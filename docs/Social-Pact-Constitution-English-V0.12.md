@@ -1,5 +1,5 @@
 # First Part: 
-# The connection as a Foundational Principle.
+## The connection as a Foundational Principle.
 
 With the purpose of participating in the creation of a society of harmony and peace:
 
@@ -12,26 +12,35 @@ I recognize that life is a process of continuous development and therefore, cons
 All this I do in order to fulfill the ultimate goal established by nature for the human race: **to be the guardian of life.**
 
 # Second Part: 
-# Development.
+## Development in Articles.
 
+### 1.
+Freedom implies great responsibility and therefore the citizen must be educated in using his freedom wisely, since ignorance does not free him from responsibility and the consequences of his actions.
 
-Article 1: Freedom implies great responsibility and therefore the citizen must be educated in using his freedom wisely, since ignorance does not free him from responsibility and the consequences of his actions.
+### 2.
+The education system has the purpose of forming responsible citizens, knowing society and the world, preparing citizens to be entrepreneurs and parents of the next generation. It is based on the scientific method applied with love learning to think scientifically, how to balance human nature with technological developments.
 
-Article 2: The education system has the purpose of forming responsible citizens, knowing society and the world, preparing citizens to be entrepreneurs and parents of the next generation. It is based on the scientific method applied with love learning to think scientifically, how to balance human nature with technological developments.
 _Definition:_
-Scientific Method: 1.To observe, 2.To investigate, 3. Hypothesis, 4. Experiment, 5. Conclusions or Repeat.
 
-Article 2.1: We recognize the existence of mental viruses and that training in the application of the scientific method is the tool to eliminate them.
+**Scientific Method:**
+1. Observe.
+2. Investigate.
+3. Hypothesis.
+4. Experiment.
+5. Conclusions or Repeat.
+
+#### 2.1.
+We recognize the existence of mental viruses and that training in the application of the scientific method is the tool to eliminate them.
+
 _Definition_:
-Mental Virus: Beliefs that limits the development of the human being. Mental viruses behave just like its biological counterparts because they mutate and are transmitted between people. When a paradigm becomes obsolete it becomes a mental virus.
+**Mental Virus:** Beliefs that limits the development of the human being. Mental viruses behave just like its biological counterparts because they mutate and are transmitted between people. When a paradigm becomes obsolete it becomes a mental virus. There are also mental viruses that are born as mental viruses.
 
-There are also mental viruses that are born as mental viruses.
+#### 2.2.
+Families are free to choose the educational center they consider most convenient for their children, including teaching at home.
 
+#### 2.3.
+Educational centers will be publicly evaluated with the indicators of Mutual Welfare. Circular Education is recommended, with its 10 educational principles.
 
-
-Article 2.2: Families are free to choose the educational center they consider most convenient for their children, including teaching at home.
-
-Article 2.3: Educational centers will be publicly evaluated with the indicators of Mutual Welfare. Circular Education is recommended, with its 10 educational principles.
 1. Social Environment Builds the Person.
 2. Personal Example.
 3. Equality of Importance.
@@ -43,149 +52,212 @@ Article 2.3: Educational centers will be publicly evaluated with the indicators 
 9. Small Groups with Several Educators (of both genders).
 10. Parent support.
 
-Article 2.4: Step learning is recommended, following the development of the history of mankind.
+#### 2.4.
+Stepped learning is recommended, following the development of the history of mankind.
 
-Article 2.4.1: General Aspects:
-• Up to 5 years the child should develop gradually in the same way that humanity developed until his generation, related first with nature and then with technology.
-• The child should grow in increasingly larger circles. Example: from the room to the living room, from the living room to the garden etc... Here it is important to observe how much the child&#39;s desire shows to enter the next circle, because the progress must be made according to their demand and not by means of pressure (The same happens in the transition from the tit to the bottle).
-• From the Kindergarten it would be ideal for each new stage to be isolated from the previous and next stages. This allows the educator that in each stage can help to develop a homogeneous society where there are not strong versus weak.
-• From 3 to 10 years old, the little ones are not in danger of absorbing the negative qualities produced by the &quot;cunning&quot; in growth of the elderly.
-• From 9 to 12 years old, the genders are separated, including their educators, and they are taught roles in primitive social life.
-• From the age of 12, they are taught the roles in postmodern society, and to participate in power games, which perform the genres.
+##### 2.4.1. General Aspects:
+- Up to 5 years the child should develop gradually in the same way that humanity developed until his generation, related first with nature and then with technology.
+- The child should grow in increasingly larger circles. Example: from the room to the living room, from the living room to the garden etc... Here it is important to observe how much the child&#39;s desire shows to enter the next circle, because the progress must be made according to their demand and not by means of pressure (The same happens in the transition from the tit to the bottle).
+- From the Kindergarten it would be ideal for each new stage to be isolated from the previous and next stages. This allows the educator that in each stage can help to develop a homogeneous society where there are not strong versus weak.
+- From 3 to 10 years old, the little ones are not in danger of absorbing the negative qualities produced by the &quot;cunning&quot; in growth of the elderly.
+- From 9 to 12 years old, the genders are separated, including their educators, and they are taught roles in primitive social life.
+- From the age of 12, they are taught the roles in postmodern society, and to participate in power games, which perform the genres.
 
-Article 2.4.2: Specific Aspects
-• From 0 to 18 months: During this period it is recommended to feed them breast milk directly from the breast of their mother. At this stage your environment is recommended to be surrounded by the least amount of stimuli, only your parents, your room and your crib. They do not understand wide environments and complex forms (cars, planes, TV, Smart Phones, computers).
-• From 18 months to 3 years: Stop perceiving him as a baby, and start seeing him as a small child. In this stage he has the capacity to learn through games and examples, his parents must show him all kinds of ways that they can understand so that internally they begin to discern between the good and the bad.
+##### 2.4.2. Specific Aspects:
+- From 0 to 18 months: During this period it is recommended to feed them breast milk directly from the breast of their mother. At this stage your environment is recommended to be surrounded by the least amount of stimuli, only your parents, your room and your crib. They do not understand wide environments and complex forms (cars, planes, TV, Smart Phones, computers).
+- From 18 months to 3 years: Stop perceiving him as a baby, and start seeing him as a small child. In this stage he has the capacity to learn through games and examples, his parents must show him all kinds of ways that they can understand so that internally they begin to discern between the good and the bad.
+- From 3 to 5 years old: their development ceases to depend exclusively on the home, and kindergarten becomes their main environment for growth. During this period emotional development is vital, in kindergarten you must learn to relate to adults, with boys and girls, learn different types of rules, how to take care of things that can hurt your body.
+- At 3 years: they can learn the letters and numbers.
+- At 4 years old: they can learn to read and sing different subjects they have memorized. Ex .: colors, numbers, letters ...
+- At 5 years: comparisons of quality and quantity. Example: height and width, distances, light and dark, etc.
+- From 6 years old: it goes from kindergarten to school. Having acquired a correct emotional development, it moves to a new stage where mental development is main (scientific knowledge) using the KWHLAQ method.
+- From the age of 9, the use and programming of the computer.
 
-• From 3 to 5 years old: their development ceases to depend exclusively on the home, and kindergarten becomes their main environment for growth. During this period emotional development is vital, in kindergarten you must learn to relate to adults, with boys and girls, learn different types of rules, how to take care of things that can hurt your body.
-• At 3 years: they can learn the letters and numbers.
-• At 4 years old: they can learn to read and sing different subjects they have memorized. Ex .: colors, numbers, letters ...
-• At 5 years: comparisons of quality and quantity. Example: height and width, distances, light and dark, etc.
-• From 6 years old: it goes from kindergarten to school. Having acquired a correct emotional development, it moves to a new stage where mental development is main (scientific knowledge) using the KWHLAQ method.
-• From the age of 9, the use and programming of the computer.
+### 3.
+Our collective decision-making mechanism is direct democracy with meritocracy, expressed in the consensus vote and the benevolent dictator.
 
-Article 3: Our collective decision-making mechanism is direct democracy with meritocracy, expressed in the consensus vote and the benevolent dictator.
-Definitions:
-Direct Democracy: The power is not delegated and is always in the hands of citizens, who participate actively and continuously in decision-making.
-Meritocracy: The ability to do a job, either by demonstration when doing work, or by having a public title that accredits you as capable of performing the job.
-Consensus Voting: Decisions that cannot be resolved by technical analysis are resolved by a limited time vote, on a series of proposals, with 4 types of votes: 1- Agree, 2- Against, 3- I do not care, 4- First Dead. The consensus occurs when a proposal reaches ⅔ of type 1 votes and up to 12% of type 4 votes.
-Benevolent Dictator: The benevolent dictator is a role that is earned by merit, since it is a person with the ability to reconcile contradictory points and his function is to make decisions in the extreme case that consensus could not be reached. He or She can be revoked at any time.
+_Definitions:_
 
-Article 3.1: Voting is not anonymous, except in cases where it is necessary, as to avoid damage to a reputation. The votes of the last round can be anonymous.
+**Direct Democracy:** The power is not delegated and is always in the hands of citizens, who participate actively and continuously in decision-making.
 
-Article 4: We operate and organize ourselves in a distributed manner, both in the geographical area and in the distribution of power, avoiding, as far as possible, the formation of centralisms.
+**Meritocracy:** The ability to do a job, either by demonstration when doing work, or by having a public title that accredits you as capable of performing the job.
 
-Article 4.1: In the geographical area we are a nation, distributed throughout the planet Earth. At the will of citizens, their geo-located assets are part of our geography. At the same time we recognize the geographical spaces of the other nationality of our citizens.
+**Consensus Voting:** Decisions that cannot be resolved by technical analysis are resolved by a limited time vote, on a series of proposals, with 4 types of votes: 1- Agree, 2- Against, 3- I do not care, 4- First Dead. The consensus occurs when a proposal reaches ⅔ of type 1 votes and up to 12% of type 4 votes.
 
-Article 4.2: In the area of ​​power, we seek that the power always resides in the citizen, avoiding delegations of power, except for temporary delegations and revocable at any time that the practice requires for the effective realization of activities.
+**Benevolent Dictator:** The benevolent dictator is a role that is earned by merit, since it is a person with the ability to reconcile contradictory points and his function is to make decisions in the extreme case that consensus could not be reached. He or She can be revoked at any time.
 
-Article 5: To get out of the paradigm of measuring everything exclusively with money, two forms of payment are recognized: 1- honor, 2- money.
+#### 3.1.
+Voting is not anonymous, except in cases where it is necessary, as to avoid damage to a reputation. The votes of the last round can be anonymous.
 
-Article 5.1: Events are promoted to pay with honor, giving public recognitions. These recognitions can be standardized in a hierarchical system of levels, which are achieved by achieving a defined number of points. Example of levels: iron, copper, silver, gold, platinum; each with sub-levels from 1 to 5.
+### 4.
+We operate and organize ourselves in a distributed manner, both in the geographical area and in the distribution of power, avoiding, as far as possible, the formation of centralisms.
 
-Article 6: Our economic system is the Circular Market Capitalism, with total transparency and detailed in real time for the activities of public entities.
+#### 4.1.
+In the geographical area we are a nation, distributed throughout the planet Earth. At the will of citizens, their geo-located assets are part of our geography. At the same time we recognize the geographical spaces of the other nationality of our citizens.
 
-Article 6.1: The market develops when the two fundamental laws of the economy are fulfilled.
-1. Law of Profit or loss: incentivize or restrict any type of activity by giving the opportunity of gain or loss, whether real or potential.
-2. Law of Competition: the necessary requirements for a new company to enter into a market are the minimum possible.
+#### 4.2.
+In the area of ​​power, we seek that the power always resides in the citizen, avoiding delegations of power, except for temporary delegations and revocable at any time that the practice requires for the effective realization of activities.
 
-Article 6.1.1: All types of virtual or physical currencies are recognized as valid for the cancellation of payments, provided that the parties agree.
+### 5.
+To get out of the paradigm of measuring everything exclusively with money, two forms of payment are recognized: 1- honor, 2- money.
 
-Article 6.1.2: In order to promote competition in natural monopolies, such as roads, water, electricity, radio spectrum, competition for temporary differentiated use and administrative competence in services is proposed, using a common medium shared by all operators and always leaving the opportunity to try new operators.
+#### 5.1.
+Events are promoted to pay with honor, giving public recognitions. These recognitions can be standardized in a hierarchical system of levels, which are achieved by achieving a defined number of points. Example of levels: iron, copper, silver, gold, platinum; each with sub-levels from 1 to 5.
 
-Article 6.2: The monetary function, of creating money in our UnityCoin currency, belongs to the organized citizens.
+### 6.
+Our economic system is the Circular Market Capitalism, with total transparency and detailed in real time for the activities of public entities.
 
-Article 6.3: The financial function of administration of the money of the State (in what the money is spent), in our currency UnityCoin belongs to the organized citizens.
+#### 6.1.
+The market develops when the two fundamental laws of the economy are fulfilled.
+1. **Law of Profit** or loss: incentivize or restrict any type of activity by giving the opportunity of gain or loss, whether real or potential.
+2. **Law of Competition**: the necessary requirements for a new company to enter into a market are the minimum possible.
 
-Article 6.3.1: The depreciation of the monetary mass of UnityCoin, as a mechanism of social redistribution, can be implemented in the future to ensure a sustainable economy.
+##### 6.1.1.
+All types of virtual or physical currencies are recognized as valid for the cancellation of payments, provided that the parties agree.
 
-Article 6.4: The State may be the capitalist partner, in those projects that citizens need and the project executors don&#39;t have the money to invest.
+##### 6.1.2.
+In order to promote competition in natural monopolies, such as roads, water, electricity, radio spectrum, competition for temporary differentiated use and administrative competence in services is proposed, using a common medium shared by all operators and always leaving the opportunity to try new operators.
 
-Article 6.4.1: The health and education systems can be financed by the State, while they are administered by private companies or organized citizens. The State participates in the profits and / or losses, as well as the private ones.
+#### 6.2.
+The monetary function, of creating money in our UnityCoin currency, belongs to the organized citizens.
 
-Article 6.5: As the system of production of goods and services requires a continuous injection of money, instead of injecting that money into the banks or the stock exchange system, that injection of money will be made directly to citizens, through a universal minimum income.
+#### 6.3.
+The financial function of administration of the money of the State (in what the money is spent), in our currency UnityCoin belongs to the organized citizens.
 
-Article 6.5.1: The State will be responsible for giving a minimum universal income to each citizen, except for those citizens who receive an insured basic salary (Article 7) as the case of those who work for the State.
+##### 6.3.1.
+The depreciation of the monetary mass of UnityCoin, as a mechanism of social redistribution, can be implemented in the future to ensure a sustainable economy.
 
-Definition:
+#### 6.4.
+The State may be the capitalist partner, in those projects that citizens need and the project executors don&#39;t have the money to invest.
 
-Universal Minimum Income: the amount of monthly money a person needs to survive. We are talking about that with that amount the person can pays his expenses of: food, basic services (water, electricity, telephone, Internet) and health.
+##### 6.4.1.
+The health and education systems can be financed by the State, while they are administered by private companies or organized citizens. The State participates in the profits and / or losses, as well as the private ones.
 
-Article 6.5.1.1: To receive this money, every citizen should periodically see or attend a talk where they are educated and remembered that this money comes from the welfare of the society in which they live. If social welfare improves, the amount of money increases, if social welfare decreases, the amount of money received decreases.
+#### 6.5.
+As the system of production of goods and services requires a continuous injection of money, instead of injecting that money into the banks or the stock exchange system, that injection of money will be made directly to citizens, through a universal minimum income.
 
-Article 6.5.1.2: The universal minimum income will be implemented progressively and is one of the economic - human goals, starting with children up to the age of 16, women dedicated to home and their education, and adults over 60.
+##### 6.5.1.
+The State will be responsible for giving a minimum universal income to each citizen, except for those citizens who receive an insured basic salary (Article 7) as the case of those who work for the State.
 
-Article 6.5.1.2.1: This encourages the work of young people, the retirement of our seniors from work, as well as recognizes the work of women in the home, making it easier for them to continue studying.
+_Definition:_
 
-Article 6.5.1.3: For minors up to the age of 16 and for a maximum of two children, the mother or her legal representative receives 50% of the amount of money an adult receives.
+**Universal Minimum Income** : the amount of monthly money a person needs to survive. We are talking about that with that amount the person can pays his expenses of: food, basic services (water, electricity, telephone, Internet) and health.
 
-Article 6.5.1.3.1: In order to favor the natural development of children, the amount goes up to 60%, if the children are under the continuous authority of a man and a woman (because biologically the Same-sex marriage do not reproduce and that the children need the masculine and feminine model).
+###### 6.5.1.1.
+To receive this money, every citizen should periodically see or attend a talk where they are educated and remembered that this money comes from the welfare of the society in which they live. If social welfare improves, the amount of money increases, if social welfare decreases, the amount of money received decreases.
 
-Article 6.5.1.4: To avoid misuse of universal minimum income, this can be granted with means of payment that support differentiated consumption.
-Definition:
-Differentiated Consumption: In physical or virtual stores at the time of payment, the payment terminals distinguish whether the money from the payment means can be used to buy the products. Example: beverages and tobacco cannot be paid with money reserved for food and services.
-Differentiated Payment: The price of the product varies with reference to the citizen who pays. Example: older adults pay 50% less, a birthday person pays 20% less.
+###### 6.5.1.2.
+The universal minimum income will be implemented progressively and is one of the economic - human goals, starting with children up to the age of 16, women dedicated to home and their education, and adults over 60.
 
-Article 6.6: All public or private organizations and their products, which offer goods or services to the public, will be evaluated every six months publicly by citizens, with all the details of who and how this evaluation was carried out, using our matrix of Indicators of Mutual Welfare. The products will clearly show the result of that evaluation.
+###### 6.5.1.2.1.
+This encourages the work of young people, the retirement of our seniors from work, as well as recognizes the work of women in the home, making it easier for them to continue studying.
 
-Article 6.7: Each locality will define and make public a series of economic - human - ecological goals, updated periodically, that include the goals of the macro locality that groups belong and other localities.
+###### 6.5.1.3.
+For minors up to the age of 16 and for a maximum of two children, the mother or her legal representative receives 50% of the amount of money an adult receives.
 
-Article 6.8: Automation and the use of Artificial Intelligences are promoted in all sectors: public and private, including health and legal sectors, as mechanisms to improve the quality of products and attention to citizens, to reduce costs and free the human being from repetitive tasks. Our economic-financial model allows these improvements to be immediately distributed to all citizens.
+###### 6.5.1.3.1.
+In order to favor the natural development of children, the amount goes up to 60%, if the children are under the continuous authority of a man and a woman (because biologically the Same-sex marriage do not reproduce and that the children need the masculine and feminine model).
 
-Article 7: The basic salary insured is established, the State is responsible for ensuring the existence of a job for all citizens who require it.
-Definition:
-Work: It is everything that a citizen does to earn money or honor, favoring society and nature.
-Basic Insured Salary: It is the amount of monthly money that a person needs to cover all his needs, but not luxuries. We are talking about that with this amount, the person can pay His expenses of: food, basic services of water, electricity, telephone, health, hygiene, Internet, housing and transportation.
+###### 6.5.1.4.
+To avoid misuse of universal minimum income, this can be granted with means of payment that support differentiated consumption.
 
-Article 7.1: Citizens, companies and other organizations that generate products or services, that benefit society and nature, are not employment agencies and are free to trade with those who wish.
+_Definition:_
 
-Article 7.2: The State will be automated as much as possible, without losing quality of service. Thus the number of working hours must continually decrease, and the benefits of this technological efficiency (cultural heritage) are automatically transferred to the entire population through lower prices.
+**Differentiated Consumption** : In physical or virtual stores at the time of payment, the payment terminals distinguish whether the money from the payment means can be used to buy the products. Example: beverages and tobacco cannot be paid with money reserved for food and services.
+**Differentiated Payment** : The price of the product varies with reference to the citizen who pays. Example: older adults pay 50% less, a birthday person pays 20% less.
 
-Article 8: Companies pay the State an annual tax of 10% (or less, since most of the work is done by machines, robots and artificial intelligence). It must be a sufficient amount to pay the salaries and other costs of the State (justified at the highest level of detail).
+#### 6.6.
+All public or private organizations and their products, which offer goods or services to the public, will be evaluated every six months publicly by citizens, with all the details of who and how this evaluation was carried out, using our matrix of Indicators of Mutual Welfare. The products will clearly show the result of that evaluation.
 
-Article 8.1: The sale of products does not pay taxes, but in order to facilitate collection, the tax that companies have to pay can be implemented as a tax on the value of the product.
+#### 6.7.
+Each locality will define and make public a series of economic - human - ecological goals, updated periodically, that include the goals of the macro locality that groups belong and other localities.
 
-Article 8.1.1: The products that we do not want to promote in society such as alcohol, tobacco and drugs are discouraged with high taxes (as is done today). 200% 1,000% are possible values ​​and are fixed for each type, for example Alcohol 200%, Cigars 300%, Marijuana 400%.
+#### 6.8.
+Automation and the use of Artificial Intelligences are promoted in all sectors: public and private, including health and legal sectors, as mechanisms to improve the quality of products and attention to citizens, to reduce costs and free the human being from repetitive tasks. Our economic-financial model allows these improvements to be immediately distributed to all citizens.
 
-Article 8.1.1.1: This money collected is for programs to prevent the consumption of these products, educational system and health.
+### 7.
+The basic salary insured is established, the State is responsible for ensuring the existence of a job for all citizens who require it.
 
-Article 9: Citizens pay a progressive tax, that is to say it increases as the income of the citizens increase, and is measured in basic salaries. The one who earns more pays more. We propose to start at 5% up to 30%, with a final gradual scale until reaching the top. For example, a minimum wage pays 5%, two minimum wages 7%, three minimum wages 9%, and so on up to 20 minimum wages or more, which pays 30%.
+_Definition:_
 
-Article 10: To avoid double taxation, we recognize the payment of taxes in other countries.
+**Work** : It is everything that a citizen does to earn money or honor, favoring society and nature.
 
-Article 11: The penalty for evading taxes, is as much fines for double the money evaded, as the loss of half of the reputation that the citizen or company has. If you do not have money, pay with equivalent labor.
+**Basic Insured Salary** : It is the amount of monthly money that a person needs to cover all his needs, but not luxuries. We are talking about that with this amount, the person can pay His expenses of: food, basic services of water, electricity, telephone, health, hygiene, Internet, housing and transportation.
 
-Article 11.1: People can decide not to pay taxes. And since this attitude damages society, they will have to pay a penalty in reputation in each period.
+#### 7.1.
+Citizens, companies and other organizations that generate products or services, that benefit society and nature, are not employment agencies and are free to trade with those who wish.
 
-Article 12: As the State is interested in knowing what crosses the customs, we propose an import tariff of 1%, for everything.
+#### 7.2.
+The State will be automated as much as possible, without losing quality of service. Thus the number of working hours must continually decrease, and the benefits of this technological efficiency (cultural heritage) are automatically transferred to the entire population through lower prices.
 
-Article 13: The tax on inheritance and royalties, which is paid when a family member dies and their assets pass to a family member, or when someone decides to give a good to another person, will be: for the first degree of consanguinity 5%, for others 10% degrees, and royalties equal to 10%.
+### 8.
+Companies pay the State an annual tax of 10% (or less, since most of the work is done by machines, robots and artificial intelligence). It must be a sufficient amount to pay the salaries and other costs of the State (justified at the highest level of detail).
 
-Article 14: Addictive and highly profitable businesses such as the casino and lotteries, to ensure that a large part of the profits are returned to the citizens, it is recommended that they be financed by the State and administered by private companies.
+#### 8.1.
+The sale of products does not pay taxes, but in order to facilitate collection, the tax that companies have to pay can be implemented as a tax on the value of the product.
 
-Article 15: The localities can set additional taxes to those already mentioned in order to stimulate competition between locations.
+##### 8.1.1.
+The products that we do not want to promote in society such as alcohol, tobacco and drugs are discouraged with high taxes (as is done today). 200% 1,000% are possible values ​​and are fixed for each type, for example Alcohol 200%, Cigars 300%, Marijuana 400%.
 
-Article 16: Every citizen can participate in any organization that manages money, without requiring a license of any kind. It is recommended the creation of business centers, composed of advisors of all kinds, to seek success in the implementation of business ideas, to participate in the profits or losses of these businesses.
+###### 8.1.1.1.
+This money collected is for programs to prevent the consumption of these products, educational system and health.
 
-Article 17: The planet earth belongs to all life, and life needs whoever takes care of it, that&#39;s why the concept of the owner of the land is changed, as the guardian of the Earth.
+### 9.
+Citizens pay a progressive tax, that is to say it increases as the income of the citizens increase, and is measured in basic salaries. The one who earns more pays more. We propose to start at 5% up to 30%, with a final gradual scale until reaching the top. For example, a minimum wage pays 5%, two minimum wages 7%, three minimum wages 9%, and so on up to 20 minimum wages or more, which pays 30%.
 
-Article 17.1: Private property is inviolable, unless it is necessary for a common good, clearly demonstrable and with due compensation in money and honor.
+### 10.
+To avoid double taxation, we recognize the payment of taxes in other countries.
 
-Article 18: To promote the creation of new patents, and to avoid the excessive protectionism of old patents it is established that patents will last for 5 years, extendable for 2 years more if they are not implemented in the first 5 years.
+### 11.
+The penalty for evading taxes, is as much fines for double the money evaded, as the loss of half of the reputation that the citizen or company has. If you do not have money, pay with equivalent labor.
 
-Article 18.1: The creation of new patents shall be publicly recognized with honor.
+#### 11.1.
+People can decide not to pay taxes. And since this attitude damages society, they will have to pay a penalty in reputation in each period.
 
-Article 19: The Executive Power of the State is implemented through two complementary organizations, the technical circle and the circle of government. Both are organizations composed of citizens, who make their decisions horizontally but execute their tasks vertically. They meet regularly and are completely transparent, anonymity is not allowed.
+### 12.
+As the State is interested in knowing what crosses the customs, we propose an import tariff of 1%, for everything.
 
-Article 19.1: The technical circle, is responsible for the execution of technical tasks, based on the scientific method, and has a representative in the circle of government.
+### 13.
+The tax on inheritance and royalties, which is paid when a family member dies and their assets pass to a family member, or when someone decides to give a good to another person, will be: for the first degree of consanguinity 5%, for others 10% degrees, and royalties equal to 10%.
 
-Article 19.2: The circle of government is responsible for issues related to citizens, their needs and priorities. The benevolent dictator belongs to this organization.
+### 14.
+Addictive and highly profitable businesses such as the casino and lotteries, to ensure that a large part of the profits are returned to the citizens, it is recommended that they be financed by the State and administered by private companies.
 
-Article 19.3: This organization implements our collective decision-making mechanism. Each locality has this same organization and is grouped into larger localities (macro locality) with government circles integrated by a representative of each government circle in groups of up to 10.
+### 15.
+The localities can set additional taxes to those already mentioned in order to stimulate competition between locations.
 
-Article 19.3.1: The macro-localities also have a benevolent dictator. And a representative of each macro-locality is grouped into larger macro-locations of up to 10 representatives.
+### 16.
+Every citizen can participate in any organization that manages money, without requiring a license of any kind. It is recommended the creation of business centers, composed of advisors of all kinds, to seek success in the implementation of business ideas, to participate in the profits or losses of these businesses.
 
-Article 19.4: Part of the functions of the Executive is to define and organize:
+### 17.
+The planet earth belongs to all life, and life needs whoever takes care of it, that&#39;s why the concept of the owner of the land is changed, as the guardian of the Earth.
+
+#### 17.1.
+Private property is inviolable, unless it is necessary for a common good, clearly demonstrable and with due compensation in money and honor.
+
+### 18.
+To promote the creation of new patents, and to avoid the excessive protectionism of old patents it is established that patents will last for 5 years, extendable for 2 years more if they are not implemented in the first 5 years.
+
+#### 18.1.
+The creation of new patents shall be publicly recognized with honor.
+
+### 19.
+The Executive Power of the State is implemented through two complementary organizations, the technical circle and the circle of government. Both are organizations composed of citizens, who make their decisions horizontally but execute their tasks vertically. They meet regularly and are completely transparent, anonymity is not allowed.
+
+#### 19.1.
+The technical circle, is responsible for the execution of technical tasks, based on the scientific method, and has a representative in the circle of government.
+
+#### 19.2.
+The circle of government is responsible for issues related to citizens, their needs and priorities. The benevolent dictator belongs to this organization.
+
+#### 19.3.
+This organization implements our collective decision-making mechanism. Each locality has this same organization and is grouped into larger localities (macro locality) with government circles integrated by a representative of each government circle in groups of up to 10.
+
+##### 19.3.1.
+The macro-localities also have a benevolent dictator. And a representative of each macro-locality is grouped into larger macro-locations of up to 10 representatives.
+
+#### 19.4.
+Part of the functions of the Executive is to define and organize:
 1. The judicial system.
 2. The system of professional armed forces.
 3. The distributed system of public data.
