@@ -1,5 +1,5 @@
 # Primera Parte:
-# La conexión como principio fundacional.
+## La conexión como principio fundacional.
 
 Con el propósito de participar en la creación de una sociedad de armonía y paz.
 
@@ -12,25 +12,35 @@ Reconozco que la vida es un proceso de continuo desarrollo y por lo tanto, consc
 Todo esto lo hago a fin de cumplir con la meta última establecida por la naturaleza para la raza humana: **ser el guardián de la vida**.
 
 # Segunda Parte: 
-# El Desarrollo.
+## Desarrollo en Artículos.
 
-Artículo 1: La libertad implica una gran responsabilidad, por lo tanto el ciudadano debe educarse en utilizar sabiamente su libertad, ya que el desconocimiento no lo libra de la responsabilidad y las consecuencias de sus actos.
+### 1.
+La libertad implica una gran responsabilidad, por lo tanto el ciudadano debe educarse en utilizar sabiamente su libertad, ya que el desconocimiento no lo libra de la responsabilidad y las consecuencias de sus actos.
 
-Artículo 2: El sistema educativo tiene el propósito de formar ciudadanos responsables, conocedores de la sociedad y el mundo, preparando a los ciudadanos para ser emprendedores y padres de la siguiente generación. Está basado en el método científico aplicado con amor. Aprendiendo a pensar científicamente, cómo equilibrar la naturaleza humana con los desarrollos tecnológicos.
+### 2.
+El sistema educativo tiene el propósito de formar ciudadanos responsables, conocedores de la sociedad y el mundo, preparando a los ciudadanos para ser emprendedores y padres de la siguiente generación. Está basado en el método científico aplicado con amor. Aprendiendo a pensar científicamente, cómo equilibrar la naturaleza humana con los desarrollos tecnológicos.
 
 _Definición:_
 
-**Método Científico:** 1.Observar, 2. Investigar, 3. Hipótesis, 4. Experimento, 5. Conclusiones o Repetir.
+**Método Científico:** 
+1. Observar.
+2. Investigar.
+3. Hipótesis.
+4. Experimento.
+5. Conclusiones o Repetir.
 
-Artículo 2.1: Reconocemos la existencia de los virus mentales, y que la formación en la aplicación del método científico, es la herramienta para eliminarlos.
+#### 2.1.
+Reconocemos la existencia de los virus mentales, y que la formación en la aplicación del método científico, es la herramienta para eliminarlos.
 
 _Definición:_
 
 **Virus Mental:** Creencia que limita el desarrollo del ser humano. Los virus mentales se comportan igual que sus similares biológicos, mutan y se transmiten entre las personas. Cuando un paradigma se vuelve obsoleto se convierte en un virus mental. También hay virus mentales que nacen como virus mentales.
 
-Artículo 2.2: Las familias son libres de escoger el centro educativo que consideren que mejor les convenga, incluyendo la enseñanza en casa.
+#### 2.2.
+Las familias son libres de escoger el centro educativo que consideren que mejor les convenga, incluyendo la enseñanza en casa.
 
-Artículo 2.3: Los centros educativos serán evaluados públicamente con los indicadores del Bienestar Mutuo. Se recomienda la Educación Circular, con sus 10 principios educativos.
+#### 2.3.
+Los centros educativos serán evaluados públicamente con los indicadores del Bienestar Mutuo. Se recomienda la Educación Circular, con sus 10 principios educativos.
 
 1. Entorno Social Construye a la Persona.
 2. Ejemplo Personal.
