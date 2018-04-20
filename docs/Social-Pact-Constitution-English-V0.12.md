@@ -40,7 +40,6 @@ Families are free to choose the educational center they consider most convenient
 
 #### 2.3.
 Educational centers will be publicly evaluated with the indicators of Mutual Welfare. Circular Education is recommended, with its 10 educational principles.
-
 1. Social Environment Builds the Person.
 2. Personal Example.
 3. Equality of Importance.
@@ -109,6 +108,7 @@ Our economic system is the Circular Market Capitalism, with total transparency a
 
 #### 6.1.
 The market develops when the two fundamental laws of the economy are fulfilled.
+
 1. **Law of Profit** or loss: incentivize or restrict any type of activity by giving the opportunity of gain or loss, whether real or potential.
 2. **Law of Competition**: the necessary requirements for a new company to enter into a market are the minimum possible.
 
@@ -265,116 +265,170 @@ Part of the functions of the Executive is to define and organize:
 5. The various standards, important to facilitate competition.
 6. The parties, which will have the purpose of uniting and integrating the whole society.
 
-Article 19.4.1: Recognizing that citizens are not prepared for new systems, as a first approximation in a transition, you can implement a copy of the archaic state systems, evaluating periodically (monthly, bi-monthly, quarterly): What parts of this system work ? What parts can be updated now? What parts can be changed in the next iteration?
+##### 19.4.1.
+Recognizing that citizens are not prepared for new systems, as a first approximation in a transition, you can implement a copy of the archaic state systems, evaluating periodically (monthly, bi-monthly, quarterly): What parts of this system work ? What parts can be updated now? What parts can be changed in the next iteration?
 
-Article 20: We are a state of law where we apply justice with mercy, the damages caused are repaired with money and honor in proportion to the damage caused and to whoever causes the damage. If the damage is so severe that it cannot be repaired without a doubt then capital punishment is allowed to eradicate this evil in society.
+### 20.
+We are a state of law where we apply justice with mercy, the damages caused are repaired with money and honor in proportion to the damage caused and to whoever causes the damage. If the damage is so severe that it cannot be repaired without a doubt then capital punishment is allowed to eradicate this evil in society.
 
-Article 20.1: Everyone has access to the justice system, which is paid by the losing party. These costs will be set in man hours.
+#### 20.1.
+Everyone has access to the justice system, which is paid by the losing party. These costs will be set in man hours.
 
-Article 20.2: The legal body is constituted in a hierarchical way: 1- this constitution, 2- laws (generalizations) 3- Standard contracts (dynamically updated by citizens) 4- Procedures (regulations) 5- Recommendations. In order to maintain freedom, responsibility and self-control, it is recommended to develop recommendations instead of laws and regulations.
+#### 20.2.
+The legal body is constituted in a hierarchical way: 1- this constitution, 2- laws (generalizations) 3- Standard contracts (dynamically updated by citizens) 4- Procedures (regulations) 5- Recommendations. In order to maintain freedom, responsibility and self-control, it is recommended to develop recommendations instead of laws and regulations.
 
-Article 20.3: It is understood that companies are in a state of continuous improvement, therefore this reality is assumed and the legal body is applied considering the latest version and the difference between versions.
+#### 20.3.
+It is understood that companies are in a state of continuous improvement, therefore this reality is assumed and the legal body is applied considering the latest version and the difference between versions.
 
-Article 20.3.1: These modifications will be annotated using the SemVer notation.
+##### 20.3.1.
+These modifications will be annotated using the SemVer notation.
 
-Article 20.4: The definition of the judicial system includes its relationship with the Criminal Investigation Agency.
+#### 20.4.
+The definition of the judicial system includes its relationship with the Criminal Investigation Agency.
 
-Article 21: The salary in the State will be a minimum of 1 basic salary and maximum 3 basic salaries. The private sector does not have these limits.
+### 21.
+The salary in the State will be a minimum of 1 basic salary and maximum 3 basic salaries. The private sector does not have these limits.
 
-Article 21.1: Salaries in the State are paid using the money collected with taxes.
+#### 21.1.
+Salaries in the State are paid using the money collected with taxes.
 
-Article 22: We promote the culture, values ​​and local languages, as long as they do not contradict our Foundation.
+### 22.
+We promote the culture, values ​​and local languages, as long as they do not contradict our Foundation.
 
-Article 23: Our FOUNDATION has supreme character, and the Articles serve to develop it, in any case what is important is the intention of what is written and not the words with which it is written.
+### 23.
+Our FOUNDATION has supreme character, and the Articles serve to develop it, in any case what is important is the intention of what is written and not the words with which it is written.
 
-Article 23.1: The fundamentals may be modified in their wording but never in their intention. The articles of this social pact can be modified at any time using the mechanism of collective participation established in this social pact.
+#### 23.1.
+The fundamentals may be modified in their wording but never in their intention. The articles of this social pact can be modified at any time using the mechanism of collective participation established in this social pact.
 
-Article 24: Our nationality is acquired and waived by the public demonstration of the will of any human being from the age of majority, or 13 years of age if their guardians allow it.
+### 24.
+Our nationality is acquired and waived by the public demonstration of the will of any human being from the age of majority, or 13 years of age if their guardians allow it.
 
-Article 24.1: This public demonstration consists of a video where the person reads the fundamentals of this social pact.
+#### 24.1.
+This public demonstration consists of a video where the person reads the fundamentals of this social pact.
 
-Article 25: The citizen is responsible for his or her actions, both those he or she does and those he or she should do and not do.
+### 25.
+The citizen is responsible for his or her actions, both those he or she does and those he or she should do and not do.
 
-Article 26: Every citizen can participate in any public organization that he wishes, being his only limitation the one imposed on himself for his capacity of contribution to that organization.
+### 26.
+Every citizen can participate in any public organization that he wishes, being his only limitation the one imposed on himself for his capacity of contribution to that organization.
 
-Article 26.1: Therefore we do not have political parties but groups of interest.
+#### 26.1.
+Therefore we do not have political parties but groups of interest.
 
-Article 27: All work deserves a retribution whether in cash or in honor.
+### 27.
+All work deserves a retribution whether in cash or in honor.
 
-Article 28: Organized citizens are responsible for the formulation and execution of public policies being able to delegate their power to managers for short and renewable periods.
+### 28.
+Organized citizens are responsible for the formulation and execution of public policies being able to delegate their power to managers for short and renewable periods.
 
-Article 29: The public delegates are representatives of citizens and not of themselves. They are under the orders of organized citizens and are free to be removed at any time.
+### 29.
+The public delegates are representatives of citizens and not of themselves. They are under the orders of organized citizens and are free to be removed at any time.
 
-Article 30: Total Transparency: All activities of public entities both internal processing and customer service will be accessible online in order to ensure public auditing at real time.
+### 30.
+Total Transparency: All activities of public entities both internal processing and customer service will be accessible online in order to ensure public auditing at real time.
 
-Article 31: The public registry will be kept in a cryptographic form with printing on paper according to the convenience of the citizen. His or her storage will be public and distributed for verification and online access at any time.
+### 31.
+The public registry will be kept in a cryptographic form with printing on paper according to the convenience of the citizen. His or her storage will be public and distributed for verification and online access at any time.
 
-Article 31.1: This distributed registry will have the functions of: traditional registry, notary, electronic identification (with levels of domain of identity) and trust services (remote identification, probative value) serving both the public and the private, if the private person requests and pays for it.
+#### 31.1.
+This distributed registry will have the functions of: traditional registry, notary, electronic identification (with levels of domain of identity) and trust services (remote identification, probative value) serving both the public and the private, if the private person requests and pays for it.
 
-Article 31.2: When the storage in this distributed register is done in an assisted form (prior advice) either by a certified citizen (the notary) or an artificial intelligence, the value and weight of that accompaniment is added to it.
+#### 31.2.
+When the storage in this distributed register is done in an assisted form (prior advice) either by a certified citizen (the notary) or an artificial intelligence, the value and weight of that accompaniment is added to it.
 
-Article 31.2.1: To facilitate this registration process, a series of assisted templates will be created, on typical documents.
+##### 31.2.1.
+To facilitate this registration process, a series of assisted templates will be created, on typical documents.
 
-Article 32: The digital identity is accepted for public procedures, except for the specific ones that require an additional physical validation.
+### 32.
+The digital identity is accepted for public procedures, except for the specific ones that require an additional physical validation.
 
-Article 32.1: The digital information of a citizen belongs to the citizen.
+#### Article 32.1.
+The digital information of a citizen belongs to the citizen.
 
-Article 32.1.1: Accessing private information of a citizen without reason is a criminal offense with a penalty.
+##### 32.1.1.
+Accessing private information of a citizen without reason is a criminal offense with a penalty.
 
-Article 32.2: The registration information of companies and land tenure is public.
+#### 32.2.
+The registration information of companies and land tenure is public.
 
-Article 32.3: Pseudonyms can also be used as digital identities if they are duly verified by the notary or artificial intelligence.
+#### 32.3.
+Pseudonyms can also be used as digital identities if they are duly verified by the notary or artificial intelligence.
 
-Article 33: The behavior within the private spaces is totally free and with clear rules for anyone who freely decides to participate in that private space and to maintain that freedom without inducing particular behaviors in the public. Behavior in public spaces is dictated by the behavior of order, respect and hierarchy, which establishes the biological nature (XX and XY).
+### 33.
+The behavior within the private spaces is totally free and with clear rules for anyone who freely decides to participate in that private space and to maintain that freedom without inducing particular behaviors in the public. Behavior in public spaces is dictated by the behavior of order, respect and hierarchy, which establishes the biological nature (XX and XY).
 
-Article 33.1: Therefore publicly is only promoted the family model of a man, a woman and their children. The other types of sexual behavior are accepted and recognized at the same level of importance as the natural model within the limitations imposed by the biological nature.
+#### 33.1.
+Therefore publicly is only promoted the family model of a man, a woman and their children. The other types of sexual behavior are accepted and recognized at the same level of importance as the natural model within the limitations imposed by the biological nature.
 
-Article 33.1.1: Marriage is the union of one man with one woman.
+##### 33.1.1.
+Marriage is the union of one man with one woman.
 
-Article 33.1.2: Same-sex marriage is the union between two human beings of the same sex.
+##### 33.1.2.
+Same-sex marriage is the union between two human beings of the same sex.
 
-Article 33.1.3: Another type of sexual unions between two or more human beings is equally valid (all within the Fundamentals). If they are popular, they can be assigned a specific denomination (trinomial, multinomial, etc.).
+##### 33.1.3.
+Another type of sexual unions between two or more human beings is equally valid (all within the Fundamentals). If they are popular, they can be assigned a specific denomination (trinomial, multinomial, etc.).
 
-Article 33.2: Marriage, Same-sex marriage and other sexual associations are based on our foundations, (equality of importance, recognition of differences) with the limitations and responsibilities that these same sexual associations establish among themselves in their standard contracts.
+#### 33.2.
+Marriage, Same-sex marriage and other sexual associations are based on our foundations, (equality of importance, recognition of differences) with the limitations and responsibilities that these same sexual associations establish among themselves in their standard contracts.
 
-Article 33.3: Each locality can generate spaces with its own rules of conduct.
+#### 33.3.
+Each locality can generate spaces with its own rules of conduct.
 
-Article 33.4: All citizens are equally important but for the purpose of respect and order the natural hierarchy is recognized: children owe respect to their parents and other adults and adults to the elderly.
+#### 33.4.
+All citizens are equally important but for the purpose of respect and order the natural hierarchy is recognized: children owe respect to their parents and other adults and adults to the elderly.
 
-Article 33.5: Citizens, organizations and companies are free to negotiate with whomever they wish.
+#### 33.5.
+Citizens, organizations and companies are free to negotiate with whomever they wish.
 
-Article 34: Majority is assumed progressively:
-13 years = Majority to be a citizen (with the approval of the parents) and receive the punishments for the crimes committed.
-16 years = Majority for emancipation under the approval of parents and to vote, except for drugs, prostitution, arms, drugs, alcohol and cigarettes among others.
-18 years = Majority except for strong drugs and weapons.
-21 years = Complete Majority. At age 21, brain development is over.
+### 34.
+Majority is assumed progressively:
+- 13 years = Majority to be a citizen (with the approval of the parents) and receive the punishments for the crimes committed.
+- 16 years = Majority for emancipation under the approval of parents and to vote, except for drugs, prostitution, arms, drugs, alcohol and cigarettes among others.
+- 18 years = Majority except for strong drugs and weapons.
+- 21 years = Complete Majority. At age 21, brain development is over.
 
-Article 35: The commercialization of drugs is accepted but it is not publicly promoted and its negative effects will be well explained in the commercial chain. In the educational system soft drugs such as alcohol and cigarettes are explained as of 13 years old and strong drugs are explained at 16 years of age.
+### 35.
+The commercialization of drugs is accepted but it is not publicly promoted and its negative effects will be well explained in the commercial chain. In the educational system soft drugs such as alcohol and cigarettes are explained as of 13 years old and strong drugs are explained at 16 years of age.
 
-Article 36: The physical security of the State depends on the citizens and the State, providing to it all the technological advances.
+### 36.
+The physical security of the State depends on the citizens and the State, providing to it all the technological advances.
 
-Article 36.1: Every citizen has the right to use and carry weapons. People with mental problems that represent a danger to society are excluded.
+#### 36.1.
+Every citizen has the right to use and carry weapons. People with mental problems that represent a danger to society are excluded.
 
-Article 36.1.1: Deterrent weapons are recommended over lethal weapons.
+##### 36.1.1.
+Deterrent weapons are recommended over lethal weapons.
 
-Article 36.2: All weapons will be duly registered in the public registry of assets.
+#### 36.2.
+All weapons will be duly registered in the public registry of assets.
 
-Article 36.3: Each year, each armed citizen must participate in sessions of security and use of weapons, sharing techniques and experiences for a better social service.
+#### 36.3.
+Each year, each armed citizen must participate in sessions of security and use of weapons, sharing techniques and experiences for a better social service.
 
-Article 36.4: The militias are organized armed citizens who participate in the duty to insure the nation.
+#### 36.4.
+The militias are organized armed citizens who participate in the duty to insure the nation.
 
-Article 36.5: The Executive will form specialized, armed professional groups that will coordinate with the militias.
+#### 36.5.
+The Executive will form specialized, armed professional groups that will coordinate with the militias.
 
-Article 36.5.1: The Professional Armed Force is an organization that has the purpose of protect the citizens and support them in cases of disasters. When they are not in activity or training, they will be carrying out construction work, first nationally and then internationally.
+##### 36.5.1.
+The Professional Armed Force is an organization that has the purpose of protect the citizens and support them in cases of disasters. When they are not in activity or training, they will be carrying out construction work, first nationally and then internationally.
 
-Article 36.6: For weapons of war, magazines of more than 7 rounds, and munitions of high lethal power, a special permit is required.
+#### 36.6.
+For weapons of war, magazines of more than 7 rounds, and munitions of high lethal power, a special permit is required.
 
-Article 36.7: In the education system men and women as of the 16 years receive instruction in personal defense and in the handling and protection of arms.
+#### 36.7.
+In the education system men and women as of the 16 years receive instruction in personal defense and in the handling and protection of arms.
 
-Article 37: Every citizen has the duty to comply with and enforce this social pact.
+### 37.
+Every citizen has the duty to comply with and enforce this social pact.
 
-# TRANSITIONAL PROVISION
+## TRANSITIONAL PROVISION
 
-1- Due to the impossibility of implementing this social pact at one time it will be progressively implemented accepting the limitations imposed by the progressive development of our model.
+### 1.
+Due to the impossibility of implementing this social pact at one time it will be progressively implemented accepting the limitations imposed by the progressive development of our model.
 
-Note: Due to the existence of the basic salary insured and the universal minimum income the traditional social security concepts no longer apply, such as: retirement, forced unemployment, unjustified dismissal, etc.
+## Note:
+Due to the existence of the basic salary insured and the universal minimum income the traditional social security concepts no longer apply, such as: retirement, forced unemployment, unjustified dismissal, etc.
