@@ -41,7 +41,6 @@ Las familias son libres de escoger el centro educativo que consideren que mejor 
 
 #### 2.3.
 Los centros educativos serán evaluados públicamente con los indicadores del Bienestar Mutuo. Se recomienda la Educación Circular, con sus 10 principios educativos.
-
 1. Entorno Social Construye a la Persona.
 2. Ejemplo Personal.
 3. Igualdad de Importancia.
@@ -132,7 +131,8 @@ La depreciación de la masa monetaria de UnityCoin, como mecanismo de redistribu
 #### 6.4.
 El estado podrá ser el socio capitalista, en aquellos proyectos que necesiten los ciudadanos y que los ejecutores del proyecto no tengan el dinero para invertir.
 
-##### 6.4.1. Los sistemas de salud y educación, pueden ser financiados por el Estado, mientras son administrados por los privados, ya sean empresas o ciudadanos organizados. El Estado participa de las ganancias y/o pérdidas, así como los privados.
+##### 6.4.1.
+Los sistemas de salud y educación, pueden ser financiados por el Estado, mientras son administrados por los privados, ya sean empresas o ciudadanos organizados. El Estado participa de las ganancias y/o pérdidas, así como los privados.
 
 #### 6.5.
 Como el sistema de producción de bienes y servicios requiere de una inyección continua de dinero, en vez de inyectar ese dinero dándoselo a los bancos o al sistema de bolsa de valores, esa inyección de dinero se hará directamente a los ciudadanos, mediante un ingreso mínimo universal.
@@ -142,7 +142,7 @@ El estado se encargará de dar un ingreso mínimo universal a cada ciudadano. Ex
 
 _Definición:_
 
-**Ingreso Mínimo Universal:** la cantidad de dinero mensual que necesita una persona para sobrevivir. Estamos hablando de que con esa cantidad, la persona puede pagar sus gastos de: comida, servicios básicos (agua, electricidad, teléfono, internet) y salud.
+**Ingreso Mínimo Universal** : la cantidad de dinero mensual que necesita una persona para sobrevivir. Estamos hablando de que con esa cantidad, la persona puede pagar sus gastos de: comida, servicios básicos (agua, electricidad, teléfono, internet) y salud.
 
 ###### 6.5.1.1.
 Para recibir este dinero, periódicamente cada ciudadano deberá ver o asistir a una charla donde se les educa y recuerda, que ese dinero le llega producto del bienestar de la sociedad en la que vive. Si el bienestar social mejora, aumenta la cantidad de dinero, si el bienestar social disminuye, disminuye la cantidad de dinero recibido.
@@ -164,9 +164,9 @@ Para evitar el mal uso del ingreso mínimo universal, este se puede otorgar con 
 
 _Definición:_
 
-**Consumo Diferenciado:** En las tiendas físicas o virtuales al momento de pagar, los terminales de pago distinguen si el dinero del medio de pago, puede ser utilizado para comprar los productos. Ejemplo: bebidas y tabaco no pueden ser pagados con dinero reservados para alimentos y servicios.
+**Consumo Diferenciado** : En las tiendas físicas o virtuales al momento de pagar, los terminales de pago distinguen si el dinero del medio de pago, puede ser utilizado para comprar los productos. Ejemplo: bebidas y tabaco no pueden ser pagados con dinero reservados para alimentos y servicios.
 
-**Pago Diferenciado:** El precio del producto varía con referencia al ciudadano que paga. Ejemplo: adultos mayores pagan 50% menos, un cumpleañero paga 20% menos.
+**Pago Diferenciado** : El precio del producto varía con referencia al ciudadano que paga. Ejemplo: adultos mayores pagan 50% menos, un cumpleañero paga 20% menos.
 
 #### 6.6.
 Todos las organizaciones públicas o privadas y sus productos, que ofrezcan bienes o servicios al público, serán evaluadas semestralmente de forma pública por los ciudadanos, con todos los detalles de quién y cómo se realizó esa evaluación, usando nuestra matriz de Indicadores del Bienestar Mutuo. Los productos mostrarán claramente el resultado de esa evaluación.
@@ -182,9 +182,9 @@ Se establece el sueldo básico asegurado, el estado se encarga de asegurar la ex
 
 _Definición:_
 
-**Trabajo:** Es todo aquello que hace un ciudadano para ganar dinero u honor, favoreciendo a la sociedad y la naturaleza.
+**Trabajo** : Es todo aquello que hace un ciudadano para ganar dinero u honor, favoreciendo a la sociedad y la naturaleza.
 
-**Sueldo Básico Asegurado:** Es la cantidad de dinero mensual que necesita una persona para cubrir todas sus necesidades, pero no los lujos. Estamos hablando de que con esta cantidad, la persona puede pagar sus gastos de: comida, servicios básicos (agua, electricidad, teléfono), salud, higiene, internet, vivienda y transporte.
+**Sueldo Básico Asegurado** : Es la cantidad de dinero mensual que necesita una persona para cubrir todas sus necesidades, pero no los lujos. Estamos hablando de que con esta cantidad, la persona puede pagar sus gastos de: comida, servicios básicos (agua, electricidad, teléfono), salud, higiene, internet, vivienda y transporte.
 
 #### 7.1.
 Ciudadanos, empresas y demás organizaciones generadoras de productos o servicios, que benefician a la sociedad y a la naturaleza, no son agencias de empleo y son libres de comerciar con quienes deseen.
@@ -260,7 +260,6 @@ Las macro localidades cuentan también con un dictador benévolo. Y un represent
 
 #### 19.4.
 Parte de las funciones del Ejecutivo, es definir y organizar:
-
 1. El sistema judicial.
 2. El sistema de fuerzas armadas profesionales.
 3. El sistema distribuido de datos públicos.
@@ -387,7 +386,6 @@ Ciudadanos, organizaciones y empresas son libres de negociar con quien deseen.
 
 ### 34.
 La mayoridad se asume de forma progresiva:
-
 - 13 años = Mayoría para ser ciudadano (con la aprobación de los padres) y recibir los castigos por los delitos cometidos.
 - 16 años = Mayoría para la emancipación bajo la aprobación de los padres y votar, excepto para medicamentos, prostitución, armas, y drogas: alcohol, cigarrillos, entre otros.
 - 18 años = Mayoría excepto para drogas fuertes y armas.
@@ -431,7 +429,7 @@ Todo ciudadano tiene el deber de acatar y hacer cumplir este pacto social.
 
 ## DISPOSICIÓN TRANSITORIA
 
-#### 1.
+### 1.
 Debido a la imposibilidad de implementar todo este pacto social de una sola vez, se implementará progresivamente, aceptando las limitaciones impuestas por el desarrollo progresivo de nuestro modelo.
 
 ## Nota:
