@@ -53,10 +53,10 @@ Los centros educativos serán evaluados públicamente con los indicadores del Bi
 9. Grupos Pequeños con Varios Educadores (de ambos géneros).
 10. Apoyo de los Padres.
 
-Artículo 2.4: Se recomienda el aprendizaje escalonado, siguiendo el desarrollo de la historia de la humanidad.
+#### 2.4.
+Se recomienda el aprendizaje escalonado, siguiendo el desarrollo de la historia de la humanidad.
 
-Artículo 2.4.1: Aspectos Generales:
-
+##### 2.4.1. Aspectos Generales:
 - Hasta los 5 años el niño/a debe desarrollarse gradualmente de la misma forma en que se desarrolló la humanidad hasta su generación. Relacionarse primero con la naturaleza y luego con la tecnología.
 - El niño/a debe crecer en círculos cada vez más amplios. Ejemplo: del cuarto a la sala, de la sala al jardín etc… Aquí es importante observar cuánto anhelo muestra el niño/a para entrar en el próximo círculo, pues el avance debe darse de acuerdo con su exigencia y no por medio de la presión (lo mismo sucede en la transición de la teta hacia el biberón).
 - A partir del Jardín de Infantes sería ideal que cada nueva etapa esté aislada de las etapas anteriores y de las próximas. Esto permite al educador que en cada etapa pueda ayudar a desarrollar una sociedad homogénea, donde no existan fuertes y débiles.
@@ -64,8 +64,7 @@ Artículo 2.4.1: Aspectos Generales:
 - De 9 a 12 años, los géneros son separados, incluso sus educadores y se les enseña los roles en la vida social primitiva.
 - Desde los 12 años, se les enseñan los roles en la sociedad post moderna, y a participar en los juegos de poder, que realizan los géneros.
 
-Artículo 2.4.2: Aspectos Específicos
-
+##### 2.4.2. Aspectos Específicos:
 - De 0 a 18 meses : Durante este período se recomienda alimentarlos de leche materna directamente del pecho de su madre. En esta etapa su ambiente se recomienda estar rodeado de la menor cantidad de estímulos, sólo sus padres, su cuarto y su cuna. No entienden los ambientes amplios y las formas complejas (carros, aviones, TV, Smart Phones, computadoras).
 - De 18 meses a 3 años: Dejar de percibirlo como un bebé, y empezar a verlo como un niño/a pequeño/a. En esta etapa tiene la capacidad de aprender a través de juegos y ejemplos, sus padres deben mostrarle todo tipo de formas que ellos puedan entender para que internamente comiencen a discernir entre lo bueno y lo malo.
 - De 3 a 5 años: su desarrollo deja de depender exclusivamente del hogar, y el jardín de infancia pasa a ser su ambiente principal de crecimiento. Durante este período el desarrollo emocional es vital, en el jardín de infancia debe aprender a relacionarse con los adultos, con niños y niñas, aprender diferentes tipos de reglas, cómo cuidarse de cosas que puedan lastimar su cuerpo.
@@ -75,7 +74,8 @@ Artículo 2.4.2: Aspectos Específicos
 - A partir de los 6 años: pasa del jardín de infantes al colegio. Habiendo adquirido un desarrollo emocional correcto, pasa a una nueva etapa donde el desarrollo mental es principal (conocimiento científico) usando el método KWHLAQ.
 - A partir  de los 9 años el uso y programación de la computadora.
 
-Artículo 3: Nuestro mecanismo de toma de decisiones colectivas, es la democracia directa con meritocracia, expresada en la votación de consenso y el dictador benévolo.
+### 3.
+Nuestro mecanismo de toma de decisiones colectivas, es la democracia directa con meritocracia, expresada en la votación de consenso y el dictador benévolo.
 
 _Definiciones:_
 
@@ -87,40 +87,55 @@ _Definiciones:_
 
 **Dictador Benévolo:** El dictador benévolo es un rol que se gana por méritos, ya que es una persona con la capacidad de conciliar puntos contradictorios y su función es tomar las decisiones en el caso extremo de que no se llegue al consenso.  Puede ser revocado en cualquier momento.
 
-Artículo 3.1: Las votaciones no son anónimas, excepto en los casos que sea necesario, como para evitar un daño a una reputación. Las votaciones de la última ronda pueden ser anónimas.
+### 3.1.
+Las votaciones no son anónimas, excepto en los casos que sea necesario, como para evitar un daño a una reputación. Las votaciones de la última ronda pueden ser anónimas.
 
-Artículo 4: Funcionamos y nos organizamos de forma distribuida, tanto en el ámbito geográfico como de distribución de poder, evitando en lo posible, la formación de centralismos.
+### 4.
+Funcionamos y nos organizamos de forma distribuida, tanto en el ámbito geográfico como de distribución de poder, evitando en lo posible, la formación de centralismos.
 
-Artículo 4.1: En el ámbito geográfico somos una nación, distribuida en todo el planeta tierra. A voluntad de los ciudadanos, sus bienes geo localizados forman parte de nuestra geografía. A la vez que reconocemos los espacios geográficos de la otra nacionalidad de nuestros ciudadanos.
+#### 4.1.
+En el ámbito geográfico somos una nación, distribuida en todo el planeta tierra. A voluntad de los ciudadanos, sus bienes geo localizados forman parte de nuestra geografía. A la vez que reconocemos los espacios geográficos de la otra nacionalidad de nuestros ciudadanos.
 
-Artículo 4.2: En el ámbito del poder, buscamos que el poder resida siempre en el ciudadano, evitando las delegaciones de poder, excepto por las delegaciones temporales y revocables en cualquier momento, que la práctica requiere para la efectiva realización de actividades.
+#### 4.2.
+En el ámbito del poder, buscamos que el poder resida siempre en el ciudadano, evitando las delegaciones de poder, excepto por las delegaciones temporales y revocables en cualquier momento, que la práctica requiere para la efectiva realización de actividades.
 
-Artículo 5: Para salir del paradigma de medir todo exclusivamente con dinero, se reconocen dos formas de pago: 1- honor, 2- dinero.
+### 5.
+Para salir del paradigma de medir todo exclusivamente con dinero, se reconocen dos formas de pago: 1- honor, 2- dinero.
 
-Artículo 5.1: Se promueven eventos para pagar con honor, dando reconocimientos públicos. Estos reconocimientos se pueden estandarizar en un sistema jerárquico de niveles, que se alcanzan al lograr una definida cantidad de puntos. Ejemplo de niveles: hierro, cobre, plata, oro, platino; cada uno con subniveles 1 al 5.
+#### 5.1.
+Se promueven eventos para pagar con honor, dando reconocimientos públicos. Estos reconocimientos se pueden estandarizar en un sistema jerárquico de niveles, que se alcanzan al lograr una definida cantidad de puntos. Ejemplo de niveles: hierro, cobre, plata, oro, platino; cada uno con subniveles 1 al 5.
 
-Artículo 6: Nuestro sistema económico es el Capitalismo Circular de mercado. Con Transparencia total, y detallada en tiempo real para la actividades de los entes públicos.
+### 6.
+Nuestro sistema económico es el Capitalismo Circular de mercado. Con Transparencia total, y detallada en tiempo real para la actividades de los entes públicos.
 
-Artículo 6.1: El mercado se desarrolla al cumplirse las dos leyes fundamentales de la economía.
+#### 6.1.
+El mercado se desarrolla al cumplirse las dos leyes fundamentales de la economía.
 
 1. **Ley de la Ganancia** o pérdida: incentivar o restringir cualquier tipo de actividad al dar la oportunidad de ganancia o pérdida, ya sea real o potencial.
 2. **Ley de la Competencia** : los requisitos necesarios para que una nueva empresa entre a un mercado, son los mínimos posibles.
 
-Artículo 6.1.1: Se reconocen como válidas para la cancelación de pagos, todo tipo de monedas virtuales o físicas, siempre que las partes estén de acuerdo.
+##### 6.1.1.
+Se reconocen como válidas para la cancelación de pagos, todo tipo de monedas virtuales o físicas, siempre que las partes estén de acuerdo.
 
-Artículo 6.1.2: Para fomentar la competencia en los monopolios naturales, tales como las vías, agua, electricidad, espectro radioeléctrico, se propone la competencia por uso temporal diferenciado y la competencia administrativa en servicios, usando un medio común compartido por todos los operadores y dejando siempre la oportunidad de probar nuevos operadores.
+##### 6.1.2.
+Para fomentar la competencia en los monopolios naturales, tales como las vías, agua, electricidad, espectro radioeléctrico, se propone la competencia por uso temporal diferenciado y la competencia administrativa en servicios, usando un medio común compartido por todos los operadores y dejando siempre la oportunidad de probar nuevos operadores.
 
-Artículo 6.2: La función monetaria, de creación del dinero en nuestra moneda UnityCoin, está en los ciudadanos organizados.
+#### 6.2.
+La función monetaria, de creación del dinero en nuestra moneda UnityCoin, está en los ciudadanos organizados.
 
-Artículo 6.3: La función financiera, de administración del dinero del Estado (en qué se gasta el dinero), en nuestra moneda UnityCoin está en los ciudadanos organizados.
+#### 6.3.
+La función financiera, de administración del dinero del Estado (en qué se gasta el dinero), en nuestra moneda UnityCoin está en los ciudadanos organizados.
 
-Artículo 6.3.1: La depreciación de la masa monetaria de UnityCoin, como mecanismo de redistribución social, puede implementarse a futuro para asegurar una economía sustentable.
+##### 6.3.1.
+La depreciación de la masa monetaria de UnityCoin, como mecanismo de redistribución social, puede implementarse a futuro para asegurar una economía sustentable.
 
-Artículo 6.4: El estado podrá ser el socio capitalista, en aquellos proyectos que necesiten los ciudadanos y que los ejecutores del proyecto no tengan el dinero para invertir.
+#### 6.4.
+El estado podrá ser el socio capitalista, en aquellos proyectos que necesiten los ciudadanos y que los ejecutores del proyecto no tengan el dinero para invertir.
 
-Artículo 6.4.1: Los sistemas de salud y educación, pueden ser financiados por el Estado, mientras son administrados por los privados, ya sean empresas o ciudadanos organizados. El Estado participa de las ganancias y/o pérdidas, así como los privados.
+##### 6.4.1. Los sistemas de salud y educación, pueden ser financiados por el Estado, mientras son administrados por los privados, ya sean empresas o ciudadanos organizados. El Estado participa de las ganancias y/o pérdidas, así como los privados.
 
-Artículo 6.5: Como el sistema de producción de bienes y servicios requiere de una inyección continua de dinero, en vez de inyectar ese dinero dándoselo a los bancos o al sistema de bolsa de valores, esa inyección de dinero se hará directamente a los ciudadanos, mediante un ingreso mínimo universal.
+#### 6.5.
+Como el sistema de producción de bienes y servicios requiere de una inyección continua de dinero, en vez de inyectar ese dinero dándoselo a los bancos o al sistema de bolsa de valores, esa inyección de dinero se hará directamente a los ciudadanos, mediante un ingreso mínimo universal.
 
 Artículo 6.5.1: El estado se encargará de dar un ingreso mínimo universal a cada ciudadano. Excepto a aquellos ciudadanos que reciban un sueldo básico asegurado (Artículo 7) como el caso de los que trabajan para el Estado.
 
