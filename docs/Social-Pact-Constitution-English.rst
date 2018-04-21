@@ -58,16 +58,12 @@ Development in Articles.
 
 1.
 ~~
-
 Freedom implies great responsibility and therefore the citizen must be
 educated in using his freedom wisely, since ignorance does not free him
 from responsibility and the consequences of his actions.
 
-.. _section-1:
-
 2.
 ~~
-
 The education system has the purpose of forming responsible citizens,
 knowing society and the world, preparing citizens to be entrepreneurs
 and parents of the next generation. It is based on the scientific method
