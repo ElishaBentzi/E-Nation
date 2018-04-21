@@ -200,27 +200,27 @@ The State will be responsible for giving a minimum universal income to each citi
 **Universal Minimum Income:** the amount of monthly money a person needs to survive. We are talking about that with that amount the person can pays his expenses of: food, basic services (water, electricity, telephone, Internet) and health.
 
     6.5.1.1.
-    -------- 
+     
 To receive this money, every citizen should periodically see or attend a talk where they are educated and remembered that this money comes from the welfare of the society in which they live. If social welfare improves, the amount of money increases, if social welfare decreases, the amount of money received decreases.
 
     6.5.1.2.
-    --------    
+        
 The universal minimum income will be implemented progressively and is one of the economic - human goals, starting with children up to the age of 16, women dedicated to home and their education, and adults over 60.
 
     6.5.1.2.1.
-    ~~~~~~~~~~      
+          
 This encourages the work of young people, the retirement of our seniors from work, as well as recognizes the work of women in the home, making it easier for them to continue studying.
 
     6.5.1.3.
-    --------    
+        
 For minors up to the age of 16 and for a maximum of two children, the mother or her legal representative receives 50% of the amount of money an adult receives.
 
     6.5.1.3.1.
-    ~~~~~~~~~~      
+          
 In order to favor the natural development of children, the amount goes up to 60%, if the children are under the continuous authority of a man and a woman (because biologically the Same-sex marriage do not reproduce and that the children need the masculine and feminine model).
 
     6.5.1.4.
-    --------    
+        
 To avoid misuse of universal minimum income, this can be granted with means of payment that support differentiated consumption.
 
 *Definition:*
@@ -272,7 +272,7 @@ The sale of products does not pay taxes, but in order to facilitate collection, 
 The products that we do not want to promote in society such as alcohol, tobacco and drugs are discouraged with high taxes (as is done today). 200% 1,000% are possible values ​​and are fixed for each type, for example Alcohol 200%, Cigars 300%, Marijuana 400%.
 
     8.1.1.1.
-    --------    
+        
 This money collected is for programs to prevent the consumption of these products, educational system and health.
 
 9.
@@ -301,8 +301,7 @@ The tax on inheritance and royalties, which is paid when a family member dies an
 
 14.
 ~~~
-Addictive and highly profitable businesses such as the casino and lotteries, to ensure that a large part of the profits are returned to
-the citizens, it is recommended that they be financed by the State and administered by private companies.
+Addictive and highly profitable businesses such as the casino and lotteries, to ensure that a large part of the profits are returned to the citizens, it is recommended that they be financed by the State and administered by private companies.
 
 15.
 ~~~
@@ -351,7 +350,6 @@ The macro-localities also have a benevolent dictator. And a representative of ea
 19.4.
 ^^^^^
 Part of the functions of the Executive is to define and organize:
-
 1. The judicial system.
 2. The system of professional armed forces.
 3. The distributed system of public data.
@@ -384,10 +382,7 @@ In order to maintain freedom, responsibility and self-control, it is recommended
 
 20.3.
 ^^^^^
-It is understood that companies are in a state of continuous
-improvement, therefore this reality is assumed and the legal body is
-applied considering the latest version and the difference between
-versions.
+It is understood that companies are in a state of continuous improvement, therefore this reality is assumed and the legal body is applied considering the latest version and the difference between versions.
 
 20.3.1.
 '''''''
@@ -528,24 +523,18 @@ Citizens, organizations and companies are free to negotiate with whomever they w
 34.
 ~~~
 Majority is assumed progressively:
-
--  13 years = Majority to be a citizen (with the approval of the
-   parents) and receive the punishments for the crimes committed.
--  16 years = Majority for emancipation under the approval of parents
-   and to vote, except for drugs, prostitution, arms, drugs, alcohol and
-   cigarettes among others.
+-  13 years = Majority to be a citizen (with the approval of the parents) and receive the punishments for the crimes committed.
+-  16 years = Majority for emancipation under the approval of parents and to vote, except for drugs, prostitution, arms, drugs, alcohol and cigarettes among others.
 -  18 years = Majority except for strong drugs and weapons.
 -  21 years = Complete Majority. At age 21, brain development is over.
 
 35.
 ~~~
-The commercialization of drugs is accepted but it is not publicly promoted and its negative effects will be well explained in the
-commercial chain. In the educational system soft drugs such as alcohol and cigarettes are explained as of 13 years old and strong drugs are explained at 16 years of age.
+The commercialization of drugs is accepted but it is not publicly promoted and its negative effects will be well explained in the commercial chain. In the educational system soft drugs such as alcohol and cigarettes are explained as of 13 years old and strong drugs are explained at 16 years of age.
 
 36.
 ~~~
-The physical security of the State depends on the citizens and the
-State, providing to it all the technological advances.
+The physical security of the State depends on the citizens and the State, providing to it all the technological advances.
 
 36.1.
 ^^^^^
