@@ -355,8 +355,7 @@ Part of the functions of the Executive is to define and organize:
 3. The distributed system of public data.
 4. The system for checking complaints.
 5. The various standards, important to facilitate competition.
-6. The parties, which will have the purpose of uniting and integrating
-   the whole society.
+6. The parties, which will have the purpose of uniting and integrating the whole society.
 
 19.4.1.
 '''''''
