@@ -89,6 +89,11 @@ html_logo = 'images/e-nation200x200.png'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
+# Added custom css
+
+def setup(app):
+    app.add_stylesheet('custom.css')
+
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
 #
