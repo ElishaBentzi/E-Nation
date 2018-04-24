@@ -13,8 +13,8 @@ El innovador Pacto Social de la nueva Nación Global que rompe con *la esclavitu
 
 Usted puede ver esta constitucion en los siguientes idiomas:
 
-* `Ingles <https://e-nation.readthedocs.io/en/latest/>`_
-* `Español <https://e-nation.readthedocs.io/es/latest/>`_
+* `Ingles <https://docs.e-nation.org/en/latest/>`_
+* `Español <https://docs.e-nation.org/es/latest/>`_
 
 -----
 
