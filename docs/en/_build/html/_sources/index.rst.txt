@@ -11,6 +11,13 @@ The innovative Social Pact of the New Global Nation that break with the *slavery
 
 -----
 
+You may view this constitution in the following languages:
+
+* `English <https://e-nation.readthedocs.io/en/latest/>`_
+* `Español <https://e-nation.readthedocs.io/es/latest/>`_
+
+-----
+
 .. toctree::
    :maxdepth: 2
 
