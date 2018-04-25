@@ -3,8 +3,7 @@ Bienvenido a la Constitucion de E-Nation!
 
 *La Nación Distribuida Físicamente en Todo el Mundo*
 
-El innovador Pacto Social de la nueva Nación Global que rompe con **la esclavitud de los gobiernos como granja de humanos**. 
-Dando el Poder a los Ciudadanos.
+El innovador Pacto Social de la nueva Nación Global que rompe con **la esclavitud de los gobiernos como granja de humanos**. Al Darle el Poder a los Ciudadanos.
 
 .. image:: images/e-nation300x300.png
    :height: 300px 
