@@ -14,8 +14,8 @@ The innovative Social Pact of the New Global Nation that break with the **slaver
 
 You may view this constitution in the following languages:
 
-* `English <https://docs.e-nation.org/en/latest/>`_
-* `Español <https://docs.e-nation.org/es/latest/>`_
+* `English <http://e-nation.readthedocs.io/en/latest/>`_
+* `Español <http://e-nation.readthedocs.io/es/latest/>`_
 
 -----
 
