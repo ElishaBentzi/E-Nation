@@ -13,7 +13,7 @@ I \________________\_ wish to be part of this society, and I commit myself to ha
 
 I accept the truth that: “all human beings are naturally different in capacities and needs, just as all human beings are equally important”. That is why, in order to achieve peace, I commit myself to: “support all the members of this society, so that they can benefit society with their uniqueness”, with the same force with which I want to express my uniqueness.
 
-I recognize that life is a process of continuous development and therefore, consciously or unconsciously, I and the other members of this society can and will make mistakes. That's why I commit myself to recognize my mistakes, to ask for mercy for my mistakes, and I promise to repair them. On the other hand, I promise to judge with mercy the errors of the other members of this society.
+I recognize that life is a process of continuous development and therefore, consciously or unconsciously, I and the other members of this society can and will make mistakes. That's why I commit myself to recognize my mistakes, to ask for clemency for my mistakes, and I promise to repair them. On the other hand, I promise to judge with clemency the errors of the other members of this society.
 
 All this I do in order to fulfill the ultimate goal established by nature for the human race: **to be the guardian of life.**
 
