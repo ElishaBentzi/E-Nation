@@ -407,7 +407,7 @@ Por lo tanto no tenemos partidos políticos, sino grupos de interés.
 
 27.
 ~~~
-Todo trabajo merece una retribución, ya sea en dinero o en honor.
+Todo trabajo merece una retribución, ya sea en dinero y / o en honor. El daño a la sociedad merece un castigo en dinero y / o en honor. Si el daño es grave e irreparable, la pena de muerte es posible.
 
 28.
 ~~~
