@@ -94,7 +94,7 @@ Stepped learning is recommended, following the development of the history of man
 
 3.
 ~~
-Our collective decision-making mechanism is direct democracy with meritocracy, expressed in the consensus vote and the benevolent dictator.
+Our collective decision-making mechanism is direct democracy with meritocracy, expressed in the consensus vote and the benevolent leader.
 
 *Definitions:*
 
@@ -104,7 +104,7 @@ Our collective decision-making mechanism is direct democracy with meritocracy, e
 
 **Consensus Voting:** Decisions that cannot be resolved by technical analysis are resolved by a limited time vote, on a series of proposals, with 4 types of votes: 1- Agree, 2- Against, 3- I do not care, 4- First Dead. The consensus occurs when a proposal reaches ⅔ of type 1 votes and up to 12% of type 4 votes.
 
-**Benevolent Dictator:** The benevolent dictator is a role that is earned by merit, since it is a person with the ability to reconcile contradictory points and his function is to make decisions in the extreme case that consensus could not be reached. He or She can be revoked at any time.
+**Benevolent Leader:** The benevolent leader is a role that is earned by merit, since it is a person with the ability to reconcile contradictory points and his function is to make decisions in the extreme case that consensus could not be reached. He or She can be revoked at any time.
 
 3.1.
 ^^^^
@@ -167,7 +167,7 @@ The State may be the capitalist partner, in those projects that citizens need an
 
 6.4.1.
 ''''''
-The health and education systems can be financed by the State, while they are administered by private companies or organized citizens. The State participates in the profits and / or losses, as well as the private ones.
+The health and education systems can be financed by the State, while they are administered by private companies or organized citizens. The State and the private participates in the profits and / or losses.
 
 6.5.
 ^^^^
@@ -319,7 +319,7 @@ The technical circle, is responsible for the execution of technical tasks, based
 
 19.2.
 ^^^^^
-The circle of government is responsible for issues related to citizens, their needs and priorities. The benevolent dictator belongs to this organization.
+The circle of government is responsible for issues related to citizens, their needs and priorities. The benevolent leader belongs to this organization.
 
 19.3.
 ^^^^^
@@ -327,7 +327,7 @@ This organization implements our collective decision-making mechanism. Each loca
 
 19.3.1.
 '''''''
-The macro-localities also have a benevolent dictator. And a representative of each macro-locality is grouped into larger macro-locations of up to 10 representatives.
+The macro-localities also have a benevolent leader. And a representative of each macro-locality is grouped into larger macro-locations of up to 10 representatives.
 
 19.4.
 ^^^^^
@@ -415,7 +415,7 @@ Therefore we do not have political parties but groups of interest.
 
 27.
 ~~~
-All work deserves a retribution whether in cash or in honor.
+All work deserves a retribution whether in money and / or in honor. The damage to society deserves a punishment in money and / or in honor. If the damage is severe and irreparable the death penalty is possible.
 
 28.
 ~~~
