@@ -92,7 +92,7 @@ Se recomienda el aprendizaje escalonado, siguiendo el desarrollo de la historia 
 
 3.
 ~~
-Nuestro mecanismo de toma de decisiones colectivas, es la democracia directa con meritocracia, expresada en la votación de consenso y el dictador benévolo.
+Nuestro mecanismo de toma de decisiones colectivas, es la democracia directa con meritocracia, expresada en la votación de consenso y el líder benévolo.
 
 *Definiciones:*
 
@@ -102,7 +102,7 @@ Nuestro mecanismo de toma de decisiones colectivas, es la democracia directa con
 
 **Votación de Consenso:** Las decisiones que no puedan resolverse por análisis técnico, se resuelven por votación limitada en tiempo, sobre una serie de propuestas, con 4 tipos de voto: 1- De acuerdo, 2- En Contra, 3- No me importa, 4- Primero Muerto. El consenso se alcanza al llegar a una propuesta que contenga ⅔ de votos del tipo 1 y hasta 12% de votos del tipo 4.
 
-**Dictador Benévolo:** El dictador benévolo es un rol que se gana por méritos, ya que es una persona con la capacidad de conciliar puntos contradictorios y su función es tomar las decisiones en el caso extremo de que no se llegue al consenso.  Puede ser revocado en cualquier momento.
+**Líder Benévolo:** El líder benévolo es un rol que se gana por méritos, ya que es una persona con la capacidad de conciliar puntos contradictorios y su función es tomar las decisiones en el caso extremo de que no se llegue al consenso.  Puede ser revocado en cualquier momento.
 
 3.1.
 ^^^^
@@ -165,7 +165,7 @@ El estado podrá ser el socio capitalista, en aquellos proyectos que necesiten l
 
 6.4.1.
 ''''''
-Los sistemas de salud y educación, pueden ser financiados por el Estado, mientras son administrados por los privados, ya sean empresas o ciudadanos organizados. El Estado participa de las ganancias y/o pérdidas, así como los privados.
+Los sistemas de salud y educación, pueden ser financiados por el Estado, mientras son administrados por los privados, ya sean empresas o ciudadanos organizados. El Estado y los privados participan de las ganancias y/o pérdidas.
 
 6.5.
 ^^^^
@@ -317,7 +317,7 @@ El círculo técnico, se encarga de la ejecución de las tareas técnicas, basad
 
 19.2.
 ^^^^^
-El círculo de gobierno, se encarga de los temas relacionados con los ciudadanos, sus necesidades y prioridades. El dictador benévolo pertenece a esta organización.
+El círculo de gobierno, se encarga de los temas relacionados con los ciudadanos, sus necesidades y prioridades. El líder benévolo pertenece a esta organización.
 
 19.3.
 ^^^^^
@@ -325,7 +325,7 @@ Esta organización implementa nuestro mecanismo de toma de decisiones colectivas
 
 19.3.1.
 '''''''
-Las macro localidades cuentan también con un dictador benévolo. Y un representante de cada macro localidad se agrupa en macro localidades aún más grandes de hasta 10 representantes.
+Las macro localidades cuentan también con un líder benévolo. Y un representante de cada macro localidad se agrupa en macro localidades aún más grandes de hasta 10 representantes.
 
 19.4.
 ^^^^^
