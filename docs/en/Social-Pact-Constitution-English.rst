@@ -191,7 +191,7 @@ The universal minimum income will be implemented progressively and is one of the
 
 6.5.1.2.1.
 **********          
-This encourages the work of young people, the retirement of our seniors from work, as well as recognizes the work of women in the home, making it easier for them to continue studying.
+This encourages the work of young people, the retirement of our seniors from work, the generational grouping, as well as recognizes the work of women in the home, making it easier for them to continue studying.
 
 6.5.1.3.
 """"""""        
@@ -199,9 +199,13 @@ For minors up to the age of 16 and for a maximum of two children, the mother or 
 
 6.5.1.3.1.
 **********          
-In order to favor the natural development of children, the amount goes up to 60%, if the children are under the continuous authority of a man and a woman (because biologically the Same-sex marriage do not reproduce and that the children need the masculine and feminine model).
+In order to favor the natural development of children, the amount increase 10%, if the children are under the continuous authority of a man and a woman (because biologically the Same-sex marriage do not reproduce and that the children need the masculine and feminine model).
 
 6.5.1.4.
+""""""""
+In order to favor the generational grouping, descendants who live with parents over 60 will receive an additional 5% for each parent living with them.
+
+6.5.1.5.
 """"""""        
 To avoid misuse of universal minimum income, this can be granted with means of payment that support differentiated consumption.
 
