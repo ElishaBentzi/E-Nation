@@ -189,7 +189,7 @@ El ingreso mínimo universal, se implementará progresivamente, y es una de las 
 
 6.5.1.2.1.
 **********
-Esto fomenta el trabajo de los jóvenes, el retiro de nuestros adultos mayores del trabajo, así como reconoce el trabajo de la mujer en el hogar facilitando que siga estudiando.
+Esto fomenta el trabajo de los jóvenes, el retiro de nuestros adultos mayores del trabajo, el agrupamiento generacional, así como reconoce el trabajo de la mujer en el hogar facilitando que siga estudiando.
 
 6.5.1.3.
 """"""""
@@ -200,6 +200,10 @@ Por los menores hasta los 16 años y por máximo dos hijos, la madre o su repres
 A fin de favorecer el desarrollo natural de los niños, el monto sube al 60%, si los niños están bajo la autoridad continua de un hombre y una mujer. (Debido a que biológicamente los homónomios no se reproducen, y que los niños necesitan el modelo masculino y femenino).
 
 6.5.1.4.
+""""""""
+A fin de favorecer la agrupación generacional, los hijos que viven con padres mayores de 60 años, reciben 5% adicional por cada padre que viva con ellos.
+
+6.5.1.5.
 """"""""
 Para evitar el mal uso del ingreso mínimo universal, este se puede otorgar con medios de pago que soporten el consumo diferenciado.
 
