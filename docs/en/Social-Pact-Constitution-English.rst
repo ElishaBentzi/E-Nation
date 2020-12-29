@@ -9,11 +9,11 @@ The connection as a Foundational Principle.
 
 With the purpose of participating in the creation of a society of harmony and peace:
 
-I \________________\_ wish to be part of this society, and I commit myself to have the fundamental basic intention of “not harming any other human being”, that is, before carrying out any activity, I will take into consideration that this activity does not cause harm to others.
+I \________________\_ wish to be part of this society, and I commit myself to have the fundamental intention of “not harming any other human being”, that is, before carrying out any activity, I will take into consideration that this activity does not cause harm to others.
 
 I accept the truth that: “all human beings are naturally different in capacities and needs, just as all human beings are equally important”. That is why, in order to achieve peace, I commit myself to: “support all the members of this society, so that they can benefit society with their uniqueness”, with the same force with which I want to express my uniqueness.
 
-I recognize that life is a process of continuous development and therefore, consciously or unconsciously, I and the other members of this society can and will make mistakes. That's why I commit myself to recognize my mistakes, to ask for clemency for my mistakes, and I promise to repair them. On the other hand, I promise to judge with clemency the errors of the other members of this society.
+I recognize that life is a process of continuous development and therefore, consciously or unconsciously, I and the other members of this society can and will make mistakes. That's why I commit myself to recognize my mistakes, to ask for clemency for my mistakes, and I promise to repair them. On the other hand, I promise to judge with benevolence the errors of the other members of this society.
 
 All this I do in order to fulfill the ultimate goal established by nature for the human race: **to be the guardian of life.**
 
@@ -22,6 +22,10 @@ Second Part:
 
 Development in Articles.
 ------------------------
+
+0.
+~~
+Freedom implies great responsibility and therefore the citizen must be educated in using his freedom wisely, since ignorance does not free him from responsibility and the consequences of his actions.
 
 1.
 ~~
@@ -55,7 +59,7 @@ Families are free to choose the educational center they consider most convenient
 
 2.3.
 ^^^^
-Educational centers will be publicly evaluated with the indicators of Mutual Welfare. Circular Education is recommended, with its 10
+Educational centers will be publicly evaluated with the indicators of Mutual Welfare as defined by the community. Circular Education is recommended, with its 10
 educational principles. 
 1. Social Environment Builds the Person.
 2. Personal Example.
@@ -74,8 +78,8 @@ Stepped learning is recommended, following the development of the history of man
 
 2.4.1. General Aspects:
 '''''''''''''''''''''''
-- Up to 5 years the child should develop gradually in the same way that humanity developed until his generation, related first with nature and then with technology.
-- The child should grow in increasingly larger circles. Example: from the room to the living room, from the living room to the garden etc. Here it is important to observe how much the child's desire shows to enter the next circle, because the progress must be made according to their demand and not by means of pressure (The same happens in the transition from the tit to the bottle).
+- Up to 5 years the child could develop gradually in the same way that humanity developed until his generation, related first with nature and then with technology.
+- The child could grow in increasingly larger circles. Example: from the room to the living room, from the living room to the garden etc. Here it is important to observe how much the child's desire shows to enter the next circle, because the progress must be made according to their demand and not by means of pressure (The same happens in the transition from the tit to the bottle).
 - From the Kindergarten it would be ideal for each new stage to be isolated from the previous and next stages. This allows the educator that in each stage can help to develop a homogeneous society where there are not strong versus weak.
 - From 3 to 10 years old, the little ones are not in danger of absorbing the negative qualities produced by the “cunning” in growth of the elderly.
 - From 9 to 12 years old, the genders are separated, including their educators, and they are taught roles in primitive social life.
@@ -187,7 +191,7 @@ To receive this money, every citizen should periodically see or attend a talk wh
 
 6.5.1.2.
 """"""""        
-The universal minimum income will be implemented progressively and is one of the economic - human goals, starting with children up to the age of 16, women dedicated to home and their education, and adults over 60.
+The universal minimum income will be implemented progressively and is one of the economic - human goals of the community, starting with children up to the age of 16, women or man dedicated to home or homeschooling, and adults over 60.
 
 6.5.1.2.1.
 **********          
@@ -255,7 +259,7 @@ The sale of products does not pay taxes, but in order to facilitate collection, 
 
 8.1.1.
 ''''''
-The products that we do not want to promote in society such as alcohol, tobacco and drugs are discouraged with high taxes (as is done today). 200% 1,000% are possible values ​​and are fixed for each type, for example Alcohol 200%, Cigars 300%, Marijuana 400%.
+The products that we do not want to promote in society such as alcohol, tobacco and drugs are discouraged with high taxes (as is done today). 200% 1,000% are possible values and are fixed for each type, for example Alcohol 200%, Cigars 300%, Marijuana 400%.
 
 8.1.1.1.
 """"""""        
@@ -299,7 +303,7 @@ Every citizen can participate in any organization that manages money, without re
 
 17.
 ~~~
-The planet earth belongs to all life, and life needs whoever takes care of it, that's why the concept of the owner of the land is changed, as the guardian of the Earth.
+The planet earth belongs to all life, and life needs whoever takes care of it, that's why the concept of the owner of the land is changed to guardian of the land.
 
 17.1.
 ^^^^^
@@ -399,11 +403,23 @@ The fundamentals may be modified in their wording but never in their intention. 
 
 24.
 ~~~
-Our nationality is acquired and waived by the public demonstration of the will of any human being from the age of majority, or 13 years of age if their guardians allow it.
+Our nationality is acquired and renounced, by the public manifestation of the will of any being or entity.
 
 24.1.
 ^^^^^
-This public demonstration consists of a video where the person reads the fundamentals of this social pact.
+For human beings from the age of majority, or 13 years of age if their guardians allow it.
+
+24.2.
+^^^^^
+For other beings or entities, from the development of the concepts of freedom and responsibility.
+
+24.2.1.
+'' '' '' '
+Any being or entity that adopts our nationality is considered like any other human being, with no more limitations than those imposed by its own nature.
+
+24.3.
+^^^^^
+This public manifestation consists of entering your data in the identity register, printing and signing the FOUNDATIONS or a video where the being or entity reads the FOUNDATIONS.
 
 25.
 ~~~
@@ -509,13 +525,13 @@ Citizens, organizations and companies are free to negotiate with whomever they w
 ~~~
 Majority is assumed progressively:
 -  13 years = Majority to be a citizen (with the approval of the parents) and receive the punishments for the crimes committed.
--  16 years = Majority for emancipation under the approval of parents and to vote, except for drugs, prostitution, arms, drugs, alcohol and cigarettes among others.
+-  16 years = Majority for emancipation under the approval of parents and to vote. Except for choose medications, prostitution, weapons, drugs, alcohol and cigarettes.
 -  18 years = Majority except for strong drugs and weapons.
 -  21 years = Complete Majority. At age 21, brain development is over.
 
 35.
 ~~~
-The commercialization of drugs is accepted but it is not publicly promoted and its negative effects will be well explained in the commercial chain. In the educational system soft drugs such as alcohol and cigarettes are explained as of 13 years old and strong drugs are explained at 16 years of age.
+The commercialization of drugs is accepted but it is not publicly promoted and its negative effects will be well explained in the commercial chain. In the educational system the effects are explained, as of 13 years old soft drugs such as alcohol and cigarettes, at 16 years of age strong drugs.
 
 36.
 ~~~
