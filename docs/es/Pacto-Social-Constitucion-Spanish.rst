@@ -9,11 +9,11 @@ La conexión como principio fundacional.
 
 Con el propósito de participar en la creación de una sociedad de armonía y paz.
 
-Yo \________________\_ deseo formar parte de esta sociedad, y me comprometo a tener la intención básica fundamental de "no hacer daño a ningún otro ser humano", es decir, antes de realizar cualquier actividad, tendré en consideración que esta actividad no le cause daño a otras personas.
+Yo \________________\_ deseo formar parte de esta sociedad, y me comprometo a tener la intención fundamental de "no hacer daño a ningún otro ser humano", es decir, antes de realizar cualquier actividad, tendré en consideración que esta actividad no le cause daño a otras personas.
 
-Acepto la verdad de que: "todos los seres humanos somos naturalmente diferentes en capacidades y necesidades, así como que todos los seres humanos somos igualmente importante".  Por eso, para alcanzar la paz, me comprometo a: "apoyar a todos los miembros de esta sociedad, para que puedan beneficiar a la sociedad con su singularidad", con la misma fuerza con la que quiero expresar mi singularidad.
+Acepto la verdad de que: "todos los seres humanos somos naturalmente diferentes en capacidades y necesidades, así como que todos los seres humanos somos igualmente importantes".  Por eso, para alcanzar la paz, me comprometo a: "apoyar a todos los miembros de esta sociedad, para que puedan beneficiar a la sociedad con su singularidad", con la misma fuerza con la que quiero expresar mi singularidad.
 
-Reconozco que la vida es un proceso de continuo desarrollo y por lo tanto, consciente o inconscientemente, tanto yo como los demás miembros de esta sociedad podemos y vamos a cometer errores. Por eso me comprometo a reconocer mis errores, a pedir clemencia por mis errores, y me comprometo a repararlos. Por otro lado, me comprometo a juzgar con clemencia los errores de los demás miembros de esta sociedad.
+Reconozco que la vida es un proceso de continuo desarrollo y por lo tanto, consciente o inconscientemente, tanto yo como los demás miembros de esta sociedad podemos y vamos a cometer errores. Por eso me comprometo a reconocer mis errores, a pedir clemencia por mis errores, y me comprometo a repararlos. Por otro lado, me comprometo a juzgar con benevolencia los errores de los demás miembros de esta sociedad.
 
 Todo esto lo hago a fin de cumplir con la meta última establecida por la naturaleza para la raza humana: **ser el guardián de la vida**.
 
@@ -22,6 +22,10 @@ Segunda Parte:
 
 Desarrollo en Artículos.
 ------------------------
+
+0.
+~~
+Cada comunidad definirá su propia implementación del FUNDAMENTO, los siguientes articulos constituyen un ejemplo y el valor por omisión en caso de no definirlos. 
 
 1.
 ~~
@@ -54,7 +58,7 @@ Las familias son libres de escoger el centro educativo que consideren que mejor 
 
 2.3.
 ^^^^
-Los centros educativos serán evaluados públicamente con los indicadores del Bienestar Mutuo. Se recomienda la Educación Circular, con sus 10 principios educativos.
+Los centros educativos serán evaluados públicamente con los indicadores del Bienestar Mutuo definidos por la comunidad. Se recomienda la Educación Circular, con sus 10 principios educativos.
 1. Entorno Social Construye a la Persona.
 2. Ejemplo Personal.
 3. Igualdad de Importancia.
@@ -72,8 +76,8 @@ Se recomienda el aprendizaje escalonado, siguiendo el desarrollo de la historia 
 
 2.4.1. Aspectos Generales:
 ''''''''''''''''''''''''''
-- Hasta los 5 años el niño/a debe desarrollarse gradualmente de la misma forma en que se desarrolló la humanidad hasta su generación. Relacionarse primero con la naturaleza y luego con la tecnología.
-- El niño/a debe crecer en círculos cada vez más amplios. Ejemplo: del cuarto a la sala, de la sala al jardín etc… Aquí es importante observar cuánto anhelo muestra el niño/a para entrar en el próximo círculo, pues el avance debe darse de acuerdo con su exigencia y no por medio de la presión (lo mismo sucede en la transición de la teta hacia el biberón).
+- Hasta los 5 años los niños pueden desarrollarse gradualmente de la misma forma en que se desarrolló la humanidad hasta su generación. Relacionarse primero con la naturaleza y luego con la tecnología.
+- Los niños pueden crecer en círculos cada vez más amplios. Ejemplo: del cuarto a la sala, de la sala al jardín etc… Aquí es importante observar cuánto anhelo muestran los niños para entrar en el próximo círculo, pues el avance debe darse de acuerdo con su exigencia y no por medio de la presión (lo mismo sucede en la transición de la teta hacia el biberón).
 - A partir del Jardín de Infantes sería ideal que cada nueva etapa esté aislada de las etapas anteriores y de las próximas. Esto permite al educador que en cada etapa pueda ayudar a desarrollar una sociedad homogénea, donde no existan fuertes y débiles.
 - De 3 a 10 años, los más pequeños no corren peligro de absorber las cualidades negativas producto de la "astucia" en crecimiento de los mayores.
 - De 9 a 12 años, los géneros son separados, incluso sus educadores y se les enseña los roles en la vida social primitiva.
@@ -82,7 +86,7 @@ Se recomienda el aprendizaje escalonado, siguiendo el desarrollo de la historia 
 2.4.2. Aspectos Específicos:
 ''''''''''''''''''''''''''''
 - De 0 a 18 meses : Durante este período se recomienda alimentarlos de leche materna directamente del pecho de su madre. En esta etapa su ambiente se recomienda estar rodeado de la menor cantidad de estímulos, sólo sus padres, su cuarto y su cuna. No entienden los ambientes amplios y las formas complejas (carros, aviones, TV, Smart Phones, computadoras).
-- De 18 meses a 3 años: Dejar de percibirlo como un bebé, y empezar a verlo como un niño/a pequeño/a. En esta etapa tiene la capacidad de aprender a través de juegos y ejemplos, sus padres deben mostrarle todo tipo de formas que ellos puedan entender para que internamente comiencen a discernir entre lo bueno y lo malo.
+- De 18 meses a 3 años: Dejar de percibirlo como un bebé, y empezar a verlo como un niño/a pequeño/a. En esta etapa tiene la capacidad de aprender a través de juegos y ejemplos, sus padres pueden mostrarle todo tipo de formas que los niños puedan entender para que internamente comiencen a discernir entre lo bueno y lo malo.
 - De 3 a 5 años: su desarrollo deja de depender exclusivamente del hogar, y el jardín de infancia pasa a ser su ambiente principal de crecimiento. Durante este período el desarrollo emocional es vital, en el jardín de infancia debe aprender a relacionarse con los adultos, con niños y niñas, aprender diferentes tipos de reglas, cómo cuidarse de cosas que puedan lastimar su cuerpo.
 - A los 3 años: pueden aprender las letras y números.
 - A los 4 años: pueden aprender a leer y cantar diferentes temas que hayan memorizado. Ejm.: los colores, los números, las letras…
@@ -185,7 +189,7 @@ Para recibir este dinero, periódicamente cada ciudadano deberá ver o asistir a
 
 6.5.1.2.
 """"""""
-El ingreso mínimo universal, se implementará progresivamente, y es una de las metas económico - humanas.  Empezando con los menores hasta los 16 años, las mujeres dedicadas al hogar y a su formación, y los adultos mayores de 60.
+El ingreso mínimo universal, se implementará progresivamente, y es una de las metas económico - humanas de la comunidad.  Empezando con los menores hasta los 16 años, las mujeres u hombres dedicados al hogar y a la formación en el hogar, y los adultos mayores de 60.
 
 6.5.1.2.1.
 **********
@@ -391,11 +395,23 @@ Los fundamentos pueden ser modificados en su redacción pero nunca en su intenci
 
 24.
 ~~~
-Nuestra nacionalidad se adquiere y se renuncia, por la manifestación pública de la voluntad de cualquier ser humano a partir de su mayoría de edad, o de los 13 años de edad si sus tutores lo permiten.
+Nuestra nacionalidad se adquiere y se renuncia, por la manifestación pública de la voluntad de cualquier ser o entidad.
 
 24.1.
 ^^^^^
-Esta manifestación pública, consiste de un video donde la persona lee los fundamentos de este pacto social.
+Para los seres humanos a partir de su mayoría de edad, ó 13 años de edad si sus tutores lo permiten.
+
+24.2.
+^^^^^
+Para otros seres o entes, a partir del desarrollo de los conceptos de libertad y responsabilidad.
+
+24.2.1.
+'''''''
+Cualquier ser o entidad que adopte nuestra nacionalidad, es considerado como cualquier otro ser humano, sin mas limitaciones que las que imponga su propia naturaleza.
+
+24.3.
+^^^^^
+Esta manifestación pública, consiste en ingresas sus datos en el registro de identidad, la impresión y firma de los FUNDAMENTOS o un video donde el ser o entidad lee los FUNDAMENTOS.
 
 25.
 ~~~
@@ -501,13 +517,13 @@ Ciudadanos, organizaciones y empresas son libres de negociar con quien deseen.
 ~~~
 La mayoridad se asume de forma progresiva:
 - 13 años = Mayoría para ser ciudadano (con la aprobación de los padres) y recibir los castigos por los delitos cometidos.
-- 16 años = Mayoría para la emancipación bajo la aprobación de los padres y votar, excepto para medicamentos, prostitución, armas, y drogas: alcohol, cigarrillos, entre otros.
+- 16 años = Mayoría para la emancipación bajo la aprobación de los padres y votar. Excepto para escoger medicamentos, prostitución, armas, drogas, alcohol, cigarrillos.
 - 18 años = Mayoría excepto para drogas fuertes y armas.
 - 21 años = Mayoría Completa. A los 21 años el desarrollo cerebral ha terminado.
 
 35.
 ~~~
-La comercialización de drogas es aceptada, pero no es promovida públicamente, y sus efectos negativos serán bien explicados en la cadena comercial. En el sistema educativo se explican a partir de los 13 años las drogas suaves como el alcohol y cigarros, y a los 16 años se explican las drogas fuertes.
+La comercialización de drogas es aceptada, pero no es promovida públicamente, y sus efectos negativos serán bien explicados en la cadena comercial. En el sistema educativo se explican sus efectos, a partir de los 13 años las drogas suaves como el alcohol y cigarros, y a los 16 años se explican las drogas fuertes.
 
 36.
 ~~~
