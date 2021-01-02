@@ -25,7 +25,7 @@ Development in Articles.
 
 0.
 ~~
-Freedom implies great responsibility and therefore the citizen must be educated in using his freedom wisely, since ignorance does not free him from responsibility and the consequences of his actions.
+Each community will define its own implementation of the FOUNDATION, the following articles are an example and the default value in case they are not defined.
 
 1.
 ~~
