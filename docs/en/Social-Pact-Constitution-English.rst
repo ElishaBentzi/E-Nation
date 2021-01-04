@@ -20,8 +20,8 @@ All this I do in order to fulfill the ultimate goal established by nature for th
 Second Part:
 ============
 
-Development in Articles.
-------------------------
+Development in Articles of the Constitution that will govern the relations in the e-nation organization.
+--------------------------------------------------------------------------------------------------------
 
 0.
 ~~
