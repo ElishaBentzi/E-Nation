@@ -20,12 +20,12 @@ Todo esto lo hago a fin de cumplir con la meta última establecida por la natura
 Segunda Parte:
 ==============
 
-Desarrollo en Artículos.
-------------------------
+Desarrollo en Artículos de la Constitución que va a regir las relaciones en la organización e-nation.
+-----------------------------------------------------------------------------------------------------
 
 0.
 ~~
-Cada comunidad definirá su propia implementación del FUNDAMENTO, los siguientes articulos constituyen un ejemplo y el valor por omisión en caso de no definirlos. 
+Cada comunidad definirá su propia implementación del FUNDAMENTO, los siguientes artículos constituyen un ejemplo y el valor por omisión en caso de no definirlos. 
 
 1.
 ~~
