@@ -411,7 +411,7 @@ Cualquier ser o entidad que adopte nuestra nacionalidad, es considerado como cua
 
 24.3.
 ^^^^^
-Esta manifestación pública, consiste en ingresas sus datos en el registro de identidad, la impresión y firma de los FUNDAMENTOS o un video donde el ser o entidad lee los FUNDAMENTOS.
+Esta manifestación pública, consiste en ingresar sus datos en el registro de identidad, la impresión y firma de los FUNDAMENTOS ó un vídeo donde se lean los FUNDAMENTOS.
 
 25.
 ~~~
