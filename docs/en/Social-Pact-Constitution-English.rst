@@ -419,7 +419,7 @@ Any being or entity that adopts our nationality is considered like any other hum
 
 24.3.
 ^^^^^
-This public manifestation consists of entering your data in the identity register, printing and signing the FOUNDATIONS or a video where the being or entity reads the FOUNDATIONS.
+This public manifestation consists of entering your data in the identity register, printing and signing the FOUNDATIONS or a video where the FOUNDATIONS are read.
 
 25.
 ~~~
