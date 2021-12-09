@@ -249,93 +249,81 @@ El Estado se automatizará lo máximo posible, sin perder calidad de servicio.  
 
 8.
 ~~
-Las empresas pagan al Estado un impuesto anual de 10% (o menos, ya que la mayor parte del trabajo lo hacen las máquinas, los robots y las inteligencias artificiales). Debe ser un monto suficiente para pagar los sueldos y otros costos del Estado (justificado al máximo nivel de detalle).
+Empresas y Ciudadanos no pagan impuestos, ni sobre sus beneficios. Los pocos trabajos en labores de Estado (ya que la mayor parte del trabajo lo hacen las máquinas, los robots y las inteligencias artificiales). Se pagaran con dinero aportado voluntariamente por los ciudadanos (justificado al máximo nivel de detalle).
 
 8.1.
 ^^^^
-La venta de productos no paga impuestos, pero en aras de facilitar la recaudación, el impuesto que tienen que pagar las empresas se puede implementar como un impuesto en el valor del producto.
+Los productos que no deseamos promocionar en la sociedad, tales como alcohol, tabaco y drogas, son desalentados con altos impuestos (tal como se hace hoy en día).  200% 1.000% son valores posibles y se fijan por cada tipo, ejemplo: Alcohol 200%, Cigarros 300%, Marijuana 400%.
 
 8.1.1.
 ''''''
-Los productos que no deseamos promocionar en la sociedad, tales como alcohol, tabaco y drogas, son desalentados con altos impuestos (tal como se hace hoy en día).  200% 1.000% son valores posibles y se fijan por cada tipo, ejemplo Alcohol 200%, Cigarros 300%, Marijuana 400%.
-
-8.1.1.1.
-""""""""
-Este dinero recaudado es para programas de prevención del consumo de esos productos, sistema educativo y salud.
+Este dinero recaudado es para programas de educación preventiva sobre el consumo de esos productos.
 
 9.
-~~
-Los ciudadanos pagan un impuesto progresivo, es decir aumenta conforme aumentan los ingresos de los ciudadanos, y es medido en sueldos básicos. El que gana más, paga más.  Proponemos comenzar en 5% hasta el 30%, con una escala gradual final hasta llegar al tope. Ejemplo, un sueldo mínimo paga 5%, dos sueldos mínimos 7%, tres sueldos mínimos 9%, así hasta llegar a 20 sueldos mínimos ó más, que paga 30%.
+~~~
+Como al Estado le interesa saber qué cruza las aduanas, se propone un Arancel de importación del 2%, para todo.
 
 10.
 ~~~
-Para evitar la doble tributación, reconocemos el pago de impuestos en otros países.
+El impuesto a las Sucesiones y Regalías, que se paga cuando un familiar muere y sus bienes pasan a un familiar, o cuando alguien decide regalar un bien a otra persona. Los bienes declarados como principales no pagan impuestos. Para los bienes secundarios será: para el primer grado de consanguinidad 5%, para otros grados 10%, y las regalías igual al 10%.
 
 11.
 ~~~
-El castigo por evadir impuestos, es tanto multas por el doble del dinero evadido, como la pérdida de la mitad de la reputación que tenga el ciudadano o empresa. Si no tiene dinero, paga con trabajo obrero equivalente.
-
-11.1.
-^^^^^
-Las personas pueden decidir no pagar impuestos. Y debido a que esta actitud daña la sociedad, tendrán que pagar en cada período una penalidad en reputación.
+Los negocios adictivos y altamente lucrativos como el casino y las loterías, para asegurar que gran parte de las ganancias regresan a los ciudadanos, se recomienda que sean financiados por el Estado y administrados por privados.
 
 12.
 ~~~
-Como al Estado le interesa saber qué cruza las aduanas, se propone un Arancel de importación del 1%, para todo.
+Las localidades, pueden fijar impuestos adicionales a los ya mencionados. Esto para estimular la competencia entre localidades.
 
 13.
 ~~~
-El impuesto a las Sucesiones y Regalías, que se paga cuando un familiar muere y sus bienes pasan a un familiar, o cuando alguien decide regalar un bien a otra persona, será: para el primer grado de consanguinidad 5%, para otros grados 10%, y las regalías igual al 10%.
+El castigo por evadir impuestos locales, es tanto multas por el doble del dinero evadido, como la pérdida de la mitad de la reputación que tenga el ciudadano o empresa. Si no tiene dinero, paga con trabajo obrero equivalente.
+
+13.1.
+^^^^^
+Los ciudadanos pueden decidir no pagar impuestos locales. Y debido a que esta actitud daña el pacto social local, tendrán que pagar una penalidad en reputación.
 
 14.
 ~~~
-Los negocios adictivos y altamente lucrativos como el casino y las loterías, para asegurar que gran parte de las ganancias regresan a los ciudadanos, se recomienda que sean financiados por el Estado y administrados por privados.
+Todo ciudadano puede participar en cualquier organización que maneje dinero, sin requerir licencia de ningún tipo.  Se recomienda la creación de centros de negocios, compuestos de asesores de todo tipo, para procurar el éxito en la implementación de las ideas de negocio, al participar en las ganancias o pérdidas de esos negocios.
 
 15.
 ~~~
-Las localidades, pueden fijar impuestos adicionales a los ya mencionados. Esto para estimular la competencia entre localidades.
-
-16.
-~~~
-Todo ciudadano puede participar en cualquier organización que maneje dinero, sin requerir licencia de ningún tipo.  Se recomienda la creación de centros de negocios, compuestos de asesores de todo tipo, para procurar el éxito en la implementación de las ideas de negocio, al participar en las ganancias o pérdidas de esos negocios.
-
-17.
-~~~
 El planeta tierra le pertenece a toda la vida, y la vida necesita quien se encargue de ella, por eso se cambia el concepto de dueño de la tierra, por guardián de la tierra.
 
-17.1.
+15.1.
 ^^^^^
 La propiedad privada es inviolable, a menos que ello sea necesario por un bien común, claramente demostrable y con la debida retribución en dinero y honor.
 
-18.
+16.
 ~~~
 Para promover la creación de nuevas patentes, y evitar el excesivo proteccionismo de las patentes viejas, se establece que las patentes tendrán una duración de 5 años, prorrogables 2 años si no se implementan en los primeros 5 años.
 
-18.1.
+16.1.
 ^^^^^
 La creación de nuevas patentes, se reconocerá con honor públicamente.
 
-19.
+17.
 ~~~
 El poder Ejecutivo del Estado se implementa a través de dos organizaciones complementarias, el círculo técnico y el circulo de gobierno. Ambas son organizaciones compuestas de ciudadanos, que toman sus decisiones de forma horizontal pero ejecutan sus tareas de forma vertical. Se reúnen periódicamente y son totalmente transparentes, no se permite el anonimato.
 
-19.1.
+17.1.
 ^^^^^
 El círculo técnico, se encarga de la ejecución de las tareas técnicas, basadas en el método científico, y tiene un representante en el círculo de gobierno.
 
-19.2.
+17.2.
 ^^^^^
 El círculo de gobierno, se encarga de los temas relacionados con los ciudadanos, sus necesidades y prioridades. El líder benévolo pertenece a esta organización.
 
-19.3.
+17.3.
 ^^^^^
 Esta organización implementa nuestro mecanismo de toma de decisiones colectivas.  Cada localidad tiene esta misma organización, y se agrupa en localidades mayores (macro localidad) con círculos de gobierno integrados por un representante de cada círculo de gobierno en grupos de hasta 10.
 
-19.3.1.
+17.3.1.
 '''''''
 Las macro localidades cuentan también con un líder benévolo. Y un representante de cada macro localidad se agrupa en macro localidades aún más grandes de hasta 10 representantes.
 
-19.4.
+17.4.
 ^^^^^
 Parte de las funciones del Ejecutivo, es definir y organizar:
 1. El sistema judicial.
@@ -345,175 +333,175 @@ Parte de las funciones del Ejecutivo, es definir y organizar:
 5. Los diversos estándares, importantes para facilitar la competencia.
 6. Las fiestas, que tendrán el propósito de unir e integrar a toda la sociedad.
 
-19.4.1.
+17.4.1.
 '''''''
 Reconociendo que los ciudadanos no estamos preparados para los nuevos sistemas, como primera aproximación en una transición, se puede implementar una copia de los arcaicos sistemas del Estado, evaluando periódicamente (mensual, bimensual, trimestral) ¿qué partes de este sistema funcionan?, ¿qué partes se pueden actualizar ahora?, ¿qué partes se pueden cambiar en la siguiente iteración?
 
-20.
+18.
 ~~~
 Somos un estado de derecho, donde aplicamos la justicia con misericordia, los daños causados son reparados con dinero y honor en proporción al daño causado, y a quien causa el daño. Si el daño es tan severo que sin lugar a dudas no pueda ser reparado, entonces para erradicar este mal en la sociedad se permite la pena capital.
 
-20.1.
+18.1.
 ^^^^^
 Todos tienen acceso al sistema de justicia, el cual es pagado por la parte perdedora. Estos costos estarán fijados en horas / hombre.
 
-20.2.
+18.2.
 ^^^^^
 El cuerpo legal está constituido de forma jerárquica: 1- esta constitución, 2- las leyes (generalizaciones) 3- Los contratos tipo (dinámicamente actualizados por los ciudadanos) 4- Los procedimientos (reglamentos) 5- Las recomendaciones. A fin de mantener la libertad, la responsabilidad y el autocontrol, se recomienda la elaboración de recomendaciones en lugar de leyes y reglamentos.
 
-20.3.
+18.3.
 ^^^^^
 Se entiende que la sociedad está en un estado de mejora continua, por lo tanto se asume esta realidad y el cuerpo legal se aplica considerando la última versión y la diferencia entre versiones.
 
-20.3.1.
+18.3.1.
 '''''''
 Estas modificaciones se anotarán usando la notación SemVer.
 
-20.4.
+18.4.
 ^^^^^
 La definición del sistema judicial incluye su relación con el organismo de investigación criminalístico.
 
-21.
+19.
 ~~~
 El sueldo en el Estado será mínimo de 1 sueldo básico y máximo 3 sueldos básicos. El sector privado no tiene estos límites.
 
-21.1.
+19.1.
 ^^^^^
 Los sueldos en el Estado son pagados usando el dinero recogido con los impuestos.
 
-22.
+20.
 ~~~
 Promovemos la cultura, valores e idiomas locales, siempre que no contradigan nuestro Fundamento.
 
-23.
+21.
 ~~~
 Nuestro FUNDAMENTO tiene carácter supremo, y los Artículos sirven para desarrollarlo, en todo caso lo importante es la intención de lo que está escrito y no las palabras con las que está escrito.
 
-23.1.
+21.1.
 ^^^^^
 Los fundamentos pueden ser modificados en su redacción pero nunca en su intención.  Los artículos de este pacto social pueden ser modificados en cualquier momento usando el mecanismo de participación colectiva establecido en este pacto social.
 
-24.
+22.
 ~~~
 Nuestra nacionalidad se adquiere y se renuncia, por la manifestación pública de la voluntad de cualquier ser o entidad.
 
-24.1.
+22.1.
 ^^^^^
 Para los seres humanos a partir de su mayoría de edad, ó 13 años de edad si sus tutores lo permiten.
 
-24.2.
+22.2.
 ^^^^^
 Para otros seres o entes, a partir del desarrollo de los conceptos de libertad y responsabilidad.
 
-24.2.1.
+22.2.1.
 '''''''
 Cualquier ser o entidad que adopte nuestra nacionalidad, es considerado como cualquier otro ser humano, sin mas limitaciones que las que imponga su propia naturaleza.
 
-24.3.
+22.3.
 ^^^^^
 Esta manifestación pública, consiste en ingresar sus datos en el registro de identidad, la impresión y firma de los FUNDAMENTOS ó un vídeo donde se lean los FUNDAMENTOS.
 
-25.
+23.
 ~~~
 El ciudadano es responsable de sus acciones, tanto las que hace como las que debería hacer y no hace.
 
-26.
+24.
 ~~~
 Todo ciudadano puede participar en cualquier organización pública que desee, siendo su única limitación la impuesta a sí mismo por su capacidad de aporte a dicha organización.
 
-26.1.
+24.1.
 ^^^^^
 Por lo tanto no tenemos partidos políticos, sino grupos de interés.
 
-27.
+25.
 ~~~
 Todo trabajo merece una retribución, ya sea en dinero y / o en honor. El daño a la sociedad merece un castigo en dinero y / o en honor. Si el daño es grave e irreparable, la pena de muerte es posible.
 
-28.
+26.
 ~~~
 Son los ciudadanos organizados los responsables de la formulación y ejecución de las políticas públicas, pudiendo delegar su poder a gerentes, por períodos cortos renovables.
 
-29.
+27.
 ~~~
 Los delegados públicos, son representantes de los ciudadanos y no de sí mismos, están bajo las órdenes de los ciudadanos organizados y son de libre remoción en cualquier momento.
 
-30.
+28.
 ~~~
 Transparencia Total, todas las actividades de los entes públicos, tanto de procesamiento interno como de atención al público, serán accesibles por internet, a fin de garantizar la auditoría pública en tiempo real.
 
-31.
+29.
 ~~~
 El registro público se llevará de forma criptográfica, con impresión en papel según la conveniencia del ciudadano, su almacenamiento será público y distribuido, para su verificación y acceso en línea en cualquier momento.
 
-31.1.
+29.1.
 ^^^^^
 Este registro distribuido, tendrá las funciones de: registro tradicional, notaría, identificación electrónica (con niveles de dominio de la identidad) y los servicios de confianza (identificación remota, valor probatorio), dando servicio tanto para lo público como para lo privado, si el privado lo solicita y paga por ello.
 
-31.2.
+29.2.
 ^^^^^
 Cuando el almacenamiento en este registro distribuido, se hace de forma asistida (asesoramiento previo) ya sea por un ciudadano certificado (el notario) o una inteligencia artificial, se le agrega el valor y peso de ese acompañamiento.
 
-31.2.1.
+29.2.1.
 '''''''
 Para facilitar este proceso de registro, se crearán una serie de plantillas asistidas, sobre documentos típicos.
 
-32.
+30.
 ~~~
 La identidad digital es aceptada para los trámites públicos, excepto por los específicos que requieren una validación adicional física.
 
-32.1.
+30.1.
 ^^^^^
 La información digital de un ciudadano le pertenece al ciudadano.
 
-32.1.1.
+30.1.1.
 '''''''
 Acceder a información privada de un ciudadano sin razón es una ofensa criminal con pena.
 
-32.2.
+30.2.
 ^^^^^
 La información de registro de empresas y tenencia de la tierra es pública.
 
-32.3.
+30.3.
 ^^^^^
 Los seudónimos, también pueden ser usados como identidades digitales, si están debidamente verificados por el notario o la inteligencia artificial.
 
-33.
+31.
 ~~~
 El comportamiento dentro de los espacios privados, es totalmente libre y con reglas claras para todo el que decida libremente participar en ese espacio privado.  Y para mantener esa libertad, sin inducir comportamientos particulares en el público, el comportamiento en los espacios públicos, está dictado por el comportamiento de orden, respeto y jerarquía, que establece la naturaleza biológica (XX y XY).
 
-33.1.
+31.1.
 ^^^^^
 Por lo tanto, públicamente sólo es promovido el modelo familiar de un hombre, una mujer y sus hijos.  Los otros tipos de comportamiento sexual son aceptados y reconocidos, en el mismo nivel de importancia que el modelo natural, dentro de las limitaciones que la naturaleza biológica les imponga.
 
-33.1.1.
+31.1.1.
 '''''''
 El matrimonio es la unión de un solo hombre con una sola mujer.
 
-33.1.2.
+31.1.2.
 '''''''
 El homonomio es la unión entre dos seres humanos del mismo sexo.
 
-33.1.3.
+31.1.3.
 '''''''
 Otro tipo de uniones sexuales entre dos o más seres humanos, son igualmente válidas, (todo dentro de los Fundamentos). En caso de ser populares, se les puede asignar una denominación específica (trinomio, multinomio, etc).
 
-33.2.
+31.2.
 ^^^^^
 El matrimonio, homonomio, y demás asociaciones sexuales, se basan en nuestros fundamentos, (igualdad de importancia, reconocimiento de diferencias) con las limitaciones y responsabilidades que estas mismas asociaciones sexuales establezcan entre ellos, en sus contratos tipo.
 
-33.3.
+31.3.
 ^^^^^
 Cada localidad puede generar espacios con sus propias reglas de conducta.
 
-33.4.
+31.4.
 ^^^^^
 Todos los ciudadanos son igualmente importantes, pero a fines de respeto y orden, se reconoce la jerarquía natural: los niños le deben el respeto a sus padres y otros adultos, y los adultos a los ancianos.
 
-33.5.
+31.5.
 ^^^^^
 Ciudadanos, organizaciones y empresas son libres de negociar con quien deseen.
 
-34.
+32.
 ~~~
 La mayoridad se asume de forma progresiva:
 - 13 años = Mayoría para ser ciudadano (con la aprobación de los padres) y recibir los castigos por los delitos cometidos.
@@ -521,51 +509,51 @@ La mayoridad se asume de forma progresiva:
 - 18 años = Mayoría excepto para drogas fuertes y armas.
 - 21 años = Mayoría Completa. A los 21 años el desarrollo cerebral ha terminado.
 
-35.
+33.
 ~~~
 La comercialización de drogas es aceptada, pero no es promovida públicamente, y sus efectos negativos serán bien explicados en la cadena comercial. En el sistema educativo se explican sus efectos, a partir de los 13 años las drogas suaves como el alcohol y cigarros, y a los 16 años se explican las drogas fuertes.
 
-36.
+34.
 ~~~
 La seguridad física del Estado, depende de los ciudadanos y del Estado, disponiendo de todos los avances tecnológicos.
 
-36.1.
+34.1.
 ^^^^^
 Todo ciudadano tiene derecho al uso y porte de armas. Quedan excluidas, las personas con problemas mentales que representen un peligro para la sociedad.
 
-36.1.1.
+34.1.1.
 '''''''
 Se recomienda las armas de disuasión sobre las armas letales.
 
-36.2.
+34.2.
 ^^^^^
 Todas las armas estarán debidamente registradas en el registro público de activos.
 
-36.3.
+34.3.
 ^^^^^
 Cada año, cada ciudadano armado deberá participar en sesiones de seguridad y uso de armas, compartiendo técnicas y experiencias para un mejor servicio social.
 
-36.4.
+34.4.
 ^^^^^
 Las milicias, son ciudadanos armados organizados, que participan en el deber de asegurar la nación.
 
-36.5.
+34.5.
 ^^^^^
 El Ejecutivo conformará grupos profesionales armados, especializados, que coordinará con las milicias.
 
-36.5.1.
+34.5.1.
 '''''''
 Las fuerzas armadas profesionales, son una organización con el propósito de proteger a los ciudadanos, y apoyar en casos de desastres. Cuando no estén en actividad o entrenamiento, estarán realizando labores de construcción, primero nacional y luego internacionalmente.
 
-36.6.
+34.6.
 ^^^^^
 Para las armas de guerra, magazines de más de 7 rondas, y municiones de alto poder letal, se requiere de un permiso especial.
 
-36.7.
+34.7.
 ^^^^^
 En el sistema educativo, hombres y mujeres a partir de los 16 años reciben instrucción en defensa personal, y en el manejo y resguardo de armas.
 
-37.
+35.
 ~~~
 Todo ciudadano tiene el deber de acatar y hacer cumplir este pacto social.
 
