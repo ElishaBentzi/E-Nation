@@ -251,93 +251,81 @@ The State will be automated as much as possible, without losing quality of servi
 
 8.
 ~~
-Companies pay the State an annual tax of 10% (or less, since most of the work is done by machines, robots and artificial intelligence). It must be a sufficient amount to pay the salaries and other costs of the State (justified at the highest level of detail).
+Companies and Citizens do not pay taxes, nor on their benefits. The few jobs in state work (since most of the work is done by machines, robots and artificial intelligences). They will be paid with money voluntarily contributed by citizens (justified to the maximum level of detail).
 
 8.1.
 ^^^^
-The sale of products does not pay taxes, but in order to facilitate collection, the tax that companies have to pay can be implemented as a tax on the value of the product.
+The products that we do not want to promote in society such as alcohol, tobacco and drugs are discouraged with high taxes (as is done today). 200% 1,000% are possible values and are fixed for each type, for example Alcohol 200%, Cigars 300%, Marijuana 400%.
 
 8.1.1.
 ''''''
-The products that we do not want to promote in society such as alcohol, tobacco and drugs are discouraged with high taxes (as is done today). 200% 1,000% are possible values and are fixed for each type, for example Alcohol 200%, Cigars 300%, Marijuana 400%.
-
-8.1.1.1.
-""""""""        
-This money collected is for programs to prevent the consumption of these products, educational system and health.
+This money collected is for preventive education programs on the consumption of these products.
 
 9.
 ~~
-Citizens pay a progressive tax, that is to say it increases as the income of the citizens increase, and is measured in basic salaries. The one who earns more pays more. We propose to start at 5% up to 30%, with a final gradual scale until reaching the top. For example, a minimum wage pays 5%, two minimum wages 7%, three minimum wages 9%, and so on up to 20 minimum wages or more, which pays 30%.
+As the State is interested in knowing what crosses the customs, we propose an import tariff of 2%, for everything.
 
 10.
 ~~~
-To avoid double taxation, we recognize the payment of taxes in other countries.
+The Inheritance and Royalties tax, which is paid when a relative dies and their assets pass to a relative, or when someone decides to give an asset to another person. The goods declared as main do not pay taxes. For secondary goods it will be: for the first degree of consanguinity 5%, for other degrees 10%, and royalties equal to 10%.
 
 11.
 ~~~
-The penalty for evading taxes, is as much fines for double the money evaded, as the loss of half of the reputation that the citizen or company has. If you do not have money, pay with equivalent labor.
-
-11.1.
-^^^^^
-People can decide not to pay taxes. And since this attitude damages society, they will have to pay a penalty in reputation in each period.
+Addictive and highly profitable businesses such as the casino and lotteries, to ensure that a large part of the profits are returned to the citizens, it is recommended that they be financed by the State and administered by private companies.
 
 12.
 ~~~
-As the State is interested in knowing what crosses the customs, we propose an import tariff of 1%, for everything.
+The localities can set additional taxes to those already mentioned in order to stimulate competition between locations.
 
 13.
 ~~~
-The tax on inheritance and royalties, which is paid when a family member dies and their assets pass to a family member, or when someone decides to give a good to another person, will be: for the first degree of consanguinity 5%, for others 10% degrees, and royalties equal to 10%.
+The punishment for evading local taxes is both fines for double the money evaded, and the loss of half of the reputation of the citizen or company. If he has no money, he pays with equivalent labor work.
+
+13.1.
+^^^^^
+Citizens can decide not to pay local taxes. And because this attitude damages the local social pact, they will have to pay a reputational penalty.
 
 14.
 ~~~
-Addictive and highly profitable businesses such as the casino and lotteries, to ensure that a large part of the profits are returned to the citizens, it is recommended that they be financed by the State and administered by private companies.
+Every citizen can participate in any organization that manages money, without requiring a license of any kind. It is recommended the creation of business centers, composed of advisors of all kinds, to seek success in the implementation of business ideas, to participate in the profits or losses of these businesses.
 
 15.
 ~~~
-The localities can set additional taxes to those already mentioned in order to stimulate competition between locations.
-
-16.
-~~~
-Every citizen can participate in any organization that manages money, without requiring a license of any kind. It is recommended the creation of business centers, composed of advisors of all kinds, to seek success in the implementation of business ideas, to participate in the profits or losses of these businesses.
-
-17.
-~~~
 The planet earth belongs to all life, and life needs whoever takes care of it, that's why the concept of the owner of the land is changed to guardian of the land.
 
-17.1.
+15.1.
 ^^^^^
 Private property is inviolable, unless it is necessary for a common good, clearly demonstrable and with due compensation in money and honor.
 
-18.
+16.
 ~~~
 To promote the creation of new patents, and to avoid the excessive protectionism of old patents it is established that patents will last for 5 years, extendable for 2 years more if they are not implemented in the first 5 years.
 
-18.1.
+16.1.
 ^^^^^
 The creation of new patents shall be publicly recognized with honor.
 
-19.
+17.
 ~~~
 The Executive Power of the State is implemented through two complementary organizations, the technical circle and the circle of government. Both are organizations composed of citizens, who make their decisions horizontally but execute their tasks vertically. They meet regularly and are completely transparent, anonymity is not allowed.
 
-19.1.
+17.1.
 ^^^^^
 The technical circle, is responsible for the execution of technical tasks, based on the scientific method, and has a representative in the circle of government.
 
-19.2.
+17.2.
 ^^^^^
 The circle of government is responsible for issues related to citizens, their needs and priorities. The benevolent leader belongs to this organization.
 
-19.3.
+17.3.
 ^^^^^
 This organization implements our collective decision-making mechanism. Each locality has this same organization and is grouped into larger localities (macro locality) with government circles integrated by a representative of each government circle in groups of up to 10.
 
-19.3.1.
+17.3.1.
 '''''''
 The macro-localities also have a benevolent leader. And a representative of each macro-locality is grouped into larger macro-locations of up to 10 representatives.
 
-19.4.
+17.4.
 ^^^^^
 Part of the functions of the Executive is to define and organize:
 1. The judicial system.
@@ -347,19 +335,19 @@ Part of the functions of the Executive is to define and organize:
 5. The various standards, important to facilitate competition.
 6. The parties, which will have the purpose of uniting and integrating the whole society.
 
-19.4.1.
+17.4.1.
 '''''''
 Recognizing that citizens are not prepared for new systems, as a first approximation in a transition, you can implement a copy of the archaic state systems, evaluating periodically (monthly, bi-monthly, quarterly): What parts of this system work ? What parts can be updated now? What parts can be changed in the next iteration?
 
-20.
+18.
 ~~~
 We are a state of law where we apply justice with mercy, the damages caused are repaired with money and honor in proportion to the damage caused and to whoever causes the damage. If the damage is so severe that it cannot be repaired without a doubt then capital punishment is allowed to eradicate this evil in society.
 
-20.1.
+18.1.
 ^^^^^
 Everyone has access to the justice system, which is paid by the losing party. These costs will be set in man hours.
 
-20.2.
+18.2.
 ^^^^^
 The legal body is constituted in a hierarchical way: 
 1- This constitution.
@@ -369,159 +357,159 @@ The legal body is constituted in a hierarchical way:
 5- Recommendations.
 In order to maintain freedom, responsibility and self-control, it is recommended to develop recommendations instead of laws and regulations.
 
-20.3.
+18.3.
 ^^^^^
 It is understood that companies are in a state of continuous improvement, therefore this reality is assumed and the legal body is applied considering the latest version and the difference between versions.
 
-20.3.1.
+18.3.1.
 '''''''
 These modifications will be annotated using the SemVer notation.
 
-20.4.
+18.4.
 ^^^^^
 The definition of the judicial system includes its relationship with the Criminal Investigation Agency.
 
-21.
+19.
 ~~~
 The salary in the State will be a minimum of 1 basic salary and maximum 3 basic salaries. The private sector does not have these limits.
 
-21.1.
+19.1.
 ^^^^^
 Salaries in the State are paid using the money collected with taxes.
 
-22.
+20.
 ~~~
 We promote the culture, values and local languages, as long as they do not contradict our Foundation.
 
-23.
+21.
 ~~~
 Our FOUNDATION has supreme character, and the Articles serve to develop it, in any case what is important is the intention of what is written and not the words with which it is written.
 
-23.1.
+21.1.
 ^^^^^
 The fundamentals may be modified in their wording but never in their intention. The articles of this social pact can be modified at any time using the mechanism of collective participation established in this social pact.
 
-24.
+22.
 ~~~
 Our nationality is acquired and renounced, by the public manifestation of the will of any being or entity.
 
-24.1.
+22.1.
 ^^^^^
 For human beings from the age of majority, or 13 years of age if their guardians allow it.
 
-24.2.
+22.2.
 ^^^^^
 For other beings or entities, from the development of the concepts of freedom and responsibility.
 
-24.2.1.
+22.2.1.
 '' '' '' '
 Any being or entity that adopts our nationality is considered like any other human being, with no more limitations than those imposed by its own nature.
 
-24.3.
+22.3.
 ^^^^^
 This public manifestation consists of entering your data in the identity register, printing and signing the FOUNDATIONS or a video where the FOUNDATIONS are read.
 
-25.
+23.
 ~~~
 The citizen is responsible for his or her actions, both those he or she does and those he or she should do and not do.
 
-26.
+24.
 ~~~
 Every citizen can participate in any public organization that he wishes, being his only limitation the one imposed on himself for his capacity of contribution to that organization.
 
-26.1.
+24.1.
 ^^^^^
 Therefore we do not have political parties but groups of interest.
 
-27.
+25.
 ~~~
 All work deserves a retribution whether in money and / or in honor. The damage to society deserves a punishment in money and / or in honor. If the damage is severe and irreparable the death penalty is possible.
 
-28.
+26.
 ~~~
 Organized citizens are responsible for the formulation and execution of public policies being able to delegate their power to managers for short and renewable periods.
 
-29.
+27.
 ~~~
 The public delegates are representatives of citizens and not of themselves. They are under the orders of organized citizens and are free to be removed at any time.
 
-30.
+28.
 ~~~
 Total Transparency: All activities of public entities both internal processing and customer service will be accessible online in order to ensure public auditing at real time.
 
-31.
+29.
 ~~~
 The public registry will be kept in a cryptographic form with printing on paper according to the convenience of the citizen. His or her storage will be public and distributed for verification and online access at any time.
 
-31.1.
+29.1.
 ^^^^^
 This distributed registry will have the functions of: traditional registry, notary, electronic identification (with levels of domain of identity) and trust services (remote identification, probative value) serving both the public and the private, if the private person requests and pays for it.
 
-31.2.
+29.2.
 ^^^^^
 When the storage in this distributed register is done in an assisted form (prior advice) either by a certified citizen (the notary) or an artificial intelligence, the value and weight of that accompaniment is added to it.
 
-31.2.1.
+29.2.1.
 '''''''
 To facilitate this registration process, a series of assisted templates will be created, on typical documents.
 
-32.
+30.
 ~~~
 The digital identity is accepted for public procedures, except for the specific ones that require an additional physical validation.
 
-32.1.
+30.1.
 ^^^^^
 The digital information of a citizen belongs to the citizen.
 
-32.1.1.
+30.1.1.
 '''''''
 Accessing private information of a citizen without reason is a criminal offense with a penalty.
 
-32.2.
+30.2.
 ^^^^^
 The registration information of companies and land tenure is public.
 
-32.3.
+30.3.
 ^^^^^
 Pseudonyms can also be used as digital identities if they are duly verified by the notary or artificial intelligence.
 
-33.
+31.
 ~~~
 The behavior within the private spaces is totally free and with clear rules for anyone who freely decides to participate in that private space and to maintain that freedom without inducing particular behaviors in the public. Behavior in public spaces is dictated by the behavior of order, respect and hierarchy, which establishes the biological nature (XX and XY).
 
-33.1.
+31.1.
 ^^^^^
 Therefore publicly is only promoted the family model of a man, a woman and their children. The other types of sexual behavior are accepted and recognized at the same level of importance as the natural model within the limitations imposed by the biological nature.
 
-33.1.1.
+31.1.1.
 '''''''
 Marriage is the union of one man with one woman.
 
-33.1.2.
+31.1.2.
 '''''''
 Same-sex marriage is the union between two human beings of the same sex.
 
-33.1.3.
+31.1.3.
 '''''''
 Another type of sexual unions between two or more human beings is equally valid (all within the Fundamentals). If they are popular, they can be assigned a specific denomination (trinomial, multinomial, etc.).
 
-33.2.
+31.2.
 ^^^^^
 Marriage, Same-sex marriage and other sexual associations are based on our foundations, (equality of importance, recognition of differences) with the limitations and responsibilities that these same sexual associations establish among themselves in their standard contracts.
 
-33.3.
+31.3.
 ^^^^^
 Each locality can generate spaces with its own rules of conduct.
 
-33.4.
+31.4.
 ^^^^^
 All citizens are equally important but for the purpose of respect and order the natural hierarchy is recognized: children owe respect to their parents and other adults and adults to the elderly.
 
-33.5.
+31.5.
 ^^^^^
 Citizens, organizations and companies are free to negotiate with whomever they wish.
 
-34.
+32.
 ~~~
 Majority is assumed progressively:
 -  13 years = Majority to be a citizen (with the approval of the parents) and receive the punishments for the crimes committed.
@@ -529,51 +517,51 @@ Majority is assumed progressively:
 -  18 years = Majority except for strong drugs and weapons.
 -  21 years = Complete Majority. At age 21, brain development is over.
 
-35.
+33.
 ~~~
 The commercialization of drugs is accepted but it is not publicly promoted and its negative effects will be well explained in the commercial chain. In the educational system the effects are explained, as of 13 years old soft drugs such as alcohol and cigarettes, at 16 years of age strong drugs.
 
-36.
+34.
 ~~~
 The physical security of the State depends on the citizens and the State, providing to it all the technological advances.
 
-36.1.
+34.1.
 ^^^^^
 Every citizen has the right to use and carry weapons. People with mental problems that represent a danger to society are excluded.
 
-36.1.1.
+34.1.1.
 '''''''
 Deterrent weapons are recommended over lethal weapons.
 
-36.2.
+34.2.
 ^^^^^
 All weapons will be duly registered in the public registry of assets.
 
-36.3.
+34.3.
 ^^^^^
 Each year, each armed citizen must participate in sessions of security and use of weapons, sharing techniques and experiences for a better social service.
 
-36.4.
+34.4.
 ^^^^^
 The militias are organized armed citizens who participate in the duty to insure the nation.
 
-36.5.
+34.5.
 ^^^^^
 The Executive will form specialized, armed professional groups that will coordinate with the militias.
 
-36.5.1.
+34.5.1.
 '''''''
 The Professional Armed Force is an organization that has the purpose of protect the citizens and support them in cases of disasters. When they are not in activity or training, they will be carrying out construction work, first nationally and then internationally.
 
-36.6.
+34.6.
 ^^^^^
 For weapons of war, magazines of more than 7 rounds, and munitions of high lethal power, a special permit is required.
 
-36.7.
+34.7.
 ^^^^^
 In the education system men and women as of the 16 years receive instruction in personal defense and in the handling and protection of arms.
 
-37.
+35.
 ~~~
 Every citizen has the duty to comply with and enforce this social pact.
 
