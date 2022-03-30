@@ -114,6 +114,22 @@ Our collective decision-making mechanism is direct democracy with meritocracy, e
 ^^^^
 Voting is not anonymous, except in cases where it is necessary, as to avoid damage to a reputation. The votes of the last round can be anonymous.
 
+3.2.
+^^^^
+The maximum number of rounds per proposal is 3.
+
+3.3.
+^^^^
+The benevolent leader can veto a proposal only once, in the first or second round, not in the third or last round.
+
+3.3.1.
+''''''
+The benevolent leader cannot veto a proposal related to her replacement or removal.
+
+3.4.
+^^^^
+Proposals are added by the benevolent leader or any citizen who receives a minimum of 10% pre-votes (temporary delegations of power).
+
 4.
 ~~
 We operate and organize ourselves in a distributed manner, both in the geographical area and in the distribution of power, avoiding, as far as possible, the formation of centralisms.
