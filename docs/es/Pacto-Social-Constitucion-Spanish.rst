@@ -112,6 +112,22 @@ Nuestro mecanismo de toma de decisiones colectivas, es la democracia directa con
 ^^^^
 Las votaciones no son anónimas, excepto en los casos que sea necesario, como para evitar un daño a una reputación. Las votaciones de la última ronda pueden ser anónimas.
 
+3.2.
+^^^^
+La maxima cantidad de rondas por propuesta son 3.
+
+3.3.
+^^^^
+El líder benevolo puede vetar una propuesta una sola vez, en la primera o segunda ronda, no en la tercera ó última ronda.
+
+3.3.1.
+''''''
+El líder benévolo no puede vetar una propuesta relacionada con su reemplazo ó remoción.
+
+3.4.
+^^^^
+Las propuestas son agregadas por el líder benévolo ó cualquier ciudadano que reciba un mínimo de 10% de pre-votaciones (delegaciones de poder temporales).
+
 4.
 ~~
 Funcionamos y nos organizamos de forma distribuida, tanto en el ámbito geográfico como de distribución de poder, evitando en lo posible, la formación de centralismos.
