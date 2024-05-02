@@ -4,28 +4,30 @@ Constitucion de E-Nation en **Español**
 Primera Parte:
 ==============
 
-La conexión como principio fundacional.
----------------------------------------
+El Fundamento.
+---------------
 
 Con el propósito de participar en la creación de una sociedad de armonía y paz.
 
-Yo \________________\_ deseo formar parte de esta sociedad, y me comprometo a tener la intención fundamental de "no hacer daño a ningún otro ser humano", es decir, antes de realizar cualquier actividad, tendré en consideración que esta actividad no le cause daño a otras personas.
+Yo, esencia de vida encarnada en un homo vivo, que para la interaccion con terceros respondo al sonido \________________\_ expreso mi deseo de formar parte de esta sociedad, y me comprometo a cumplir la ley natural, con la intención fundamental de "no hacer daño a ningún otro ser humano", es decir, antes de realizar cualquier actividad, tendré en consideración que esta actividad no le cause daño a otros.
 
 Acepto la verdad de que: "todos los seres humanos somos naturalmente diferentes en capacidades y necesidades, así como que todos los seres humanos somos igualmente importantes".  Por eso, para alcanzar la paz, me comprometo a: "apoyar a todos los miembros de esta sociedad, para que puedan beneficiar a la sociedad con su singularidad", con la misma fuerza con la que quiero expresar mi singularidad.
 
-Reconozco que la vida es un proceso de continuo desarrollo y por lo tanto, consciente o inconscientemente, tanto yo como los demás miembros de esta sociedad podemos y vamos a cometer errores. Por eso me comprometo a reconocer mis errores, a pedir clemencia por mis errores, y me comprometo a repararlos. Por otro lado, me comprometo a juzgar con benevolencia los errores de los demás miembros de esta sociedad.
+Para garantizar que esta sociedad sea de bienhechores que se apoyan mutuamente, antepongo el bienestar de otros al mio propio.
 
-Todo esto lo hago a fin de cumplir con la meta última establecida por la naturaleza para la raza humana: **ser el guardián de la vida**.
+Reconozco que la vida es un proceso de continuo desarrollo y por lo tanto, consciente o inconscientemente, tanto yo como los demás miembros de esta sociedad podemos cometer errores. Por eso me comprometo a reconocer, reparar y compensar por mis errores. Por otro lado, me comprometo a juzgar con benevolencia los errores de los demás miembros de esta sociedad.
+
+Todo esto lo hago a fin de cumplir con la meta última establecida por la naturaleza para la raza humana: ser feliz construyendo un mundo mejor para todos, **siendo el guardián de la vida**.
 
 Segunda Parte:
 ==============
 
-Desarrollo en Artículos de la Constitución que va a regir las relaciones en la organización e-nation.
------------------------------------------------------------------------------------------------------
+Desarrollo en Artículos de la Constitución que va a regir las relaciones en la organización social e-nation.
+------------------------------------------------------------------------------------------------------------
 
 0.
 ~~
-Cada comunidad definirá su propia implementación del FUNDAMENTO, los siguientes artículos constituyen un ejemplo y el valor por omisión en caso de no definirlos. 
+Cada comunidad definirá su propia implementación del Fundamento, los siguientes artículos constituyen un ejemplo y el valor por omisión en caso de no definirlos. 
 
 1.
 ~~
@@ -33,7 +35,7 @@ La libertad implica una gran responsabilidad, por lo tanto el ciudadano debe edu
 
 2.
 ~~
-El sistema educativo tiene el propósito de formar ciudadanos responsables, conocedores de la sociedad y el mundo, preparando a los ciudadanos para ser emprendedores y padres de la siguiente generación. Está basado en el método científico aplicado con amor. Aprendiendo a pensar científicamente, cómo equilibrar la naturaleza humana con los desarrollos tecnológicos.
+El sistema educativo tiene el propósito de formar ciudadanos empaticos y responsables, conocedores de la sociedad y el mundo, preparando a los ciudadanos para ser emprendedores y padres de la siguiente generación. Está basado en el método científico aplicado con amor. Aprendiendo a pensar científicamente y con empatia, sin ser dueños de la verdad y siempre buscando la nueva version de la verdad, equilibrando la naturaleza humana con los desarrollos tecnológicos hacia un mayor autoconocimiento y elevacion humana.
 
 *Definición:*
 
@@ -46,11 +48,11 @@ El sistema educativo tiene el propósito de formar ciudadanos responsables, cono
 
 2.1.
 ^^^^
-Reconocemos la existencia de los virus mentales, y que la formación en la aplicación del método científico, es la herramienta para eliminarlos.
+Reconocemos la existencia de los virus mentales y los traumas, y que la formación en la aplicación del método científico con empatia, es la herramienta para descartarlos y reemplazarlos.
 
 *Definición:*
 
-**Virus Mental:** Creencia que limita el desarrollo del ser humano. Los virus mentales se comportan igual que sus similares biológicos, mutan y se transmiten entre las personas. Cuando un paradigma se vuelve obsoleto se convierte en un virus mental. También hay virus mentales que nacen como virus mentales.
+**Virus Mental:** Creencia que limita el desarrollo del ser humano. Los virus mentales pueden transmitirse entre las mentes de las personas o pueden ser absorvidos por la mente de medios audio visuales que los contengan, a proposito, por desconocimiento o por confusión. Muchos virus mentales son paradigmas que se vuelven obsoletos con el avance del desarrollo humano.
 
 2.2.
 ^^^^
@@ -68,7 +70,7 @@ Los centros educativos serán evaluados públicamente con los indicadores del Bi
 7. &quot;El Pequeño Juzgado&quot;.
 8. Grabar en Vídeo las Actividades.
 9. Grupos Pequeños con Varios Educadores (de ambos géneros).
-10. Apoyo de los Padres.
+10. Apoyo continuo de los Padres.
 
 2.4.
 ^^^^
@@ -78,10 +80,10 @@ Se recomienda el aprendizaje escalonado, siguiendo el desarrollo de la historia 
 ''''''''''''''''''''''''''
 - Hasta los 5 años los niños pueden desarrollarse gradualmente de la misma forma en que se desarrolló la humanidad hasta su generación. Relacionarse primero con la naturaleza y luego con la tecnología.
 - Los niños pueden crecer en círculos cada vez más amplios. Ejemplo: del cuarto a la sala, de la sala al jardín etc… Aquí es importante observar cuánto anhelo muestran los niños para entrar en el próximo círculo, pues el avance debe darse de acuerdo con su exigencia y no por medio de la presión (lo mismo sucede en la transición de la teta hacia el biberón).
-- A partir del Jardín de Infantes sería ideal que cada nueva etapa esté aislada de las etapas anteriores y de las próximas. Esto permite al educador que en cada etapa pueda ayudar a desarrollar una sociedad homogénea, donde no existan fuertes y débiles.
+- A partir del Jardín de Infantes sería ideal que cada nueva etapa esté aislada de las etapas anteriores y de las próximas. Esto permite al educador que en cada etapa pueda ayudar a desarrollar una sociedad homogénea, donde no existan fuertes y débiles sino complementos.
 - De 3 a 10 años, los más pequeños no corren peligro de absorber las cualidades negativas producto de la "astucia" en crecimiento de los mayores.
-- De 9 a 12 años, los géneros son separados, incluso sus educadores y se les enseña los roles en la vida social primitiva.
-- Desde los 12 años, se les enseñan los roles en la sociedad post moderna, y a participar en los juegos de poder, que realizan los géneros.
+- De 9 a 12 años, los géneros son separados, incluso sus educadores y se les enseña los roles en la vida social basica.
+- Desde los 12 años, se les enseñan los roles tecnicos en la sociedad post moderna, y la naturaleza del genero masculino y femenino con su impacto en la construcción o destrucción de una sociedad en armonia y paz.
 
 2.4.2. Aspectos Específicos:
 ''''''''''''''''''''''''''''
@@ -169,7 +171,7 @@ Para fomentar la competencia en los monopolios naturales, tales como las vías, 
 
 6.2.
 ^^^^
-La función monetaria, de creación del dinero en nuestra moneda UnityCoin, está en los ciudadanos organizados.
+La función monetaria, de creación del dinero en nuestra moneda UnityCoin, está en los ciudadanos organizados. Esto subyuga al Estado a estar siempre por debajo del Ciudadano, ya que es el Ciudadano el que controla el dinero y no el Estado.
 
 6.3.
 ^^^^
@@ -235,7 +237,23 @@ Para evitar el mal uso del ingreso mínimo universal, este se puede otorgar con 
 
 6.6.
 ^^^^
-Todos las organizaciones públicas o privadas y sus productos, que ofrezcan bienes o servicios al público, serán evaluadas semestralmente de forma pública por los ciudadanos, con todos los detalles de quién y cómo se realizó esa evaluación, usando nuestra matriz de Indicadores del Bienestar Mutuo. Los productos mostrarán claramente el resultado de esa evaluación.
+A fin de darle un autentico poder de decisión al Ciudadano, que pueda tomar decisiones informadas al comparar comercios, productos y servicios, se implementan los Indicadores del Bienestar Mutuo, que es una matriz de indicadores desponible al detalle y que para fines prácticos y de rápidez se resumen de forma iconográfica en la etiqueda de los productos.
+
+6.6.1.
+''''''
+La implementación de los Indicadores del Bienestar Mutuo organizados en tres tipos: económicos, humanos y ecológicos. Permite la sana competencia al hacer una comparativa equilibrada de calidad entre productos, eliminando las fallas de una simple comparación de precio, o de una evaluación de calidad subjetiva hecha con criterios no estandard.
+
+6.6.2.
+''''''
+Todas las organizaciones públicas o privadas, que ofrezcan bienes o servicios al público, serán evaluadas semestralmente de forma pública usando la matriz de Indicadores del Bienestar Mutuo. Las organizaciones, los productos y los servicios mostrarán claramente el resultado de esa evaluación.
+
+6.6.3.
+''''''
+Los ciudadanos organizados realizaran de forma pública y alternada la evaluación de los Indicadores del Bienestar Mutuo, con todos los detalles de quién y cómo se realizó esa evaluación.
+
+6.6.3.1.
+""""""""
+Los ciudadanos organizados que realicen la evaluación de los Indicadores del Bienestar Mutuo, recibiran un pago por esta labor de parte del Estado.
 
 6.7.
 ^^^^
@@ -265,23 +283,39 @@ El Estado se automatizará lo máximo posible, sin perder calidad de servicio.  
 
 8.
 ~~
-Empresas y Ciudadanos no pagan impuestos, ni sobre sus beneficios. Los pocos trabajos en labores de Estado (ya que la mayor parte del trabajo lo hacen las máquinas, los robots y las inteligencias artificiales). Se pagaran con dinero aportado voluntariamente por los ciudadanos (justificado al máximo nivel de detalle).
+Los impuestos como mecanismo de recaudación obligatorio son eliminados, Empresas y Ciudadanos no pagan impuestos forzados de ningún tipo.
 
 8.1.
 ^^^^
-Los productos que no deseamos promocionar en la sociedad, tales como alcohol, tabaco y drogas, son desalentados con altos impuestos (tal como se hace hoy en día).  200% 1.000% son valores posibles y se fijan por cada tipo, ejemplo: Alcohol 200%, Cigarros 300%, Marijuana 400%.
+El Estado y los gobiernos locales obtendran ingresos a partir de campañas de recaudación, en las cuales motivaran a los Ciudadanos y Empresas para que hagan donativos, recompensando con honor a los Ciudadanos y Empresas que aporten a las campañas de recaudación.
 
 8.1.1.
 ''''''
-Este dinero recaudado es para programas de educación preventiva sobre el consumo de esos productos.
+Ciudadanos y Empresas no pueden ser obligados o penalizados por no aportar a una campaña de recaudación. 
+
+8.2.
+^^^^
+Los pocos trabajos que existan en el Estado (ya que la mayor parte del trabajo lo hacen las máquinas, los robots y las inteligencias artificiales). Se pagaran con dinero aportado voluntariamente por Ciudadanos y Empresas (justificado por el Estado al máximo nivel de detalle), el Estado hara campaña para recaudar los fondos necesarios.
+
+8.3.
+^^^^
+Los productos que no deseamos promocionar en la sociedad, tales como alcohol, tabaco y drogas suaves o fuertes, pueden ser desalentados con un sobreprecio (tal como se hace hoy en día).  200% - 1000% son valores posibles y se fijan por cada tipo, ejemplo: Alcohol 200%, Cigarros 300%, Marijuana 400%.
+
+8.3.1.
+''''''
+El dinero recaudado por sobreprecio en los comercios es utilizado para programas de educación preventiva sobre los efectos negativos por el consumo de esos productos.
+
+8.3.2.
+''''''
+Si el comercio se reusa a aplicar los sobreprecios a los productos a ser desalentados, tendrá que notificarlo de forma pública y destacada a la sociedad.
 
 9.
 ~~~
-Como al Estado le interesa saber qué cruza las aduanas, se propone un Arancel de importación del 2%, para todo.
+El Ciudadano es el responsable y policia de si mismo, un problema educativo requiere una solucion educativa, el Estado no tiene la autoridad de decirle al Ciudadano que consume o no en su vida privada, el Estado solo informa de los posibles daños que se haga a si mismo o a la comunidad.  Por eso se elimina la persecución de la producción y tráfico de drogas, lo cual solo ha generado mercados clandestinos y corrupción.
 
 10.
 ~~~
-El impuesto a las Sucesiones y Regalías, que se paga cuando un familiar muere y sus bienes pasan a un familiar, o cuando alguien decide regalar un bien a otra persona. Los bienes declarados como principales no pagan impuestos. Para los bienes secundarios será: para el primer grado de consanguinidad 5%, para otros grados 10%, y las regalías igual al 10%.
+A fin de fomentar la libre competencia, se eliminan los Aranceles de importación.
 
 11.
 ~~~
@@ -289,287 +323,267 @@ Los negocios adictivos y altamente lucrativos como el casino y las loterías, pa
 
 12.
 ~~~
-Las localidades, pueden fijar impuestos adicionales a los ya mencionados. Esto para estimular la competencia entre localidades.
+Todo ciudadano puede participar en cualquier organización que maneje dinero, sin requerir licencia de ningún tipo.  Se recomienda la creación de centros de negocios, compuestos de asesores de todo tipo, para procurar el éxito en la implementación de las ideas de negocio, al participar en las ganancias o pérdidas de esos negocios.
 
 13.
 ~~~
-El castigo por evadir impuestos locales, es tanto multas por el doble del dinero evadido, como la pérdida de la mitad de la reputación que tenga el ciudadano o empresa. Si no tiene dinero, paga con trabajo obrero equivalente.
+El planeta tierra le pertenece a toda la vida, y la vida necesita quien se encargue de ella, por eso se cambia el concepto de dueño de la tierra, por guardián de la tierra.
 
 13.1.
 ^^^^^
-Los ciudadanos pueden decidir no pagar impuestos locales. Y debido a que esta actitud daña el pacto social local, tendrán que pagar una penalidad en reputación.
+La propiedad privada es inviolable, a menos que ello sea necesario por un bien común, claramente demostrable y con la debida retribución en dinero y honor.
 
 14.
 ~~~
-Todo ciudadano puede participar en cualquier organización que maneje dinero, sin requerir licencia de ningún tipo.  Se recomienda la creación de centros de negocios, compuestos de asesores de todo tipo, para procurar el éxito en la implementación de las ideas de negocio, al participar en las ganancias o pérdidas de esos negocios.
-
-15.
-~~~
-El planeta tierra le pertenece a toda la vida, y la vida necesita quien se encargue de ella, por eso se cambia el concepto de dueño de la tierra, por guardián de la tierra.
-
-15.1.
-^^^^^
-La propiedad privada es inviolable, a menos que ello sea necesario por un bien común, claramente demostrable y con la debida retribución en dinero y honor.
-
-16.
-~~~
 Para promover la creación de nuevas patentes, y evitar el excesivo proteccionismo de las patentes viejas, se establece que las patentes tendrán una duración de 5 años, prorrogables 2 años si no se implementan en los primeros 5 años.
 
-16.1.
+14.1.
 ^^^^^
 La creación de nuevas patentes, se reconocerá con honor públicamente.
 
-17.
+15.
 ~~~
 El poder Ejecutivo del Estado se implementa a través de dos organizaciones complementarias, el círculo técnico y el circulo de gobierno. Ambas son organizaciones compuestas de ciudadanos, que toman sus decisiones de forma horizontal pero ejecutan sus tareas de forma vertical. Se reúnen periódicamente y son totalmente transparentes, no se permite el anonimato.
 
-17.1.
+15.1.
 ^^^^^
 El círculo técnico, se encarga de la ejecución de las tareas técnicas, basadas en el método científico, y tiene un representante en el círculo de gobierno.
 
-17.2.
+15.2.
 ^^^^^
 El círculo de gobierno, se encarga de los temas relacionados con los ciudadanos, sus necesidades y prioridades. El líder benévolo pertenece a esta organización.
 
-17.3.
+15.3.
 ^^^^^
 Esta organización implementa nuestro mecanismo de toma de decisiones colectivas.  Cada localidad tiene esta misma organización, y se agrupa en localidades mayores (macro localidad) con círculos de gobierno integrados por un representante de cada círculo de gobierno en grupos de hasta 10.
 
-17.3.1.
+15.3.1.
 '''''''
 Las macro localidades cuentan también con un líder benévolo. Y un representante de cada macro localidad se agrupa en macro localidades aún más grandes de hasta 10 representantes.
 
-17.4.
+15.4.
 ^^^^^
-Parte de las funciones del Ejecutivo, es definir y organizar:
+Parte de las funciones de los gerentes del Estado, es asegurar que los siguientes sistemas dispongan de lo necesario para realizar su labor:
 1. El sistema judicial.
 2. El sistema de fuerzas armadas profesionales.
 3. El sistema distribuido de datos públicos.
 4. El sistema de comprobación de denuncias.
-5. Los diversos estándares, importantes para facilitar la competencia.
-6. Las fiestas, que tendrán el propósito de unir e integrar a toda la sociedad.
+5. La creación de estándares, importantes para facilitar la competencia.
+6. Las fiestas, que tendrán el propósito de unir e integrar a toda la sociedad en armonía y paz.
 
-17.4.1.
-'''''''
-Reconociendo que los ciudadanos no estamos preparados para los nuevos sistemas, como primera aproximación en una transición, se puede implementar una copia de los arcaicos sistemas del Estado, evaluando periódicamente (mensual, bimensual, trimestral) ¿qué partes de este sistema funcionan?, ¿qué partes se pueden actualizar ahora?, ¿qué partes se pueden cambiar en la siguiente iteración?
-
-18.
+16.
 ~~~
-Somos un estado de derecho, donde aplicamos la justicia con misericordia, los daños causados son reparados con dinero y honor en proporción al daño causado, y a quien causa el daño. Si el daño es tan severo que sin lugar a dudas no pueda ser reparado, entonces para erradicar este mal en la sociedad se permite la pena capital.
+Somos un estado de derecho, basado en la ley natural, donde aplicamos la justicia con misericordia, los daños causados son reparados con dinero y honor en proporción al daño causado, y a quien causa el daño. Si el daño es tan severo que sin lugar a dudas no pueda ser reparado, entonces para erradicar este mal en la sociedad se permite la pena capital o la expulsión.
 
-18.1.
+16.1.
 ^^^^^
 Todos tienen acceso al sistema de justicia, el cual es pagado por la parte perdedora. Estos costos estarán fijados en horas / hombre.
 
-18.2.
+16.2.
 ^^^^^
-El cuerpo legal está constituido de forma jerárquica: 1- esta constitución, 2- las leyes (generalizaciones) 3- Los contratos tipo (dinámicamente actualizados por los ciudadanos) 4- Los procedimientos (reglamentos) 5- Las recomendaciones. A fin de mantener la libertad, la responsabilidad y el autocontrol, se recomienda la elaboración de recomendaciones en lugar de leyes y reglamentos.
+El cuerpo legal está constituido de forma jerárquica: 1- la ley natural, 2- esta constitución, 3- Las recomendaciones generales 4- Los contratos tipo (dinámicamente actualizados por los ciudadanos) 5- Los procedimientos (reglamentos) 5- Las recomendaciones. A fin de mantener la libertad, la responsabilidad y el autocontrol, se recomienda la elaboración de recomendaciones en lugar de leyes y reglamentos (ya que unica ley es la ley natural).
 
-18.3.
+16.3.
 ^^^^^
 Se entiende que la sociedad está en un estado de mejora continua, por lo tanto se asume esta realidad y el cuerpo legal se aplica considerando la última versión y la diferencia entre versiones.
 
-18.3.1.
+16.3.1.
 '''''''
 Estas modificaciones se anotarán usando la notación SemVer.
 
-18.4.
+16.4.
 ^^^^^
 La definición del sistema judicial incluye su relación con el organismo de investigación criminalístico.
 
-19.
+17.
 ~~~
 El sueldo en el Estado será mínimo de 1 sueldo básico y máximo 3 sueldos básicos. El sector privado no tiene estos límites.
 
-19.1.
-^^^^^
-Los sueldos en el Estado son pagados usando el dinero recogido con los impuestos.
-
-20.
+18.
 ~~~
 Promovemos la cultura, valores e idiomas locales, siempre que no contradigan nuestro Fundamento.
 
-21.
+19.
 ~~~
-Nuestro FUNDAMENTO tiene carácter supremo, y los Artículos sirven para desarrollarlo, en todo caso lo importante es la intención de lo que está escrito y no las palabras con las que está escrito.
+Nuestro Fundamento tiene carácter supremo sobre estos Artículos, que sirven para desarrollar el Fundamento, en todo caso lo importante es la intención de lo que está escrito y no las palabras con las que está escrito.
 
-21.1.
+19.1.
 ^^^^^
-Los fundamentos pueden ser modificados en su redacción pero nunca en su intención.  Los artículos de este pacto social pueden ser modificados en cualquier momento usando el mecanismo de participación colectiva establecido en este pacto social.
+El Fundamento pueden ser modificado en su redacción pero nunca en su intención.  Los artículos de este pacto social pueden ser modificados en cualquier momento usando el mecanismo de participación colectiva establecido en este pacto social.
 
-22.
+20.
 ~~~
 Nuestra nacionalidad se adquiere y se renuncia, por la manifestación pública de la voluntad de cualquier ser o entidad.
 
-22.1.
+20.1.
 ^^^^^
 Para los seres humanos a partir de su mayoría de edad, ó 13 años de edad si sus tutores lo permiten.
 
-22.2.
+20.2.
 ^^^^^
 Para otros seres o entes, a partir del desarrollo de los conceptos de libertad y responsabilidad.
 
-22.2.1.
+20.2.1.
 '''''''
-Cualquier ser o entidad que adopte nuestra nacionalidad, es considerado como cualquier otro ser humano, sin mas limitaciones que las que imponga su propia naturaleza.
+Cualquier ser o entidad que adopte nuestra nacionalidad, es considerado como cualquier otro ser humano, sin más limitaciones que las que imponga su propia naturaleza.
 
-22.3.
+20.3.
 ^^^^^
-Esta manifestación pública, consiste en ingresar sus datos en el registro de identidad, la impresión y firma de los FUNDAMENTOS ó un vídeo donde se lean los FUNDAMENTOS.
+La manifestación pública de nuestra ciudadania, consiste en la impresión y firma del Fundamento ó un vídeo donde se lea el Fundamento.
 
-23.
+21.
 ~~~
 El ciudadano es responsable de sus acciones, tanto las que hace como las que debería hacer y no hace.
 
-24.
+22.
 ~~~
 Todo ciudadano puede participar en cualquier organización pública que desee, siendo su única limitación la impuesta a sí mismo por su capacidad de aporte a dicha organización.
 
-24.1.
+22.1.
 ^^^^^
 Por lo tanto no tenemos partidos políticos, sino grupos de interés.
 
-25.
+23.
 ~~~
-Todo trabajo merece una retribución, ya sea en dinero y / o en honor. El daño a la sociedad merece un castigo en dinero y / o en honor. Si el daño es grave e irreparable, la pena de muerte es posible.
+Todo trabajo merece una retribución, ya sea en dinero y / o en honor.
 
-26.
+24.
 ~~~
 Son los ciudadanos organizados los responsables de la formulación y ejecución de las políticas públicas, pudiendo delegar su poder a gerentes, por períodos cortos renovables.
 
+25.
+~~~
+Los delegados y gerentes públicos, son representantes de los ciudadanos y no de sí mismos, están bajo las órdenes de los ciudadanos organizados y son de libre remoción en cualquier momento.
+
+26.
+~~~
+Transparencia Total, todas las actividades de los organismos públicos, tanto de procesamiento interno como de atención al público, serán accesibles por internet, a fin de garantizar la auditoría pública en tiempo real.
+
 27.
-~~~
-Los delegados públicos, son representantes de los ciudadanos y no de sí mismos, están bajo las órdenes de los ciudadanos organizados y son de libre remoción en cualquier momento.
-
-28.
-~~~
-Transparencia Total, todas las actividades de los entes públicos, tanto de procesamiento interno como de atención al público, serán accesibles por internet, a fin de garantizar la auditoría pública en tiempo real.
-
-29.
 ~~~
 El registro público se llevará de forma criptográfica, con impresión en papel según la conveniencia del ciudadano, su almacenamiento será público y distribuido, para su verificación y acceso en línea en cualquier momento.
 
-29.1.
+27.1.
 ^^^^^
 Este registro distribuido, tendrá las funciones de: registro tradicional, notaría, identificación electrónica (con niveles de dominio de la identidad) y los servicios de confianza (identificación remota, valor probatorio), dando servicio tanto para lo público como para lo privado, si el privado lo solicita y paga por ello.
 
-29.2.
+27.2.
 ^^^^^
 Cuando el almacenamiento en este registro distribuido, se hace de forma asistida (asesoramiento previo) ya sea por un ciudadano certificado (el notario) o una inteligencia artificial, se le agrega el valor y peso de ese acompañamiento.
 
-29.2.1.
+27.2.1.
 '''''''
 Para facilitar este proceso de registro, se crearán una serie de plantillas asistidas, sobre documentos típicos.
 
-30.
+28.
 ~~~
 La identidad digital es aceptada para los trámites públicos, excepto por los específicos que requieren una validación adicional física.
 
-30.1.
+28.1.
 ^^^^^
 La información digital de un ciudadano le pertenece al ciudadano.
 
-30.1.1.
+28.1.1.
 '''''''
 Acceder a información privada de un ciudadano sin razón es una ofensa criminal con pena.
 
-30.2.
+28.2.
 ^^^^^
 La información de registro de empresas y tenencia de la tierra es pública.
 
-30.3.
+28.3.
 ^^^^^
-Los seudónimos, también pueden ser usados como identidades digitales, si están debidamente verificados por el notario o la inteligencia artificial.
+Los seudónimos, también pueden ser usados como identidades digitales, opcionalmente se les puede agregar la verificación del notario, de terceros o la inteligencia artificial.
 
-31.
+29.
 ~~~
-El comportamiento dentro de los espacios privados, es totalmente libre y con reglas claras para todo el que decida libremente participar en ese espacio privado.  Y para mantener esa libertad, sin inducir comportamientos particulares en el público, el comportamiento en los espacios públicos, está dictado por el comportamiento de orden, respeto y jerarquía, que establece la naturaleza biológica (XX y XY).
+El comportamiento dentro de los espacios privados, es totalmente libre y con reglas claras y notorias para todo el que decida libremente participar en ese espacio privado.  El comportamiento en los espacios públicos, está dictado por el comportamiento de orden, respeto y jerarquia natural, propios de una sociedad de armonia y paz.
 
-31.1.
+29.1.
 ^^^^^
-Por lo tanto, públicamente sólo es promovido el modelo familiar de un hombre, una mujer y sus hijos.  Los otros tipos de comportamiento sexual son aceptados y reconocidos, en el mismo nivel de importancia que el modelo natural, dentro de las limitaciones que la naturaleza biológica les imponga.
+Públicamente sólo es promovido el modelo natural de pareja de un hombre y una mujer, naturaleza biológica (XY) y (XX).  Los otros tipos de comportamiento sexual son aceptados y reconocidos, con el mismo nivel de importancia que el modelo natural, y dentro de las limitaciones que la naturaleza biológica les imponga a esos otros tipos de agrupamiento sexual.
 
-31.1.1.
+29.1.1.
 '''''''
 El matrimonio es la unión de un solo hombre con una sola mujer.
 
-31.1.2.
+29.1.2.
 '''''''
-El homonomio es la unión entre dos seres humanos del mismo sexo.
+El homonomio es la unión entre dos seres humanos del mismo sexo biologico.
 
-31.1.3.
+29.1.3.
 '''''''
-Otro tipo de uniones sexuales entre dos o más seres humanos, son igualmente válidas, (todo dentro de los Fundamentos). En caso de ser populares, se les puede asignar una denominación específica (trinomio, multinomio, etc).
+Otro tipo de uniones sexuales entre más de dos seres humanos, son igualmente válidas, (todo dentro del Fundamento). En caso de ser populares, se les puede asignar una denominación específica (trinomio, multinomio, etc).
 
-31.2.
+29.2.
 ^^^^^
-El matrimonio, homonomio, y demás asociaciones sexuales, se basan en nuestros fundamentos, (igualdad de importancia, reconocimiento de diferencias) con las limitaciones y responsabilidades que estas mismas asociaciones sexuales establezcan entre ellos, en sus contratos tipo.
+El matrimonio, homonomio, trinomio, multinomio y demás asociaciones sexuales, se basan en nuestro Fundamento, más las limitaciones y responsabilidades que estas mismas asociaciones sexuales establezcan entre ellos, en sus contratos tipo definidos por ellos mismos.
 
-31.3.
+29.3.
 ^^^^^
 Cada localidad puede generar espacios con sus propias reglas de conducta.
 
-31.4.
+29.4.
 ^^^^^
-Todos los ciudadanos son igualmente importantes, pero a fines de respeto y orden, se reconoce la jerarquía natural: los niños le deben el respeto a sus padres y otros adultos, y los adultos a los ancianos.
+Todos los ciudadanos son igualmente importantes, pero a fines de respeto y orden, se reconoce la jerarquía natural: los niños le deben el respeto a sus padres y a otros adultos, y los adultos a los ancianos.
 
-31.5.
+29.5.
 ^^^^^
 Ciudadanos, organizaciones y empresas son libres de negociar con quien deseen.
 
-32.
+30.
 ~~~
 La mayoridad se asume de forma progresiva:
-- 13 años = Mayoría para ser ciudadano (con la aprobación de los padres) y recibir los castigos por los delitos cometidos.
-- 16 años = Mayoría para la emancipación bajo la aprobación de los padres y votar. Excepto para escoger medicamentos, prostitución, armas, drogas, alcohol, cigarrillos.
-- 18 años = Mayoría excepto para drogas fuertes y armas.
-- 21 años = Mayoría Completa. A los 21 años el desarrollo cerebral ha terminado.
+- 13 años = Mayoridad para ser ciudadano (con la aprobación de los padres) y recibir los castigos por los delitos cometidos.
+- 16 años = Mayoridad para la emancipación bajo la aprobación de los padres y votar. Excepto para escoger medicamentos, prostitución, armas, drogas, alcohol, cigarrillos.
+- 18 años = Mayoridad excepto para drogas fuertes y armas.
+- 21 años = Mayoridad Completa. A los 21 años el desarrollo cerebral básico ha terminado.
 
-33.
+31.
 ~~~
 La comercialización de drogas es aceptada, pero no es promovida públicamente, y sus efectos negativos serán bien explicados en la cadena comercial. En el sistema educativo se explican sus efectos, a partir de los 13 años las drogas suaves como el alcohol y cigarros, y a los 16 años se explican las drogas fuertes.
 
-34.
+32.
 ~~~
-La seguridad física del Estado, depende de los ciudadanos y del Estado, disponiendo de todos los avances tecnológicos.
+La seguridad física del ciudadano depende de los propios ciudadanos y del Estado, disponiendo de todos los avances tecnológicos.
 
-34.1.
+32.1.
 ^^^^^
 Todo ciudadano tiene derecho al uso y porte de armas. Quedan excluidas, las personas con problemas mentales que representen un peligro para la sociedad.
 
-34.1.1.
+32.1.1.
 '''''''
-Se recomienda las armas de disuasión sobre las armas letales.
+Para evitar el uso excesivo de la fuerza, se recomienda el uso de armas que primero tengan un efecto disuasivo y que escalen a efectos letales. 
 
-34.2.
+32.2.
 ^^^^^
-Todas las armas estarán debidamente registradas en el registro público de activos.
+Las armas letales estarán debidamente registradas en el registro público de activos.
 
-34.3.
+32.3.
 ^^^^^
 Cada año, cada ciudadano armado deberá participar en sesiones de seguridad y uso de armas, compartiendo técnicas y experiencias para un mejor servicio social.
 
-34.4.
+32.4.
 ^^^^^
-Las milicias, son ciudadanos armados organizados, que participan en el deber de asegurar la nación.
+Las milicias, son ciudadanos armados organizados, que participan en el deber de asegurar la libertad y responsabilidad en su comunidad.
 
-34.5.
+32.5.
 ^^^^^
-El Ejecutivo conformará grupos profesionales armados, especializados, que coordinará con las milicias.
+Los gerentes públicos conformarán grupos profesionales armados, especializados, que coordinarán sus actividades con las milicias.
 
-34.5.1.
+32.5.1.
 '''''''
-Las fuerzas armadas profesionales, son una organización con el propósito de proteger a los ciudadanos, y apoyar en casos de desastres. Cuando no estén en actividad o entrenamiento, estarán realizando labores de construcción, primero nacional y luego internacionalmente.
+Las fuerzas armadas profesionales, son una organización con el propósito de proteger a los ciudadanos, y apoyar en casos de desastres. Cuando no estén en actividad o entrenamiento, estarán realizando labores de construcción y rescate, primero nacional y luego internacionalmente.
 
-34.6.
+32.6.
 ^^^^^
 Para las armas de guerra, magazines de más de 7 rondas, y municiones de alto poder letal, se requiere de un permiso especial.
 
-34.7.
+32.7.
 ^^^^^
 En el sistema educativo, hombres y mujeres a partir de los 16 años reciben instrucción en defensa personal, y en el manejo y resguardo de armas.
 
-35.
+33.
 ~~~
 Todo ciudadano tiene el deber de acatar y hacer cumplir este pacto social.
 
@@ -580,6 +594,10 @@ DISPOSICIÓN TRANSITORIA
 ~~
 Debido a la imposibilidad de implementar todo este pacto social de una sola vez, se implementará progresivamente, aceptando las limitaciones impuestas por el desarrollo progresivo de nuestro modelo.
 
+2.
+~~
+Reconociendo que los ciudadanos no estamos preparados para los nuevos sistemas, como primera aproximación en una transición, se puede implementar una copia de los arcaicos sistemas del Estado, evaluando periódicamente (mensual, bimensual, trimestral) ¿qué partes de este sistema funcionan?, ¿qué partes se pueden actualizar ahora?, ¿qué partes se pueden cambiar en la siguiente iteración?.
+
 Nota:
 -----
-Debido a la existencia del sueldo básico asegurado, y el ingreso mínimo universal, los conceptos de seguridad social tradicional ya no aplican, tal como: jubilación, paro forzoso, despido injustificado, etc.
+Debido a la existencia del sueldo básico asegurado, y el ingreso mínimo universal, los conceptos de seguridad social y cargas sociales ya no aplican, tal como: jubilación, paro forzoso, despido injustificado, etc.
