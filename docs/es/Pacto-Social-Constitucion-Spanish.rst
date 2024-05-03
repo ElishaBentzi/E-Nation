@@ -52,7 +52,7 @@ Reconocemos la existencia de los virus mentales y los traumas, y que la formaci�
 
 *Definición:*
 
-**Virus Mental:** Creencia que limita el desarrollo del ser humano. Los virus mentales pueden transmitirse entre las mentes de las personas o pueden ser absorvidos por la mente de medios audio visuales que los contengan, a proposito, por desconocimiento o por confusión. Muchos virus mentales son paradigmas que se vuelven obsoletos con el avance del desarrollo humano.
+**Virus Mental:** Creencia que limita el desarrollo del ser humano. Los virus mentales pueden transmitirse entre las mentes de las personas o pueden ser absorvidos por la mente de medios audio visuales que los contengan, a proposito, por desconocimiento o por confusión. Muchos virus mentales son paradigmas que se volvieron obsoletos con el avance del desarrollo humano.
 
 2.2.
 ^^^^
@@ -74,7 +74,7 @@ Los centros educativos serán evaluados públicamente con los indicadores del Bi
 
 2.4.
 ^^^^
-Se recomienda el aprendizaje escalonado, siguiendo el desarrollo de la historia de la humanidad.
+Se recomienda el aprendizaje escalonado, siguiendo el desarrollo de la humanidad.
 
 2.4.1. Aspectos Generales:
 ''''''''''''''''''''''''''
@@ -152,7 +152,7 @@ Se promueven eventos para pagar con honor, dando reconocimientos públicos. Esto
 
 6.
 ~~
-Nuestro sistema económico es el Capitalismo Circular de mercado. Con Transparencia total, y detallada en tiempo real para la actividades de los entes públicos.
+Nuestro sistema económico es el Capitalismo Circular de mercado. Con Transparencia total de las actividades de los organismos públicos, al maximo detalle en tiempo real.
 
 6.1.
 ^^^^
@@ -171,7 +171,7 @@ Para fomentar la competencia en los monopolios naturales, tales como las vías, 
 
 6.2.
 ^^^^
-La función monetaria, de creación del dinero en nuestra moneda UnityCoin, está en los ciudadanos organizados. Esto subyuga al Estado a estar siempre por debajo del Ciudadano, ya que es el Ciudadano el que controla el dinero y no el Estado.
+La función monetaria, de creación del dinero en nuestra moneda UnityCoin, está en los ciudadanos organizados. Esto subyuga al Estado a estar siempre por debajo del Ciudadano, ya que es el Ciudadano el que controla la creación y uso del dinero y no el Estado.
 
 6.3.
 ^^^^
@@ -195,11 +195,11 @@ Como el sistema de producción de bienes y servicios requiere de una inyección 
 
 6.5.1.
 ''''''
-El estado se encargará de dar un ingreso mínimo universal a cada ciudadano. Excepto a aquellos ciudadanos que reciban un sueldo básico asegurado (Artículo 7) como el caso de los que trabajan para el Estado.
+El estado se encargará de dar un ingreso mínimo universal a cada ciudadano. Excepto a aquellos ciudadanos que reciban un sueldo del sector privado o un sueldo básico asegurado (Artículo 7) como el caso de los que trabajan para el Estado.
 
 *Definición:*
 
-**Ingreso Mínimo Universal:** la cantidad de dinero mensual que necesita una persona para sobrevivir. Estamos hablando de que con esa cantidad, la persona puede pagar sus gastos de: comida, servicios básicos (agua, electricidad, teléfono, internet) y salud.
+**Ingreso Mínimo Universal:** la cantidad de dinero mensual que necesita una persona para sobrevivir. Con esta cantidad de dinero, la persona puede pagar sus gastos de: comida, servicios básicos (agua, electricidad, teléfono, internet) salud e higiene.
 
 6.5.1.1.
 """"""""
@@ -223,7 +223,7 @@ A fin de favorecer el desarrollo natural de los niños, el monto sube al 60%, si
 
 6.5.1.4.
 """"""""
-A fin de favorecer la agrupación generacional, los hijos que viven con padres mayores de 60 años, reciben 5% adicional por cada padre que viva con ellos.
+A fin de favorecer la agrupación transgeneracional, los hijos que viven con padres mayores de 60 años, reciben 5% adicional por cada padre que viva con ellos.
 
 6.5.1.5.
 """"""""
@@ -237,11 +237,11 @@ Para evitar el mal uso del ingreso mínimo universal, este se puede otorgar con 
 
 6.6.
 ^^^^
-A fin de darle un autentico poder de decisión al Ciudadano, que pueda tomar decisiones informadas al comparar comercios, productos y servicios, se implementan los Indicadores del Bienestar Mutuo, que es una matriz de indicadores desponible al detalle y que para fines prácticos y de rápidez se resumen de forma iconográfica en la etiqueda de los productos.
+A fin de darle un autentico poder de decisión al Ciudadano, que pueda tomar decisiones informadas al comparar comercios, productos y servicios, se implementan los Indicadores del Bienestar Mutuo, que es una matriz de indicadores desponible al detalle y que para fines prácticos y de rápidez, se resumen de forma iconográfica en la etiqueda de los productos.
 
 6.6.1.
 ''''''
-La implementación de los Indicadores del Bienestar Mutuo organizados en tres tipos: económicos, humanos y ecológicos. Permite la sana competencia al hacer una comparativa equilibrada de calidad entre productos, eliminando las fallas de una simple comparación de precio, o de una evaluación de calidad subjetiva hecha con criterios no estandard.
+La implementación de los Indicadores del Bienestar Mutuo organizados en tres tipos: económicos, humanos y ecológicos. Promueve la sana competencia al hacer una comparativa equilibrada de calidad entre productos, eliminando las fallas de una simple comparación de precio, o de una evaluación de calidad subjetiva hecha con criterios no estandard.
 
 6.6.2.
 ''''''
@@ -271,19 +271,19 @@ Se establece el sueldo básico asegurado, el estado se encarga de asegurar la ex
 
 **Trabajo:** Es todo aquello que hace un ciudadano para ganar dinero u honor, favoreciendo a la sociedad y la naturaleza.
 
-**Sueldo Básico Asegurado:** Es la cantidad de dinero mensual que necesita una persona para cubrir todas sus necesidades, pero no los lujos. Estamos hablando de que con esta cantidad, la persona puede pagar sus gastos de: comida, servicios básicos (agua, electricidad, teléfono), salud, higiene, internet, vivienda y transporte.
+**Sueldo Básico Asegurado:** Es la cantidad de dinero mensual que necesita una persona para cubrir todas sus necesidades, pero no los lujos. Incluye todo lo cubre el Ingreso Mínimo Universal más vivienda y transporte.
 
 7.1.
 ^^^^
-Ciudadanos, empresas y demás organizaciones generadoras de productos o servicios, que benefician a la sociedad y a la naturaleza, no son agencias de empleo y son libres de comerciar con quienes deseen.
+Ciudadanos, empresas y demás organizaciones generadoras de productos o servicios, que benefician a la sociedad y a la naturaleza, no son agencias de empleo, por lo tanto pueden despedir a los trabajores en cualquier momento, y son libres de comerciar con quienes deseen.
 
 7.2.
 ^^^^
-El Estado se automatizará lo máximo posible, sin perder calidad de servicio.  Así la cantidad de horas laborables deberá de disminuir continuamente, y los beneficios de esta eficiencia tecnológica (herencia cultural) son transferidas automáticamente a toda la población mediante precios más bajos.
+El Estado se automatizará lo máximo posible, sin perder calidad de servicio.  Así la cantidad de horas laborables deberá de disminuir continuamente, y los beneficios de esta eficiencia tecnológica (herencia cultural) son transferidas automáticamente a toda la población mediante precios más bajos y servicios mas rápidos.
 
 8.
 ~~
-Los impuestos como mecanismo de recaudación obligatorio son eliminados, Empresas y Ciudadanos no pagan impuestos forzados de ningún tipo.
+Los impuestos como mecanismo de recaudación obligatorio son prohibited, Empresas y Ciudadanos no pueden ser forzados a pagar impuestos de ningún tipo.
 
 8.1.
 ^^^^
@@ -373,7 +373,7 @@ Parte de las funciones de los gerentes del Estado, es asegurar que los siguiente
 
 16.
 ~~~
-Somos un estado de derecho, basado en la ley natural, donde aplicamos la justicia con misericordia, los daños causados son reparados con dinero y honor en proporción al daño causado, y a quien causa el daño. Si el daño es tan severo que sin lugar a dudas no pueda ser reparado, entonces para erradicar este mal en la sociedad se permite la pena capital o la expulsión.
+Somos un estado de derecho, basado en la ley natural, donde aplicamos la justicia con misericordia, los daños causados son reparados con dinero y honor en proporción al daño causado, y a quien causa el daño. Si el daño es tan severo que sin lugar a dudas no pueda ser reparado, entonces para erradicar este mal de la sociedad se permite la pena capital o la expulsión.
 
 16.1.
 ^^^^^
@@ -381,7 +381,13 @@ Todos tienen acceso al sistema de justicia, el cual es pagado por la parte perde
 
 16.2.
 ^^^^^
-El cuerpo legal está constituido de forma jerárquica: 1- la ley natural, 2- esta constitución, 3- Las recomendaciones generales 4- Los contratos tipo (dinámicamente actualizados por los ciudadanos) 5- Los procedimientos (reglamentos) 5- Las recomendaciones. A fin de mantener la libertad, la responsabilidad y el autocontrol, se recomienda la elaboración de recomendaciones en lugar de leyes y reglamentos (ya que unica ley es la ley natural).
+El cuerpo legal está constituido de forma jerárquica: 
+1- la ley natural.
+2- esta constitución.
+3- Las recomendaciones generales.
+4- Los contratos tipo (dinámicamente actualizados por los ciudadanos).
+5- Los procedimientos (reglamentos).
+A fin de mantener la libertad, la responsabilidad y el autocontrol, se recomienda la elaboración de recomendaciones en lugar de leyes y reglamentos (ya que unica ley es la ley natural y lo demás son opiniones).
 
 16.3.
 ^^^^^
@@ -397,7 +403,7 @@ La definición del sistema judicial incluye su relación con el organismo de inv
 
 17.
 ~~~
-El sueldo en el Estado será mínimo de 1 sueldo básico y máximo 3 sueldos básicos. El sector privado no tiene estos límites.
+El sueldo en el Estado será mínimo de 1 sueldo básico garantizado y máximo 3 sueldos básicos garantizados. El sector privado no tiene estos límites.
 
 18.
 ~~~
@@ -417,7 +423,7 @@ Nuestra nacionalidad se adquiere y se renuncia, por la manifestación pública d
 
 20.1.
 ^^^^^
-Para los seres humanos a partir de su mayoría de edad, ó 13 años de edad si sus tutores lo permiten.
+Para los seres humanos a partir de su mayoría de edad, ó 13 años de edad si sus padres (tutores) lo permiten.
 
 20.2.
 ^^^^^
@@ -457,11 +463,11 @@ Los delegados y gerentes públicos, son representantes de los ciudadanos y no de
 
 26.
 ~~~
-Transparencia Total, todas las actividades de los organismos públicos, tanto de procesamiento interno como de atención al público, serán accesibles por internet, a fin de garantizar la auditoría pública en tiempo real.
+Transparencia Total, todas las actividades de los organismos públicos, tanto de procesamiento interno como de atención al público, serán accesibles por internet y almacenados con tecnologia de cadena de bloques, a fin de garantizar la auditoría pública en tiempo real.
 
 27.
 ~~~
-El registro público se llevará de forma criptográfica, con impresión en papel según la conveniencia del ciudadano, su almacenamiento será público y distribuido, para su verificación y acceso en línea en cualquier momento.
+El registro público se llevará de forma criptográfica y almacenados con tecnologia de cadena de bloques, con impresión en papel según la conveniencia del ciudadano, su almacenamiento será público y distribuido, para su auditoria, verificación y acceso en línea en cualquier momento.
 
 27.1.
 ^^^^^
@@ -469,7 +475,7 @@ Este registro distribuido, tendrá las funciones de: registro tradicional, notar
 
 27.2.
 ^^^^^
-Cuando el almacenamiento en este registro distribuido, se hace de forma asistida (asesoramiento previo) ya sea por un ciudadano certificado (el notario) o una inteligencia artificial, se le agrega el valor y peso de ese acompañamiento.
+Cuando el almacenamiento en este registro distribuido, se hace de forma asistida (asesoramiento previo) ya sea por un ciudadano certificado, por un notario o una inteligencia artificial, se le agrega el valor y peso de ese acompañamiento.
 
 27.2.1.
 '''''''
@@ -493,11 +499,11 @@ La información de registro de empresas y tenencia de la tierra es pública.
 
 28.3.
 ^^^^^
-Los seudónimos, también pueden ser usados como identidades digitales, opcionalmente se les puede agregar la verificación del notario, de terceros o la inteligencia artificial.
+Los seudónimos, también pueden ser usados como identidades digitales, opcionalmente se les puede agregar la verificación de un ciudadano certificado, de un notario, o de una inteligencia artificial.
 
 29.
 ~~~
-El comportamiento dentro de los espacios privados, es totalmente libre y con reglas claras y notorias para todo el que decida libremente participar en ese espacio privado.  El comportamiento en los espacios públicos, está dictado por el comportamiento de orden, respeto y jerarquia natural, propios de una sociedad de armonia y paz.
+El comportamiento dentro de los espacios privados, es totalmente libre y con reglas claramente expuestas para todo el que decida libremente participar en ese espacio privado.  El comportamiento en los espacios públicos, está dictado por el comportamiento de orden, respeto y jerarquia natural, propios de una sociedad de armonia y paz.
 
 29.1.
 ^^^^^
@@ -517,7 +523,7 @@ Otro tipo de uniones sexuales entre más de dos seres humanos, son igualmente v�
 
 29.2.
 ^^^^^
-El matrimonio, homonomio, trinomio, multinomio y demás asociaciones sexuales, se basan en nuestro Fundamento, más las limitaciones y responsabilidades que estas mismas asociaciones sexuales establezcan entre ellos, en sus contratos tipo definidos por ellos mismos.
+El matrimonio, homonomio, trinomio, multinomio y demás asociaciones sexuales, se limitan a nuestro Fundamento, más las limitaciones y responsabilidades que estas mismas asociaciones sexuales establezcan entre ellos, en sus contratos tipo definidos por ellos mismos.
 
 29.3.
 ^^^^^
@@ -527,21 +533,17 @@ Cada localidad puede generar espacios con sus propias reglas de conducta.
 ^^^^^
 Todos los ciudadanos son igualmente importantes, pero a fines de respeto y orden, se reconoce la jerarquía natural: los niños le deben el respeto a sus padres y a otros adultos, y los adultos a los ancianos.
 
-29.5.
-^^^^^
-Ciudadanos, organizaciones y empresas son libres de negociar con quien deseen.
-
 30.
 ~~~
 La mayoridad se asume de forma progresiva:
 - 13 años = Mayoridad para ser ciudadano (con la aprobación de los padres) y recibir los castigos por los delitos cometidos.
 - 16 años = Mayoridad para la emancipación bajo la aprobación de los padres y votar. Excepto para escoger medicamentos, prostitución, armas, drogas, alcohol, cigarrillos.
 - 18 años = Mayoridad excepto para drogas fuertes y armas.
-- 21 años = Mayoridad Completa. A los 21 años el desarrollo cerebral básico ha terminado.
+- 21 años = Mayoridad Completa.
 
 31.
 ~~~
-La comercialización de drogas es aceptada, pero no es promovida públicamente, y sus efectos negativos serán bien explicados en la cadena comercial. En el sistema educativo se explican sus efectos, a partir de los 13 años las drogas suaves como el alcohol y cigarros, y a los 16 años se explican las drogas fuertes.
+La venta de drogas es aceptada, pero no es promovida públicamente, y sus efectos negativos serán bien explicados en la cadena comercial. En el sistema educativo se explican sus efectos, a partir de los 13 años las drogas suaves como el alcohol y cigarros, y a los 16 años se explican las drogas fuertes.
 
 32.
 ~~~
@@ -565,7 +567,7 @@ Cada año, cada ciudadano armado deberá participar en sesiones de seguridad y u
 
 32.4.
 ^^^^^
-Las milicias, son ciudadanos armados organizados, que participan en el deber de asegurar la libertad y responsabilidad en su comunidad.
+Las milicias son ciudadanos armados organizados, que participan en el deber de velar por la libertad y seguridad de los ciudadanos.
 
 32.5.
 ^^^^^
