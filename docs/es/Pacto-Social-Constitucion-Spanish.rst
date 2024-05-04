@@ -195,7 +195,7 @@ Como el sistema de producción de bienes y servicios requiere de una inyección 
 
 6.5.1.
 ''''''
-El estado se encargará de dar un ingreso mínimo universal a cada ciudadano. Excepto a aquellos ciudadanos que reciban un sueldo del sector privado o un sueldo básico asegurado (Artículo 7) como el caso de los que trabajan para el Estado.
+El estado se encargará de dar un ingreso mínimo universal a cada ciudadano. Excepto a aquellos ciudadanos que reciban un sueldo del sector privado, sector público o un sueldo básico asegurado (Artículo 7).
 
 *Definición:*
 
@@ -275,9 +275,13 @@ Se establece el sueldo básico asegurado, el estado se encarga de asegurar la ex
 
 7.1.
 ^^^^
-Ciudadanos, empresas y demás organizaciones generadoras de productos o servicios, que benefician a la sociedad y a la naturaleza, no son agencias de empleo, por lo tanto pueden despedir a los trabajores en cualquier momento, y son libres de comerciar con quienes deseen.
+El dinero para pagar el Ingreso Minimo Universal o el Sueldo Basico Asegurado, sera creado por el Estado como valor, sin generación de una contraparte de deuda.
 
 7.2.
+^^^^
+Ciudadanos, empresas y demás organizaciones generadoras de productos o servicios, que benefician a la sociedad y a la naturaleza, no son agencias de empleo, por lo tanto pueden despedir a los trabajores en cualquier momento, y son libres de comerciar con quienes deseen.
+
+7.3.
 ^^^^
 El Estado se automatizará lo máximo posible, sin perder calidad de servicio.  Así la cantidad de horas laborables deberá de disminuir continuamente, y los beneficios de esta eficiencia tecnológica (herencia cultural) son transferidas automáticamente a toda la población mediante precios más bajos y servicios mas rápidos.
 
