@@ -195,7 +195,7 @@ As the system of production of goods and services requires a continuous injectio
 
 6.5.1.
 ''''''
-The state will be responsible for providing a universal minimum income to each citizen. Except for those citizens who receive a salary from the private sector or a guaranteed basic salary (Article 7) as is the case of those who work for the State.
+The state will be responsible for providing a universal minimum income to each citizen. Except for those citizens who receive a salary from the private sector, public sector or a guaranteed basic salary (Article 7).
 
 *Definition:*
 
@@ -275,9 +275,13 @@ The Guaranteed Basic Salary is established, the State is responsible for ensurin
 
 7.1.
 ^^^^
-Citizens, companies and other organizations that generate products or services that benefit society and nature are not employment agencies, therefore they can fire workers at any time, and are free to trade with whoever they wish.
+The money to pay the Universal Minimum Income or the Guaranteed Basic Salary will be created by the State as value, without the generation of a debt counterpart.
 
 7.2.
+^^^^
+Citizens, companies and other organizations that generate products or services that benefit society and nature are not employment agencies, therefore they can fire workers at any time, and are free to trade with whoever they wish.
+
+7.3.
 ^^^^
 The State will be automated as much as possible, without losing quality of service. Thus the number of working hours must continually decrease, and the benefits of this technological efficiency (cultural heritage) are automatically transferred to the entire population through lower prices and faster service.
 
