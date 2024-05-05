@@ -1,1 +1,4 @@
-12345
+.wy-side-nav-search>a img.logo, .wy-side-nav-search .wy-dropdown>a img.logo {
+    border-radius: 105px;
+    background: White;
+}
