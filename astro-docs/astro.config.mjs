@@ -46,6 +46,7 @@ export default defineConfig({
       locales: {
         root: { label: 'Espanol', lang: 'es' },
         en: { label: 'English', lang: 'en' },
+        fr: { label: 'Francais', lang: 'fr' },
       },
       // Tokens de marca compartidos con el sitio. Viven en brand/ para que las
       // dos apps consuman los mismos valores medidos y ninguna derive.

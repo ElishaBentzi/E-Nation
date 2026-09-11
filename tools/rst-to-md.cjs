@@ -41,11 +41,15 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const OUT = path.join(ROOT, 'astro-docs', 'src', 'content', 'docs');
 
-// loc -> { src, index, route }
+// loc -> { src, index, slug, suffix, titleFallback, docDesc, idxDesc }
 // El SLUG es el mismo en todos los idiomas (ver la nota en astro-docs/astro.config.mjs):
 // Starlight construye los hreflang reutilizando el slug por idioma y Astro no
 // soporta slugs traducidos por configuracion. En los docs no hay equity que
 // perder porque las URLs indexadas eran las .html de RTD, que se redirigen.
+//
+// LA META DESCRIPTION VA POR IDIOMA. Antes se fijaba la misma cadena para los
+// dos y el ingles quedaba con la description en espanol, que es lo que Google
+// muestra en los resultados de busqueda.
 const SLUG = 'pacto-social';
 const DOCS = [
   {
@@ -55,6 +59,8 @@ const DOCS = [
     slug: SLUG,
     suffix: /en \*\*Español\*\*$/i,
     titleFallback: 'Constitución de E-Nation',
+    docDesc: 'Pacto Social de E-Nation — Worldwide Physical Distributed Nation',
+    idxDesc: 'Documentación del Pacto Social de E-Nation',
   },
   {
     loc: 'en',
@@ -63,6 +69,8 @@ const DOCS = [
     slug: SLUG,
     suffix: /in \*\*English\*\*$/i,
     titleFallback: "E-Nation's Constitution",
+    docDesc: "E-Nation's Social Pact — Worldwide Physical Distributed Nation",
+    idxDesc: "E-Nation's Social Pact documentation",
   },
 ];
 
@@ -130,11 +138,28 @@ function convert(rst) {
 }
 
 function landing(rst) {
-  // El index.rst es la pagina de bienvenida: titulo, lema, logo y selector.
+  // El index.rst es la pagina de bienvenida: titulo, lema, parrafo, logo y la
+  // lista de idiomas.
+  //
+  // DOS COSAS QUE NO SE COPIAN:
+  //
+  // 1. La lista de idiomas (`* English`, `* Español` apuntando a readthedocs) NO
+  //    se reproduce. Es navegacion, no contenido, y Starlight ya trae su propio
+  //    selector que ademas es mejor: lleva a la MISMA pagina en el otro idioma,
+  //    no solo al inicio. Mantenerla seria ademas incrustar URLs dentro de texto
+  //    traducible, que se rompe en cuanto cambie una ruta.
+  //
+  // 2. El cuerpo se corta en la frase que introduce esa lista, porque si no
+  //    quedaria una frase huerfana anunciando unos enlaces que ya no estan.
+  //
+  // Y OJO: el cuerpo pasa por `inline()`. Sin eso, los enlaces RST salian sin
+  // convertir y se veian como texto literal con backticks en la web.
   const lines = rst.split(/\r?\n/);
   let title = null;
   const body = [];
+  let cortado = false;
   for (let i = 0; i < lines.length; i++) {
+    if (cortado) break;
     const line = lines[i];
     const next = lines[i + 1];
     if (next && isUnderlineLine(next) && line.trim()) {
@@ -145,15 +170,14 @@ function landing(rst) {
     }
     if (isUnderlineLine(line)) continue;
     if (line.trim() === '-----') continue;
-    if (line.trim().startsWith('.. toctree::')) break; // el toctree lo sustituye el sidebar
+    if (line.trim().startsWith('.. toctree::')) break;
+    if (/idiomas:|languages:/i.test(line)) break; // aqui empieza la lista de idiomas
     if (line.trim().startsWith('.. image::')) {
-      // imagen del logo: se reescribe a la ruta local del sitio de docs
-      const m = line.trim().match(/^\.\. image::\s*(.+)$/);
-      if (m) body.push(`![E-Nation logo](/e-nation300x300.png)`);
+      body.push('![E-Nation logo](/e-nation300x300.png)');
       continue;
     }
-    if (line.trim().startsWith(':height:') || line.trim().startsWith(':width:') || line.trim().startsWith(':align:')) continue;
-    body.push(line);
+    if (/^:(height|width|align):/.test(line.trim())) continue;
+    body.push(inline(line));
   }
   return { title, body: body.join('\n').replace(/\n{3,}/g, '\n\n').trim() };
 }
@@ -170,17 +194,15 @@ for (const d of DOCS) {
   const dir = d.loc === 'es' ? OUT : path.join(OUT, d.loc);
   fs.mkdirSync(dir, { recursive: true });
 
-  const page = `---\ntitle: ${JSON.stringify(cleanTitle).replace(/^"|"$/g, '"')}\ndescription: ${JSON.stringify('Pacto Social de E-Nation — Worldwide Physical Distributed Nation')}\n---\n\n${body}\n`;
+  const page = `---\ntitle: ${JSON.stringify(cleanTitle)}\ndescription: ${JSON.stringify(d.docDesc)}\n---\n\n${body}\n`;
   fs.writeFileSync(path.join(dir, `${d.slug}.md`), page, 'utf8');
 
+  // El landing ya no lleva la lista de idiomas: ver la nota en landing().
   const idx = fs.readFileSync(path.join(ROOT, d.index), 'utf8');
   const L = landing(idx);
-  // Reescribe los enlaces de idioma que apuntan a readthedocs
-  const idxBody = L.body.replace(/\[([^\]]+)\]\(http:\/\/e-nation\.readthedocs\.io\/(en|es)\/latest\/\)/g,
-    (_m, label, lang) => `[${label}](${lang === 'es' ? '/' : '/' + lang + '/'})`);
-  const indexPage = `---\ntitle: ${JSON.stringify(L.title || 'E-Nation')}\ndescription: ${JSON.stringify('Documentación del Pacto Social de E-Nation')}\n---\n\n${idxBody}\n`;
+  const indexPage = `---\ntitle: ${JSON.stringify(L.title || 'E-Nation')}\ndescription: ${JSON.stringify(d.idxDesc)}\n---\n\n${L.body}\n`;
   fs.writeFileSync(path.join(dir, 'index.md'), indexPage, 'utf8');
 
-  console.log(`${d.loc}: ${d.slug}.md (${body.length} bytes, titulo "${cleanTitle}") + index.md (${idxBody.length} bytes)`);
+  console.log(`${d.loc}: ${d.slug}.md (${body.length} bytes, titulo "${cleanTitle}") + index.md (${L.body.length} bytes)`);
 }
 console.log('\nConversion terminada.');

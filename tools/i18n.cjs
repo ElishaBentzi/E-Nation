@@ -37,7 +37,13 @@ const ROOT = path.resolve(__dirname, '..');
 const DOCS = path.join(ROOT, 'astro-docs', 'src', 'content', 'docs');
 const TM_DIR = path.join(ROOT, 'astro-docs', 'src', 'i18n', 'tm');
 
-const PAGES = [{ slug: 'pacto-social', locales: ['en', 'fr'] }];
+// Paginas de los docs. `index` es el landing de bienvenida de cada idioma: sin
+// el, /fr/ daria 404 y el selector de idioma apuntaria a un enlace roto, porque
+// Starlight enlaza al inicio del idioma, no a la pagina que estas viendo.
+const PAGES = [
+  { slug: 'pacto-social', locales: ['en', 'fr'] },
+  { slug: 'index', locales: ['en', 'fr'] },
+];
 const DEFAULT_LOCALE = 'es';
 
 const esSoloNumeracion = (t) => /^[0-9]+(\.[0-9]+)*\.?$/.test(t.trim());
@@ -107,7 +113,11 @@ function parse(md) {
   return { fm, bloques, unidades: fmUnits.concat(unidades) };
 }
 
-const clave = (u) => sha1(`${u.seccion}\u0000${u.kind}\u0000${u.texto}`);
+// La CLAVE incluye la pagina ademas de la seccion. Sin el slug, el landing y el
+// Pacto colisionarian: los dos tienen unidades en la seccion 0 y 1, y una cadena
+// corta que se repitiese en ambos recibiria una sola traduccion para los dos
+// sitios, que puede no ser la correcta.
+const clave = (u, slug) => sha1(`${slug}\u0000${u.seccion}\u0000${u.kind}\u0000${u.texto}`);
 
 // ---------------------------------------------------------------------------
 // Memoria
@@ -143,7 +153,7 @@ function status() {
       const tm = cargarTM(locale);
       let ok = 0, ausentes = 0, sinRevisar = 0;
       for (const u of src.unidades) {
-        const e = tm.get(clave(u));
+        const e = tm.get(clave(u, page.slug));
         if (!e || !e.target) { ausentes++; continue; }
         ok++;
         if (!e.reviewed) sinRevisar++;
@@ -205,17 +215,20 @@ function importar(locale, archivo, method, reviewed, slug) {
     process.exit(1);
   }
 
-  const tm = new Map();
+  // Se MEZCLA con lo que ya hubiera en la memoria de ese idioma. Reemplazarla
+  // entera borraria las traducciones de las demas paginas: importar el landing
+  // se llevaria por delante el Pacto.
+  const tm = cargarTM(locale);
   for (let i = 0; i < es.unidades.length; i++) {
     const u = es.unidades[i], t = trad.unidades[i];
-    tm.set(clave(u), {
-      key: clave(u), seccion: u.seccion, kind: u.kind,
+    tm.set(clave(u, slug), {
+      key: clave(u, slug), pagina: slug, seccion: u.seccion, kind: u.kind,
       source: u.texto, target: t.texto,
       method, reviewed,
     });
   }
   guardarTM(locale, tm);
-  console.log(`${locale}: ${tm.size} entradas importadas de ${path.relative(ROOT, archivo)} (method=${method}, reviewed=${reviewed})`);
+  console.log(`${locale}/${slug}: ${es.unidades.length} entradas importadas de ${path.relative(ROOT, archivo)} (method=${method}, reviewed=${reviewed})`);
 }
 
 // ---------------------------------------------------------------------------
@@ -245,7 +258,7 @@ function render(locale, page) {
   const fm = {};
   for (const u of src.unidades) {
     if (u.seccion !== -1) continue;
-    fm[u.campo] = (tm.get(clave(u)) || {}).target || u.texto;
+    fm[u.campo] = (tm.get(clave(u, page.slug)) || {}).target || u.texto;
   }
   for (const campo of Object.keys(src.fm)) {
     if (!(campo in fm)) fm[campo] = src.fm[campo];
@@ -263,13 +276,13 @@ function render(locale, page) {
       continue;
     }
     const unidad = unidadPorIndice(src, b.indice);
-    const e = tm.get(clave(unidad));
+    const e = tm.get(clave(unidad, page.slug));
     partes.push((b.prefijo || '') + (e && e.target ? e.target : unidad.texto));
     ultimoRaw = null;
   }
 
   const salida = partes.join('\n').replace(/\n{3,}/g, '\n\n').replace(/^\n+/, '') + '\n';
-  const usadas = src.unidades.filter((u) => { const e = tm.get(clave(u)); return e && e.target; }).length;
+  const usadas = src.unidades.filter((u) => { const e = tm.get(clave(u, page.slug)); return e && e.target; }).length;
   return { salida, usadas, total: src.unidades.length };
 }
 
@@ -354,13 +367,19 @@ else if (cmd === 'seed') seed();
 else if (cmd === 'import') {
   const locale = process.argv[3];
   const archivo = process.argv[4];
+  const slug = process.argv[5] || PAGES[0].slug;
   if (!locale || !archivo) {
-    console.log('uso: node tools/i18n.cjs import <locale> <ruta-al-md-traducido>');
+    console.log('uso: node tools/i18n.cjs import <locale> <ruta-al-md-traducido> [slug]');
+    console.log(`  slug por defecto: ${PAGES[0].slug}. Disponibles: ${PAGES.map((p) => p.slug).join(', ')}`);
+    process.exit(2);
+  }
+  if (!PAGES.some((p) => p.slug === slug)) {
+    console.log(`slug desconocido: ${slug}. Disponibles: ${PAGES.map((p) => p.slug).join(', ')}`);
     process.exit(2);
   }
   const abs = path.isAbsolute(archivo) ? archivo : path.join(ROOT, archivo);
   if (!fs.existsSync(abs)) { console.log(`no existe el archivo: ${abs}`); process.exit(2); }
-  importar(locale, abs, 'ia', false, PAGES[0].slug);
+  importar(locale, abs, 'ia', false, slug);
 }
 else if (cmd === 'build') build(process.argv[3] || 'en');
 else if (cmd === 'check') check();
