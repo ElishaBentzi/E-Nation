@@ -1,0 +1,19 @@
+{
+  "name": "e-nation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sitio y documentacion de E-Nation: scripts de build, i18n y extraccion",
+  "type": "module",
+  "scripts": {
+    "i18n:status": "node tools/i18n.cjs status",
+    "i18n:seed": "node tools/i18n.cjs seed",
+    "i18n:build": "node tools/i18n.cjs build",
+    "i18n:check": "node tools/i18n.cjs check",
+    "docs:convert": "node tools/rst-to-md.cjs",
+    "docs:analyze": "node tools/analyze-docs.cjs",
+    "docs:compare": "node tools/compare-docs-text.cjs",
+    "docs:align": "node tools/i18n-align-check.cjs",
+    "docs:dev": "npm --prefix astro-docs run dev",
+    "docs:build": "npm --prefix astro-docs run build"
+  }
+}

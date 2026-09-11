@@ -38,8 +38,10 @@ Phase 3: Docs — Starlight, i18n y deploy — `in_progress`
 ### Phase 3: Docs — Starlight, i18n y deploy (ensayo general)
 - [x] `astro-docs/` con Starlight: Astro 7.3.2 + Starlight 0.42.0, ES por defecto en la raíz y EN bajo prefijo, Pagefind, `brand/tokens.css` compartido
 - [x] Build verificado: 5 páginas, búsqueda indexada, `_redirects` copiado, marca aplicada, hreflang y canonical correctos
-- [ ] `tools/` de i18n: memoria de traducción, `i18n-status.mjs` (exit 1 si hay ausentes u obsoletas), generación de locales
-- [ ] FR generado desde la memoria y declarado en la config
+- [x] `tools/i18n.cjs` con memoria de traducción, `status` (exit 1 si hay ausentes), `seed`, `build` y `check`; scripts en el `package.json` raíz
+- [x] Alineación ES↔EN medida: 130 secciones y 201 unidades, **coinciden al 100%**, y `check` reproduce el inglés con 0 diferencias de contenido
+- [ ] Corregir la meta `description` del inglés (está en español porque el conversor la fija igual para los dos idiomas)
+- [ ] **Generar el francés** (203 unidades) y declararlo en la config
 - [ ] Deploy a `.pages.dev` → dominio `docs.e-nation.org` → quitar dominio de RTD → verificar TLS y 301
 **Status:** in_progress
 
@@ -119,6 +121,9 @@ Phase 3: Docs — Starlight, i18n y deploy — `in_progress`
 | La comparación de texto contaba encabezados del `.rst` como prosa | 1 | **Corregido.** Ahora se excluyen encabezados y sus subrayados antes de comparar. |
 | `customCss` con `../../brand/tokens.css` → módulo no encontrado | 1 | **Corregido.** Las rutas de `customCss` se resuelven desde la **raíz de la app** (`astro-docs/`), no desde el archivo de config: es `../brand/tokens.css`. |
 | Starlight generaba hreflang a `/es/pacto-social/` (inexistente) y `/en/pacto-social/` con el slug del español | 1 | **Corregido.** Dos causas: faltaba la entrada `root` en `locales` (Starlight prefijaba el idioma por defecto) y el slug difería entre idiomas (Starlight lo reutiliza). Verificado en el HTML: canonical, hreflang y `x-default` apuntan ahora a rutas que existen. |
+| **Corrompí el Markdown inglés**: un `build` con bug sobre el mismo fichero que `check` leía lo reescribió mal (203 → 496 unidades) | 1 | **Corregido.** Restaurado desde el commit `8bd8af3`. Refactorizado en `render` (no escribe) + `build` (escribe) para que `check` compare en memoria, y añadida salvaguarda que impide generar el idioma fuente. **Lección: una herramienta que escribe y verifica sobre la misma ruta se destruye a sí misma cuando falla.** |
+| Dos definiciones de `check` en `tools/i18n.cjs` (la destructiva ganaba por hoisting) | 1 | **Corregido.** Queda una sola, verificada con `grep -c`. |
+| La meta `description` del inglés quedó en español en la memoria | 0 (pendiente) | **Sin corregir.** El conversor la fija igual para ambos idiomas; hay que sustituir esa entrada de la memoria. |
 
 ## Notes
 - Re-read this plan before major decisions.

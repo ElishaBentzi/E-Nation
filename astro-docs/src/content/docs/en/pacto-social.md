@@ -428,10 +428,10 @@ All citizens are equally important, but for the purpose of respect and order, th
 
 ### 30.
 Majority is assumed progressively:
--  13 years = Majority to be a citizen (with the approval of the parents) and receive the punishments for the crimes committed.
--  16 years = Majority for emancipation under the approval of parents and to vote. Except for choose medications, prostitution, weapons, drugs, alcohol and cigarettes.
--  18 years = Majority except for strong drugs and weapons.
--  21 years = Complete Majority.
+- 13 years = Majority to be a citizen (with the approval of the parents) and receive the punishments for the crimes committed.
+- 16 years = Majority for emancipation under the approval of parents and to vote. Except for choose medications, prostitution, weapons, drugs, alcohol and cigarettes.
+- 18 years = Majority except for strong drugs and weapons.
+- 21 years = Complete Majority.
 
 ### 31.
 The sale of drugs is accepted, but it is not publicly promoted, and its negative effects will be well explained in the commercial chain. In the educational system, their effects are explained; from the age of 13, soft drugs such as alcohol and cigarettes are explained, and at the age of 16, strong drugs are explained.
@@ -470,6 +470,7 @@ In the education system men and women as of the 16 years receive instruction in 
 Every citizen has the duty to comply with and enforce this social pact.
 
 ### TRANSITIONAL PROVISION
+
 ### 1.
 Due to the impossibility of implementing this social pact at one time it will be progressively implemented accepting the limitations imposed by the progressive development of our model.
 
@@ -478,3 +479,4 @@ Recognizing that citizens are not prepared for new systems, as a first approach 
 
 ### Note:
 Due to the existence of the Guaranteed Basic Salary and the Universal Minimum Income, the concepts of social security and social charges no longer apply, such as: retirement, forced unemployment, unjustified dismissal, etc.
+

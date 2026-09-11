@@ -52,7 +52,15 @@ Actions taken:
 Files created/modified:
 - `astro-docs/{package.json,astro.config.mjs,.nvmrc,src/content.config.ts,src/styles/docs.css,public/_redirects,public/e-nation300x300.png}`
 
-Pendiente: herramienta de i18n con memoria de traducción, generar el francés, y el deploy del ensayo.
+Segunda parte de la fase — herramienta de i18n:
+- Medido con `tools/i18n-align-check.cjs` que **ES y EN alinean al 100%**: 130 secciones, 201 unidades de cuerpo, y las 130 secciones con el mismo número de unidades. Eso hace viable emparejar por posición y que el inglés viva en la memoria como traducción `original`.
+- Escrito `tools/i18n.cjs` con cuatro comandos: `status` (matriz página×idioma, exit 1 si falta algo), `seed` (empareja ES↔EN y siembra la memoria), `build <locale>` (genera el Markdown del idioma desde la memoria) y `check` (compara el contenido generado contra el fichero existente **sin escribir**).
+- Claves **content-addressed**: `sha1(sección + tipo + texto fuente)`. Hace estructuralmente imposible que haya traducciones viejas silenciosas: si el español cambia, la clave cambia y la unidad aparece como ausente. No hace falta un estado "obsoleta" aparte — simplificación sobre lo que decía el plan, misma garantía.
+- Los encabezados que son solo numeración (`2.1.`, `6.5.1.2.1.`) no se traducen: son iguales en todos los idiomas.
+- **Verificado**: `check` reporta 203 unidades en disco, 203 generadas y **0 con texto distinto** → el pipeline reproduce el inglés unidad por unidad. `status` da EN 203/203 OK y FR 203 ausentes, con exit 1.
+- Scripts atados en el `package.json` raíz (`i18n:status`, `i18n:seed`, `i18n:build`, `i18n:check`, `docs:*`).
+
+Pendiente de esta fase: **generar el francés** (203 unidades), declararlo en `astro.config.mjs` y desplegar el ensayo. Y corregir la meta `description` del inglés, que hoy está en español porque el conversor la fija igual para los dos idiomas: entró así en la memoria y hay que sustituir esa entrada.
 
 ### Phase 4: Captura del sitio WordPress
 **Status:** pending
@@ -130,6 +138,9 @@ Files created/modified:
 | 2026-09-11 ~16:07 | La comparación de texto contaba los encabezados del `.rst` como prosa (en el `.rst` el título es una línea normal marcada por el subrayado siguiente) | 1 | **Corregido**: se excluyen encabezados y subrayados antes de comparar. Inflaba el recuento del `.rst`. |
 | 2026-09-11 16:11 | `astro build` → `Could not resolve '../../brand/tokens.css'` | 1 | **Corregido.** `customCss` resuelve desde la raíz de la app (`astro-docs/`), no desde el fichero de config: es `../brand/tokens.css`. |
 | 2026-09-11 16:12 | Starlight generaba `hreflang` a `/es/pacto-social/` (no existe) y a `/en/pacto-social/` usando el slug del español | 1 | **Corregido.** Dos causas independientes: (1) falta la entrada `root` en `locales` — Starlight calcula `prefixDefaultLocale = isMultilingual && locales.root === undefined \|\| …` y prefija también el idioma por defecto; (2) el slug difería por idioma y Starlight lo reutiliza para los alternos. Verificado en el HTML construido. |
+| 2026-09-11 16:14 | **Corrompí `astro-docs/src/content/docs/en/pacto-social.md`**: un `build` con un bug (partía los encabezados en dos líneas) escribió sobre el mismo fichero que `check` leía. El fichero pasó de 203 a 496 unidades | 1 | **Corregido.** Restaurado con `git checkout HEAD -- <fichero>` (estaba en el commit `8bd8af3`). Arreglado el `parse` para que el prefijo del encabezado (`## `) y su texto sean **un solo bloque**, y refactorizado `build` en `render` (devuelve la cadena, no escribe) + `build` (escribe): así `check` compara en memoria sin tocar el fichero. Añadida una salvaguarda que impide generar el idioma fuente. **Lección**: una herramienta que escribe y verifica sobre la misma ruta se destruye a sí misma cuando falla. |
+| 2026-09-11 16:15 | Dos definiciones de `check` en `tools/i18n.cjs` (la vieja destructiva quedaba última y ganaba por hoisting) | 1 | **Corregido.** Verificado que queda 1 sola definición con `grep -c "^function check"`. |
+| 2026-09-11 16:15 | La meta `description` del inglés quedó en español (el conversor la fija igual para los dos idiomas) y así entró en la memoria | 1 | **Pendiente.** Hay que traducir esa entrada de la memoria; anotado arriba y en `task_plan.md`. |
 
 ## 5-Question Reboot Check
 <!-- Answer these after any /clear or compaction to re-orient quickly. -->
