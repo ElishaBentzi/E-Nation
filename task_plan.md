@@ -40,12 +40,14 @@ Phase 3: Docs — Starlight, i18n y deploy — `in_progress`
 - [x] Build verificado: 5 páginas, búsqueda indexada, `_redirects` copiado, marca aplicada, hreflang y canonical correctos
 - [x] `tools/i18n.cjs` con memoria de traducción, `status` (exit 1 si hay ausentes), `seed`, `build` y `check`; scripts en el `package.json` raíz
 - [x] Alineación ES↔EN medida: 130 secciones y 201 unidades, **coinciden al 100%**, y `check` reproduce el inglés con 0 diferencias de contenido
-- [x] **Ensayo sobre `docs.unitygenerator.com`** (decisión del usuario): el dominio real no se toca hasta verificar. Dominio centralizado en `astro-docs/site.config.mjs`, `robots.txt` bloqueando el rastreo mientras sea ensayo, y `functions/[[path]].js` con 301 por host
-- [ ] Subir a GitHub, crear el proyecto de Pages y verificar el ensayo (TLS, 301 desde `/en/latest/*`, Pagefind, hreflang)
+- [x] **Ensayo sobre `unitygenerator.com`** (decisión del usuario): el dominio real no se toca hasta verificar. Dominio centralizado en `astro-docs/site.config.mjs`, `robots.txt` bloqueando el rastreo mientras sea ensayo, y `functions/[[path]].js` con 301 por host
+- [x] Subido a GitHub y **ensayo verificado de punta a punta** (evidencia en `progress.md`): 5 páginas, TLS propio del dominio, Pagefind con índices es/en, selector de idioma que mapea a la página correspondiente, 404 propio, canonical/hreflang/sitemap en el apex, y los cuatro 301 desde las URLs de RTD apuntando bien. El build falló al principio por el `Root directory` sin poner
 - [ ] **Cambio al dominio real** cuando el ensayo esté verificado (lista de cambio abajo)
 - [ ] Corregir la meta `description` del inglés (está en español porque el conversor la fija igual para los dos idiomas)
 - [ ] **Generar el francés** (203 unidades) y declararlo en la config
 **Status:** in_progress
+
+**Pendiente de verificar del ensayo**: la rama "otro host" de `functions/[[path]].js` (el 301 por hostname) no se puede comprobar hasta que un segundo hostname apunte al proyecto. Eso ocurre exactamente en el cambio al dominio real, así que la primera vez que se ejerza será con `docs.e-nation.org`. No darlo por bueno antes.
 
 #### Lista de cambio al dominio real (los tres puntos van juntos)
 

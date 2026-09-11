@@ -213,6 +213,9 @@ Quitar el dominio de prueba del proyecto, revocar cualquier token de GitHub usad
 
 ## Gotchas (validados en producción)
 
+- **En un monorepo, el `Root directory` del proyecto de Pages es la carpeta de la app**, no la raíz del repositorio. Si se deja vacío, el build corre en la raíz, no encuentra el `package.json` de la app y falla con `Missing script: "build"` (o con "output directory not found"). Es el error número uno de este montaje y su síntoma engañoso es un 404 en la URL `*.pages.dev`.
+- **Cambiar la configuración de build en Pages NO relanza el build.** Hay que reintentar el despliegue desde Deployments o empujar un commit nuevo. Si no, sigues viendo el resultado viejo y crees que el cambio no sirvió.
+- **Un 404 en `<proyecto>.pages.dev` no siempre significa "no hay despliegue"**: Cloudflare sirve en el borde su propio `robots.txt` por defecto (política de señales de contenido para crawlers de IA) aunque no haya nada desplegado. Ese 200 aislado en `/robots.txt` no prueba que tu sitio esté arriba: comprueba `/index.html` y una ruta real.
 - `<script>` sin atributos: Astro los procesa como módulos. NO añadas `client:load`/`is:inline` a scripts con `import`.
 - `npm run deploy` no existe en Pages (eso es Workers). Solo build + push.
 - Valida `package.json` tras ediciones: `node -e "JSON.parse(require('fs').readFileSync('package.json'))"`.

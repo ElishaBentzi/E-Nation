@@ -125,6 +125,17 @@ Files created/modified:
 | `20.2.1.` como encabezado en EN | `grep '<h5.*20\.2\.1\.'` | Presente | `<h5 id="2021">20.2.1.` | OK |
 | hreflang y canonical | HTML construido | Rutas existentes | `/pacto-social/` y `/en/pacto-social/`, las dos existen | OK tras corregir |
 | Sitemap | `dist/sitemap-0.xml` | 4 URLs válidas | Las 4 existen como rutas construidas | OK |
+| Build limpio como lo hace Cloudflare | `rm -rf node_modules && npm ci && npm run build` | 5 páginas | 5 páginas, `dist/` completo | OK |
+| **Ensayo desplegado: las 4 páginas** | `curl` a `unitygenerator.com` | 200 | `/`, `/pacto-social/`, `/en/`, `/en/pacto-social/` → 200 | OK |
+| TLS del dominio de ensayo | `openssl s_client` | Certificado válido del dominio | `CN=unitygenerator.com`, emitido por Google Trust Services, válido hasta 2026-12-10, apex en el SAN | OK |
+| `robots.txt` desplegado | `curl` | El nuestro, con Disallow | `# Dominio de ensayo: no debe indexarse.` | OK |
+| Búsqueda Pagefind | `/pagefind/pagefind-entry.json` | Índices es y en | Pagefind 1.5.2, 2 páginas por idioma | OK |
+| Selector de idioma | markup de la página ES | Navegable | `<select>` con `Espanol` → `/pacto-social/` y `English` → `/en/pacto-social/`, mapea a la página correspondiente | OK |
+| 404 propio | `/ruta-que-no-existe/` | 404 con nuestra página | 404, `<title>404 \| E-Nation` | OK |
+| Canonical, hreflang y x-default | HTML desplegado | En el dominio de ensayo | Los tres en `https://unitygenerator.com` | OK |
+| Los 301 de Read the Docs | 4 URLs antiguas | 301 al destino nuevo | `/en/latest/`→`/en/`, `/es/latest/`→`/`, y los dos `.html` a sus páginas | OK |
+| El arreglo del `20.2.1.` en producción | HTML desplegado del inglés | Encabezado | `<h5 id="2021">20.2.1.` | OK |
+| **301 por hostname de la Function** | — | — | **NO VERIFICABLE AÚN**: hace falta un segundo hostname apuntando al proyecto | Pendiente |
 
 ## Error Log
 <!-- More detailed than task_plan.md's error table. Timestamped. -->
@@ -143,6 +154,7 @@ Files created/modified:
 | 2026-09-11 16:15 | La meta `description` del inglés quedó en español (el conversor la fija igual para los dos idiomas) y así entró en la memoria | 0 (pendiente) | **Sin corregir.** Hay que sustituir esa entrada de la memoria; anotado en `task_plan.md` y en el `code-comment` del conversor. |
 | 2026-09-11 16:46 | **`git push` → 403 `Permission to ElishaBentzi/E-Nation.git denied to ElishaBentzi`** | 1 | **Resuelto.** No era un problema del repositorio: `ElishaBentzi` es una cuenta de usuario (no organización), el repo es público y no está archivado ni deshabilitado. El 403 venía del **token con el que se autenticó**, sin scope de escritura (típico de un fine-grained que no incluye el repo, o un clásico sin `repo`). Se resolvió pasando el remoto a **SSH**: clave ed25519 generada en `C:\Users\Elisha\.ssh\`, registrada como Authentication Key en GitHub, remoto a `git@github.com:…` y `core.sshCommand` fijado en el repo. Verificado: autentica como `ElishaBentzi` y `77a75fb..89a01a0 master -> master`. |
 | 2026-09-11 16:46 | **El `HOME` de este entorno apunta al perfil del sistema** (`/c/WINDOWS/system32/config/systemprofile`), no a `C:\Users\Elisha` | 1 | **Corregido.** Me llevó a crear la clave SSH en el sitio equivocado y a que dos comprobaciones previas (`ls ~/.ssh` y `cmdkey /list`) miraran en el contexto equivocado. Clave regenerada en `C:\Users\Elisha\.ssh\` y la mal ubicada eliminada. **Regla para el futuro en este entorno: no usar `~` para nada del usuario, siempre rutas absolutas `C:\Users\Elisha\…`.** |
+| 2026-09-11 15:37 | 404 en `e-nation.pages.dev` y en el dominio de ensayo; **leí un 200 en `/robots.txt` como prueba de que había despliegue** | 1 | **Corregido.** Ese `robots.txt` era el de Cloudflare por defecto (su política de señales de contenido para crawlers de IA), no el nuestro. `/index.html` y `/404.html` daban 404: **no había despliegue**. La causa real: el `Root directory` del proyecto de Pages se quedó vacío, así que el build corría en la raíz del monorepo, donde el `package.json` no tiene script `build`. El usuario lo corrigió a `astro-docs` y desplegó. **Lección: un 200 aislado en `/robots.txt` no prueba que tu sitio esté arriba; comprobar siempre una ruta real.** |
 
 ## 5-Question Reboot Check
 <!-- Answer these after any /clear or compaction to re-orient quickly. -->
