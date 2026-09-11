@@ -1,8 +1,13 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import sitemap from '@astrojs/sitemap';
+import { SITE } from './site.config.mjs';
 
-// Docs del Pacto Social en docs.e-nation.org.
+// Docs del Pacto Social.
+//
+// AHORA EN ENSAYO sobre docs.unitygenerator.com. El dominio real sera
+// docs.e-nation.org; los tres sitios donde se cambia y el orden estan en
+// site.config.mjs.
 //
 // El espanol es el idioma por defecto y vive en la RAIZ; el ingles y el frances
 // van bajo prefijo. Es el mismo criterio del sitio, adaptado a que aqui el
@@ -29,7 +34,9 @@ import sitemap from '@astrojs/sitemap';
 // declararlo antes de tenerlo daria un selector con enlaces rotos.
 
 export default defineConfig({
-  site: 'https://docs.e-nation.org',
+  // El origen canonico sale de site.config.mjs, que es tambien el unico sitio
+  // donde se cambia el dominio al pasar del ensayo al dominio real.
+  site: SITE,
   output: 'static',
   integrations: [
     starlight({

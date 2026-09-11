@@ -40,10 +40,20 @@ Phase 3: Docs — Starlight, i18n y deploy — `in_progress`
 - [x] Build verificado: 5 páginas, búsqueda indexada, `_redirects` copiado, marca aplicada, hreflang y canonical correctos
 - [x] `tools/i18n.cjs` con memoria de traducción, `status` (exit 1 si hay ausentes), `seed`, `build` y `check`; scripts en el `package.json` raíz
 - [x] Alineación ES↔EN medida: 130 secciones y 201 unidades, **coinciden al 100%**, y `check` reproduce el inglés con 0 diferencias de contenido
+- [x] **Ensayo sobre `docs.unitygenerator.com`** (decisión del usuario): el dominio real no se toca hasta verificar. Dominio centralizado en `astro-docs/site.config.mjs`, `robots.txt` bloqueando el rastreo mientras sea ensayo, y `functions/[[path]].js` con 301 por host
+- [ ] Subir a GitHub, crear el proyecto de Pages y verificar el ensayo (TLS, 301 desde `/en/latest/*`, Pagefind, hreflang)
+- [ ] **Cambio al dominio real** cuando el ensayo esté verificado (lista de cambio abajo)
 - [ ] Corregir la meta `description` del inglés (está en español porque el conversor la fija igual para los dos idiomas)
 - [ ] **Generar el francés** (203 unidades) y declararlo en la config
-- [ ] Deploy a `.pages.dev` → dominio `docs.e-nation.org` → quitar dominio de RTD → verificar TLS y 301
 **Status:** in_progress
+
+#### Lista de cambio al dominio real (los tres puntos van juntos)
+
+1. `astro-docs/site.config.mjs` → `SITE`, `PRIMARY_HOST` e `INDEXABLE` (ponerla en `true`).
+2. `astro-docs/functions/[[path]].js` → `PRIMARY` (no puede importar el archivo de config: Cloudflare empaqueta las Functions aparte).
+3. Cloudflare → añadir `docs.e-nation.org` como dominio propio del proyecto de Pages, y entonces quitar el dominio de Read the Docs.
+
+El 301 desde el dominio de ensayo al real sale solo del punto 2.
 
 ### Phase 4: Captura del sitio WordPress
 - [ ] Extractor PHP ampliado con WPML subido a `/zero/` → `reference/wp-export.json`
@@ -107,6 +117,9 @@ Phase 3: Docs — Starlight, i18n y deploy — `in_progress`
 | Docs: la fuente es el **`.rst` del repo**, no los `.md` locales | Los `.md` son el borrador de 2018; el `.rst` está mantenido hasta 2024-05-04 y tiene 349–496 palabras más. Medido con `tools/compare-docs-text.cjs`. |
 | Docs: **mismo slug en los tres idiomas** | Starlight construye hreflang y sitemap reutilizando el slug por idioma y Astro no soporta slugs traducidos por configuración. En los docs no hay equity que perder: las URLs indexadas eran las `.html` de RTD, que se redirigen con 301. En el **sitio** es al revés y se usará el manifiesto. |
 | Docs: locale por defecto declarado como **`root`** | Starlight calcula `prefixDefaultLocale = isMultilingual && locales.root === undefined || …`: sin una entrada `root` prefija también el idioma por defecto y genera hreflang a `/es/…` inexistentes. Verificado en el HTML construido. |
+| Docs: **ensayo en `docs.unitygenerator.com`** antes del dominio real | Decisión del usuario. Es un subdominio de otra zona suya en Cloudflare, sin A en el apex y sin correo en uso (`mail.unitygenerator.com` no resuelve), así que probar ahí no arriesga nada. El ensayo reproduce **el mismo tipo de cambio de DNS** que después se hará con el dominio real, que es justo lo que queríamos ensayar. |
+| Docs: dominio centralizado en `astro-docs/site.config.mjs` | Aparece en tres sitios (origen canónico, `robots.txt` y la Function del 301). En un archivo único, el cambio al dominio real es un punto y no una cacería; la Function lo duplica porque Cloudflare la empaqueta aparte, y está comentado. |
+| Docs: `robots.txt` bloquea el rastreo mientras sea ensayo | El dominio de ensayo no debe competir en buscadores con los docs reales que hoy sirve RTD. Se ata a la constante `INDEXABLE`, así el cambio al dominio real lo desbloquea en el mismo gesto y no se puede olvidar. |
 | Docs: **no se toca la prosa ni la ortografía** | Reescribir el texto de su documento fundacional es decisión editorial del autor. La limpieza de tildes (`nación`/`nacion`) y la reparación del inglés quedan como paso explícito, pendiente de su visto bueno. |
 
 ## Errors Encountered
@@ -115,7 +128,7 @@ Phase 3: Docs — Starlight, i18n y deploy — `in_progress`
 |-------|---------|------------|
 | `curl` a `docs.e-nation.org` → **429** | 1 | No confirmado si es anti-bot. Se resuelve migrando a infraestructura propia. |
 | `WebFetch` del árbol completo del repo por API de GitHub no devolvió texto | 1 | Se consultó directorio por directorio en lugar del árbol recursivo. |
-| **`video-3d-structures` desapareció de `~/.zcode/skills/`** durante la sesión | 1 (verificado) | **SIN RESOLVER.** Verificado: no está en el perfil, ni en caché de plugins, ni en otros proyectos, ni en la Papelera. Mi `rm -rf` apuntaba a un directorio concreto y no puede borrar un hermano; `rm` de Git Bash no usa la Papelera. Hipótesis principal: **cuarentena de Windows Defender** (contenía `.py` y `start_server.cmd`). Acción para el usuario: revisar Seguridad de Windows → Historial de protección. |
+| ~~`video-3d-structures` desapareció de `~/.zcode/skills/`~~ | 1 | **FALSO POSITIVO, cerrado.** El usuario la movió a otro proyecto con otro agente. **Lección**: el listado de skills del arranque es una foto fija y otros agentes modifican el disco en paralelo; preguntar antes de declarar una desaparición. |
 | Mi analizador de RST exigía subrayados de 3+ caracteres y este documento usa `~~` (dos) | 1 | **Corregido.** Hizo invisibles los 10 encabezados de artículo y me llevó a afirmar que al inglés le faltaban los artículos 1–8. Regex a `{1,}`. |
 | Afirmé "el español perdió los acentos" desde una muestra de 2 palabras | 1 | **Corregido.** La medición dice lo contrario: el `.rst` tiene 513 acentos frente a 480 del `.md`. Es inconsistencia puntual en ambas ediciones. |
 | La comparación de texto contaba encabezados del `.rst` como prosa | 1 | **Corregido.** Ahora se excluyen encabezados y sus subrayados antes de comparar. |
