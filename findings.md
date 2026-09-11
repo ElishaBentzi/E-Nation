@@ -80,6 +80,35 @@ Lo que pidió el usuario, en orden de llegada:
 - **RE(ADME)**: `docs.e-nation.org/en/latest/` es el patrón URL de RTD (idioma + versión). Al migrar a `/docs/` hacen falta **301 desde `/en/latest/*` y `/es/latest/*`**.
 - **Pendiente**: qué hacer con las URLs `*.readthedocs.io` (comprobar si están indexadas antes de borrar el proyecto).
 
+### Las dos EDICIONES del Pacto Social (medido — corrige una hipótesis mía)
+
+**No son el mismo documento con distinto formato: son dos ediciones distintas.** Medido con `tools/compare-docs-text.cjs` y `tools/analyze-docs.cjs`.
+
+| | `.md` local (raíz del proyecto) | `.rst` (repo, publicado en RTD) |
+|---|---|---|
+| Fecha | **abril 2018** (Sphinx se instaló el 2018-04-20; los `.md` son del 04-24) | **hasta 2024-05-04** |
+| Historial git | **ninguno** (nunca commiteados) | **22 commits EN / 25 ES** desde 2018 |
+| Párrafos EN | 136 | 176 |
+| Palabras EN | 4.534 | **4.935** |
+| Palabras ES | 4.650 | **5.201** |
+| Párrafos idénticos | solo **53 de 136** | — |
+| Prosa EN | concisa e idiomática: *"I wish to be part of this society and I commit myself…"* | más elaborada, otra redacción: *"I, essence of life incarnated in a living homo, who for interaction with third parties respond to the sound ______, express my desire…"* |
+| Prosa ES | *"yo deseo formar parte de esta sociedad…"* | *"yo esencia de vida encarnada en un homo vivo…"* |
+| Encabezados | 120 | **130** (10 más: el `.rst` **sí** tiene los artículos `0.`–`8.`) |
+| Tildes | 480 caracteres acentuados | 513 — **inconsistentes en AMBAS ediciones**, no solo en el `.rst` |
+
+**Conclusión operativa**: el `.rst` es la **fuente de contenido** (es la edición mantenida, la publicada y la que Google indexa, y contiene contenido que el `.md` no tiene: eliminación de impuestos, ciudadanía a no-humanos, detalles del mecanismo de decisión colectiva, ejemplos de artículos). El `.md` **no sirve como atajo**: es un snapshot de 2018 con seis años menos de edición. **Corrige mi hipótesis anterior**, que asumía que los `.md` eran el material fuente de los docs por coincidir los nombres.
+
+**El único defecto estructural, verificado**: subrayado RST roto en EN, línea 437 — `20.2.1.` lleva `'' '' '' '` como subrayado, y en RST los espacios lo invalidan, así que ese apartado **no se renderiza como encabezado**: queda como párrafo sin ancla y fuera del índice. El ES lo escribe bien (`'''''''`). `tools/analyze-docs.cjs` lo detecta y es **el único caso** en los dos ficheros.
+
+**Limpieza orográfica pendiente (editorial — NO se toca sin el usuario)**: la tilde es inconsistente en las dos ediciones para unas pocas palabras: `nación`/`nacion`, `armonía`/`armonia`, `interacción`/`interaccion`. **No es un stripping sistemático**: ambos ficheros tienen cientos de tildes correctas y ambos fallan en las mismas palabras.
+
+**Paridad EN↔ES: en sincronía.** Los dos `.rst` tienen 130 y 131 encabezados con la misma numeración (`0.`, `1.`, … `33.` y sus subapartados). La diferencia de uno es exactamente el `20.2.1.` que en EN no se detecta por el subrayado roto. **No hay contenido desincronizado entre idiomas.**
+
+**Cifras de texto corregidas** (excluyendo encabezados, que antes se colaban como prosa): EN 136 párrafos / 4.534 palabras en el `.md` frente a 150 / 4.883 en el `.rst`; ES 138 / 4.650 frente a 149 / 5.146. El `.rst` tiene 349–496 palabras más. Coinciden en 53 (EN) y 67 (ES) párrafos literales; el resto es redacción distinta.
+
+**Los documentos no contienen enlaces internos** (0 en los cuatro ficheros): solo el `index.rst` de cada idioma tiene enlaces, y apuntan a `http://e-nation.readthedocs.io/en/latest/` y `/es/latest/` — hay que reescribirlos al migrar.
+
 ### Verificación pendiente sobre las páginas de artículos (CORREGIDO)
 
 - **Corrección del usuario**: la intención de `/articles/` y `/es/articulos/` era **enlazar a artículos alojados en OTRO WordPress, en OTRO dominio**. Esa es **otra migración**, que hará **otro agente, más adelante**.
@@ -112,6 +141,9 @@ Lo que pidió el usuario, en orden de llegada:
 | `curl` a `docs.e-nation.org` devuelve **429** | No confirmado si es anti-bot o límite real. Se resuelve migrando a infraestructura propia, que es justo lo decidido. |
 | `WebFetch` del árbol completo del repo por API de GitHub no devolvió texto | Se resolvió consultando directorio por directorio (`contents/`, `contents/docs`, `contents/docs/en`, …). |
 | **`video-3d-structures` desapareció de `~/.zcode/skills/`** durante esta sesión, sin causa determinada | **Sin resolver.** Explicado en `progress.md`. Hipótesis principal: cuarentena de Windows Defender (la skill tenía `.py` y `start_server.cmd`). Comprobar en Seguridad de Windows → Historial de protección. |
+| **Mi analizador de RST exigía subrayados de 3+ caracteres** y este documento subraya los artículos con `~~` (dos) | **Corregido.** Hizo invisibles los 10 encabezados de artículo (`0.`–`8.`) y me llevó a afirmar por error que "al inglés le faltan los artículos 1–8". Regex a `{1,}`. |
+| **Generalicé "el español perdió los acentos" desde una muestra de 2 palabras** | **Corregido.** La medición dice lo contrario: el `.rst` tiene 513 caracteres acentuados frente a 480 del `.md`. Es inconsistencia puntual en ambas ediciones, no stripping. Lección: no afirmar sobre un corpus desde una muestra. |
+| **La comparación de texto contaba los encabezados del `.rst` como prosa** (en el `.rst` el título es una línea normal marcada por el subrayado siguiente; en el `.md` empieza por `#` y se descarta solo) | **Corregido.** Inflaba el recuento del `.rst`. Ahora se excluyen los encabezados y sus subrayados antes de comparar. |
 
 ## Resources
 

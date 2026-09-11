@@ -11,11 +11,11 @@ Migrar todo lo que hoy vive en WordPress y Read the Docs —el sitio `e-nation.o
 
 ## Next Step
 
-Terminar la Fase 1 (andamiaje): falta crear `README.md`, `AGENTS.md`, `.gitignore`, `brand/tokens.css` y hacer el `git init` + primer commit. Después arranca la Fase 2 con la verificación de paridad EN↔ES de los docs.
+Construir la herramienta de i18n: memoria de traducción + `i18n:status` con matriz página×idioma, y con ella generar el **francés** de los docs (que no existe hoy) para poder declararlo en `astro.config.mjs`. Después, el ensayo general: deploy a `.pages.dev` y cutover de `docs.e-nation.org`.
 
 ## Current Phase
 
-Phase 1: Andamiaje — `in_progress`
+Phase 3: Docs — Starlight, i18n y deploy — `in_progress`
 
 ## Phases
 
@@ -24,22 +24,24 @@ Phase 1: Andamiaje — `in_progress`
 - [x] Adaptar `SKILL.md` al layout real y a los aprendizajes nuevos (memoria de traducción, sliders, medición de parallax, docs externas)
 - [x] `findings.md` sembrado con todo el recon
 - [ ] `README.md` y `AGENTS.md`
-- [ ] `.gitignore` + `git init` + primer commit
-- [ ] `brand/tokens.css` con la paleta y tipografías medidas
-**Status:** in_progress
+- [x] `.gitignore` + `.gitattributes` + `git init` + primer commit (`97fccfd`, sobre la historia del remoto: 178 commits)
+- [x] `brand/tokens.css` con la paleta y tipografías medidas
+**Status:** complete
 
 ### Phase 2: Docs — verificación y contenido
-- [ ] Verificar qué idiomas de docs resuelven hoy y la **paridad real EN↔ES**
+- [x] Verificar qué idiomas de docs resuelven hoy y la **paridad real EN↔ES** → está en sincronía (130 vs 131 encabezados; la única diferencia es el subrayado roto del `20.2.1.`)
+- [x] Determinar qué edición es la fuente → **el `.rst` del repo** (mantenido hasta 2024-05-04); los `.md` locales son el borrador de 2018, con 349–496 palabras menos
 - [ ] Averiguar qué contienen `/articles/` y `/es/articulos/` y a qué URLs apuntan (van a otro WordPress de otro dominio; **reproducir fielmente, no arreglar**)
-- [ ] Convertir los `.rst` a Markdown usando los `.md` locales como atajo (decodificar entidades HTML)
-**Status:** pending
+- [x] Convertir los `.rst` a Markdown de Starlight con `tools/rst-to-md.cjs`, arreglando el subrayado roto
+**Status:** complete (queda pendiente solo lo de `/articles/`, que es del sitio, no de los docs)
 
 ### Phase 3: Docs — Starlight, i18n y deploy (ensayo general)
-- [ ] `astro-docs/` con Starlight (ES por defecto, EN/FR bajo prefijo, Pagefind)
+- [x] `astro-docs/` con Starlight: Astro 7.3.2 + Starlight 0.42.0, ES por defecto en la raíz y EN bajo prefijo, Pagefind, `brand/tokens.css` compartido
+- [x] Build verificado: 5 páginas, búsqueda indexada, `_redirects` copiado, marca aplicada, hreflang y canonical correctos
 - [ ] `tools/` de i18n: memoria de traducción, `i18n-status.mjs` (exit 1 si hay ausentes u obsoletas), generación de locales
-- [ ] FR generado desde la memoria; EN sembrado como entrada `original`
+- [ ] FR generado desde la memoria y declarado en la config
 - [ ] Deploy a `.pages.dev` → dominio `docs.e-nation.org` → quitar dominio de RTD → verificar TLS y 301
-**Status:** pending
+**Status:** in_progress
 
 ### Phase 4: Captura del sitio WordPress
 - [ ] Extractor PHP ampliado con WPML subido a `/zero/` → `reference/wp-export.json`
@@ -100,6 +102,10 @@ Phase 1: Andamiaje — `in_progress`
 | Monorepo sobre `ElishaBentzi/E-Nation` | El repo ya describe el conjunto, no solo los docs. |
 | Propiedades lógicas de CSS desde el inicio | Cuesta lo mismo y habilita RTL para futuros idiomas. |
 | Legales: FR enlaza al EN | No se asume el riesgo de traducir automáticamente un texto legal. **Reversible**: si el usuario aporta el francés, se integra. |
+| Docs: la fuente es el **`.rst` del repo**, no los `.md` locales | Los `.md` son el borrador de 2018; el `.rst` está mantenido hasta 2024-05-04 y tiene 349–496 palabras más. Medido con `tools/compare-docs-text.cjs`. |
+| Docs: **mismo slug en los tres idiomas** | Starlight construye hreflang y sitemap reutilizando el slug por idioma y Astro no soporta slugs traducidos por configuración. En los docs no hay equity que perder: las URLs indexadas eran las `.html` de RTD, que se redirigen con 301. En el **sitio** es al revés y se usará el manifiesto. |
+| Docs: locale por defecto declarado como **`root`** | Starlight calcula `prefixDefaultLocale = isMultilingual && locales.root === undefined || …`: sin una entrada `root` prefija también el idioma por defecto y genera hreflang a `/es/…` inexistentes. Verificado en el HTML construido. |
+| Docs: **no se toca la prosa ni la ortografía** | Reescribir el texto de su documento fundacional es decisión editorial del autor. La limpieza de tildes (`nación`/`nacion`) y la reparación del inglés quedan como paso explícito, pendiente de su visto bueno. |
 
 ## Errors Encountered
 
@@ -108,6 +114,11 @@ Phase 1: Andamiaje — `in_progress`
 | `curl` a `docs.e-nation.org` → **429** | 1 | No confirmado si es anti-bot. Se resuelve migrando a infraestructura propia. |
 | `WebFetch` del árbol completo del repo por API de GitHub no devolvió texto | 1 | Se consultó directorio por directorio en lugar del árbol recursivo. |
 | **`video-3d-structures` desapareció de `~/.zcode/skills/`** durante la sesión | 1 (verificado) | **SIN RESOLVER.** Verificado: no está en el perfil, ni en caché de plugins, ni en otros proyectos, ni en la Papelera. Mi `rm -rf` apuntaba a un directorio concreto y no puede borrar un hermano; `rm` de Git Bash no usa la Papelera. Hipótesis principal: **cuarentena de Windows Defender** (contenía `.py` y `start_server.cmd`). Acción para el usuario: revisar Seguridad de Windows → Historial de protección. |
+| Mi analizador de RST exigía subrayados de 3+ caracteres y este documento usa `~~` (dos) | 1 | **Corregido.** Hizo invisibles los 10 encabezados de artículo y me llevó a afirmar que al inglés le faltaban los artículos 1–8. Regex a `{1,}`. |
+| Afirmé "el español perdió los acentos" desde una muestra de 2 palabras | 1 | **Corregido.** La medición dice lo contrario: el `.rst` tiene 513 acentos frente a 480 del `.md`. Es inconsistencia puntual en ambas ediciones. |
+| La comparación de texto contaba encabezados del `.rst` como prosa | 1 | **Corregido.** Ahora se excluyen encabezados y sus subrayados antes de comparar. |
+| `customCss` con `../../brand/tokens.css` → módulo no encontrado | 1 | **Corregido.** Las rutas de `customCss` se resuelven desde la **raíz de la app** (`astro-docs/`), no desde el archivo de config: es `../brand/tokens.css`. |
+| Starlight generaba hreflang a `/es/pacto-social/` (inexistente) y `/en/pacto-social/` con el slug del español | 1 | **Corregido.** Dos causas: faltaba la entrada `root` en `locales` (Starlight prefijaba el idioma por defecto) y el slug difería entre idiomas (Starlight lo reutiliza). Verificado en el HTML: canonical, hreflang y `x-default` apuntan ahora a rutas que existen. |
 
 ## Notes
 - Re-read this plan before major decisions.

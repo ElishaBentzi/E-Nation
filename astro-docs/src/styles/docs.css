@@ -1,0 +1,44 @@
+/*
+ * Mapeo de los tokens de marca a las variables de Starlight.
+ *
+ * Los valores vienen de brand/tokens.css, que a su vez salen de MEDIR el CSS
+ * real del original. Aqui no se inventa ningun color: Starlight pide tres
+ * ranuras de acento (low / accent / high) y se rellenan con colores de marca
+ * medidos, no con degradados inventados.
+ *
+ *   accent  ->  el naranja principal #ff7100, el color dominante del original
+ *   low     ->  el navy #234965 medido, que es un color de fondo oscuro en el
+ *               original; es justo el papel de esta ranura (fondos sutiles)
+ *   high    ->  el propio naranja, para texto de enfasis sobre fondo claro
+ *
+ * Si el autor quiere matices concretos para low/high, hay que derivarlos de su
+ * paleta con su visto bueno: eso ya es una decision de diseno, no una medicion.
+ *
+ * PENDIENTE: los .woff2 de Roboto y Roboto Slab son auto-hospedados por el
+ * WordPress original. Hasta que se espejen (Fase 4) estas pilas caen en las
+ * fuentes del sistema, asi que la tipografia aun no es la definitiva.
+ */
+
+:root {
+  --sl-color-accent-low: var(--en-color-navy);
+  --sl-color-accent: var(--en-color-primary);
+  --sl-color-accent-high: var(--en-color-primary);
+  --sl-font: var(--en-font-body);
+}
+
+:root[data-theme='dark'] {
+  --sl-color-accent-low: var(--en-color-blue-dark);
+  --sl-color-accent: var(--en-color-primary);
+  --sl-color-accent-high: var(--en-color-primary-dark);
+}
+
+/* Starlight no expone una variable para la tipografia de titulos. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.site-title {
+  font-family: var(--en-font-heading);
+}

@@ -1,0 +1,31 @@
+# Read the Docs -> Astro Starlight
+#
+# Las URLs publicadas por RTD eran /<idioma>/latest/... y hay que preservarlas
+# con 301 para no perder lo indexado. El idioma por defecto (espanol) pasa a
+# vivir en la raiz, asi que /es/latest/ se convierte en /.
+#
+# El orden importa: Cloudflare aplica la PRIMERA regla que coincide, por eso las
+# rutas concretas van antes que los comodines.
+
+# Documentos concretos (las URLs que RTD publicaba para cada pagina).
+# El slug de destino es el mismo en los dos idiomas: ver la nota sobre slugs en
+# astro.config.mjs.
+/en/latest/Social-Pact-Constitution-English.html    /en/pacto-social    301
+/es/latest/Pacto-Social-Constitucion-Spanish.html    /pacto-social       301
+/en/latest/Social-Pact-Constitution-English         /en/pacto-social    301
+/es/latest/Pacto-Social-Constitucion-Spanish         /pacto-social       301
+
+# Prefijos de idioma de RTD
+/en/latest/    /en/    301
+/en/latest     /en/    301
+/es/latest/    /       301
+/es/latest     /       301
+
+# Resto de rutas de RTD bajo cada idioma
+/en/latest/*    /en/:splat    301
+/es/latest/*    /:splat       301
+
+# Rutas historicas de RTD
+/search.html    /    301
+/genindex.html  /    301
+/py-modindex.html    /    301
