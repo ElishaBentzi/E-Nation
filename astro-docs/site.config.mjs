@@ -5,13 +5,18 @@
  * al real sea cambiar tres lineas y no buscar cadenas por el proyecto.
  *
  * ---------------------------------------------------------------------------
- * ESTADO ACTUAL: ENSAYO sobre docs.unitygenerator.com
+ * ESTADO ACTUAL: ENSAYO sobre unitygenerator.com (el APEX)
  * ---------------------------------------------------------------------------
- * Los docs se despliegan primero en un subdominio de unitygenerator.com (que el
- * usuario tiene en la misma cuenta de Cloudflare) para probar de punta a punta
- * build -> Pages -> dominio propio -> certificado -> 301 SIN tocar el dominio
- * real ni su correo. Cuando el ensayo este verificado, se cambia a
- * docs.e-nation.org.
+ * Los docs se despliegan primero en unitygenerator.com, que el usuario tiene en
+ * la misma cuenta de Cloudflare, para probar de punta a punta build -> Pages ->
+ * dominio propio -> certificado -> 301 SIN tocar el dominio real ni su correo.
+ * Cuando el ensayo este verificado, se cambia a docs.e-nation.org.
+ *
+ * Se usa el apex y no un subdominio porque es el dominio que el usuario adjunto
+ * al proyecto de Pages. El mecanismo del cambio final es identico. Si se
+ * prefiere que el ensayo viva en docs.unitygenerator.com (misma forma que el
+ * destino final), basta cambiar estas tres constantes y anadir ese subdominio
+ * como dominio propio en Pages.
  *
  * ---------------------------------------------------------------------------
  * LISTA DE CAMBIO AL DOMINIO REAL (hacer los tres juntos)
@@ -28,10 +33,10 @@
  */
 
 /** Origen canonico. Alimenta canonical, hreflang, sitemap y og:url. */
-export const SITE = 'https://docs.unitygenerator.com';
+export const SITE = 'https://unitygenerator.com';
 
 /** Host que se sirve; cualquier otro host recibe un 301 a este. */
-export const PRIMARY_HOST = 'docs.unitygenerator.com';
+export const PRIMARY_HOST = 'unitygenerator.com';
 
 /**
  * Mientras sea false, el robots.txt bloquea el rastreo. Es un dominio de

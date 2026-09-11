@@ -12,7 +12,7 @@
  */
 
 // Ensayo. Al cambiar al dominio real sera 'docs.e-nation.org'.
-const PRIMARY = 'docs.unitygenerator.com';
+const PRIMARY = 'unitygenerator.com';
 
 export async function onRequest(context) {
   const { request, next } = context;
