@@ -162,35 +162,70 @@ function status() {
 }
 
 // ---------------------------------------------------------------------------
-// seed: empareja ES<->EN por posicion dentro de cada seccion y siembra la
-// memoria del ingles como traduccion ORIGINAL (la escribio el autor del sitio,
-// no se regenera).
+// importar: toma un Markdown YA TRADUCIDO y rellena la memoria emparejando
+// unidad por unidad con la fuente espanola.
+//
+// Se traduce el DOCUMENTO, no el JSONL. Es mejor por dos razones: una traduccion
+// se escribe como prosa coherente (terminologia consistente entre apartados, no
+// frase a frase aislada), y el emparejamiento por posicion ya esta probado. El
+// JSONL de la memoria es un artefacto derivado, no algo que se escriba a mano.
+//
+// Empareja por posicion DENTRO DE CADA SECCION y aborta si alguna seccion tiene
+// distinto numero de unidades: eso detecta una traduccion que se ha saltado o
+// anadido un parrafo, que es el error caro de este metodo. Un simple recuento
+// total lo dejaria pasar si un parrafo se pierde en una seccion y se gana en
+// otra.
+// ---------------------------------------------------------------------------
+function importar(locale, archivo, method, reviewed, slug) {
+  const es = parse(fs.readFileSync(rutaDe(DEFAULT_LOCALE, slug), 'utf8'));
+  const trad = parse(fs.readFileSync(archivo, 'utf8'));
+
+  const porSeccion = (u) => {
+    const m = new Map();
+    for (const x of u.filter((y) => y.seccion !== -1)) m.set(x.seccion, (m.get(x.seccion) || 0) + 1);
+    return m;
+  };
+  const a = porSeccion(es.unidades), b = porSeccion(trad.unidades);
+
+  const problemas = [];
+  for (const [sec, n] of a) {
+    const m = b.get(sec);
+    if (m === undefined) problemas.push(`seccion ${sec}: falta entera (la fuente tiene ${n} unidades)`);
+    else if (m !== n) problemas.push(`seccion ${sec}: ${n} unidades en la fuente contra ${m} en la traduccion`);
+  }
+
+  if (es.unidades.length !== trad.unidades.length || problemas.length) {
+    console.log(`ABORTADO: la traduccion no alinea con la fuente.`);
+    console.log(`  unidades totales: fuente ${es.unidades.length} contra traduccion ${trad.unidades.length}`);
+    if (problemas.length) {
+      console.log(`  secciones desalineadas (${problemas.length}):`);
+      problemas.slice(0, 15).forEach((p) => console.log(`    ${p}`));
+      if (problemas.length > 15) console.log(`    ... y ${problemas.length - 15} mas`);
+    }
+    process.exit(1);
+  }
+
+  const tm = new Map();
+  for (let i = 0; i < es.unidades.length; i++) {
+    const u = es.unidades[i], t = trad.unidades[i];
+    tm.set(clave(u), {
+      key: clave(u), seccion: u.seccion, kind: u.kind,
+      source: u.texto, target: t.texto,
+      method, reviewed,
+    });
+  }
+  guardarTM(locale, tm);
+  console.log(`${locale}: ${tm.size} entradas importadas de ${path.relative(ROOT, archivo)} (method=${method}, reviewed=${reviewed})`);
+}
+
+// ---------------------------------------------------------------------------
+// seed: siembra el ingles desde el Markdown que ya existe en el proyecto. Son
+// traducciones que escribio el autor del sitio, no generadas: entran como
+// `original` y revisadas, y no se regeneran.
 // ---------------------------------------------------------------------------
 function seed() {
   for (const page of PAGES) {
-    const es = parse(fs.readFileSync(rutaDe(DEFAULT_LOCALE, page.slug), 'utf8'));
-    const enPath = rutaDe('en', page.slug);
-    if (!fs.existsSync(enPath)) { console.log(`no existe ${enPath}, nada que sembrar`); continue; }
-    const en = parse(fs.readFileSync(enPath, 'utf8'));
-
-    if (en.unidades.length !== es.unidades.length) {
-      console.log(`ABORTADO: ${es.unidades.length} unidades ES contra ${en.unidades.length} EN. No se puede emparejar por posicion.`);
-      process.exit(1);
-    }
-
-    const tm = new Map();
-    let sembradas = 0;
-    for (let i = 0; i < es.unidades.length; i++) {
-      const u = es.unidades[i], t = en.unidades[i];
-      tm.set(clave(u), {
-        key: clave(u), seccion: u.seccion, kind: u.kind,
-        source: u.texto, target: t.texto,
-        method: 'original', reviewed: true,
-      });
-      sembradas++;
-    }
-    guardarTM('en', tm);
-    console.log(`en: sembradas ${sembradas} entradas desde ${path.relative(ROOT, enPath)} (method=original, reviewed=true)`);
+    importar('en', rutaDe('en', page.slug), 'original', true, page.slug);
   }
 }
 
@@ -316,6 +351,20 @@ function check() {
 const cmd = process.argv[2] || 'status';
 if (cmd === 'status') status();
 else if (cmd === 'seed') seed();
+else if (cmd === 'import') {
+  const locale = process.argv[3];
+  const archivo = process.argv[4];
+  if (!locale || !archivo) {
+    console.log('uso: node tools/i18n.cjs import <locale> <ruta-al-md-traducido>');
+    process.exit(2);
+  }
+  const abs = path.isAbsolute(archivo) ? archivo : path.join(ROOT, archivo);
+  if (!fs.existsSync(abs)) { console.log(`no existe el archivo: ${abs}`); process.exit(2); }
+  importar(locale, abs, 'ia', false, PAGES[0].slug);
+}
 else if (cmd === 'build') build(process.argv[3] || 'en');
 else if (cmd === 'check') check();
-else { console.log('uso: node tools/i18n.cjs [status|seed|build <locale>|check]'); process.exit(2); }
+else {
+  console.log('uso: node tools/i18n.cjs status | seed | import <locale> <archivo> | build <locale> | check');
+  process.exit(2);
+}

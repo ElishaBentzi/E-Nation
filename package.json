@@ -7,6 +7,7 @@
   "scripts": {
     "i18n:status": "node tools/i18n.cjs status",
     "i18n:seed": "node tools/i18n.cjs seed",
+    "i18n:import": "node tools/i18n.cjs import",
     "i18n:build": "node tools/i18n.cjs build",
     "i18n:check": "node tools/i18n.cjs check",
     "docs:convert": "node tools/rst-to-md.cjs",
