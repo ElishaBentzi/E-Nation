@@ -16,6 +16,7 @@
     "docs:align": "node tools/i18n-align-check.cjs",
     "docs:dev": "npm --prefix astro-docs run dev",
     "docs:build": "npm --prefix astro-docs run build",
-    "i18n:strict": "node tools/i18n.cjs status --strict"
+    "i18n:strict": "node tools/i18n.cjs status --strict",
+    "i18n:review": "node tools/i18n.cjs review"
   }
 }

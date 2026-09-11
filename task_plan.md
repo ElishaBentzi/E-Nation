@@ -71,6 +71,7 @@ El 301 desde el dominio de ensayo al real sale solo del punto 2.
 ### Phase 5: Stack del sitio
 - [ ] `astro-site/` con Astro 7 + Tailwind v4 + sitemap + aos, `.nvmrc` en 22
 - [ ] Manifiesto i18n desde los grupos de traducción de WPML
+- [ ] **Tema claro/oscuro/auto** (petición del usuario tras ver el de Starlight en los docs): `@custom-variant dark (&:where(.dark, .dark *))` en Tailwind v4, tres estados como Starlight, elección persistida y sin destello al cargar. **La paleta oscura hay que decidirla con el usuario**: el sitio original NO tiene modo oscuro, así que no se extrae, se diseña. Propuesta a partir de la paleta medida (fondos desde `#003f7f`/`#234965`, texto `#e8e8e8`, acento `#ff7100`, énfasis `#ff3a2d`), y los tokens oscuros van a `brand/tokens.css` para que sitio y docs compartan el mismo criterio
 - [ ] `npm run build` verificado como puerta de salida
 **Status:** pending
 

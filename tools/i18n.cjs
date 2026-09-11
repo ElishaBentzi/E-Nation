@@ -314,6 +314,26 @@ function build(locale) {
 }
 
 // ---------------------------------------------------------------------------
+// review: marca como revisadas las entradas de un idioma. Se hace con un
+// comando y no editando el JSONL a mano para que quede en el historial de git
+// que la revision la hizo el autor y cuando.
+//
+// NO se cambia `method`: el texto lo genero la IA y lo que ha ocurrido es que el
+// autor lo ha aprobado. Ponerlo como `humana` falsearia la procedencia, que es
+// justo lo que la memoria sirve para no perder.
+// ---------------------------------------------------------------------------
+function review(locale) {
+  const tm = cargarTM(locale);
+  const hoy = new Date().toISOString().slice(0, 10);
+  let n = 0;
+  for (const e of tm.values()) {
+    if (!e.reviewed) { e.reviewed = true; e.reviewedAt = hoy; n++; }
+  }
+  guardarTM(locale, tm);
+  console.log(`${locale}: ${n} entradas marcadas como revisadas el ${hoy}`);
+}
+
+// ---------------------------------------------------------------------------
 // check: ver la version con comparacion por unidades mas abajo.
 // ---------------------------------------------------------------------------
 
@@ -394,9 +414,14 @@ else if (cmd === 'import') {
   if (!fs.existsSync(abs)) { console.log(`no existe el archivo: ${abs}`); process.exit(2); }
   importar(locale, abs, 'ia', false, slug);
 }
+else if (cmd === 'review') {
+  const locale = process.argv[3];
+  if (!locale) { console.log('uso: node tools/i18n.cjs review <locale>'); process.exit(2); }
+  review(locale);
+}
 else if (cmd === 'build') build(process.argv[3] || 'en');
 else if (cmd === 'check') check();
 else {
-  console.log('uso: node tools/i18n.cjs status | seed | import <locale> <archivo> | build <locale> | check');
+  console.log('uso: node tools/i18n.cjs status [--strict] | seed | import <locale> <archivo> [slug] | review <locale> | build <locale> | check');
   process.exit(2);
 }

@@ -10,15 +10,27 @@
 
 ## Requirements
 
-Lo que pidió el usuario, en orden de llegada:
+| # | Requisito | Estado |
+|---|---|---|
+| 1 | Usar la skill `wordpress-to-cloudflare` y **mudarla dentro de este proyecto** | Hecho |
+| 2 | Migrar el sitio **e-nation.org** (WordPress) a Astro + Cloudflare Pages | Fase 4-8 |
+| 3 | Crear `README.md`, `AGENTS.md` y los tres archivos de `planning-with-files` | Hecho |
+| 4 | Multi-idioma con **memoria de traducción** en vez de replicar WPML; las imágenes con texto como **texto superpuesto traducible** | Docs hechos (es/en/fr); sitio pendiente |
+| 5 | Consolidar los docs de **Read the Docs** en la infraestructura propia | Ensayo verificado; falta el cambio de dominio |
+| 6 | Revisar las traducciones antes de publicar | **Francés revisado y aprobado por el usuario el 2026-09-11** |
+| 7 | **Tema claro/oscuro/auto en las páginas del sitio**, como el que trae Starlight en los docs (petición del usuario al revisar el francés) | Fase 5 |
 
-1. Usar la skill `wordpress-to-cloudflare` y **mudarla dentro de este proyecto** (no dejarla en scope de usuario).
-2. Migrar el sitio **e-nation.org** (WordPress) a Astro + Cloudflare Pages.
-3. Crear en la raíz `README.md`, `AGENTS.md` y los tres archivos de `planning-with-files` (memoria del proyecto).
-4. Multi-idioma: **no replicar la estructura de WPML** (la página por idioma como unidad). En su lugar, **caché/memoria de traducción** de lo ya traducido, o traducir a los tres idiomas en cada publicación. **Las imágenes con texto deben ser texto superpuesto traducible.**
-5. Consolidar los docs de **Read the Docs** dentro de la infraestructura propia.
-6. Confirmado por el usuario: el **español es el idioma de autoría**; las traducciones **las hace el agente en sesión** (sin API keys); las imágenes con texto se **auditan y se deciden caso por caso**.
-7. Confirmado: **docs primero** como ensayo general; **Starlight**; URLs en `/docs/` con 301.
+### Requisito 7 en detalle: el tema oscuro del sitio
+
+El usuario vio el selector claro/oscuro/auto de Starlight en los docs y quiere algo similar en las páginas de e-nation.
+
+**Matiz que condiciona el trabajo**: el sitio original de WordPress **no tiene modo oscuro**. Por lo tanto esto no es fidelidad de migración sino una **funcionalidad nueva**, y la paleta oscura **no se puede extraer del original: hay que diseñarla**. Eso choca de frente con el principio rector de la skill ("nunca inventar diseño"), así que la paleta se **propone a partir de los colores medidos y la decide el usuario**, no se elige por mi cuenta.
+
+Base para proponer, de la paleta ya medida: fondos oscuros desde `#003f7f` y `#234965` (azules medidos del original), texto `#e8e8e8`, acento `#ff7100`, énfasis `#ff3a2d`.
+
+Mecánica ya documentada en la skill para Tailwind v4: `@custom-variant dark (&:where(.dark, .dark *))`, la elección se persiste, y para el estado "auto" se respeta `prefers-color-scheme`. Hace falta un script mínimo en línea que ponga la clase **antes del primer pintado**, o se ve un destello del tema equivocado al cargar.
+
+**Coherencia**: el modo oscuro de los docs ya funciona (Starlight), y sus tokens oscuros están en `astro-docs/src/styles/docs.css` (`--sl-color-accent-low: var(--en-color-blue-dark)`). Los tokens oscuros del sitio deberían ir a `brand/tokens.css` para que las dos apps compartan el mismo criterio y ninguna derive.
 
 ## Research Findings
 
