@@ -137,6 +137,8 @@ El 301 desde el dominio de ensayo al real sale solo del punto 2.
 | **Corrompí el Markdown inglés**: un `build` con bug sobre el mismo fichero que `check` leía lo reescribió mal (203 → 496 unidades) | 1 | **Corregido.** Restaurado desde el commit `8bd8af3`. Refactorizado en `render` (no escribe) + `build` (escribe) para que `check` compare en memoria, y añadida salvaguarda que impide generar el idioma fuente. **Lección: una herramienta que escribe y verifica sobre la misma ruta se destruye a sí misma cuando falla.** |
 | Dos definiciones de `check` en `tools/i18n.cjs` (la destructiva ganaba por hoisting) | 1 | **Corregido.** Queda una sola, verificada con `grep -c`. |
 | La meta `description` del inglés quedó en español en la memoria | 0 (pendiente) | **Sin corregir.** El conversor la fija igual para ambos idiomas; hay que sustituir esa entrada de la memoria. |
+| **`git push` → 403 `denied to ElishaBentzi`** | 1 | **Resuelto.** No era del repositorio (usuario, público, no archivado) sino del **token sin scope de escritura**. Remoto pasado a **SSH** con clave ed25519 en `C:\Users\Elisha\.ssh\` y `core.sshCommand` fijado en el repo. Verificado: `77a75fb..89a01a0 master -> master`. |
+| El `HOME` de este entorno apunta al **perfil del sistema**, no a `C:\Users\Elisha` | 1 | **Corregido.** Me llevó a crear la clave SSH en el sitio equivocado y a que dos comprobaciones miraran en el contexto equivocado. **Regla: en este entorno no usar `~` para nada del usuario; siempre rutas absolutas `C:\Users\Elisha\…`.** |
 
 ## Notes
 - Re-read this plan before major decisions.
