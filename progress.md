@@ -60,7 +60,20 @@ Segunda parte de la fase — herramienta de i18n:
 - **Verificado**: `check` reporta 203 unidades en disco, 203 generadas y **0 con texto distinto** → el pipeline reproduce el inglés unidad por unidad. `status` da EN 203/203 OK y FR 203 ausentes, con exit 1.
 - Scripts atados en el `package.json` raíz (`i18n:status`, `i18n:seed`, `i18n:build`, `i18n:check`, `docs:*`).
 
-Pendiente de esta fase: **generar el francés** (203 unidades), declararlo en `astro.config.mjs` y desplegar el ensayo. Y corregir la meta `description` del inglés, que hoy está en español porque el conversor la fija igual para los dos idiomas: entró así en la memoria y hay que sustituir esa entrada.
+Tercera parte de la fase — el francés y los tres idiomas:
+- Traducido el Pacto Social al francés: **203 unidades del documento + 5 del landing**, escritas como prosa y no como entradas de JSONL. `i18n:import` las alineó **a la primera**: 130 secciones, 197 unidades y 41 items coincidiendo exactamente con el español.
+- El francés es el único idioma generado: el español es la fuente y el inglés entró en la memoria como traducción `original` del autor, que no se regenera.
+- Declarado `fr` en la config. **7 páginas construidas** y desplegadas: las 6 rutas en es/en/fr con su `lang`, hreflang de los tres más `x-default`, y Pagefind indexando los tres idiomas.
+- `i18n:strict` añadido para la puerta de revisión: el modo normal solo falla si falta texto (publicar en el dominio de ensayo para revisar en contexto es legítimo); el estricto falla además si queda algo sin revisar, y es el que debe pasar antes del cambio al dominio real.
+
+**Tres fallos que aparecieron al añadir el landing, los tres arreglados:**
+1. Los enlaces RST del landing salían **sin convertir** (`English <http://...>`_`) porque `landing()` no pasaba el texto por `inline()`. Se veían como texto literal con backticks en la web ya desplegada.
+2. Los dos idiomas compartían la meta `description`, así que el inglés tenía la descripción en español — justo lo que Google muestra en los resultados.
+3. La **clave de las unidades no incluía la página**, así que el landing y el Pacto colisionaban en las mismas secciones; y además `importar` **reemplazaba** la memoria entera, de modo que importar el landing habría borrado las 203 entradas del Pacto. Ahora la clave lleva el slug y la importación **mezcla**.
+
+También se quitó del landing la lista de idiomas que apuntaba a readthedocs: es navegación y no contenido, Starlight ya trae su selector (que además lleva a la misma página en el otro idioma, no solo al inicio), y mantenerla obligaba a incrustar URLs dentro de texto traducible.
+
+Pendiente: la **revisión del usuario** de las 208 cadenas del francés, y el cambio al dominio real (lista de cuatro puntos en `task_plan.md`).
 
 ### Phase 4: Captura del sitio WordPress
 **Status:** pending
@@ -113,28 +126,26 @@ Files created/modified:
 |------|-------|----------|--------|--------|
 | Integridad de la copia de la skill | `sha256sum` de ambos `build-legal-page.cjs` | Hashes iguales | `e010e50b9519321ebf16b74d690332fd34b2cac2fd1320afba8bceb87094808a` en ambos | OK |
 | Skill de usuario eliminada | `ls ~/.zcode/skills` | Solo `planning-with-files` | Solo `planning-with-files` | OK |
-| Skill del proyecto presente | `find .zcode/skills -type f` | 2 archivos | `SKILL.md` (28.140 B) + `scripts/build-legal-page.cjs` (6.092 B) | OK |
-| Existencia de `video-3d-structures` | `find ~/.zcode` y todo el perfil | Encontrada | **No existe en ninguna parte** | **FALLO** |
+| Skill del proyecto presente | `find .zcode/skills -type f` | 2 archivos | `SKILL.md` + `scripts/build-legal-page.cjs` | OK |
+| Existencia de `video-3d-structures` | `find` por todo el perfil | Encontrada | No existe: la movió el usuario con otro agente | Falso positivo, cerrado |
 | Estructura de los docs EN↔ES | `tools/analyze-docs.cjs` | Paridad | 130 vs 131 encabezados; la diferencia es el subrayado roto del `20.2.1.` | OK |
-| Subrayados RST rotos | `tools/analyze-docs.cjs` | 0 | 1 caso: EN línea 437. ES limpio | Aviso |
-| ¿Los `.md` sirven de fuente? | `tools/compare-docs-text.cjs` | Mismo contenido | 136/150 párrafos y 4.534/4.883 palabras: **son ediciones distintas** | **Fallo de hipótesis** |
-| Conversión RST→Markdown | `tools/rst-to-md.cjs` | 0 subrayados sueltos | 0 en los 4 ficheros; 130 encabezados | OK |
-| Build de Starlight | `npm run build` en `astro-docs` | 5 páginas | 5 páginas, Pagefind indexa, `_redirects` en `dist` | OK |
-| Marca aplicada al CSS | `grep ff7100 dist/_astro/*.css` | Presente | Presente | OK |
-| Encabezados renderizados (ES) | `grep -c '<h[2-6]'` | 130 + ToC | 130 de contenido + 1 "En esta página" de Starlight | OK |
-| `20.2.1.` como encabezado en EN | `grep '<h5.*20\.2\.1\.'` | Presente | `<h5 id="2021">20.2.1.` | OK |
-| hreflang y canonical | HTML construido | Rutas existentes | `/pacto-social/` y `/en/pacto-social/`, las dos existen | OK tras corregir |
-| Sitemap | `dist/sitemap-0.xml` | 4 URLs válidas | Las 4 existen como rutas construidas | OK |
-| Build limpio como lo hace Cloudflare | `rm -rf node_modules && npm ci && npm run build` | 5 páginas | 5 páginas, `dist/` completo | OK |
-| **Ensayo desplegado: las 4 páginas** | `curl` a `unitygenerator.com` | 200 | `/`, `/pacto-social/`, `/en/`, `/en/pacto-social/` → 200 | OK |
-| TLS del dominio de ensayo | `openssl s_client` | Certificado válido del dominio | `CN=unitygenerator.com`, emitido por Google Trust Services, válido hasta 2026-12-10, apex en el SAN | OK |
-| `robots.txt` desplegado | `curl` | El nuestro, con Disallow | `# Dominio de ensayo: no debe indexarse.` | OK |
-| Búsqueda Pagefind | `/pagefind/pagefind-entry.json` | Índices es y en | Pagefind 1.5.2, 2 páginas por idioma | OK |
-| Selector de idioma | markup de la página ES | Navegable | `<select>` con `Espanol` → `/pacto-social/` y `English` → `/en/pacto-social/`, mapea a la página correspondiente | OK |
-| 404 propio | `/ruta-que-no-existe/` | 404 con nuestra página | 404, `<title>404 \| E-Nation` | OK |
-| Canonical, hreflang y x-default | HTML desplegado | En el dominio de ensayo | Los tres en `https://unitygenerator.com` | OK |
-| Los 301 de Read the Docs | 4 URLs antiguas | 301 al destino nuevo | `/en/latest/`→`/en/`, `/es/latest/`→`/`, y los dos `.html` a sus páginas | OK |
-| El arreglo del `20.2.1.` en producción | HTML desplegado del inglés | Encabezado | `<h5 id="2021">20.2.1.` | OK |
+| Subrayados RST rotos | `tools/analyze-docs.cjs` | 0 | 1 caso en EN (arreglado); ES limpio | Aviso |
+| ¿Los `.md` sirven de fuente? | `tools/compare-docs-text.cjs` | Mismo contenido | 136/150 párrafos y 4.534/4.883 palabras: **son ediciones distintas** | Fallo de hipótesis |
+| Conversión RST→Markdown | `tools/rst-to-md.cjs` | 0 subrayados sueltos | 0; 130 encabezados; el `20.2.1.` ya es encabezado | OK |
+| Alineación ES↔EN de unidades | `tools/i18n-align-check.cjs` | Coinciden | 130 secciones, 201 unidades, **las 130 secciones con el mismo número** | OK |
+| `check`: el pipeline reproduce el EN | `i18n:check` | 0 diferencias | 203 y 5 unidades, 0 con texto distinto | OK |
+| Red de seguridad del importador | quitar un párrafo y `i18n:import` | Aborta | `seccion 2: 7 unidades en la fuente contra 6` + exit 1 | OK |
+| Refactor de `import` sin cambio de comportamiento | re-sembrar EN | Memoria idéntica | **Byte a byte idéntica** | OK |
+| **Francés: alineación** | `i18n:import fr` | Alinea | 130 secciones, 197 unidades, 41 items **idénticos al español**, a la primera | OK |
+| Francés generado | `i18n:build fr` | Ambos ficheros | 203/203 y 5/5 unidades; 130 encabezados; 122 de numeración preservados | OK |
+| Build limpio como lo hace Cloudflare | `npm ci && npm run build` | 7 páginas | 7 páginas, `dist/` completo | OK |
+| **Desplegado en los tres idiomas** | `curl` a las 6 rutas | 200 con `lang` correcto | `/`,`/pacto-social/` es · `/en/…` en · `/fr/…` fr | OK |
+| Pagefind con tres idiomas | `pagefind-entry.json` | es, en, fr | es 2, en 2, fr 2 páginas | OK (tras descartar caché) |
+| hreflang completo | HTML del francés | 4 alternos | es, en, fr, x-default | OK |
+| Selector de idioma | markup del francés | 3 opciones | Espanol / English / Francais con la página correspondiente | OK |
+| Los 301 de Read the Docs | 4 URLs antiguas | 301 correcto | Correctos | OK |
+| TLS del dominio de ensayo | `openssl s_client` | Válido | `CN=unitygenerator.com`, Google Trust Services, hasta 2026-12-10 | OK |
+| `robots.txt` de ensayo | `curl` | Disallow | Disallow, intacto tras los despliegues | OK |
 | **301 por hostname de la Function** | — | — | **NO VERIFICABLE AÚN**: hace falta un segundo hostname apuntando al proyecto | Pendiente |
 
 ## Error Log
@@ -153,6 +164,10 @@ Files created/modified:
 | 2026-09-11 16:15 | Dos definiciones de `check` en `tools/i18n.cjs` (la vieja destructiva quedaba última y ganaba por hoisting) | 1 | **Corregido.** Verificado que queda 1 sola definición con `grep -c "^function check"`. |
 | 2026-09-11 16:15 | La meta `description` del inglés quedó en español (el conversor la fija igual para los dos idiomas) y así entró en la memoria | 0 (pendiente) | **Sin corregir.** Hay que sustituir esa entrada de la memoria; anotado en `task_plan.md` y en el `code-comment` del conversor. |
 | 2026-09-11 16:46 | **`git push` → 403 `Permission to ElishaBentzi/E-Nation.git denied to ElishaBentzi`** | 1 | **Resuelto.** No era un problema del repositorio: `ElishaBentzi` es una cuenta de usuario (no organización), el repo es público y no está archivado ni deshabilitado. El 403 venía del **token con el que se autenticó**, sin scope de escritura (típico de un fine-grained que no incluye el repo, o un clásico sin `repo`). Se resolvió pasando el remoto a **SSH**: clave ed25519 generada en `C:\Users\Elisha\.ssh\`, registrada como Authentication Key en GitHub, remoto a `git@github.com:…` y `core.sshCommand` fijado en el repo. Verificado: autentica como `ElishaBentzi` y `77a75fb..89a01a0 master -> master`. |
+| 2026-09-11 18:17 | El landing generaba los enlaces RST **sin convertir** y se veían como texto literal en la web desplegada | 1 | **Corregido.** `landing()` no pasaba el cuerpo por `inline()`. Ahora sí, y además se quita la lista de idiomas (ver abajo). |
+| 2026-09-11 18:17 | Los dos idiomas compartían la meta `description`: el inglés tenía la descripción en español | 1 | **Corregido.** La descripción pasa a ser un campo por idioma en el conversor. Es lo que Google muestra en los resultados, así que no es cosmético. |
+| 2026-09-11 18:17 | **La clave de las unidades no incluía la página** y `importar` reemplazaba la memoria entera | 1 | **Corregido.** Sin el slug en la clave, el landing y el Pacto colisionaban en las mismas secciones; y como `importar` reemplazaba, importar el landing habría **borrado las 203 entradas del Pacto sin avisar**. Ahora la clave lleva el slug y la importación mezcla sobre lo existente. Las memorias se regeneraron (las claves cambiaron) y se re-sembró y re-importó todo. |
+| 2026-09-11 18:19 | Pagefind parecía no haber indexado el francés (`en` y `es` solamente) | 1 | **Falso positivo: era caché.** El `pagefind-entry.json` desplegado con cache-busting sí trae `es, en, fr`, y `wasm.fr.pagefind` responde 200. El nombre del fichero es fijo, así que me sirvió una copia vieja. Medido antes de "arreglarlo", que es exactamente la lección de la skill. |
 | 2026-09-11 16:46 | **El `HOME` de este entorno apunta al perfil del sistema** (`/c/WINDOWS/system32/config/systemprofile`), no a `C:\Users\Elisha` | 1 | **Corregido.** Me llevó a crear la clave SSH en el sitio equivocado y a que dos comprobaciones previas (`ls ~/.ssh` y `cmdkey /list`) miraran en el contexto equivocado. Clave regenerada en `C:\Users\Elisha\.ssh\` y la mal ubicada eliminada. **Regla para el futuro en este entorno: no usar `~` para nada del usuario, siempre rutas absolutas `C:\Users\Elisha\…`.** |
 | 2026-09-11 15:37 | 404 en `e-nation.pages.dev` y en el dominio de ensayo; **leí un 200 en `/robots.txt` como prueba de que había despliegue** | 1 | **Corregido.** Ese `robots.txt` era el de Cloudflare por defecto (su política de señales de contenido para crawlers de IA), no el nuestro. `/index.html` y `/404.html` daban 404: **no había despliegue**. La causa real: el `Root directory` del proyecto de Pages se quedó vacío, así que el build corría en la raíz del monorepo, donde el `package.json` no tiene script `build`. El usuario lo corrigió a `astro-docs` y desplegó. **Lección: un 200 aislado en `/robots.txt` no prueba que tu sitio esté arriba; comprobar siempre una ruta real.** |
 

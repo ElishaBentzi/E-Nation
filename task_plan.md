@@ -42,18 +42,19 @@ Phase 3: Docs — Starlight, i18n y deploy — `in_progress`
 - [x] Alineación ES↔EN medida: 130 secciones y 201 unidades, **coinciden al 100%**, y `check` reproduce el inglés con 0 diferencias de contenido
 - [x] **Ensayo sobre `unitygenerator.com`** (decisión del usuario): el dominio real no se toca hasta verificar. Dominio centralizado en `astro-docs/site.config.mjs`, `robots.txt` bloqueando el rastreo mientras sea ensayo, y `functions/[[path]].js` con 301 por host
 - [x] Subido a GitHub y **ensayo verificado de punta a punta** (evidencia en `progress.md`): 5 páginas, TLS propio del dominio, Pagefind con índices es/en, selector de idioma que mapea a la página correspondiente, 404 propio, canonical/hreflang/sitemap en el apex, y los cuatro 301 desde las URLs de RTD apuntando bien. El build falló al principio por el `Root directory` sin poner
-- [ ] **Cambio al dominio real** cuando el ensayo esté verificado (lista de cambio abajo)
-- [ ] Corregir la meta `description` del inglés (está en español porque el conversor la fija igual para los dos idiomas)
-- [ ] **Generar el francés** (203 unidades) y declararlo en la config
+- [x] **Generar el francés**: 203 unidades del Pacto + 5 del landing, importadas como prosa y alineadas a la primera. Los docs están en los tres idiomas y desplegados
+- [x] `i18n:strict` para la puerta de revisión: el modo normal solo falla si falta texto; el estricto falla además si queda algo sin revisar
+- [ ] **Revisión del usuario** de las 208 cadenas del francés (y de la meta `description` del inglés, que ahora ya está en inglés)
 **Status:** in_progress
 
-**Pendiente de verificar del ensayo**: la rama "otro host" de `functions/[[path]].js` (el 301 por hostname) no se puede comprobar hasta que un segundo hostname apunte al proyecto. Eso ocurre exactamente en el cambio al dominio real, así que la primera vez que se ejerza será con `docs.e-nation.org`. No darlo por bueno antes.
+**Los docs están desplegados y verificados en es/en/fr** sobre `unitygenerator.com`, con búsqueda Pagefind indexada en los tres idiomas, hreflang completo y los 301 desde Read the Docs. Queda pendiente de verificar la rama "otro host" de `functions/[[path]].js` (el 301 por hostname): necesita un segundo hostname apuntando al proyecto, y eso ocurre justo en el cambio al dominio real.
 
-#### Lista de cambio al dominio real (los tres puntos van juntos)
+#### Lista de cambio al dominio real (los cuatro puntos van juntos)
 
 1. `astro-docs/site.config.mjs` → `SITE`, `PRIMARY_HOST` e `INDEXABLE` (ponerla en `true`).
 2. `astro-docs/functions/[[path]].js` → `PRIMARY` (no puede importar el archivo de config: Cloudflare empaqueta las Functions aparte).
-3. Cloudflare → añadir `docs.e-nation.org` como dominio propio del proyecto de Pages, y entonces quitar el dominio de Read the Docs.
+3. **`npm run i18n:strict` tiene que pasar**: no se cambia el dominio con traducciones sin revisar.
+4. Cloudflare → añadir `docs.e-nation.org` como dominio propio del proyecto de Pages, y entonces quitar el dominio de Read the Docs.
 
 El 301 desde el dominio de ensayo al real sale solo del punto 2.
 

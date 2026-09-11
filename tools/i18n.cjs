@@ -143,8 +143,14 @@ function guardarTM(locale, tm) {
 // status
 // ---------------------------------------------------------------------------
 function status() {
+  // `--strict` anade una condicion mas: falla tambien si queda algo SIN REVISAR.
+  // El modo normal solo falla si falta texto, porque publicar en un dominio de
+  // ensayo para poder revisar las traducciones en contexto es legitimo. Antes de
+  // cambiar al dominio real hay que correrlo en estricto.
+  const estricto = process.argv.includes('--strict');
   let faltaAlgo = false;
-  console.log('Matriz de traduccion\n');
+  let haySinRevisar = false;
+  console.log(`Matriz de traduccion${estricto ? ' (modo estricto: tambien falla lo sin revisar)' : ''}\n`);
   for (const page of PAGES) {
     const src = parse(fs.readFileSync(rutaDe(DEFAULT_LOCALE, page.slug), 'utf8'));
     const total = src.unidades.length;
@@ -160,6 +166,7 @@ function status() {
       }
       const estado = ausentes ? 'AUSENTE' : sinRevisar ? 'sin revisar' : 'OK';
       if (ausentes) faltaAlgo = true;
+      if (sinRevisar) haySinRevisar = true;
       console.log(`  ${locale.padEnd(4)} traducidas ${String(ok).padStart(3)}/${total}   ausentes ${String(ausentes).padStart(3)}   sin revisar ${String(sinRevisar).padStart(3)}   ${estado}`);
     }
     console.log('');
@@ -168,7 +175,13 @@ function status() {
     console.log('Hay cadenas ausentes: no se puede publicar texto viejo en otro idioma.');
     process.exit(1);
   }
-  console.log('Todas las cadenas estan traducidas.');
+  if (estricto && haySinRevisar) {
+    console.log('Hay traducciones sin revisar. Antes del cambio al dominio real, revisarlas y marcarlas.');
+    process.exit(1);
+  }
+  console.log(estricto
+    ? 'Todas las cadenas estan traducidas y revisadas.'
+    : 'Todas las cadenas estan traducidas.');
 }
 
 // ---------------------------------------------------------------------------
