@@ -1,0 +1,14 @@
+# Normaliza finales de linea para evitar ruido de CRLF/LF entre maquinas.
+* text=auto
+
+# Binarios: que git nunca intente normalizarlos.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.ai binary
+*.eps binary
+*.pdf binary

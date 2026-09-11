@@ -1,0 +1,31 @@
+# Dependencias y builds
+node_modules/
+dist/
+.astro/
+
+# Entorno y editores
+.env
+.env.*
+.vscode/
+
+# Material de trabajo pesado extraído del original.
+# Son binarios reproducibles y no aportan al historial: se regeneran con los
+# scripts de tools/ a partir del sitio y de los uploads del WordPress.
+reference/uploads/
+screenshots/
+
+# Salida compilada de Sphinx (el HTML de Read the Docs estaba commiteado en
+# este repo; aquí no lo queremos). Se usa una vez para comparar nuestro build
+# contra el de RTD y luego se ignora.
+docs/**/_build/
+_build/
+
+# Sistema
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.log
+
+# Planes de sesion que escribe el cliente ZCode (artefacto por sesion).
+# La memoria del proyecto son task_plan.md / findings.md / progress.md en la raiz.
+.zcode/plans/

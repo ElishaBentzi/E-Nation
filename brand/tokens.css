@@ -1,0 +1,61 @@
+/*
+ * Tokens de marca de E-Nation — archivo compartido por astro-site y astro-docs.
+ *
+ * Todos los valores están MEDIDOS sobre el CSS real del original
+ * (post-5738.css de Elementor y el CSS inline de la home), nunca inventados.
+ * La procedencia de cada uno está en findings.md.
+ *
+ * Es CSS plano a propósito: no lleva `@theme` de Tailwind ni variables de
+ * Starlight, porque lo consumen dos frameworks distintos. El sitio lo importa
+ * y mapea estos valores a su `@theme`; los docs lo importan y sobrescriben
+ * las variables de Starlight.
+ */
+
+:root {
+  /* ---------------------------------------------------------------
+   * Color — paleta de marca
+   * Frecuencias medidas sobre post-5738.css: #ff7100 aparece 94 veces
+   * (acento principal), #095287 (10), #003f7f (8), #234965 (4),
+   * #ff3a2d (8 en el CSS inline de la home).
+   * ------------------------------------------------------------- */
+  --en-color-primary: #ff7100; /* naranja — acento principal */
+  --en-color-primary-dark: #ff6900; /* variante usada en hover */
+  --en-color-accent: #ff3a2d; /* rojo — énfasis y alertas */
+  --en-color-blue: #095287; /* azul medio */
+  --en-color-blue-dark: #003f7f; /* azul oscuro */
+  --en-color-navy: #234965; /* azul marino */
+  --en-color-blue-light: #2e6f9a; /* azul claro */
+
+  /* Neutros */
+  --en-color-white: #ffffff;
+  --en-color-ink: #333333;
+  --en-color-black: #000000;
+  --en-color-border: #e8e8e8;
+
+  /* ---------------------------------------------------------------
+   * Tipografía
+   * Globales de Elementor, auto-hospedadas por el propio WordPress en
+   * /zero/wp-content/uploads/elementor/google-fonts/. Las familias del
+   * tema (Arimo, Maven Pro, Open Sans) se declaran pero no se usan en
+   * la home.
+   *
+   * PENDIENTE (Fase 4): al espejar los uploads hay que añadir aquí los
+   * @font-face con los .woff2 del original. Hasta entonces estas pilas
+   * resuelven por fallback del sistema si la fuente no está instalada.
+   * ------------------------------------------------------------- */
+  --en-font-heading: "Roboto Slab", Georgia, "Times New Roman", serif;
+  --en-font-body: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Arial, sans-serif;
+
+  /* Escala tipográfica del original — PENDIENTE de medir (Fase 4). */
+}
+
+/* ---------------------------------------------------------------
+ * PENDIENTE DE MEDIR antes de escribir nada más aquí (Fase 4):
+ *   - Radios de borde (si son 0, el diseño es cuadrado y hay que
+ *     decirlo explícitamente en vez de dejar el default del framework)
+ *   - Sombras (si el diseño es flat, hay que anular las del framework)
+ *   - Ancho del contenedor (el original usa un page builder; hay que
+ *     leer el max-width real, típicamente 1140px, no suponerlo)
+ * No inventes estos valores: se leen del CSS computado del original.
+ * ------------------------------------------------------------- */
