@@ -85,13 +85,27 @@ Cuarta parte de la fase — el ensayo con la forma docs.*:
 **El ensayo está cerrado.** Lo único pendiente del lado de los docs es ejecutar el cambio a `docs.e-nation.org` cuando el usuario lo decida, y luego quitar el dominio de Read the Docs.
 
 ### Phase 4: Captura del sitio WordPress
-**Status:** pending
-**Started:**
+**Status:** in_progress
+**Started:** 2026-09-11
 Actions taken:
--
+- Escrito `tools/wp-extract.php` (563 líneas) para que **el usuario lo suba** a `/zero/`. Exporta contenido de todos los idiomas, datos de Elementor, SEO de Rank Math, menús, medios, grupos de traducción de WPML, el kit global y la config de Slider Revolution. **No imprime el contenido**: en pantalla solo métricas, y el JSON se descarga con `?download=1`, para que el texto legal nunca pase por el chat ni por un registro.
+- Añadido `tools/validate-php.mjs` con `php-parser`, porque escribimos PHP que corre en el servidor pero la máquina local no tiene PHP: **sintaxis validada, 563 líneas OK**. Sin esto, un error se descubre subiendo el archivo y viendo un 500.
+- Escrito `tools/capture-reference.cjs` y capturado: **16 HTML renderizados**, sus estilos inline (14-18 bloques cada uno) y **47 CSS en su ruta original** (2,27 MB, 0 fallos). Índice en `reference/INDEX.md`.
+- Escrito `tools/extract-tokens.cjs` y medidos los tokens: `reference/TOKENS.md`.
+- Escrito `tools/measure-browser.js`: el snippet que se inyecta en el navegador para resolver **a la vez** el color computado y la técnica real del parallax, que son las dos preguntas que el CSS no puede responder.
+
+**Hallazgos de la captura** (detalle en `findings.md`):
+- **Solo 4 páginas usan Elementor**; las otras 12 son planas del tema. Y las grandes son las **presentaciones** (~245 KB de CSS de Elementor cada una), no la home (76 KB).
+- **`#1ebbf0` es ambiguo, no un falso positivo**: aparece 402 veces en el CSS *propio* del sitio (el que WordPress genera desde las opciones del tema) y estiliza `.elementor-button`, mientras el CSS que pinta la home usa `#ff7100` 94 veces y no lo menciona. **Se corrige mi afirmación anterior** y queda pendiente de medir en el navegador.
+- Confirmado como falso positivo seguro: la paleta por defecto de Elementor (`#6EC1E4`, `#61CE70`), que aparece en las variables del kit.
+- Top de color del CSS propio: `#ffffff` 560, `#1ebbf0` 402, `#ff7100` 314, `#39dfaa` 215, **`#052743` 127** (navy no detectado antes), `#234965` 54.
 
 Files created/modified:
--
+- `tools/wp-extract.php`, `tools/validate-php.mjs`, `tools/capture-reference.cjs`, `tools/extract-tokens.cjs`, `tools/measure-browser.js`, `tools/package.json` (con `php-parser`)
+- `reference/rendered/*.html` y `*.inline.css` (16 de cada), `reference/css/**` (47 archivos), `reference/INDEX.md`, `reference/TOKENS.md` — todo ignorado por git
+- `.gitignore` (se ignora `reference/` entero, no solo `uploads/`)
+
+Pendiente de la fase: el barrido del navegador sobre el sitio vivo (capturas 1440/390 + medición de color y parallax), y la auditoría de imágenes con texto. Y recibir `wp-export.json` del usuario.
 
 ### Phase 5: Stack del sitio
 **Status:** pending
@@ -181,6 +195,11 @@ Files created/modified:
 | 2026-09-11 18:17 | **La clave de las unidades no incluía la página** y `importar` reemplazaba la memoria entera | 1 | **Corregido.** Sin el slug en la clave, el landing y el Pacto colisionaban en las mismas secciones; y como `importar` reemplazaba, importar el landing habría **borrado las 203 entradas del Pacto sin avisar**. Ahora la clave lleva el slug y la importación mezcla sobre lo existente. Las memorias se regeneraron (las claves cambiaron) y se re-sembró y re-importó todo. |
 | 2026-09-11 18:19 | Pagefind parecía no haber indexado el francés (`en` y `es` solamente) | 1 | **Falso positivo: era caché.** El `pagefind-entry.json` desplegado con cache-busting sí trae `es, en, fr`, y `wasm.fr.pagefind` responde 200. El nombre del fichero es fijo, así que me sirvió una copia vieja. Medido antes de "arreglarlo", que es exactamente la lección de la skill. |
 | 2026-09-11 ~16:50 | Probé una URL de RTD inválida (`/es/latest/Social-Pact-Constitution-English.html`, documento inglés bajo prefijo es) y su 301 cayó en la regla comodín a una ruta inexistente | 1 | **Era mi URL de test, no un fallo del despliegue.** Al probar las 4 URLs reales de RTD con `curl -L`, todas aterrizan con 200. Lección de nuevo: verificar con datos reales del original antes de declarar un bug. |
+| 2026-09-11 ~18:40 | `capture-reference.cjs` creaba rutas inexistentes: `nombreArchivo()` dejaba las barras del path en el nombre del archivo | 1 | **Corregido.** Ahora se **replica la estructura de directorios original** bajo `reference/css/`, que además es más navegable y evita colisiones entre archivos homónimos de carpetas distintas. |
+| 2026-09-11 ~18:40 | El CSS de Mailchimp (`/embedcode/classic-10_7.css`) da **404 en su ruta original**: solo existe dentro de la caché de WP Rocket | 1 | **Corregido.** Se guarda también la URL absoluta que enlaza el HTML y, si la ruta original falla, se reintenta contra la cacheada. 1 de los 47 CSS se obtuvo así. |
+| 2026-09-11 ~18:45 | **`grep -c` cuenta LÍNEAS, no apariciones**, y los CSS son de una sola línea: reportaba `1` aparición de `#ff7100` cuando había 94 | 1 | **Corregido.** Uso `grep -o … \| wc -l` en shell y `matchAll` en código. **Este error me llevó a una conclusión falsa sobre la paleta antes de detectarlo**, y es la razón por la que casi descarto `#1ebbf0` sin medirlo. |
+| 2026-09-11 ~18:50 | **Carácter cirílico en mi propio script**: escribí `'fabricа'` con `а` cirílica, creando una familia fantasma que se tragaba el CSS de `wp-includes` y desaparecía de los totales | 1 | **Corregido.** Familia renombrada a `core` y lista de familias centralizada en la constante `FAMILIAS`, para que no pueda volver a desincronizarse. Detectado con `cat -A`, que revela los bytes altos. |
+| 2026-09-11 ~18:35 | Afirmé que `#1ebbf0` y `#39dfaa` eran "paleta por defecto de The7, no la marca" | 1 | **Corregido en `findings.md` y en `TOKENS.md`.** La medición dice que `#1ebbf0` aparece 402 veces en el CSS **propio** del sitio y estiliza `.elementor-button`. No se puede resolver leyendo CSS: queda como **candidato sin confirmar** hasta medir el color computado en el navegador. |
 | 2026-09-11 16:46 | **El `HOME` de este entorno apunta al perfil del sistema** (`/c/WINDOWS/system32/config/systemprofile`), no a `C:\Users\Elisha` | 1 | **Corregido.** Me llevó a crear la clave SSH en el sitio equivocado y a que dos comprobaciones previas (`ls ~/.ssh` y `cmdkey /list`) miraran en el contexto equivocado. Clave regenerada en `C:\Users\Elisha\.ssh\` y la mal ubicada eliminada. **Regla para el futuro en este entorno: no usar `~` para nada del usuario, siempre rutas absolutas `C:\Users\Elisha\…`.** |
 | 2026-09-11 15:37 | 404 en `e-nation.pages.dev` y en el dominio de ensayo; **leí un 200 en `/robots.txt` como prueba de que había despliegue** | 1 | **Corregido.** Ese `robots.txt` era el de Cloudflare por defecto (su política de señales de contenido para crawlers de IA), no el nuestro. `/index.html` y `/404.html` daban 404: **no había despliegue**. La causa real: el `Root directory` del proyecto de Pages se quedó vacío, así que el build corría en la raíz del monorepo, donde el `package.json` no tiene script `build`. El usuario lo corrigió a `astro-docs` y desplegó. **Lección: un 200 aislado en `/robots.txt` no prueba que tu sitio esté arriba; comprobar siempre una ruta real.** |
 

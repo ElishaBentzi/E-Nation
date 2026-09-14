@@ -20,6 +20,83 @@
 | 6 | Revisar las traducciones antes de publicar | **Francés revisado y aprobado por el usuario el 2026-09-11** |
 | 7 | **Tema claro/oscuro/auto en las páginas del sitio**, como el que trae Starlight en los docs (petición del usuario al revisar el francés) | Fase 5 |
 
+### Recursos del original: cómo encontrarlos de verdad (medido)
+
+**El HTML pesa 282 KB y enlaza 36 hojas de estilo**, pero hay un truco que cambia todo el planteamiento: **WP Rocket reescribe las URLs** a
+`/zero/wp-content/cache/min/1/zero/wp-content/plugins/...` y a
+`/zero/wp-content/cache/background-css/1/e-nation.org/...`.
+
+Es decir: si se descarga lo que enlaza el HTML se obtienen **archivos minificados y combinados**, sin estructura ni comentarios, que son la peor fuente posible para extraer valores de diseño. **La ruta original se recupera quitando el prefijo de caché**, y esos archivos sí son legibles.
+
+| Se enlaza en el HTML | Ruta original a descargar |
+|---|---|
+| `/cache/min/1/zero/wp-content/plugins/jet-elements/assets/css/addons/jet-banner.css` | `/zero/wp-content/plugins/jet-elements/assets/css/addons/jet-banner.css` |
+| `/cache/background-css/1/e-nation.org/zero/wp-content/uploads/elementor/css/post-5738.css` | `/zero/wp-content/uploads/elementor/css/post-5738.css` |
+
+**El CSS de Elementor es POR PÁGINA**, no global: la home EN usa `post-5738.css` (76.725 B) y el HTML de la home referencia además `post-6709.css`, que es de otra página. Cada página tiene el suyo, así que hay que descubrirlo desde el HTML de cada una en vez de suponer un único archivo.
+
+CSS clave confirmados como accesibles (200):
+- `/zero/wp-content/uploads/elementor/css/post-5738.css` — 76.725 B, la home EN
+- `/zero/wp-content/uploads/elementor/css/post-6028.css` — 76.396 B, la home ES (del recon inicial)
+- `/zero/wp-content/uploads/the7-css/custom.css` — **338.142 B**, el tema
+- `/zero/wp-content/uploads/the7-css/css-vars.css` — 35.201 B, **las variables de marca**
+- `media.css`, `mega-menu.css`, `compatibility/wpml.css` — el resto del tema
+- De plugins, los que importan para los efectos: `jet-elements/addons/jet-{banner,animated-box,animated-text,button,slider}.css` y sus `skin/`, `jet-elements.css`, `slider-pro.min.css`, `peel.min.css`, y el `rs6.css` de Slider Revolution
+- Fuentes: `/zero/wp-content/uploads/elementor/google-fonts/css/{roboto,robotoslab}.css`, más el CSS de fuentes cacheado por WP Rocket y las fuentes del tema (`icomoon-the7-font`, FontAwesome)
+
+**La home trae 18 bloques de `<style>` inline** (5.302 B en total) que también hay que capturar: ahí viven ajustes de Elementor y de The7 que no están en ningún archivo.
+
+**Implicación para la captura**: hay que descargar ~35 CSS **en su ruta original**, más el CSS de Elementor específico de cada una de las 16 páginas, más los estilos inline de cada página. Guardar lo que enlaza el HTML sería guardar la versión minificada y perder la legibilidad que hace falta para extraer la paleta, los radios, las sombras y los efectos.
+
+### Captura de referencia: hecha, y lo que reveló
+
+**Capturado** (con `tools/capture-reference.cjs`): el HTML renderizado de las **16 páginas**, sus estilos inline, y **47 archivos CSS en su ruta original** (2,27 MB, 0 fallos). Índice en `reference/INDEX.md`, tokens medidos en `reference/TOKENS.md`.
+
+**Hallazgo estructural importante: solo 4 páginas usan Elementor.**
+
+| Página | CSS de Elementor |
+|---|---|
+| `presentation-en` (576 KB de HTML) | `post-5479.css` — **244.977 B** |
+| `presentacion-es` (580 KB) | `post-6100.css` — **248.133 B** |
+| `home-en` | `post-5738.css` — 76.725 B |
+| `home-es` | `post-6028.css` — 76.396 B |
+| (compartido por las 4) | `post-6709.css` — 1.134 B, probablemente el kit |
+
+**Las otras 12 páginas son planas del tema The7**, sin page builder: `articles`, `news`, `verify`, `privacy-policy`, `terms-and-conditions` y sus equivalentes ES, más las dos FR. Eso reduce mucho el trabajo: la fidelidad de reconstrucción al nivel de Elementor solo hace falta en **4 páginas**, y `presentation`/`presentacion` son las grandes (no la home, como yo suponía).
+
+**Corrección de una suposición mía**: dije que la home era "lo más difícil por los 3 RevSliders". Cierto, pero las páginas realmente voluminosas son las presentaciones, con ~245 KB de CSS de Elementor cada una frente a 76 KB las homes.
+
+### La paleta: `#1ebbf0` es AMBIGUO y hay que medirlo, no deducirlo
+
+Esto merece su propio apartado porque **me contradije a mí mismo y la evidencia obliga a corregirlo**.
+
+El recon inicial dio por sentado que `#1ebbf0` (cian) y `#39dfaa` (verde) eran "paleta por defecto de The7, no la marca". **Al medir con conteo de frecuencias, `#1ebbf0` aparece 402 veces en el CSS *propio* del sitio** — más que `#ff7100` (314). Está en `uploads/the7-css/custom.css`, que es CSS **generado por WordPress para este sitio** a partir de las opciones del tema. No es CSS de fábrica.
+
+Y sus selectores incluyen cosas visibles:
+```css
+.wp-block-categories li a:hover, .wp-block-archives li a:hover { color: #1ebbf0; }
+.elementor-button, a.elementor-button:visited { … }   /* botones de Elementor */
+.wp-block-quote { border-color: #1ebbf0; }
+```
+
+En cambio `post-5738.css` (el CSS que pinta la home) usa **`#ff7100` 94 veces y `#1ebbf0` CERO**.
+
+**Conclusión honesta: no se puede resolver leyendo CSS.** Son hojas distintas apuntando a selectores distintos: puede haber botones cian y textos naranjas en la misma página. Solo el **color computado de los elementos visibles** lo decide. Queda como **candidato sin confirmar** hasta medirlo con `tools/measure-browser.js` en el navegador.
+
+**Lo que sí es falso positivo seguro**: la paleta por defecto de **Elementor**, que aparece como variables globales del kit aunque no se use — `--e-global-color-primary: #6EC1E4` y `--e-global-color-accent: #61CE70`. Y ojo: esa es exactamente la trampa que la skill advierte, encontrada en vivo.
+
+### Tokens medidos (de `reference/TOKENS.md`)
+
+- **Tipografías auto-hospedadas de verdad** (`@font-face`): **Roboto (198 declaraciones)**, Arimo (64), **Roboto Slab (63)**, Open Sans (30), Maven Pro (18), más las de iconos (FontAwesome ×3 variantes). Coincide con el reconocimiento: **Roboto + Roboto Slab son las globales de Elementor**; Arimo, Open Sans y Maven Pro las declara el tema.
+- **Top de color en el CSS propio**: `#ffffff` 560, `#1ebbf0` 402, `#ff7100` 314, `#39dfaa` 215, `#052743` 127 (**navy oscuro no detectado antes**), `#333333` 124, `#234965` 54.
+- Pendiente de calcular con precisión: radios, sombras y ancho de contenedor (el script los extrae; revisar `TOKENS.md`).
+
+### Trampas de medición encontradas (para no repetirlas)
+
+- **`grep -c` cuenta LÍNEAS, no apariciones.** Los CSS de WordPress y de Elementor son de **una sola línea**, así que `grep -c "#ff7100"` devolvía `1` cuando había 94. Hay que usar `grep -o … | wc -l`, y en código `matchAll` o `split`. Este error me llevó a una conclusión falsa antes de detectarlo.
+- **WP Rocket reescribe las URLs del CSS** a `/cache/min/1/…` y `/cache/background-css/1/…`. Descargar lo que enlaza el HTML da archivos **minificados y combinados**; la ruta original se recupera quitando el prefijo de caché, y esos archivos sí son legibles. Hay assets que **solo** existen en la caché (el CSS del formulario de Mailchimp, `/embedcode/classic-10_7.css`): para esos hace falta reserva a la URL cacheada.
+- **`&nbsp;` y entidades escapadas**: ya visto en los `.md` del Pacto.
+
 ### Requisito 7 en detalle: el tema oscuro del sitio
 
 El usuario vio el selector claro/oscuro/auto de Starlight en los docs y quiere algo similar en las páginas de e-nation.
