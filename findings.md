@@ -97,6 +97,108 @@ En cambio `post-5738.css` (el CSS que pinta la home) usa **`#ff7100` 94 veces y 
 - **WP Rocket reescribe las URLs del CSS** a `/cache/min/1/…` y `/cache/background-css/1/…`. Descargar lo que enlaza el HTML da archivos **minificados y combinados**; la ruta original se recupera quitando el prefijo de caché, y esos archivos sí son legibles. Hay assets que **solo** existen en la caché (el CSS del formulario de Mailchimp, `/embedcode/classic-10_7.css`): para esos hace falta reserva a la URL cacheada.
 - **`&nbsp;` y entidades escapadas**: ya visto en los `.md` del Pacto.
 
+### El export de WordPress: qué trajo y qué resolvió
+
+`reference/wp-export.json` — **2,26 MB**, generado por `tools/wp-extract.php`. Trae 16 páginas, 90 medios, 112 efectos, 544 widgets y los 4 sliders.
+
+#### La paleta: RESUELTA en parte, y con sorpresa
+
+**El kit global de Elementor tiene la paleta de FÁBRICA del plugin**, sin personalizar:
+`--e-global-color-primary: #6EC1E4`, `secondary: #54595F`, `text: #7A7A7A`, `accent: #61CE70`. Son exactamente los valores por defecto de Elementor.
+
+Dos consecuencias:
+1. **Confirma que el kit no es la marca** — el autor nunca personalizó los colores globales, los puso elemento por elemento. Los valores reales están en el CSS de cada página (`post-5738.css` usa `#ff7100` 94 veces).
+2. **Refuerza que `#1ebbf0` importa**: si el kit está sin personalizar, el color de acento del tema (que estiliza `.elementor-button`) **no lo pisa el kit**, así que los botones podrían salir cian. Sigue haciendo falta medir el color computado en el navegador — pero ahora sé que el kit no es la explicación alternativa.
+
+**Tipografía del kit (esta sí es real y se usa)**: `primary: Roboto`, `secondary: **Roboto Slab**`, `text: Roboto`, `accent: Roboto`. Confirma Roboto + Roboto Slab como las tipografías de Elementor.
+
+#### Solo 4 páginas son Elementor, y las demás están casi vacías
+
+| Página | Datos de Elementor |
+|---|---|
+| `presentation-en` | **285.943 B** |
+| `presentacion-es` | **292.830 B** |
+| `home-landing-page-en` | 79.242 B |
+| `home-es` | 78.836 B |
+
+Las otras **12 son páginas planas** y su `post_content` es minúsculo: `articles` 85 B, `news` 75 B, `verify` 118 B, y las FR 89-91 B. Es decir: **son páginas que prácticamente solo contienen un enlace o un shortcode**, coherente con que los artículos vivan en otro WordPress. La fidelidad de nivel Elementor solo hace falta en **4 páginas**.
+
+#### Inventario de widgets: 544 en total
+
+| Widget | Nº |
+|---|---|
+| `heading` | **306** |
+| `image` | **114** |
+| `jet-banner` | 56 |
+| `jet-animated-text` | 18 |
+| `jet-animated-box` | 14 |
+| `shortcode` | 10 |
+| `icon-list` | 8 |
+| `html` | 6 |
+| `jet-button` | 4 |
+| `jet-video` | 4 |
+| `jet-slider` | 2 |
+| `menu-anchor` | 2 |
+
+La reconstrucción es sobre todo **encabezados e imágenes**: el 77 % del total. Nada de formularios ni widgets exóticos.
+
+#### Parallax: CONFIRMADO que es fondo fijo
+
+**112 efectos, todos de tipo `background`. Cero animaciones de entrada (`_animation`) y cero `motion_fx_scrolling`.**
+
+De esos fondos, **54 declaran `background-attachment: fixed`** y 58 no lo declaran. El usuario tenía razón: **la técnica es fondo fijo**, no desplazamiento por transform.
+
+**Y esto explica el dato que me confundió antes**: los 63 elementos con `elementor-motion-effects` que vi en el HTML **no son efectos activos** — Elementor renderiza esos contenedores vacíos siempre. No hay ni un efecto de movimiento por JS. La familia "transform" que yo esperaba encontrar **no existe en este sitio**.
+
+#### Los 4 sliders y dónde vive cada uno
+
+| Slider | Slides | Peso | Dónde se usa |
+|---|---|---|---|
+| `e-nation` (id 18) | 2 | 219 KB | home EN y ES |
+| `vertical-horizontal` (id 19) | 1 | 431 KB | home EN y ES |
+| `snake` (id 20) | 1 | 23 KB | **home EN/ES y presentación EN/ES** |
+| `banner-publicidad` (id 17) | **21** | **1,95 MB** | presentación EN y ES |
+
+Se inyectan como shortcodes `[rev_slider alias="…"]` dentro de Elementor (los 10 widgets `shortcode` del inventario son exactamente estos). La home lleva 3 y la presentación 2. Extraídos a `reference/sliders/<alias>.json` con sus capas y params completos.
+
+#### SEO: solo 4 focus keywords, y una sorpresa de marca
+
+**12 de 16 páginas no tienen focus keyword.** Las únicas definidas son `Articles`, `News`, `Artículos`, `Noticias`. El valor SEO del original es mucho menor de lo que el plan asumía: no hay una lista de keywords que igualar.
+
+**Y los títulos SEO revelan un nombre de marca que no había visto**: `Articles | Mutual Welfare | For an Altruistic Society` y `Artículos | Bienestar Mutuo | Por una Sociedad Altruista`. Es decir, el sitio se presenta en Google como **"Mutual Welfare / Bienestar Mutuo"**, que además coincide con la lista de Mailchimp (`bienestarmutuo`). Pero el `og:site_name` es `E-Nation` y la descripción de la home es `Real Direct Democracy`. **Hay tres identidades conviviendo** y hay que preguntar al usuario cuál manda.
+
+#### La navegación: fuente de verdad es el HTML, no el export
+
+**Corrección de una hipótesis mía.** El export dice que hay 3 menús (uno por idioma, cosa de WPML) y que **los tres apuntan a URLs en inglés**, lo que sugería que la navegación española llevaba a páginas inglesas. **El HTML renderizado lo desmiente**: el menú del ES apunta a `/es/`, `/es/presentacion/`, `/es/articulos/`, `/es/noticias/`.
+
+**Lección**: `wp_get_nav_menu_items()` devuelve los items sin traducir; **WPML los traduce al renderizar**. Para la navegación, la fuente de verdad es el HTML renderizado. Queda escrito en el `aviso` de `reference/manifest.json`.
+
+**Defecto real encontrado**: el selector de idioma enlaza a **`https://e-nation.org/fr/`, que redirige a la home inglesa**. La opción francesa del original no funciona.
+
+**Y una dependencia a gestionar**: el item "Constitución" del menú apunta a **`http://docs.e-nation.org/{en,es}/latest/`** — las URLs de Read the Docs. Hay que actualizarlo al migrar los docs (ya está anotado en `AGENTS.md`).
+
+#### Grupos de traducción: el manifiesto autoritativo
+
+Extraídos a `reference/manifest.json`. Son **7 grupos**, con los slugs reales por idioma:
+
+| trid | idiomas | slugs |
+|---|---|---|
+| 1585 | en, es, **fr** | `articles` / `articulos` / `articles` |
+| 1587 | en, es, **fr** | `news` / `noticias` / `nouvelles` |
+| 4487 | en, es | `home-landing-page` / **`home`** |
+| 4343 | en, es | `presentation` / `presentacion` |
+| 4596 | en, es | `verify` / `verificar` |
+| 2677 | en, es | `privacy-policy` / `politica-de-privacidad` |
+| 2678 | en, es | `terms-and-conditions` / `terminos-condiciones-del-servicio` |
+
+**Dato que corrige el recon inicial**: el slug del ES de la home **no es vacío ni `/es/home/` duplicado, es `home`** en el grupo de traducción. Coincide con el `/es/home/` que el recon vio como "duplicado".
+
+**Y otro hallazgo**: los grupos de `articles` y `news` **sí incluyen francés**, así que las dos páginas FR son traducciones reales de esas dos páginas, no páginas sueltas.
+
+#### Medios: 90 imágenes, todas de 2018-2020
+
+`png` 63, `jpg` 24, `gif` 3. Por carpeta: `2018/08` (52), `2018/10` (17), `2018/09` (17), `2019/10` (2), `2020/12` (1). Nada posterior a 2020, coherente con el sitio congelado. Es un espejo pequeño.
+
 ### Requisito 7 en detalle: el tema oscuro del sitio
 
 El usuario vio el selector claro/oscuro/auto de Starlight en los docs y quiere algo similar en las páginas de e-nation.

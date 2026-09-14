@@ -105,7 +105,22 @@ Files created/modified:
 - `reference/rendered/*.html` y `*.inline.css` (16 de cada), `reference/css/**` (47 archivos), `reference/INDEX.md`, `reference/TOKENS.md` — todo ignorado por git
 - `.gitignore` (se ignora `reference/` entero, no solo `uploads/`)
 
-Pendiente de la fase: el barrido del navegador sobre el sitio vivo (capturas 1440/390 + medición de color y parallax), y la auditoría de imágenes con texto. Y recibir `wp-export.json` del usuario.
+**El export llegó y se procesó.** El usuario subió `wp-extract.php` a `/zero/` y dejó `wp-export.json` (2,26 MB) en el proyecto.
+
+- **Urgente y resuelto**: el archivo estaba en la **raíz** del proyecto y git **no lo ignoraba** — con la política de privacidad dentro y el repositorio público, habría acabado en GitHub. Movido a `reference/wp-export.json` (que sí está ignorado) y añadida al analizador una comprobación que avisa si vuelve a aparecer en la raíz.
+- Escritos `tools/analyze-export.cjs` (informa **estructura y métricas**, nunca el cuerpo de las páginas), `tools/extract-assets.cjs` (separa sliders, datos de Elementor por página y el manifiesto i18n) y `tools/compare-nav.cjs`.
+- Extraídos `reference/sliders/*.json` (los 4 sliders con sus capas y params: `banner-publicidad` 21 slides/1,95 MB, `e-nation`, `vertical-horizontal`, `snake`), `reference/elementor/*.json` (4 páginas + el kit) y `reference/manifest.json` (los 7 grupos de traducción).
+
+**Resultados que cambian el plan** (detalle en `findings.md`):
+- **La paleta del kit de Elementor es la de FÁBRICA** (`#6EC1E4`, `#54595F`, `#7A7A7A`, `#61CE70`): el autor nunca personalizó los colores globales. Confirma que el kit no es la marca y que los colores reales están en el CSS de cada página.
+- **Solo 4 páginas usan Elementor**; las otras 12 están prácticamente vacías (`articles` 85 B, `news` 75 B, `verify` 118 B): son páginas de enlace.
+- **El parallax es fondo fijo, confirmado**: 112 efectos, todos de tipo fondo; **54 declaran `background-attachment: fixed`**; cero animaciones de entrada y **cero `motion_fx_scrolling`**. Los 63 `elementor-motion-effects` del HTML eran contenedores vacíos, no efectos activos: la familia "transform" que yo esperaba **no existe**.
+- **Inventario de widgets: 544**, dominado por `heading` (306) e `image` (114) = 77 %.
+- **SEO pobre**: solo 4 focus keywords de 16 páginas. Y los títulos SEO revelan una **marca alternativa**: "Mutual Welfare / Bienestar Mutuo · Por una Sociedad Altruista", que convive con `E-Nation` y con `Real Direct Democracy`. Hay que preguntar cuál manda.
+- **Corregida otra hipótesis mía**: el export decía que los 3 menús apuntaban a URLs inglesas, pero el HTML renderizado muestra que el menú ES sí apunta a `/es/…`. `wp_get_nav_menu_items()` no traduce; **WPML traduce al renderizar**, así que la fuente de verdad para la navegación es el HTML.
+- **Defecto encontrado**: el selector de idioma enlaza a `/fr/`, que redirige a la home inglesa. La opción francesa del original no funciona.
+
+Pendiente de la fase: el barrido del navegador sobre el sitio vivo (capturas 1440/390 + color computado + confirmación del parallax) y la auditoría de imágenes con texto.
 
 ### Phase 5: Stack del sitio
 **Status:** pending
