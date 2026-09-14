@@ -165,7 +165,9 @@ Se inyectan como shortcodes `[rev_slider alias="…"]` dentro de Elementor (los 
 
 **12 de 16 páginas no tienen focus keyword.** Las únicas definidas son `Articles`, `News`, `Artículos`, `Noticias`. El valor SEO del original es mucho menor de lo que el plan asumía: no hay una lista de keywords que igualar.
 
-**Y los títulos SEO revelan un nombre de marca que no había visto**: `Articles | Mutual Welfare | For an Altruistic Society` y `Artículos | Bienestar Mutuo | Por una Sociedad Altruista`. Es decir, el sitio se presenta en Google como **"Mutual Welfare / Bienestar Mutuo"**, que además coincide con la lista de Mailchimp (`bienestarmutuo`). Pero el `og:site_name` es `E-Nation` y la descripción de la home es `Real Direct Democracy`. **Hay tres identidades conviviendo** y hay que preguntar al usuario cuál manda.
+**Y los títulos SEO revelan un nombre de marca que no había visto**: `Articles | Mutual Welfare | For an Altruistic Society` y `Artículos | Bienestar Mutuo | Por una Sociedad Altruista`. Es decir, el sitio se presenta en Google como **"Mutual Welfare / Bienestar Mutuo"**, que además coincide con la lista de Mailchimp (`bienestarmutuo`). Pero el `og:site_name` es `E-Nation` y la descripción de la home es `Real Direct Democracy`.
+
+**DECISIÓN TOMADA (pendiente de confirmar por el usuario, reversible)**: **no se elige una sola marca**, porque elegir sería inventar. En su lugar se conserva lo que ya hay, página por página, y en el JSON-LD se representa correctamente con `name: "E-Nation"` (que es el `og:site_name` y el dominio) más **`alternateName: ["Mutual Welfare", "Bienestar Mutuo"]`**, que es la forma que schema.org define justo para esto: una entidad con varios nombres. Así no se pierde ninguna de las tres identidades ni hay que decidir cuál es "la buena" desde fuera. Si el usuario dice cuál manda, se simplifica.
 
 #### La navegación: fuente de verdad es el HTML, no el export
 
@@ -173,7 +175,7 @@ Se inyectan como shortcodes `[rev_slider alias="…"]` dentro de Elementor (los 
 
 **Lección**: `wp_get_nav_menu_items()` devuelve los items sin traducir; **WPML los traduce al renderizar**. Para la navegación, la fuente de verdad es el HTML renderizado. Queda escrito en el `aviso` de `reference/manifest.json`.
 
-**Defecto real encontrado**: el selector de idioma enlaza a **`https://e-nation.org/fr/`, que redirige a la home inglesa**. La opción francesa del original no funciona.
+**Defecto real encontrado**: el selector de idioma enlaza a **`https://e-nation.org/fr/`, que redirige a la home inglesa**. La opción francesa del original no funciona. **DECISIÓN TOMADA (reversible)**: se **corrige**, no se replica. Un enlace roto no es una decisión de diseño sino un fallo, y es la misma categoría que los otros defectos que ya arreglamos (el `<h1>` ausente, el subrayado RST roto del `20.2.1.`, el `og:image` que falta). En el sitio nuevo `/fr/` existe de verdad, así que corregirlo sale gratis; replicarlo sería enviar a propósito una navegación rota.
 
 **Y una dependencia a gestionar**: el item "Constitución" del menú apunta a **`http://docs.e-nation.org/{en,es}/latest/`** — las URLs de Read the Docs. Hay que actualizarlo al migrar los docs (ya está anotado en `AGENTS.md`).
 
@@ -198,6 +200,79 @@ Extraídos a `reference/manifest.json`. Son **7 grupos**, con los slugs reales p
 #### Medios: 90 imágenes, todas de 2018-2020
 
 `png` 63, `jpg` 24, `gif` 3. Por carpeta: `2018/08` (52), `2018/10` (17), `2018/09` (17), `2019/10` (2), `2020/12` (1). Nada posterior a 2020, coherente con el sitio congelado. Es un espejo pequeño.
+
+### Medición en el sitio EN VIVO: la paleta resuelta y el parallax confirmado
+
+Medido con el navegador sobre `https://e-nation.org/` a 1440×900, tras desplazar la página entera para forzar la carga de los fondos diferidos. Snippet en `tools/measure-browser.js`.
+
+#### `#1ebbf0`: RESUELTO — está declarado pero NO se ve
+
+| Qué | Valor medido |
+|---|---|
+| `background` del botón `.elementor-button` "Project Here" | **`rgb(0, 63, 127)` = `#003f7f`** (el azul de marca) |
+| `color` del texto del botón | `#ffffff` |
+| `border-color` | `rgb(30, 187, 240)` = **`#1ebbf0`** |
+| **`border-width`** | **`0px / 0px`** |
+
+**El cian está declarado como color de borde pero el borde tiene ancho CERO, así que no se ve.** Y en los colores de texto computados de la home **`#1ebbf0` no aparece ni una vez**.
+
+O sea: las 402 apariciones en `custom.css` son reales, pero esas declaraciones o están pisadas o no tienen efecto visible. **La conclusión del recon inicial era correcta, pero por casualidad: yo lo había afirmado sin medirlo, luego lo puse en duda al ver el conteo, y ahora la medición lo confirma.** Lo que faltaba era justo el dato del ancho de borde, que no se ve contando colores.
+
+**Paleta de texto realmente computada en la home** (elementos visibles con texto propio):
+
+| color | elementos | nota |
+|---|---|---|
+| `#ffffff` | 36 | texto sobre fondos oscuros |
+| `#003f7f` | 7 | **azul de marca, el más usado para texto** |
+| `#333333` | 6 | gris de texto |
+| `#6ec1e4` | 4 | **paleta por defecto de Elementor, sí se ve** |
+| `#54595f` | 2 | también por defecto de Elementor |
+| `#21759b` | 1 | azul de enlace por defecto de WordPress |
+| `#ff7100` | 1 | **el naranja de marca** |
+| `#d80700` | 1 | rojo |
+
+**Dato nuevo e inesperado: los colores por defecto de Elementor (`#6ec1e4`, `#54595f`) SÍ se ven**, en 6 elementos. Confirma que el kit nunca se personalizó y que el autor dejó algunos elementos con el color de fábrica del plugin. **No son la marca, pero están en pantalla**, así que al reconstruir hay que decidir si se replican o se alinean con la paleta real.
+
+#### El parallax: fondo fijo, CONFIRMADO con medición
+
+Ejemplo medido en la home:
+```
+section.elementor-section.elementor-top-section
+  background-image: 14-background.jpg
+  background-attachment: FIXED
+  background-size: cover
+  transform: null          ← sin transform: es la técnica de fondo fijo, no JS
+  altura: 831 px
+```
+
+**Cero elementos con `transform` de parallax, cero `data-prlx`, cero `motion_fx`.** La familia "transform" que yo esperaba **no existe**. El usuario tenía razón desde el principio.
+
+#### Los 54 fondos fijos están en las PRESENTACIONES, no en la home
+
+| Página | Fondos | De ellos, `fixed` |
+|---|---|---|
+| `home-landing-page` (EN) | 7 | **4** |
+| `home` (ES) | 7 | **4** |
+| `presentation` (EN) | **49** | **23** |
+| `presentacion` (ES) | **49** | **23** |
+
+**El parallax es el efecto dominante de las dos presentaciones**, con 23 secciones de fondo fijo cada una. La home solo tiene 4. Esto reordena las prioridades: donde hay que clavar el parallax es en la presentación, que además es la página más pesada (286-293 KB de datos de Elementor).
+
+#### Dos defectos del original confirmados en vivo
+
+- **La home no tiene ni un `<h1>`** (`h1Count: 0`, medido). No era una impresión del recon.
+- Existe una URL de fondo malformada (`https://e-nation.org/i.imgur.com/...`) que **rompe `decodeURIComponent`** en el navegador: un script que recorra los fondos sin protección lanza `URIError` y aborta.
+
+### Capturas de referencia: método validado
+
+**Hecha la home EN a 1440 en 9 tramos de 900 px** (`reference/screenshots/original-home-en-desktop-NN.png`, 14 MB en total). Método que funciona:
+
+1. `setViewportSize` → `goto` → `waitForLoadState(domcontentloaded)` → esperar ~2,5 s.
+2. Inyectar el CSS que **congela las animaciones** (`[data-aos]{opacity:1!important;transform:none!important;transition:none!important}` y `animation-duration:0s`): sin eso se captura un estado intermedio.
+3. Capturar por tramos con `window.scrollTo({top:N,behavior:'instant'})` y ~400 ms entre tramos (`smooth` impediría el salto exacto).
+4. Reintento una vez por tramo: **el primer screenshot del bucle falló con "browser screenshot activity capture failed for guest"** y el reintento lo resolvió. Sin reintento, un fallo transitorio pierde el tramo en silencio.
+
+**`fullPage: true` SÍ funciona aquí** (generó un PNG de 6,87 MB de la home entera), al contrario de lo que advierte la skill. **Pero no sirve para nuestro caso**: con `background-attachment: fixed` el fondo es relativo al viewport, así que en una captura de página completa las secciones de parallax se renderizan mal (el fondo se ancla a la posición del viewport en el momento de capturar, no a la sección). **Los tramos son la opción correcta para las páginas con fondo fijo**, que son precisamente las dos presentaciones. El PNG de prueba se conserva renombrado `AVISO-fullpage-deforma-parallax-home-en.png` para que su limitación sea evidente.
 
 ### Requisito 7 en detalle: el tema oscuro del sitio
 

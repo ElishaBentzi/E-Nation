@@ -227,3 +227,17 @@ Files created/modified:
 | What's the goal? | Mover el sitio `e-nation.org` (16 páginas, 3 idiomas) y los docs del Pacto Social a Astro + Cloudflare Pages, con réplica fiel, memoria de traducción con el español como idioma fuente, y cutover sin romper el correo. |
 | What have I learned? | En `findings.md`: el WP vive en `/zero/`; el MX apunta al propio apex (el correo vive en el servidor del sitio); los docs son **dos documentos** y **dos ediciones distintas** del mismo Pacto — manda el `.rst` mantenido, no el `.md` de 2018; EN y ES están en sincronía; el único defecto estructural es el subrayado roto del `20.2.1.`; la paleta real es `#ff7100` + `#095287`/`#003f7f` y `#1ebbf0`/`#39dfaa` son un falso positivo del tema. |
 | What have I done? | En este archivo, arriba: recon completo; skill movida y borrada de usuario; cuatro archivos de memoria; commit `97fccfd` sobre la historia del remoto; comparación de las dos ediciones del Pacto; `tools/rst-to-md.cjs`; `astro-docs` con Starlight construyendo 5 páginas con Pagefind y hreflang correcto; y `tools/i18n.cjs` con el pipeline de traducción verificado. Sin incidentes abiertos: el de `video-3d-structures` era un falso positivo. |
+
+### Medición en el navegador (cierre de la Fase 4, primera parte)
+**Status:** in_progress
+
+- Medido el sitio EN VIVO con el navegador: la paleta queda **resuelta** y el parallax **confirmado**.
+- **`#1ebbf0` NO se ve**: el botón de Elementor tiene `background: #003f7f` (azul de marca) y `border-color: #1ebbf0` pero **`border-width: 0px`**. Y no aparece en ningún texto computado. Las 402 apariciones en el CSS son reales pero sin efecto visible. **La conclusión del recon inicial era correcta: lo afirmé sin medirlo, lo puse en duda al ver el conteo, y la medición lo confirma.**
+- **Paleta de texto real**: `#ffffff` (36), **`#003f7f` (7, el más usado)**, `#333333` (6), y **`#6ec1e4`/`#54595f` (6 elementos con la paleta por defecto de Elementor, que SÍ se ve)**. `#ff7100` solo en 1.
+- **Parallax confirmado como fondo fijo**: `background-attachment: fixed`, `background-size: cover`, **`transform: null`**. Cero `data-prlx` y cero `motion_fx`. La familia transform no existe.
+- **Los 54 fondos fijos están en las presentaciones** (49 cada una, 23 fijos), no en la home (7, 4 fijos). Reordena las prioridades.
+- **La home no tiene `<h1>`**: confirmado en vivo, `h1Count: 0`.
+- Capturada la home EN a 1440 en **9 tramos**. Método validado, incluido el reintento por tramo: sin él, un fallo transitorio de screenshot pierde el tramo en silencio.
+- **`fullPage` funciona aquí pero no sirve**: con fondo fijo, la captura de página completa deforma el parallax. Los tramos son obligatorios en las presentaciones.
+
+Pendiente: las capturas restantes (15 páginas × 2 viewports) y la auditoría de imágenes con texto.
