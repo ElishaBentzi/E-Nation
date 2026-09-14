@@ -11,11 +11,11 @@ Migrar todo lo que hoy vive en WordPress y Read the Docs —el sitio `e-nation.o
 
 ## Next Step
 
-Construir la herramienta de i18n: memoria de traducción + `i18n:status` con matriz página×idioma, y con ella generar el **francés** de los docs (que no existe hoy) para poder declararlo en `astro.config.mjs`. Después, el ensayo general: deploy a `.pages.dev` y cutover de `docs.e-nation.org`.
+Arrancar la Fase 4 (captura del sitio WordPress): subir el extractor PHP ampliado con WPML a `/zero/`, descargar `wp-export.json`, y capturar las 16 URLs a 1440 y 390 px con browser-use. Requiere las credenciales de wp-admin del usuario para el extractor; el scraping de HTML renderizado no.
 
 ## Current Phase
 
-Phase 3: Docs — Starlight, i18n y deploy — `in_progress`
+Phase 4: Captura del sitio WordPress — `in_progress`
 
 ## Phases
 
@@ -40,23 +40,21 @@ Phase 3: Docs — Starlight, i18n y deploy — `in_progress`
 - [x] Build verificado: 5 páginas, búsqueda indexada, `_redirects` copiado, marca aplicada, hreflang y canonical correctos
 - [x] `tools/i18n.cjs` con memoria de traducción, `status` (exit 1 si hay ausentes), `seed`, `build` y `check`; scripts en el `package.json` raíz
 - [x] Alineación ES↔EN medida: 130 secciones y 201 unidades, **coinciden al 100%**, y `check` reproduce el inglés con 0 diferencias de contenido
-- [x] **Ensayo sobre `unitygenerator.com`** (decisión del usuario): el dominio real no se toca hasta verificar. Dominio centralizado en `astro-docs/site.config.mjs`, `robots.txt` bloqueando el rastreo mientras sea ensayo, y `functions/[[path]].js` con 301 por host
-- [x] Subido a GitHub y **ensayo verificado de punta a punta** (evidencia en `progress.md`): 5 páginas, TLS propio del dominio, Pagefind con índices es/en, selector de idioma que mapea a la página correspondiente, 404 propio, canonical/hreflang/sitemap en el apex, y los cuatro 301 desde las URLs de RTD apuntando bien. El build falló al principio por el `Root directory` sin poner
-- [x] **Generar el francés**: 203 unidades del Pacto + 5 del landing, importadas como prosa y alineadas a la primera. Los docs están en los tres idiomas y desplegados
-- [x] `i18n:strict` para la puerta de revisión: el modo normal solo falla si falta texto; el estricto falla además si queda algo sin revisar
-- [ ] **Revisión del usuario** de las 208 cadenas del francés (y de la meta `description` del inglés, que ahora ya está en inglés)
-**Status:** in_progress
+- [x] **Ensayo completo con la forma docs.***: el subdominio `docs.unitygenerator.com` sirve con canonical propio, el apex redirige 301 conservando la ruta, las 4 URLs de RTD aterrizan con 200, Pagefind en es/en/fr, robots.txt en Disallow. El 301 por hostname quedó verificado en ambas direcciones
+- [x] Revisión del usuario registrada (`i18n:review fr`), puerta estricta en verde
+- [ ] **Cambio al dominio real** cuando el usuario lo decida (ahora es solo cambiar hostnames: lista abajo)
+**Status:** complete (a falta del cambio al dominio real, un paso de 10 minutos)
 
-**Los docs están desplegados y verificados en es/en/fr** sobre `unitygenerator.com`, con búsqueda Pagefind indexada en los tres idiomas, hreflang completo y los 301 desde Read the Docs. Queda pendiente de verificar la rama "otro host" de `functions/[[path]].js` (el 301 por hostname): necesita un segundo hostname apuntando al proyecto, y eso ocurre justo en el cambio al dominio real.
+**Los docs están desplegados y verificados en es/en/fr** sobre `docs.unitygenerator.com`, con búsqueda Pagefind indexada en los tres idiomas, hreflang completo y los 301 desde Read the Docs. El 301 por hostname, que faltaba por probar, quedó verificado al añadir el segundo hostname.
 
 #### Lista de cambio al dominio real (los cuatro puntos van juntos)
 
 1. `astro-docs/site.config.mjs` → `SITE`, `PRIMARY_HOST` e `INDEXABLE` (ponerla en `true`).
 2. `astro-docs/functions/[[path]].js` → `PRIMARY` (no puede importar el archivo de config: Cloudflare empaqueta las Functions aparte).
 3. **`npm run i18n:strict` tiene que pasar**: no se cambia el dominio con traducciones sin revisar.
-4. Cloudflare → añadir `docs.e-nation.org` como dominio propio del proyecto de Pages, y entonces quitar el dominio de Read the Docs.
+4. Cloudflare → añadir `docs.e-nation.org` como dominio propio del proyecto de Pages (lo hace el usuario), y entonces quitar el dominio de Read the Docs (también del usuario).
 
-El 301 desde el dominio de ensayo al real sale solo del punto 2.
+El 301 desde los hostnames del ensayo al real sale solo del punto 2. El orden es crítico: primero el dominio nuevo en Pages (Cloudflare re-apunta el CNAME que hoy va a readthedocs.io), después la config — invertido, el dominio de ensayo empezaría a redirigir a un host que todavía sirve RTD.
 
 ### Phase 4: Captura del sitio WordPress
 - [ ] Extractor PHP ampliado con WPML subido a `/zero/` → `reference/wp-export.json`

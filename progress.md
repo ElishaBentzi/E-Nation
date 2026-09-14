@@ -73,7 +73,16 @@ Tercera parte de la fase — el francés y los tres idiomas:
 
 También se quitó del landing la lista de idiomas que apuntaba a readthedocs: es navegación y no contenido, Starlight ya trae su selector (que además lleva a la misma página en el otro idioma, no solo al inicio), y mantenerla obligaba a incrustar URLs dentro de texto traducible.
 
-Pendiente: la **revisión del usuario** de las 208 cadenas del francés, y el cambio al dominio real (lista de cuatro puntos en `task_plan.md`).
+Cuarta parte de la fase — el ensayo con la forma docs.*:
+- El usuario añadió `docs.unitygenerator.com` como dominio propio **adrede** (no typo): quiere ensayar la forma `docs.*` que tendrá el destino final.
+- El principal del ensayo pasó del apex al subdominio. **El patrón completo quedó verificado en producción**:
+  - `docs.unitygenerator.com` sirve con canonical sobre sí mismo;
+  - el apex `unitygenerator.com` redirige 301 conservando la ruta (ejerciendo la rama de redirección por host de la Function);
+  - las 4 URLs reales de Read the Docs aterrizan con 200 en las páginas correctas;
+  - Pagefind indexa es/en/fr; `robots.txt` sigue en Disallow; TLS lo cubre el wildcard de la zona.
+- Con esto, el cambio al dominio real queda reducido a **cambiar las cadenas del hostname**: mismo mecanismo ya probado en las dos direcciones.
+
+**El ensayo está cerrado.** Lo único pendiente del lado de los docs es ejecutar el cambio a `docs.e-nation.org` cuando el usuario lo decida, y luego quitar el dominio de Read the Docs.
 
 ### Phase 4: Captura del sitio WordPress
 **Status:** pending
@@ -147,6 +156,8 @@ Files created/modified:
 | TLS del dominio de ensayo | `openssl s_client` | Válido | `CN=unitygenerator.com`, Google Trust Services, hasta 2026-12-10 | OK |
 | `robots.txt` de ensayo | `curl` | Disallow | Disallow, intacto tras los despliegues | OK |
 | **301 por hostname de la Function** | `curl` a `docs.unitygenerator.com` (segundo hostname apuntando al proyecto) | 301 a `unitygenerator.com` conservando la ruta | `/` y `/pacto-social/` → 301 a las rutas equivalentes del apex | **OK — verificado por fin** |
+| **Ensayo con principal en docs.***: el subdominio sirve y el apex redirige | `curl` a las 4 rutas de cada host | Subdominio 200 con canonical propio; apex 301 conservando ruta | Exacto en las 4 rutas probadas (`/`, `/pacto-social/`, `/en/pacto-social/`, `/fr/pacto-social/`) | OK |
+| Las 4 URLs reales de RTD sobre el nuevo principal | `curl -L` (siguiendo el 301) | 200 en el destino | Las 4 con destino final 200 | OK |
 | TLS del subdominio añadido | `openssl s_client` a `docs.unitygenerator.com` | Certificado válido | `CN=unitygenerator.com` con SAN `DNS:*.unitygenerator.com` (el wildcard de la zona cubre el subdominio) | OK |
 
 ## Error Log
@@ -169,6 +180,7 @@ Files created/modified:
 | 2026-09-11 18:17 | Los dos idiomas compartían la meta `description`: el inglés tenía la descripción en español | 1 | **Corregido.** La descripción pasa a ser un campo por idioma en el conversor. Es lo que Google muestra en los resultados, así que no es cosmético. |
 | 2026-09-11 18:17 | **La clave de las unidades no incluía la página** y `importar` reemplazaba la memoria entera | 1 | **Corregido.** Sin el slug en la clave, el landing y el Pacto colisionaban en las mismas secciones; y como `importar` reemplazaba, importar el landing habría **borrado las 203 entradas del Pacto sin avisar**. Ahora la clave lleva el slug y la importación mezcla sobre lo existente. Las memorias se regeneraron (las claves cambiaron) y se re-sembró y re-importó todo. |
 | 2026-09-11 18:19 | Pagefind parecía no haber indexado el francés (`en` y `es` solamente) | 1 | **Falso positivo: era caché.** El `pagefind-entry.json` desplegado con cache-busting sí trae `es, en, fr`, y `wasm.fr.pagefind` responde 200. El nombre del fichero es fijo, así que me sirvió una copia vieja. Medido antes de "arreglarlo", que es exactamente la lección de la skill. |
+| 2026-09-11 ~16:50 | Probé una URL de RTD inválida (`/es/latest/Social-Pact-Constitution-English.html`, documento inglés bajo prefijo es) y su 301 cayó en la regla comodín a una ruta inexistente | 1 | **Era mi URL de test, no un fallo del despliegue.** Al probar las 4 URLs reales de RTD con `curl -L`, todas aterrizan con 200. Lección de nuevo: verificar con datos reales del original antes de declarar un bug. |
 | 2026-09-11 16:46 | **El `HOME` de este entorno apunta al perfil del sistema** (`/c/WINDOWS/system32/config/systemprofile`), no a `C:\Users\Elisha` | 1 | **Corregido.** Me llevó a crear la clave SSH en el sitio equivocado y a que dos comprobaciones previas (`ls ~/.ssh` y `cmdkey /list`) miraran en el contexto equivocado. Clave regenerada en `C:\Users\Elisha\.ssh\` y la mal ubicada eliminada. **Regla para el futuro en este entorno: no usar `~` para nada del usuario, siempre rutas absolutas `C:\Users\Elisha\…`.** |
 | 2026-09-11 15:37 | 404 en `e-nation.pages.dev` y en el dominio de ensayo; **leí un 200 en `/robots.txt` como prueba de que había despliegue** | 1 | **Corregido.** Ese `robots.txt` era el de Cloudflare por defecto (su política de señales de contenido para crawlers de IA), no el nuestro. `/index.html` y `/404.html` daban 404: **no había despliegue**. La causa real: el `Root directory` del proyecto de Pages se quedó vacío, así que el build corría en la raíz del monorepo, donde el `package.json` no tiene script `build`. El usuario lo corrigió a `astro-docs` y desplegó. **Lección: un 200 aislado en `/robots.txt` no prueba que tu sitio esté arriba; comprobar siempre una ruta real.** |
 
