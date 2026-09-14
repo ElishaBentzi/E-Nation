@@ -1,0 +1,10 @@
+{
+  "name": "e-nation-tools",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Herramientas de extraccion y validacion del proyecto E-Nation",
+  "type": "module",
+  "dependencies": {
+    "php-parser": "^3.7.0"
+  }
+}

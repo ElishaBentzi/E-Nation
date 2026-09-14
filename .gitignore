@@ -8,10 +8,17 @@ dist/
 .env.*
 .vscode/
 
-# Material de trabajo pesado extraído del original.
-# Son binarios reproducibles y no aportan al historial: se regeneran con los
-# scripts de tools/ a partir del sitio y de los uploads del WordPress.
-reference/uploads/
+# Material de trabajo extraido del original.
+#
+# TODO `reference/` se ignora, no solo uploads/. Motivo: es material DERIVADO del
+# sitio, reproducible con los scripts de tools/, y ademas incluye el contenido
+# completo de las paginas, entre ellas la politica de privacidad y los terminos.
+# Este repositorio es PUBLICO, y aunque ese texto ya sea publico en la web, no
+# hay razon para duplicarlo en el historial de git.
+#
+# El contenido del Pacto Social SI esta versionado donde toca: los fuentes .rst
+# en `docs/` y el Markdown resultante en `astro-docs/src/content/`.
+reference/
 screenshots/
 
 # Salida compilada de Sphinx (el HTML de Read the Docs estaba commiteado en
