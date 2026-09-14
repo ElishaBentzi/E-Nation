@@ -146,7 +146,8 @@ Files created/modified:
 | Los 301 de Read the Docs | 4 URLs antiguas | 301 correcto | Correctos | OK |
 | TLS del dominio de ensayo | `openssl s_client` | Válido | `CN=unitygenerator.com`, Google Trust Services, hasta 2026-12-10 | OK |
 | `robots.txt` de ensayo | `curl` | Disallow | Disallow, intacto tras los despliegues | OK |
-| **301 por hostname de la Function** | — | — | **NO VERIFICABLE AÚN**: hace falta un segundo hostname apuntando al proyecto | Pendiente |
+| **301 por hostname de la Function** | `curl` a `docs.unitygenerator.com` (segundo hostname apuntando al proyecto) | 301 a `unitygenerator.com` conservando la ruta | `/` y `/pacto-social/` → 301 a las rutas equivalentes del apex | **OK — verificado por fin** |
+| TLS del subdominio añadido | `openssl s_client` a `docs.unitygenerator.com` | Certificado válido | `CN=unitygenerator.com` con SAN `DNS:*.unitygenerator.com` (el wildcard de la zona cubre el subdominio) | OK |
 
 ## Error Log
 <!-- More detailed than task_plan.md's error table. Timestamped. -->

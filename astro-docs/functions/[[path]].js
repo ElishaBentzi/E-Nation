@@ -11,8 +11,9 @@
  * resuelve rutas fuera de esta carpeta.
  */
 
-// Ensayo. Al cambiar al dominio real sera 'docs.e-nation.org'.
-const PRIMARY = 'unitygenerator.com';
+// Ensayo: el principal es el subdominio docs.*, el apex redirige a el. Al
+// cambiar al dominio real sera 'docs.e-nation.org'.
+const PRIMARY = 'docs.unitygenerator.com';
 
 export async function onRequest(context) {
   const { request, next } = context;

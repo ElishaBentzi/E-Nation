@@ -5,18 +5,14 @@
  * al real sea cambiar tres lineas y no buscar cadenas por el proyecto.
  *
  * ---------------------------------------------------------------------------
- * ESTADO ACTUAL: ENSAYO sobre unitygenerator.com (el APEX)
+ * ESTADO ACTUAL: ENSAYO sobre docs.unitygenerator.com
  * ---------------------------------------------------------------------------
- * Los docs se despliegan primero en unitygenerator.com, que el usuario tiene en
- * la misma cuenta de Cloudflare, para probar de punta a punta build -> Pages ->
- * dominio propio -> certificado -> 301 SIN tocar el dominio real ni su correo.
- * Cuando el ensayo este verificado, se cambia a docs.e-nation.org.
- *
- * Se usa el apex y no un subdominio porque es el dominio que el usuario adjunto
- * al proyecto de Pages. El mecanismo del cambio final es identico. Si se
- * prefiere que el ensayo viva en docs.unitygenerator.com (misma forma que el
- * destino final), basta cambiar estas tres constantes y anadir ese subdominio
- * como dominio propio en Pages.
+ * El principal del ensayo es el SUBDOMINIO docs.unitygenerator.com, con la
+ * misma forma docs.* que tendra el destino final, y el apex unitygenerator.com
+ * redirige 301 hacia el (ejerce la rama de redireccion por host de la
+ * Function). Asi se ensaya el patron exacto del dominio real: el subdominio
+ * docs.* sirve y los demas hosts redirigen.
+ * ---------------------------------------------------------------------------
  *
  * ---------------------------------------------------------------------------
  * LISTA DE CAMBIO AL DOMINIO REAL (hacer los tres juntos)
@@ -27,16 +23,16 @@
  *   3. Nada mas. `site` en astro.config.mjs y el robots.txt se generan de aqui.
  *
  * Y en Cloudflare: anadir docs.e-nation.org como dominio propio del proyecto de
- * Pages, y luego quitarlo de Read the Docs. El 301 desde el dominio de ensayo
- * al real sale solo del paso 2.
+ * Pages, y luego quitarlo de Read the Docs. Los hostnames del ensayo pasan a
+ * redirigir al dominio real solos, con el paso 2.
  * ---------------------------------------------------------------------------
  */
 
 /** Origen canonico. Alimenta canonical, hreflang, sitemap y og:url. */
-export const SITE = 'https://unitygenerator.com';
+export const SITE = 'https://docs.unitygenerator.com';
 
 /** Host que se sirve; cualquier otro host recibe un 301 a este. */
-export const PRIMARY_HOST = 'unitygenerator.com';
+export const PRIMARY_HOST = 'docs.unitygenerator.com';
 
 /**
  * Mientras sea false, el robots.txt bloquea el rastreo. Es un dominio de
