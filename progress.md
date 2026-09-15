@@ -241,3 +241,32 @@ Files created/modified:
 - **`fullPage` funciona aquí pero no sirve**: con fondo fijo, la captura de página completa deforma el parallax. Los tramos son obligatorios en las presentaciones.
 
 Pendiente: las capturas restantes (15 páginas × 2 viewports) y la auditoría de imágenes con texto.
+
+### Capturas de referencia: COMPLETAS
+**Status:** complete
+
+**16 páginas × 2 viewports = 297 PNG, 146 MB, sin huecos.** Viewports fijos: 1440×900 (escritorio) y 390×844 (móvil), para que la comparación con la reconstrucción sea justa.
+
+| página | desktop | mobile |
+|---|---|---|
+| home-en | 11 | 13 |
+| presentation-en | **42** | **41** |
+| home-es | 11 | 13 |
+| presentacion-es | **42** | **42** |
+| privacy-policy-en / privacidad-es | 6 / 6 | 10 / 11 |
+| terms-en / terminos-es | 3 / 3 | 5 / 6 |
+| articles-en, news-en, verify-en | 2 cada una | 2 cada una |
+| articulos-es, noticias-es, verificar-es | 2 cada una | 2 cada una |
+| articles-fr, nouvelles-fr | 2 cada una | 2 cada una |
+
+Las presentaciones necesitan 42 tramos cada una porque miden **37.005 px** de alto.
+
+**Cuatro trampas del proceso, todas registradas:**
+1. **Todas las páginas tienen al menos un fondo fijo** (el banner del tema), así que `fullPage` **no vale en ninguna**: deformaría el parallax. Lo comprobé página por página ANTES de capturar, en vez de asumirlo, y eso corrigió mi plan (iba a usar `fullPage` en las "planas").
+2. **Si los screenshots fallan de forma persistente, el *guest* de la vista se ha trabado.** Pasó con `articles-fr` y con `noticias-es`: ambos fallaban los 3 intentos de todos sus tramos. **Abrir pestaña nueva lo resuelve**, y es lo único que funcionó (reintentar en la misma no sirve).
+3. **La captura es reanudable**: salta los tramos que ya están en disco, así que un corte por tiempo no pierde nada y basta con volver a llamar. Sin esto habría perdido trabajo en cada timeout.
+4. **Los lotes grandes agotan el presupuesto**: 16 tramos por llamada funcionan en páginas ligeras pero no en las de 37.000 px, donde hay que bajar a 10.
+5. **Llamar a `setViewportSize` cuando el viewport ya coincide agota sus 30 s.** Hay que comprobar antes si difiere.
+6. Las **primeras capturas de la home eran inválidas** (las hice antes de añadir el recorrido que fuerza la carga diferida de fondos): las rehice. Ese recorrido es obligatorio o los tramos bajos salen sin sus fondos.
+
+**Hallazgo adicional de la inspección**: **8 de 16 páginas no tienen ni un `<h1>`** — la home EN y ES, `articles`, `news`, las dos de artículos/noticias en español y las dos francesas. Solo `verify`, `privacy-policy`, `terms` y sus equivalentes ES lo tienen. Es un defecto SEO más amplio de lo que decía el recon.
