@@ -270,3 +270,14 @@ Las presentaciones necesitan 42 tramos cada una porque miden **37.005 px** de al
 6. Las **primeras capturas de la home eran inválidas** (las hice antes de añadir el recorrido que fuerza la carga diferida de fondos): las rehice. Ese recorrido es obligatorio o los tramos bajos salen sin sus fondos.
 
 **Hallazgo adicional de la inspección**: **8 de 16 páginas no tienen ni un `<h1>`** — la home EN y ES, `articles`, `news`, las dos de artículos/noticias en español y las dos francesas. Solo `verify`, `privacy-policy`, `terms` y sus equivalentes ES lo tienen. Es un defecto SEO más amplio de lo que decía el recon.
+
+### Medios descargados
+**Status:** complete
+
+**112 ficheros únicos, 5,1 MB, 0 fallos**, en `reference/uploads/` replicando la estructura del original.
+
+**Un defecto del marcado del original que salió al hacerlo**: de las 90 referencias del export, **31 no eran URLs sino `srcset` completos** (`a.png 226w, https://.../b.png 66w, …`), porque la expresión del extractor PHP no cortaba en las comas. **Un srcset no es basura: son las variantes responsivas que generó WordPress**, así que se parsean en vez de descartarlas. Al expandirlas aparecieron **53 ficheros más** que con las URLs simples: 59 → **112**.
+
+Reparto: `2018/08` 69, `2018/09` 21, `2018/10` 17, `2019/10` 3, `2020/12` 1, `elementor/thumbs` 1. Por extensión: png 84, jpg 25, gif 3.
+
+Pendiente de la fase: la **auditoría de imágenes con texto** (visión + OCR) sobre estos 112 ficheros, con la lista para que el usuario decida caso por caso.
