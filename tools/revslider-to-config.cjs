@@ -28,6 +28,9 @@ const DESTINO = path.join(ROOT, 'astro-site', 'src', 'sliders');
 // El export del WordPress: de aqui salen los PRESETS de estilo (tabla
 // `revslider_css`), que es donde las capas toman el color y parte de la tipografia.
 const EXPORT = path.join(ROOT, 'reference', 'wp-export.json');
+// Geometria RESUELTA por el plugin, leida del marcado renderizado. Manda sobre la
+// base de datos: ver la explicacion en el bloque de posicion.
+const { leerGeometriaResuelta } = require('./markup-geometry.cjs');
 // El HTML renderizado del original, del que se leen los valores ya resueltos.
 const RENDERED = path.join(ROOT, 'reference', 'rendered');
 
@@ -284,6 +287,7 @@ function animacionDe(capa) {
   };
 }
 
+const GEOMETRIA = leerGeometriaResuelta();
 let animaciones = 0;
 const avisos = [];
 const avisar = (alias, que) => avisos.push({ alias, que });
@@ -402,6 +406,9 @@ function traducir(s) {
       if (!capa || typeof capa !== 'object') continue;
 
       const tipo = capa.type || 'text';
+      // Geometria resuelta por el plugin para ESTA capa, emparejando por id.
+      // La clave lleva tambien la DIAPOSITIVA: los uid de capa son por diapositiva.
+      const resuelta = GEOMETRIA.get(`${s.id}-${sl.id}-${capa.uid}`) || null;
       const tam = capa.size || {};
       const pos = capa.position || {};
       const w = porDispositivo(tam.width);
@@ -423,31 +430,43 @@ function traducir(s) {
         textoConHtml: !/image|shape/i.test(tipo) && /<[a-z][^>]*>/i.test(String(capa.text || '')),
         imagen: ruta(capa, 'media.imageUrl', null),
         alt: ruta(capa, 'media.alt', null),
-        // POSICION: hay que respetar lo que dice el original y NO inventar.
-        //
-        // De 220 capas, 162 NO declaran anclaje horizontal y 187 no declaran el
-        // vertical: vienen como `{e:true}` sin valor. Esas capas se posicionan por
-        // PIXELES (`position.x`/`position.y`) medidos desde la esquina superior
-        // izquierda del lienzo. Solo 58 declaran `center` y 33 `middle`.
-        //
-        // Dar por hecho `center`/`middle` cuando el valor no esta manda 162 capas
-        // fuera de sitio: acaban apiladas fuera del area visible y el banner se ve
-        // vacio. Un valor ausente NO es un valor por defecto.
-        posicion: {
-          horizontal: horiz.valor !== undefined ? horiz.valor : null,
-          vertical: vert.valor !== undefined ? vert.valor : null,
-          x: ox.valor !== undefined ? ox.valor : null,
-          y: oy.valor !== undefined ? oy.valor : null,
-          /**
-           * true cuando la capa se posiciona por pixeles sobre el lienzo, que es
-           * el caso mayoritario. El componente necesita saberlo para convertir los
-           * pixeles a porcentaje y que el banner escale con el contenedor.
-           */
-          porPixeles: horiz.valor === undefined && vert.valor === undefined,
-          zIndex: pos.zIndex || null,
-        },
+        /*
+         * POSICION: se usa la que RESUELVE EL MARCADO cuando esta disponible, y solo
+         * se cae a la base de datos cuando no.
+         *
+         * POR QUE EL MARCADO MANDA, y no es un detalle:
+         *
+         *   - EL ANCLAJE. En la base de datos una capa puede tener
+         *     `horizontal: "center"` Y ADEMAS un `x` con valor (`-527px`). El plugin
+         *     resuelve eso a `x:c`: centrado, IGNORANDO el desplazamiento. Leyendo la
+         *     base de datos esa capa se coloca 527 px a la izquierda de donde va, y
+         *     acaba solapando con las vecinas — que es exactamente lo que se veia.
+         *   - LOS DESPLAZAMIENTOS SOBRE EL ANCLAJE (`xo`/`yo`) solo aparecen en el
+         *     marcado. `y:c;yo:5px` es "centrado y 5 px mas abajo"; sin leerlo, la
+         *     capa se coloca a 5 px del borde superior. Es el descentrado del logo de
+         *     la moneda.
+         *   - EL ORDEN DE LAS CAPAS difiere entre las dos fuentes, asi que se empareja
+         *     por ID de capa (`modulo-uid`), no por posicion en la lista.
+         */
+        posicion: resuelta
+          ? {
+              horizontal: resuelta.x.anclaje,
+              vertical: resuelta.y.anclaje,
+              x: resuelta.x.offset,
+              y: resuelta.y.offset,
+              porPixeles: !resuelta.x.anclaje && !resuelta.y.anclaje,
+              zIndex: pos.zIndex || null,
+            }
+          : {
+              horizontal: horiz.valor !== undefined ? horiz.valor : null,
+              vertical: vert.valor !== undefined ? vert.valor : null,
+              x: ox.valor !== undefined ? ox.valor : null,
+              y: oy.valor !== undefined ? oy.valor : null,
+              porPixeles: horiz.valor === undefined && vert.valor === undefined,
+              zIndex: pos.zIndex || null,
+            },
         tamano: {
-          ancho: w.valor !== undefined ? w.valor : null,
+          ancho: (resuelta && resuelta.ancho) || (w.valor !== undefined ? w.valor : null),
           alto: h.valor !== undefined ? h.valor : null,
         },
         // Tipografia y color, del estado `idle`
@@ -492,6 +511,28 @@ function traducir(s) {
         // cubre: se avisa en lugar de quedarse con el primero y callar.
         if (new Set(candidatos).size > 1) {
           avisar(alias, `slide ${sl.id}, capa ${capa.uid}: ${candidatos.length} enlaces distintos, solo se usa el primero`);
+        }
+      }
+
+      /*
+       * ANIMACION CONTINUA (bucle). Solo esta en el marcado: la base de datos no la
+       * expone. Es la que da VIDA al banner despues de la entrada — el corazon que
+       * late es `loop_0="sX:0.8;sY:0.8"`: se encoge al 80 % y vuelve, en bucle.
+       *
+       * Sin esto todo queda estatico al terminar la animacion de entrada, que es
+       * justo lo que se notaba.
+       */
+      const loop0 = resuelta ? resuelta.loop0 : null;
+      if (loop0) {
+        const escala = loop0.sX || loop0.sY;
+        const rotacion = loop0.xR || loop0.yR;
+        // `oX`/`oY` solos son solo el origen de la transformacion: no animan nada.
+        if (escala && escala !== '1') {
+          c.bucle = { tipo: 'escala', valor: Number(escala) };
+          animaciones++;
+        } else if (rotacion) {
+          c.bucle = { tipo: 'rotacion', valor: Number(rotacion) };
+          animaciones++;
         }
       }
 

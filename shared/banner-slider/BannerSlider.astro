@@ -53,7 +53,19 @@ interface Capa {
   tamano?: { ancho?: string | null; alto?: string | null };
   variantes?: Record<string, { ancho?: string; alto?: string }>;
   enlace?: { href: string; target?: string; externo?: boolean };
-  animacion?: { tiene: boolean; fotogramasOriginales?: number; entradaMs?: number | null };
+  animacion?: {
+    desde?: { opacidad?: number; x?: string | null; y?: string | null };
+    duracionMs?: number | null;
+    retardoMs?: number | null;
+  } | null;
+  /**
+   * Animacion CONTINUA, que se repite mientras el banner esta visible.
+   *
+   * Es lo que da vida: el corazon que late de Venezuela es `escala: 0.8`, y las
+   * monedas de UnityCoin pulsan a `0.95`. Sin esto la capa se queda quieta al
+   * terminar la entrada, que es justo lo que se notaba.
+   */
+  bucle?: { tipo: 'escala' | 'rotacion'; valor: number } | null;
 }
 
 interface Slide {
@@ -248,6 +260,16 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
     if (a.retardoMs) partes.push(`--bs-delay:${a.retardoMs}ms`);
   }
 
+  /*
+   * BUCLE: la animacion continua que da vida al banner.
+   *
+   * Se usan las propiedades INDIVIDUALES `scale` y `rotate`, no `transform`, por el
+   * mismo motivo que la entrada usa `translate`: las capas ancladas ya ocupan
+   * `transform` para posicionarse, y las propiedades individuales son
+   * independientes, asi que no pueden chocar con el.
+   */
+  if (c.bucle) partes.push(`--bs-loop:${c.bucle.valor}`);
+
   // Tipografia en unidades de CONTENEDOR (`cqw`): es lo que hace que el texto
   // escale con el banner, como hacia el plugin. El contenedor se declara con
   // `container-type: inline-size` en los estilos del componente.
@@ -326,6 +348,7 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
                 style={estiloCapa(c, anchoLienzo, altoLienzo)}
                 data-capa={c.uid}
                 data-anim={c.animacion ? '' : undefined}
+                data-loop={c.bucle ? c.bucle.tipo : undefined}
               >
                 {/* Si el original traia HTML (texto + icono), se interpreta
                     saneado; si no, se pinta como texto normal. */}
@@ -341,6 +364,7 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
                 style={estiloCapa(c, anchoLienzo, altoLienzo)}
                 data-capa={c.uid}
                 data-anim={c.animacion ? '' : undefined}
+                data-loop={c.bucle ? c.bucle.tipo : undefined}
               />
             )
           ))}
@@ -445,6 +469,34 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
   /* Sin movimiento: las capas se muestran ya en su estado final, sin entrada. */
   @media (prefers-reduced-motion: reduce) {
     .banner-slider__slide[aria-hidden='false'] .banner-slider__capa[data-anim] {
+      animation: none;
+    }
+  }
+
+
+  /*
+   * BUCLE. Se anima la MITAD del recorrido (el 50 %) para que la capa vuelva a su
+   * estado original: sin ese "y vuelve", el elemento se quedaria encogido al
+   * terminar cada ciclo. El `ease-in-out` hace que el latido acelere y frene, que
+   * es lo que lo hace parecer un latido y no un parpadeo.
+   */
+  @keyframes bs-latido {
+    50% { scale: var(--bs-loop, 1); }
+  }
+  @keyframes bs-giro {
+    50% { rotate: calc(var(--bs-loop, 0) * 1deg); }
+  }
+
+  /* El bucle solo corre en el slide ACTIVO, y es infinito mientras lo este. */
+  .banner-slider__slide[aria-hidden='false'] .banner-slider__capa[data-loop='escala'] {
+    animation: bs-latido var(--bs-loop-dur, 1500ms) ease-in-out infinite;
+  }
+  .banner-slider__slide[aria-hidden='false'] .banner-slider__capa[data-loop='rotacion'] {
+    animation: bs-giro var(--bs-loop-dur, 2500ms) ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .banner-slider__slide[aria-hidden='false'] .banner-slider__capa[data-loop] {
       animation: none;
     }
   }

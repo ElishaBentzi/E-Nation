@@ -866,3 +866,46 @@ Una diapositiva es huérfana **si declara un `parentId` que no existe entre las 
 Ahora **el valor declarado manda** y la heurística queda solo como último recurso para diapositivas que no lo declaren, **avisando si las dos señales discrepan**. Sustituye `detect-slide-locales.cjs` por `slide-locales.cjs`.
 
 **La lección, que se repite en este proyecto**: antes de construir una deducción, comprobar si el dato ya lo dice. El campo estaba ahí desde el principio y no lo miré.
+
+### Los solapamientos: la causa era que FALTABAN LAS FUENTES
+
+El usuario reportó solapamientos de texto en tres diapositivas. La causa no estaba ni en las posiciones ni en los tamaños: **el sitio no cargaba NINGUNA tipografía**.
+
+RevSlider emite un bloque **`<style class="sr7-inline-css">`** con las declaraciones `@font-face` de las fuentes que usan sus capas, y pone la familia de cada capa en un `style` en línea (`font-family:'Martel Sans'`). **Ese bloque no lo estaba leyendo**, así que las capas pedían «Martel Sans», «Actor» o «Arimo» y el navegador **sustituía por otra fuente con métricas distintas**: el texto ocupaba más ancho y más alto y acababa solapando con las capas vecinas.
+
+**El síntoma es invisible en el HTML**: las clases están bien, la familia está bien escrita, no hay ningún error. Solo se ve al pintar, comparando la distribución del texto.
+
+Extraídas y auto-hospedadas: **6 familias, 20 ficheros, 415 KB** — Roboto, Martel Sans, Actor, Arimo, Maven Pro y Open Sans. Nada de depender de Google Fonts en tiempo de ejecución: el original ya las auto-hospeda.
+
+#### Tres trampas por el camino
+
+1. **Las URLs del marcado son relativas al protocolo** (`//e-nation.org/...`) y `fetch` no las parsea: hay que anteponer `https:`.
+2. **El `format()` debe corresponder al tipo de fichero.** Declaraba `format('woff2')` para ficheros `.ttf`, y así algunos navegadores descartan la fuente sin avisar.
+3. **CSS exige que los `@import` estén al principio del archivo.** Puse el de las fuentes después de otras reglas y **se ignoró en silencio**: los `.woff2` se copiaban al despliegue, no había ningún error, y las fuentes simplemente no cargaban. Se detectó contando las reglas `@font-face` en el CSS construido: **cero**. Movido arriba: **20**.
+
+### La geometría y las animaciones ahora salen del marcado RESUELTO
+
+Se añadió `tools/markup-geometry.cjs`, que lee del marcado renderizado lo que el plugin **ya resolvió**, y que la base de datos no dice igual:
+
+| qué | base de datos | marcado (resuelto) |
+|---|---|---|
+| **anclaje** | `horizontal: "center"` **+** `x: "-527px"` | `x:c` → **centrado, sin desplazamiento** |
+| **desplazamiento sobre anclaje** | no existe | `y:c;yo:5px` → centrado **y 5 px más abajo** |
+| **orden de las capas** | distinto del marcado | el orden real de pintado |
+| **animación de bucle** | **no está** | `loop_0="sX:0.8;sY:0.8"` |
+
+Leer el anclaje de la base de datos colocaba esa capa **527 px a la izquierda** de donde va, y el `yo` no se leía, dejando el logo de la moneda descentrado. Es el patrón que se repite en este proyecto: **la base de datos guarda la intención, el marcado el resultado**.
+
+**Se empareja por ID de capa, no por posición en la lista**, porque el orden difiere. La clave incluye los tres datos: `<módulo>-<diapositiva>-<uid>`. Los `uid` de capa son **por diapositiva**, no por slider: indexando solo por módulo y uid, el latido de las monedas de UnityCoin aparecía en Mutual Welfare.
+
+### Animación continua (bucle): lo que el original tiene y lo que no
+
+| diapositiva | bucle en el original |
+|---|---|
+| **Venezuela** (#3 es, #4 en) | **el corazón, escala 0.8** — el latido |
+| **UnityCoin** (#10 es, #11 en) | dos monedas, escala 0.95 |
+| SBM Juegos, SBM Libre, Mutual Welfare | **ninguno** |
+
+Implementado en el componente con `@keyframes`, animando la **mitad** del recorrido (el 50 %) para que vuelva al estado original, con `ease-in-out` para que acelere y frene como un latido, e infinito mientras el slide esté activo. Se animan las propiedades individuales `scale` y `rotate`, no `transform`, por el mismo motivo que la entrada: las capas ancladas ya ocupan `transform` para posicionarse.
+
+**Pendiente de decisión**: el usuario pidió animación continua también para **SBM Juegos**, donde el original **no tiene ninguna**. Eso es un añadido, no fidelidad, así que se propone en vez de inventarlo.

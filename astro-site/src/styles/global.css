@@ -14,6 +14,14 @@
  *   inspecciona el color computado. Es la trampa numero uno de Tailwind v4.
  */
 
+/*
+ * LAS FUENTES VAN AQUI, ARRIBA DEL TODO, y no es un capricho de estilo: CSS exige
+ * que los @import esten al principio del archivo. Puestos despues de otras reglas
+ * se IGNORAN EN SILENCIO: los ficheros .woff2 se copian al despliegue, no hay
+ * ningun error, y las tipografias simplemente no cargan — el texto se sustituye
+ * por otra con metricas distintas y los banners se solapan.
+ */
+@import './fuentes-sliders.css';
 @import 'tailwindcss';
 /* Tres niveles: este archivo esta en astro-site/src/styles/, y brand/ cuelga de la
    RAIZ del proyecto. Con dos niveles apuntaria a astro-site/brand, que no existe. */
@@ -33,6 +41,7 @@
  * aqui o sus clases no existiran.
  */
 @source '../../../shared';
+
 
 @custom-variant dark (&:where(.dark, .dark *));
 

@@ -53,7 +53,7 @@
           "alt": null,
           "posicion": {
             "horizontal": null,
-            "vertical": "middle",
+            "vertical": "center",
             "x": "11px",
             "y": null,
             "porPixeles": false,
@@ -75,7 +75,7 @@
           "alt": null,
           "posicion": {
             "horizontal": null,
-            "vertical": "middle",
+            "vertical": "center",
             "x": "1058px",
             "y": null,
             "porPixeles": false,
@@ -145,7 +145,11 @@
             "ancho": "762px",
             "alto": "64px"
           },
-          "estilos": null
+          "estilos": null,
+          "bucle": {
+            "tipo": "escala",
+            "valor": 0.97
+          }
         },
         {
           "uid": 5,
@@ -183,6 +187,10 @@
               "tamano": "capa",
               "color": "capa"
             }
+          },
+          "bucle": {
+            "tipo": "escala",
+            "valor": 0.97
           }
         },
         {
@@ -243,7 +251,11 @@
             "ancho": "907px",
             "alto": "425px"
           },
-          "estilos": null
+          "estilos": null,
+          "bucle": {
+            "tipo": "rotacion",
+            "valor": 10
+          }
         },
         {
           "uid": 8,
@@ -458,7 +470,7 @@
           "alt": null,
           "posicion": {
             "horizontal": null,
-            "vertical": "middle",
+            "vertical": "center",
             "x": "11px",
             "y": null,
             "porPixeles": false,
@@ -480,7 +492,7 @@
           "alt": null,
           "posicion": {
             "horizontal": null,
-            "vertical": "middle",
+            "vertical": "center",
             "x": "1058px",
             "y": null,
             "porPixeles": false,
@@ -550,7 +562,11 @@
             "ancho": "762px",
             "alto": "64px"
           },
-          "estilos": null
+          "estilos": null,
+          "bucle": {
+            "tipo": "escala",
+            "valor": 0.97
+          }
         },
         {
           "uid": 5,
@@ -588,6 +604,10 @@
               "tamano": "capa",
               "color": "capa"
             }
+          },
+          "bucle": {
+            "tipo": "escala",
+            "valor": 0.97
           }
         },
         {
@@ -648,7 +668,11 @@
             "ancho": "907px",
             "alto": "425px"
           },
-          "estilos": null
+          "estilos": null,
+          "bucle": {
+            "tipo": "rotacion",
+            "valor": 10
+          }
         },
         {
           "uid": 8,
