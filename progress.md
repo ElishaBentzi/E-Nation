@@ -281,3 +281,12 @@ Las presentaciones necesitan 42 tramos cada una porque miden **37.005 px** de al
 Reparto: `2018/08` 69, `2018/09` 21, `2018/10` 17, `2019/10` 3, `2020/12` 1, `elementor/thumbs` 1. Por extensión: png 84, jpg 25, gif 3.
 
 Pendiente de la fase: la **auditoría de imágenes con texto** (visión + OCR) sobre estos 112 ficheros, con la lista para que el usuario decida caso por caso.
+
+### Auditoría de imágenes: COMPLETA — y cierra la Fase 4
+**Status:** complete
+
+- Escrito `tools/audit-images.cjs`, que reduce los 171 ficheros a las **118 imágenes únicas**, lee sus dimensiones reales **sin dependencias** (cabeceras PNG/JPEG/GIF a mano) y determina el **papel** de cada una: **59 son fondos de sección** (decorativas por diseño, descartadas sin mirarlas) y **54 de contenido**.
+- Las 54 de contenido revisadas por **tres revisores en paralelo**: **19 tienen texto**, pero solo **4 son candidatas reales a conversión**. 11 son logotipos de medios de prensa (no se tocan: marcas de terceros) y 4 tienen texto incidental de la propia fotografía. Detalle en `reference/REVISION-VISUAL.md`.
+- **La intuición del usuario era correcta**: la gran mayoría de imágenes no tiene texto.
+
+**Un defecto propio que salió aquí, y era grave**: los **59 fondos de parallax NO estaban descargados**. La causa es fina: **Elementor guarda las URLs en su JSON con las barras escapadas** (`https:\/\/…`), así que cualquier expresión que busque `https://` en los datos crudos no las ve. Mi extractor PHP tenía ese fallo, y los fondos —justo el efecto principal del sitio— nunca entraron en el inventario de medios. Se corrigió añadiendo el **CSS generado** como fuente, que sí tiene las URLs normales: **112 → 171 ficheros, 9,2 MB**.
