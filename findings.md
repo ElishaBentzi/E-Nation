@@ -821,3 +821,48 @@ O sea: **se quitó del proyecto de docs (paso 1 hecho) pero todavía no se ha a�
 #### Nota sobre la verificación visual del carrusel
 
 **No la puedo hacer yo**: las animaciones de entrada usan `fill-mode: both` con opacidad inicial 0, y en el navegador automatizado **las animaciones CSS no avanzan con el reloj real** (verificado con un control). Así que en mis capturas las capas se quedan invisibles y el banner parecería vacío. **Es una limitación del entorno de pruebas, no del banner**: en un navegador real las animaciones corren. La revisión visual tiene que hacerla el usuario.
+
+### El carrusel tenía 3 elementos de más, y la causa era estructural
+
+El usuario revisó el carrusel desplegado y vio **8 elementos donde el original tiene 5**. Señaló tres para borrar. **Antes de borrar nada se buscó la causa**, y resultó ser una estructura que yo no había leído.
+
+#### RevSlider organiza las diapositivas en PADRE E HIJOS
+
+| campo | qué dice |
+|---|---|
+| `child.language` | **el idioma de la diapositiva**, declarado por el plugin |
+| `child.parentId` | el padre del que es variante |
+
+Los **padres** son 5 y están en español (Juegos, Venezuela, Pagos, Unity, SBM org); sus **hijos** son las versiones en inglés y francés.
+
+**Cuando se borra un padre, sus hijos quedan huérfanos**: siguen en la base de datos y **el plugin ya no los renderiza**, pero una extracción ingenua se los lleva todos. Eran **6 de 21** (tres versiones viejas × dos idiomas), y esa era exactamente la diferencia entre 8 y 5.
+
+Los tres que el usuario identificó a ojo eran esos huérfanos:
+
+| `parentId` | texto |
+|---|---|
+| 4 | «Mutual Welfare Society … Spanish Edition English Edition French Edition» |
+| 5 | «Model of Participation · POLITICS» |
+| 6 | «WORKSHOPS» |
+
+#### El criterio aplicado es estructural, no por contenido
+
+Una diapositiva es huérfana **si declara un `parentId` que no existe entre las de su mismo slider**. Se descartan **los dos idiomas** que corresponde, no solo los tres que se ven en la página inglesa: borrar por contenido habría dejado las parejas en francés, y el defecto habría vuelto a aparecer al revisar el sitio en francés.
+
+**Resultado: 15 diapositivas en tripletes limpios, 5 proyectos × 3 idiomas.** Y las 5 de cada idioma coinciden con los 5 elementos del original. Las capas bajan de 157 a 93.
+
+| proyecto | es | en | fr |
+|---|---|---|---|
+| SBM Juegos | #1 | #2 | #6 |
+| Venezuela / Bienestar Mutuo | #3 | #4 | #5 |
+| SBM Libre | #7 | #8 | #9 |
+| UnityCoin | #10 | #11 | #12 |
+| Mutual Welfare | #13 | #14 | #15 |
+
+#### Y de paso se corrigió un enfoque mío equivocado
+
+**El idioma de cada diapositiva lo DECLARA el plugin** en `child.language`, y yo había construido un detector heurístico que puntuaba palabras y caracteres del texto. Funcionaba —acertó los 21 salvo dos empates—, pero **resolvía un problema que el dato ya resolvía**, y me obligó a mantener una lista de marcas por idioma que es frágil.
+
+Ahora **el valor declarado manda** y la heurística queda solo como último recurso para diapositivas que no lo declaren, **avisando si las dos señales discrepan**. Sustituye `detect-slide-locales.cjs` por `slide-locales.cjs`.
+
+**La lección, que se repite en este proyecto**: antes de construir una deducción, comprobar si el dato ya lo dice. El campo estaba ahí desde el principio y no lo miré.

@@ -304,3 +304,14 @@ Pendiente de la fase: la **auditoría de imágenes con texto** (visión + OCR) s
 1. **El CSS no se aplicaba en absoluto** y el build pasaba igual (Astro no exige importar la hoja). Las páginas salían sin estilos. Detectado midiendo el HTML construido, no el log.
 2. **Un test mío dio falso positivo**: `grep … | head -1 && echo "presente"` imprimía «presente» aunque el grep no encontrara nada, porque `head` siempre devuelve 0. De ahí concluí que el CSS estaba bien cuando no existía.
 3. Los ids con guion (`privacy-policy`) no son claves válidas sin comillas en TypeScript; el build lo cazó y el generador ahora las entrecomilla.
+
+### Corrección del carrusel: de 8 a 5 elementos
+**Status:** complete
+
+El usuario revisó el carrusel desplegado y detectó **8 elementos donde el original tiene 5**, señalando tres para borrar. Antes de borrarlos se buscó la causa y resultó estructural: **RevSlider organiza las diapositivas en padre e hijos** (`child.parentId` y `child.language`), y **al borrar un padre sus hijos quedan huérfanos** — siguen en la base de datos y el plugin ya no los renderiza, pero la extracción se los llevaba.
+
+Se aplicó un criterio **estructural** (huérfana = `parentId` que no existe en su slider) en vez de borrar por contenido, así se descartaron los **6** (tres versiones × dos idiomas) y no solo los tres que se ven en inglés. **El carrusel pasa a 15 diapositivas en tripletes limpios: 5 proyectos × 3 idiomas**, y las capas bajan de 157 a 93.
+
+Y se corrigió un enfoque mío: **el idioma lo declara el plugin**, así que el detector heurístico que había construido era innecesario. Ahora el valor declarado manda y la heurística es el último recurso. Herramienta sustituida.
+
+**Verificado en producción tras el despliegue**: `/presentation/` y `/es/presentacion/` muestran 6 diapositivas cada una (5 del carrusel + 1 neutra), y los tres elementos viejos están ausentes.
