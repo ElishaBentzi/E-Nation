@@ -127,7 +127,12 @@
             "color": "#fff",
             "fondo": null,
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -192,7 +197,12 @@
             "color": "#fff",
             "fondo": null,
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -230,7 +240,12 @@
             "color": "#fff",
             "fondo": null,
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -376,7 +391,12 @@
             "color": null,
             "fondo": null,
             "radio": null,
-            "preset": null
+            "preset": null,
+            "origen": {
+              "familia": null,
+              "tamano": null,
+              "color": null
+            }
           }
         },
         {
@@ -409,7 +429,12 @@
             "color": null,
             "fondo": null,
             "radio": null,
-            "preset": null
+            "preset": null,
+            "origen": {
+              "familia": null,
+              "tamano": null,
+              "color": null
+            }
           }
         },
         {
@@ -442,7 +467,12 @@
             "color": null,
             "fondo": null,
             "radio": null,
-            "preset": null
+            "preset": null,
+            "origen": {
+              "familia": null,
+              "tamano": null,
+              "color": null
+            }
           }
         }
       ]
@@ -543,7 +573,12 @@
             "color": "#fff",
             "fondo": null,
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -608,7 +643,12 @@
             "color": "#fff",
             "fondo": null,
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -646,7 +686,12 @@
             "color": "#fff",
             "fondo": null,
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -792,7 +837,12 @@
             "color": null,
             "fondo": null,
             "radio": null,
-            "preset": null
+            "preset": null,
+            "origen": {
+              "familia": null,
+              "tamano": null,
+              "color": null
+            }
           }
         },
         {
@@ -825,7 +875,12 @@
             "color": null,
             "fondo": null,
             "radio": null,
-            "preset": null
+            "preset": null,
+            "origen": {
+              "familia": null,
+              "tamano": null,
+              "color": null
+            }
           }
         },
         {
@@ -858,7 +913,12 @@
             "color": null,
             "fondo": null,
             "radio": null,
-            "preset": null
+            "preset": null,
+            "origen": {
+              "familia": null,
+              "tamano": null,
+              "color": null
+            }
           }
         }
       ]

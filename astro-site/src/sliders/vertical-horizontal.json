@@ -883,7 +883,12 @@
             "color": "#ff7100",
             "fondo": "transparent",
             "radio": null,
-            "preset": null
+            "preset": null,
+            "origen": {
+              "familia": null,
+              "tamano": null,
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -1026,10 +1031,15 @@
             "interlineado": "120px",
             "espaciadoLetras": null,
             "alineacion": "inherit",
-            "color": null,
+            "color": "#ffffff",
             "fondo": "transparent",
             "radio": null,
-            "preset": null
+            "preset": null,
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "marcado"
+            }
           },
           "animacion": {
             "tiene": true,

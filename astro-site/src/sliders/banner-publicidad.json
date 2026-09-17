@@ -74,10 +74,15 @@
             "interlineado": "35px",
             "espaciadoLetras": "0px",
             "alineacion": null,
-            "color": null,
+            "color": "#ffc370",
             "fondo": "transparent",
             "radio": null,
-            "preset": "Fashion-BigDisplay"
+            "preset": "Fashion-BigDisplay",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "marcado"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -284,14 +289,19 @@
           "estilos": {
             "familia": "Roboto Slab",
             "tamano": "63px",
-            "grosor": null,
+            "grosor": "700",
             "interlineado": "55px",
-            "espaciadoLetras": null,
+            "espaciadoLetras": "0px",
             "alineacion": null,
             "color": "rgba(232,96,0,1)",
             "fondo": "transparent",
             "radio": null,
-            "preset": "Newspaper-Title"
+            "preset": "Newspaper-Title",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -329,7 +339,12 @@
             "color": "rgba(0,250,255,1)",
             "fondo": "transparent",
             "radio": null,
-            "preset": null
+            "preset": null,
+            "origen": {
+              "familia": null,
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -367,7 +382,12 @@
             "color": "rgba(255,255,255,1)",
             "fondo": "transparent",
             "radio": null,
-            "preset": "WebProduct-Title-Light"
+            "preset": "WebProduct-Title-Light",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -486,7 +506,12 @@
             "color": "rgba(255,255,255,1)",
             "fondo": "transparent",
             "radio": null,
-            "preset": "WebProduct-Title-Light"
+            "preset": "WebProduct-Title-Light",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -551,7 +576,12 @@
             "color": "rgba(255,255,255,1)",
             "fondo": "transparent",
             "radio": null,
-            "preset": "WebProduct-Title-Light"
+            "preset": "WebProduct-Title-Light",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -677,14 +707,19 @@
           "estilos": {
             "familia": "Roboto Slab",
             "tamano": "63px",
-            "grosor": null,
+            "grosor": "700",
             "interlineado": "55px",
-            "espaciadoLetras": null,
+            "espaciadoLetras": "0px",
             "alineacion": null,
             "color": "rgba(232,96,0,1)",
             "fondo": "transparent",
             "radio": null,
-            "preset": "Newspaper-Title"
+            "preset": "Newspaper-Title",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -722,7 +757,12 @@
             "color": "rgba(0,250,255,1)",
             "fondo": "transparent",
             "radio": null,
-            "preset": null
+            "preset": null,
+            "origen": {
+              "familia": null,
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -760,7 +800,12 @@
             "color": "rgba(255,255,255,1)",
             "fondo": "transparent",
             "radio": null,
-            "preset": "WebProduct-Title-Light"
+            "preset": "WebProduct-Title-Light",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -879,7 +924,12 @@
             "color": "rgba(255,255,255,1)",
             "fondo": "transparent",
             "radio": null,
-            "preset": "WebProduct-Title-Light"
+            "preset": "WebProduct-Title-Light",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -944,7 +994,12 @@
             "color": "rgba(255,255,255,1)",
             "fondo": "transparent",
             "radio": null,
-            "preset": "WebProduct-Title-Light"
+            "preset": "WebProduct-Title-Light",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -1124,14 +1179,19 @@
           "estilos": {
             "familia": "Georgia, serif",
             "tamano": "40px",
-            "grosor": null,
+            "grosor": "300",
             "interlineado": "20px",
             "espaciadoLetras": null,
             "alineacion": null,
             "color": "rgba(0,0,0,1)",
             "fondo": "transparent",
             "radio": null,
-            "preset": "Furniture-Subtitle"
+            "preset": "Furniture-Subtitle",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -1169,7 +1229,12 @@
             "color": "rgba(0,53,112,1)",
             "fondo": "transparent",
             "radio": null,
-            "preset": null
+            "preset": null,
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -1207,7 +1272,12 @@
             "color": "rgba(39,83,130,1)",
             "fondo": "rgba(255,255,255,0.75)",
             "radio": null,
-            "preset": null
+            "preset": null,
+            "origen": {
+              "familia": null,
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -1360,14 +1430,19 @@
           "estilos": {
             "familia": "Georgia, serif",
             "tamano": "40px",
-            "grosor": null,
+            "grosor": "300",
             "interlineado": "20px",
             "espaciadoLetras": null,
             "alineacion": null,
             "color": "rgba(0,0,0,1)",
             "fondo": "transparent",
             "radio": null,
-            "preset": "Furniture-Subtitle"
+            "preset": "Furniture-Subtitle",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -1405,7 +1480,12 @@
             "color": "rgba(0,53,112,1)",
             "fondo": "transparent",
             "radio": null,
-            "preset": null
+            "preset": null,
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -1443,7 +1523,12 @@
             "color": "rgba(39,83,130,1)",
             "fondo": "rgba(255,255,255,0.75)",
             "radio": null,
-            "preset": null
+            "preset": null,
+            "origen": {
+              "familia": null,
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -1596,14 +1681,19 @@
           "estilos": {
             "familia": "Belleza",
             "tamano": "135px",
-            "grosor": null,
+            "grosor": "300",
             "interlineado": "150px",
             "espaciadoLetras": null,
             "alineacion": null,
             "color": "rgba(10,0,8,1)",
             "fondo": "transparent",
             "radio": null,
-            "preset": "Furniture-LogoText"
+            "preset": "Furniture-LogoText",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -1972,14 +2062,19 @@
           "estilos": {
             "familia": "Belleza",
             "tamano": "160px",
-            "grosor": null,
+            "grosor": "300",
             "interlineado": "150px",
             "espaciadoLetras": null,
             "alineacion": null,
             "color": "rgba(10,0,8,1)",
             "fondo": "transparent",
             "radio": null,
-            "preset": "Furniture-LogoText"
+            "preset": "Furniture-LogoText",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -2248,10 +2343,15 @@
             "interlineado": "35px",
             "espaciadoLetras": "0px",
             "alineacion": null,
-            "color": null,
+            "color": "#ffc370",
             "fondo": "transparent",
             "radio": null,
-            "preset": "Fashion-BigDisplay"
+            "preset": "Fashion-BigDisplay",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "marcado"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -2415,7 +2515,12 @@
             "color": "#fff",
             "fondo": "transparent",
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -2480,7 +2585,12 @@
             "color": "#fff",
             "fondo": "transparent",
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -2518,7 +2628,12 @@
             "color": "#003f72",
             "fondo": "transparent",
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -2628,7 +2743,12 @@
             "color": "#fff",
             "fondo": "transparent",
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -2693,7 +2813,12 @@
             "color": "#fff",
             "fondo": "transparent",
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -2731,7 +2856,12 @@
             "color": "#003f72",
             "fondo": "transparent",
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -2841,7 +2971,12 @@
             "color": "#fff",
             "fondo": "transparent",
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -2906,7 +3041,12 @@
             "color": "#fff",
             "fondo": "transparent",
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -2944,7 +3084,12 @@
             "color": "#003f72",
             "fondo": "transparent",
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -3051,10 +3196,15 @@
             "interlineado": "35px",
             "espaciadoLetras": "0px",
             "alineacion": null,
-            "color": null,
+            "color": "#ffc370",
             "fondo": "transparent",
             "radio": null,
-            "preset": "Fashion-BigDisplay"
+            "preset": "Fashion-BigDisplay",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "marcado"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -3218,7 +3368,12 @@
             "color": "#d7b35b",
             "fondo": "transparent",
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -3256,7 +3411,12 @@
             "color": "#d7b35b",
             "fondo": "transparent",
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -3287,14 +3447,19 @@
           "estilos": {
             "familia": "Actor",
             "tamano": "55px",
-            "grosor": null,
+            "grosor": "700",
             "interlineado": "60px",
             "espaciadoLetras": "2px",
             "alineacion": null,
-            "color": null,
+            "color": "#ffffff",
             "fondo": "transparent",
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "marcado"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -3352,14 +3517,19 @@
           "estilos": {
             "familia": "Actor",
             "tamano": "28px",
-            "grosor": null,
+            "grosor": "700",
             "interlineado": "60px",
             "espaciadoLetras": "-1px",
             "alineacion": null,
-            "color": null,
+            "color": "#ffffff",
             "fondo": "transparent",
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "marcado"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -3442,7 +3612,12 @@
             "color": "#d7b35b",
             "fondo": "transparent",
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -3480,7 +3655,12 @@
             "color": "#d7b35b",
             "fondo": "transparent",
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -3511,14 +3691,19 @@
           "estilos": {
             "familia": "Actor",
             "tamano": "52px",
-            "grosor": null,
+            "grosor": "700",
             "interlineado": "60px",
             "espaciadoLetras": "2px",
             "alineacion": null,
-            "color": null,
+            "color": "#ffffff",
             "fondo": "transparent",
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "marcado"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -3576,14 +3761,19 @@
           "estilos": {
             "familia": "Actor",
             "tamano": "29px",
-            "grosor": null,
+            "grosor": "700",
             "interlineado": "60px",
             "espaciadoLetras": "0px",
             "alineacion": null,
-            "color": null,
+            "color": "#ffffff",
             "fondo": "transparent",
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "marcado"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -3666,7 +3856,12 @@
             "color": "#d7b35b",
             "fondo": "transparent",
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -3704,7 +3899,12 @@
             "color": "#d7b35b",
             "fondo": "transparent",
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -3735,14 +3935,19 @@
           "estilos": {
             "familia": "Actor",
             "tamano": "51px",
-            "grosor": null,
+            "grosor": "700",
             "interlineado": "60px",
             "espaciadoLetras": "0px",
             "alineacion": null,
-            "color": null,
+            "color": "#ffffff",
             "fondo": "transparent",
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "marcado"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -3800,14 +4005,19 @@
           "estilos": {
             "familia": "Actor",
             "tamano": "28px",
-            "grosor": null,
+            "grosor": "700",
             "interlineado": "60px",
             "espaciadoLetras": "0px",
             "alineacion": null,
-            "color": null,
+            "color": "#ffffff",
             "fondo": "transparent",
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "marcado"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -3890,7 +4100,12 @@
             "color": "#ffc370",
             "fondo": "transparent",
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -3979,10 +4194,15 @@
             "interlineado": "55px",
             "espaciadoLetras": "0px",
             "alineacion": null,
-            "color": null,
+            "color": "#ffffff",
             "fondo": "transparent",
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "marcado"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -4017,10 +4237,15 @@
             "interlineado": "55px",
             "espaciadoLetras": "0px",
             "alineacion": null,
-            "color": null,
+            "color": "#ffffff",
             "fondo": "transparent",
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "marcado"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -4055,10 +4280,15 @@
             "interlineado": "55px",
             "espaciadoLetras": "0px",
             "alineacion": null,
-            "color": null,
+            "color": "#ffffff",
             "fondo": "transparent",
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "marcado"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -4141,7 +4371,12 @@
             "color": "#ffc370",
             "fondo": "transparent",
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -4230,10 +4465,15 @@
             "interlineado": "55px",
             "espaciadoLetras": "0px",
             "alineacion": null,
-            "color": null,
+            "color": "#ffffff",
             "fondo": "transparent",
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "marcado"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -4268,10 +4508,15 @@
             "interlineado": "50px",
             "espaciadoLetras": "0px",
             "alineacion": null,
-            "color": null,
+            "color": "#ffffff",
             "fondo": "transparent",
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "marcado"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -4306,10 +4551,15 @@
             "interlineado": "55px",
             "espaciadoLetras": "0px",
             "alineacion": null,
-            "color": null,
+            "color": "#ffffff",
             "fondo": "transparent",
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "marcado"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -4392,7 +4642,12 @@
             "color": "#ffc370",
             "fondo": "transparent",
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -4481,10 +4736,15 @@
             "interlineado": "55px",
             "espaciadoLetras": "0px",
             "alineacion": null,
-            "color": null,
+            "color": "#ffffff",
             "fondo": "transparent",
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "marcado"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -4519,10 +4779,15 @@
             "interlineado": "55px",
             "espaciadoLetras": "0px",
             "alineacion": null,
-            "color": null,
+            "color": "#ffffff",
             "fondo": "transparent",
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "marcado"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -4557,10 +4822,15 @@
             "interlineado": "55px",
             "espaciadoLetras": "0px",
             "alineacion": null,
-            "color": null,
+            "color": "#ffffff",
             "fondo": "transparent",
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "marcado"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -4640,10 +4910,15 @@
             "interlineado": "55px",
             "espaciadoLetras": "0px",
             "alineacion": null,
-            "color": null,
+            "color": "#ffc370",
             "fondo": "transparent",
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "marcado"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -4678,10 +4953,15 @@
             "interlineado": "84px",
             "espaciadoLetras": "0px",
             "alineacion": null,
-            "color": null,
+            "color": "#d7b35b",
             "fondo": "transparent",
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "marcado"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -4712,14 +4992,19 @@
           "estilos": {
             "familia": "Arimo",
             "tamano": "40px",
-            "grosor": null,
+            "grosor": "900",
             "interlineado": "40px",
             "espaciadoLetras": "0px",
             "alineacion": null,
             "color": "#002e60",
             "fondo": "transparent",
             "radio": null,
-            "preset": "Fashion-BigDisplay"
+            "preset": "Fashion-BigDisplay",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -4777,14 +5062,19 @@
           "estilos": {
             "familia": "Arimo",
             "tamano": "40px",
-            "grosor": null,
+            "grosor": "900",
             "interlineado": "40px",
             "espaciadoLetras": "0px",
             "alineacion": null,
             "color": "#002e60",
             "fondo": "transparent",
             "radio": null,
-            "preset": "Fashion-BigDisplay"
+            "preset": "Fashion-BigDisplay",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -4891,10 +5181,15 @@
             "interlineado": "55px",
             "espaciadoLetras": "0px",
             "alineacion": null,
-            "color": null,
+            "color": "#ffc370",
             "fondo": "transparent",
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "marcado"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -4929,10 +5224,15 @@
             "interlineado": "84px",
             "espaciadoLetras": "0px",
             "alineacion": null,
-            "color": null,
+            "color": "#d7b35b",
             "fondo": "transparent",
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "marcado"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -4963,14 +5263,19 @@
           "estilos": {
             "familia": "Arimo",
             "tamano": "45px",
-            "grosor": null,
+            "grosor": "900",
             "interlineado": "40px",
             "espaciadoLetras": "1px",
             "alineacion": null,
             "color": "#002e60",
             "fondo": "transparent",
             "radio": null,
-            "preset": "Fashion-BigDisplay"
+            "preset": "Fashion-BigDisplay",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -5028,14 +5333,19 @@
           "estilos": {
             "familia": "Arimo",
             "tamano": "48px",
-            "grosor": null,
+            "grosor": "900",
             "interlineado": "40px",
             "espaciadoLetras": "1px",
             "alineacion": null,
             "color": "#002e60",
             "fondo": "transparent",
             "radio": null,
-            "preset": "Fashion-BigDisplay"
+            "preset": "Fashion-BigDisplay",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -5142,10 +5452,15 @@
             "interlineado": "55px",
             "espaciadoLetras": "0px",
             "alineacion": null,
-            "color": null,
+            "color": "#ffc370",
             "fondo": "transparent",
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "marcado"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -5180,10 +5495,15 @@
             "interlineado": "84px",
             "espaciadoLetras": "0px",
             "alineacion": null,
-            "color": null,
+            "color": "#d7b35b",
             "fondo": "transparent",
             "radio": null,
-            "preset": "very_large_text"
+            "preset": "very_large_text",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "marcado"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -5214,14 +5534,19 @@
           "estilos": {
             "familia": "Arimo",
             "tamano": "43px",
-            "grosor": null,
+            "grosor": "900",
             "interlineado": "40px",
             "espaciadoLetras": "1px",
             "alineacion": null,
             "color": "#002e60",
             "fondo": "transparent",
             "radio": null,
-            "preset": "Fashion-BigDisplay"
+            "preset": "Fashion-BigDisplay",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,
@@ -5279,14 +5604,19 @@
           "estilos": {
             "familia": "Arimo",
             "tamano": "38px",
-            "grosor": null,
+            "grosor": "900",
             "interlineado": "40px",
             "espaciadoLetras": "-1px",
             "alineacion": null,
             "color": "#002e60",
             "fondo": "transparent",
             "radio": null,
-            "preset": "Fashion-BigDisplay"
+            "preset": "Fashion-BigDisplay",
+            "origen": {
+              "familia": "capa",
+              "tamano": "capa",
+              "color": "capa"
+            }
           },
           "animacion": {
             "tiene": true,

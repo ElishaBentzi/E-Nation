@@ -651,3 +651,39 @@ Se arregla declarando la fuente explícitamente en `global.css`: `@source '../..
 **Por qué este fallo es peligroso**: es invisible por partida doble. El build **pasa**, y el HTML **contiene las clases escritas** (se ven en el `class`), así que cualquier comprobación que mire el HTML lo da por bueno. Solo se detecta **midiendo el estilo computado** —`getComputedStyle` decía `opacity: 1` en los 21 slides— o mirando la página. Es la enésima confirmación de la regla del proyecto: un HTML con el marcador correcto NO prueba que el estilo se aplique.
 
 **Consecuencia general**: si se añaden más componentes compartidos fuera de la app, hay que declararlos en `@source` o sus clases no existirán.
+
+### Los presets de estilo llegaron, y con ellos una corrección de fondo
+
+El usuario re-ejecutó el extractor con la tabla `revslider_css`: **109 presets**. Y con ellos se resolvió el color de todas las capas de texto.
+
+#### La cascada la tenía INVERTIDA
+
+Resolví primero por el preset (`idle.style` → `Fashion-BigDisplay` → `#000000`) y **el texto del banner salía NEGRO**, cuando en el original se ve claro. El marcado renderizado decía `data-color="#ffffff"` para esa misma capa.
+
+**El error de razonamiento**: traté el preset como la fuente principal y el marcado como último recurso, cuando es al revés. El marcado es **la salida final del plugin**, con el preset y la capa ya combinados y con los valores por defecto aplicados; el preset es solo **la base**. Poner la base por delante del resultado real es invertir la cascada.
+
+**Orden correcto, y por qué cada puesto:**
+
+1. **Lo que declara la capa** (`idle`): es una decisión explícita del autor para esa capa.
+2. **Lo que resuelve el marcado renderizado**: es el resultado real, con todo combinado.
+3. **El preset**: base para lo que no haya quedado resuelto.
+
+Resultado tras corregirlo: **49 colores de la capa, 25 del marcado, 0 del preset** — porque el marcado cubre los casos que antes resolvía el preset, y el blanco pasa a ser el color dominante, como en el original. **Ninguna capa de texto con contenido se queda sin color**; las 6 sin color son capas **vacías** que el componente filtra y no pintan nada.
+
+#### Otra trampa: los `uid` de RevSlider son POR SLIDER
+
+Al usar el marcado como fuente, indexé los valores resueltos por `uid` de capa. No funcionaba: **los `uid` de RevSlider son por slider, no globales**, así que la capa 3 del slider A y la capa 3 del slider B colisionaban y una se quedaba con el color de la otra. Hay que indexar por `módulo-uid`.
+
+#### Límite conocido del marcado
+
+Solo trae **los slides que el plugin renderiza de entrada**: 5 de los 21 del banner. Para los otros 16 no hay valores resueltos y se cae al preset. Si hiciera falta precisión total en los 21, habría que recorrer el slider con el navegador para cosechar cada slide ya renderizado.
+
+#### Recuento final de los sliders
+
+| | |
+|---|---|
+| Capas totales | 220 (157 en el banner de publicidad) |
+| Capas de texto con contenido | 80 |
+| Con color resuelto | **74 (100 % de las que pintan)** |
+| Enlaces extraídos | 15, a 11 destinos de otros proyectos |
+| Tipografías en uso | Arial, Arimo, **Raleway**, **Actor**, **Martel Sans**, Roboto Slab, Belleza, Maven Pro, Open Sans, Georgia |

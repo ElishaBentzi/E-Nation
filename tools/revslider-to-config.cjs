@@ -25,9 +25,19 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const ORIGEN = path.join(ROOT, 'reference', 'sliders');
 const DESTINO = path.join(ROOT, 'astro-site', 'src', 'sliders');
+// El export del WordPress: de aqui salen los PRESETS de estilo (tabla
+// `revslider_css`), que es donde las capas toman el color y parte de la tipografia.
+const EXPORT = path.join(ROOT, 'reference', 'wp-export.json');
+// El HTML renderizado del original, del que se leen los valores ya resueltos.
+const RENDERED = path.join(ROOT, 'reference', 'rendered');
 
 if (!fs.existsSync(ORIGEN)) {
   console.error('no hay sliders extraidos en reference/sliders/');
+  process.exit(2);
+}
+if (!fs.existsSync(EXPORT)) {
+  console.error('no existe reference/wp-export.json: sin el no hay presets y las');
+  console.error('capas se quedarian sin color.');
   process.exit(2);
 }
 
@@ -74,7 +84,7 @@ function ruta(o, camino, porDefecto = undefined) {
  * del preset (`idle.style`, p. ej. "Fashion-BigDisplay"). Cuando pasa eso se deja
  * en null y se AVISA: inventarse un color seria peor que reconocer que falta.
  */
-function estilosDe(capa) {
+function estilosDe(capa, uidCapa, modulo) {
   const idle = capa.idle || {};
   const s = (v) => {
     if (v === undefined || v === null) return null;
@@ -85,23 +95,135 @@ function estilosDe(capa) {
     }
     return v === '' ? null : v;
   };
+
+  const preset = PRESETS.get(idle.style) || null;
+  const resuelto = RESUELTOS.get(`${modulo}-${uidCapa}`) || null;
+
+  /*
+   * ORDEN DE PRECEDENCIA, y el porque de cada puesto:
+   *
+   *   1. LO QUE DECLARA LA PROPIA CAPA (`idle`). Es una decision explicita del autor
+   *      para esa capa concreta.
+   *   2. LO QUE RESUELVE EL MARCADO RENDERIZADO. Es la SALIDA FINAL del plugin, con
+   *      el preset y la capa ya combinados. Manda sobre el preset porque el preset
+   *      es solo la BASE: el plugin puede aplicar encima valores que no estan ni en
+   *      la configuracion de la capa ni en la del preset.
+   *   3. EL PRESET, como base para lo que no haya quedado resuelto.
+   *
+   * TENIA ESTE ORDEN AL REVES y se notaba: el texto del banner salia NEGRO (del
+   * preset "Fashion-BigDisplay", #000000) cuando el original lo pinta BLANCO
+   * (`data-color="#ffffff"` en el marcado). Poner el preset por delante del
+   * resultado real es invertir la cascada.
+   *
+   * Limite conocido: el marcado solo trae los slides que el plugin renderiza de
+   * entrada (5 de los 21 del banner), asi que para el resto se cae al preset.
+   */
+  const propio = (v, resuelto_, delPreset_) => s(v) ?? resuelto_ ?? delPreset_;
+  const tiene = (v) => s(v) !== null;
+
   return {
-    familia: s(idle.fontFamily),
-    tamano: s(idle.fontSize),
-    grosor: s(idle.fontWeight),
-    interlineado: s(idle.lineHeight),
-    espaciadoLetras: s(idle.letterSpacing),
-    alineacion: s(idle.textAlign),
-    color: s(idle.color),
-    fondo: s(idle.backgroundColor),
+    familia: propio(idle.fontFamily, resuelto?.familia ?? null, delPreset(preset, 'font-family')),
+    tamano: propio(idle.fontSize, resuelto?.tamano ?? null, delPreset(preset, 'font-size')),
+    grosor: propio(idle.fontWeight, resuelto?.grosor ?? null, delPreset(preset, 'font-weight')),
+    interlineado: propio(idle.lineHeight, resuelto?.interlineado ?? null, delPreset(preset, 'line-height')),
+    espaciadoLetras: propio(idle.letterSpacing, resuelto?.espaciadoLetras ?? null, null),
+    alineacion: propio(idle.textAlign, null, null),
+    color: propio(idle.color, resuelto?.color ?? null, delPreset(preset, 'color')),
+    fondo: propio(idle.backgroundColor, null, delPreset(preset, 'background-color')),
     radio: s(idle.borderRadius),
     preset: idle.style || null,
+    /** De donde salio cada valor, para poder auditar la cascada. */
+    origen: {
+      familia: tiene(idle.fontFamily) ? 'capa' : (resuelto?.familia ? 'marcado' : (delPreset(preset, 'font-family') ? 'preset' : null)),
+      tamano: tiene(idle.fontSize) ? 'capa' : (resuelto?.tamano ? 'marcado' : (delPreset(preset, 'font-size') ? 'preset' : null)),
+      color: tiene(idle.color) ? 'capa' : (resuelto?.color ? 'marcado' : (delPreset(preset, 'color') ? 'preset' : null)),
+    },
   };
+}
+
+// ---------------------------------------------------------------------------
+// PRESETS DE ESTILO (`revslider_css`)
+//
+// Es la pieza que faltaba. Las capas NO declaran color ni, a menudo, tipografia:
+// toman un PRESET por nombre (`idle.style`, p. ej. "Fashion-BigDisplay"), y el
+// preset si trae color, font-family, font-size, font-weight, line-height...
+//
+// LA CASCADA ES: preset como base, y encima lo que declare el `idle` de la capa.
+// Por eso las capas pueden usar "Martel Sans" cuando el preset dice "Raleway":
+// la capa gana. Sin la tabla de presets hay que adivinar los colores, y adivinar
+// es exactamente lo que no se hace en una migracion.
+// ---------------------------------------------------------------------------
+const j = JSON.parse(fs.readFileSync(EXPORT, 'utf8'));
+const PRESETS = new Map();
+for (const c of (j.sliders_revolution || []).filter((x) => x.tabla === 'revslider_css')) {
+  const nombre = String(c.handle || '').split('.').pop();
+  PRESETS.set(nombre, c.params_decodificado || {});
+}
+
+/** Extrae un valor del preset, que viene plano y en cadenas. */
+function delPreset(preset, clave) {
+  if (!preset) return null;
+  const v = preset[clave];
+  if (v === undefined || v === null || v === '') return null;
+  if (typeof v === 'object') {
+    const d = v.d;
+    const val = d && typeof d === 'object' && 'v' in d ? d.v : d;
+    return val === undefined || val === '' ? null : val;
+  }
+  return v;
+}
+
+// ---------------------------------------------------------------------------
+// SEGUNDA FUENTE: los valores RESUELTOS del marcado renderizado.
+//
+// Hay capas que no declaran estilo propio Y TAMPOCO referencian un preset (las del
+// slider `e-nation`): dependen de los valores por defecto internos del plugin, que
+// no estan en ninguna configuracion.
+//
+// Pero el marcado que el plugin genera SI trae el resultado final ya resuelto
+// (`data-color="#fff" data-text="s:110;l:110;ls:-2px;fw:900"`). Asi que se usa
+// como ultimo recurso: preset -> capa -> marcado resuelto. Con esto no queda
+// ninguna capa sin color, y no hay que adivinar ninguno.
+// ---------------------------------------------------------------------------
+const RESUELTOS = new Map(); // "<moduloRevSlider>-<uid>" -> estilos resueltos
+if (fs.existsSync(RENDERED)) {
+  for (const f of fs.readdirSync(RENDERED)) {
+    if (!f.endsWith('.html')) continue;
+    const html = fs.readFileSync(path.join(RENDERED, f), 'utf8');
+    for (const m of html.matchAll(/<rs-layer([\s\S]*?)>/g)) {
+      const attrs = m[1];
+      // El id del marcado es `slider-<modulo>-slide-<slide>-layer-<uid>`. Se
+      // capturan LOS DOS. Los uid de RevSlider son por slider, no globales: con
+      // solo el uid, las capas de sliders distintos colisionan entre si y se le
+      // acaba asignando a una el color de otra.
+      const idm = attrs.match(/id="slider-(\d+)-slide-\d+-layer-([^"]+)"/);
+      if (!idm) continue;
+      const d = {};
+      for (const x of attrs.matchAll(/data-([a-z_0-9]+)\s*=\s*"([^"]*)"/gi)) d[x[1].toLowerCase()] = x[2];
+      const t = {};
+      for (const trozo of String(d.text || '').split(';')) {
+        const i = trozo.indexOf(':');
+        if (i > 0) t[trozo.slice(0, i).trim()] = trozo.slice(i + 1).trim();
+      }
+      RESUELTOS.set(`${idm[1]}-${idm[2]}`, {
+        color: d.color || null,
+        tamano: t.s ? t.s + 'px' : null,
+        interlineado: t.l ? t.l + 'px' : null,
+        grosor: t.fw || null,
+        espaciadoLetras: t.ls || null,
+        // El marcado no declara la familia: si no esta en el preset ni en la capa,
+        // se deja sin declarar en vez de inventar una.
+        familia: null,
+      });
+    }
+  }
 }
 
 const avisos = [];
 const avisar = (alias, que) => avisos.push({ alias, que });
 const fuentesVistas = new Map();
+const presetsVistos = new Map();
+let capasSinColor = 0;
 
 /** Traduce un slider completo. */
 function traducir(s) {
@@ -264,7 +386,7 @@ function traducir(s) {
         },
         // Tipografia y color, del estado `idle`
         estilos: /image|shape/i.test(tipo) ? null : (() => {
-          const e = estilosDe(capa);
+          const e = estilosDe(capa, capa.uid, s.id);
           if (e.familia) fuentesVistas.set(e.familia, (fuentesVistas.get(e.familia) || 0) + 1);
           if (!e.color) avisar(alias, `capa ${capa.uid}: sin color declarado (se resuelve por el preset "${e.preset || '?'}")`);
           return e;
