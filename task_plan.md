@@ -11,11 +11,13 @@ Migrar todo lo que hoy vive en WordPress y Read the Docs —el sitio `e-nation.o
 
 ## Next Step
 
-Arrancar la Fase 4 (captura del sitio WordPress): subir el extractor PHP ampliado con WPML a `/zero/`, descargar `wp-export.json`, y capturar las 16 URLs a 1440 y 390 px con browser-use. Requiere las credenciales de wp-admin del usuario para el extractor; el scraping de HTML renderizado no.
+**Desplegar y pedir al usuario que revise las animaciones nuevas** en `web.unitygenerator.com/presentation/` (ola en las letras y flotación de la imagen, en SBM Juegos, SBM Libre y Mutual Welfare). En local están verificadas: 0 solapes en las 6 diapositivas y en los dos idiomas, y la ola y la flotación medidas en movimiento.
+
+Después, seguir con la Fase 6 (contenido real de la home y las presentaciones, parallax, `org-piramid`). Antes conviene resolver los tres pendientes que aparecieron al medir el carrusel (ver `findings.md`): el slider `snake` trae 1 diapositiva y el original 2, nuestro banner mide 1166 px frente a los 1120 del original, y el original aplica `text-shadow` a las capas de texto.
 
 ## Current Phase
 
-Phase 4: Captura del sitio WordPress — `in_progress`
+Phase 6: Reconstrucción del sitio — `in_progress` (contenido real de la home y las presentaciones)
 
 ## Phases
 
@@ -57,28 +59,33 @@ Phase 4: Captura del sitio WordPress — `in_progress`
 El 301 desde los hostnames del ensayo al real sale solo del punto 2. El orden es crítico: primero el dominio nuevo en Pages (Cloudflare re-apunta el CNAME que hoy va a readthedocs.io), después la config — invertido, el dominio de ensayo empezaría a redirigir a un host que todavía sirve RTD.
 
 ### Phase 4: Captura del sitio WordPress
-- [ ] Extractor PHP ampliado con WPML subido a `/zero/` → `reference/wp-export.json`
-- [ ] Capturas full-page de las 16 URLs a 1440 y 390 px
-- [ ] HTML renderizado + CSS inline + CSS de Elementor/The7/JetElements/RevSlider
-- [ ] JSON de config de los 4 sliders → `reference/sliders/`
-- [ ] **Medir** el parallax por elemento (familias fondo-fijo vs transform)
-- [ ] Espejo de `/zero/wp-content/uploads/`
-- [ ] Auditoría de imágenes con texto (visión + OCR) y lista para decisión del usuario
-**Status:** pending
+- [x] Extractor PHP ampliado con WPML subido a `/zero/` → `reference/wp-export.json`
+- [x] HTML renderizado + CSS inline + CSS de Elementor/The7/JetElements/RevSlider
+- [x] JSON de config de los 4 sliders → `reference/sliders/`
+- [x] Espejo de `/zero/wp-content/uploads/` (205 imágenes)
+- [ ] **Medir** el parallax por elemento (familias fondo-fijo vs transform) → se hará con el contenido de la home
+- [ ] Auditoría de imágenes con texto (visión + OCR) y lista para decisión del usuario → `reference/AUDITORIA-IMAGENES.md`
+- [x] Capturas de referencia de las 16 URLs
+**Status:** complete (la medición del parallax se hará con el contenido real de la home)
 
 ### Phase 5: Stack del sitio
-- [ ] `astro-site/` con Astro 7 + Tailwind v4 + sitemap + aos, `.nvmrc` en 22
-- [ ] Manifiesto i18n desde los grupos de traducción de WPML
-- [ ] **Tema claro/oscuro/auto** (petición del usuario tras ver el de Starlight en los docs): `@custom-variant dark (&:where(.dark, .dark *))` en Tailwind v4, tres estados como Starlight, elección persistida y sin destello al cargar. **La paleta oscura hay que decidirla con el usuario**: el sitio original NO tiene modo oscuro, así que no se extrae, se diseña. Propuesta a partir de la paleta medida (fondos desde `#003f7f`/`#234965`, texto `#e8e8e8`, acento `#ff7100`, énfasis `#ff3a2d`), y los tokens oscuros van a `brand/tokens.css` para que sitio y docs compartan el mismo criterio
-- [ ] `npm run build` verificado como puerta de salida
-**Status:** pending
+- [x] `astro-site/` con Astro 7 + Tailwind v4 + sitemap + aos, `.nvmrc` en 22
+- [x] Manifiesto i18n desde los grupos de traducción de WPML
+- [x] **Tema claro/oscuro/auto**: tres estados como Starlight, elección persistida y sin destello al cargar (guion en línea en el `<head>`). **La paleta oscura sigue pendiente de aprobación del usuario**
+- [x] `npm run build` verificado como puerta de salida
+- [x] Header, footer, las 16 rutas y la página 404 construidas y desplegadas
+**Status:** complete (queda la aprobación del usuario sobre la paleta oscura)
 
 ### Phase 6: Reconstrucción del sitio
-- [ ] Header y footer
-- [ ] Home (incluye los 3 Slider Revolution + JetSlider)
+- [x] Header y footer
+- [x] **Carrusel de banners** (`banner-publicidad`): 5 diapositivas por idioma, huérfanas descartadas, fuentes auto-hospedadas, geometría del marcado resuelto, ola en las letras y flotación. **0 solapes medidos** en las 6 diapositivas y en los dos idiomas
+- [ ] Contenido real de la home y de las presentaciones (textos e imágenes)
+- [ ] Parallax de la home: medir por elemento (fondo fijo vs transform) antes de reconstruir
+- [ ] `org-piramid.png`: reconstruir la superposición
 - [ ] Interiores; páginas legales por script
 - [ ] `/verify/` inspeccionado antes de prometer nada
-**Status:** pending
+- [ ] Pendientes del carrusel, medidos: el slider `snake` trae 1 diapositiva y el original 2; el ancho del banner es 1166 px frente a 1120 del original; el original aplica `text-shadow` a las capas de texto
+**Status:** in_progress
 
 ### Phase 7: SEO y verificación visual
 - [ ] Titles/meta traducidos por idioma; focus keywords de Rank Math verificadas tras el build
@@ -141,6 +148,14 @@ El 301 desde los hostnames del ensayo al real sale solo del punto 2. El orden es
 | La meta `description` del inglés quedó en español en la memoria | 0 (pendiente) | **Sin corregir.** El conversor la fija igual para ambos idiomas; hay que sustituir esa entrada de la memoria. |
 | **`git push` → 403 `denied to ElishaBentzi`** | 1 | **Resuelto.** No era del repositorio (usuario, público, no archivado) sino del **token sin scope de escritura**. Remoto pasado a **SSH** con clave ed25519 en `C:\Users\Elisha\.ssh\` y `core.sshCommand` fijado en el repo. Verificado: `77a75fb..89a01a0 master -> master`. |
 | El `HOME` de este entorno apunta al **perfil del sistema**, no a `C:\Users\Elisha` | 1 | **Corregido.** Me llevó a crear la clave SSH en el sitio equivocado y a que dos comprobaciones miraran en el contexto equivocado. **Regla: en este entorno no usar `~` para nada del usuario; siempre rutas absolutas `C:\Users\Elisha\…`.** |
+| Declaré que faltaban los fotogramas de la ola porque no aparecían en `dist/_astro/*.css` | 1 | **Falso negativo.** Los estilos del componente van **en línea en el HTML**; allí estaban desde el principio. **Lección: buscar en el fichero equivocado no prueba una ausencia; comprobar dónde se mira.** |
+| La medición en navegador decía «la ola no se mueve» con los fotogramas correctos | 1 | **Era el entorno.** `document.hidden = true` (pestaña en segundo plano) y **Chrome congela ahí las animaciones**. Se mide moviendo el reloj de la animación (`currentTime`) y leyendo el estilo computado: determinista y sin depender del reloj. |
+| Las letras del banner salían separadas («P l a y») | 1 | **Corregido.** El aire entre etiquetas en el código (salto de línea y sangría) **es contenido de texto y se pinta**. Etiqueta, letra y cierre en la misma línea; el espacio entre palabras, fuera de las letras. |
+| Cuatro capas apiladas en el mismo punto y el logo de la moneda descentrado y cortado | 1 | **Corregido.** `calc(0 + 72px)` **es CSS inválido** (no se suma el número `0` a una longitud dentro de `calc()`), así que el navegador descartaba el `transform` entero y la capa se quedaba en `left:50%;top:0`. Solo afectaba a los anclajes `left`/`top`. Bases con unidad (`0px`). |
+| Titulares que envuelven de línea donde el original no lo hace | 2 | **Corregido, dos causas.** (1) `display:inline-block` por letra pierde el kerning y redondea anchos → letras **en línea** con `position:relative` + `top`. (2) El generador ignoraba `customCSS`, donde 39 de 48 capas declaran `white-space:nowrap`. |
+| 57 capas con `font-weight:900` donde el original pinta 400 | 1 | **Corregido.** Peso **vacío** en la capa → el generador caía al preset (900), que el original **no aplica** (medido: 400). El preset deja de ser fuente del peso. |
+| Comparar cajas de elementos inventaba solapes que no existen | 1 | **Corregido.** Se comparan **líneas** (`Range.getClientRects()`), y con la ola hay que agrupar los rectángulos por fila porque **cada letra es un elemento**. |
+| `tab.screenshot()` se colgó con la pestaña trabada | 1 | **Se abrió una pestaña nueva** (remedio ya documentado) y se siguió midiendo con `evaluate`. |
 
 ## Notes
 - Re-read this plan before major decisions.

@@ -73,6 +73,7 @@
             "grosor": "700",
             "interlineado": "35px",
             "espaciadoLetras": "0px",
+            "sinEnvolver": false,
             "alineacion": null,
             "color": "#ffc370",
             "fondo": "transparent",
@@ -84,6 +85,7 @@
               "color": "marcado"
             }
           },
+          "efectoTexto": "ola",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -146,6 +148,7 @@
             "alto": "163px"
           },
           "estilos": null,
+          "efectoImagen": "flotar",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -262,6 +265,7 @@
             "grosor": "700",
             "interlineado": "35px",
             "espaciadoLetras": "0px",
+            "sinEnvolver": false,
             "alineacion": null,
             "color": "#ffc370",
             "fondo": "transparent",
@@ -273,6 +277,7 @@
               "color": "marcado"
             }
           },
+          "efectoTexto": "ola",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -335,6 +340,7 @@
             "alto": "163px"
           },
           "estilos": null,
+          "efectoImagen": "flotar",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -451,6 +457,7 @@
             "grosor": "700",
             "interlineado": "55px",
             "espaciadoLetras": "-3px",
+            "sinEnvolver": true,
             "alineacion": null,
             "color": "#fff",
             "fondo": "transparent",
@@ -529,6 +536,7 @@
             "grosor": "700",
             "interlineado": "60px",
             "espaciadoLetras": "-4px",
+            "sinEnvolver": true,
             "alineacion": null,
             "color": "#fff",
             "fondo": "transparent",
@@ -576,6 +584,7 @@
             "grosor": "700",
             "interlineado": "60px",
             "espaciadoLetras": "-2px",
+            "sinEnvolver": true,
             "alineacion": null,
             "color": "#003f72",
             "fondo": "transparent",
@@ -707,6 +716,7 @@
             "grosor": "700",
             "interlineado": "55px",
             "espaciadoLetras": "-3px",
+            "sinEnvolver": true,
             "alineacion": null,
             "color": "#fff",
             "fondo": "transparent",
@@ -785,6 +795,7 @@
             "grosor": "700",
             "interlineado": "60px",
             "espaciadoLetras": "-4px",
+            "sinEnvolver": true,
             "alineacion": null,
             "color": "#fff",
             "fondo": "transparent",
@@ -832,6 +843,7 @@
             "grosor": "700",
             "interlineado": "60px",
             "espaciadoLetras": "-2px",
+            "sinEnvolver": true,
             "alineacion": null,
             "color": "#003f72",
             "fondo": "transparent",
@@ -963,6 +975,7 @@
             "grosor": "700",
             "interlineado": "55px",
             "espaciadoLetras": "-3px",
+            "sinEnvolver": true,
             "alineacion": null,
             "color": "#fff",
             "fondo": "transparent",
@@ -1041,6 +1054,7 @@
             "grosor": "700",
             "interlineado": "60px",
             "espaciadoLetras": "-4px",
+            "sinEnvolver": true,
             "alineacion": null,
             "color": "#fff",
             "fondo": "transparent",
@@ -1088,6 +1102,7 @@
             "grosor": "700",
             "interlineado": "60px",
             "espaciadoLetras": "-2px",
+            "sinEnvolver": true,
             "alineacion": null,
             "color": "#003f72",
             "fondo": "transparent",
@@ -1215,6 +1230,7 @@
             "grosor": "700",
             "interlineado": "35px",
             "espaciadoLetras": "0px",
+            "sinEnvolver": false,
             "alineacion": null,
             "color": "#ffc370",
             "fondo": "transparent",
@@ -1226,6 +1242,7 @@
               "color": "marcado"
             }
           },
+          "efectoTexto": "ola",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -1288,6 +1305,7 @@
             "alto": "163px"
           },
           "estilos": null,
+          "efectoImagen": "flotar",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -1404,6 +1422,7 @@
             "grosor": "700",
             "interlineado": "55px",
             "espaciadoLetras": "-3px",
+            "sinEnvolver": true,
             "alineacion": null,
             "color": "#d7b35b",
             "fondo": "transparent",
@@ -1415,6 +1434,7 @@
               "color": "capa"
             }
           },
+          "efectoTexto": "ola",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -1451,6 +1471,7 @@
             "grosor": "700",
             "interlineado": "60px",
             "espaciadoLetras": "-4px",
+            "sinEnvolver": true,
             "alineacion": null,
             "color": "#d7b35b",
             "fondo": "transparent",
@@ -1462,6 +1483,7 @@
               "color": "capa"
             }
           },
+          "efectoTexto": "ola",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -1495,9 +1517,10 @@
           "estilos": {
             "familia": "Actor",
             "tamano": "55px",
-            "grosor": "700",
+            "grosor": null,
             "interlineado": "60px",
             "espaciadoLetras": "2px",
+            "sinEnvolver": true,
             "alineacion": null,
             "color": "#ffffff",
             "fondo": "transparent",
@@ -1509,6 +1532,7 @@
               "color": "marcado"
             }
           },
+          "efectoTexto": "ola",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -1573,9 +1597,10 @@
           "estilos": {
             "familia": "Actor",
             "tamano": "28px",
-            "grosor": "700",
+            "grosor": null,
             "interlineado": "60px",
             "espaciadoLetras": "-1px",
+            "sinEnvolver": true,
             "alineacion": null,
             "color": "#ffffff",
             "fondo": "transparent",
@@ -1587,6 +1612,7 @@
               "color": "marcado"
             }
           },
+          "efectoTexto": "ola",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -1618,6 +1644,7 @@
             "alto": "176px"
           },
           "estilos": null,
+          "efectoImagen": "flotar",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -1672,6 +1699,7 @@
             "grosor": "700",
             "interlineado": "55px",
             "espaciadoLetras": "-3px",
+            "sinEnvolver": true,
             "alineacion": null,
             "color": "#d7b35b",
             "fondo": "transparent",
@@ -1683,6 +1711,7 @@
               "color": "capa"
             }
           },
+          "efectoTexto": "ola",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -1719,6 +1748,7 @@
             "grosor": "700",
             "interlineado": "60px",
             "espaciadoLetras": "-4px",
+            "sinEnvolver": true,
             "alineacion": null,
             "color": "#d7b35b",
             "fondo": "transparent",
@@ -1730,6 +1760,7 @@
               "color": "capa"
             }
           },
+          "efectoTexto": "ola",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -1763,9 +1794,10 @@
           "estilos": {
             "familia": "Actor",
             "tamano": "52px",
-            "grosor": "700",
+            "grosor": null,
             "interlineado": "60px",
             "espaciadoLetras": "2px",
+            "sinEnvolver": true,
             "alineacion": null,
             "color": "#ffffff",
             "fondo": "transparent",
@@ -1777,6 +1809,7 @@
               "color": "marcado"
             }
           },
+          "efectoTexto": "ola",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -1841,9 +1874,10 @@
           "estilos": {
             "familia": "Actor",
             "tamano": "29px",
-            "grosor": "700",
+            "grosor": null,
             "interlineado": "60px",
             "espaciadoLetras": "0px",
+            "sinEnvolver": true,
             "alineacion": null,
             "color": "#ffffff",
             "fondo": "transparent",
@@ -1855,6 +1889,7 @@
               "color": "marcado"
             }
           },
+          "efectoTexto": "ola",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -1886,6 +1921,7 @@
             "alto": "176px"
           },
           "estilos": null,
+          "efectoImagen": "flotar",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -1940,6 +1976,7 @@
             "grosor": "700",
             "interlineado": "55px",
             "espaciadoLetras": "-3px",
+            "sinEnvolver": true,
             "alineacion": null,
             "color": "#d7b35b",
             "fondo": "transparent",
@@ -1951,6 +1988,7 @@
               "color": "capa"
             }
           },
+          "efectoTexto": "ola",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -1987,6 +2025,7 @@
             "grosor": "700",
             "interlineado": "60px",
             "espaciadoLetras": "-4px",
+            "sinEnvolver": true,
             "alineacion": null,
             "color": "#d7b35b",
             "fondo": "transparent",
@@ -1998,6 +2037,7 @@
               "color": "capa"
             }
           },
+          "efectoTexto": "ola",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -2031,9 +2071,10 @@
           "estilos": {
             "familia": "Actor",
             "tamano": "51px",
-            "grosor": "700",
+            "grosor": null,
             "interlineado": "60px",
             "espaciadoLetras": "0px",
+            "sinEnvolver": true,
             "alineacion": null,
             "color": "#ffffff",
             "fondo": "transparent",
@@ -2045,6 +2086,7 @@
               "color": "marcado"
             }
           },
+          "efectoTexto": "ola",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -2109,9 +2151,10 @@
           "estilos": {
             "familia": "Actor",
             "tamano": "28px",
-            "grosor": "700",
+            "grosor": null,
             "interlineado": "60px",
             "espaciadoLetras": "0px",
+            "sinEnvolver": true,
             "alineacion": null,
             "color": "#ffffff",
             "fondo": "transparent",
@@ -2123,6 +2166,7 @@
               "color": "marcado"
             }
           },
+          "efectoTexto": "ola",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -2154,6 +2198,7 @@
             "alto": "176px"
           },
           "estilos": null,
+          "efectoImagen": "flotar",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -2208,6 +2253,7 @@
             "grosor": "700",
             "interlineado": "55px",
             "espaciadoLetras": "0px",
+            "sinEnvolver": true,
             "alineacion": null,
             "color": "#ffc370",
             "fondo": "transparent",
@@ -2325,6 +2371,7 @@
             "grosor": "700",
             "interlineado": "55px",
             "espaciadoLetras": "0px",
+            "sinEnvolver": true,
             "alineacion": null,
             "color": "#ffffff",
             "fondo": "transparent",
@@ -2372,6 +2419,7 @@
             "grosor": "700",
             "interlineado": "55px",
             "espaciadoLetras": "0px",
+            "sinEnvolver": true,
             "alineacion": null,
             "color": "#ffffff",
             "fondo": "transparent",
@@ -2419,6 +2467,7 @@
             "grosor": "700",
             "interlineado": "55px",
             "espaciadoLetras": "0px",
+            "sinEnvolver": true,
             "alineacion": null,
             "color": "#ffffff",
             "fondo": "transparent",
@@ -2515,6 +2564,7 @@
             "grosor": "700",
             "interlineado": "55px",
             "espaciadoLetras": "0px",
+            "sinEnvolver": true,
             "alineacion": null,
             "color": "#ffc370",
             "fondo": "transparent",
@@ -2632,6 +2682,7 @@
             "grosor": "700",
             "interlineado": "55px",
             "espaciadoLetras": "0px",
+            "sinEnvolver": true,
             "alineacion": null,
             "color": "#ffffff",
             "fondo": "transparent",
@@ -2679,6 +2730,7 @@
             "grosor": "700",
             "interlineado": "50px",
             "espaciadoLetras": "0px",
+            "sinEnvolver": true,
             "alineacion": null,
             "color": "#ffffff",
             "fondo": "transparent",
@@ -2726,6 +2778,7 @@
             "grosor": "700",
             "interlineado": "55px",
             "espaciadoLetras": "0px",
+            "sinEnvolver": true,
             "alineacion": null,
             "color": "#ffffff",
             "fondo": "transparent",
@@ -2822,6 +2875,7 @@
             "grosor": "700",
             "interlineado": "55px",
             "espaciadoLetras": "0px",
+            "sinEnvolver": true,
             "alineacion": null,
             "color": "#ffc370",
             "fondo": "transparent",
@@ -2931,6 +2985,7 @@
             "grosor": "700",
             "interlineado": "55px",
             "espaciadoLetras": "0px",
+            "sinEnvolver": true,
             "alineacion": null,
             "color": "#ffffff",
             "fondo": "transparent",
@@ -2978,6 +3033,7 @@
             "grosor": "700",
             "interlineado": "55px",
             "espaciadoLetras": "0px",
+            "sinEnvolver": true,
             "alineacion": null,
             "color": "#ffffff",
             "fondo": "transparent",
@@ -3025,6 +3081,7 @@
             "grosor": "700",
             "interlineado": "55px",
             "espaciadoLetras": "0px",
+            "sinEnvolver": true,
             "alineacion": null,
             "color": "#ffffff",
             "fondo": "transparent",
@@ -3121,6 +3178,7 @@
             "grosor": "700",
             "interlineado": "55px",
             "espaciadoLetras": "0px",
+            "sinEnvolver": true,
             "alineacion": null,
             "color": "#ffc370",
             "fondo": "transparent",
@@ -3132,6 +3190,7 @@
               "color": "marcado"
             }
           },
+          "efectoTexto": "ola",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -3168,6 +3227,7 @@
             "grosor": "700",
             "interlineado": "84px",
             "espaciadoLetras": "0px",
+            "sinEnvolver": true,
             "alineacion": null,
             "color": "#d7b35b",
             "fondo": "transparent",
@@ -3179,6 +3239,7 @@
               "color": "marcado"
             }
           },
+          "efectoTexto": "ola",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -3212,9 +3273,10 @@
           "estilos": {
             "familia": "Arimo",
             "tamano": "40px",
-            "grosor": "900",
+            "grosor": null,
             "interlineado": "40px",
             "espaciadoLetras": "0px",
+            "sinEnvolver": false,
             "alineacion": null,
             "color": "#002e60",
             "fondo": "transparent",
@@ -3226,6 +3288,7 @@
               "color": "capa"
             }
           },
+          "efectoTexto": "ola",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -3290,9 +3353,10 @@
           "estilos": {
             "familia": "Arimo",
             "tamano": "40px",
-            "grosor": "900",
+            "grosor": null,
             "interlineado": "40px",
             "espaciadoLetras": "0px",
+            "sinEnvolver": false,
             "alineacion": null,
             "color": "#002e60",
             "fondo": "transparent",
@@ -3304,6 +3368,7 @@
               "color": "capa"
             }
           },
+          "efectoTexto": "ola",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -3420,6 +3485,7 @@
             "grosor": "700",
             "interlineado": "55px",
             "espaciadoLetras": "0px",
+            "sinEnvolver": true,
             "alineacion": null,
             "color": "#ffc370",
             "fondo": "transparent",
@@ -3431,6 +3497,7 @@
               "color": "marcado"
             }
           },
+          "efectoTexto": "ola",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -3467,6 +3534,7 @@
             "grosor": "700",
             "interlineado": "84px",
             "espaciadoLetras": "0px",
+            "sinEnvolver": true,
             "alineacion": null,
             "color": "#d7b35b",
             "fondo": "transparent",
@@ -3478,6 +3546,7 @@
               "color": "marcado"
             }
           },
+          "efectoTexto": "ola",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -3511,9 +3580,10 @@
           "estilos": {
             "familia": "Arimo",
             "tamano": "45px",
-            "grosor": "900",
+            "grosor": null,
             "interlineado": "40px",
             "espaciadoLetras": "1px",
+            "sinEnvolver": false,
             "alineacion": null,
             "color": "#002e60",
             "fondo": "transparent",
@@ -3525,6 +3595,7 @@
               "color": "capa"
             }
           },
+          "efectoTexto": "ola",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -3589,9 +3660,10 @@
           "estilos": {
             "familia": "Arimo",
             "tamano": "48px",
-            "grosor": "900",
+            "grosor": null,
             "interlineado": "40px",
             "espaciadoLetras": "1px",
+            "sinEnvolver": false,
             "alineacion": null,
             "color": "#002e60",
             "fondo": "transparent",
@@ -3603,6 +3675,7 @@
               "color": "capa"
             }
           },
+          "efectoTexto": "ola",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -3719,6 +3792,7 @@
             "grosor": "700",
             "interlineado": "55px",
             "espaciadoLetras": "0px",
+            "sinEnvolver": true,
             "alineacion": null,
             "color": "#ffc370",
             "fondo": "transparent",
@@ -3766,6 +3840,7 @@
             "grosor": "700",
             "interlineado": "84px",
             "espaciadoLetras": "0px",
+            "sinEnvolver": true,
             "alineacion": null,
             "color": "#d7b35b",
             "fondo": "transparent",
@@ -3810,9 +3885,10 @@
           "estilos": {
             "familia": "Arimo",
             "tamano": "43px",
-            "grosor": "900",
+            "grosor": null,
             "interlineado": "40px",
             "espaciadoLetras": "1px",
+            "sinEnvolver": false,
             "alineacion": null,
             "color": "#002e60",
             "fondo": "transparent",
@@ -3888,9 +3964,10 @@
           "estilos": {
             "familia": "Arimo",
             "tamano": "38px",
-            "grosor": "900",
+            "grosor": null,
             "interlineado": "40px",
             "espaciadoLetras": "-1px",
+            "sinEnvolver": false,
             "alineacion": null,
             "color": "#002e60",
             "fondo": "transparent",

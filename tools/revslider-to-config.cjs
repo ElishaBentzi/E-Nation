@@ -86,6 +86,12 @@ function ruta(o, camino, porDefecto = undefined) {
  * El COLOR suele venir VACIO (`{e:true}`) porque se resuelve por la hoja de estilos
  * del preset (`idle.style`, p. ej. "Fashion-BigDisplay"). Cuando pasa eso se deja
  * en null y se AVISA: inventarse un color seria peor que reconocer que falta.
+ *
+ * `customCSS` NO ES SOLO EL ESPACIADO, y creerlo costo un defecto visible: de las
+ * 48 capas de texto, 39 declaran ahi `white-space:nowrap`. Sin ese `nowrap` el
+ * texto ENVUELVE de linea donde el original lo mantiene entero, la capa crece de
+ * alto y se pisa con la de abajo. Se comprobo midiendo el original: su titular de
+ * Mutual Welfare ocupa UNA linea de 727 px dentro de una caja de 761.
  */
 function estilosDe(capa, uidCapa, modulo) {
   const idle = capa.idle || {};
@@ -97,6 +103,13 @@ function estilosDe(capa, uidCapa, modulo) {
       return val === undefined || val === '' ? null : val;
     }
     return v === '' ? null : v;
+  };
+
+  /** Lee una propiedad suelta de un bloque `customCSS` ("a:b;c:d"). */
+  const css = (bloque, prop) => {
+    if (typeof bloque !== 'string') return null;
+    const m = bloque.match(new RegExp(prop + '\\s*:\\s*([^;]+)', 'i'));
+    return m ? m[1].trim() : null;
   };
 
   const preset = PRESETS.get(idle.style) || null;
@@ -127,9 +140,30 @@ function estilosDe(capa, uidCapa, modulo) {
   return {
     familia: propio(idle.fontFamily, resuelto?.familia ?? null, delPreset(preset, 'font-family')),
     tamano: propio(idle.fontSize, resuelto?.tamano ?? null, delPreset(preset, 'font-size')),
-    grosor: propio(idle.fontWeight, resuelto?.grosor ?? null, delPreset(preset, 'font-weight')),
+    /*
+     * EL PRESET NO VALE COMO FUENTE DEL PESO, y es contraintuitivo, asi que queda
+     * escrito: hay 57 capas de las 93 con `fontWeight` VACIO (`{"d":{"e":true}}`, o
+     * sea "no lo declares"). El respaldo natural era el preset
+     * ("Fashion-BigDisplay", que declara 900), pero MEDIDO en el original esa misma
+     * capa se pinta con 400: el plugin no aplica el peso del preset.
+     *
+     * El dano no era cosmetico. Un titular que alli ocupa UNA linea (727 px dentro
+     * de una caja de 761) aqui pesaba 900, no cabia en su caja, envolvia a dos
+     * lineas, la capa doblaba su alto y se pISABA con la capa de abajo.
+     *
+     * Sin valor, no se emite `font-weight` y el navegador usa el suyo (400), que es
+     * justo lo que hace el original. Las 36 capas que SI declaran 700 lo conservan.
+     */
+    grosor: propio(idle.fontWeight, resuelto?.grosor ?? null, null),
     interlineado: propio(idle.lineHeight, resuelto?.interlineado ?? null, delPreset(preset, 'line-height')),
-    espaciadoLetras: propio(idle.letterSpacing, resuelto?.espaciadoLetras ?? null, null),
+    espaciadoLetras: propio(idle.letterSpacing, resuelto?.espaciadoLetras ?? null, css(capa.customCSS, 'letter-spacing')),
+    /*
+     * `white-space` solo vive en `customCSS` (no hay estado `idle` para el). Cuando
+     * vale `nowrap` el texto NO debe envolver, y eso es una decision de diseno del
+     * original que hay que respetar: cambiarla altera el alto de la capa y produce
+     * solapes con la capa de abajo.
+     */
+    sinEnvolver: /nowrap/i.test(String(css(capa.customCSS, 'white-space') || '')),
     alineacion: propio(idle.textAlign, null, null),
     color: propio(idle.color, resuelto?.color ?? null, delPreset(preset, 'color')),
     fondo: propio(idle.backgroundColor, null, delPreset(preset, 'background-color')),
@@ -288,6 +322,20 @@ function animacionDe(capa) {
 }
 
 const GEOMETRIA = leerGeometriaResuelta();
+
+/*
+ * EFECTOS AÑADIDOS POR EL USUARIO (no extraidos del original).
+ *
+ * Viven en un archivo de DECISION, aparte de la configuracion generada, por dos
+ * motivos: para que una regeneracion no los borre, y para que quede claro QUE ES
+ * DEL ORIGINAL Y QUE NO. El original no tiene animacion continua en estas
+ * diapositivas, asi que estos efectos son una mejora, no fidelidad.
+ *
+ * Se indexan por DESTINO del banner y no por numero de diapositiva: asi el efecto
+ * cubre todas sus variantes de idioma de una vez.
+ */
+const RUTA_EFECTOS = path.join(ROOT, 'astro-site', 'src', 'sliders', 'efectos.json');
+const EFECTOS = fs.existsSync(RUTA_EFECTOS) ? JSON.parse(fs.readFileSync(RUTA_EFECTOS, 'utf8')) : {};
 let animaciones = 0;
 const avisos = [];
 const avisar = (alias, que) => avisos.push({ alias, que });
@@ -390,6 +438,24 @@ function traducir(s) {
     };
 
     const seo = sp.seo || {};
+
+    /*
+     * EFECTOS AÑADIDOS POR EL USUARIO para esta diapositiva, si los hay.
+     *
+     * Se resuelven por DESTINO del banner: asi el mismo efecto cubre sus variantes
+     * de idioma sin repetirlo. Y van DESPUES de declarar `seo`, porque necesitan su
+     * enlace — ponerlos antes daba un error de zona muerta temporal.
+     */
+    // Se empareja por HOST EXACTO, no por texto contenido. Buscar la cadena dentro
+    // de la URL tiene una trampa real: `bienestarmutuo.org.ve` (Venezuela) CONTIENE
+    // `bienestarmutuo.org` (Mutual Welfare), asi que por texto el efecto de una
+    // diapositiva se aplicaria a la de otro proyecto.
+    let hostDestino = '';
+    try { hostDestino = new URL(seo.link).hostname.replace(/^www./, ''); } catch (e) { hostDestino = ''; }
+    const efectosDeLaDiapositiva = Object.entries(EFECTOS['banner-publicidad'] || {})
+      .filter(([clave]) => clave && !clave.startsWith('_') && hostDestino === clave.replace(/^www./, ''))
+      .map(([, v]) => v)[0] || null;
+
     if (seo.set && seo.link) {
       slide.enlace = {
         href: seo.link,
@@ -532,6 +598,24 @@ function traducir(s) {
           animaciones++;
         } else if (rotacion) {
           c.bucle = { tipo: 'rotacion', valor: Number(rotacion) };
+          animaciones++;
+        }
+      }
+
+      /*
+       * Efectos anadidos por el usuario. Se marcan en la capa para que el componente
+       * sepa que hacer, y NO se confunden con lo extraido del original: el nombre del
+       * campo lo deja claro.
+       */
+      if (efectosDeLaDiapositiva) {
+        if (efectosDeLaDiapositiva.texto === 'ola' && c.tipo === 'texto' && c.texto) {
+          // La ola necesita el texto partido en letras, y eso solo se puede hacer con
+          // texto plano: si trae HTML se animaria el bloque entero y quedaria peor.
+          c.efectoTexto = c.textoConHtml ? null : 'ola';
+          if (c.efectoTexto) animaciones++;
+        }
+        if (efectosDeLaDiapositiva.imagen === 'flotar' && c.tipo === 'imagen' && /logo|logotipo/i.test(String(c.imagen || ''))) {
+          c.efectoImagen = 'flotar';
           animaciones++;
         }
       }

@@ -1,0 +1,28 @@
+{
+  "_nota": "Efectos AÑADIDOS por decisión del usuario, no extraídos del original. Este archivo es de DECISIÓN: se edita a mano y NO se pisa al regenerar la configuración.",
+  "_donde": "documentado en findings.md. El original NO tiene animación continua en estas diapositivas, así que esto es una mejora, no fidelidad. Se registra aquí para que quede claro qué es del original y qué no.",
+  "_valores": {
+    "ola": "el texto ondula: cada letra sube y baja en cascada",
+    "flotar": "la imagen flota: sube y baja unos píxeles, suave y continuo"
+  },
+  "_clave": "por DESTINO del banner, no por número de diapositiva: así el efecto se aplica a todas sus variantes de idioma de una vez, y no hay que repetirlo por cada idioma.",
+  "banner-publicidad": {
+    "sbmjuegos.com": {
+      "texto": "ola",
+      "imagen": "flotar"
+    },
+    "sbmlibre.com": {
+      "texto": "ola",
+      "imagen": "flotar"
+    },
+    "mutualwelfare.org": {
+      "texto": "ola",
+      "_nota": "Mutual Welfare NO lleva flotación: esta diapositiva no tiene logo, tiene un mapamundi y una barra. Hacer flotar un mapamundi es una decisión de diseño que no corresponde tomar sin el usuario."
+    },
+    "bienestarmutuo.org": {
+      "texto": "ola",
+      "_nota": "Mutual Welfare NO lleva flotación: esta diapositiva no tiene logo, tiene un mapamundi y una barra. Hacer flotar un mapamundi es una decisión de diseño que no corresponde tomar sin el usuario."
+    }
+  },
+  "_nota_hosts": "Mutual Welfare usa DOS dominios segun el idioma: mutualwelfare.org en ingles y bienestarmutuo.org en espanol. Ambos apuntan a la misma diapositiva, por eso hay dos claves."
+}

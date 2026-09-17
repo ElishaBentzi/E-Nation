@@ -939,3 +939,80 @@ Son *soft 404s*: el buscador ve una página válida en infinitas URLs y las inde
 La página nueva resuelve el idioma leyendo el prefijo de la ruta con un guion en línea, porque el fichero es **uno solo para todo el sitio**: generarlo por idioma obligaría a duplicar la página tres veces. Lleva `noindex`.
 
 **Y un recordatorio que casi se cuela otra vez**: la 404 **no usa el layout**, así que tiene que importar la hoja de estilos ella misma. Sin ese import saldría **sin estilos y sin ningún error de build** — exactamente el fallo que ya apareció antes.
+
+### La ola y la flotación: cinco defectos, los tres últimos de fondo
+
+El usuario pidió animaciones continuas para SBM Juegos, SBM Libre y Mutual Welfare: **una ola en las letras** y **flotación suave** en la imagen. Se implementaron, y al medirlas aparecieron cinco defectos encadenados. **Ninguno se veía en el HTML ni rompía el build.**
+
+#### Falso negativo mío: los fotogramas sí estaban
+
+Se buscó `@keyframes bs-ola` en `dist/_astro/*.css`, no aparecía, y se dio por hecho que faltaban. **Los estilos del componente van en línea en el propio HTML** (Astro los inserta ahí porque son pocos), no en la hoja emitida. En `dist/presentation/index.html` estaban desde el principio.
+
+Ya está escrito que un marcador en el HTML no prueba nada; falta la otra mitad: **buscar en el fichero equivocado tampoco prueba nada**. Antes de declarar que algo falta, comprobar en qué fichero se está mirando.
+
+#### Defecto 1: un espacio entre etiquetas se PINTA
+
+Las letras se emitían con el formato de JSX, cada una en su línea:
+
+```
+<span class="banner-slider__letra">  P </span><span ...>  l </span>
+```
+
+Ese aire alrededor de cada letra (salto de línea y sangría del código) es **contenido de texto** y se pinta: el banner mostraba «P l a y a n d C o o p e r a t e». El texto se volvía mucho más ancho, envolvía de línea y se pisaba con la capa de abajo.
+
+En JSX hay que escribir la etiqueta, la letra y el cierre **en la misma línea**. Y el espacio entre palabras va **fuera** de las letras, como texto normal: dentro de un elemento en línea no hay punto de corte y la frase no podría envolver.
+
+#### Defecto 2: `inline-block` cambia la maquetación del texto
+
+Para animar `translate` hacía falta `display:inline-block`, porque **`translate` no se aplica a las cajas en línea**. Y `inline-block` deja de maquetar como texto: **se pierde el kerning y cada caja redondea su ancho a un píxel entero**. En una frase de 30 letras son varios píxeles de más, la línea deja de caber y **envuelve**.
+
+La solución evita el problema en vez de compensarlo: las letras se quedan **en línea** y la onda se hace con **`position:relative` + `top`**, que sí se aplica a las cajas en línea. La frase se maqueta **idéntica** al texto plano (mismo kerning, mismos cortes) y cada letra sube y baja sin que la línea se entere. Verificado moviendo el reloj de la animación: `top` va de `-0,01px` a `-7,99px` a mitad de ciclo. El coste es que `top` no se compone en la GPU; con ~30 letras en una sola diapositiva es irrelevante.
+
+#### Defecto 3 (el gordo): `calc(0 + 72px)` es CSS INVÁLIDO
+
+En las capas ancladas, el generador emitía:
+
+```
+transform: translate(-50%, calc(0 + 72px))
+```
+
+**Eso no es CSS válido.** Dentro de `calc()` no se puede sumar el número `0` a una longitud; `0` sin unidad solo vale como longitud en una declaración normal, no dentro de `calc()`. `calc(-50% + 72px)` sí es válido, y ahí estaba la trampa: **solo fallaban los anclajes `left`/`top`**, que son los que llevan base `0`.
+
+El navegador **descarta la declaración entera sin decir nada**, así que esas capas se quedaban en `left:50%; top:0`: cuatro textos apilados en el mismo punto del banner, y el logotipo de la moneda descentrado y cortado. Arreglado con bases con unidad (`0px`) y un normalizador que añade `px` a los números sueltos.
+
+**Cómo se caza esto para siempre**: se añadió al verificador un guardián que recorre cada atributo `style` del documento, separa lo ESCRITO y le pregunta al navegador por cada propiedad (`el.style.getPropertyValue`). Si responde vacío, la descartó. Hoy da **0**.
+
+#### Defecto 4: `customCSS` no era «solo el espaciado»
+
+El generador leía la tipografía de `idle`, y de `customCSS` únicamente el `letter-spacing`. **De las 48 capas de texto, 39 declaran ahí `white-space:nowrap`.** Sin ese `nowrap` el texto envuelve donde el original lo mantiene entero, la capa dobla su alto y pisa la de abajo — el solape que el usuario veía como «el texto de abajo».
+
+Medido en el original para no deducirlo: su titular de Mutual Welfare ocupa **una línea de 727 px dentro de una caja de 761**.
+
+#### Defecto 5: el preset daba un `font-weight` que el original NO aplica
+
+57 de las 93 capas tienen el peso **vacío** (`{"d":{"e":true}}`, o sea «no lo declares»). El respaldo natural era el preset (`Fashion-BigDisplay`, que declara `font-weight:900`)… y **medido en el original esa misma capa se pinta con 400**: el plugin no aplica el peso del preset.
+
+El daño no era cosmético: con 900 el titular **no cabía en su caja**, envolvía a dos líneas y se pisaba con la capa siguiente. El preset deja de ser fuente del peso: sin valor no se emite `font-weight` y el navegador usa el suyo (400), que es lo que hace el original. Las 36 capas que sí declaran 700 lo conservan.
+
+#### Resultado medido
+
+**0 solapes** en las 6 diapositivas y en los dos idiomas, **0 declaraciones descartadas**, y la ola y la flotación confirmadas en movimiento. La flotación se midió con su `translate` cambiando entre dos instantes; la ola, moviendo el reloj de la animación, porque **Chrome congela las animaciones de una pestaña en segundo plano** y `document.hidden` estaba en `true`: medirla así daba «no se mueve» con los fotogramas perfectos.
+
+#### Dos trampas de medición más
+
+1. **La caja del elemento no es lo que se ve.** Una capa puede tener una caja más alta que su texto; comparar cajas inventa solapes que no existen. Lo que el ojo ve son las **líneas**, y se obtienen con `Range.getClientRects()`.
+2. **Pero con la ola cada letra es un elemento**, así que `Range` devuelve **un rectángulo por letra**, no por línea. Hay que agruparlos por fila (misma banda vertical) y tomar de cada fila el ancho completo: eso sí es la línea.
+
+#### Pendiente, encontrado de paso (no toca al carrusel de banners)
+
+- El slider **`snake`** tiene 1 diapositiva en nuestra config y **2 en el original**.
+- Nuestro banner mide **1166 px** de ancho y el del original **1120** (misma proporción): diferencia de ancho del contenedor de la página.
+- El original aplica **`text-shadow: 0 2px 5px rgba(0,0,0,.5)`** a las capas de texto (está en su `customCSS`) y nosotros no.
+- Las cajas de varias capas son 3–17 px más bajas que su contenido. Ya no produce solapes, pero conviene revisarlo al comparar con el original.
+
+#### Herramientas nuevas
+
+- `tools/verify-sliders.js` — animaciones y geometría de la diapositiva **activa**.
+- `tools/verify-carrusel-geometria.js` — las **seis** diapositivas a la vez: desbordes, solapes por líneas reales (en reposo y con la ola arriba), encuadre de imágenes y el guardián de declaraciones descartadas.
+- `tools/sonda-grosor.cjs`, `tools/sonda-idle.cjs`, `tools/sonda-customcss.cjs` — rastrean de qué fuente sale cada valor de estilo.
+

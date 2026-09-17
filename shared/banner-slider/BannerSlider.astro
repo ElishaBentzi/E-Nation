@@ -49,6 +49,12 @@ interface Capa {
     alineacion?: string | null;
     color?: string | null;
     preset?: string | null;
+    /*
+     * El original declara `white-space:nowrap` en 39 de sus 48 capas de texto. No
+     * es cosmetico: sin ello el texto envuelve de linea, la capa crece de alto y
+     * se pisa con la de abajo.
+     */
+    sinEnvolver?: boolean;
   } | null;
   tamano?: { ancho?: string | null; alto?: string | null };
   variantes?: Record<string, { ancho?: string; alto?: string }>;
@@ -66,6 +72,13 @@ interface Capa {
    * terminar la entrada, que es justo lo que se notaba.
    */
   bucle?: { tipo: 'escala' | 'rotacion'; valor: number } | null;
+  /**
+   * Efecto de texto AÑADIDO por el usuario (no extraido del original): la ola, en la
+   * que cada letra sube y baja en cascada.
+   */
+  efectoTexto?: 'ola' | null;
+  /** Efecto de imagen AÑADIDO por el usuario: flotacion vertical suave. */
+  efectoImagen?: 'flotar' | null;
 }
 
 interface Slide {
@@ -229,9 +242,35 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
     const h = p.horizontal ?? 'left';
     const v = p.vertical ?? 'top';
     partes.push(`left:${anclajesH[h] ?? '0'}`, `top:${anclajesV[v] ?? '0'}`);
-    const tx = h === 'right' ? '-100%' : h === 'center' ? '-50%' : '0';
-    const ty = v === 'bottom' ? '-100%' : v === 'middle' ? '-50%' : '0';
-    partes.push(`transform:translate(${p.x ? `calc(${tx} + ${p.x})` : tx},${p.y ? `calc(${ty} + ${p.y})` : ty})`);
+
+    /*
+     * LAS BASES LLEVAN UNIDAD, y no es un detalle de estilo: es un fallo que costo
+     * una tarde.
+     *
+     * Con la base en `0` a secas, un desplazamiento de `72px` producia
+     * `calc(0 + 72px)`. Eso es CSS INVALIDO, porque dentro de `calc()` no se puede
+     * sumar el numero `0` a una longitud — al contrario que en una declaracion
+     * normal, donde `0` vale como cualquier unidad. `calc(-50% + 72px)` si es
+     * valido, y ahi estaba la trampa: solo fallaban los anclajes `left`/`top`.
+     *
+     * El navegador descarta la declaracion ENTERA sin avisar, asi que la capa se
+     * quedaba en `left`/`top` crudos: media docena de textos apilados en el mismo
+     * punto del banner y el logotipo de la moneda descentrado y cortado. El HTML
+     * parecia correcto y el build pasaba sin una queja.
+     */
+    const largo = (valor: unknown) => {
+      if (valor === null || valor === undefined || valor === '') return null;
+      const s = String(valor).trim();
+      if (/^-?\d*\.?\d+$/.test(s)) return `${s}px`; // numero suelto -> pixeles
+      return s;
+    };
+    const dx = largo(p.x);
+    const dy = largo(p.y);
+    const tx = h === 'right' ? '-100%' : h === 'center' ? '-50%' : '0px';
+    const ty = v === 'bottom' ? '-100%' : v === 'middle' ? '-50%' : '0px';
+    const sx = dx ? `calc(${tx} + ${dx})` : tx;
+    const sy = dy ? `calc(${ty} + ${dy})` : ty;
+    partes.push(`transform:translate(${sx},${sy})`);
   }
 
   if (p.zIndex) partes.push(`z-index:${p.zIndex}`);
@@ -285,6 +324,12 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
       if (ls) partes.push(`letter-spacing:${ls.toFixed(4)}cqw`);
     }
     if (est.familia) partes.push(`font-family:"${est.familia}", sans-serif`);
+    /*
+     * `white-space:nowrap` tal cual lo declara el original. Sin esto, un titular que
+     * alli ocupa una linea aqui envuelve, la capa dobla su alto y acaba encima de
+     * la capa siguiente.
+     */
+    if (est.sinEnvolver) partes.push('white-space:nowrap');
     if (est.color) partes.push(`color:${est.color}`);
     if (est.alineacion) partes.push(`text-align:${est.alineacion}`);
   }
@@ -352,7 +397,57 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
               >
                 {/* Si el original traia HTML (texto + icono), se interpreta
                     saneado; si no, se pinta como texto normal. */}
-                {c.textoConHtml ? <Fragment set:html={sanearHtml(c.texto)} /> : c.texto}
+                {c.efectoTexto === 'ola' ? (
+                  /*
+                   * La OLA necesita cada letra en su propio elemento para desfasarlas, y
+                   * al ser elementos HIJOS su `translate` no choca con el de la entrada
+                   * del padre: cada uno anima el suyo.
+                   *
+                   * DOS TRAMPAS, las dos ya pagadas:
+                   *
+                   * 1. NADA de aire entre las etiquetas. Un salto de linea o una sangria
+                   *    entre dos elementos en linea SE PINTA como un espacio: el texto
+                   *    salia letra a letra ("P l a y"), se volvia mas ancho de lo que
+                   *    era, envolvia de linea y se pISABA con la capa de abajo. Por eso
+                   *    la etiqueta, la letra y el cierre van en la MISMA linea.
+                   *
+                   * 2. El espacio entre palabras va FUERA de las letras, como texto
+                   *    normal. Dentro de un elemento en linea no hay punto de corte, asi
+                   *    que el texto no podria envolver y una frase larga se saldria del
+                   *    banner en vez de repartirse en dos lineas como en el original.
+                   */
+                  c.texto.split('').map((letra, i) =>
+                    letra === ' ' ? ' ' : (
+                      <span class="banner-slider__letra" style={`--i:${i}`}>{letra}</span>
+                    )
+                  )
+                ) : c.textoConHtml ? (
+                  <Fragment set:html={sanearHtml(c.texto)} />
+                ) : (
+                  c.texto
+                )}
+              </span>
+            ) : c.efectoImagen === 'flotar' ? (
+              /*
+               * CON ENVOLTORIO, y es necesario: la animacion de entrada y la de
+               * flotacion animan las dos `translate`. En el MISMO elemento competirian
+               * —la segunda gana mientras se solapan— y una de las dos se perderia. Con
+               * el padre haciendo la entrada y el hijo flotando, cada una anima su
+               * propio `translate` y se componen.
+               */
+              <span
+                class="banner-slider__capa absolute"
+                style={estiloCapa(c, anchoLienzo, altoLienzo)}
+                data-capa={c.uid}
+                data-anim={c.animacion ? '' : undefined}
+              >
+                <img
+                  src={c.imagen!}
+                  alt={c.alt ?? ''}
+                  loading="lazy"
+                  decoding="async"
+                  class="banner-slider__flota"
+                />
               </span>
             ) : (
               <img
@@ -497,6 +592,65 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
 
   @media (prefers-reduced-motion: reduce) {
     .banner-slider__slide[aria-hidden='false'] .banner-slider__capa[data-loop] {
+      animation: none;
+    }
+  }
+
+
+  /*
+   * OLA: el texto ondula. Cada letra sube 8 px y vuelve, con un desfase por letra
+   * que hace que la ondulacion recorra la frase de izquierda a derecha.
+   *
+   * LAS LETRAS VAN EN LINEA Y SE MUEVEN CON `top`, NO CON `translate`. Es la clave
+   * y costo dos intentos:
+   *
+   *   - `translate` NO se aplica a las cajas en linea (solo a elementos que
+   *     participan del modelo de cajas). Para que funcionara habia que declararlas
+   *     `inline-block`, y entonces DEJAN DE MAQUETARSE COMO TEXTO: se pierde el
+   *     kerning y cada caja redondea su ancho a un pixel entero. En una frase de 30
+   *     letras eso son varios pixeles de mas, la linea ya no cabe en el ancho de la
+   *     capa y ENVUELVE — con lo que la capa crece, pisa la de abajo y aparece un
+   *     solape que en el original no existe.
+   *
+   *   - En linea, la frase se maqueta EXACTAMENTE igual que el texto del original
+   *     (mismo kerning, mismos cortes de linea), y `position: relative` + `top` si
+   *     se aplica a las cajas en linea, asi que cada letra puede subir y bajar sin
+   *     que la linea se entere.
+   *
+   * El coste es que `top` no se compone en la GPU. Con ~30 letras en una sola
+   * diapositiva (la regla solo alcanza a la activa) es irrelevante.
+   */
+  @keyframes bs-ola {
+    0%, 100% { top: 0; }
+    50% { top: -8px; }
+  }
+  .banner-slider__letra {
+    position: relative;
+  }
+  .banner-slider__slide[aria-hidden='false'] .banner-slider__letra {
+    animation: bs-ola 2500ms ease-in-out infinite;
+    animation-delay: calc(var(--i, 0) * 60ms);
+  }
+
+  /*
+   * FLOTACION: la imagen sube 10 px y vuelve, lento. Va en el elemento interior para
+   * no competir con la entrada del padre.
+   */
+  @keyframes bs-flotar {
+    0%, 100% { translate: 0 0; }
+    50% { translate: 0 -10px; }
+  }
+  .banner-slider__flota {
+    display: block;
+    width: 100%;
+    height: auto;
+    animation: bs-flotar 4000ms ease-in-out infinite;
+  }
+
+  /* Sin movimiento: ni ola ni flotacion. El texto y las imagenes, quietos. */
+  @media (prefers-reduced-motion: reduce) {
+    .banner-slider__slide[aria-hidden='false'] .banner-slider__letra,
+    .banner-slider__flota {
       animation: none;
     }
   }
