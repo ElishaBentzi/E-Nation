@@ -521,3 +521,30 @@ Lo último es lo delicado: el guion del tema va **en línea en el `<head>`**, an
 2. **Mi propio test dio un falso positivo**: un `grep … | head -1 && echo "presente"` imprimía «presente» aunque el grep no encontrara nada, porque `head` siempre devuelve 0. De ahí saqué la conclusión errónea de que el CSS estaba bien cuando no existía.
 
 Y un tercero, de sintaxis, que el build sí cazó: los ids con guion (`privacy-policy`) **no son claves válidas sin comillas en TypeScript**; el generador ahora las entrecomilla solo cuando hace falta.
+
+### El enlace a los docs y el selector de idioma (peticiones del usuario)
+
+#### El enlace «Constitución» apuntaba a Read the Docs
+
+El menú apuntaba a `docs.e-nation.org/<idioma>/latest/`, y **ese dominio todavía sirve Read the Docs**, así que el visitante acababa en la herramienta que estamos dejando de usar. Corregido: ahora apunta al **despliegue nuevo** (`docs.unitygenerator.com`), y **con el mapa de rutas correcto de la documentación**, que no es el del sitio:
+
+| idioma | URL de los docs | por qué |
+|---|---|---|
+| es | `docs.unitygenerator.com/` | en los docs el predeterminado es el **español**, va en la raíz |
+| en | `docs.unitygenerator.com/en/` | |
+| fr | `docs.unitygenerator.com/fr/` | |
+
+**Ojo con la asimetría, que es deliberada**: en el **sitio** el predeterminado es el **inglés** (raíz) y en la **documentación** es el **español** (raíz). Es correcto en cada caso —el español es el idioma de autoría del Pacto— pero conviene no confundirlos.
+
+El host vive en `astro-site/site.config.mjs` como constante única: el día que los docs muden a su dominio definitivo se cambia esa línea y nada más.
+
+#### Selector de idioma: de tres enlaces a uno colapsado
+
+Con 2 idiomas los tres enlaces cabían, pero **con 3 ya empujaban la navegación y con 4 la rompen**, y el sitio está pensado para crecer. Ahora es un desplegable colapsado que ocupa el ancho de **una etiqueta, independientemente del número de idiomas**.
+
+Decisiones que importan:
+
+- **`<details>`/`<summary>`, sin JavaScript.** Es un desplegable nativo: funciona sin JS, se abre con teclado y lo anuncian bien los lectores de pantalla porque usa la semántica del navegador. Un desplegable hecho a mano obliga a gestionar foco, cierre al pulsar fuera y teclas Escape/flechas, y casi siempre se hace peor. Aquí el interior son enlaces, no hace falta estado: es el caso donde `<details>` es la opción correcta.
+- **Sin banderas, y esto es una recomendación de fondo.** Una bandera representa un **país**, no un idioma: el español no es solo España, el inglés no es solo el Reino Unido, el francés no es solo Francia. Poner banderas excluye a la mayoría de los hablantes y obliga a inventarse una bandera para idiomas que no tienen país. Se usa el **nombre del idioma en su propio idioma** (endónimo), que un hablante reconoce de un vistazo.
+- **Solo ofrece los idiomas en los que existe esa página.** Desde `/presentation/` no aparece Français (no existe la presentación en francés) en lugar de ofrecer un enlace que llevaría a un 404 o al inicio.
+- **Cada enlace lleva a la MISMA página** en el otro idioma, no al inicio. Verificado: `/presentation/` → `/es/presentacion/`, y `/fr/articles/` → `/articles/` y `/es/articulos/`. Es exactamente el defecto que el original tenía con el francés.

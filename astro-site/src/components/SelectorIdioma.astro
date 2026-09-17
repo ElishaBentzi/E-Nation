@@ -1,0 +1,83 @@
+---
+/*
+ * Selector de idioma, COMPACTO.
+ *
+ * POR QUE NO SON TRES ENLACES EN LA BARRA
+ *   Con dos idiomas ocupan poco, pero con tres ya empujan la navegacion y con
+ *   cuatro la rompen. Y el sitio esta pensado para crecer. Colapsado ocupa el
+ *   ancho de UNA etiqueta, independientemente del numero de idiomas.
+ *
+ * POR QUE <details> Y NO UN DESPLEGABLE CON JAVASCRIPT
+ *   <details>/<summary> da un desplegable nativo que funciona SIN JavaScript, se
+ *   abre con teclado, y lo anuncian bien los lectores de pantalla porque usa la
+ *   semantica del navegador. Un desplegable hecho a mano exige gestionar el foco,
+ *   el cierre al pulsar fuera y las teclas Escape/flechas, y casi siempre se hace
+ *   peor que el nativo. Ademas aqui el interior son ENLACES: no hace falta
+ *   gestionar estado, que es justo el caso donde <details> brilla.
+ *
+ * POR QUE NO HAY BANDERAS
+ *   Es el error clasico de los selectores de idioma: una bandera representa un
+ *   PAIS, no un idioma. El espanol no es solo Espana, el ingles no es solo el
+ *   Reino Unido ni Francia el frances. Poner banderas excluye a la mayoria de los
+ *   hablantes y ademas obliga a elegir una bandera para idiomas que no tienen
+ *   pais. Se usa el NOMBRE DEL IDIOMA EN SU PROPIO IDIOMA (endonimo), que es lo
+ *   que un hablante reconoce de un vistazo y es la practica recomendada.
+ *
+ * CADA ENLACE LLEVA A LA MISMA PAGINA en el otro idioma, no al inicio. Es el
+ * defecto que tenia el original: su enlace a frances llevaba a /fr/, que
+ * redirigia a la home inglesa.
+ */
+import { LOCALES, type Locale, type PageId, rutaDe } from '../i18n/config.ts';
+import { UI } from '../i18n/ui.ts';
+
+interface Props {
+  locale: Locale;
+  page: PageId;
+}
+const { locale, page } = Astro.props;
+const t = UI[locale];
+
+// Solo los idiomas en los que existe ESTA pagina. El frances no tiene
+// presentacion, asi que desde /presentation/ no se ofrece frances en lugar de
+// ofrecer un enlace roto.
+const disponibles = LOCALES.filter((l) => rutaDe(page, l) !== null);
+const actual = { code: locale, etiqueta: { en: 'English', es: 'Español', fr: 'Français' }[locale] };
+---
+
+{disponibles.length > 1 && (
+  <details class="group relative">
+    <summary
+      class="flex cursor-pointer list-none items-center gap-1.5 rounded border border-border-soft px-2 py-1 text-xs text-ink hover:border-brand hover:text-brand dark:border-[#2a4a6b] dark:text-border-soft"
+      aria-label={t.idiomaLabel}
+    >
+      {/* Icono de globo terráqueo: neutro, no representa ningún país. */}
+      <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M3 12h18M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18z" />
+      </svg>
+      <span>{actual.etiqueta}</span>
+      <svg aria-hidden="true" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" class="transition-transform group-open:rotate-180">
+        <path d="m6 9 6 6 6-6" />
+      </svg>
+    </summary>
+
+    <ul class="absolute end-0 z-40 mt-1 min-w-36 rounded border border-border-soft bg-white py-1 shadow-lg dark:border-[#2a4a6b] dark:bg-[#0f2236]">
+      {disponibles.map((l) => (
+        <li>
+          <a
+            href={rutaDe(page, l)!}
+            hreflang={l}
+            lang={l}
+            aria-current={l === locale ? 'true' : undefined}
+            class:list={[
+              'block px-3 py-1.5 text-sm hover:bg-border-soft dark:hover:bg-[#1c3a57]',
+              l === locale ? 'font-semibold text-brand' : 'text-ink dark:text-border-soft',
+            ]}
+          >
+            {{ en: 'English', es: 'Español', fr: 'Français' }[l]}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </details>
+)}

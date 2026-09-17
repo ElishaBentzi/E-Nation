@@ -8,9 +8,13 @@
  *   - los alternos hreflang, generados del manifiesto
  *   - cabecera con navegacion y selectores, y pie
  */
-import { LOCALES, DEFAULT_LOCALE, LOCALE_LABELS, type Locale, type PageId, rutaDe, idiomasDe } from '../i18n/config.ts';
+// LOCALES y LOCALE_LABELS ya no se usan aqui: el selector de idioma se movio a su
+// propio componente, que es quien los necesita.
+import { DEFAULT_LOCALE, type Locale, type PageId, rutaDe, idiomasDe } from '../i18n/config.ts';
 import { UI, ORDEN_NAV } from '../i18n/ui.ts';
 import SelectorTema from '../components/SelectorTema.astro';
+import SelectorIdioma from '../components/SelectorIdioma.astro';
+import { urlDocs } from '../../site.config.mjs';
 
 // La hoja de estilos del sitio. SIN ESTA IMPORTACION EL BUILD PASA IGUAL y las
 // paginas salen SIN NINGUN ESTILO: Astro no exige que el CSS se importe, asi que
@@ -112,14 +116,14 @@ const rutaXDefault = rutaDe(page, DEFAULT_LOCALE);
                 </li>
               );
             })}
-            {/* Enlace a la documentacion. En el original apuntaba a
-                docs.e-nation.org/<idioma>/latest/; cuando los docs se muden a
-                /docs/ hay que actualizarlo AQUI y en un solo sitio. */}
+            {/* Enlace a la documentacion del Pacto Social.
+                El destino sale de site.config.mjs, que es el unico sitio donde se
+                cambia cuando los docs muden de dominio. Apunta al despliegue NUEVO
+                (docs.unitygenerator.com) y no a docs.e-nation.org, porque ese
+                ultimo todavia sirve Read the Docs y el visitante acabaria en la
+                herramienta que estamos dejando de usar. */}
             <li>
-              <a
-                href={`https://docs.e-nation.org${locale === DEFAULT_LOCALE ? '' : '/' + locale}/latest/`}
-                class="text-sm text-ink hover:text-brand dark:text-border-soft"
-              >
+              <a href={urlDocs(locale)} class="text-sm text-ink hover:text-brand dark:text-border-soft">
                 {t.enlaceConstitucion}
               </a>
             </li>
@@ -127,32 +131,10 @@ const rutaXDefault = rutaDe(page, DEFAULT_LOCALE);
         </nav>
 
         <div class="flex items-center gap-4">
-          {/* Selector de idioma: lleva a la MISMA pagina en el otro idioma, no al
-              inicio. Es lo que el original no conseguia con el frances (su enlace
-              llevaba a /fr/, que redirigia a la home inglesa). */}
-          <nav aria-label={t.idiomaLabel}>
-            <ul class="flex items-center gap-2 text-sm">
-              {LOCALES.map((l) => {
-                const destino = rutaDe(page, l);
-                if (!destino) return null;
-                return (
-                  <li>
-                    <a
-                      href={destino}
-                      hreflang={l}
-                      aria-current={l === locale ? 'true' : undefined}
-                      class:list={[
-                        l === locale ? 'font-semibold text-brand' : 'text-ink hover:text-brand dark:text-border-soft',
-                      ]}
-                    >
-                      {LOCALE_LABELS[l]}
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
-
+          {/* Selector de idioma compacto y selector de tema. El de idioma solo
+              aparece si la pagina existe en mas de uno: si no, seria un
+              desplegable con una sola opcion. */}
+          <SelectorIdioma locale={locale} page={page} />
           <SelectorTema locale={locale} />
         </div>
       </div>
