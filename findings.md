@@ -790,3 +790,34 @@ Al verificar el artefacto servido, **`/images/2018/10/e-nation-logo-L.png` devol
 #### Qué va a mostrar el despliegue de prueba
 
 El contenido de las páginas es todavía un esqueleto, porque la reconstrucción es la fase siguiente. **Lo que sí se puede revisar ya son los sliders**, que es lo que el usuario quiere ver: el carrusel de banners con sus enlaces, sus colores resueltos, sus tipografías y el escalonado de entrada, y **solo las diapositivas del idioma de cada página**.
+
+### El sitio está desplegado y verificado en `e-nation-site.pages.dev`
+
+**Proyecto `e-nation-site`** (root `astro-site`). Verificado en producción:
+
+| comprobación | resultado |
+|---|---|
+| Las **16 rutas** | todas **200** |
+| `robots.txt` | `Disallow: /` (es revisión) |
+| Imágenes locales (`/images/AAAA/MM/`) | **200** |
+| canonical | `https://web.unitygenerator.com/presentation/` |
+| hreflang | `en`, `es`, `x-default` |
+| **Carrusel en `/presentation/`** | **9 diapositivas, 62 capas animadas, 60 con retardo escalonado** |
+| **Carrusel en `/es/presentacion/`** | **6 diapositivas, 30 capas animadas, 28 con retardo** |
+| Enlaces a otros proyectos | 5 destinos, todos con `rel="noopener"` |
+
+**Y el filtro por idioma se ve funcionando en producción.** En la página inglesa los textos son «A 100% NEW VENEZUELA!», «English Edition», «Designed for the Benefit of WHOLE SOCIETY»; en la española, «BIENESTAR MUTUO», «Juega y Coopera para Crecer», «Economía Etica Social 2.0». **Sin mezcla.**
+
+#### El dominio de prueba da 522, y el motivo está identificado
+
+`web.unitygenerator.com` resuelve a las IPs de Cloudflare pero responde **522** (el borde no alcanza el origen). Y **ya no lo sirve el proyecto de docs**: antes redirigía a `docs.unitygenerator.com` y ahora da 522 también en `/pacto-social/`.
+
+O sea: **se quitó del proyecto de docs (paso 1 hecho) pero todavía no se ha añadido al proyecto del sitio (paso 3)**. Con el registro apuntando a ningún proyecto, Cloudflare devuelve 522.
+
+**El orden sigue importando**: el dominio propio se añade **desde dentro del proyecto** (`e-nation-site` → Custom domains), y es eso lo que hace que Cloudflare reapunte el registro. Añadirlo como registro suelto no basta.
+
+**Lo importante: el sitio ya se puede revisar en `https://e-nation-site.pages.dev/`**, que funciona. El dominio propio es un paso aparte y no bloquea la revisión del carrusel.
+
+#### Nota sobre la verificación visual del carrusel
+
+**No la puedo hacer yo**: las animaciones de entrada usan `fill-mode: both` con opacidad inicial 0, y en el navegador automatizado **las animaciones CSS no avanzan con el reloj real** (verificado con un control). Así que en mis capturas las capas se quedan invisibles y el banner parecería vacío. **Es una limitación del entorno de pruebas, no del banner**: en un navegador real las animaciones corren. La revisión visual tiene que hacerla el usuario.
