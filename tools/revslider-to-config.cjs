@@ -219,6 +219,72 @@ if (fs.existsSync(RENDERED)) {
   }
 }
 
+/**
+ * Animacion de entrada de una capa.
+ *
+ * RevSlider guarda la animacion como FOTOGRAMAS: `frame_0` es el estado inicial,
+ * `frame_1` el final, y `frame_999` la salida. Cada fotograma trae su `speed`
+ * (duracion) y su `start` (retardo).
+ *
+ * LO QUE HACE ATRACTIVO UN BANNER ES EL ESCALONADO, no la animacion en si: en el
+ * original las cinco capas del primer slide entran con retardos de 10, 290, 490,
+ * 900 y 910 ms, de modo que el banner se va componiendo en vez de aparecer de
+ * golpe. Reproducir eso es lo que se nota; ignorar el retardo lo deja plano.
+ *
+ * Se reproduce "entra desde" (opacidad y desplazamiento) que es lo que cubre este
+ * componente. Los fotogramas completos del plugin —con transformaciones por eje y
+ * por dispositivo— no se traducen enteros, y se avisa de cuantos quedan.
+ */
+function animacionDe(capa) {
+  const tl = capa.timeline || {};
+  const frames = tl.frames || {};
+  const desde = frames.frame_0;
+  if (!desde) return null;
+
+  const val = (frame, clave) => {
+    const v = frame && frame.transform ? frame.transform[clave] : undefined;
+    if (v === undefined || v === null) return null;
+    if (typeof v === 'object') {
+      const d = v.d;
+      const x = d && typeof d === 'object' && 'v' in d ? d.v : d;
+      return x === undefined || x === 'inherit' ? null : x;
+    }
+    return v === 'inherit' ? null : v;
+  };
+
+  const hasta = frames.frame_1;
+  const timing = (hasta && hasta.timeline) || desde.timeline || {};
+
+  // `inherit` significa "se queda donde esta", o sea sin desplazamiento.
+  const desdeX = val(desde, 'x');
+  const desdeY = val(desde, 'y');
+  const op0 = val(desde, 'opacity');
+  const op1 = val(hasta, 'opacity');
+
+  const duracion = Number(timing.speed) || null;
+  const retardo = Number(timing.start) || 0;
+
+  // Si no hay nada que animar, no se genera animacion: una animacion vacia solo
+  // anade ruido al archivo y una clase inutil al HTML.
+  const tieneCambio = (desdeX !== null && desdeX !== 0 && desdeX !== '0px')
+    || (desdeY !== null && desdeY !== 0 && desdeY !== '0px')
+    || (op0 !== null && String(op0) === '0' && String(op1) !== '0');
+
+  if (!tieneCambio) return null;
+
+  return {
+    // Estado inicial. Solo se incluye lo que difiere del final.
+    desde: {
+      opacidad: op0 !== null ? Number(op0) : 1,
+      x: desdeX !== null ? String(desdeX) : null,
+      y: desdeY !== null ? String(desdeY) : null,
+    },
+    duracionMs: duracion,
+    retardoMs: retardo || null,
+  };
+}
+
+let animaciones = 0;
 const avisos = [];
 const avisar = (alias, que) => avisos.push({ alias, que });
 const fuentesVistas = new Map();
@@ -429,19 +495,19 @@ function traducir(s) {
         }
       }
 
-      // Animacion: se resume. Los fotogramas completos de RevSlider (con
-      // transformaciones por eje y por dispositivo) NO se traducen enteros; se
-      // anota que existe y sus tiempos, y se avisa para revisarlo a mano.
+      // Animacion de entrada: opacidad y desplazamiento iniciales, con su duracion
+      // y su retardo. El RETARDO escalonado es lo que hace que el banner se
+      // componga en vez de aparecer de golpe.
+      const anim = animacionDe(capa);
+      if (anim) {
+        c.animacion = anim;
+        animaciones++;
+      }
+      // Los fotogramas de SALIDA (frame_999) y los que llevan transformaciones por
+      // eje no se reproducen: se cuentan para poder decirlo.
       const tl = capa.timeline || {};
       const frames = tl.frames ? Object.keys(tl.frames).filter((k) => !/^frame_999$/.test(k)) : [];
-      if (frames.length) {
-        c.animacion = {
-          tiene: true,
-          fotogramasOriginales: frames.length,
-          entradaMs: Number(ruta(tl, `frames.${frames[0]}.timeline.start`, 0)) || null,
-        };
-        framesNoMapeados.add(`${tipo}/${frames.length}f`);
-      }
+      if (frames.length) framesNoMapeados.add(`${tipo}/${frames.length}f`);
 
       slide.capas.push(c);
     }
@@ -470,6 +536,9 @@ function traducir(s) {
       totalCapas, totalTexto, totalImagen,
       enlacesSlide, enlacesCapa,
       slidesSinEnlace: sinEnlace.length,
+      // Se cuenta del RESULTADO y no del contador global, para que el numero sea el
+      // de este slider y no arrastre el de los anteriores.
+      animacionesDeEntrada: config.slides.reduce((a, sl) => a + sl.capas.filter((c) => c.animacion).length, 0),
       framesNoMapeados: [...framesNoMapeados],
     },
   };
@@ -497,7 +566,8 @@ for (const f of ficheros.sort()) {
   console.log(`    autoplay: ${config.comportamiento.autoplay}${config.comportamiento.intervaloMs ? ' cada ' + config.comportamiento.intervaloMs + 'ms' : ''}   lienzo: ${config.lienzo.ancho} x ${config.lienzo.alto}`);
   console.log(`    escrito: src/sliders/${config.id}.json (${kb} KB)`);
   if (resumen.framesNoMapeados.length) {
-    console.log(`    animaciones a revisar a mano: ${resumen.framesNoMapeados.join(', ')}`);
+    console.log(`    animaciones de entrada extraidas: ${resumen.animacionesDeEntrada}`);
+  if (resumen.framesNoMapeados.length) console.log(`    fotogramas originales por capa (informativo): ${resumen.framesNoMapeados.join(', ')}`);
   }
   console.log('');
 

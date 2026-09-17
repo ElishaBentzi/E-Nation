@@ -687,3 +687,40 @@ Solo trae **los slides que el plugin renderiza de entrada**: 5 de los 21 del ban
 | Con color resuelto | **74 (100 % de las que pintan)** |
 | Enlaces extraídos | 15, a 11 destinos de otros proyectos |
 | Tipografías en uso | Arial, Arimo, **Raleway**, **Actor**, **Martel Sans**, Roboto Slab, Belleza, Maven Pro, Open Sans, Georgia |
+
+### Animaciones del banner: implementadas, y una limitación del navegador de pruebas
+
+Se extrajeron los fotogramas del original y se implementó el escalonado. Los valores medidos en el carrusel de banners: **retardos de 10 a 870 ms** y duraciones de 500 a 1000 ms, de modo que las capas se van componiendo en vez de aparecer de golpe. En `vertical-horizontal` el escalonado llega a **7.800 ms**.
+
+**Dos correcciones por el camino:**
+
+1. **`none translate(...)` no es CSS válido.** La animación componía el anclaje con el desplazamiento de entrada, y cuando el anclaje valía `none` el navegador **descartaba la declaración entera en silencio**: solo se animaba el fundido, sin desplazamiento y sin ningún error. Se resolvió animando la propiedad **`translate`**, que es **independiente de `transform`** y por tanto no puede chocar con el posicionamiento. Es la solución correcta y además más simple.
+2. **Faltaba marcar las capas de imagen**: solo se habían marcado las de texto, así que 152 capas tenían las variables pero 66 la marca. Ahora las llevan las 152.
+
+**LA LIMITACIÓN, y explica capturas anteriores que salían en blanco:** en el navegador automatizado **las animaciones CSS no avanzan con el reloj real**. Verificado con un control: una animación trivial creada al vuelo se queda en `currentTime: 0` con `playState: running`.
+
+Consecuencia importante: como la animación usa `fill-mode: both` y el fotograma inicial tiene opacidad 0, **mientras el reloj no avanza las capas se quedan invisibles**. Eso es exactamente lo que hacía que el banner saliera vacío en algunas capturas. **No es un fallo del código** —en un navegador real las animaciones corren— pero conviene saberlo para no confundirlo con un problema del banner.
+
+**Lo que sí quedó verificado**: forzando `currentTime` a mano, la opacidad progresa **0 → 0,66 → 0,92 → 1** respetando el retardo de 910 ms. O sea que los fotogramas y los tiempos son correctos; lo que no se puede observar aquí es el avance en tiempo real.
+
+### El carrusel de banners mezcla TRES idiomas
+
+El índice de diapositivas (`reference/INDICE-DIAPOSITIVAS.md`) lo dejó a la vista: las 21 diapositivas del carrusel vienen **en parejas o tríos de idioma**.
+
+| # | textos | idioma |
+|---|---|---|
+| 1 | Juega y Coopera para Crecer | español |
+| 2 | Mutual Welfare Society · Spanish Edition | inglés |
+| 3 | Société du Bien-être Mutuel · Edition Espagnol | **francés** |
+| 4 | Model of Participation · POLITICS | inglés |
+| 5 | Modèle de Participation · POLITIQUE | **francés** |
+| 6 | WORKSHOPS | inglés |
+| 7 | ATELIERS | **francés** |
+
+**Y el mismo carrusel se sirve en las dos presentaciones**, porque el shortcode es idéntico en ambas. Así que **quien visita el sitio en inglés ve banners en español y en francés**, y al revés.
+
+Es un defecto del original, o una decisión deliberada de mostrar todos los idiomas. En cualquier caso **hay que decidirlo**: lo coherente en un sitio multi-idioma es que cada idioma muestre sus banners. Es una decisión del usuario, no mía.
+
+### Herramienta nueva: índice de diapositivas
+
+`tools/slide-index.cjs` → `reference/INDICE-DIAPOSITIVAS.md`. Da a cada diapositiva **un número estable**, su título, su destino y los textos que aparecen dentro, que es por donde se reconoce de un vistazo. Permite decir «la 7, la de SBM Juegos» y hablar de la misma sin ambigüedad. Se regenera solo, así que no se desincroniza.

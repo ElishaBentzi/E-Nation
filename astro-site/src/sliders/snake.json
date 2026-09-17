@@ -65,9 +65,13 @@
           },
           "estilos": null,
           "animacion": {
-            "tiene": true,
-            "fotogramasOriginales": 2,
-            "entradaMs": 10
+            "desde": {
+              "opacidad": 0,
+              "x": null,
+              "y": null
+            },
+            "duracionMs": null,
+            "retardoMs": 10
           }
         }
       ]

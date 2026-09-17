@@ -227,6 +227,27 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
   const ancho = aPct(c.tamano?.ancho, anchoLienzo);
   if (ancho) partes.push(`width:${ancho.toFixed(4)}%`);
 
+  /*
+   * ANIMACION DE ENTRADA.
+   *
+   * El ESCALONADO es lo que hace atractivo el banner: en el original las capas
+   * entran con retardos de 10 a 870 ms, asi que se va componiendo en vez de
+   * aparecer de golpe. Sin el retardo, la animacion se nota mucho menos.
+   *
+   * La animacion mueve la propiedad `translate`, NO `transform`: las capas con
+   * anclaje ya usan `transform` para posicionarse, y las dos propiedades son
+   * independientes, asi que no hay conflicto posible. El detalle esta explicado en
+   * los fotogramas, mas abajo.
+   */
+  if (c.animacion) {
+    const a = c.animacion;
+    if (a.desde?.opacidad !== undefined && a.desde.opacidad !== 1) partes.push(`--bs-op0:${a.desde.opacidad}`);
+    if (a.desde?.x) partes.push(`--bs-x0:${a.desde.x}`);
+    if (a.desde?.y) partes.push(`--bs-y0:${a.desde.y}`);
+    if (a.duracionMs) partes.push(`--bs-dur:${a.duracionMs}ms`);
+    if (a.retardoMs) partes.push(`--bs-delay:${a.retardoMs}ms`);
+  }
+
   // Tipografia en unidades de CONTENEDOR (`cqw`): es lo que hace que el texto
   // escale con el banner, como hacia el plugin. El contenedor se declara con
   // `container-type: inline-size` en los estilos del componente.
@@ -300,7 +321,12 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
 
           {capasConContenido.map((c) => (
             c.tipo === 'texto' ? (
-              <span class="banner-slider__capa absolute" style={estiloCapa(c, anchoLienzo, altoLienzo)} data-capa={c.uid}>
+              <span
+                class="banner-slider__capa absolute"
+                style={estiloCapa(c, anchoLienzo, altoLienzo)}
+                data-capa={c.uid}
+                data-anim={c.animacion ? '' : undefined}
+              >
                 {/* Si el original traia HTML (texto + icono), se interpreta
                     saneado; si no, se pinta como texto normal. */}
                 {c.textoConHtml ? <Fragment set:html={sanearHtml(c.texto)} /> : c.texto}
@@ -312,8 +338,9 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
                 loading="lazy"
                 decoding="async"
                 class="banner-slider__capa absolute"
-                style={`${estiloCapa(c, anchoLienzo, altoLienzo)}${c.tamano?.ancho ? `;width:${c.tamano.ancho}` : ''}`}
+                style={estiloCapa(c, anchoLienzo, altoLienzo)}
                 data-capa={c.uid}
+                data-anim={c.animacion ? '' : undefined}
               />
             )
           ))}
@@ -376,6 +403,52 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
   .banner-slider__capa {
     max-width: calc(100% - 2rem);
   }
+
+  /*
+   * ENTRADA DE UNA CAPA.
+   *
+   * SE ANIMA LA PROPIEDAD `translate`, NO `transform`. Es la clave y costo un
+   * intento fallido: las capas ancladas ya usan `transform` para posicionarse, asi
+   * que animar `transform` obliga a COMPONER los dos valores — y componerlos con
+   * una variable que vale `none` produce `none translate(...)`, que **no es CSS
+   * valido**: el navegador descarta la declaracion entera y solo se anima el
+   * fundido, sin desplazamiento y sin ningun error visible.
+   *
+   * `translate`, `rotate` y `scale` son propiedades INDEPENDIENTES que se aplican
+   * ademas de `transform`. Animando `translate` no hay conflicto posible con el
+   * posicionamiento, y el desplazamiento de entrada funciona en los dos sistemas.
+   */
+  @keyframes bs-entrada {
+    from {
+      opacity: var(--bs-op0, 1);
+      translate: var(--bs-x0, 0) var(--bs-y0, 0);
+    }
+    to {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
+
+  /*
+   * Solo se anima el slide ACTIVO. Al cambiar de slide, la regla pasa a aplicarse a
+   * las capas de otro slide y el navegador REINICIA la animacion, que es justo lo
+   * que se quiere: el escalonado vuelve a correr en cada banner.
+   *
+   * El retardo (`--bs-delay`) es lo que produce el escalonado, y la curva imita la
+   * salida suave del plugin: arranca rapido y frena.
+   */
+  .banner-slider__slide[aria-hidden='false'] .banner-slider__capa[data-anim] {
+    animation: bs-entrada var(--bs-dur, 600ms) cubic-bezier(0.22, 0.61, 0.36, 1)
+      var(--bs-delay, 0ms) both;
+  }
+
+  /* Sin movimiento: las capas se muestran ya en su estado final, sin entrada. */
+  @media (prefers-reduced-motion: reduce) {
+    .banner-slider__slide[aria-hidden='false'] .banner-slider__capa[data-anim] {
+      animation: none;
+    }
+  }
+
   .banner-slider__flecha {
     display: grid;
     place-items: center;

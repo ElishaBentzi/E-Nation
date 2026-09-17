@@ -63,12 +63,7 @@
             "ancho": "130px",
             "alto": "590px"
           },
-          "estilos": null,
-          "animacion": {
-            "tiene": true,
-            "fotogramasOriginales": 2,
-            "entradaMs": 10
-          }
+          "estilos": null
         },
         {
           "uid": 2,
@@ -90,12 +85,7 @@
             "ancho": "130px",
             "alto": "590px"
           },
-          "estilos": null,
-          "animacion": {
-            "tiene": true,
-            "fotogramasOriginales": 2,
-            "entradaMs": 10
-          }
+          "estilos": null
         },
         {
           "uid": 3,
@@ -133,11 +123,6 @@
               "tamano": "capa",
               "color": "capa"
             }
-          },
-          "animacion": {
-            "tiene": true,
-            "fotogramasOriginales": 2,
-            "entradaMs": null
           }
         },
         {
@@ -160,12 +145,7 @@
             "ancho": "762px",
             "alto": "64px"
           },
-          "estilos": null,
-          "animacion": {
-            "tiene": true,
-            "fotogramasOriginales": 2,
-            "entradaMs": null
-          }
+          "estilos": null
         },
         {
           "uid": 5,
@@ -203,11 +183,6 @@
               "tamano": "capa",
               "color": "capa"
             }
-          },
-          "animacion": {
-            "tiene": true,
-            "fotogramasOriginales": 2,
-            "entradaMs": null
           }
         },
         {
@@ -246,11 +221,6 @@
               "tamano": "capa",
               "color": "capa"
             }
-          },
-          "animacion": {
-            "tiene": true,
-            "fotogramasOriginales": 2,
-            "entradaMs": null
           }
         },
         {
@@ -273,12 +243,7 @@
             "ancho": "907px",
             "alto": "425px"
           },
-          "estilos": null,
-          "animacion": {
-            "tiene": true,
-            "fotogramasOriginales": 2,
-            "entradaMs": null
-          }
+          "estilos": null
         },
         {
           "uid": 8,
@@ -300,12 +265,7 @@
             "ancho": "296px",
             "alto": "286px"
           },
-          "estilos": null,
-          "animacion": {
-            "tiene": true,
-            "fotogramasOriginales": 2,
-            "entradaMs": null
-          }
+          "estilos": null
         },
         {
           "uid": 9,
@@ -327,12 +287,7 @@
             "ancho": "600px",
             "alto": "219px"
           },
-          "estilos": null,
-          "animacion": {
-            "tiene": true,
-            "fotogramasOriginales": 2,
-            "entradaMs": null
-          }
+          "estilos": null
         },
         {
           "uid": 10,
@@ -356,9 +311,13 @@
           },
           "estilos": null,
           "animacion": {
-            "tiene": true,
-            "fotogramasOriginales": 2,
-            "entradaMs": null
+            "desde": {
+              "opacidad": 1,
+              "x": "175%",
+              "y": "0px"
+            },
+            "duracionMs": 1500,
+            "retardoMs": null
           }
         },
         {
@@ -509,12 +468,7 @@
             "ancho": "130px",
             "alto": "590px"
           },
-          "estilos": null,
-          "animacion": {
-            "tiene": true,
-            "fotogramasOriginales": 2,
-            "entradaMs": 10
-          }
+          "estilos": null
         },
         {
           "uid": 2,
@@ -536,12 +490,7 @@
             "ancho": "130px",
             "alto": "590px"
           },
-          "estilos": null,
-          "animacion": {
-            "tiene": true,
-            "fotogramasOriginales": 2,
-            "entradaMs": 10
-          }
+          "estilos": null
         },
         {
           "uid": 3,
@@ -579,11 +528,6 @@
               "tamano": "capa",
               "color": "capa"
             }
-          },
-          "animacion": {
-            "tiene": true,
-            "fotogramasOriginales": 2,
-            "entradaMs": null
           }
         },
         {
@@ -606,12 +550,7 @@
             "ancho": "762px",
             "alto": "64px"
           },
-          "estilos": null,
-          "animacion": {
-            "tiene": true,
-            "fotogramasOriginales": 2,
-            "entradaMs": null
-          }
+          "estilos": null
         },
         {
           "uid": 5,
@@ -649,11 +588,6 @@
               "tamano": "capa",
               "color": "capa"
             }
-          },
-          "animacion": {
-            "tiene": true,
-            "fotogramasOriginales": 2,
-            "entradaMs": null
           }
         },
         {
@@ -692,11 +626,6 @@
               "tamano": "capa",
               "color": "capa"
             }
-          },
-          "animacion": {
-            "tiene": true,
-            "fotogramasOriginales": 2,
-            "entradaMs": null
           }
         },
         {
@@ -719,12 +648,7 @@
             "ancho": "907px",
             "alto": "425px"
           },
-          "estilos": null,
-          "animacion": {
-            "tiene": true,
-            "fotogramasOriginales": 2,
-            "entradaMs": null
-          }
+          "estilos": null
         },
         {
           "uid": 8,
@@ -746,12 +670,7 @@
             "ancho": "296px",
             "alto": "286px"
           },
-          "estilos": null,
-          "animacion": {
-            "tiene": true,
-            "fotogramasOriginales": 2,
-            "entradaMs": null
-          }
+          "estilos": null
         },
         {
           "uid": 9,
@@ -773,12 +692,7 @@
             "ancho": "600px",
             "alto": "219px"
           },
-          "estilos": null,
-          "animacion": {
-            "tiene": true,
-            "fotogramasOriginales": 2,
-            "entradaMs": null
-          }
+          "estilos": null
         },
         {
           "uid": 10,
@@ -802,9 +716,13 @@
           },
           "estilos": null,
           "animacion": {
-            "tiene": true,
-            "fotogramasOriginales": 2,
-            "entradaMs": null
+            "desde": {
+              "opacidad": 1,
+              "x": "175%",
+              "y": "0px"
+            },
+            "duracionMs": 1500,
+            "retardoMs": null
           }
         },
         {
