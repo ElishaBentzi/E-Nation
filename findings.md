@@ -583,3 +583,43 @@ Medido con `tools/analyze-sliders.cjs`: **los 4 sliders suman 220 capas**, y el 
 Verificado que funciona: **1166 px de ancho (el `maxWidth` respetado), 282 px de alto, 21 slides, 54 imágenes externas cargando y los 15 enlaces con `rel="noopener"`**. Texto real visible («Juega y Coopera para Crecer»).
 
 **Falta calibrar la posición de las 85 capas de imagen.** Están posicionadas en píxeles relativos al lienzo de 1240 px del original, y el banner sale oscuro porque caen fuera del área visible. Es exactamente el trabajo del **bucle de comparación contra las capturas de referencia**, que es la siguiente ola.
+
+### Calibrar los sliders: el diagnóstico y las dos piezas que faltan
+
+La posición de las capas salía mal y la causa era **de datos, no de estilos**.
+
+#### El error que lo causaba
+
+De **220 capas, 162 no declaran anclaje horizontal** y 187 no declaran el vertical: vienen como `{e:true}`, **sin valor**. Esas capas se posicionan por **píxeles** (`position.x`/`position.y`) desde la esquina superior izquierda del lienzo. Solo 58 declaran `center` y 33 `middle`.
+
+Mi generador hacía `horizontal: horiz.valor || 'center'`: **inventaba `center` cuando el valor no estaba**. Un valor ausente NO es un valor por defecto. Eso mandaba 162 capas fuera del área visible y el banner se veía vacío. Corregido: el anclaje se emite como `null` cuando no está declarado, y hay una marca `porPixeles` para que el componente convierta los píxeles a porcentaje del lienzo y el banner escale con el contenedor.
+
+#### La fuente buena: el marcado renderizado
+
+El HTML del original trae el marcado de RevSlider 6 **con los valores por defecto ya aplicados** por el plugin, en formato compacto:
+
+```html
+<rs-slide data-link="//sbmjuegos.com" data-target="_blank" data-duration="5000">
+  <rs-layer data-type="text"
+            data-xy="x:34px;y:202px;"                       posición, con x resuelto
+            data-color="#ffffff"
+            data-text="w:normal;s:39;l:35;ls:0px;fw:700;"   tipografía
+            data-dim="w:665px;"
+            data-frame_0="tp:600;"                          animación de entrada
+            data-frame_1="tp:600;st:910;sp:1000;sR:910;">
+```
+
+Comparado con la base de datos, donde hay que deducir qué significa cada ausencia, **aquí se lee**. Pero tiene un límite encontrado al usarlo: **RevSlider solo renderiza los primeros slides y carga el resto bajo demanda**, así que el HTML trae 5 de los 21 slides de `banner-publicidad`. Sirve para aprender las reglas y los valores por defecto, **no como fuente completa**.
+
+#### Dónde vive la tipografía: en `idle`
+
+Costó encontrarlo. En la base de datos la capa no tiene `fontSize` ni `color` en primer nivel, y `customCSS` solo trae el espaciado entre letras. **La tipografía está anidada en `idle`**, que es el estado base del sistema de estados de Revolución (hay también `hover`): `idle.fontFamily`, `idle.fontSize`, `idle.fontWeight`, `idle.lineHeight`, `idle.letterSpacing`.
+
+**Y aparecieron cuatro tipografías que no tenía en los tokens**: `Actor` (6 capas), `Martel Sans` (3), `Raleway` (6) y `Belleza` (2). Comprobado en el HTML: **Actor y Martel Sans sí se cargan**; Raleway solo se declara en el CSS del plugin y Belleza no aparece, así que esos dos probablemente caen a un sustituto.
+
+#### Las dos piezas que faltan
+
+1. **La tabla `revslider_css` (presets de estilo) no se extrajo.** Las capas **no declaran color**: lo toman de un preset (`idle.style`, p. ej. `"Fashion-BigDisplay"` o `"very_large_text"`). Sin esa tabla hay que adivinar los colores, y adivinar es justo lo que no se hace. **Añadida al extractor PHP**: hay que volver a ejecutarlo para tenerla.
+2. **El marcado solo trae los slides ya renderizados**, pero **sí trae los colores resueltos** (`data-color="#ffffff"`). Recorriendo el slider con el navegador se pueden cosechar los 21 slides con sus valores resueltos — es la vía que evita depender del presupuesto.
+
+Ambas cosas están anotadas. **El banner ahora sale oscuro porque las 85 capas de imagen caen fuera del área visible**, y con el anclaje ya corregido el siguiente paso es aplicar la conversión de píxeles a porcentaje y comparar contra las capturas.

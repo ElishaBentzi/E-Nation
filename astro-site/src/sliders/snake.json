@@ -54,14 +54,16 @@
           "posicion": {
             "horizontal": "center",
             "vertical": "middle",
-            "offsetX": null,
-            "offsetY": null,
+            "x": null,
+            "y": null,
+            "porPixeles": false,
             "zIndex": 5
           },
           "tamano": {
             "ancho": "650px",
             "alto": "655px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,

@@ -52,16 +52,18 @@
           "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/0-L.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
+            "horizontal": null,
             "vertical": "middle",
-            "offsetX": "11px",
-            "offsetY": null,
+            "x": "11px",
+            "y": null,
+            "porPixeles": false,
             "zIndex": 5
           },
           "tamano": {
             "ancho": "130px",
             "alto": "590px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -77,16 +79,18 @@
           "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/0-2-R.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
+            "horizontal": null,
             "vertical": "middle",
-            "offsetX": "1058px",
-            "offsetY": null,
+            "x": "1058px",
+            "y": null,
+            "porPixeles": false,
             "zIndex": 6
           },
           "tamano": {
             "ancho": "130px",
             "alto": "590px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -103,14 +107,27 @@
           "alt": null,
           "posicion": {
             "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": null,
-            "offsetY": "17px",
+            "vertical": null,
+            "x": null,
+            "y": "17px",
+            "porPixeles": false,
             "zIndex": 7
           },
           "tamano": {
             "ancho": null,
             "alto": null
+          },
+          "estilos": {
+            "familia": "Maven Pro",
+            "tamano": "110px",
+            "grosor": "900",
+            "interlineado": "110px",
+            "espaciadoLetras": "-2px",
+            "alineacion": "inherit",
+            "color": "#fff",
+            "fondo": null,
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -128,15 +145,17 @@
           "alt": null,
           "posicion": {
             "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": null,
-            "offsetY": "128px",
+            "vertical": null,
+            "x": null,
+            "y": "128px",
+            "porPixeles": false,
             "zIndex": 8
           },
           "tamano": {
             "ancho": "762px",
             "alto": "64px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -153,14 +172,27 @@
           "alt": null,
           "posicion": {
             "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": null,
-            "offsetY": "136px",
+            "vertical": null,
+            "x": null,
+            "y": "136px",
+            "porPixeles": false,
             "zIndex": 9
           },
           "tamano": {
             "ancho": null,
             "alto": null
+          },
+          "estilos": {
+            "familia": "Arimo",
+            "tamano": "50px",
+            "grosor": "700",
+            "interlineado": "49px",
+            "espaciadoLetras": "-2px",
+            "alineacion": "inherit",
+            "color": "#fff",
+            "fondo": null,
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -178,14 +210,27 @@
           "alt": null,
           "posicion": {
             "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "-3px",
-            "offsetY": "205px",
+            "vertical": null,
+            "x": "-3px",
+            "y": "205px",
+            "porPixeles": false,
             "zIndex": 10
           },
           "tamano": {
             "ancho": null,
             "alto": null
+          },
+          "estilos": {
+            "familia": "Arimo",
+            "tamano": "30px",
+            "grosor": "700",
+            "interlineado": "30px",
+            "espaciadoLetras": "-2px",
+            "alineacion": "inherit",
+            "color": "#fff",
+            "fondo": null,
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -203,15 +248,17 @@
           "alt": null,
           "posicion": {
             "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": null,
-            "offsetY": "219px",
+            "vertical": null,
+            "x": null,
+            "y": "219px",
+            "porPixeles": false,
             "zIndex": 11
           },
           "tamano": {
             "ancho": "907px",
             "alto": "425px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -227,16 +274,18 @@
           "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/2-hand-passport.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "133px",
-            "offsetY": "313px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "133px",
+            "y": "313px",
+            "porPixeles": true,
             "zIndex": 12
           },
           "tamano": {
             "ancho": "296px",
             "alto": "286px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -252,16 +301,18 @@
           "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/09/1-family.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "421px",
-            "offsetY": "381px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "421px",
+            "y": "381px",
+            "porPixeles": true,
             "zIndex": 13
           },
           "tamano": {
             "ancho": "600px",
             "alto": "219px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -278,15 +329,17 @@
           "alt": null,
           "posicion": {
             "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": null,
-            "offsetY": "236px",
+            "vertical": null,
+            "x": null,
+            "y": "236px",
+            "porPixeles": false,
             "zIndex": 14
           },
           "tamano": {
             "ancho": "950px",
             "alto": "4px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -302,15 +355,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": null,
-            "offsetY": null,
+            "horizontal": null,
+            "vertical": null,
+            "x": null,
+            "y": null,
+            "porPixeles": true,
             "zIndex": null
           },
           "tamano": {
             "ancho": null,
             "alto": null
+          },
+          "estilos": {
+            "familia": null,
+            "tamano": null,
+            "grosor": null,
+            "interlineado": null,
+            "espaciadoLetras": null,
+            "alineacion": null,
+            "color": null,
+            "fondo": null,
+            "radio": null,
+            "preset": null
           }
         },
         {
@@ -322,15 +388,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": null,
-            "offsetY": null,
+            "horizontal": null,
+            "vertical": null,
+            "x": null,
+            "y": null,
+            "porPixeles": true,
             "zIndex": null
           },
           "tamano": {
             "ancho": null,
             "alto": null
+          },
+          "estilos": {
+            "familia": null,
+            "tamano": null,
+            "grosor": null,
+            "interlineado": null,
+            "espaciadoLetras": null,
+            "alineacion": null,
+            "color": null,
+            "fondo": null,
+            "radio": null,
+            "preset": null
           }
         },
         {
@@ -342,15 +421,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": null,
-            "offsetY": null,
+            "horizontal": null,
+            "vertical": null,
+            "x": null,
+            "y": null,
+            "porPixeles": true,
             "zIndex": null
           },
           "tamano": {
             "ancho": null,
             "alto": null
+          },
+          "estilos": {
+            "familia": null,
+            "tamano": null,
+            "grosor": null,
+            "interlineado": null,
+            "espaciadoLetras": null,
+            "alineacion": null,
+            "color": null,
+            "fondo": null,
+            "radio": null,
+            "preset": null
           }
         }
       ]
@@ -376,16 +468,18 @@
           "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/0-L.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
+            "horizontal": null,
             "vertical": "middle",
-            "offsetX": "11px",
-            "offsetY": null,
+            "x": "11px",
+            "y": null,
+            "porPixeles": false,
             "zIndex": 5
           },
           "tamano": {
             "ancho": "130px",
             "alto": "590px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -401,16 +495,18 @@
           "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/0-2-R.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
+            "horizontal": null,
             "vertical": "middle",
-            "offsetX": "1058px",
-            "offsetY": null,
+            "x": "1058px",
+            "y": null,
+            "porPixeles": false,
             "zIndex": 6
           },
           "tamano": {
             "ancho": "130px",
             "alto": "590px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -427,14 +523,27 @@
           "alt": null,
           "posicion": {
             "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": null,
-            "offsetY": "17px",
+            "vertical": null,
+            "x": null,
+            "y": "17px",
+            "porPixeles": false,
             "zIndex": 7
           },
           "tamano": {
             "ancho": null,
             "alto": null
+          },
+          "estilos": {
+            "familia": "Maven Pro",
+            "tamano": "110px",
+            "grosor": "900",
+            "interlineado": "110px",
+            "espaciadoLetras": "-2px",
+            "alineacion": "inherit",
+            "color": "#fff",
+            "fondo": null,
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -452,15 +561,17 @@
           "alt": null,
           "posicion": {
             "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": null,
-            "offsetY": "128px",
+            "vertical": null,
+            "x": null,
+            "y": "128px",
+            "porPixeles": false,
             "zIndex": 8
           },
           "tamano": {
             "ancho": "762px",
             "alto": "64px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -477,14 +588,27 @@
           "alt": null,
           "posicion": {
             "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": null,
-            "offsetY": "136px",
+            "vertical": null,
+            "x": null,
+            "y": "136px",
+            "porPixeles": false,
             "zIndex": 9
           },
           "tamano": {
             "ancho": null,
             "alto": null
+          },
+          "estilos": {
+            "familia": "Arimo",
+            "tamano": "50px",
+            "grosor": "700",
+            "interlineado": "49px",
+            "espaciadoLetras": "-2px",
+            "alineacion": "inherit",
+            "color": "#fff",
+            "fondo": null,
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -502,14 +626,27 @@
           "alt": null,
           "posicion": {
             "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "-3px",
-            "offsetY": "205px",
+            "vertical": null,
+            "x": "-3px",
+            "y": "205px",
+            "porPixeles": false,
             "zIndex": 10
           },
           "tamano": {
             "ancho": null,
             "alto": null
+          },
+          "estilos": {
+            "familia": "Arimo",
+            "tamano": "30px",
+            "grosor": "700",
+            "interlineado": "30px",
+            "espaciadoLetras": "-2px",
+            "alineacion": "inherit",
+            "color": "#fff",
+            "fondo": null,
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -527,15 +664,17 @@
           "alt": null,
           "posicion": {
             "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": null,
-            "offsetY": "219px",
+            "vertical": null,
+            "x": null,
+            "y": "219px",
+            "porPixeles": false,
             "zIndex": 11
           },
           "tamano": {
             "ancho": "907px",
             "alto": "425px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -551,16 +690,18 @@
           "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/2-hand-passport.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "133px",
-            "offsetY": "313px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "133px",
+            "y": "313px",
+            "porPixeles": true,
             "zIndex": 12
           },
           "tamano": {
             "ancho": "296px",
             "alto": "286px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -576,16 +717,18 @@
           "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/09/1-family.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "421px",
-            "offsetY": "381px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "421px",
+            "y": "381px",
+            "porPixeles": true,
             "zIndex": 13
           },
           "tamano": {
             "ancho": "600px",
             "alto": "219px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -602,15 +745,17 @@
           "alt": null,
           "posicion": {
             "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": null,
-            "offsetY": "236px",
+            "vertical": null,
+            "x": null,
+            "y": "236px",
+            "porPixeles": false,
             "zIndex": 14
           },
           "tamano": {
             "ancho": "950px",
             "alto": "4px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -626,15 +771,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": null,
-            "offsetY": null,
+            "horizontal": null,
+            "vertical": null,
+            "x": null,
+            "y": null,
+            "porPixeles": true,
             "zIndex": null
           },
           "tamano": {
             "ancho": null,
             "alto": null
+          },
+          "estilos": {
+            "familia": null,
+            "tamano": null,
+            "grosor": null,
+            "interlineado": null,
+            "espaciadoLetras": null,
+            "alineacion": null,
+            "color": null,
+            "fondo": null,
+            "radio": null,
+            "preset": null
           }
         },
         {
@@ -646,15 +804,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": null,
-            "offsetY": null,
+            "horizontal": null,
+            "vertical": null,
+            "x": null,
+            "y": null,
+            "porPixeles": true,
             "zIndex": null
           },
           "tamano": {
             "ancho": null,
             "alto": null
+          },
+          "estilos": {
+            "familia": null,
+            "tamano": null,
+            "grosor": null,
+            "interlineado": null,
+            "espaciadoLetras": null,
+            "alineacion": null,
+            "color": null,
+            "fondo": null,
+            "radio": null,
+            "preset": null
           }
         },
         {
@@ -666,15 +837,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": null,
-            "offsetY": null,
+            "horizontal": null,
+            "vertical": null,
+            "x": null,
+            "y": null,
+            "porPixeles": true,
             "zIndex": null
           },
           "tamano": {
             "ancho": null,
             "alto": null
+          },
+          "estilos": {
+            "familia": null,
+            "tamano": null,
+            "grosor": null,
+            "interlineado": null,
+            "espaciadoLetras": null,
+            "alineacion": null,
+            "color": null,
+            "fondo": null,
+            "radio": null,
+            "preset": null
           }
         }
       ]

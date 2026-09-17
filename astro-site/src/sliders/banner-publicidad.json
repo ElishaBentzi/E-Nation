@@ -56,15 +56,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "34px",
-            "offsetY": "202px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "34px",
+            "y": "202px",
+            "porPixeles": true,
             "zIndex": 6
           },
           "tamano": {
             "ancho": "665px",
             "alto": null
+          },
+          "estilos": {
+            "familia": "Martel Sans",
+            "tamano": "43px",
+            "grosor": "700",
+            "interlineado": "35px",
+            "espaciadoLetras": "0px",
+            "alineacion": null,
+            "color": null,
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "Fashion-BigDisplay"
           },
           "animacion": {
             "tiene": true,
@@ -81,16 +94,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/games-banner-barra.jpg",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": null,
-            "offsetY": "189px",
+            "horizontal": null,
+            "vertical": null,
+            "x": null,
+            "y": "189px",
+            "porPixeles": true,
             "zIndex": 5
           },
           "tamano": {
             "ancho": "668px",
             "alto": "58px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -106,16 +121,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/games-banner-logo.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "47px",
-            "offsetY": "41px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "47px",
+            "y": "41px",
+            "porPixeles": true,
             "zIndex": 7
           },
           "tamano": {
             "ancho": "956px",
             "alto": "163px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -131,16 +148,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/games-banner-amarillo.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "514px",
-            "offsetY": null,
+            "horizontal": null,
+            "vertical": null,
+            "x": "514px",
+            "y": null,
+            "porPixeles": true,
             "zIndex": 8
           },
           "tamano": {
             "ancho": "589px",
             "alto": "87px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -156,16 +175,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/games-banner-rosado.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "365px",
-            "offsetY": "171px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "365px",
+            "y": "171px",
+            "porPixeles": true,
             "zIndex": 9
           },
           "tamano": {
             "ancho": "876px",
             "alto": "131px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -197,14 +218,16 @@
           "posicion": {
             "horizontal": "center",
             "vertical": "middle",
-            "offsetX": null,
-            "offsetY": null,
+            "x": null,
+            "y": null,
+            "porPixeles": false,
             "zIndex": 5
           },
           "tamano": {
             "ancho": "1240px",
             "alto": "300px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -220,16 +243,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Psyco-a-tamaño.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": null,
-            "offsetY": null,
+            "horizontal": null,
+            "vertical": null,
+            "x": null,
+            "y": null,
+            "porPixeles": true,
             "zIndex": 7
           },
           "tamano": {
             "ancho": "378px",
             "alto": "300px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -245,15 +270,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "390px",
-            "offsetY": "17px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "390px",
+            "y": "17px",
+            "porPixeles": true,
             "zIndex": 8
           },
           "tamano": {
             "ancho": "714px",
             "alto": "67px"
+          },
+          "estilos": {
+            "familia": "Roboto Slab",
+            "tamano": "63px",
+            "grosor": null,
+            "interlineado": "55px",
+            "espaciadoLetras": null,
+            "alineacion": null,
+            "color": "rgba(232,96,0,1)",
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "Newspaper-Title"
           },
           "animacion": {
             "tiene": true,
@@ -270,15 +308,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "955px",
-            "offsetY": "269px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "955px",
+            "y": "269px",
+            "porPixeles": true,
             "zIndex": 13
           },
           "tamano": {
             "ancho": "218px",
             "alto": "27px"
+          },
+          "estilos": {
+            "familia": null,
+            "tamano": "14px",
+            "grosor": "700",
+            "interlineado": "22",
+            "espaciadoLetras": null,
+            "alineacion": "right",
+            "color": "rgba(0,250,255,1)",
+            "fondo": "transparent",
+            "radio": null,
+            "preset": null
           },
           "animacion": {
             "tiene": true,
@@ -295,15 +346,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "783px",
-            "offsetY": "138px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "783px",
+            "y": "138px",
+            "porPixeles": true,
             "zIndex": 14
           },
           "tamano": {
             "ancho": null,
             "alto": null
+          },
+          "estilos": {
+            "familia": "Raleway",
+            "tamano": "20px",
+            "grosor": "600",
+            "interlineado": "20px",
+            "espaciadoLetras": null,
+            "alineacion": null,
+            "color": "rgba(255,255,255,1)",
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "WebProduct-Title-Light"
           },
           "animacion": {
             "tiene": true,
@@ -320,16 +384,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Ralla.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "754px",
-            "offsetY": "152px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "754px",
+            "y": "152px",
+            "porPixeles": true,
             "zIndex": 9
           },
           "tamano": {
             "ancho": "229px",
             "alto": "23px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -345,16 +411,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Ebook-elastic.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "710px",
-            "offsetY": "89px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "710px",
+            "y": "89px",
+            "porPixeles": true,
             "zIndex": 12
           },
           "tamano": {
             "ancho": "497px",
             "alto": "183px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -370,16 +438,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Ralla.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "736px",
-            "offsetY": "195px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "736px",
+            "y": "195px",
+            "porPixeles": true,
             "zIndex": 10
           },
           "tamano": {
             "ancho": "229px",
             "alto": "23px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -395,15 +465,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "773px",
-            "offsetY": "180px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "773px",
+            "y": "180px",
+            "porPixeles": true,
             "zIndex": 15
           },
           "tamano": {
             "ancho": null,
             "alto": null
+          },
+          "estilos": {
+            "familia": "Raleway",
+            "tamano": "20px",
+            "grosor": "600",
+            "interlineado": "20px",
+            "espaciadoLetras": null,
+            "alineacion": null,
+            "color": "rgba(255,255,255,1)",
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "WebProduct-Title-Light"
           },
           "animacion": {
             "tiene": true,
@@ -420,16 +503,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Ralla.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "716px",
-            "offsetY": "238px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "716px",
+            "y": "238px",
+            "porPixeles": true,
             "zIndex": 11
           },
           "tamano": {
             "ancho": "229px",
             "alto": "23px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -445,15 +530,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "741px",
-            "offsetY": "225px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "741px",
+            "y": "225px",
+            "porPixeles": true,
             "zIndex": 16
           },
           "tamano": {
             "ancho": null,
             "alto": null
+          },
+          "estilos": {
+            "familia": "Raleway",
+            "tamano": "20px",
+            "grosor": "600",
+            "interlineado": "20px",
+            "espaciadoLetras": null,
+            "alineacion": null,
+            "color": "rgba(255,255,255,1)",
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "WebProduct-Title-Light"
           },
           "animacion": {
             "tiene": true,
@@ -472,14 +570,16 @@
           "posicion": {
             "horizontal": "center",
             "vertical": "middle",
-            "offsetX": "-457px",
-            "offsetY": null,
+            "x": "-457px",
+            "y": null,
+            "porPixeles": false,
             "zIndex": 6
           },
           "tamano": {
             "ancho": "294px",
             "alto": "288px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -511,14 +611,16 @@
           "posicion": {
             "horizontal": "center",
             "vertical": "middle",
-            "offsetX": null,
-            "offsetY": null,
+            "x": null,
+            "y": null,
+            "porPixeles": false,
             "zIndex": 5
           },
           "tamano": {
             "ancho": "1240px",
             "alto": "300px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -534,16 +636,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Psyco-a-tamaño.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": null,
-            "offsetY": null,
+            "horizontal": null,
+            "vertical": null,
+            "x": null,
+            "y": null,
+            "porPixeles": true,
             "zIndex": 7
           },
           "tamano": {
             "ancho": "378px",
             "alto": "300px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -559,15 +663,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "327px",
-            "offsetY": "17px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "327px",
+            "y": "17px",
+            "porPixeles": true,
             "zIndex": 8
           },
           "tamano": {
             "ancho": "851px",
             "alto": "67px"
+          },
+          "estilos": {
+            "familia": "Roboto Slab",
+            "tamano": "63px",
+            "grosor": null,
+            "interlineado": "55px",
+            "espaciadoLetras": null,
+            "alineacion": null,
+            "color": "rgba(232,96,0,1)",
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "Newspaper-Title"
           },
           "animacion": {
             "tiene": true,
@@ -584,15 +701,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "862px",
-            "offsetY": "271px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "862px",
+            "y": "271px",
+            "porPixeles": true,
             "zIndex": 13
           },
           "tamano": {
             "ancho": "315px",
             "alto": "26px"
+          },
+          "estilos": {
+            "familia": null,
+            "tamano": "14px",
+            "grosor": "700",
+            "interlineado": "22",
+            "espaciadoLetras": null,
+            "alineacion": "right",
+            "color": "rgba(0,250,255,1)",
+            "fondo": "transparent",
+            "radio": null,
+            "preset": null
           },
           "animacion": {
             "tiene": true,
@@ -609,15 +739,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "783px",
-            "offsetY": "138px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "783px",
+            "y": "138px",
+            "porPixeles": true,
             "zIndex": 14
           },
           "tamano": {
             "ancho": null,
             "alto": null
+          },
+          "estilos": {
+            "familia": "Raleway",
+            "tamano": "20px",
+            "grosor": "600",
+            "interlineado": "20px",
+            "espaciadoLetras": null,
+            "alineacion": null,
+            "color": "rgba(255,255,255,1)",
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "WebProduct-Title-Light"
           },
           "animacion": {
             "tiene": true,
@@ -634,16 +777,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Ralla.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "754px",
-            "offsetY": "152px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "754px",
+            "y": "152px",
+            "porPixeles": true,
             "zIndex": 9
           },
           "tamano": {
             "ancho": "229px",
             "alto": "23px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -659,16 +804,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Ebook-elastic.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "710px",
-            "offsetY": "89px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "710px",
+            "y": "89px",
+            "porPixeles": true,
             "zIndex": 12
           },
           "tamano": {
             "ancho": "497px",
             "alto": "183px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -684,16 +831,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Ralla.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "736px",
-            "offsetY": "195px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "736px",
+            "y": "195px",
+            "porPixeles": true,
             "zIndex": 10
           },
           "tamano": {
             "ancho": "229px",
             "alto": "23px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -709,15 +858,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "773px",
-            "offsetY": "180px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "773px",
+            "y": "180px",
+            "porPixeles": true,
             "zIndex": 15
           },
           "tamano": {
             "ancho": null,
             "alto": null
+          },
+          "estilos": {
+            "familia": "Raleway",
+            "tamano": "20px",
+            "grosor": "600",
+            "interlineado": "20px",
+            "espaciadoLetras": null,
+            "alineacion": null,
+            "color": "rgba(255,255,255,1)",
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "WebProduct-Title-Light"
           },
           "animacion": {
             "tiene": true,
@@ -734,16 +896,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Ralla.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "716px",
-            "offsetY": "238px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "716px",
+            "y": "238px",
+            "porPixeles": true,
             "zIndex": 11
           },
           "tamano": {
             "ancho": "229px",
             "alto": "23px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -759,15 +923,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "741px",
-            "offsetY": "225px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "741px",
+            "y": "225px",
+            "porPixeles": true,
             "zIndex": 16
           },
           "tamano": {
             "ancho": null,
             "alto": null
+          },
+          "estilos": {
+            "familia": "Raleway",
+            "tamano": "20px",
+            "grosor": "600",
+            "interlineado": "20px",
+            "espaciadoLetras": null,
+            "alineacion": null,
+            "color": "rgba(255,255,255,1)",
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "WebProduct-Title-Light"
           },
           "animacion": {
             "tiene": true,
@@ -786,14 +963,16 @@
           "posicion": {
             "horizontal": "center",
             "vertical": "middle",
-            "offsetX": "-457px",
-            "offsetY": null,
+            "x": "-457px",
+            "y": null,
+            "porPixeles": false,
             "zIndex": 6
           },
           "tamano": {
             "ancho": "294px",
             "alto": "288px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -825,14 +1004,16 @@
           "posicion": {
             "horizontal": "center",
             "vertical": "middle",
-            "offsetX": null,
-            "offsetY": null,
+            "x": null,
+            "y": null,
+            "porPixeles": false,
             "zIndex": 10
           },
           "tamano": {
             "ancho": "1240px",
             "alto": "300px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -850,14 +1031,16 @@
           "posicion": {
             "horizontal": "center",
             "vertical": "middle",
-            "offsetX": null,
-            "offsetY": null,
+            "x": null,
+            "y": null,
+            "porPixeles": false,
             "zIndex": 7
           },
           "tamano": {
             "ancho": "1240px",
             "alto": "300px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -875,14 +1058,16 @@
           "posicion": {
             "horizontal": "center",
             "vertical": "middle",
-            "offsetX": null,
-            "offsetY": "6px",
+            "x": null,
+            "y": "6px",
+            "porPixeles": false,
             "zIndex": 8
           },
           "tamano": {
             "ancho": "1240px",
             "alto": "300px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -900,14 +1085,16 @@
           "posicion": {
             "horizontal": "center",
             "vertical": "middle",
-            "offsetX": null,
-            "offsetY": null,
+            "x": null,
+            "y": null,
+            "porPixeles": false,
             "zIndex": 9
           },
           "tamano": {
             "ancho": "1240px",
             "alto": "300px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -923,15 +1110,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "625px",
-            "offsetY": "15px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "625px",
+            "y": "15px",
+            "porPixeles": true,
             "zIndex": 6
           },
           "tamano": {
             "ancho": null,
             "alto": null
+          },
+          "estilos": {
+            "familia": "Georgia, serif",
+            "tamano": "40px",
+            "grosor": null,
+            "interlineado": "20px",
+            "espaciadoLetras": null,
+            "alineacion": null,
+            "color": "rgba(0,0,0,1)",
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "Furniture-Subtitle"
           },
           "animacion": {
             "tiene": true,
@@ -948,15 +1148,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "552px",
-            "offsetY": "67px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "552px",
+            "y": "67px",
+            "porPixeles": true,
             "zIndex": 5
           },
           "tamano": {
             "ancho": "594px",
             "alto": null
+          },
+          "estilos": {
+            "familia": "Arial, Helvetica, sans-serif",
+            "tamano": "130px",
+            "grosor": null,
+            "interlineado": "100px",
+            "espaciadoLetras": null,
+            "alineacion": null,
+            "color": "rgba(0,53,112,1)",
+            "fondo": "transparent",
+            "radio": null,
+            "preset": null
           },
           "animacion": {
             "tiene": true,
@@ -973,15 +1186,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "714px",
-            "offsetY": "175px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "714px",
+            "y": "175px",
+            "porPixeles": true,
             "zIndex": 11
           },
           "tamano": {
             "ancho": "278px",
             "alto": "44px"
+          },
+          "estilos": {
+            "familia": null,
+            "tamano": "17px",
+            "grosor": "500",
+            "interlineado": "17px",
+            "espaciadoLetras": null,
+            "alineacion": null,
+            "color": "rgba(39,83,130,1)",
+            "fondo": "rgba(255,255,255,0.75)",
+            "radio": null,
+            "preset": null
           },
           "animacion": {
             "tiene": true,
@@ -1014,14 +1240,16 @@
           "posicion": {
             "horizontal": "center",
             "vertical": "middle",
-            "offsetX": null,
-            "offsetY": null,
+            "x": null,
+            "y": null,
+            "porPixeles": false,
             "zIndex": 10
           },
           "tamano": {
             "ancho": "1240px",
             "alto": "300px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -1039,14 +1267,16 @@
           "posicion": {
             "horizontal": "center",
             "vertical": "middle",
-            "offsetX": null,
-            "offsetY": null,
+            "x": null,
+            "y": null,
+            "porPixeles": false,
             "zIndex": 7
           },
           "tamano": {
             "ancho": "1240px",
             "alto": "300px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -1064,14 +1294,16 @@
           "posicion": {
             "horizontal": "center",
             "vertical": "middle",
-            "offsetX": null,
-            "offsetY": "6px",
+            "x": null,
+            "y": "6px",
+            "porPixeles": false,
             "zIndex": 8
           },
           "tamano": {
             "ancho": "1240px",
             "alto": "300px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -1089,14 +1321,16 @@
           "posicion": {
             "horizontal": "center",
             "vertical": "middle",
-            "offsetX": null,
-            "offsetY": null,
+            "x": null,
+            "y": null,
+            "porPixeles": false,
             "zIndex": 9
           },
           "tamano": {
             "ancho": "1240px",
             "alto": "300px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -1112,15 +1346,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "625px",
-            "offsetY": "15px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "625px",
+            "y": "15px",
+            "porPixeles": true,
             "zIndex": 6
           },
           "tamano": {
             "ancho": null,
             "alto": null
+          },
+          "estilos": {
+            "familia": "Georgia, serif",
+            "tamano": "40px",
+            "grosor": null,
+            "interlineado": "20px",
+            "espaciadoLetras": null,
+            "alineacion": null,
+            "color": "rgba(0,0,0,1)",
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "Furniture-Subtitle"
           },
           "animacion": {
             "tiene": true,
@@ -1137,15 +1384,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "508px",
-            "offsetY": "67px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "508px",
+            "y": "67px",
+            "porPixeles": true,
             "zIndex": 5
           },
           "tamano": {
             "ancho": "594px",
             "alto": null
+          },
+          "estilos": {
+            "familia": "Arial, Helvetica, sans-serif",
+            "tamano": "130px",
+            "grosor": null,
+            "interlineado": "100px",
+            "espaciadoLetras": null,
+            "alineacion": null,
+            "color": "rgba(0,53,112,1)",
+            "fondo": "transparent",
+            "radio": null,
+            "preset": null
           },
           "animacion": {
             "tiene": true,
@@ -1162,15 +1422,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "714px",
-            "offsetY": "175px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "714px",
+            "y": "175px",
+            "porPixeles": true,
             "zIndex": 11
           },
           "tamano": {
             "ancho": "278px",
             "alto": "44px"
+          },
+          "estilos": {
+            "familia": null,
+            "tamano": "17px",
+            "grosor": "500",
+            "interlineado": "17px",
+            "espaciadoLetras": null,
+            "alineacion": null,
+            "color": "rgba(39,83,130,1)",
+            "fondo": "rgba(255,255,255,0.75)",
+            "radio": null,
+            "preset": null
           },
           "animacion": {
             "tiene": true,
@@ -1203,14 +1476,16 @@
           "posicion": {
             "horizontal": "center",
             "vertical": "middle",
-            "offsetX": null,
-            "offsetY": null,
+            "x": null,
+            "y": null,
+            "porPixeles": false,
             "zIndex": 6
           },
           "tamano": {
             "ancho": "1240px",
             "alto": "300px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -1226,16 +1501,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Man.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "359px",
-            "offsetY": "141px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "359px",
+            "y": "141px",
+            "porPixeles": true,
             "zIndex": 7
           },
           "tamano": {
             "ancho": "104px",
             "alto": "154px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -1251,16 +1528,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Hearth.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "358px",
-            "offsetY": "143px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "358px",
+            "y": "143px",
+            "porPixeles": true,
             "zIndex": 8
           },
           "tamano": {
             "ancho": "104px",
             "alto": "154px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -1276,16 +1555,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Man-Hearth.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "267px",
-            "offsetY": "141px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "267px",
+            "y": "141px",
+            "porPixeles": true,
             "zIndex": 9
           },
           "tamano": {
             "ancho": "104px",
             "alto": "154px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -1303,13 +1584,26 @@
           "posicion": {
             "horizontal": "center",
             "vertical": "middle",
-            "offsetX": "-208px",
-            "offsetY": "-85px",
+            "x": "-208px",
+            "y": "-85px",
+            "porPixeles": false,
             "zIndex": 5
           },
           "tamano": {
             "ancho": "787px",
             "alto": null
+          },
+          "estilos": {
+            "familia": "Belleza",
+            "tamano": "135px",
+            "grosor": null,
+            "interlineado": "150px",
+            "espaciadoLetras": null,
+            "alineacion": null,
+            "color": "rgba(10,0,8,1)",
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "Furniture-LogoText"
           },
           "animacion": {
             "tiene": true,
@@ -1326,16 +1620,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Man-Hearth.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "451px",
-            "offsetY": "141px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "451px",
+            "y": "141px",
+            "porPixeles": true,
             "zIndex": 10
           },
           "tamano": {
             "ancho": "104px",
             "alto": "154px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -1351,16 +1647,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Man-Hearth.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "175px",
-            "offsetY": "141px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "175px",
+            "y": "141px",
+            "porPixeles": true,
             "zIndex": 11
           },
           "tamano": {
             "ancho": "104px",
             "alto": "154px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -1376,16 +1674,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Man-Hearth.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "543px",
-            "offsetY": "141px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "543px",
+            "y": "141px",
+            "porPixeles": true,
             "zIndex": 12
           },
           "tamano": {
             "ancho": "104px",
             "alto": "154px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -1401,16 +1701,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Man-Hearth.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "83px",
-            "offsetY": "141px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "83px",
+            "y": "141px",
+            "porPixeles": true,
             "zIndex": 13
           },
           "tamano": {
             "ancho": "104px",
             "alto": "154px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -1426,16 +1728,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Man-Hearth.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "635px",
-            "offsetY": "141px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "635px",
+            "y": "141px",
+            "porPixeles": true,
             "zIndex": 14
           },
           "tamano": {
             "ancho": "104px",
             "alto": "154px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -1451,16 +1755,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Man-Hearth.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "-9px",
-            "offsetY": "141px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "-9px",
+            "y": "141px",
+            "porPixeles": true,
             "zIndex": 15
           },
           "tamano": {
             "ancho": "104px",
             "alto": "154px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -1476,16 +1782,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Man-Hearth.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "727px",
-            "offsetY": "141px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "727px",
+            "y": "141px",
+            "porPixeles": true,
             "zIndex": 16
           },
           "tamano": {
             "ancho": "104px",
             "alto": "154px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -1503,14 +1811,16 @@
           "posicion": {
             "horizontal": "center",
             "vertical": "middle",
-            "offsetX": null,
-            "offsetY": null,
+            "x": null,
+            "y": null,
+            "porPixeles": false,
             "zIndex": 17
           },
           "tamano": {
             "ancho": "1240px",
             "alto": "300px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -1542,14 +1852,16 @@
           "posicion": {
             "horizontal": "center",
             "vertical": "middle",
-            "offsetX": null,
-            "offsetY": null,
+            "x": null,
+            "y": null,
+            "porPixeles": false,
             "zIndex": 6
           },
           "tamano": {
             "ancho": "1240px",
             "alto": "300px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -1565,16 +1877,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Man.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "359px",
-            "offsetY": "141px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "359px",
+            "y": "141px",
+            "porPixeles": true,
             "zIndex": 7
           },
           "tamano": {
             "ancho": "104px",
             "alto": "154px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -1590,16 +1904,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Hearth.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "358px",
-            "offsetY": "143px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "358px",
+            "y": "143px",
+            "porPixeles": true,
             "zIndex": 8
           },
           "tamano": {
             "ancho": "104px",
             "alto": "154px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -1615,16 +1931,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Man-Hearth.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "267px",
-            "offsetY": "141px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "267px",
+            "y": "141px",
+            "porPixeles": true,
             "zIndex": 9
           },
           "tamano": {
             "ancho": "104px",
             "alto": "154px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -1642,13 +1960,26 @@
           "posicion": {
             "horizontal": "center",
             "vertical": "middle",
-            "offsetX": "-209px",
-            "offsetY": "-85px",
+            "x": "-209px",
+            "y": "-85px",
+            "porPixeles": false,
             "zIndex": 5
           },
           "tamano": {
             "ancho": "663px",
             "alto": "151px"
+          },
+          "estilos": {
+            "familia": "Belleza",
+            "tamano": "160px",
+            "grosor": null,
+            "interlineado": "150px",
+            "espaciadoLetras": null,
+            "alineacion": null,
+            "color": "rgba(10,0,8,1)",
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "Furniture-LogoText"
           },
           "animacion": {
             "tiene": true,
@@ -1665,16 +1996,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Man-Hearth.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "451px",
-            "offsetY": "141px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "451px",
+            "y": "141px",
+            "porPixeles": true,
             "zIndex": 10
           },
           "tamano": {
             "ancho": "104px",
             "alto": "154px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -1690,16 +2023,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Man-Hearth.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "175px",
-            "offsetY": "141px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "175px",
+            "y": "141px",
+            "porPixeles": true,
             "zIndex": 11
           },
           "tamano": {
             "ancho": "104px",
             "alto": "154px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -1715,16 +2050,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Man-Hearth.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "543px",
-            "offsetY": "141px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "543px",
+            "y": "141px",
+            "porPixeles": true,
             "zIndex": 12
           },
           "tamano": {
             "ancho": "104px",
             "alto": "154px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -1740,16 +2077,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Man-Hearth.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "83px",
-            "offsetY": "141px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "83px",
+            "y": "141px",
+            "porPixeles": true,
             "zIndex": 13
           },
           "tamano": {
             "ancho": "104px",
             "alto": "154px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -1765,16 +2104,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Man-Hearth.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "635px",
-            "offsetY": "141px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "635px",
+            "y": "141px",
+            "porPixeles": true,
             "zIndex": 14
           },
           "tamano": {
             "ancho": "104px",
             "alto": "154px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -1790,16 +2131,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Man-Hearth.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "-9px",
-            "offsetY": "141px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "-9px",
+            "y": "141px",
+            "porPixeles": true,
             "zIndex": 15
           },
           "tamano": {
             "ancho": "104px",
             "alto": "154px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -1815,16 +2158,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Man-Hearth.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "727px",
-            "offsetY": "141px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "727px",
+            "y": "141px",
+            "porPixeles": true,
             "zIndex": 16
           },
           "tamano": {
             "ancho": "104px",
             "alto": "154px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -1842,14 +2187,16 @@
           "posicion": {
             "horizontal": "center",
             "vertical": "middle",
-            "offsetX": null,
-            "offsetY": null,
+            "x": null,
+            "y": null,
+            "porPixeles": false,
             "zIndex": 17
           },
           "tamano": {
             "ancho": "1240px",
             "alto": "300px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -1883,15 +2230,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "34px",
-            "offsetY": "202px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "34px",
+            "y": "202px",
+            "porPixeles": true,
             "zIndex": 6
           },
           "tamano": {
             "ancho": "665px",
             "alto": null
+          },
+          "estilos": {
+            "familia": "Martel Sans",
+            "tamano": "39px",
+            "grosor": "700",
+            "interlineado": "35px",
+            "espaciadoLetras": "0px",
+            "alineacion": null,
+            "color": null,
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "Fashion-BigDisplay"
           },
           "animacion": {
             "tiene": true,
@@ -1908,16 +2268,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/games-banner-barra.jpg",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": null,
-            "offsetY": "189px",
+            "horizontal": null,
+            "vertical": null,
+            "x": null,
+            "y": "189px",
+            "porPixeles": true,
             "zIndex": 5
           },
           "tamano": {
             "ancho": "668px",
             "alto": "58px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -1933,16 +2295,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/games-banner-logo.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "47px",
-            "offsetY": "41px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "47px",
+            "y": "41px",
+            "porPixeles": true,
             "zIndex": 7
           },
           "tamano": {
             "ancho": "956px",
             "alto": "163px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -1958,16 +2322,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/games-banner-amarillo.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "514px",
-            "offsetY": null,
+            "horizontal": null,
+            "vertical": null,
+            "x": "514px",
+            "y": null,
+            "porPixeles": true,
             "zIndex": 8
           },
           "tamano": {
             "ancho": "589px",
             "alto": "87px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -1983,16 +2349,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/games-banner-rosado.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "365px",
-            "offsetY": "170px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "365px",
+            "y": "170px",
+            "porPixeles": true,
             "zIndex": 9
           },
           "tamano": {
             "ancho": "876px",
             "alto": "131px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -2026,15 +2394,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "18px",
-            "offsetY": "62px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "18px",
+            "y": "62px",
+            "porPixeles": true,
             "zIndex": 6
           },
           "tamano": {
             "ancho": "665px",
             "alto": null
+          },
+          "estilos": {
+            "familia": "Arial",
+            "tamano": "70px",
+            "grosor": "700",
+            "interlineado": "55px",
+            "espaciadoLetras": "-3px",
+            "alineacion": null,
+            "color": "#fff",
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -2051,16 +2432,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/ve-banner-bandera.jpg",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": null,
-            "offsetY": "30px",
+            "horizontal": null,
+            "vertical": null,
+            "x": null,
+            "y": "30px",
+            "porPixeles": true,
             "zIndex": 5
           },
           "tamano": {
             "ancho": "818px",
             "alto": "177px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -2076,15 +2459,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "18px",
-            "offsetY": "134px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "18px",
+            "y": "134px",
+            "porPixeles": true,
             "zIndex": 7
           },
           "tamano": {
             "ancho": "893px",
             "alto": "122px"
+          },
+          "estilos": {
+            "familia": "Arial",
+            "tamano": "85px",
+            "grosor": "700",
+            "interlineado": "60px",
+            "espaciadoLetras": "-4px",
+            "alineacion": null,
+            "color": "#fff",
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -2101,15 +2497,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "17px",
-            "offsetY": "228px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "17px",
+            "y": "228px",
+            "porPixeles": true,
             "zIndex": 8
           },
           "tamano": {
             "ancho": "1031px",
             "alto": "122px"
+          },
+          "estilos": {
+            "familia": "Arial",
+            "tamano": "54px",
+            "grosor": "700",
+            "interlineado": "60px",
+            "espaciadoLetras": "-2px",
+            "alineacion": null,
+            "color": "#003f72",
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -2126,16 +2535,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/ve-banner-map.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "857px",
-            "offsetY": "16px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "857px",
+            "y": "16px",
+            "porPixeles": true,
             "zIndex": 9
           },
           "tamano": {
             "ancho": "360px",
             "alto": "269px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -2151,16 +2562,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/ve-banner-corazon.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "1002px",
-            "offsetY": "93px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "1002px",
+            "y": "93px",
+            "porPixeles": true,
             "zIndex": 10
           },
           "tamano": {
             "ancho": "100px",
             "alto": "85px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -2194,15 +2607,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "19px",
-            "offsetY": "62px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "19px",
+            "y": "62px",
+            "porPixeles": true,
             "zIndex": 6
           },
           "tamano": {
             "ancho": "665px",
             "alto": null
+          },
+          "estilos": {
+            "familia": "Arial",
+            "tamano": "75px",
+            "grosor": "700",
+            "interlineado": "55px",
+            "espaciadoLetras": "-3px",
+            "alineacion": null,
+            "color": "#fff",
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -2219,16 +2645,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/ve-banner-bandera.jpg",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": null,
-            "offsetY": "30px",
+            "horizontal": null,
+            "vertical": null,
+            "x": null,
+            "y": "30px",
+            "porPixeles": true,
             "zIndex": 5
           },
           "tamano": {
             "ancho": "818px",
             "alto": "177px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -2244,15 +2672,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "19px",
-            "offsetY": "136px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "19px",
+            "y": "136px",
+            "porPixeles": true,
             "zIndex": 7
           },
           "tamano": {
             "ancho": "893px",
             "alto": "122px"
+          },
+          "estilos": {
+            "familia": "Arial",
+            "tamano": "85px",
+            "grosor": "700",
+            "interlineado": "60px",
+            "espaciadoLetras": "-4px",
+            "alineacion": null,
+            "color": "#fff",
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -2269,15 +2710,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "17px",
-            "offsetY": "228px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "17px",
+            "y": "228px",
+            "porPixeles": true,
             "zIndex": 8
           },
           "tamano": {
             "ancho": "1031px",
             "alto": "122px"
+          },
+          "estilos": {
+            "familia": "Arial",
+            "tamano": "54px",
+            "grosor": "700",
+            "interlineado": "60px",
+            "espaciadoLetras": "-2px",
+            "alineacion": null,
+            "color": "#003f72",
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -2294,16 +2748,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/ve-banner-map.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "857px",
-            "offsetY": "16px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "857px",
+            "y": "16px",
+            "porPixeles": true,
             "zIndex": 9
           },
           "tamano": {
             "ancho": "360px",
             "alto": "269px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -2319,16 +2775,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/ve-banner-corazon.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "1002px",
-            "offsetY": "93px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "1002px",
+            "y": "93px",
+            "porPixeles": true,
             "zIndex": 10
           },
           "tamano": {
             "ancho": "100px",
             "alto": "85px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -2362,15 +2820,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "18px",
-            "offsetY": "59px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "18px",
+            "y": "59px",
+            "porPixeles": true,
             "zIndex": 6
           },
           "tamano": {
             "ancho": "665px",
             "alto": null
+          },
+          "estilos": {
+            "familia": "Arial",
+            "tamano": "70px",
+            "grosor": "700",
+            "interlineado": "55px",
+            "espaciadoLetras": "-3px",
+            "alineacion": null,
+            "color": "#fff",
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -2387,16 +2858,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/ve-banner-bandera.jpg",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": null,
-            "offsetY": "30px",
+            "horizontal": null,
+            "vertical": null,
+            "x": null,
+            "y": "30px",
+            "porPixeles": true,
             "zIndex": 5
           },
           "tamano": {
             "ancho": "818px",
             "alto": "177px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -2412,15 +2885,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "18px",
-            "offsetY": "134px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "18px",
+            "y": "134px",
+            "porPixeles": true,
             "zIndex": 7
           },
           "tamano": {
             "ancho": "893px",
             "alto": "122px"
+          },
+          "estilos": {
+            "familia": "Arial",
+            "tamano": "85px",
+            "grosor": "700",
+            "interlineado": "60px",
+            "espaciadoLetras": "-4px",
+            "alineacion": null,
+            "color": "#fff",
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -2437,15 +2923,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "17px",
-            "offsetY": "228px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "17px",
+            "y": "228px",
+            "porPixeles": true,
             "zIndex": 8
           },
           "tamano": {
             "ancho": "1031px",
             "alto": "122px"
+          },
+          "estilos": {
+            "familia": "Arial",
+            "tamano": "47px",
+            "grosor": "700",
+            "interlineado": "60px",
+            "espaciadoLetras": "-2px",
+            "alineacion": null,
+            "color": "#003f72",
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -2462,16 +2961,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/ve-banner-map.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "857px",
-            "offsetY": "16px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "857px",
+            "y": "16px",
+            "porPixeles": true,
             "zIndex": 9
           },
           "tamano": {
             "ancho": "360px",
             "alto": "269px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -2487,16 +2988,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/ve-banner-corazon.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "1002px",
-            "offsetY": "93px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "1002px",
+            "y": "93px",
+            "porPixeles": true,
             "zIndex": 10
           },
           "tamano": {
             "ancho": "100px",
             "alto": "85px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -2530,15 +3033,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "33px",
-            "offsetY": "202px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "33px",
+            "y": "202px",
+            "porPixeles": true,
             "zIndex": 6
           },
           "tamano": {
             "ancho": "665px",
             "alto": null
+          },
+          "estilos": {
+            "familia": "Martel Sans",
+            "tamano": "40px",
+            "grosor": "700",
+            "interlineado": "35px",
+            "espaciadoLetras": "0px",
+            "alineacion": null,
+            "color": null,
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "Fashion-BigDisplay"
           },
           "animacion": {
             "tiene": true,
@@ -2555,16 +3071,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/games-banner-barra.jpg",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": null,
-            "offsetY": "189px",
+            "horizontal": null,
+            "vertical": null,
+            "x": null,
+            "y": "189px",
+            "porPixeles": true,
             "zIndex": 5
           },
           "tamano": {
             "ancho": "668px",
             "alto": "58px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -2580,16 +3098,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/games-banner-logo.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "47px",
-            "offsetY": "41px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "47px",
+            "y": "41px",
+            "porPixeles": true,
             "zIndex": 7
           },
           "tamano": {
             "ancho": "956px",
             "alto": "163px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -2605,16 +3125,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/games-banner-amarillo.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "514px",
-            "offsetY": null,
+            "horizontal": null,
+            "vertical": null,
+            "x": "514px",
+            "y": null,
+            "porPixeles": true,
             "zIndex": 8
           },
           "tamano": {
             "ancho": "589px",
             "alto": "87px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -2630,16 +3152,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/games-banner-rosado.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "365px",
-            "offsetY": "171px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "365px",
+            "y": "171px",
+            "porPixeles": true,
             "zIndex": 9
           },
           "tamano": {
             "ancho": "876px",
             "alto": "131px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -2673,15 +3197,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "635px",
-            "offsetY": "18px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "635px",
+            "y": "18px",
+            "porPixeles": true,
             "zIndex": 6
           },
           "tamano": {
             "ancho": "422px",
             "alto": "56px"
+          },
+          "estilos": {
+            "familia": "Arial",
+            "tamano": "60px",
+            "grosor": "700",
+            "interlineado": "55px",
+            "espaciadoLetras": "-3px",
+            "alineacion": null,
+            "color": "#d7b35b",
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -2698,15 +3235,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "526px",
-            "offsetY": "78px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "526px",
+            "y": "78px",
+            "porPixeles": true,
             "zIndex": 7
           },
           "tamano": {
             "ancho": "675px",
             "alto": "61px"
+          },
+          "estilos": {
+            "familia": "Arial",
+            "tamano": "75px",
+            "grosor": "700",
+            "interlineado": "60px",
+            "espaciadoLetras": "-4px",
+            "alineacion": null,
+            "color": "#d7b35b",
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -2723,15 +3273,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "539px",
-            "offsetY": "162px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "539px",
+            "y": "162px",
+            "porPixeles": true,
             "zIndex": 8
           },
           "tamano": {
             "ancho": "647px",
             "alto": null
+          },
+          "estilos": {
+            "familia": "Actor",
+            "tamano": "55px",
+            "grosor": null,
+            "interlineado": "60px",
+            "espaciadoLetras": "2px",
+            "alineacion": null,
+            "color": null,
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -2748,16 +3311,18 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "499px",
-            "offsetY": "148px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "499px",
+            "y": "148px",
+            "porPixeles": true,
             "zIndex": 5
           },
           "tamano": {
             "ancho": "741px",
             "alto": "136px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -2773,15 +3338,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "542px",
-            "offsetY": "207px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "542px",
+            "y": "207px",
+            "porPixeles": true,
             "zIndex": 9
           },
           "tamano": {
             "ancho": "647px",
             "alto": null
+          },
+          "estilos": {
+            "familia": "Actor",
+            "tamano": "28px",
+            "grosor": null,
+            "interlineado": "60px",
+            "espaciadoLetras": "-1px",
+            "alineacion": null,
+            "color": null,
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -2798,16 +3376,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/pagos-banner-logotipo.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "111px",
-            "offsetY": "63px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "111px",
+            "y": "63px",
+            "porPixeles": true,
             "zIndex": 10
           },
           "tamano": {
             "ancho": "206px",
             "alto": "176px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -2842,14 +3422,27 @@
           "alt": null,
           "posicion": {
             "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "256px",
-            "offsetY": "18px",
+            "vertical": null,
+            "x": "256px",
+            "y": "18px",
+            "porPixeles": false,
             "zIndex": 6
           },
           "tamano": {
             "ancho": "246px",
             "alto": "57px"
+          },
+          "estilos": {
+            "familia": "Arial",
+            "tamano": "60px",
+            "grosor": "700",
+            "interlineado": "55px",
+            "espaciadoLetras": "-3px",
+            "alineacion": null,
+            "color": "#d7b35b",
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -2867,14 +3460,27 @@
           "alt": null,
           "posicion": {
             "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "245px",
-            "offsetY": "78px",
+            "vertical": null,
+            "x": "245px",
+            "y": "78px",
+            "porPixeles": false,
             "zIndex": 7
           },
           "tamano": {
             "ancho": "675px",
             "alto": "61px"
+          },
+          "estilos": {
+            "familia": "Arial",
+            "tamano": "75px",
+            "grosor": "700",
+            "interlineado": "60px",
+            "espaciadoLetras": "-4px",
+            "alineacion": null,
+            "color": "#d7b35b",
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -2891,15 +3497,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "539px",
-            "offsetY": "162px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "539px",
+            "y": "162px",
+            "porPixeles": true,
             "zIndex": 8
           },
           "tamano": {
             "ancho": "647px",
             "alto": null
+          },
+          "estilos": {
+            "familia": "Actor",
+            "tamano": "52px",
+            "grosor": null,
+            "interlineado": "60px",
+            "espaciadoLetras": "2px",
+            "alineacion": null,
+            "color": null,
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -2917,15 +3536,17 @@
           "alt": null,
           "posicion": {
             "horizontal": "right",
-            "vertical": "middle",
-            "offsetX": null,
-            "offsetY": "148px",
+            "vertical": null,
+            "x": null,
+            "y": "148px",
+            "porPixeles": false,
             "zIndex": 5
           },
           "tamano": {
             "ancho": "741px",
             "alto": "133px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -2941,15 +3562,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "542px",
-            "offsetY": "207px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "542px",
+            "y": "207px",
+            "porPixeles": true,
             "zIndex": 9
           },
           "tamano": {
             "ancho": "647px",
             "alto": null
+          },
+          "estilos": {
+            "familia": "Actor",
+            "tamano": "29px",
+            "grosor": null,
+            "interlineado": "60px",
+            "espaciadoLetras": "0px",
+            "alineacion": null,
+            "color": null,
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -2966,16 +3600,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/pagos-banner-logotipo.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "111px",
-            "offsetY": "63px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "111px",
+            "y": "63px",
+            "porPixeles": true,
             "zIndex": 10
           },
           "tamano": {
             "ancho": "206px",
             "alto": "176px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -3010,14 +3646,27 @@
           "alt": null,
           "posicion": {
             "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "248px",
-            "offsetY": "10px",
+            "vertical": null,
+            "x": "248px",
+            "y": "10px",
+            "porPixeles": false,
             "zIndex": 6
           },
           "tamano": {
             "ancho": "352px",
             "alto": "57px"
+          },
+          "estilos": {
+            "familia": "Arial",
+            "tamano": "60px",
+            "grosor": "700",
+            "interlineado": "55px",
+            "espaciadoLetras": "-3px",
+            "alineacion": null,
+            "color": "#d7b35b",
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -3035,14 +3684,27 @@
           "alt": null,
           "posicion": {
             "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "246px",
-            "offsetY": "78px",
+            "vertical": null,
+            "x": "246px",
+            "y": "78px",
+            "porPixeles": false,
             "zIndex": 7
           },
           "tamano": {
             "ancho": "675px",
             "alto": "61px"
+          },
+          "estilos": {
+            "familia": "Arial",
+            "tamano": "75px",
+            "grosor": "700",
+            "interlineado": "60px",
+            "espaciadoLetras": "-4px",
+            "alineacion": null,
+            "color": "#d7b35b",
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -3059,15 +3721,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "539px",
-            "offsetY": "162px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "539px",
+            "y": "162px",
+            "porPixeles": true,
             "zIndex": 8
           },
           "tamano": {
             "ancho": "647px",
             "alto": null
+          },
+          "estilos": {
+            "familia": "Actor",
+            "tamano": "51px",
+            "grosor": null,
+            "interlineado": "60px",
+            "espaciadoLetras": "0px",
+            "alineacion": null,
+            "color": null,
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -3084,16 +3759,18 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "499px",
-            "offsetY": "148px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "499px",
+            "y": "148px",
+            "porPixeles": true,
             "zIndex": 5
           },
           "tamano": {
             "ancho": "741px",
             "alto": "133px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -3109,15 +3786,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "542px",
-            "offsetY": "207px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "542px",
+            "y": "207px",
+            "porPixeles": true,
             "zIndex": 9
           },
           "tamano": {
             "ancho": "666px",
             "alto": "61px"
+          },
+          "estilos": {
+            "familia": "Actor",
+            "tamano": "28px",
+            "grosor": null,
+            "interlineado": "60px",
+            "espaciadoLetras": "0px",
+            "alineacion": null,
+            "color": null,
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -3134,16 +3824,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/pagos-banner-logotipo.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "111px",
-            "offsetY": "63px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "111px",
+            "y": "63px",
+            "porPixeles": true,
             "zIndex": 10
           },
           "tamano": {
             "ancho": "206px",
             "alto": "176px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -3178,14 +3870,27 @@
           "alt": null,
           "posicion": {
             "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": null,
-            "offsetY": "72px",
+            "vertical": null,
+            "x": null,
+            "y": "72px",
+            "porPixeles": false,
             "zIndex": 5
           },
           "tamano": {
             "ancho": "442px",
             "alto": null
+          },
+          "estilos": {
+            "familia": "Arial",
+            "tamano": "80px",
+            "grosor": "700",
+            "interlineado": "55px",
+            "espaciadoLetras": "0px",
+            "alineacion": null,
+            "color": "#ffc370",
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -3202,16 +3907,18 @@
           "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/unity-banner-B.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
+            "horizontal": null,
             "vertical": "middle",
-            "offsetX": "862px",
-            "offsetY": "5px",
+            "x": "862px",
+            "y": "5px",
+            "porPixeles": false,
             "zIndex": 6
           },
           "tamano": {
             "ancho": "240px",
             "alto": "236px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -3227,16 +3934,18 @@
           "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/unity-banner-A.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
+            "horizontal": null,
             "vertical": "middle",
-            "offsetX": "145px",
-            "offsetY": "5px",
+            "x": "145px",
+            "y": "5px",
+            "porPixeles": false,
             "zIndex": 7
           },
           "tamano": {
             "ancho": "240px",
             "alto": "236px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -3253,14 +3962,27 @@
           "alt": null,
           "posicion": {
             "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "-527px",
-            "offsetY": "186px",
+            "vertical": null,
+            "x": "-527px",
+            "y": "186px",
+            "porPixeles": false,
             "zIndex": 8
           },
           "tamano": {
             "ancho": "128px",
             "alto": "57px"
+          },
+          "estilos": {
+            "familia": "Arial",
+            "tamano": "55px",
+            "grosor": "700",
+            "interlineado": "55px",
+            "espaciadoLetras": "0px",
+            "alineacion": null,
+            "color": null,
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -3278,14 +4000,27 @@
           "alt": null,
           "posicion": {
             "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "4px",
-            "offsetY": "146px",
+            "vertical": null,
+            "x": "4px",
+            "y": "146px",
+            "porPixeles": false,
             "zIndex": 9
           },
           "tamano": {
             "ancho": "440px",
             "alto": "56px"
+          },
+          "estilos": {
+            "familia": "Arial",
+            "tamano": "30px",
+            "grosor": "700",
+            "interlineado": "55px",
+            "espaciadoLetras": "0px",
+            "alineacion": null,
+            "color": null,
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -3303,14 +4038,27 @@
           "alt": null,
           "posicion": {
             "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "20px",
-            "offsetY": "189px",
+            "vertical": null,
+            "x": "20px",
+            "y": "189px",
+            "porPixeles": false,
             "zIndex": 10
           },
           "tamano": {
             "ancho": "503px",
             "alto": "57px"
+          },
+          "estilos": {
+            "familia": "Arial",
+            "tamano": "50px",
+            "grosor": "700",
+            "interlineado": "55px",
+            "espaciadoLetras": "0px",
+            "alineacion": null,
+            "color": null,
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -3327,16 +4075,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/unity-banner-theoriginal.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "1033px",
-            "offsetY": "98px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "1033px",
+            "y": "98px",
+            "porPixeles": true,
             "zIndex": 11
           },
           "tamano": {
             "ancho": "205px",
             "alto": "203px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -3371,14 +4121,27 @@
           "alt": null,
           "posicion": {
             "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": null,
-            "offsetY": "72px",
+            "vertical": null,
+            "x": null,
+            "y": "72px",
+            "porPixeles": false,
             "zIndex": 5
           },
           "tamano": {
             "ancho": "442px",
             "alto": null
+          },
+          "estilos": {
+            "familia": "Arial",
+            "tamano": "80px",
+            "grosor": "700",
+            "interlineado": "55px",
+            "espaciadoLetras": "0px",
+            "alineacion": null,
+            "color": "#ffc370",
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -3395,16 +4158,18 @@
           "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/unity-banner-B.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
+            "horizontal": null,
             "vertical": "middle",
-            "offsetX": "862px",
-            "offsetY": "5px",
+            "x": "862px",
+            "y": "5px",
+            "porPixeles": false,
             "zIndex": 6
           },
           "tamano": {
             "ancho": "240px",
             "alto": "236px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -3420,16 +4185,18 @@
           "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/unity-banner-A.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
+            "horizontal": null,
             "vertical": "middle",
-            "offsetX": "145px",
-            "offsetY": "5px",
+            "x": "145px",
+            "y": "5px",
+            "porPixeles": false,
             "zIndex": 7
           },
           "tamano": {
             "ancho": "240px",
             "alto": "236px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -3446,14 +4213,27 @@
           "alt": null,
           "posicion": {
             "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "-527px",
-            "offsetY": "186px",
+            "vertical": null,
+            "x": "-527px",
+            "y": "186px",
+            "porPixeles": false,
             "zIndex": 8
           },
           "tamano": {
             "ancho": "128px",
             "alto": "57px"
+          },
+          "estilos": {
+            "familia": "Arial",
+            "tamano": "55px",
+            "grosor": "700",
+            "interlineado": "55px",
+            "espaciadoLetras": "0px",
+            "alineacion": null,
+            "color": null,
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -3471,14 +4251,27 @@
           "alt": null,
           "posicion": {
             "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "1px",
-            "offsetY": "146px",
+            "vertical": null,
+            "x": "1px",
+            "y": "146px",
+            "porPixeles": false,
             "zIndex": 9
           },
           "tamano": {
             "ancho": "387px",
             "alto": "57px"
+          },
+          "estilos": {
+            "familia": "Arial",
+            "tamano": "45px",
+            "grosor": "700",
+            "interlineado": "50px",
+            "espaciadoLetras": "0px",
+            "alineacion": null,
+            "color": null,
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -3496,14 +4289,27 @@
           "alt": null,
           "posicion": {
             "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "3px",
-            "offsetY": "190px",
+            "vertical": null,
+            "x": "3px",
+            "y": "190px",
+            "porPixeles": false,
             "zIndex": 10
           },
           "tamano": {
             "ancho": "517px",
             "alto": "56px"
+          },
+          "estilos": {
+            "familia": "Arial",
+            "tamano": "57px",
+            "grosor": "700",
+            "interlineado": "55px",
+            "espaciadoLetras": "0px",
+            "alineacion": null,
+            "color": null,
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -3520,16 +4326,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/unity-banner-theoriginal.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "1033px",
-            "offsetY": "98px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "1033px",
+            "y": "98px",
+            "porPixeles": true,
             "zIndex": 11
           },
           "tamano": {
             "ancho": "205px",
             "alto": "203px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -3564,14 +4372,27 @@
           "alt": null,
           "posicion": {
             "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": null,
-            "offsetY": "72px",
+            "vertical": null,
+            "x": null,
+            "y": "72px",
+            "porPixeles": false,
             "zIndex": 5
           },
           "tamano": {
             "ancho": "442px",
             "alto": null
+          },
+          "estilos": {
+            "familia": "Arial",
+            "tamano": "80px",
+            "grosor": "700",
+            "interlineado": "55px",
+            "espaciadoLetras": "0px",
+            "alineacion": null,
+            "color": "#ffc370",
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -3588,16 +4409,18 @@
           "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/unity-banner-B.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
+            "horizontal": null,
             "vertical": "middle",
-            "offsetX": "862px",
-            "offsetY": "5px",
+            "x": "862px",
+            "y": "5px",
+            "porPixeles": false,
             "zIndex": 6
           },
           "tamano": {
             "ancho": "240px",
             "alto": "236"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -3613,16 +4436,18 @@
           "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/unity-banner-A.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
+            "horizontal": null,
             "vertical": "middle",
-            "offsetX": "145px",
-            "offsetY": "5px",
+            "x": "145px",
+            "y": "5px",
+            "porPixeles": false,
             "zIndex": 7
           },
           "tamano": {
             "ancho": "240px",
             "alto": "236"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -3639,14 +4464,27 @@
           "alt": null,
           "posicion": {
             "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "-527px",
-            "offsetY": "186px",
+            "vertical": null,
+            "x": "-527px",
+            "y": "186px",
+            "porPixeles": false,
             "zIndex": 8
           },
           "tamano": {
             "ancho": "128px",
             "alto": "57px"
+          },
+          "estilos": {
+            "familia": "Arial",
+            "tamano": "55px",
+            "grosor": "700",
+            "interlineado": "55px",
+            "espaciadoLetras": "0px",
+            "alineacion": null,
+            "color": null,
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -3664,14 +4502,27 @@
           "alt": null,
           "posicion": {
             "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "2px",
-            "offsetY": "146px",
+            "vertical": null,
+            "x": "2px",
+            "y": "146px",
+            "porPixeles": false,
             "zIndex": 9
           },
           "tamano": {
             "ancho": "440px",
             "alto": "56px"
+          },
+          "estilos": {
+            "familia": "Arial",
+            "tamano": "35px",
+            "grosor": "700",
+            "interlineado": "55px",
+            "espaciadoLetras": "0px",
+            "alineacion": null,
+            "color": null,
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -3689,14 +4540,27 @@
           "alt": null,
           "posicion": {
             "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": null,
-            "offsetY": "190px",
+            "vertical": null,
+            "x": null,
+            "y": "190px",
+            "porPixeles": false,
             "zIndex": 10
           },
           "tamano": {
             "ancho": "479px",
             "alto": "60px"
+          },
+          "estilos": {
+            "familia": "Arial",
+            "tamano": "57px",
+            "grosor": "700",
+            "interlineado": "55px",
+            "espaciadoLetras": "0px",
+            "alineacion": null,
+            "color": null,
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -3713,16 +4577,18 @@
           "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/unity-banner-theoriginal.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "1033px",
-            "offsetY": "98px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "1033px",
+            "y": "98px",
+            "porPixeles": true,
             "zIndex": 11
           },
           "tamano": {
             "ancho": "205px",
             "alto": "203px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -3756,15 +4622,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "22px",
-            "offsetY": "30px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "22px",
+            "y": "30px",
+            "porPixeles": true,
             "zIndex": 8
           },
           "tamano": {
             "ancho": "536px",
             "alto": null
+          },
+          "estilos": {
+            "familia": "Arial",
+            "tamano": "70px",
+            "grosor": "700",
+            "interlineado": "55px",
+            "espaciadoLetras": "0px",
+            "alineacion": null,
+            "color": null,
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -3781,15 +4660,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "21px",
-            "offsetY": "85px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "21px",
+            "y": "85px",
+            "porPixeles": true,
             "zIndex": 9
           },
           "tamano": {
             "ancho": "860px",
             "alto": null
+          },
+          "estilos": {
+            "familia": "Arial",
+            "tamano": "85px",
+            "grosor": "700",
+            "interlineado": "84px",
+            "espaciadoLetras": "0px",
+            "alineacion": null,
+            "color": null,
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -3806,15 +4698,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "13px",
-            "offsetY": "200px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "13px",
+            "y": "200px",
+            "porPixeles": true,
             "zIndex": 10
           },
           "tamano": {
             "ancho": "842px",
             "alto": null
+          },
+          "estilos": {
+            "familia": "Arimo",
+            "tamano": "40px",
+            "grosor": null,
+            "interlineado": "40px",
+            "espaciadoLetras": "0px",
+            "alineacion": null,
+            "color": "#002e60",
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "Fashion-BigDisplay"
           },
           "animacion": {
             "tiene": true,
@@ -3831,16 +4736,18 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "3px",
-            "offsetY": "194px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "3px",
+            "y": "194px",
+            "porPixeles": true,
             "zIndex": 5
           },
           "tamano": {
             "ancho": "865px",
             "alto": "96px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -3856,15 +4763,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "13px",
-            "offsetY": "242px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "13px",
+            "y": "242px",
+            "porPixeles": true,
             "zIndex": 11
           },
           "tamano": {
             "ancho": "842px",
             "alto": null
+          },
+          "estilos": {
+            "familia": "Arimo",
+            "tamano": "40px",
+            "grosor": null,
+            "interlineado": "40px",
+            "espaciadoLetras": "0px",
+            "alineacion": null,
+            "color": "#002e60",
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "Fashion-BigDisplay"
           },
           "animacion": {
             "tiene": true,
@@ -3881,16 +4801,18 @@
           "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/org-banner-mundo.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "927px",
-            "offsetY": "38px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "927px",
+            "y": "38px",
+            "porPixeles": true,
             "zIndex": 6
           },
           "tamano": {
             "ancho": "250px",
             "alto": "249px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -3906,16 +4828,18 @@
           "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/org-banner-bar.jpg",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "2px",
-            "offsetY": "8px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "2px",
+            "y": "8px",
+            "porPixeles": true,
             "zIndex": 7
           },
           "tamano": {
             "ancho": "865px",
             "alto": "178px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -3949,15 +4873,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "22px",
-            "offsetY": "30px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "22px",
+            "y": "30px",
+            "porPixeles": true,
             "zIndex": 8
           },
           "tamano": {
             "ancho": "536px",
             "alto": null
+          },
+          "estilos": {
+            "familia": "Arial",
+            "tamano": "70px",
+            "grosor": "700",
+            "interlineado": "55px",
+            "espaciadoLetras": "0px",
+            "alineacion": null,
+            "color": null,
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -3974,15 +4911,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "21px",
-            "offsetY": "85px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "21px",
+            "y": "85px",
+            "porPixeles": true,
             "zIndex": 9
           },
           "tamano": {
             "ancho": "860px",
             "alto": null
+          },
+          "estilos": {
+            "familia": "Arial",
+            "tamano": "85px",
+            "grosor": "700",
+            "interlineado": "84px",
+            "espaciadoLetras": "0px",
+            "alineacion": null,
+            "color": null,
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -3999,15 +4949,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "13px",
-            "offsetY": "199px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "13px",
+            "y": "199px",
+            "porPixeles": true,
             "zIndex": 10
           },
           "tamano": {
             "ancho": "842px",
             "alto": null
+          },
+          "estilos": {
+            "familia": "Arimo",
+            "tamano": "45px",
+            "grosor": null,
+            "interlineado": "40px",
+            "espaciadoLetras": "1px",
+            "alineacion": null,
+            "color": "#002e60",
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "Fashion-BigDisplay"
           },
           "animacion": {
             "tiene": true,
@@ -4024,16 +4987,18 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "3px",
-            "offsetY": "194px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "3px",
+            "y": "194px",
+            "porPixeles": true,
             "zIndex": 5
           },
           "tamano": {
             "ancho": "865px",
             "alto": "96px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -4049,15 +5014,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "13px",
-            "offsetY": "244px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "13px",
+            "y": "244px",
+            "porPixeles": true,
             "zIndex": 11
           },
           "tamano": {
             "ancho": "842px",
             "alto": null
+          },
+          "estilos": {
+            "familia": "Arimo",
+            "tamano": "48px",
+            "grosor": null,
+            "interlineado": "40px",
+            "espaciadoLetras": "1px",
+            "alineacion": null,
+            "color": "#002e60",
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "Fashion-BigDisplay"
           },
           "animacion": {
             "tiene": true,
@@ -4074,16 +5052,18 @@
           "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/org-banner-mundo.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "927px",
-            "offsetY": "38px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "927px",
+            "y": "38px",
+            "porPixeles": true,
             "zIndex": 6
           },
           "tamano": {
             "ancho": "250px",
             "alto": "249px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -4099,16 +5079,18 @@
           "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/org-banner-bar.jpg",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "2px",
-            "offsetY": "8px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "2px",
+            "y": "8px",
+            "porPixeles": true,
             "zIndex": 7
           },
           "tamano": {
             "ancho": "865px",
             "alto": "178px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -4142,15 +5124,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "22px",
-            "offsetY": "30px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "22px",
+            "y": "30px",
+            "porPixeles": true,
             "zIndex": 8
           },
           "tamano": {
             "ancho": "536px",
             "alto": null
+          },
+          "estilos": {
+            "familia": "Arial",
+            "tamano": "70px",
+            "grosor": "700",
+            "interlineado": "55px",
+            "espaciadoLetras": "0px",
+            "alineacion": null,
+            "color": null,
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -4167,15 +5162,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "21px",
-            "offsetY": "91px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "21px",
+            "y": "91px",
+            "porPixeles": true,
             "zIndex": 9
           },
           "tamano": {
             "ancho": "860px",
             "alto": null
+          },
+          "estilos": {
+            "familia": "Arial",
+            "tamano": "83px",
+            "grosor": "700",
+            "interlineado": "84px",
+            "espaciadoLetras": "0px",
+            "alineacion": null,
+            "color": null,
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "very_large_text"
           },
           "animacion": {
             "tiene": true,
@@ -4192,15 +5200,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "13px",
-            "offsetY": "202px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "13px",
+            "y": "202px",
+            "porPixeles": true,
             "zIndex": 10
           },
           "tamano": {
             "ancho": "842px",
             "alto": null
+          },
+          "estilos": {
+            "familia": "Arimo",
+            "tamano": "43px",
+            "grosor": null,
+            "interlineado": "40px",
+            "espaciadoLetras": "1px",
+            "alineacion": null,
+            "color": "#002e60",
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "Fashion-BigDisplay"
           },
           "animacion": {
             "tiene": true,
@@ -4217,16 +5238,18 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "3px",
-            "offsetY": "194px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "3px",
+            "y": "194px",
+            "porPixeles": true,
             "zIndex": 5
           },
           "tamano": {
             "ancho": "865px",
             "alto": "96px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -4242,15 +5265,28 @@
           "imagen": null,
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "13px",
-            "offsetY": "242px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "13px",
+            "y": "242px",
+            "porPixeles": true,
             "zIndex": 11
           },
           "tamano": {
             "ancho": "842px",
             "alto": null
+          },
+          "estilos": {
+            "familia": "Arimo",
+            "tamano": "38px",
+            "grosor": null,
+            "interlineado": "40px",
+            "espaciadoLetras": "-1px",
+            "alineacion": null,
+            "color": "#002e60",
+            "fondo": "transparent",
+            "radio": null,
+            "preset": "Fashion-BigDisplay"
           },
           "animacion": {
             "tiene": true,
@@ -4267,16 +5303,18 @@
           "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/org-banner-mundo.png",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "927px",
-            "offsetY": "38px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "927px",
+            "y": "38px",
+            "porPixeles": true,
             "zIndex": 6
           },
           "tamano": {
             "ancho": "250px",
             "alto": "249px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,
@@ -4292,16 +5330,18 @@
           "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/org-banner-bar.jpg",
           "alt": null,
           "posicion": {
-            "horizontal": "center",
-            "vertical": "middle",
-            "offsetX": "2px",
-            "offsetY": "8px",
+            "horizontal": null,
+            "vertical": null,
+            "x": "2px",
+            "y": "8px",
+            "porPixeles": true,
             "zIndex": 7
           },
           "tamano": {
             "ancho": "865px",
             "alto": "178px"
           },
+          "estilos": null,
           "animacion": {
             "tiene": true,
             "fotogramasOriginales": 2,

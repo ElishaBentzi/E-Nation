@@ -62,8 +62,46 @@ function ruta(o, camino, porDefecto = undefined) {
   return actual === undefined ? porDefecto : actual;
 }
 
+/**
+ * Estilos de una capa. VIVEN EN `idle`, que es el estado base del sistema de
+ * estados de RevSlider (hay tambien `hover`).
+ *
+ * Esto costo encontrarlo: en la base de datos la capa no tiene `fontSize` ni
+ * `color` en primer nivel, y `customCSS` solo trae el espaciado entre letras. La
+ * tipografia esta anidada en `idle`.
+ *
+ * El COLOR suele venir VACIO (`{e:true}`) porque se resuelve por la hoja de estilos
+ * del preset (`idle.style`, p. ej. "Fashion-BigDisplay"). Cuando pasa eso se deja
+ * en null y se AVISA: inventarse un color seria peor que reconocer que falta.
+ */
+function estilosDe(capa) {
+  const idle = capa.idle || {};
+  const s = (v) => {
+    if (v === undefined || v === null) return null;
+    if (typeof v === 'object') {
+      const d = v.d;
+      const val = d && typeof d === 'object' && 'v' in d ? d.v : (typeof d === 'string' ? d : undefined);
+      return val === undefined || val === '' ? null : val;
+    }
+    return v === '' ? null : v;
+  };
+  return {
+    familia: s(idle.fontFamily),
+    tamano: s(idle.fontSize),
+    grosor: s(idle.fontWeight),
+    interlineado: s(idle.lineHeight),
+    espaciadoLetras: s(idle.letterSpacing),
+    alineacion: s(idle.textAlign),
+    color: s(idle.color),
+    fondo: s(idle.backgroundColor),
+    radio: s(idle.borderRadius),
+    preset: idle.style || null,
+  };
+}
+
 const avisos = [];
 const avisar = (alias, que) => avisos.push({ alias, que });
+const fuentesVistas = new Map();
 
 /** Traduce un slider completo. */
 function traducir(s) {
@@ -197,18 +235,40 @@ function traducir(s) {
         textoConHtml: !/image|shape/i.test(tipo) && /<[a-z][^>]*>/i.test(String(capa.text || '')),
         imagen: ruta(capa, 'media.imageUrl', null),
         alt: ruta(capa, 'media.alt', null),
-        // Posicion: cuando hay offsets se usan; si no, el anclaje declarado.
+        // POSICION: hay que respetar lo que dice el original y NO inventar.
+        //
+        // De 220 capas, 162 NO declaran anclaje horizontal y 187 no declaran el
+        // vertical: vienen como `{e:true}` sin valor. Esas capas se posicionan por
+        // PIXELES (`position.x`/`position.y`) medidos desde la esquina superior
+        // izquierda del lienzo. Solo 58 declaran `center` y 33 `middle`.
+        //
+        // Dar por hecho `center`/`middle` cuando el valor no esta manda 162 capas
+        // fuera de sitio: acaban apiladas fuera del area visible y el banner se ve
+        // vacio. Un valor ausente NO es un valor por defecto.
         posicion: {
-          horizontal: horiz.valor || 'center',
-          vertical: vert.valor || 'middle',
-          offsetX: ox.valor !== undefined ? ox.valor : null,
-          offsetY: oy.valor !== undefined ? oy.valor : null,
+          horizontal: horiz.valor !== undefined ? horiz.valor : null,
+          vertical: vert.valor !== undefined ? vert.valor : null,
+          x: ox.valor !== undefined ? ox.valor : null,
+          y: oy.valor !== undefined ? oy.valor : null,
+          /**
+           * true cuando la capa se posiciona por pixeles sobre el lienzo, que es
+           * el caso mayoritario. El componente necesita saberlo para convertir los
+           * pixeles a porcentaje y que el banner escale con el contenedor.
+           */
+          porPixeles: horiz.valor === undefined && vert.valor === undefined,
           zIndex: pos.zIndex || null,
         },
         tamano: {
           ancho: w.valor !== undefined ? w.valor : null,
           alto: h.valor !== undefined ? h.valor : null,
         },
+        // Tipografia y color, del estado `idle`
+        estilos: /image|shape/i.test(tipo) ? null : (() => {
+          const e = estilosDe(capa);
+          if (e.familia) fuentesVistas.set(e.familia, (fuentesVistas.get(e.familia) || 0) + 1);
+          if (!e.color) avisar(alias, `capa ${capa.uid}: sin color declarado (se resuelve por el preset "${e.preset || '?'}")`);
+          return e;
+        })(),
         // Variantes responsive: solo se anotan cuando DIFIEREN del escritorio.
         variantes: {},
       };

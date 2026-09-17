@@ -317,8 +317,14 @@ if (post_type_exists('elementor_library')) {
 // --- Sliders de Slider Revolution -----------------------------------------
 // La configuración vive en tablas propias del plugin. Sin esto habría que
 // reconstruir los sliders solo desde el HTML renderizado, que es mucho peor.
+//
+// `revslider_css` son los PRESETS DE ESTILO ("Fashion-BigDisplay",
+// "very_large_text"...). Es imprescindible y se descubrió tarde: las capas de los
+// sliders NO declaran color, lo toman del preset. Sin esta tabla hay que
+// adivinar los colores, y adivinar en una migración es exactamente lo que no se
+// debe hacer.
 global $wpdb;
-foreach (['revslider_sliders', 'revslider_slides'] as $tabla) {
+foreach (['revslider_sliders', 'revslider_slides', 'revslider_css', 'revslider_layer_animations'] as $tabla) {
     $nombre = $wpdb->prefix . $tabla;
     $existe = $wpdb->get_var($wpdb->prepare('SHOW TABLES LIKE %s', $nombre));
     if (!$existe) continue;
