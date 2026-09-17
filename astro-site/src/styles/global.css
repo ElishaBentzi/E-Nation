@@ -19,6 +19,21 @@
    RAIZ del proyecto. Con dos niveles apuntaria a astro-site/brand, que no existe. */
 @import '../../../brand/tokens.css';
 
+/*
+ * FUENTES ADICIONALES PARA TAILWIND.
+ *
+ * Tailwind v4 detecta solo las clases usadas dentro del proyecto de la app. El
+ * componente `shared/banner-slider/` vive FUERA de `astro-site/`, asi que sus
+ * utilidades NO se generaban: `.opacity-0` no existia en el CSS y los 21 slides
+ * del carrusel se pintaban todos encima a la vez. El fallo es invisible en el
+ * build —pasa— y en el HTML —las clases estan escritas— : solo se ve mirando la
+ * pagina, y se confirma midiendo el estilo computado.
+ *
+ * Si se anaden mas componentes compartidos fuera de la app, hay que declararlos
+ * aqui o sus clases no existiran.
+ */
+@source '../../../shared';
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* ---------------------------------------------------------------------------

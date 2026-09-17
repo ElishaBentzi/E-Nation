@@ -623,3 +623,31 @@ Costó encontrarlo. En la base de datos la capa no tiene `fontSize` ni `color` e
 2. **El marcado solo trae los slides ya renderizados**, pero **sí trae los colores resueltos** (`data-color="#ffffff"`). Recorriendo el slider con el navegador se pueden cosechar los 21 slides con sus valores resueltos — es la vía que evita depender del presupuesto.
 
 Ambas cosas están anotadas. **El banner ahora sale oscuro porque las 85 capas de imagen caen fuera del área visible**, y con el anclaje ya corregido el siguiente paso es aplicar la conversión de píxeles a porcentaje y comparar contra las capturas.
+
+#### Calibración resuelta: el banner ya se renderiza
+
+Medido tras los arreglos:
+
+| comprobación | antes | ahora |
+|---|---|---|
+| Capas dentro del banner | 0 de 5 | **4 de 5** |
+| Slides visibles a la vez | **21 de 21** (todos apilados) | **1 de 21** |
+| Tamaño de fuente computado | — | **40,43 px** = 43 px escalado de 1240 a 1166 ✓ |
+| Ancho del banner | 1425 px | **1166 px** (el `maxWidth` del original) |
+| CSS generado | 9.608 B | **15.774 B** |
+
+Y visualmente: se ve el logo **SBM Juegos®**, el texto «Juega y Coopera para Crecer» sobre su barra, las formas amarillas y rosas, el fondo texturizado y las flechas — **solo el contenido de un slide**.
+
+**Cómo se convirtió la posición.** Los píxeles se traducen a **porcentaje del lienzo** y la tipografía a **unidades de contenedor (`cqw`)**, con `container-type: inline-size` en el componente. Así el banner entero escala con la ventana como hacía el plugin, en vez de quedarse clavado. Las capas usan `left`/`top` **físicos** y no lógicos a propósito: esto replica una composición gráfica fija, y en un idioma RTL espejar el banner pondría los logos del revés.
+
+#### El fallo más importante de esta ola: Tailwind no veía el componente compartido
+
+**`.opacity-0` NO existía en el CSS aplicado**, así que los **21 slides se pintaban todos encima a la vez** — se veían textos de proyectos distintos superpuestos e ilegibles.
+
+La causa es de arquitectura: **Tailwind v4 solo detecta las clases usadas dentro del proyecto de la app**, y `shared/banner-slider/` vive **fuera de `astro-site/`**. Sus utilidades no se generaban.
+
+Se arregla declarando la fuente explícitamente en `global.css`: `@source '../../../shared';`.
+
+**Por qué este fallo es peligroso**: es invisible por partida doble. El build **pasa**, y el HTML **contiene las clases escritas** (se ven en el `class`), así que cualquier comprobación que mire el HTML lo da por bueno. Solo se detecta **midiendo el estilo computado** —`getComputedStyle` decía `opacity: 1` en los 21 slides— o mirando la página. Es la enésima confirmación de la regla del proyecto: un HTML con el marcador correcto NO prueba que el estilo se aplique.
+
+**Consecuencia general**: si se añaden más componentes compartidos fuera de la app, hay que declararlos en `@source` o sus clases no existirán.

@@ -33,12 +33,23 @@ interface Capa {
   imagen?: string | null;
   alt?: string | null;
   posicion?: {
-    horizontal?: string;
-    vertical?: string;
-    offsetX?: string | number | null;
-    offsetY?: string | number | null;
+    horizontal?: string | null;
+    vertical?: string | null;
+    x?: string | number | null;
+    y?: string | number | null;
+    porPixeles?: boolean;
     zIndex?: number | null;
   };
+  estilos?: {
+    familia?: string | null;
+    tamano?: string | null;
+    grosor?: string | null;
+    interlineado?: string | null;
+    espaciadoLetras?: string | null;
+    alineacion?: string | null;
+    color?: string | null;
+    preset?: string | null;
+  } | null;
   tamano?: { ancho?: string | null; alto?: string | null };
   variantes?: Record<string, { ancho?: string; alto?: string }>;
   enlace?: { href: string; target?: string; externo?: boolean };
@@ -134,6 +145,11 @@ for (const c of CORTES) {
   }
 }
 
+// Dimensiones del lienzo para convertir pixeles a porcentaje. Si la config no las
+// trae, se usan las del slider de banners del original, que es el caso conocido.
+const anchoLienzo = Number(lienzo.ancho) || 1240;
+const altoLienzo = Number(lienzo.alto) || 300;
+
 /**
  * Sanea el HTML de una capa.
  *
@@ -163,25 +179,74 @@ function sanearHtml(html) {
     });
 }
 
-// Estilo de posicion de una capa. Se calcula aqui y no en el cliente para que el
-// HTML ya salga con el aspecto correcto aunque el JavaScript no llegue a cargar.
-function estiloCapa(c: Capa) {
+/**
+ * Posicion de una capa.
+ *
+ * HAY DOS SISTEMAS, y confundirlos manda las capas fuera de sitio:
+ *
+ *   1. POR PIXELES (`porPixeles`), que es el caso mayoritario: 116 de las 157
+ *      capas del slider de banners, y 162 de las 220 de todo el sitio. Las
+ *      coordenadas son pixeles desde la esquina superior IZQUIERDA del lienzo.
+ *   2. POR ANCLAJE, cuando el original SI declara `horizontal`/`vertical`.
+ *
+ * Los pixeles se convierten a PORCENTAJE del lienzo para que el banner escale con
+ * el contenedor. Dejados en pixeles, al estrecharse la ventana las capas se
+ * quedarian clavadas y se saldrian.
+ */
+function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
   const p = c.posicion ?? {};
-  const anclajesH: Record<string, string> = { left: '0', center: '50%', right: '100%' };
-  const anclajesV: Record<string, string> = { top: '0', middle: '50%', bottom: '100%' };
-  const izq = anclajesH[String(p.horizontal ?? 'center')] ?? '50%';
-  const arr = anclajesV[String(p.vertical ?? 'middle')] ?? '50%';
-  const tx = p.horizontal === 'right' ? '-100%' : p.horizontal === 'center' ? '-50%' : '0';
-  const ty = p.vertical === 'bottom' ? '-100%' : p.vertical === 'middle' ? '-50%' : '0';
-  const ox = p.offsetX ? `calc(${tx} + ${p.offsetX})` : tx;
-  const oy = p.offsetY ? `calc(${ty} + ${p.offsetY})` : ty;
-  return [
-    'position:absolute',
-    `inset-inline-start:${izq}`,
-    `top:${arr}`,
-    `transform:translate(${ox},${oy})`,
-    p.zIndex ? `z-index:${p.zIndex}` : '',
-  ].filter(Boolean).join(';');
+  const partes = ['position:absolute'];
+
+  const aPct = (valor: unknown, total: number) => {
+    if (valor === null || valor === undefined || valor === '') return null;
+    const n = parseFloat(String(valor).replace('px', ''));
+    if (Number.isNaN(n)) return null;
+    return (n / total) * 100;
+  };
+
+  if (p.porPixeles) {
+    const x = aPct(p.x, anchoLienzo) ?? 0;
+    const y = aPct(p.y, altoLienzo) ?? 0;
+    // Coordenadas FISICAS (`left`/`top`) a proposito: esto replica una composicion
+    // grafica fija, y en un idioma RTL espejar el banner pondria los logos y las
+    // formas del reves. No es cromo de la interfaz, es una ilustracion.
+    partes.push(`left:${x.toFixed(4)}%`, `top:${y.toFixed(4)}%`);
+  } else {
+    const anclajesH: Record<string, string> = { left: '0', center: '50%', right: '100%' };
+    const anclajesV: Record<string, string> = { top: '0', middle: '50%', bottom: '100%' };
+    const h = p.horizontal ?? 'left';
+    const v = p.vertical ?? 'top';
+    partes.push(`left:${anclajesH[h] ?? '0'}`, `top:${anclajesV[v] ?? '0'}`);
+    const tx = h === 'right' ? '-100%' : h === 'center' ? '-50%' : '0';
+    const ty = v === 'bottom' ? '-100%' : v === 'middle' ? '-50%' : '0';
+    partes.push(`transform:translate(${p.x ? `calc(${tx} + ${p.x})` : tx},${p.y ? `calc(${ty} + ${p.y})` : ty})`);
+  }
+
+  if (p.zIndex) partes.push(`z-index:${p.zIndex}`);
+
+  const ancho = aPct(c.tamano?.ancho, anchoLienzo);
+  if (ancho) partes.push(`width:${ancho.toFixed(4)}%`);
+
+  // Tipografia en unidades de CONTENEDOR (`cqw`): es lo que hace que el texto
+  // escale con el banner, como hacia el plugin. El contenedor se declara con
+  // `container-type: inline-size` en los estilos del componente.
+  const est = c.estilos;
+  if (est) {
+    const fs = aPct(est.tamano, anchoLienzo);
+    if (fs) partes.push(`font-size:${fs.toFixed(4)}cqw`);
+    if (est.grosor) partes.push(`font-weight:${est.grosor}`);
+    const lh = aPct(est.interlineado, anchoLienzo);
+    if (lh) partes.push(`line-height:${lh.toFixed(4)}cqw`);
+    if (est.espaciadoLetras && est.espaciadoLetras !== '0px') {
+      const ls = aPct(est.espaciadoLetras, anchoLienzo);
+      if (ls) partes.push(`letter-spacing:${ls.toFixed(4)}cqw`);
+    }
+    if (est.familia) partes.push(`font-family:"${est.familia}", sans-serif`);
+    if (est.color) partes.push(`color:${est.color}`);
+    if (est.alineacion) partes.push(`text-align:${est.alineacion}`);
+  }
+
+  return partes.join(';');
 }
 ---
 
@@ -235,7 +300,7 @@ function estiloCapa(c: Capa) {
 
           {capasConContenido.map((c) => (
             c.tipo === 'texto' ? (
-              <span class="banner-slider__capa absolute" style={estiloCapa(c)} data-capa={c.uid}>
+              <span class="banner-slider__capa absolute" style={estiloCapa(c, anchoLienzo, altoLienzo)} data-capa={c.uid}>
                 {/* Si el original traia HTML (texto + icono), se interpreta
                     saneado; si no, se pinta como texto normal. */}
                 {c.textoConHtml ? <Fragment set:html={sanearHtml(c.texto)} /> : c.texto}
@@ -247,7 +312,7 @@ function estiloCapa(c: Capa) {
                 loading="lazy"
                 decoding="async"
                 class="banner-slider__capa absolute"
-                style={`${estiloCapa(c)}${c.tamano?.ancho ? `;width:${c.tamano.ancho}` : ''}`}
+                style={`${estiloCapa(c, anchoLienzo, altoLienzo)}${c.tamano?.ancho ? `;width:${c.tamano.ancho}` : ''}`}
                 data-capa={c.uid}
               />
             )
@@ -302,6 +367,12 @@ function estiloCapa(c: Capa) {
 <style>
   /* Los estilos del componente viven CON EL, no en la hoja global: asi el
      componente se puede copiar a otro proyecto sin arrastrar nada mas. */
+  .banner-slider {
+    /* Las capas usan unidades de contenedor (cqw) para que el texto escale con el
+       banner: sin esto,  se resuelve contra el viewport y el texto no guarda
+       proporcion con las imagenes. */
+    container-type: inline-size;
+  }
   .banner-slider__capa {
     max-width: calc(100% - 2rem);
   }
