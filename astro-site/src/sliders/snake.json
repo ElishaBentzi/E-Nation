@@ -49,7 +49,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "/images/2018/10/e-nation-logo-L.png",
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/10/e-nation-logo-L.png",
           "alt": null,
           "posicion": {
             "horizontal": "center",

@@ -44,21 +44,60 @@ const slides = (j.sliders_revolution || []).filter((s) => s.tabla === 'revslider
 for (const s of sliders) {
   const alias = s.alias || `slider-${s.id}`;
   const mios = slides.filter((x) => String(x.slider_id) === String(s.id));
+
+  /*
+   * SE DESCARTAN LAS DIAPOSITIVAS HUERFANAS.
+   *
+   * RevSlider 6 organiza las diapositivas en PADRE E HIJOS: el padre es la version
+   * base (aqui, el espanol) y los hijos son sus variantes de idioma, enlazadas por
+   * `child.parentId`. Los hijos declaran ademas su idioma en `child.language`.
+   *
+   * Cuando se borra un padre, sus hijos QUEDAN HUERFANOS: siguen en la base de
+   * datos y el plugin YA NO LOS RENDERIZA, pero una extraccion ingenua se los lleva
+   * todos. En el slider de banners eran 6 de 21 (tres versiones viejas en dos
+   * idiomas), y era la causa de que se vieran 8 elementos donde el original tiene 5.
+   *
+   * El criterio es el correcto: una diapositiva es huerfana si declara un
+   * `parentId` que no existe entre las de SU MISMO slider. No se borra por numero
+   * ni por contenido —eso dejaria fuera a los hijos legitimos y a sus parejas de
+   * idioma—, se borra por estructura.
+   */
+  const idsDelSlider = new Set(mios.map((x) => String(x.id)));
+  const esHuerfana = (x) => {
+    const p = x.params_decodificado || (x.params ? JSON.parse(x.params) : null);
+    const child = p && p.child;
+    return !!(child && child.parentId && !idsDelSlider.has(String(child.parentId)));
+  };
+  const utiles = mios.filter((x) => !esHuerfana(x));
+  const huerfanas = mios.filter(esHuerfana);
+
   const salida = {
     id: s.id,
     alias,
     titulo: s.title,
     params: s.params_decodificado || null,
-    total_slides: mios.length,
-    slides: mios.map((x) => ({
+    total_slides: utiles.length,
+    slides: utiles.map((x) => ({
       id: x.id,
       titulo: x.title,
       orden: x.slide_order,
+      // El idioma y el padre vienen declarados por el plugin: no hay que deducirlos.
+      idioma: (() => {
+        const p = x.params_decodificado || (x.params ? JSON.parse(x.params) : null);
+        return p && p.child ? p.child.language || null : null;
+      })(),
+      padre: (() => {
+        const p = x.params_decodificado || (x.params ? JSON.parse(x.params) : null);
+        return p && p.child ? p.child.parentId || null : null;
+      })(),
       // `params` es la definicion de capas: posiciones, tiempos, easings
       params: x.params_decodificado || (x.params ? JSON.parse(x.params) : null),
       capas: x.layers ? JSON.parse(x.layers) : null,
     })),
   };
+  if (huerfanas.length) {
+    console.log(`  ${alias}: ${huerfanas.length} diapositivas HUERFANAS descartadas (de ${mios.length}): ${huerfanas.map((x) => x.id).join(', ')}`);
+  }
   // Si el plugin serializo los params como string JSON anidado, se decodifica
   if (typeof salida.params === 'string') {
     try { salida.params = JSON.parse(salida.params); } catch (e) { /* se deja tal cual */ }
