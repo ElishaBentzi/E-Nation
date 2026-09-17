@@ -1,0 +1,683 @@
+{
+  "id": "e-nation",
+  "origen": {
+    "plugin": "slider-revolution",
+    "id": "18",
+    "totalSlidesOriginal": 2
+  },
+  "lienzo": {
+    "ancho": 1200,
+    "alto": 600,
+    "anchoMaximo": null,
+    "variantes": {
+      "portatil": {
+        "ancho": 1024,
+        "alto": 768
+      },
+      "tableta": {
+        "ancho": 778,
+        "alto": 960
+      },
+      "movil": {
+        "ancho": 480,
+        "alto": 720
+      }
+    }
+  },
+  "comportamiento": {
+    "autoplay": false,
+    "intervaloMs": null,
+    "bucle": true,
+    "pausaAlPasarRaton": true
+  },
+  "slides": [
+    {
+      "id": "82",
+      "orden": "1",
+      "titulo": "Slide",
+      "enlace": null,
+      "fondo": {
+        "tipo": "image",
+        "color": "#E7E7E7",
+        "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/09/slide-BG.jpg",
+        "sinMapear": null
+      },
+      "capas": [
+        {
+          "uid": 1,
+          "alias": "Image 1",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/0-L.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "11px",
+            "offsetY": null,
+            "zIndex": 5
+          },
+          "tamano": {
+            "ancho": "130px",
+            "alto": "590px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 10
+          }
+        },
+        {
+          "uid": 2,
+          "alias": "Image 2",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/0-2-R.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "1058px",
+            "offsetY": null,
+            "zIndex": 6
+          },
+          "tamano": {
+            "ancho": "130px",
+            "alto": "590px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 10
+          }
+        },
+        {
+          "uid": 3,
+          "alias": "E-nation",
+          "tipo": "texto",
+          "texto": "E-NATION",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": "17px",
+            "zIndex": 7
+          },
+          "tamano": {
+            "ancho": null,
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": null
+          }
+        },
+        {
+          "uid": 4,
+          "alias": "Shape",
+          "tipo": "forma",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": "128px",
+            "zIndex": 8
+          },
+          "tamano": {
+            "ancho": "762px",
+            "alto": "64px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": null
+          }
+        },
+        {
+          "uid": 5,
+          "alias": "E-nation",
+          "tipo": "texto",
+          "texto": "World Citizenship",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": "136px",
+            "zIndex": 9
+          },
+          "tamano": {
+            "ancho": null,
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": null
+          }
+        },
+        {
+          "uid": 6,
+          "alias": "E-nation",
+          "tipo": "texto",
+          "texto": "NEW PACT FOR SOCIAL HARMONY AND POWER DISTRIBUTION ",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "-3px",
+            "offsetY": "205px",
+            "zIndex": 10
+          },
+          "tamano": {
+            "ancho": null,
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": null
+          }
+        },
+        {
+          "uid": 7,
+          "alias": "Image 7",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/2-map.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": "219px",
+            "zIndex": 11
+          },
+          "tamano": {
+            "ancho": "907px",
+            "alto": "425px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": null
+          }
+        },
+        {
+          "uid": 8,
+          "alias": "Image 8",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/2-hand-passport.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "133px",
+            "offsetY": "313px",
+            "zIndex": 12
+          },
+          "tamano": {
+            "ancho": "296px",
+            "alto": "286px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": null
+          }
+        },
+        {
+          "uid": 9,
+          "alias": "Image 9",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/09/1-family.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "421px",
+            "offsetY": "381px",
+            "zIndex": 13
+          },
+          "tamano": {
+            "ancho": "600px",
+            "alto": "219px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": null
+          }
+        },
+        {
+          "uid": 10,
+          "alias": "Shape",
+          "tipo": "forma",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": "236px",
+            "zIndex": 14
+          },
+          "tamano": {
+            "ancho": "950px",
+            "alto": "4px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": null
+          }
+        },
+        {
+          "uid": "top",
+          "alias": "TOP ROWS",
+          "tipo": "texto",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": null,
+            "zIndex": null
+          },
+          "tamano": {
+            "ancho": null,
+            "alto": null
+          }
+        },
+        {
+          "uid": "middle",
+          "alias": "MID ROWS",
+          "tipo": "texto",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": null,
+            "zIndex": null
+          },
+          "tamano": {
+            "ancho": null,
+            "alto": null
+          }
+        },
+        {
+          "uid": "bottom",
+          "alias": "BOTTOM ROWS",
+          "tipo": "texto",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": null,
+            "zIndex": null
+          },
+          "tamano": {
+            "ancho": null,
+            "alto": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "89",
+      "orden": "2",
+      "titulo": "Slide",
+      "enlace": null,
+      "fondo": {
+        "tipo": "image",
+        "color": "#E7E7E7",
+        "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/09/slide-BG.jpg",
+        "sinMapear": null
+      },
+      "capas": [
+        {
+          "uid": 1,
+          "alias": "Image 1",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/0-L.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "11px",
+            "offsetY": null,
+            "zIndex": 5
+          },
+          "tamano": {
+            "ancho": "130px",
+            "alto": "590px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 10
+          }
+        },
+        {
+          "uid": 2,
+          "alias": "Image 2",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/0-2-R.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "1058px",
+            "offsetY": null,
+            "zIndex": 6
+          },
+          "tamano": {
+            "ancho": "130px",
+            "alto": "590px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 10
+          }
+        },
+        {
+          "uid": 3,
+          "alias": "E-nation",
+          "tipo": "texto",
+          "texto": "E-NATION",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": "17px",
+            "zIndex": 7
+          },
+          "tamano": {
+            "ancho": null,
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": null
+          }
+        },
+        {
+          "uid": 4,
+          "alias": "Shape",
+          "tipo": "forma",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": "128px",
+            "zIndex": 8
+          },
+          "tamano": {
+            "ancho": "762px",
+            "alto": "64px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": null
+          }
+        },
+        {
+          "uid": 5,
+          "alias": "E-nation",
+          "tipo": "texto",
+          "texto": "La Ciudadanía Mundial",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": "136px",
+            "zIndex": 9
+          },
+          "tamano": {
+            "ancho": null,
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": null
+          }
+        },
+        {
+          "uid": 6,
+          "alias": "E-nation",
+          "tipo": "texto",
+          "texto": "NUEVO PACTO PARA LA ARMONÍA SOCIAL Y DISTRIBUCIÓN DEL PODER ",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "-3px",
+            "offsetY": "205px",
+            "zIndex": 10
+          },
+          "tamano": {
+            "ancho": null,
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": null
+          }
+        },
+        {
+          "uid": 7,
+          "alias": "Image 7",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/2-map.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": "219px",
+            "zIndex": 11
+          },
+          "tamano": {
+            "ancho": "907px",
+            "alto": "425px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": null
+          }
+        },
+        {
+          "uid": 8,
+          "alias": "Image 8",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/2-hand-passport.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "133px",
+            "offsetY": "313px",
+            "zIndex": 12
+          },
+          "tamano": {
+            "ancho": "296px",
+            "alto": "286px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": null
+          }
+        },
+        {
+          "uid": 9,
+          "alias": "Image 9",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/09/1-family.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "421px",
+            "offsetY": "381px",
+            "zIndex": 13
+          },
+          "tamano": {
+            "ancho": "600px",
+            "alto": "219px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": null
+          }
+        },
+        {
+          "uid": 10,
+          "alias": "Shape",
+          "tipo": "forma",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": "236px",
+            "zIndex": 14
+          },
+          "tamano": {
+            "ancho": "950px",
+            "alto": "4px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": null
+          }
+        },
+        {
+          "uid": "top",
+          "alias": "TOP ROWS",
+          "tipo": "texto",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": null,
+            "zIndex": null
+          },
+          "tamano": {
+            "ancho": null,
+            "alto": null
+          }
+        },
+        {
+          "uid": "middle",
+          "alias": "MID ROWS",
+          "tipo": "texto",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": null,
+            "zIndex": null
+          },
+          "tamano": {
+            "ancho": null,
+            "alto": null
+          }
+        },
+        {
+          "uid": "bottom",
+          "alias": "BOTTOM ROWS",
+          "tipo": "texto",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": null,
+            "zIndex": null
+          },
+          "tamano": {
+            "ancho": null,
+            "alto": null
+          }
+        }
+      ]
+    }
+  ]
+}

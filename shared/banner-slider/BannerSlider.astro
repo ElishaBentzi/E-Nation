@@ -1,0 +1,451 @@
+---
+/*
+ * BannerSlider — carrusel de banners con enlaces, en un solo componente.
+ *
+ * PENSADO PARA REUTILIZARSE. No sabe nada de E-Nation: se alimenta de un JSON con
+ * el formato que describe `shared/banner-slider/README.md`, que a su vez se genera
+ * desde Slider Revolution con `tools/revslider-to-config.cjs`. Otro proyecto
+ * WordPress puede copiar esta carpeta entera y reutilizar el mismo generador.
+ *
+ * QUE CUBRE
+ *   - Slides con imagen de fondo (y variante movil), enlace opcional y capas
+ *     encima: texto o imagen, posicionadas, con tamanos por dispositivo.
+ *   - Navegacion: flechas, puntos, teclado, y contador.
+ *   - Autoplay con pausa al pasar el raton o al recibir el foco.
+ *   - Respeta `prefers-reduced-motion`: sin transiciones ni autoplay.
+ *   - Accesibilidad: region con `aria-roledescription="carrusel"`, cada slide
+ *     anunciado, y los controles con nombre accesible.
+ *
+ * QUE **NO** CUBRE, A PROPOSITO
+ *   Las animaciones de entrada capa por capa de Slider Revolution (fotogramas con
+ *   transformaciones por eje y por dispositivo). Replicarlas exigiria arrastrar
+ *   toda la complejidad del plugin. En su lugar hay una entrada simple: la capa
+ *   aparece con un desplazamiento leve y opcional. El generador AVISA de cuantas
+ *   animaciones quedan sin mapear, para que no se pierdan en silencio.
+ */
+interface Capa {
+  uid: number;
+  alias?: string | null;
+  tipo: 'texto' | 'imagen' | 'forma';
+  texto?: string | null;
+  /** true si el texto trae HTML del original (texto + icono) y hay que interpretarlo. */
+  textoConHtml?: boolean;
+  imagen?: string | null;
+  alt?: string | null;
+  posicion?: {
+    horizontal?: string;
+    vertical?: string;
+    offsetX?: string | number | null;
+    offsetY?: string | number | null;
+    zIndex?: number | null;
+  };
+  tamano?: { ancho?: string | null; alto?: string | null };
+  variantes?: Record<string, { ancho?: string; alto?: string }>;
+  enlace?: { href: string; target?: string; externo?: boolean };
+  animacion?: { tiene: boolean; fotogramasOriginales?: number; entradaMs?: number | null };
+}
+
+interface Slide {
+  id: number;
+  orden?: number;
+  titulo?: string | null;
+  enlace?: { href: string; target?: string; externo?: boolean } | null;
+  fondo?: { tipo?: string; color?: string | null; imagen?: string | null };
+  capas?: Capa[];
+}
+
+interface Props {
+  config: {
+    id: string;
+    lienzo?: {
+      ancho?: number | string | null;
+      alto?: number | string | null;
+      anchoMaximo?: number | null;
+      variantes?: Record<string, { ancho: number; alto: number }>;
+    };
+    comportamiento?: {
+      autoplay?: boolean;
+      intervaloMs?: number | null;
+      bucle?: boolean;
+      pausaAlPasarRaton?: boolean;
+    };
+    slides: Slide[];
+  };
+  /** Texto para lectores de pantalla, ya traducido por quien lo usa. */
+  etiqueta: string;
+  etiquetaAnterior?: string;
+  etiquetaSiguiente?: string;
+  clase?: string;
+}
+
+const {
+  config,
+  etiqueta,
+  etiquetaAnterior = 'Previous',
+  etiquetaSiguiente = 'Next',
+  clase = '',
+} = Astro.props;
+
+const slides = config.slides ?? [];
+const comportamiento = config.comportamiento ?? {};
+const lienzo = config.lienzo ?? {};
+// La cadena vacia del autoplay se resuelve aqui para que el script reciba un
+// dato limpio y no tenga que adivinar.
+const intervalo = comportamiento.intervaloMs && comportamiento.intervaloMs > 500
+  ? comportamiento.intervaloMs
+  : 6000;
+
+/**
+ * Identificador unico para el <style> del lienzo. Se deriva del id de la config
+ * para que dos sliders en la misma pagina no se pisen las reglas.
+ */
+const idCss = `bs-${String(config.id || 'x').replace(/[^a-z0-9-]/gi, '')}`;
+
+/**
+ * Relacion de aspecto del lienzo, con sus variantes por dispositivo.
+ *
+ * ES LO QUE EVITA QUE EL SLIDER COLAPSE. Sin alto declarado el contenedor mide 0,
+ * los slides absolutos se apilan fuera de su sitio y aparecen encima del pie de
+ * pagina. Es un fallo puramente visual: el build pasa y el HTML es correcto, asi
+ * que solo se ve mirando la pagina.
+ *
+ * Los puntos de corte siguen los dispositivos de RevSlider (escritorio, portatil,
+ * tableta, movil) y van de mayor a menor para que gane el ultimo que coincida.
+ */
+const CORTES = [
+  { clave: 'portatil', max: 1199 },
+  { clave: 'tableta', max: 1023 },
+  { clave: 'movil', max: 767 },
+];
+const reglasLienzo = [];
+// Si el original limita el ancho, se respeta: las capas estan posicionadas en
+// pixeles relativos a ESE lienzo, asi que estirarlo a todo el ancho de la ventana
+// cambia la escala de todo el banner.
+if (lienzo.anchoMaximo) {
+  reglasLienzo.push(`.${idCss}{max-width:${lienzo.anchoMaximo}px;margin-inline:auto;}`);
+}
+if (lienzo.ancho && lienzo.alto) {
+  reglasLienzo.push(`.${idCss}{aspect-ratio:${lienzo.ancho}/${lienzo.alto};}`);
+}
+for (const c of CORTES) {
+  const v = lienzo.variantes?.[c.clave];
+  if (v?.ancho && v?.alto) {
+    reglasLienzo.push(`@media (max-width:${c.max}px){.${idCss}{aspect-ratio:${v.ancho}/${v.alto};}}`);
+  }
+}
+
+/**
+ * Sanea el HTML de una capa.
+ *
+ * Seis capas de estos sliders llevan HTML real ("Spanish Edition
+ * <i class=\"fa-download\"></i>"): texto mas un icono que el original renderizaba.
+ * Mostrarlo escapado ensena el codigo al visitante, asi que hay que interpretarlo.
+ *
+ * PERO no se inyecta tal cual: se permite solo una lista blanca de etiquetas
+ * simples y el atributo `class`. El contenido viene de la base de datos del
+ * WordPress del propio cliente, no de un tercero, pero interpretar HTML sin
+ * filtrar es una costumbre que no conviene adquirir.
+ */
+function sanearHtml(html) {
+  if (!html) return '';
+  return String(html)
+    .replace(/<\s*(script|style|iframe|object|embed|form)[\s\S]*?<\s*\/\s*\1\s*>/gi, '')
+    .replace(/\son\w+\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+)/gi, '')
+    .replace(/javascript:/gi, '')
+    .replace(/<\s*(\/?)\s*([a-z0-9]+)((?:\s+[^>]*)?)>/gi, (m, cierre, etiqueta, attrs) => {
+      const permitidas = ['i', 'b', 'strong', 'em', 'br', 'span', 'small'];
+      const t = etiqueta.toLowerCase();
+      if (!permitidas.includes(t)) return '';
+      if (t === 'br') return '<br>';
+      const clase = (String(attrs).match(/\bclass\s*=\s*"([^"]*)"/i) || [])[1];
+      const claseLimpia = clase ? clase.replace(/[^a-z0-9 _-]/gi, '') : '';
+      return `<${cierre}${t}${claseLimpia ? ` class="${claseLimpia}"` : ''}>`;
+    });
+}
+
+// Estilo de posicion de una capa. Se calcula aqui y no en el cliente para que el
+// HTML ya salga con el aspecto correcto aunque el JavaScript no llegue a cargar.
+function estiloCapa(c: Capa) {
+  const p = c.posicion ?? {};
+  const anclajesH: Record<string, string> = { left: '0', center: '50%', right: '100%' };
+  const anclajesV: Record<string, string> = { top: '0', middle: '50%', bottom: '100%' };
+  const izq = anclajesH[String(p.horizontal ?? 'center')] ?? '50%';
+  const arr = anclajesV[String(p.vertical ?? 'middle')] ?? '50%';
+  const tx = p.horizontal === 'right' ? '-100%' : p.horizontal === 'center' ? '-50%' : '0';
+  const ty = p.vertical === 'bottom' ? '-100%' : p.vertical === 'middle' ? '-50%' : '0';
+  const ox = p.offsetX ? `calc(${tx} + ${p.offsetX})` : tx;
+  const oy = p.offsetY ? `calc(${ty} + ${p.offsetY})` : ty;
+  return [
+    'position:absolute',
+    `inset-inline-start:${izq}`,
+    `top:${arr}`,
+    `transform:translate(${ox},${oy})`,
+    p.zIndex ? `z-index:${p.zIndex}` : '',
+  ].filter(Boolean).join(';');
+}
+---
+
+<div
+  class:list={['banner-slider relative overflow-hidden', idCss, clase]}
+  data-banner-slider
+  data-intervalo={intervalo}
+  data-autoplay={comportamiento.autoplay ? 'true' : 'false'}
+  data-bucle={comportamiento.bucle === false ? 'false' : 'true'}
+  data-pausa-hover={comportamiento.pausaAlPasarRaton === false ? 'false' : 'true'}
+  role="region"
+  aria-roledescription="carrusel"
+  aria-label={etiqueta}
+>
+  {/* Las reglas de aspecto van en un <style> propio en lugar de en el atributo
+      `style` porque necesitan puntos de corte, y `style` no admite media queries. */}
+  {reglasLienzo.length > 0 && <style set:html={reglasLienzo.join('')} is:inline />}
+  <div class="banner-slider__pista relative h-full w-full" data-pista>
+    {slides.map((s, i) => {
+      const capasConContenido = (s.capas ?? []).filter(
+        (c) => (c.tipo === 'texto' && c.texto) || (c.tipo === 'imagen' && c.imagen)
+      );
+      // El enlace del slide envuelve TODA la superficie: es lo que hace que el
+      // banner sea clicable entero y no solo un boton.
+      const Etiqueta = s.enlace ? 'a' : 'div';
+      return (
+        <Etiqueta
+          class:list={[
+            'banner-slider__slide absolute inset-0 transition-opacity duration-700',
+            i === 0 ? 'opacity-100' : 'pointer-events-none opacity-0',
+          ]}
+          data-slide={i}
+          aria-hidden={i === 0 ? 'false' : 'true'}
+          aria-label={s.titulo ?? `Slide ${i + 1} de ${slides.length}`}
+          href={s.enlace?.href}
+          target={s.enlace?.target === '_blank' ? '_blank' : undefined}
+          rel={s.enlace?.externo ? 'noopener noreferrer' : undefined}
+        >
+          {s.fondo?.imagen && (
+            <img
+              src={s.fondo.imagen}
+              alt=""
+              loading={i === 0 ? 'eager' : 'lazy'}
+              decoding="async"
+              class="h-full w-full object-cover"
+            />
+          )}
+          {s.fondo?.color && !s.fondo?.imagen && (
+            <div class="absolute inset-0" style={`background-color:${s.fondo.color}`} />
+          )}
+
+          {capasConContenido.map((c) => (
+            c.tipo === 'texto' ? (
+              <span class="banner-slider__capa absolute" style={estiloCapa(c)} data-capa={c.uid}>
+                {/* Si el original traia HTML (texto + icono), se interpreta
+                    saneado; si no, se pinta como texto normal. */}
+                {c.textoConHtml ? <Fragment set:html={sanearHtml(c.texto)} /> : c.texto}
+              </span>
+            ) : (
+              <img
+                src={c.imagen!}
+                alt={c.alt ?? ''}
+                loading="lazy"
+                decoding="async"
+                class="banner-slider__capa absolute"
+                style={`${estiloCapa(c)}${c.tamano?.ancho ? `;width:${c.tamano.ancho}` : ''}`}
+                data-capa={c.uid}
+              />
+            )
+          ))}
+        </Etiqueta>
+      );
+    })}
+  </div>
+
+  {slides.length > 1 && (
+    <>
+      <button
+        type="button"
+        data-accion="anterior"
+        aria-label={etiquetaAnterior}
+        class="banner-slider__flecha banner-slider__flecha--prev absolute top-1/2 z-20 -translate-y-1/2"
+      >
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="m15 18-6-6 6-6" />
+        </svg>
+      </button>
+      <button
+        type="button"
+        data-accion="siguiente"
+        aria-label={etiquetaSiguiente}
+        class="banner-slider__flecha banner-slider__flecha--next absolute top-1/2 z-20 -translate-y-1/2"
+      >
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="m9 18 6-6-6-6" />
+        </svg>
+      </button>
+
+      <ul class="banner-slider__puntos absolute bottom-4 z-20 flex w-full justify-center gap-2" role="tablist" aria-label={etiqueta}>
+        {slides.map((_, i) => (
+          <li>
+            <button
+              type="button"
+              role="tab"
+              data-accion="ir"
+              data-indice={i}
+              aria-selected={i === 0 ? 'true' : 'false'}
+              aria-label={`${i + 1} / ${slides.length}`}
+              class="banner-slider__punto h-2.5 w-2.5 rounded-full"
+            />
+          </li>
+        ))}
+      </ul>
+    </>
+  )}
+</div>
+
+<style>
+  /* Los estilos del componente viven CON EL, no en la hoja global: asi el
+     componente se puede copiar a otro proyecto sin arrastrar nada mas. */
+  .banner-slider__capa {
+    max-width: calc(100% - 2rem);
+  }
+  .banner-slider__flecha {
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 9999px;
+    background: color-mix(in srgb, #000 45%, transparent);
+    color: #fff;
+    backdrop-filter: blur(2px);
+  }
+  .banner-slider__flecha:hover {
+    background: color-mix(in srgb, #000 65%, transparent);
+  }
+  .banner-slider__flecha--prev {
+    inset-inline-start: 1rem;
+  }
+  .banner-slider__flecha--next {
+    inset-inline-end: 1rem;
+  }
+  .banner-slider__punto {
+    background: color-mix(in srgb, #fff 55%, transparent);
+    border: 0;
+    cursor: pointer;
+  }
+  .banner-slider__punto[aria-selected='true'] {
+    background: #fff;
+  }
+
+  /* Sin movimiento: nada de transiciones ni de fundidos. La preferencia del
+     sistema se respeta de verdad, no solo en el carrusel de entrada. */
+  @media (prefers-reduced-motion: reduce) {
+    .banner-slider__slide {
+      transition: none !important;
+    }
+  }
+</style>
+
+<script>
+  /*
+   * Comportamiento del carrusel.
+   *
+   * DETALLE QUE IMPORTA: el bucle usa `setTimeout` ajustado a la duracion de la
+   * transicion, NO el evento `transitionend`. `transitionend` no dispara de forma
+   * fiable en pestañas en segundo plano, y cuando eso pasa el indicador de
+   * animacion se queda trabado y el carrusel deja de responder. Es un fallo que
+   * solo aparece cuando el usuario cambia de pestaña, asi que se detecta tarde.
+   */
+  const DURACION_TRANSICION = 700;
+
+  function iniciar(raiz) {
+    const pista = raiz.querySelector('[data-pista]');
+    if (!pista) return;
+    const slides = [...raiz.querySelectorAll('[data-slide]')];
+    if (slides.length < 2) return;
+
+    const puntos = [...raiz.querySelectorAll('[data-indice]')];
+    const intervalo = Number(raiz.dataset.intervalo) || 6000;
+    const autoplay = raiz.dataset.autoplay === 'true';
+    const bucle = raiz.dataset.bucle !== 'false';
+    const pausaHover = raiz.dataset.pausaHover !== 'false';
+    const sinMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    let actual = 0;
+    let temporizador = null;
+    let pausado = false;
+
+    function mostrar(i, conTransicion = true) {
+      if (i === actual) return;
+      const anterior = actual;
+      actual = i;
+
+      if (!conTransicion || sinMovimiento) {
+        slides[anterior].style.transition = 'none';
+      }
+      slides[anterior].classList.replace('opacity-100', 'opacity-0');
+      slides[anterior].classList.add('pointer-events-none');
+      slides[anterior].setAttribute('aria-hidden', 'true');
+
+      slides[actual].classList.replace('opacity-0', 'opacity-100');
+      slides[actual].classList.remove('pointer-events-none');
+      slides[actual].setAttribute('aria-hidden', 'false');
+
+      if (!conTransicion || sinMovimiento) {
+        // Se fuerza un reflujo para que el navegador aplique el `transition:none`
+        // antes de devolverlo, o la siguiente transicion se perderia.
+        void slides[anterior].offsetWidth;
+        slides[anterior].style.transition = '';
+      }
+
+      puntos.forEach((p, k) => p.setAttribute('aria-selected', k === actual ? 'true' : 'false'));
+    }
+
+    const siguiente = () => (actual + 1) % slides.length;
+    const anterior = () => (actual - 1 + slides.length) % slides.length;
+
+    function programar() {
+      if (!autoplay || sinMovimiento || pausado || slides.length < 2) return;
+      clearTimeout(temporizador);
+      temporizador = setTimeout(() => {
+        mostrar(siguiente());
+        programar();
+      }, intervalo);
+    }
+
+    raiz.addEventListener('click', (e) => {
+      const boton = e.target.closest('[data-accion]');
+      if (!boton) return;
+      // Si el clic cae dentro del enlace del slide, no se intercepta: el usuario
+      // quiere navegar, no cambiar de banner.
+      if (e.target.closest('a[href]')) return;
+      e.preventDefault();
+      const accion = boton.dataset.accion;
+      if (accion === 'siguiente') mostrar(siguiente());
+      else if (accion === 'anterior') mostrar(anterior());
+      else if (accion === 'ir') mostrar(Number(boton.dataset.indice));
+      programar();
+    });
+
+    raiz.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') { mostrar(siguiente()); programar(); }
+      else if (e.key === 'ArrowLeft') { mostrar(anterior()); programar(); }
+    });
+
+    if (pausaHover) {
+      raiz.addEventListener('mouseenter', () => { pausado = true; clearTimeout(temporizador); });
+      raiz.addEventListener('mouseleave', () => { pausado = false; programar(); });
+      // El foco tambien pausa: quien navega con teclado no debe ver como el
+      // banner cambia bajo sus pies mientras lo esta leyendo.
+      raiz.addEventListener('focusin', () => { pausado = true; clearTimeout(temporizador); });
+      raiz.addEventListener('focusout', () => { pausado = false; programar(); });
+    }
+
+    // No se anima si la pestaña no esta visible: ahorra trabajo y evita que al
+    // volver el carrusel haya saltado varios slides de golpe.
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) clearTimeout(temporizador);
+      else programar();
+    });
+
+    programar();
+  }
+
+  document.querySelectorAll('[data-banner-slider]').forEach(iniciar);
+</script>

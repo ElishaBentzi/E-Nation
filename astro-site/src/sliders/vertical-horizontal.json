@@ -1,0 +1,949 @@
+{
+  "id": "vertical-horizontal",
+  "origen": {
+    "plugin": "slider-revolution",
+    "id": "19",
+    "totalSlidesOriginal": 1
+  },
+  "lienzo": {
+    "ancho": 700,
+    "alto": 700,
+    "anchoMaximo": null,
+    "variantes": {
+      "portatil": {
+        "ancho": 1024,
+        "alto": 768
+      },
+      "tableta": {
+        "ancho": 778,
+        "alto": 960
+      },
+      "movil": {
+        "ancho": 480,
+        "alto": 720
+      }
+    }
+  },
+  "comportamiento": {
+    "autoplay": false,
+    "intervaloMs": null,
+    "bucle": true,
+    "pausaAlPasarRaton": true
+  },
+  "slides": [
+    {
+      "id": "83",
+      "orden": "1",
+      "titulo": "Slide",
+      "enlace": null,
+      "fondo": {
+        "tipo": "transparent",
+        "color": "#E7E7E7",
+        "imagen": null,
+        "sinMapear": null
+      },
+      "capas": [
+        {
+          "uid": 3,
+          "alias": "Vert-piramide",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/09/slide-piramid.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "bottom",
+            "offsetX": null,
+            "offsetY": null,
+            "zIndex": 7
+          },
+          "tamano": {
+            "ancho": "700px",
+            "alto": "621px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 10
+          }
+        },
+        {
+          "uid": 8,
+          "alias": "Vert-1",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/09/slide-1.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "313px",
+            "offsetY": "179px",
+            "zIndex": 13
+          },
+          "tamano": {
+            "ancho": "46px",
+            "alto": "100px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 10
+          }
+        },
+        {
+          "uid": 9,
+          "alias": "Vert-3",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/09/slide-2.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "462px",
+            "offsetY": "344px",
+            "zIndex": 15
+          },
+          "tamano": {
+            "ancho": "23px",
+            "alto": "85px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 10
+          }
+        },
+        {
+          "uid": 10,
+          "alias": "Vert-2",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/09/slide-8.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "181px",
+            "offsetY": "339px",
+            "zIndex": 14
+          },
+          "tamano": {
+            "ancho": "57px",
+            "alto": "91px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 10
+          }
+        },
+        {
+          "uid": 11,
+          "alias": "Vert-4",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/09/slide-3.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "105px",
+            "offsetY": "519px",
+            "zIndex": 16
+          },
+          "tamano": {
+            "ancho": "24px",
+            "alto": "92px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 10
+          }
+        },
+        {
+          "uid": 12,
+          "alias": "Vert-5",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/09/slide-7.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "222px",
+            "offsetY": "525px",
+            "zIndex": 17
+          },
+          "tamano": {
+            "ancho": "43px",
+            "alto": "92px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 10
+          }
+        },
+        {
+          "uid": 13,
+          "alias": "Vert-6",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/09/slide-5.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "315px",
+            "offsetY": "519px",
+            "zIndex": 18
+          },
+          "tamano": {
+            "ancho": "47px",
+            "alto": "104px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 10
+          }
+        },
+        {
+          "uid": 14,
+          "alias": "Vert-7",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/09/slide-4.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "449px",
+            "offsetY": "515px",
+            "zIndex": 19
+          },
+          "tamano": {
+            "ancho": "30px",
+            "alto": "95px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 10
+          }
+        },
+        {
+          "uid": 15,
+          "alias": "Vert-8",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/09/slide-6.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "562px",
+            "offsetY": "515px",
+            "zIndex": 20
+          },
+          "tamano": {
+            "ancho": "42px",
+            "alto": "96px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 10
+          }
+        },
+        {
+          "uid": 17,
+          "alias": "Round-hrz",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/10/slide-circular.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": "39px",
+            "zIndex": 11
+          },
+          "tamano": {
+            "ancho": "445px",
+            "alto": "445"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 4300
+          }
+        },
+        {
+          "uid": 18,
+          "alias": "Round-Conect",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/10/slide-circular-inside.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": "142px",
+            "zIndex": 12
+          },
+          "tamano": {
+            "ancho": "350px",
+            "alto": "236px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 5410
+          }
+        },
+        {
+          "uid": 21,
+          "alias": "Bottom-1",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/10/slide-bottom-1.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "8px",
+            "offsetY": "540px",
+            "zIndex": 24
+          },
+          "tamano": {
+            "ancho": "78px",
+            "alto": "150px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 4800
+          }
+        },
+        {
+          "uid": 22,
+          "alias": "Bottom-2",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/10/slide-bottom-2.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "95px",
+            "offsetY": "540px",
+            "zIndex": 25
+          },
+          "tamano": {
+            "ancho": "78px",
+            "alto": "150px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 4900
+          }
+        },
+        {
+          "uid": 23,
+          "alias": "Bottom-3",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/10/slide-bottom-3.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "181px",
+            "offsetY": "540px",
+            "zIndex": 26
+          },
+          "tamano": {
+            "ancho": "79px",
+            "alto": "150px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 5000
+          }
+        },
+        {
+          "uid": 24,
+          "alias": "Bottom-4",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/10/slide-bottom-4.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "268px",
+            "offsetY": "540px",
+            "zIndex": 27
+          },
+          "tamano": {
+            "ancho": "75px",
+            "alto": "150px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 5100
+          }
+        },
+        {
+          "uid": 25,
+          "alias": "Bottom-5",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/10/slide-bottom-5.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "352px",
+            "offsetY": "540px",
+            "zIndex": 28
+          },
+          "tamano": {
+            "ancho": "78px",
+            "alto": "150px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 5100
+          }
+        },
+        {
+          "uid": 26,
+          "alias": "Bottom-7",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/10/slide-bottom-7.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "530px",
+            "offsetY": "540px",
+            "zIndex": 30
+          },
+          "tamano": {
+            "ancho": "79px",
+            "alto": "150px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 4900
+          }
+        },
+        {
+          "uid": 27,
+          "alias": "Bottom-8",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/10/slide-bottom-8.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "611px",
+            "offsetY": "540px",
+            "zIndex": 31
+          },
+          "tamano": {
+            "ancho": "76px",
+            "alto": "150px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 4800
+          }
+        },
+        {
+          "uid": 28,
+          "alias": "Bottom-6",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/10/slide-bottom-6.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "442px",
+            "offsetY": "540px",
+            "zIndex": 29
+          },
+          "tamano": {
+            "ancho": "78px",
+            "alto": "150px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 5000
+          }
+        },
+        {
+          "uid": 29,
+          "alias": "1-round",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/09/slide-1.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "302px",
+            "offsetY": "5px",
+            "zIndex": 32
+          },
+          "tamano": {
+            "ancho": "56px",
+            "alto": "120px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 5100
+          }
+        },
+        {
+          "uid": 30,
+          "alias": "2-round",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/09/slide-8.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "157px",
+            "offsetY": "43px",
+            "zIndex": 33
+          },
+          "tamano": {
+            "ancho": "69px",
+            "alto": "110px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 5100
+          }
+        },
+        {
+          "uid": 31,
+          "alias": "3-round",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/09/slide-2.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "507px",
+            "offsetY": "48px",
+            "zIndex": 34
+          },
+          "tamano": {
+            "ancho": "29px",
+            "alto": "105px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 5100
+          }
+        },
+        {
+          "uid": 32,
+          "alias": "4-round",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/09/slide-3.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "547px",
+            "offsetY": "181px",
+            "zIndex": 35
+          },
+          "tamano": {
+            "ancho": "29px",
+            "alto": "110px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 5100
+          }
+        },
+        {
+          "uid": 33,
+          "alias": "5-round",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/09/slide-7.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "100px",
+            "offsetY": "187px",
+            "zIndex": 36
+          },
+          "tamano": {
+            "ancho": "56px",
+            "alto": "120px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 5100
+          }
+        },
+        {
+          "uid": 34,
+          "alias": "6-round",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/09/slide-5.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "304px",
+            "offsetY": "405px",
+            "zIndex": 37
+          },
+          "tamano": {
+            "ancho": "59px",
+            "alto": "130px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 4800
+          }
+        },
+        {
+          "uid": 35,
+          "alias": "7-round",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/09/slide-4.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "499px",
+            "offsetY": "328px",
+            "zIndex": 38
+          },
+          "tamano": {
+            "ancho": "36px",
+            "alto": "115px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 4800
+          }
+        },
+        {
+          "uid": 36,
+          "alias": "8-round",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/09/slide-6.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "157px",
+            "offsetY": "325px",
+            "zIndex": 39
+          },
+          "tamano": {
+            "ancho": "52px",
+            "alto": "120px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 4800
+          }
+        },
+        {
+          "uid": 37,
+          "alias": "Vert-Shape-1",
+          "tipo": "forma",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": "224px",
+            "zIndex": 21
+          },
+          "tamano": {
+            "ancho": "270px",
+            "alto": "7px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 1000
+          }
+        },
+        {
+          "uid": 38,
+          "alias": "Vert-Shape-2",
+          "tipo": "forma",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": "381px",
+            "zIndex": 22
+          },
+          "tamano": {
+            "ancho": "500px",
+            "alto": "7px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 2000
+          }
+        },
+        {
+          "uid": 39,
+          "alias": "Vert-Shape-3",
+          "tipo": "forma",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": "563px",
+            "zIndex": 23
+          },
+          "tamano": {
+            "ancho": "690px",
+            "alto": "7px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 3000
+          }
+        },
+        {
+          "uid": 40,
+          "alias": "SVG",
+          "tipo": "texto",
+          "texto": " ",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": "156px",
+            "zIndex": 40
+          },
+          "tamano": {
+            "ancho": "200px",
+            "alto": "200px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 7800
+          }
+        },
+        {
+          "uid": 41,
+          "alias": "Vert-gray-1",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/10/slide-gray-1.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "bottom",
+            "offsetX": null,
+            "offsetY": null,
+            "zIndex": 8
+          },
+          "tamano": {
+            "ancho": "700px",
+            "alto": "621px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 1000
+          }
+        },
+        {
+          "uid": 42,
+          "alias": "Vert-gray-2",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/10/slide-gray-2.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "bottom",
+            "offsetX": null,
+            "offsetY": null,
+            "zIndex": 9
+          },
+          "tamano": {
+            "ancho": "700px",
+            "alto": "621"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 2000
+          }
+        },
+        {
+          "uid": 43,
+          "alias": "Vert-gray-3",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/10/slide-gray-3.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "bottom",
+            "offsetX": null,
+            "offsetY": null,
+            "zIndex": 10
+          },
+          "tamano": {
+            "ancho": "700px",
+            "alto": "621"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 3000
+          }
+        },
+        {
+          "uid": 45,
+          "alias": "Shape",
+          "tipo": "forma",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "477px",
+            "offsetY": "25px",
+            "zIndex": 5
+          },
+          "tamano": {
+            "ancho": "169px",
+            "alto": "169px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 1000
+          }
+        },
+        {
+          "uid": 47,
+          "alias": "Caption text37",
+          "tipo": "texto",
+          "texto": "X",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "522px",
+            "offsetY": "44px",
+            "zIndex": 6
+          },
+          "tamano": {
+            "ancho": null,
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 1000
+          }
+        }
+      ]
+    }
+  ]
+}

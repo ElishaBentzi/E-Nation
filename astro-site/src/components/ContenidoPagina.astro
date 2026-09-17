@@ -13,6 +13,8 @@
  */
 import type { Locale, PageId } from '../i18n/config.ts';
 import { PAGES, rutaDe } from '../i18n/config.ts';
+import BannerSlider from '../../../shared/banner-slider/BannerSlider.astro';
+import { slidersDe } from '../sliders/index.ts';
 
 interface Props {
   page: PageId;
@@ -21,7 +23,21 @@ interface Props {
 const { page, locale } = Astro.props;
 const def = PAGES[page];
 const seo = def.seo[locale];
+const sliders = slidersDe(page, locale);
 ---
+
+{/* Los sliders del original, reconstruidos y alimentados por la configuracion
+    extraida del plugin. En la home son de adorno (el logo animado); en la
+    presentacion, el carrusel de banners a los demas proyectos. */}
+{sliders.map((s) => (
+  <BannerSlider
+    config={s.config}
+    etiqueta={s.etiqueta}
+    etiquetaAnterior={s.anterior}
+    etiquetaSiguiente={s.siguiente}
+    clase="bg-[#0b1a2b]"
+  />
+))}
 
 <section class="container-site py-12">
   <h1 class="font-heading text-4xl text-blue-dark dark:text-white">

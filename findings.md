@@ -548,3 +548,38 @@ Decisiones que importan:
 - **Sin banderas, y esto es una recomendación de fondo.** Una bandera representa un **país**, no un idioma: el español no es solo España, el inglés no es solo el Reino Unido, el francés no es solo Francia. Poner banderas excluye a la mayoría de los hablantes y obliga a inventarse una bandera para idiomas que no tienen país. Se usa el **nombre del idioma en su propio idioma** (endónimo), que un hablante reconoce de un vistazo.
 - **Solo ofrece los idiomas en los que existe esa página.** Desde `/presentation/` no aparece Français (no existe la presentación en francés) en lugar de ofrecer un enlace que llevaría a un 404 o al inicio.
 - **Cada enlace lleva a la MISMA página** en el otro idioma, no al inicio. Verificado: `/presentation/` → `/es/presentacion/`, y `/fr/articles/` → `/articles/` y `/es/articulos/`. Es exactamente el defecto que el original tenía con el francés.
+
+### Los sliders son banners entre proyectos: `banner-publicidad`
+
+Medido con `tools/analyze-sliders.cjs`: **los 4 sliders suman 220 capas**, y el que importa es `banner-publicidad` — **21 slides y 157 capas**, que es casi todo el trabajo.
+
+**Sus 63 assets de imagen viven en 9 dominios distintos**, y los destinos de sus enlaces lo confirman: es literalmente un carrusel de banners de los proyectos del usuario.
+
+| destino | qué es |
+|---|---|
+| `sbmjuegos.com` (raíz, `/es/`, `/fr/`) | otro proyecto |
+| `sbmlibre.com` (raíz, `/es/`, `/fr/`) | otro proyecto |
+| `unitycoin.net`, `mutualwelfare.org`, `bien-etremutuel.org` | otros proyectos |
+| `bienestarmutuo.org`, `bienestarmutuo.org.ve` | otros proyectos |
+| `bienestarmutuo.org` | **24 de los 63 assets viven aquí, no en e-nation.org** |
+
+**15 de los 21 slides enlazan** a 11 destinos distintos. Los 6 restantes no tienen enlace: son slides de título o hay mapeo perdido — queda **avisado**, no descartado en silencio.
+
+**Los otros tres sliders (`e-nation`, `snake`, `vertical-horizontal`) NO enlazan a nada**: son las animaciones de adorno de la home (el logo, la serpiente). Así que "0 enlaces" ahí es **correcto**, no un fallo.
+
+#### El componente reutilizable
+
+`shared/banner-slider/` — carrusel autónomo (Astro + script, sin jQuery ni licencia) alimentado por un JSON con formato propio documentado, más `tools/revslider-to-config.cjs` como generador. **Está escrito para copiarse a otros proyectos de conversión**, con su README y su contrato de configuración. Detalles de por qué en la skill.
+
+#### Cuatro trampas que costaron tiempo (todas en la skill)
+
+1. **Los enlaces NO están en las capas sino en `params.seo.link`**, a nivel de slide. Mi primera conversión dio `enlaces: 0` y además **imprimió «sin avisos: todo mapeado»**: un falso «todo bien» sobre justo lo que da sentido a estos banners.
+2. **Las dimensiones son `size.width`/`size.height`**, no `gridWidth`/`gridHeight`. Leer las claves equivocadas **no falla**: devuelve `undefined`, el lienzo queda sin alto y **el contenedor colapsa a 0** con las capas apiladas encima del pie. Fallo puramente visual: el build pasa.
+3. **`size.maxWidth`** limita el ancho en `banner-publicidad` (1166). Ignorarlo lo estiraba a todo el ancho y cambiaba la escala de todas las capas.
+4. **El texto de 6 capas lleva HTML real** (`Spanish Edition <i class="fa-download"></i>`): texto más un icono que el original renderizaba. Escapado, el visitante veía el código.
+
+#### Estado de la reconstrucción de los sliders
+
+Verificado que funciona: **1166 px de ancho (el `maxWidth` respetado), 282 px de alto, 21 slides, 54 imágenes externas cargando y los 15 enlaces con `rel="noopener"`**. Texto real visible («Juega y Coopera para Crecer»).
+
+**Falta calibrar la posición de las 85 capas de imagen.** Están posicionadas en píxeles relativos al lienzo de 1240 px del original, y el banner sale oscuro porque caen fuera del área visible. Es exactamente el trabajo del **bucle de comparación contra las capturas de referencia**, que es la siguiente ola.

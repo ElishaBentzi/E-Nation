@@ -1,0 +1,4314 @@
+{
+  "id": "banner-publicidad",
+  "origen": {
+    "plugin": "slider-revolution",
+    "id": "17",
+    "totalSlidesOriginal": 21
+  },
+  "lienzo": {
+    "ancho": 1240,
+    "alto": 300,
+    "anchoMaximo": 1166,
+    "variantes": {
+      "portatil": {
+        "ancho": 1024,
+        "alto": 248
+      },
+      "tableta": {
+        "ancho": 778,
+        "alto": 188
+      },
+      "movil": {
+        "ancho": 480,
+        "alto": 116
+      }
+    }
+  },
+  "comportamiento": {
+    "autoplay": false,
+    "intervaloMs": null,
+    "bucle": true,
+    "pausaAlPasarRaton": true
+  },
+  "slides": [
+    {
+      "id": "50",
+      "orden": "1",
+      "titulo": "Juegos",
+      "enlace": {
+        "href": "https://sbmjuegos.com/es/",
+        "target": "_blank",
+        "externo": true
+      },
+      "fondo": {
+        "tipo": "image",
+        "color": "#E7E7E7",
+        "imagen": "https://e-nation.org/zero/wp-content/uploads/2017/12/games-banner-bg.jpg",
+        "sinMapear": null
+      },
+      "capas": [
+        {
+          "uid": 9,
+          "alias": "Subtitle",
+          "tipo": "texto",
+          "texto": "Juega y Coopera para Crecer",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "34px",
+            "offsetY": "202px",
+            "zIndex": 6
+          },
+          "tamano": {
+            "ancho": "665px",
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 910
+          }
+        },
+        {
+          "uid": 29,
+          "alias": "Pink Bar",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/games-banner-barra.jpg",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": "189px",
+            "zIndex": 5
+          },
+          "tamano": {
+            "ancho": "668px",
+            "alto": "58px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 490
+          }
+        },
+        {
+          "uid": 30,
+          "alias": "Title",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/games-banner-logo.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "47px",
+            "offsetY": "41px",
+            "zIndex": 7
+          },
+          "tamano": {
+            "ancho": "956px",
+            "alto": "163px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 10
+          }
+        },
+        {
+          "uid": 31,
+          "alias": "Yellow",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/games-banner-amarillo.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "514px",
+            "offsetY": null,
+            "zIndex": 8
+          },
+          "tamano": {
+            "ancho": "589px",
+            "alto": "87px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 290
+          }
+        },
+        {
+          "uid": 32,
+          "alias": "Pink",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/games-banner-rosado.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "365px",
+            "offsetY": "171px",
+            "zIndex": 9
+          },
+          "tamano": {
+            "ancho": "876px",
+            "alto": "131px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 900
+          }
+        }
+      ]
+    },
+    {
+      "id": "53",
+      "orden": "35",
+      "titulo": "Slide",
+      "enlace": null,
+      "fondo": {
+        "tipo": "transparent",
+        "color": "#E7E7E7",
+        "imagen": null,
+        "sinMapear": null
+      },
+      "capas": [
+        {
+          "uid": 3,
+          "alias": "Barra",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Barra.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": null,
+            "zIndex": 5
+          },
+          "tamano": {
+            "ancho": "1240px",
+            "alto": "300px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 120
+          }
+        },
+        {
+          "uid": 8,
+          "alias": "Psycho",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Psyco-a-tamaño.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": null,
+            "zIndex": 7
+          },
+          "tamano": {
+            "ancho": "378px",
+            "alto": "300px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 870
+          }
+        },
+        {
+          "uid": 9,
+          "alias": "Sociedad del Bienest...",
+          "tipo": "texto",
+          "texto": "Mutual Welfare Society",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "390px",
+            "offsetY": "17px",
+            "zIndex": 8
+          },
+          "tamano": {
+            "ancho": "714px",
+            "alto": "67px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 300
+          }
+        },
+        {
+          "uid": 11,
+          "alias": "Bienestar Mutuo (Lib...",
+          "tipo": "texto",
+          "texto": "Mutual Welfare (Digital Book)",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "955px",
+            "offsetY": "269px",
+            "zIndex": 13
+          },
+          "tamano": {
+            "ancho": "218px",
+            "alto": "27px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 870
+          }
+        },
+        {
+          "uid": 15,
+          "alias": "Edición Español",
+          "tipo": "texto",
+          "texto": "Spanish Edition <i class=\"fa-download\"></i>",
+          "textoConHtml": true,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "783px",
+            "offsetY": "138px",
+            "zIndex": 14
+          },
+          "tamano": {
+            "ancho": null,
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 2140
+          }
+        },
+        {
+          "uid": 16,
+          "alias": "Barra Español",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Ralla.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "754px",
+            "offsetY": "152px",
+            "zIndex": 9
+          },
+          "tamano": {
+            "ancho": "229px",
+            "alto": "23px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 2130
+          }
+        },
+        {
+          "uid": 17,
+          "alias": "Ebook Elastic",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Ebook-elastic.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "710px",
+            "offsetY": "89px",
+            "zIndex": 12
+          },
+          "tamano": {
+            "ancho": "497px",
+            "alto": "183px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 870
+          }
+        },
+        {
+          "uid": 20,
+          "alias": "Barra Ingles",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Ralla.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "736px",
+            "offsetY": "195px",
+            "zIndex": 10
+          },
+          "tamano": {
+            "ancho": "229px",
+            "alto": "23px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 2140
+          }
+        },
+        {
+          "uid": 21,
+          "alias": "Edición Ingles",
+          "tipo": "texto",
+          "texto": "English Edition <i class=\"fa-download\"></i>",
+          "textoConHtml": true,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "773px",
+            "offsetY": "180px",
+            "zIndex": 15
+          },
+          "tamano": {
+            "ancho": null,
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 2140
+          }
+        },
+        {
+          "uid": 24,
+          "alias": "Barra Frances",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Ralla.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "716px",
+            "offsetY": "238px",
+            "zIndex": 11
+          },
+          "tamano": {
+            "ancho": "229px",
+            "alto": "23px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 2150
+          }
+        },
+        {
+          "uid": 25,
+          "alias": "Edición Frances",
+          "tipo": "texto",
+          "texto": "French Edition <i class=\"fa-download\"></i>",
+          "textoConHtml": true,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "741px",
+            "offsetY": "225px",
+            "zIndex": 16
+          },
+          "tamano": {
+            "ancho": null,
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 2140
+          }
+        },
+        {
+          "uid": 26,
+          "alias": "Rueda",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/01/Circuloa-tamaño.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "-457px",
+            "offsetY": null,
+            "zIndex": 6
+          },
+          "tamano": {
+            "ancho": "294px",
+            "alto": "288px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 550
+          }
+        }
+      ]
+    },
+    {
+      "id": "54",
+      "orden": "34",
+      "titulo": "Slide",
+      "enlace": null,
+      "fondo": {
+        "tipo": "transparent",
+        "color": "#E7E7E7",
+        "imagen": null,
+        "sinMapear": null
+      },
+      "capas": [
+        {
+          "uid": 3,
+          "alias": "Barra",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Barra.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": null,
+            "zIndex": 5
+          },
+          "tamano": {
+            "ancho": "1240px",
+            "alto": "300px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 120
+          }
+        },
+        {
+          "uid": 8,
+          "alias": "Psycho",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Psyco-a-tamaño.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": null,
+            "zIndex": 7
+          },
+          "tamano": {
+            "ancho": "378px",
+            "alto": "300px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 870
+          }
+        },
+        {
+          "uid": 9,
+          "alias": "Sociedad del Bienest...",
+          "tipo": "texto",
+          "texto": "Société du Bien-être Mutuel",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "327px",
+            "offsetY": "17px",
+            "zIndex": 8
+          },
+          "tamano": {
+            "ancho": "851px",
+            "alto": "67px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 300
+          }
+        },
+        {
+          "uid": 11,
+          "alias": "Bienestar Mutuo (Lib...",
+          "tipo": "texto",
+          "texto": "Bien-être Mutuel (Livre Digitall)",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "862px",
+            "offsetY": "271px",
+            "zIndex": 13
+          },
+          "tamano": {
+            "ancho": "315px",
+            "alto": "26px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 870
+          }
+        },
+        {
+          "uid": 15,
+          "alias": "Edition Espagnol",
+          "tipo": "texto",
+          "texto": "Edition Espagnol <i class=\"fa-download\"></i>",
+          "textoConHtml": true,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "783px",
+            "offsetY": "138px",
+            "zIndex": 14
+          },
+          "tamano": {
+            "ancho": null,
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 2140
+          }
+        },
+        {
+          "uid": 16,
+          "alias": "Barra Español",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Ralla.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "754px",
+            "offsetY": "152px",
+            "zIndex": 9
+          },
+          "tamano": {
+            "ancho": "229px",
+            "alto": "23px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 2130
+          }
+        },
+        {
+          "uid": 17,
+          "alias": "Ebook Elastic",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Ebook-elastic.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "710px",
+            "offsetY": "89px",
+            "zIndex": 12
+          },
+          "tamano": {
+            "ancho": "497px",
+            "alto": "183px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 870
+          }
+        },
+        {
+          "uid": 20,
+          "alias": "Barra Ingles",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Ralla.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "736px",
+            "offsetY": "195px",
+            "zIndex": 10
+          },
+          "tamano": {
+            "ancho": "229px",
+            "alto": "23px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 2140
+          }
+        },
+        {
+          "uid": 21,
+          "alias": "Edición Ingles",
+          "tipo": "texto",
+          "texto": "Edition Anglaise <i class=\"fa-download\"></i>",
+          "textoConHtml": true,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "773px",
+            "offsetY": "180px",
+            "zIndex": 15
+          },
+          "tamano": {
+            "ancho": null,
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 2140
+          }
+        },
+        {
+          "uid": 24,
+          "alias": "Barra Frances",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Ralla.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "716px",
+            "offsetY": "238px",
+            "zIndex": 11
+          },
+          "tamano": {
+            "ancho": "229px",
+            "alto": "23px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 2150
+          }
+        },
+        {
+          "uid": 25,
+          "alias": "Edición Frances",
+          "tipo": "texto",
+          "texto": "Edition Française <i class=\"fa-download\"></i>",
+          "textoConHtml": true,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "741px",
+            "offsetY": "225px",
+            "zIndex": 16
+          },
+          "tamano": {
+            "ancho": null,
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 2140
+          }
+        },
+        {
+          "uid": 26,
+          "alias": "Rueda",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/01/Circuloa-tamaño.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "-457px",
+            "offsetY": null,
+            "zIndex": 6
+          },
+          "tamano": {
+            "ancho": "294px",
+            "alto": "288px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 550
+          }
+        }
+      ]
+    },
+    {
+      "id": "55",
+      "orden": "40",
+      "titulo": "Slide",
+      "enlace": null,
+      "fondo": {
+        "tipo": "image",
+        "color": "#E7E7E7",
+        "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Base.jpg",
+        "sinMapear": null
+      },
+      "capas": [
+        {
+          "uid": 1,
+          "alias": "Imagen",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Imagen.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": null,
+            "zIndex": 10
+          },
+          "tamano": {
+            "ancho": "1240px",
+            "alto": "300px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 150
+          }
+        },
+        {
+          "uid": 3,
+          "alias": "Arco Tricolor",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Banderin.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": null,
+            "zIndex": 7
+          },
+          "tamano": {
+            "ancho": "1240px",
+            "alto": "300px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 500
+          }
+        },
+        {
+          "uid": 4,
+          "alias": "Venezuela",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Venezuela.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": "6px",
+            "zIndex": 8
+          },
+          "tamano": {
+            "ancho": "1240px",
+            "alto": "300px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 500
+          }
+        },
+        {
+          "uid": 5,
+          "alias": "Cubre",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Cubre.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": null,
+            "zIndex": 9
+          },
+          "tamano": {
+            "ancho": "1240px",
+            "alto": "300px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 500
+          }
+        },
+        {
+          "uid": 6,
+          "alias": "Modelo de Participac...",
+          "tipo": "texto",
+          "texto": "Model of Participation",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "625px",
+            "offsetY": "15px",
+            "zIndex": 6
+          },
+          "tamano": {
+            "ancho": null,
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 500
+          }
+        },
+        {
+          "uid": 7,
+          "alias": "POLÍTICA",
+          "tipo": "texto",
+          "texto": "POLITICS",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "552px",
+            "offsetY": "67px",
+            "zIndex": 5
+          },
+          "tamano": {
+            "ancho": "594px",
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 500
+          }
+        },
+        {
+          "uid": 17,
+          "alias": "Descargar Libro",
+          "tipo": "texto",
+          "texto": "https://bienestarmutuo.ve",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "714px",
+            "offsetY": "175px",
+            "zIndex": 11
+          },
+          "tamano": {
+            "ancho": "278px",
+            "alto": "44px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 500
+          }
+        }
+      ]
+    },
+    {
+      "id": "56",
+      "orden": "39",
+      "titulo": "Slide",
+      "enlace": null,
+      "fondo": {
+        "tipo": "image",
+        "color": "#E7E7E7",
+        "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Base.jpg",
+        "sinMapear": null
+      },
+      "capas": [
+        {
+          "uid": 1,
+          "alias": "Imagen",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Imagen.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": null,
+            "zIndex": 10
+          },
+          "tamano": {
+            "ancho": "1240px",
+            "alto": "300px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 150
+          }
+        },
+        {
+          "uid": 3,
+          "alias": "Arco Tricolor",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Banderin.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": null,
+            "zIndex": 7
+          },
+          "tamano": {
+            "ancho": "1240px",
+            "alto": "300px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 500
+          }
+        },
+        {
+          "uid": 4,
+          "alias": "Venezuela",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Venezuela.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": "6px",
+            "zIndex": 8
+          },
+          "tamano": {
+            "ancho": "1240px",
+            "alto": "300px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 500
+          }
+        },
+        {
+          "uid": 5,
+          "alias": "Cubre",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Cubre.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": null,
+            "zIndex": 9
+          },
+          "tamano": {
+            "ancho": "1240px",
+            "alto": "300px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 500
+          }
+        },
+        {
+          "uid": 6,
+          "alias": "Modelo de Participac...",
+          "tipo": "texto",
+          "texto": "Modèle de Participation",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "625px",
+            "offsetY": "15px",
+            "zIndex": 6
+          },
+          "tamano": {
+            "ancho": null,
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 500
+          }
+        },
+        {
+          "uid": 7,
+          "alias": "POLÍTICA",
+          "tipo": "texto",
+          "texto": "POLITIQUE",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "508px",
+            "offsetY": "67px",
+            "zIndex": 5
+          },
+          "tamano": {
+            "ancho": "594px",
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 500
+          }
+        },
+        {
+          "uid": 17,
+          "alias": "Descargar Libro",
+          "tipo": "texto",
+          "texto": "https://bienestarmutuo.ve",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "714px",
+            "offsetY": "175px",
+            "zIndex": 11
+          },
+          "tamano": {
+            "ancho": "278px",
+            "alto": "44px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 500
+          }
+        }
+      ]
+    },
+    {
+      "id": "57",
+      "orden": "43",
+      "titulo": "Slide",
+      "enlace": null,
+      "fondo": {
+        "tipo": "transparent",
+        "color": "#E7E7E7",
+        "imagen": null,
+        "sinMapear": null
+      },
+      "capas": [
+        {
+          "uid": 1,
+          "alias": "Grama",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Grama.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": null,
+            "zIndex": 6
+          },
+          "tamano": {
+            "ancho": "1240px",
+            "alto": "300px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 500
+          }
+        },
+        {
+          "uid": 2,
+          "alias": "Man Principal",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Man.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "359px",
+            "offsetY": "141px",
+            "zIndex": 7
+          },
+          "tamano": {
+            "ancho": "104px",
+            "alto": "154px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 1500
+          }
+        },
+        {
+          "uid": 3,
+          "alias": "Hearth Principal",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Hearth.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "358px",
+            "offsetY": "143px",
+            "zIndex": 8
+          },
+          "tamano": {
+            "ancho": "104px",
+            "alto": "154px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 1900
+          }
+        },
+        {
+          "uid": 4,
+          "alias": "Man 2Izq",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Man-Hearth.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "267px",
+            "offsetY": "141px",
+            "zIndex": 9
+          },
+          "tamano": {
+            "ancho": "104px",
+            "alto": "154px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 2450
+          }
+        },
+        {
+          "uid": 5,
+          "alias": "Talleres",
+          "tipo": "texto",
+          "texto": "WORKSHOPS",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "-208px",
+            "offsetY": "-85px",
+            "zIndex": 5
+          },
+          "tamano": {
+            "ancho": "787px",
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 500
+          }
+        },
+        {
+          "uid": 6,
+          "alias": "Man 2Der",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Man-Hearth.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "451px",
+            "offsetY": "141px",
+            "zIndex": 10
+          },
+          "tamano": {
+            "ancho": "104px",
+            "alto": "154px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 2450
+          }
+        },
+        {
+          "uid": 7,
+          "alias": "Man 3Izq",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Man-Hearth.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "175px",
+            "offsetY": "141px",
+            "zIndex": 11
+          },
+          "tamano": {
+            "ancho": "104px",
+            "alto": "154px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 2950
+          }
+        },
+        {
+          "uid": 8,
+          "alias": "Man 3Der",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Man-Hearth.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "543px",
+            "offsetY": "141px",
+            "zIndex": 12
+          },
+          "tamano": {
+            "ancho": "104px",
+            "alto": "154px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 2950
+          }
+        },
+        {
+          "uid": 9,
+          "alias": "Man 4Izq",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Man-Hearth.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "83px",
+            "offsetY": "141px",
+            "zIndex": 13
+          },
+          "tamano": {
+            "ancho": "104px",
+            "alto": "154px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 3450
+          }
+        },
+        {
+          "uid": 11,
+          "alias": "Man 4Der",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Man-Hearth.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "635px",
+            "offsetY": "141px",
+            "zIndex": 14
+          },
+          "tamano": {
+            "ancho": "104px",
+            "alto": "154px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 3450
+          }
+        },
+        {
+          "uid": 13,
+          "alias": "Man 5Izq",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Man-Hearth.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "-9px",
+            "offsetY": "141px",
+            "zIndex": 15
+          },
+          "tamano": {
+            "ancho": "104px",
+            "alto": "154px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 3950
+          }
+        },
+        {
+          "uid": 15,
+          "alias": "Man 5Izq",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Man-Hearth.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "727px",
+            "offsetY": "141px",
+            "zIndex": 16
+          },
+          "tamano": {
+            "ancho": "104px",
+            "alto": "154px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 3950
+          }
+        },
+        {
+          "uid": 19,
+          "alias": "Image 19",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Foto.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": null,
+            "zIndex": 17
+          },
+          "tamano": {
+            "ancho": "1240px",
+            "alto": "300px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 100
+          }
+        }
+      ]
+    },
+    {
+      "id": "58",
+      "orden": "42",
+      "titulo": "Slide",
+      "enlace": null,
+      "fondo": {
+        "tipo": "transparent",
+        "color": "#E7E7E7",
+        "imagen": null,
+        "sinMapear": null
+      },
+      "capas": [
+        {
+          "uid": 1,
+          "alias": "Grama",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Grama.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": null,
+            "zIndex": 6
+          },
+          "tamano": {
+            "ancho": "1240px",
+            "alto": "300px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 500
+          }
+        },
+        {
+          "uid": 2,
+          "alias": "Man Principal",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Man.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "359px",
+            "offsetY": "141px",
+            "zIndex": 7
+          },
+          "tamano": {
+            "ancho": "104px",
+            "alto": "154px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 1500
+          }
+        },
+        {
+          "uid": 3,
+          "alias": "Hearth Principal",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Hearth.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "358px",
+            "offsetY": "143px",
+            "zIndex": 8
+          },
+          "tamano": {
+            "ancho": "104px",
+            "alto": "154px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 1900
+          }
+        },
+        {
+          "uid": 4,
+          "alias": "Man 2Izq",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Man-Hearth.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "267px",
+            "offsetY": "141px",
+            "zIndex": 9
+          },
+          "tamano": {
+            "ancho": "104px",
+            "alto": "154px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 2450
+          }
+        },
+        {
+          "uid": 5,
+          "alias": "Talleres",
+          "tipo": "texto",
+          "texto": "ATELIERS",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "-209px",
+            "offsetY": "-85px",
+            "zIndex": 5
+          },
+          "tamano": {
+            "ancho": "663px",
+            "alto": "151px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 500
+          }
+        },
+        {
+          "uid": 6,
+          "alias": "Man 2Der",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Man-Hearth.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "451px",
+            "offsetY": "141px",
+            "zIndex": 10
+          },
+          "tamano": {
+            "ancho": "104px",
+            "alto": "154px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 2450
+          }
+        },
+        {
+          "uid": 7,
+          "alias": "Man 3Izq",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Man-Hearth.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "175px",
+            "offsetY": "141px",
+            "zIndex": 11
+          },
+          "tamano": {
+            "ancho": "104px",
+            "alto": "154px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 2950
+          }
+        },
+        {
+          "uid": 8,
+          "alias": "Man 3Der",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Man-Hearth.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "543px",
+            "offsetY": "141px",
+            "zIndex": 12
+          },
+          "tamano": {
+            "ancho": "104px",
+            "alto": "154px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 2950
+          }
+        },
+        {
+          "uid": 9,
+          "alias": "Man 4Izq",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Man-Hearth.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "83px",
+            "offsetY": "141px",
+            "zIndex": 13
+          },
+          "tamano": {
+            "ancho": "104px",
+            "alto": "154px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 3450
+          }
+        },
+        {
+          "uid": 11,
+          "alias": "Man 4Der",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Man-Hearth.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "635px",
+            "offsetY": "141px",
+            "zIndex": 14
+          },
+          "tamano": {
+            "ancho": "104px",
+            "alto": "154px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 3450
+          }
+        },
+        {
+          "uid": 13,
+          "alias": "Man 5Izq",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Man-Hearth.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "-9px",
+            "offsetY": "141px",
+            "zIndex": 15
+          },
+          "tamano": {
+            "ancho": "104px",
+            "alto": "154px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 3950
+          }
+        },
+        {
+          "uid": 15,
+          "alias": "Man 5Izq",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Man-Hearth.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "727px",
+            "offsetY": "141px",
+            "zIndex": 16
+          },
+          "tamano": {
+            "ancho": "104px",
+            "alto": "154px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 3950
+          }
+        },
+        {
+          "uid": 19,
+          "alias": "Image 19",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/revslider/1header/Foto.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": null,
+            "zIndex": 17
+          },
+          "tamano": {
+            "ancho": "1240px",
+            "alto": "300px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 100
+          }
+        }
+      ]
+    },
+    {
+      "id": "59",
+      "orden": "32",
+      "titulo": "Slide",
+      "enlace": {
+        "href": "https://sbmjuegos.com",
+        "target": "_blank",
+        "externo": true
+      },
+      "fondo": {
+        "tipo": "image",
+        "color": "#E7E7E7",
+        "imagen": "https://e-nation.org/zero/wp-content/uploads/2017/12/games-banner-bg.jpg",
+        "sinMapear": null
+      },
+      "capas": [
+        {
+          "uid": 9,
+          "alias": "Subtitle",
+          "tipo": "texto",
+          "texto": "Play and Cooperate to Grow Up",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "34px",
+            "offsetY": "202px",
+            "zIndex": 6
+          },
+          "tamano": {
+            "ancho": "665px",
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 910
+          }
+        },
+        {
+          "uid": 29,
+          "alias": "Pink Bar",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/games-banner-barra.jpg",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": "189px",
+            "zIndex": 5
+          },
+          "tamano": {
+            "ancho": "668px",
+            "alto": "58px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 490
+          }
+        },
+        {
+          "uid": 30,
+          "alias": "Title",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/games-banner-logo.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "47px",
+            "offsetY": "41px",
+            "zIndex": 7
+          },
+          "tamano": {
+            "ancho": "956px",
+            "alto": "163px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 10
+          }
+        },
+        {
+          "uid": 31,
+          "alias": "Yellow",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/games-banner-amarillo.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "514px",
+            "offsetY": null,
+            "zIndex": 8
+          },
+          "tamano": {
+            "ancho": "589px",
+            "alto": "87px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 290
+          }
+        },
+        {
+          "uid": 32,
+          "alias": "Pink",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/games-banner-rosado.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "365px",
+            "offsetY": "170px",
+            "zIndex": 9
+          },
+          "tamano": {
+            "ancho": "876px",
+            "alto": "131px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 900
+          }
+        }
+      ]
+    },
+    {
+      "id": "60",
+      "orden": "5",
+      "titulo": "Venezuela",
+      "enlace": {
+        "href": "https://bienestarmutuo.org.ve",
+        "target": "_blank",
+        "externo": true
+      },
+      "fondo": {
+        "tipo": "image",
+        "color": "#E7E7E7",
+        "imagen": "https://e-nation.org/zero/wp-content/uploads/2017/12/ve-banner-bground.jpg",
+        "sinMapear": null
+      },
+      "capas": [
+        {
+          "uid": 9,
+          "alias": "Subtitle",
+          "tipo": "texto",
+          "texto": "SOCIEDAD DEL",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "18px",
+            "offsetY": "62px",
+            "zIndex": 6
+          },
+          "tamano": {
+            "ancho": "665px",
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 910
+          }
+        },
+        {
+          "uid": 33,
+          "alias": "Tricolor",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/ve-banner-bandera.jpg",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": "30px",
+            "zIndex": 5
+          },
+          "tamano": {
+            "ancho": "818px",
+            "alto": "177px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 10
+          }
+        },
+        {
+          "uid": 36,
+          "alias": "Subtitle",
+          "tipo": "texto",
+          "texto": "BIENESTAR MUTUO",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "18px",
+            "offsetY": "134px",
+            "zIndex": 7
+          },
+          "tamano": {
+            "ancho": "893px",
+            "alto": "122px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 910
+          }
+        },
+        {
+          "uid": 37,
+          "alias": "Subtitle",
+          "tipo": "texto",
+          "texto": "¡UNA VENEZUELA 100% NUEVA!",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "17px",
+            "offsetY": "228px",
+            "zIndex": 8
+          },
+          "tamano": {
+            "ancho": "1031px",
+            "alto": "122px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 910
+          }
+        },
+        {
+          "uid": 38,
+          "alias": "Image 6",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/ve-banner-map.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "857px",
+            "offsetY": "16px",
+            "zIndex": 9
+          },
+          "tamano": {
+            "ancho": "360px",
+            "alto": "269px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 1160
+          }
+        },
+        {
+          "uid": 39,
+          "alias": "Image 7",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/ve-banner-corazon.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "1002px",
+            "offsetY": "93px",
+            "zIndex": 10
+          },
+          "tamano": {
+            "ancho": "100px",
+            "alto": "85px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 1330
+          }
+        }
+      ]
+    },
+    {
+      "id": "63",
+      "orden": "29",
+      "titulo": "Venezuela",
+      "enlace": {
+        "href": "https://bienestarmutuo.org.ve",
+        "target": "_blank",
+        "externo": true
+      },
+      "fondo": {
+        "tipo": "image",
+        "color": "#E7E7E7",
+        "imagen": "https://e-nation.org/zero/wp-content/uploads/2017/12/ve-banner-bground.jpg",
+        "sinMapear": null
+      },
+      "capas": [
+        {
+          "uid": 9,
+          "alias": "Subtitle",
+          "tipo": "texto",
+          "texto": "MUTUAL",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "19px",
+            "offsetY": "62px",
+            "zIndex": 6
+          },
+          "tamano": {
+            "ancho": "665px",
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 910
+          }
+        },
+        {
+          "uid": 33,
+          "alias": "Tricolor",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/ve-banner-bandera.jpg",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": "30px",
+            "zIndex": 5
+          },
+          "tamano": {
+            "ancho": "818px",
+            "alto": "177px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 10
+          }
+        },
+        {
+          "uid": 36,
+          "alias": "Subtitle",
+          "tipo": "texto",
+          "texto": "WELFARE SOCIETY",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "19px",
+            "offsetY": "136px",
+            "zIndex": 7
+          },
+          "tamano": {
+            "ancho": "893px",
+            "alto": "122px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 910
+          }
+        },
+        {
+          "uid": 37,
+          "alias": "Subtitle",
+          "tipo": "texto",
+          "texto": "A 100% NEW VENEZUELA!",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "17px",
+            "offsetY": "228px",
+            "zIndex": 8
+          },
+          "tamano": {
+            "ancho": "1031px",
+            "alto": "122px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 910
+          }
+        },
+        {
+          "uid": 38,
+          "alias": "Image 6",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/ve-banner-map.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "857px",
+            "offsetY": "16px",
+            "zIndex": 9
+          },
+          "tamano": {
+            "ancho": "360px",
+            "alto": "269px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 1160
+          }
+        },
+        {
+          "uid": 39,
+          "alias": "Image 7",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/ve-banner-corazon.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "1002px",
+            "offsetY": "93px",
+            "zIndex": 10
+          },
+          "tamano": {
+            "ancho": "100px",
+            "alto": "85px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 1330
+          }
+        }
+      ]
+    },
+    {
+      "id": "64",
+      "orden": "27",
+      "titulo": "Venezuela",
+      "enlace": {
+        "href": "https://bienestarmutuo.org.ve",
+        "target": "_blank",
+        "externo": true
+      },
+      "fondo": {
+        "tipo": "image",
+        "color": "#E7E7E7",
+        "imagen": "https://e-nation.org/zero/wp-content/uploads/2017/12/ve-banner-bground.jpg",
+        "sinMapear": null
+      },
+      "capas": [
+        {
+          "uid": 9,
+          "alias": "Subtitle",
+          "tipo": "texto",
+          "texto": "Société du",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "18px",
+            "offsetY": "59px",
+            "zIndex": 6
+          },
+          "tamano": {
+            "ancho": "665px",
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 910
+          }
+        },
+        {
+          "uid": 33,
+          "alias": "Tricolor",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/ve-banner-bandera.jpg",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": "30px",
+            "zIndex": 5
+          },
+          "tamano": {
+            "ancho": "818px",
+            "alto": "177px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 10
+          }
+        },
+        {
+          "uid": 36,
+          "alias": "Subtitle",
+          "tipo": "texto",
+          "texto": "Bien-être Mutuel",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "18px",
+            "offsetY": "134px",
+            "zIndex": 7
+          },
+          "tamano": {
+            "ancho": "893px",
+            "alto": "122px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 910
+          }
+        },
+        {
+          "uid": 37,
+          "alias": "Subtitle",
+          "tipo": "texto",
+          "texto": "Une nouvelle venezuela à 100%!",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "17px",
+            "offsetY": "228px",
+            "zIndex": 8
+          },
+          "tamano": {
+            "ancho": "1031px",
+            "alto": "122px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 910
+          }
+        },
+        {
+          "uid": 38,
+          "alias": "Image 6",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/ve-banner-map.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "857px",
+            "offsetY": "16px",
+            "zIndex": 9
+          },
+          "tamano": {
+            "ancho": "360px",
+            "alto": "269px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 1160
+          }
+        },
+        {
+          "uid": 39,
+          "alias": "Image 7",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/ve-banner-corazon.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "1002px",
+            "offsetY": "93px",
+            "zIndex": 10
+          },
+          "tamano": {
+            "ancho": "100px",
+            "alto": "85px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 1330
+          }
+        }
+      ]
+    },
+    {
+      "id": "65",
+      "orden": "5",
+      "titulo": "Juegos",
+      "enlace": {
+        "href": "https://sbmjuegos.com/fr/",
+        "target": "_blank",
+        "externo": true
+      },
+      "fondo": {
+        "tipo": "image",
+        "color": "#E7E7E7",
+        "imagen": "https://e-nation.org/zero/wp-content/uploads/2017/12/ve-banner-bground.jpg",
+        "sinMapear": null
+      },
+      "capas": [
+        {
+          "uid": 9,
+          "alias": "Subtitle",
+          "tipo": "texto",
+          "texto": "Jouer et Coopérer pour Grandir",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "33px",
+            "offsetY": "202px",
+            "zIndex": 6
+          },
+          "tamano": {
+            "ancho": "665px",
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 910
+          }
+        },
+        {
+          "uid": 29,
+          "alias": "Pink Bar",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/games-banner-barra.jpg",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": "189px",
+            "zIndex": 5
+          },
+          "tamano": {
+            "ancho": "668px",
+            "alto": "58px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 490
+          }
+        },
+        {
+          "uid": 30,
+          "alias": "Title",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/games-banner-logo.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "47px",
+            "offsetY": "41px",
+            "zIndex": 7
+          },
+          "tamano": {
+            "ancho": "956px",
+            "alto": "163px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 10
+          }
+        },
+        {
+          "uid": 31,
+          "alias": "Yellow",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/games-banner-amarillo.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "514px",
+            "offsetY": null,
+            "zIndex": 8
+          },
+          "tamano": {
+            "ancho": "589px",
+            "alto": "87px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 290
+          }
+        },
+        {
+          "uid": 32,
+          "alias": "Pink",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/games-banner-rosado.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "365px",
+            "offsetY": "171px",
+            "zIndex": 9
+          },
+          "tamano": {
+            "ancho": "876px",
+            "alto": "131px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 900
+          }
+        }
+      ]
+    },
+    {
+      "id": "66",
+      "orden": "6",
+      "titulo": "Pagos",
+      "enlace": {
+        "href": "https://sbmlibre.com/es/",
+        "target": "_blank",
+        "externo": true
+      },
+      "fondo": {
+        "tipo": "image",
+        "color": "#E7E7E7",
+        "imagen": "https://e-nation.org/zero/wp-content/uploads/2017/12/pagos-banner-bground.jpg",
+        "sinMapear": null
+      },
+      "capas": [
+        {
+          "uid": 9,
+          "alias": "Subtitle",
+          "tipo": "texto",
+          "texto": "SOCIEDAD DEL",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "635px",
+            "offsetY": "18px",
+            "zIndex": 6
+          },
+          "tamano": {
+            "ancho": "422px",
+            "alto": "56px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 330
+          }
+        },
+        {
+          "uid": 36,
+          "alias": "Subtitle",
+          "tipo": "texto",
+          "texto": "BIENESTAR MUTUO",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "526px",
+            "offsetY": "78px",
+            "zIndex": 7
+          },
+          "tamano": {
+            "ancho": "675px",
+            "alto": "61px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 10
+          }
+        },
+        {
+          "uid": 37,
+          "alias": "Subtitle",
+          "tipo": "texto",
+          "texto": "Economía Etica Social 2.0",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "539px",
+            "offsetY": "162px",
+            "zIndex": 8
+          },
+          "tamano": {
+            "ancho": "647px",
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 600
+          }
+        },
+        {
+          "uid": 44,
+          "alias": "Shape",
+          "tipo": "forma",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "499px",
+            "offsetY": "148px",
+            "zIndex": 5
+          },
+          "tamano": {
+            "ancho": "741px",
+            "alto": "136px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 10
+          }
+        },
+        {
+          "uid": 45,
+          "alias": "Subtitle",
+          "tipo": "texto",
+          "texto": "Diseñada para el Beneficio de toda la Sociedad",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "542px",
+            "offsetY": "207px",
+            "zIndex": 9
+          },
+          "tamano": {
+            "ancho": "647px",
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 600
+          }
+        },
+        {
+          "uid": 46,
+          "alias": "Image 14",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/pagos-banner-logotipo.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "111px",
+            "offsetY": "63px",
+            "zIndex": 10
+          },
+          "tamano": {
+            "ancho": "206px",
+            "alto": "176px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 10
+          }
+        }
+      ]
+    },
+    {
+      "id": "69",
+      "orden": "24",
+      "titulo": "Pagos",
+      "enlace": {
+        "href": "https://sbmlibre.com",
+        "target": "_blank",
+        "externo": true
+      },
+      "fondo": {
+        "tipo": "image",
+        "color": "#E7E7E7",
+        "imagen": "https://e-nation.org/zero/wp-content/uploads/2017/12/pagos-banner-bground.jpg",
+        "sinMapear": null
+      },
+      "capas": [
+        {
+          "uid": 9,
+          "alias": "Subtitle",
+          "tipo": "texto",
+          "texto": "MUTUAL",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "256px",
+            "offsetY": "18px",
+            "zIndex": 6
+          },
+          "tamano": {
+            "ancho": "246px",
+            "alto": "57px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 330
+          }
+        },
+        {
+          "uid": 36,
+          "alias": "Subtitle",
+          "tipo": "texto",
+          "texto": "WELFARE SOCIETY",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "245px",
+            "offsetY": "78px",
+            "zIndex": 7
+          },
+          "tamano": {
+            "ancho": "675px",
+            "alto": "61px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 10
+          }
+        },
+        {
+          "uid": 37,
+          "alias": "Subtitle",
+          "tipo": "texto",
+          "texto": "Social Ethical Economy 2.0",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "539px",
+            "offsetY": "162px",
+            "zIndex": 8
+          },
+          "tamano": {
+            "ancho": "647px",
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 600
+          }
+        },
+        {
+          "uid": 44,
+          "alias": "Shape",
+          "tipo": "forma",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "right",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": "148px",
+            "zIndex": 5
+          },
+          "tamano": {
+            "ancho": "741px",
+            "alto": "133px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 10
+          }
+        },
+        {
+          "uid": 45,
+          "alias": "Subtitle",
+          "tipo": "texto",
+          "texto": "Designed for the Benefit of WHOLE SOCIETY",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "542px",
+            "offsetY": "207px",
+            "zIndex": 9
+          },
+          "tamano": {
+            "ancho": "647px",
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 600
+          }
+        },
+        {
+          "uid": 46,
+          "alias": "Image 14",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/pagos-banner-logotipo.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "111px",
+            "offsetY": "63px",
+            "zIndex": 10
+          },
+          "tamano": {
+            "ancho": "206px",
+            "alto": "176px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 10
+          }
+        }
+      ]
+    },
+    {
+      "id": "70",
+      "orden": "21",
+      "titulo": "Pagos",
+      "enlace": {
+        "href": "https://sbmlibre.com/fr/",
+        "target": "_blank",
+        "externo": true
+      },
+      "fondo": {
+        "tipo": "image",
+        "color": "#E7E7E7",
+        "imagen": "https://e-nation.org/zero/wp-content/uploads/2017/12/pagos-banner-bground.jpg",
+        "sinMapear": null
+      },
+      "capas": [
+        {
+          "uid": 9,
+          "alias": "Subtitle",
+          "tipo": "texto",
+          "texto": "Société du",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "248px",
+            "offsetY": "10px",
+            "zIndex": 6
+          },
+          "tamano": {
+            "ancho": "352px",
+            "alto": "57px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 330
+          }
+        },
+        {
+          "uid": 36,
+          "alias": "Subtitle",
+          "tipo": "texto",
+          "texto": "Bien-être Mutuel",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "246px",
+            "offsetY": "78px",
+            "zIndex": 7
+          },
+          "tamano": {
+            "ancho": "675px",
+            "alto": "61px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 10
+          }
+        },
+        {
+          "uid": 37,
+          "alias": "Subtitle",
+          "tipo": "texto",
+          "texto": "Économie Éthique Sociale 2.0",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "539px",
+            "offsetY": "162px",
+            "zIndex": 8
+          },
+          "tamano": {
+            "ancho": "647px",
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 600
+          }
+        },
+        {
+          "uid": 44,
+          "alias": "Shape",
+          "tipo": "forma",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "499px",
+            "offsetY": "148px",
+            "zIndex": 5
+          },
+          "tamano": {
+            "ancho": "741px",
+            "alto": "133px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 10
+          }
+        },
+        {
+          "uid": 45,
+          "alias": "Subtitle",
+          "tipo": "texto",
+          "texto": "Conçue pour le bénéfice de TOUTE LA SOCIÉTÉ",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "542px",
+            "offsetY": "207px",
+            "zIndex": 9
+          },
+          "tamano": {
+            "ancho": "666px",
+            "alto": "61px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 600
+          }
+        },
+        {
+          "uid": 46,
+          "alias": "Image 14",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/pagos-banner-logotipo.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "111px",
+            "offsetY": "63px",
+            "zIndex": 10
+          },
+          "tamano": {
+            "ancho": "206px",
+            "alto": "176px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 10
+          }
+        }
+      ]
+    },
+    {
+      "id": "71",
+      "orden": "7",
+      "titulo": "Unity",
+      "enlace": {
+        "href": "https://unitycoin.net",
+        "target": "_blank",
+        "externo": true
+      },
+      "fondo": {
+        "tipo": "image",
+        "color": "#E7E7E7",
+        "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/unity-banner-BG.jpg",
+        "sinMapear": null
+      },
+      "capas": [
+        {
+          "uid": 9,
+          "alias": "Subtitle",
+          "tipo": "texto",
+          "texto": "UNITYCOIN",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": "72px",
+            "zIndex": 5
+          },
+          "tamano": {
+            "ancho": "442px",
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 10
+          }
+        },
+        {
+          "uid": 48,
+          "alias": "Image 7",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/unity-banner-B.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "862px",
+            "offsetY": "5px",
+            "zIndex": 6
+          },
+          "tamano": {
+            "ancho": "240px",
+            "alto": "236px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": null
+          }
+        },
+        {
+          "uid": 49,
+          "alias": "Image 8",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/unity-banner-A.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "145px",
+            "offsetY": "5px",
+            "zIndex": 7
+          },
+          "tamano": {
+            "ancho": "240px",
+            "alto": "236px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": null
+          }
+        },
+        {
+          "uid": 50,
+          "alias": "Subtitle",
+          "tipo": "texto",
+          "texto": "UNT",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "-527px",
+            "offsetY": "186px",
+            "zIndex": 8
+          },
+          "tamano": {
+            "ancho": "128px",
+            "alto": "57px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 900
+          }
+        },
+        {
+          "uid": 51,
+          "alias": "Subtitle",
+          "tipo": "texto",
+          "texto": "Union para Nuestra Verdadera",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "4px",
+            "offsetY": "146px",
+            "zIndex": 9
+          },
+          "tamano": {
+            "ancho": "440px",
+            "alto": "56px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 300
+          }
+        },
+        {
+          "uid": 52,
+          "alias": "Subtitle",
+          "tipo": "texto",
+          "texto": "Libertad Monetaria",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "20px",
+            "offsetY": "189px",
+            "zIndex": 10
+          },
+          "tamano": {
+            "ancho": "503px",
+            "alto": "57px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 600
+          }
+        },
+        {
+          "uid": 54,
+          "alias": "Image 7",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/unity-banner-theoriginal.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "1033px",
+            "offsetY": "98px",
+            "zIndex": 11
+          },
+          "tamano": {
+            "ancho": "205px",
+            "alto": "203px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 1290
+          }
+        }
+      ]
+    },
+    {
+      "id": "75",
+      "orden": "17",
+      "titulo": "Unity",
+      "enlace": {
+        "href": "https://unitycoin.net",
+        "target": "_blank",
+        "externo": true
+      },
+      "fondo": {
+        "tipo": "image",
+        "color": "#E7E7E7",
+        "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/unity-banner-BG.jpg",
+        "sinMapear": null
+      },
+      "capas": [
+        {
+          "uid": 9,
+          "alias": "Subtitle",
+          "tipo": "texto",
+          "texto": "UNITYCOIN",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": "72px",
+            "zIndex": 5
+          },
+          "tamano": {
+            "ancho": "442px",
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 10
+          }
+        },
+        {
+          "uid": 48,
+          "alias": "Image 7",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/unity-banner-B.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "862px",
+            "offsetY": "5px",
+            "zIndex": 6
+          },
+          "tamano": {
+            "ancho": "240px",
+            "alto": "236px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": null
+          }
+        },
+        {
+          "uid": 49,
+          "alias": "Image 8",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/unity-banner-A.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "145px",
+            "offsetY": "5px",
+            "zIndex": 7
+          },
+          "tamano": {
+            "ancho": "240px",
+            "alto": "236px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": null
+          }
+        },
+        {
+          "uid": 50,
+          "alias": "Subtitle",
+          "tipo": "texto",
+          "texto": "UNT",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "-527px",
+            "offsetY": "186px",
+            "zIndex": 8
+          },
+          "tamano": {
+            "ancho": "128px",
+            "alto": "57px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 900
+          }
+        },
+        {
+          "uid": 51,
+          "alias": "Subtitle",
+          "tipo": "texto",
+          "texto": "Union for our true",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "1px",
+            "offsetY": "146px",
+            "zIndex": 9
+          },
+          "tamano": {
+            "ancho": "387px",
+            "alto": "57px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 300
+          }
+        },
+        {
+          "uid": 52,
+          "alias": "Subtitle",
+          "tipo": "texto",
+          "texto": "Monetary Freedom",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "3px",
+            "offsetY": "190px",
+            "zIndex": 10
+          },
+          "tamano": {
+            "ancho": "517px",
+            "alto": "56px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 600
+          }
+        },
+        {
+          "uid": 54,
+          "alias": "Image 7",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/unity-banner-theoriginal.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "1033px",
+            "offsetY": "98px",
+            "zIndex": 11
+          },
+          "tamano": {
+            "ancho": "205px",
+            "alto": "203px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 1290
+          }
+        }
+      ]
+    },
+    {
+      "id": "76",
+      "orden": "14",
+      "titulo": "Unity",
+      "enlace": {
+        "href": "https://unitycoin.net",
+        "target": "_blank",
+        "externo": true
+      },
+      "fondo": {
+        "tipo": "image",
+        "color": "#E7E7E7",
+        "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/unity-banner-BG.jpg",
+        "sinMapear": null
+      },
+      "capas": [
+        {
+          "uid": 9,
+          "alias": "Subtitle",
+          "tipo": "texto",
+          "texto": "UNITYCOIN",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": "72px",
+            "zIndex": 5
+          },
+          "tamano": {
+            "ancho": "442px",
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 10
+          }
+        },
+        {
+          "uid": 48,
+          "alias": "Image 7",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/unity-banner-B.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "862px",
+            "offsetY": "5px",
+            "zIndex": 6
+          },
+          "tamano": {
+            "ancho": "240px",
+            "alto": "236"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 10
+          }
+        },
+        {
+          "uid": 49,
+          "alias": "Image 8",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/unity-banner-A.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "145px",
+            "offsetY": "5px",
+            "zIndex": 7
+          },
+          "tamano": {
+            "ancho": "240px",
+            "alto": "236"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 10
+          }
+        },
+        {
+          "uid": 50,
+          "alias": "Subtitle",
+          "tipo": "texto",
+          "texto": "UNT",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "-527px",
+            "offsetY": "186px",
+            "zIndex": 8
+          },
+          "tamano": {
+            "ancho": "128px",
+            "alto": "57px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 900
+          }
+        },
+        {
+          "uid": 51,
+          "alias": "Subtitle",
+          "tipo": "texto",
+          "texto": "Union pour notre véritable",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "2px",
+            "offsetY": "146px",
+            "zIndex": 9
+          },
+          "tamano": {
+            "ancho": "440px",
+            "alto": "56px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 300
+          }
+        },
+        {
+          "uid": 52,
+          "alias": "Subtitle",
+          "tipo": "texto",
+          "texto": "Liberté Monétaire",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": "190px",
+            "zIndex": 10
+          },
+          "tamano": {
+            "ancho": "479px",
+            "alto": "60px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 600
+          }
+        },
+        {
+          "uid": 54,
+          "alias": "Image 7",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://bienestarmutuo.org/zero/wp-content/uploads/2017/12/unity-banner-theoriginal.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "1033px",
+            "offsetY": "98px",
+            "zIndex": 11
+          },
+          "tamano": {
+            "ancho": "205px",
+            "alto": "203px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 1290
+          }
+        }
+      ]
+    },
+    {
+      "id": "77",
+      "orden": "2",
+      "titulo": "SBM org",
+      "enlace": {
+        "href": "https://bienestarmutuo.org",
+        "target": "_blank",
+        "externo": true
+      },
+      "fondo": {
+        "tipo": "image",
+        "color": "#E7E7E7",
+        "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/org-banner-bground.jpg",
+        "sinMapear": null
+      },
+      "capas": [
+        {
+          "uid": 9,
+          "alias": "Society",
+          "tipo": "texto",
+          "texto": "SOCIEDAD DEL",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "22px",
+            "offsetY": "30px",
+            "zIndex": 8
+          },
+          "tamano": {
+            "ancho": "536px",
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 300
+          }
+        },
+        {
+          "uid": 36,
+          "alias": "Welfare",
+          "tipo": "texto",
+          "texto": "BIENESTAR MUTUO",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "21px",
+            "offsetY": "85px",
+            "zIndex": 9
+          },
+          "tamano": {
+            "ancho": "860px",
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 600
+          }
+        },
+        {
+          "uid": 37,
+          "alias": "Subtitle - 1",
+          "tipo": "texto",
+          "texto": "Un Modelo Social y Económico para llevar a",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "13px",
+            "offsetY": "200px",
+            "zIndex": 10
+          },
+          "tamano": {
+            "ancho": "842px",
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 900
+          }
+        },
+        {
+          "uid": 44,
+          "alias": "Shape",
+          "tipo": "forma",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "3px",
+            "offsetY": "194px",
+            "zIndex": 5
+          },
+          "tamano": {
+            "ancho": "865px",
+            "alto": "96px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 500
+          }
+        },
+        {
+          "uid": 45,
+          "alias": "Subtitle - 2",
+          "tipo": "texto",
+          "texto": "la HUMANIDAD a su siguiente EVOLUCIÓN",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "13px",
+            "offsetY": "242px",
+            "zIndex": 11
+          },
+          "tamano": {
+            "ancho": "842px",
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 1200
+          }
+        },
+        {
+          "uid": 46,
+          "alias": "Image 14",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/org-banner-mundo.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "927px",
+            "offsetY": "38px",
+            "zIndex": 6
+          },
+          "tamano": {
+            "ancho": "250px",
+            "alto": "249px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 10
+          }
+        },
+        {
+          "uid": 48,
+          "alias": "Image 7",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/org-banner-bar.jpg",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "2px",
+            "offsetY": "8px",
+            "zIndex": 7
+          },
+          "tamano": {
+            "ancho": "865px",
+            "alto": "178px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 10
+          }
+        }
+      ]
+    },
+    {
+      "id": "80",
+      "orden": "4",
+      "titulo": "SBM org",
+      "enlace": {
+        "href": "https://mutualwelfare.org/",
+        "target": "_blank",
+        "externo": true
+      },
+      "fondo": {
+        "tipo": "image",
+        "color": "#E7E7E7",
+        "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/org-banner-bground.jpg",
+        "sinMapear": null
+      },
+      "capas": [
+        {
+          "uid": 9,
+          "alias": "Society",
+          "tipo": "texto",
+          "texto": "MUTUAL",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "22px",
+            "offsetY": "30px",
+            "zIndex": 8
+          },
+          "tamano": {
+            "ancho": "536px",
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 300
+          }
+        },
+        {
+          "uid": 36,
+          "alias": "Welfare",
+          "tipo": "texto",
+          "texto": "WELFARE SOCIETY",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "21px",
+            "offsetY": "85px",
+            "zIndex": 9
+          },
+          "tamano": {
+            "ancho": "860px",
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 600
+          }
+        },
+        {
+          "uid": 37,
+          "alias": "Subtitle - 1",
+          "tipo": "texto",
+          "texto": "A Social and Economic Model to bring",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "13px",
+            "offsetY": "199px",
+            "zIndex": 10
+          },
+          "tamano": {
+            "ancho": "842px",
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 900
+          }
+        },
+        {
+          "uid": 44,
+          "alias": "Shape",
+          "tipo": "forma",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "3px",
+            "offsetY": "194px",
+            "zIndex": 5
+          },
+          "tamano": {
+            "ancho": "865px",
+            "alto": "96px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 500
+          }
+        },
+        {
+          "uid": 45,
+          "alias": "Subtitle - 2",
+          "tipo": "texto",
+          "texto": "HUMANITY to its next EVOLUTION\n",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "13px",
+            "offsetY": "244px",
+            "zIndex": 11
+          },
+          "tamano": {
+            "ancho": "842px",
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 1200
+          }
+        },
+        {
+          "uid": 46,
+          "alias": "Image 14",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/org-banner-mundo.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "927px",
+            "offsetY": "38px",
+            "zIndex": 6
+          },
+          "tamano": {
+            "ancho": "250px",
+            "alto": "249px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 10
+          }
+        },
+        {
+          "uid": 48,
+          "alias": "Image 7",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/org-banner-bar.jpg",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "2px",
+            "offsetY": "8px",
+            "zIndex": 7
+          },
+          "tamano": {
+            "ancho": "865px",
+            "alto": "178px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 10
+          }
+        }
+      ]
+    },
+    {
+      "id": "81",
+      "orden": "3",
+      "titulo": "SBM org",
+      "enlace": {
+        "href": "https://bien-etremutuel.org/",
+        "target": "_blank",
+        "externo": true
+      },
+      "fondo": {
+        "tipo": "image",
+        "color": "#E7E7E7",
+        "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/org-banner-bground.jpg",
+        "sinMapear": null
+      },
+      "capas": [
+        {
+          "uid": 9,
+          "alias": "Society",
+          "tipo": "texto",
+          "texto": "Société du",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "22px",
+            "offsetY": "30px",
+            "zIndex": 8
+          },
+          "tamano": {
+            "ancho": "536px",
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 300
+          }
+        },
+        {
+          "uid": 36,
+          "alias": "Welfare",
+          "tipo": "texto",
+          "texto": "Bien-être Mutuel",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "21px",
+            "offsetY": "91px",
+            "zIndex": 9
+          },
+          "tamano": {
+            "ancho": "860px",
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 600
+          }
+        },
+        {
+          "uid": 37,
+          "alias": "Subtitle - 1",
+          "tipo": "texto",
+          "texto": "Un modèle social et économique pour",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "13px",
+            "offsetY": "202px",
+            "zIndex": 10
+          },
+          "tamano": {
+            "ancho": "842px",
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 900
+          }
+        },
+        {
+          "uid": 44,
+          "alias": "Shape",
+          "tipo": "forma",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "3px",
+            "offsetY": "194px",
+            "zIndex": 5
+          },
+          "tamano": {
+            "ancho": "865px",
+            "alto": "96px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 500
+          }
+        },
+        {
+          "uid": 45,
+          "alias": "Subtitle - 2",
+          "tipo": "texto",
+          "texto": "ramener l'HUMANITÉ à son prochain EVOLUTION",
+          "textoConHtml": false,
+          "imagen": null,
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "13px",
+            "offsetY": "242px",
+            "zIndex": 11
+          },
+          "tamano": {
+            "ancho": "842px",
+            "alto": null
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 1200
+          }
+        },
+        {
+          "uid": 46,
+          "alias": "Image 14",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/org-banner-mundo.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "927px",
+            "offsetY": "38px",
+            "zIndex": 6
+          },
+          "tamano": {
+            "ancho": "250px",
+            "alto": "249px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 10
+          }
+        },
+        {
+          "uid": 48,
+          "alias": "Image 7",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/org-banner-bar.jpg",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": "2px",
+            "offsetY": "8px",
+            "zIndex": 7
+          },
+          "tamano": {
+            "ancho": "865px",
+            "alto": "178px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 10
+          }
+        }
+      ]
+    }
+  ]
+}

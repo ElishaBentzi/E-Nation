@@ -120,9 +120,18 @@ src/i18n/config.ts                 ← locales + mapa de slugs por página
 
 Es la pieza más cara de una migración de este tipo. **No empieces por aquí y no improvises el diseño**: reconstruye a partir de la configuración extraída (Fase 1.6), que trae los valores exactos de cada capa.
 
-- Reconstruye en JS propio alimentado por esos valores: sin licencia, sin jQuery y con bundle ligero.
-- Alternativas si la fidelidad no se alcanza: **auto-hospedar el plugin** (arrastra jQuery y assets pesados a un sitio estático, y la licencia hay que renovarla para actualizaciones) o **sustituir por un slider propio** aceptando que las animaciones no serán las mismas.
-- **Escotilla de escape honesta**: si parte de las animaciones no son replicables (RevSlider tiene efectos con máscaras y filtros que no se reconstruyen solo con CSS), dilo **con la captura comparativa delante** y presenta las alternativas. Nunca lo degrades por tu cuenta y lo presentes como terminado.
+**Componente reutilizable: `shared/banner-slider/`.** En este proyecto vive un carrusel de banners **autónomo** (Astro + un script, sin jQuery ni licencia) alimentado por un JSON con un formato propio documentado. Nació de migrar Slider Revolution, pero **no sabe nada del sitio**: está pensado para copiarse a otros proyectos de conversión. Lleva su propio `README.md` con el contrato de configuración y **el generador (`tools/revslider-to-config.cjs`) se copia con él**. Si vuelves a migrar un WordPress con Slider Revolution, empieza por ahí.
+
+**Cómo extraer la configuración.** Las tablas del plugin (`wp_revslider_sliders` y `wp_revslider_slides`), no el HTML. Claves que importan y **trampas que cuestan tiempo**:
+
+- **Los enlaces de los banners NO están en las capas: están en `params.seo.link`**, a nivel de slide, con su `target`. Buscarlos en las acciones de las capas devuelve cero y uno cree que el slider no enlaza a nada — cuando enlazar es justo su propósito. Comprueba además si algún slide se queda **sin enlace**: en un carrusel de banners, eso es un mapeo perdido hasta que se demuestre lo contrario.
+- **Las dimensiones son `size.width` y `size.height`** (con valores por dispositivo), NO `gridWidth`/`gridHeight`. Leer las claves equivocadas no falla: devuelve `undefined`, el lienzo queda sin alto, **el contenedor colapsa a 0 y las capas se apilan encima del pie de página**. Es un fallo visual, no de build.
+- **`size.maxWidth` limita el ancho en algunos sliders.** Ignorarlo los estira a todo el ancho de la ventana y **cambia la escala de todas las capas**, porque están posicionadas en píxeles relativos a ese lienzo.
+- Los valores van **por dispositivo** (`d`/`n`/`t`/`m` = escritorio, portátil, tableta, móvil) y la relación de aspecto **cambia** entre ellos. Guárdalos solo cuando difieran del escritorio: repetirlos los cuadruplica sin aportar nada.
+- **El texto de una capa puede contener HTML** (típicamente texto + un icono: `Edición Español <i class="fa-download"></i>`). Si se escapa, el visitante ve el código. Se interpreta **saneado con lista blanca de etiquetas y sin atributos de evento**.
+- Las animaciones de entrada capa por capa **no se replican enteras**: es toda la complejidad del plugin. Se anotan y **se avisa de cuántas quedan sin mapear**, porque un banner al que le falta un texto y nadie lo nota es el peor resultado de una migración.
+
+**Escotilla de escape honesta**: si parte de las animaciones no son replicables (RevSlider tiene efectos con máscaras y filtros que no se reconstruyen solo con CSS), dilo **con la captura comparativa delante** y presenta las alternativas. Nunca lo degrades por tu cuenta y lo presentes como terminado.
 
 ### Imágenes con texto incrustado
 

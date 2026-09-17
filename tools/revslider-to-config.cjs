@@ -1,0 +1,347 @@
+/*
+ * Convierte la configuracion de Slider Revolution al formato GENERICO del
+ * componente `shared/banner-slider/`.
+ *
+ * POR QUE UN FORMATO PROPIO EN VEZ DE USAR EL DE REVSLIDER
+ *   El de RevSlider esta pensado para su plugin: anida por categorias, mete JSON
+ *   dentro de cadenas, y describe cada capa con variantes por dispositivo en una
+ *   estructura de cuatro niveles. Reconstruirlo tal cual obligaria a arrastrar
+ *   esa complejidad a todos los proyectos que lo usen.
+ *
+ *   El formato de destino es plano, legible y documentado, y el componente lo
+ *   consume sin saber que detras hubo un Slider Revolution. Eso es lo que lo hace
+ *   reutilizable en otras migraciones.
+ *
+ * PRINCIPIO: NADA SE PIERDE EN SILENCIO
+ *   Lo que el generador no sepa mapear NO se descarta callando: se cuenta y se
+ *   lista al final. Un banner al que le falta un texto y nadie lo nota es el peor
+ *   resultado posible de una migracion.
+ *
+ * Uso: node tools/revslider-to-config.cjs [alias]
+ */
+const fs = require('fs');
+const path = require('path');
+
+const ROOT = path.resolve(__dirname, '..');
+const ORIGEN = path.join(ROOT, 'reference', 'sliders');
+const DESTINO = path.join(ROOT, 'astro-site', 'src', 'sliders');
+
+if (!fs.existsSync(ORIGEN)) {
+  console.error('no hay sliders extraidos en reference/sliders/');
+  process.exit(2);
+}
+
+const DISPOSITIVOS = ['d', 'n', 't', 'm'];
+const NOMBRE_DISPOSITIVO = { d: 'escritorio', n: 'portatil', t: 'tableta', m: 'movil' };
+
+/**
+ * Los valores por dispositivo se guardan como { d: { v }, n: { v }, ... }.
+ * Devuelve el valor de escritorio y avisa si los demas difieren, porque el
+ * componente puede necesitar variantes responsive.
+ */
+function porDispositivo(obj) {
+  if (!obj || typeof obj !== 'object') return { valor: obj, difieren: false, todos: {} };
+  const todos = {};
+  for (const d of DISPOSITIVOS) {
+    const v = obj[d];
+    if (v && typeof v === 'object' && 'v' in v) todos[d] = v.v;
+    else if (v !== undefined && typeof v !== 'object') todos[d] = v;
+  }
+  const valores = Object.values(todos).filter((v) => v !== undefined);
+  const difieren = new Set(valores.map((v) => JSON.stringify(v))).size > 1;
+  return { valor: todos.d !== undefined ? todos.d : valores[0], difieren, todos };
+}
+
+/** Busca una propiedad por ruta con puntos, sin romperse si falta. */
+function ruta(o, camino, porDefecto = undefined) {
+  let actual = o;
+  for (const parte of camino.split('.')) {
+    if (actual === null || actual === undefined || typeof actual !== 'object') return porDefecto;
+    actual = actual[parte];
+  }
+  return actual === undefined ? porDefecto : actual;
+}
+
+const avisos = [];
+const avisar = (alias, que) => avisos.push({ alias, que });
+
+/** Traduce un slider completo. */
+function traducir(s) {
+  const alias = s.alias;
+  const p = s.params || {};
+
+  // --- Ajustes del slider ---------------------------------------------------
+  // OJO CON LAS CLAVES: son `size.width` y `size.height`, NO `gridWidth`/
+  // `gridHeight`. Leer las equivocadas no falla, simplemente devuelve undefined y
+  // el lienzo queda en 'auto'... y con altura automatica el contenedor colapsa a 0
+  // y todas las capas se apilan encima del pie de pagina. El fallo es visual, no
+  // de build, asi que no se detecta hasta que se mira.
+  const ancho = porDispositivo(ruta(p, 'size.width'));
+  const alto = porDispositivo(ruta(p, 'size.height'));
+  const autoplay = ruta(p, 'general.slideshow') === 'true' || ruta(p, 'general.slideshow') === true;
+  const intervalo = Number(ruta(p, 'general.slideshowDelay', 0)) || null;
+
+  // Variantes de lienzo: la relacion de aspecto CAMBIA por dispositivo en el
+  // original (1240x300 en escritorio, 480x116 en movil), asi que hay que
+  // conservarlas o el banner queda deformado en movil.
+  const variantesLienzo = {};
+  for (const d of ['n', 't', 'm']) {
+    const a = ancho.todos[d];
+    const h = alto.todos[d];
+    if (a !== undefined && h !== undefined && (a !== ancho.valor || h !== alto.valor)) {
+      variantesLienzo[NOMBRE_DISPOSITIVO[d]] = { ancho: a, alto: h };
+    }
+  }
+
+  // El original limita el ancho de algunos sliders (`banner-publicidad` usa 1166).
+  // Ignorarlo los estira a todo el ancho de la ventana y cambia la escala de las
+  // capas, que estan posicionadas en pixeles relativos a ese lienzo.
+  const maxAnchoCrudo = ruta(p, 'size.maxWidth');
+  const maxAncho = (() => {
+    if (maxAnchoCrudo === undefined || maxAnchoCrudo === null || maxAnchoCrudo === '') return null;
+    if (typeof maxAnchoCrudo === 'object') {
+      const d = maxAnchoCrudo.d;
+      const v = d && typeof d === 'object' && 'v' in d ? d.v : d;
+      return v ? Number(v) || null : null;
+    }
+    return Number(maxAnchoCrudo) || null;
+  })();
+
+  const config = {
+    id: alias,
+    origen: { plugin: 'slider-revolution', id: s.id, totalSlidesOriginal: s.total_slides },
+    lienzo: {
+      ancho: ancho.valor !== undefined ? ancho.valor : null,
+      alto: alto.valor !== undefined ? alto.valor : null,
+      anchoMaximo: maxAncho,
+      ...(Object.keys(variantesLienzo).length ? { variantes: variantesLienzo } : {}),
+    },
+    comportamiento: {
+      autoplay,
+      intervaloMs: intervalo,
+      bucle: ruta(p, 'general.loop') !== 'false',
+      pausaAlPasarRaton: ruta(p, 'general.stopOnHover') !== 'false',
+    },
+    slides: [],
+  };
+
+  // La animacion de entrada de las capas vive en el timeline; se anota la
+  // presencia y los tiempos, no los fotogramas enteros.
+  const framesNoMapeados = new Set();
+
+  for (const sl of s.slides || []) {
+    const sp = sl.params || {};
+    const capasCrudas = sl.capas ? (Array.isArray(sl.capas) ? sl.capas : Object.values(sl.capas)) : [];
+
+    // El fondo del slide puede ser color, imagen o video
+    const fondo = sp.bg || {};
+    const imagenFondo = fondo.image || ruta(fondo, 'image.url') || null;
+    const colorFondo = fondo.color || null;
+    const tipoFondo = fondo.type || (imagenFondo ? 'image' : 'transparent');
+
+    const slide = {
+      id: sl.id,
+      orden: sl.orden,
+      titulo: sp.title || null,
+      // ENLACE DEL SLIDE. Aqui esta lo que convierte estos sliders en banners
+      // entre proyectos, y es lo que casi se pierde: los enlaces NO viven en las
+      // capas sino en `params.seo.link`, a nivel de slide, con su `target`. Se
+      // mira aqui Y en las acciones de las capas, porque puede haber de los dos.
+      enlace: null,
+      fondo: {
+        tipo: tipoFondo,
+        color: colorFondo && colorFondo !== 'transparent' ? colorFondo : null,
+        imagen: imagenFondo,
+        // TODO lo que no sea color ni imagen simple (video, gradiente) hay que
+        // mirarlo a mano: se avisa en vez de perderlo.
+        sinMapear: null,
+      },
+      capas: [],
+    };
+
+    const seo = sp.seo || {};
+    if (seo.set && seo.link) {
+      slide.enlace = {
+        href: seo.link,
+        target: seo.target || '_self',
+        externo: !/^(https?:\/\/)?([a-z0-9-]+\.)*e-nation\.org/i.test(seo.link),
+      };
+    }
+    if (fondo.video && fondo.video.url) {
+      slide.fondo.sinMapear = 'video de fondo';
+      avisar(alias, `slide ${sl.id}: fondo de video (${fondo.video.url})`);
+    }
+
+    for (const capa of capasCrudas) {
+      if (!capa || typeof capa !== 'object') continue;
+
+      const tipo = capa.type || 'text';
+      const tam = capa.size || {};
+      const pos = capa.position || {};
+      const w = porDispositivo(tam.width);
+      const h = porDispositivo(tam.height);
+      const horiz = porDispositivo(pos.horizontal);
+      const vert = porDispositivo(pos.vertical);
+      const ox = porDispositivo(pos.x);
+      const oy = porDispositivo(pos.y);
+
+      const c = {
+        uid: capa.uid,
+        alias: capa.alias || null,
+        tipo: /image/i.test(tipo) ? 'imagen' : /shape/i.test(tipo) ? 'forma' : 'texto',
+        texto: /image|shape/i.test(tipo) ? null : (capa.text || null),
+        // Seis capas de estos sliders llevan HTML de verdad en el texto
+        // ("Spanish Edition <i class=\"fa-download\"></i>"): texto mas un icono
+        // que el original SI renderizaba. Se marca para que el componente sepa
+        // que debe interpretarlo, y no mostrarlo como codigo.
+        textoConHtml: !/image|shape/i.test(tipo) && /<[a-z][^>]*>/i.test(String(capa.text || '')),
+        imagen: ruta(capa, 'media.imageUrl', null),
+        alt: ruta(capa, 'media.alt', null),
+        // Posicion: cuando hay offsets se usan; si no, el anclaje declarado.
+        posicion: {
+          horizontal: horiz.valor || 'center',
+          vertical: vert.valor || 'middle',
+          offsetX: ox.valor !== undefined ? ox.valor : null,
+          offsetY: oy.valor !== undefined ? oy.valor : null,
+          zIndex: pos.zIndex || null,
+        },
+        tamano: {
+          ancho: w.valor !== undefined ? w.valor : null,
+          alto: h.valor !== undefined ? h.valor : null,
+        },
+        // Variantes responsive: solo se anotan cuando DIFIEREN del escritorio.
+        variantes: {},
+      };
+
+      for (const d of ['n', 't', 'm']) {
+        const v = {};
+        if (w.todos[d] !== undefined && w.todos[d] !== w.valor) v.ancho = w.todos[d];
+        if (h.todos[d] !== undefined && h.todos[d] !== h.valor) v.alto = h.todos[d];
+        if (Object.keys(v).length) c.variantes[NOMBRE_DISPOSITIVO[d]] = v;
+      }
+      if (!Object.keys(c.variantes).length) delete c.variantes;
+
+      // Enlaces a nivel de CAPA. En estos sliders el enlace suele estar en el
+      // slide, pero RevSlider tambien admite acciones por capa (`image_link`,
+      // `link`, `url`) y si existen hay que conservarlas.
+      const acciones = capa.actions || {};
+      const candidatos = [
+        ruta(acciones, 'simpleEvent.0.url'),
+        ruta(acciones, 'simpleEvent.url'),
+        ruta(capa, 'action.0.image_link'),
+        ruta(capa, 'action.0.link'),
+        ruta(capa, 'action.0.url'),
+        ruta(capa, 'link'),
+      ].filter((x) => typeof x === 'string' && /^(https?:\/\/|\/)/.test(x));
+
+      if (candidatos.length) {
+        c.enlace = {
+          href: candidatos[0],
+          target: ruta(acciones, 'simpleEvent.0.target', '_self'),
+          externo: !/^(https?:\/\/)?([a-z0-9-]+\.)*e-nation\.org/i.test(candidatos[0]),
+        };
+        // Una capa con VARIOS enlaces distintos es algo que el componente no
+        // cubre: se avisa en lugar de quedarse con el primero y callar.
+        if (new Set(candidatos).size > 1) {
+          avisar(alias, `slide ${sl.id}, capa ${capa.uid}: ${candidatos.length} enlaces distintos, solo se usa el primero`);
+        }
+      }
+
+      // Animacion: se resume. Los fotogramas completos de RevSlider (con
+      // transformaciones por eje y por dispositivo) NO se traducen enteros; se
+      // anota que existe y sus tiempos, y se avisa para revisarlo a mano.
+      const tl = capa.timeline || {};
+      const frames = tl.frames ? Object.keys(tl.frames).filter((k) => !/^frame_999$/.test(k)) : [];
+      if (frames.length) {
+        c.animacion = {
+          tiene: true,
+          fotogramasOriginales: frames.length,
+          entradaMs: Number(ruta(tl, `frames.${frames[0]}.timeline.start`, 0)) || null,
+        };
+        framesNoMapeados.add(`${tipo}/${frames.length}f`);
+      }
+
+      slide.capas.push(c);
+    }
+
+    config.slides.push(slide);
+  }
+
+  const totalCapas = config.slides.reduce((a, sl) => a + sl.capas.length, 0);
+  const totalTexto = config.slides.reduce((a, sl) => a + sl.capas.filter((c) => c.tipo === 'texto' && c.texto).length, 0);
+  const totalImagen = config.slides.reduce((a, sl) => a + sl.capas.filter((c) => c.tipo === 'imagen' && c.imagen).length, 0);
+  const enlacesSlide = config.slides.filter((sl) => sl.enlace).length;
+  const enlacesCapa = config.slides.reduce((a, sl) => a + sl.capas.filter((c) => c.enlace).length, 0);
+  const sinEnlace = config.slides.filter((sl) => !sl.enlace && !sl.capas.some((c) => c.enlace));
+
+  // COMPROBACION QUE IMPORTA: si estos sliders son banners que enlazan a otros
+  // proyectos, un slide SIN enlace es sospechoso de mapeo perdido. Se avisa, en
+  // vez de dar el trabajo por bueno.
+  if (sinEnlace.length) {
+    avisar(alias, `${sinEnlace.length} de ${config.slides.length} slides SIN ningun enlace (¿banner sin destino?): ` +
+      sinEnlace.slice(0, 5).map((sl) => 'slide ' + sl.id).join(', '));
+  }
+
+  return {
+    config,
+    resumen: {
+      totalCapas, totalTexto, totalImagen,
+      enlacesSlide, enlacesCapa,
+      slidesSinEnlace: sinEnlace.length,
+      framesNoMapeados: [...framesNoMapeados],
+    },
+  };
+}
+
+// ---------------------------------------------------------------------------
+
+const pedido = process.argv[2];
+const ficheros = fs.readdirSync(ORIGEN).filter((f) => f.endsWith('.json') && (!pedido || f.includes(pedido)));
+if (!ficheros.length) { console.error(`no hay sliders que coincidan con "${pedido}"`); process.exit(2); }
+
+fs.mkdirSync(DESTINO, { recursive: true });
+
+console.log('Convirtiendo sliders de RevSlider al formato del componente\n');
+for (const f of ficheros.sort()) {
+  const s = JSON.parse(fs.readFileSync(path.join(ORIGEN, f), 'utf8'));
+  const { config, resumen } = traducir(s);
+  const destino = path.join(DESTINO, `${config.id}.json`);
+  fs.writeFileSync(destino, JSON.stringify(config, null, 2), 'utf8');
+
+  const kb = Math.round(fs.statSync(destino).size / 1024);
+  console.log(`  ${config.id}`);
+  console.log(`    slides: ${config.slides.length}   capas: ${resumen.totalCapas} (texto ${resumen.totalTexto}, imagen ${resumen.totalImagen})`);
+  console.log(`    enlaces: ${resumen.enlacesSlide} en el slide + ${resumen.enlacesCapa} en capas${resumen.slidesSinEnlace ? `   AVISO: ${resumen.slidesSinEnlace} slides sin enlace` : ''}`);
+  console.log(`    autoplay: ${config.comportamiento.autoplay}${config.comportamiento.intervaloMs ? ' cada ' + config.comportamiento.intervaloMs + 'ms' : ''}   lienzo: ${config.lienzo.ancho} x ${config.lienzo.alto}`);
+  console.log(`    escrito: src/sliders/${config.id}.json (${kb} KB)`);
+  if (resumen.framesNoMapeados.length) {
+    console.log(`    animaciones a revisar a mano: ${resumen.framesNoMapeados.join(', ')}`);
+  }
+  console.log('');
+
+  // Lista de destinos: es lo que hace que estos sliders sean banners entre
+  // proyectos, asi que conviene verlo de un vistazo.
+  const destinos = [...new Set(config.slides.filter((sl) => sl.enlace).map((sl) => sl.enlace.href))];
+  if (destinos.length) {
+    console.log(`    destinos (${destinos.length}):`);
+    for (const d of destinos.slice(0, 14)) console.log(`      ${d}`);
+    if (destinos.length > 14) console.log(`      ... y ${destinos.length - 14} mas`);
+    console.log('');
+  }
+}
+
+if (avisos.length) {
+  console.log(`AVISOS — ${avisos.length} cosas que el generador NO ha mapeado y hay que mirar:`);
+  const porAlias = new Map();
+  for (const a of avisos) {
+    if (!porAlias.has(a.alias)) porAlias.set(a.alias, []);
+    porAlias.get(a.alias).push(a.que);
+  }
+  for (const [alias, lista] of porAlias) {
+    console.log(`  ${alias}:`);
+    for (const x of lista.slice(0, 8)) console.log(`    - ${x}`);
+    if (lista.length > 8) console.log(`    ... y ${lista.length - 8} mas`);
+  }
+} else {
+  console.log('Sin avisos: todo lo relevante se ha mapeado.');
+}

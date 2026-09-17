@@ -1,0 +1,74 @@
+{
+  "id": "snake",
+  "origen": {
+    "plugin": "slider-revolution",
+    "id": "20",
+    "totalSlidesOriginal": 1
+  },
+  "lienzo": {
+    "ancho": 700,
+    "alto": 700,
+    "anchoMaximo": null,
+    "variantes": {
+      "portatil": {
+        "ancho": 1024,
+        "alto": 768
+      },
+      "tableta": {
+        "ancho": 778,
+        "alto": 960
+      },
+      "movil": {
+        "ancho": 480,
+        "alto": 720
+      }
+    }
+  },
+  "comportamiento": {
+    "autoplay": false,
+    "intervaloMs": null,
+    "bucle": true,
+    "pausaAlPasarRaton": true
+  },
+  "slides": [
+    {
+      "id": "84",
+      "orden": "1",
+      "titulo": "Slide",
+      "enlace": null,
+      "fondo": {
+        "tipo": "transparent",
+        "color": "#E7E7E7",
+        "imagen": null,
+        "sinMapear": null
+      },
+      "capas": [
+        {
+          "uid": 1,
+          "alias": "Image 1",
+          "tipo": "imagen",
+          "texto": null,
+          "textoConHtml": false,
+          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/10/e-nation-logo-L.png",
+          "alt": null,
+          "posicion": {
+            "horizontal": "center",
+            "vertical": "middle",
+            "offsetX": null,
+            "offsetY": null,
+            "zIndex": 5
+          },
+          "tamano": {
+            "ancho": "650px",
+            "alto": "655px"
+          },
+          "animacion": {
+            "tiene": true,
+            "fotogramasOriginales": 2,
+            "entradaMs": 10
+          }
+        }
+      ]
+    }
+  ]
+}
