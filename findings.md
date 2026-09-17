@@ -472,3 +472,11 @@ Mecánica ya documentada en la skill para Tailwind v4: `@custom-variant dark (&:
 ## Visual / Browser Findings
 
 Pendiente. Aún no se ha capturado nada del original. Cuando se haga (Fase 2): capturas full-page de las 16 URLs a 1440 px y 390 px, y el **registro por escrito de lo que se vio** en cada una (el contenido visual no persiste en contexto).
+
+#### Decisión del usuario sobre las imágenes
+
+**Solo se convierte `org-piramid.png`.** Es el diagrama con *Responsibility · Power · Wages · Decisions*, contenido propio del sitio con palabras que un lector leería. Las otras tres candidatas (`31-coin.png`, `8-pact-economy.jpg`, `2-hand-passport.png`) **se quedan como imagen**, y los 11 logotipos de prensa y las 4 con texto incidental de la fotografía también, como estaba previsto.
+
+**Consecuencia práctica: el trabajo de «imagen con texto → texto superpuesto» se reduce a UNA imagen.** Lo que en el plan inicial era un capítulo entero del proyecto queda en una pieza, y además es un diagrama, así que lo más probable es reconstruirlo como SVG o con capas de texto posicionadas en vez de recortar el fondo.
+
+Las coordenadas y el tamaño de los textos de esa imagen hay que medirlos sobre el original cuando se aborde la conversión (Fase 6), no antes.
