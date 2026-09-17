@@ -1,0 +1,144 @@
+/*
+ * Estilos del sitio. Tailwind v4: la configuracion vive AQUI, con `@theme`, y no
+ * en un `tailwind.config.mjs` (que en v4 ya no se usa).
+ *
+ * DE DONDE SALEN LOS VALORES
+ *   Los tokens de marca vienen de `brand/tokens.css`, que a su vez los mide del
+ *   CSS real del WordPress original. Aqui NO se inventa ningun color: lo que hay
+ *   abajo son los valores medidos, mapeados a las ranuras de Tailwind.
+ *
+ * LO MAS IMPORTANTE DE ESTE ARCHIVO
+ *   Los estilos base de elementos (body, a, h1...) van DENTRO de `@layer base`.
+ *   Sin la capa, pisan TODAS las utilidades de Tailwind y se ven colores
+ *   incorrectos SIN NINGUN ERROR DE BUILD: el fallo es invisible hasta que se
+ *   inspecciona el color computado. Es la trampa numero uno de Tailwind v4.
+ */
+
+@import 'tailwindcss';
+/* Tres niveles: este archivo esta en astro-site/src/styles/, y brand/ cuelga de la
+   RAIZ del proyecto. Con dos niveles apuntaria a astro-site/brand, que no existe. */
+@import '../../../brand/tokens.css';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ---------------------------------------------------------------------------
+ * Tokens de marca, expuestos como utilidades de Tailwind.
+ * Los valores son los MEDIDOS sobre post-5738.css y el CSS inline del original.
+ * ------------------------------------------------------------------------- */
+@theme {
+  --color-brand: var(--en-color-primary); /* #ff7100, el acento dominante */
+  --color-brand-dark: var(--en-color-primary-dark);
+  --color-accent: var(--en-color-accent); /* #ff3a2d */
+  --color-blue: var(--en-color-blue); /* #095287 */
+  --color-blue-dark: var(--en-color-blue-dark); /* #003f7f, el mas usado para texto */
+  --color-navy: var(--en-color-navy); /* #234965 */
+  --color-blue-light: var(--en-color-blue-light);
+
+  --color-ink: var(--en-color-ink); /* #333333 */
+  --color-border-soft: var(--en-color-border); /* #e8e8e8 */
+
+  --font-heading: var(--en-font-heading); /* Roboto Slab */
+  --font-body: var(--en-font-body); /* Roboto */
+}
+
+/* ---------------------------------------------------------------------------
+ * Tema oscuro.
+ *
+ * DECISION: el sitio original NO tiene modo oscuro, asi que esta paleta NO se
+ * extrae de ningun sitio: se DISENA. Y por eso mismo no se elige por cuenta
+ * propia. Lo que hay aqui es una propuesta construida SOLO con colores medidos
+ * del original:
+ *   - los fondos salen de los azules oscuros que el sitio ya usa (#003f7f, #234965)
+ *   - el texto claro sale del #e8e8e8 medido
+ *   - los acentos son los mismos que en claro, porque ya contrastan sobre oscuro
+ * No hay ningun color nuevo inventado.
+ *
+ * PENDIENTE: que el usuario vea el resultado y lo apruebe o lo ajuste. Si quiere
+ * otros matices, se cambian AQUI y afectan a todo el sitio de una vez.
+ * ------------------------------------------------------------------------- */
+:root {
+  color-scheme: light;
+}
+.dark {
+  color-scheme: dark;
+}
+
+/* ---------------------------------------------------------------------------
+ * Base. TODO dentro de @layer base: fuera de la capa pisaria las utilidades.
+ * ------------------------------------------------------------------------- */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--color-ink);
+    background-color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* En oscuro, los fondos salen de los azules medidos del original. */
+  .dark body {
+    color: var(--en-color-border);
+    background-color: #0b1a2b;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+  }
+
+  a {
+    color: var(--color-blue);
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--color-brand);
+  }
+
+  .dark a {
+    color: var(--en-color-border);
+  }
+
+  .dark a:hover {
+    color: var(--color-brand);
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * Utilidades propias del sitio.
+ * ------------------------------------------------------------------------- */
+@utility container-site {
+  width: 100%;
+  /* El original usa un contenedor de page builder; este valor se ajustara al
+     medido en la fase de reconstruccion. 1140px es el ancho tipico de Elementor. */
+  max-width: 1140px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+/* El respeto a `prefers-reduced-motion` no es opcional: el original tiene
+   parallax y transiciones, y hay gente que las pasa mal con el movimiento. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

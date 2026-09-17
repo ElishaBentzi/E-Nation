@@ -18,6 +18,9 @@
     "docs:build": "npm --prefix astro-docs run build",
     "i18n:strict": "node tools/i18n.cjs status --strict",
     "i18n:review": "node tools/i18n.cjs review",
-    "validate:php": "node tools/validate-php.mjs"
+    "validate:php": "node tools/validate-php.mjs",
+    "site:dev": "npm --prefix astro-site run dev",
+    "site:build": "npm --prefix astro-site run build",
+    "site:i18n": "node tools/build-site-i18n.cjs"
   }
 }

@@ -1,0 +1,193 @@
+---
+/*
+ * Layout base del sitio.
+ *
+ * Responsabilidades:
+ *   - el <html lang> correcto por idioma
+ *   - el guion de tema EN LINEA Y ANTES DEL PINTADO (ver nota abajo)
+ *   - los alternos hreflang, generados del manifiesto
+ *   - cabecera con navegacion y selectores, y pie
+ */
+import { LOCALES, DEFAULT_LOCALE, LOCALE_LABELS, type Locale, type PageId, rutaDe, idiomasDe } from '../i18n/config.ts';
+import { UI, ORDEN_NAV } from '../i18n/ui.ts';
+import SelectorTema from '../components/SelectorTema.astro';
+
+// La hoja de estilos del sitio. SIN ESTA IMPORTACION EL BUILD PASA IGUAL y las
+// paginas salen SIN NINGUN ESTILO: Astro no exige que el CSS se importe, asi que
+// el fallo es invisible hasta que se mira el HTML construido. Va aqui, en el
+// layout, para que lo hereden todas las paginas.
+import '../styles/global.css';
+
+interface Props {
+  locale: Locale;
+  page: PageId;
+  title: string;
+  description?: string;
+}
+const { locale, page, title, description } = Astro.props;
+const t = UI[locale];
+
+// Origen canonico: la ruta de ESTA pagina en ESTE idioma.
+const canonical = rutaDe(page, locale) ?? '/';
+const sitio = Astro.site?.origin ?? 'https://e-nation.org';
+
+// Alternos: una entrada por idioma en el que exista la pagina, mas x-default al
+// predeterminado. Se generan del manifiesto, asi que anadir un idioma no obliga
+// a tocar esto.
+const alternos = idiomasDe(page).map((l) => ({ locale: l, href: rutaDe(page, l)! }));
+const rutaXDefault = rutaDe(page, DEFAULT_LOCALE);
+---
+
+<!doctype html>
+<html lang={locale} class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="canonical" href={new URL(canonical, sitio).href} />
+
+    {alternos.map((a) => (
+      <link rel="alternate" hreflang={a.locale} href={new URL(a.href, sitio).href} />
+    ))}
+    {rutaXDefault && <link rel="alternate" hreflang="x-default" href={new URL(rutaXDefault, sitio).href} />}
+
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    {/*
+      EL TEMA SE FIJA ANTES DEL PRIMER PINTADO, y por eso va EN LINEA aqui y no
+      en un modulo diferido. Si se cargara despues, el navegador pintaria primero
+      el tema claro y luego saltaria al oscuro: un destello blanco muy visible
+      para quien tiene el tema oscuro guardado. Es el detalle que hace que un
+      selector de tema parezca roto aunque funcione.
+      `is:inline` evita que Astro lo procese como modulo y lo aplace.
+    */}
+    <script is:inline>
+      (() => {
+        try {
+          const guardado = localStorage.getItem('tema');
+          const prefiereOscuro = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          const oscuro = guardado === 'dark' || ((guardado === 'auto' || !guardado) && prefiereOscuro);
+          document.documentElement.classList.toggle('dark', oscuro);
+        } catch (e) {
+          /* Si localStorage esta bloqueado, se queda en claro. No es motivo para
+             romper la pagina. */
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <a
+      href="#contenido"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:rounded focus:bg-brand focus:px-4 focus:py-2 focus:text-white"
+    >
+      {locale === 'es' ? 'Saltar al contenido' : locale === 'fr' ? 'Aller au contenu' : 'Skip to content'}
+    </a>
+
+    <header class="border-b border-border-soft bg-white dark:bg-[#0f2236]">
+      <div class="container-site flex flex-wrap items-center justify-between gap-4 py-4">
+        <a href={rutaDe('home', locale)!} class="flex items-center gap-3">
+          <img src="/e-nation300x300.png" alt="E-Nation" width="48" height="48" class="h-12 w-12" />
+          <span class="font-heading text-xl font-semibold text-blue-dark dark:text-white">E-Nation</span>
+        </a>
+
+        <nav aria-label={t.navLabel}>
+          <ul class="flex flex-wrap items-center gap-x-6 gap-y-2">
+            {ORDEN_NAV.map((p) => {
+              const destino = rutaDe(p, locale);
+              if (!destino) return null;
+              const actual = p === page;
+              return (
+                <li>
+                  <a
+                    href={destino}
+                    aria-current={actual ? 'page' : undefined}
+                    class:list={[
+                      'text-sm hover:text-brand',
+                      actual ? 'font-semibold text-brand' : 'text-ink dark:text-border-soft',
+                    ]}
+                  >
+                    {t.nav[p] ?? p}
+                  </a>
+                </li>
+              );
+            })}
+            {/* Enlace a la documentacion. En el original apuntaba a
+                docs.e-nation.org/<idioma>/latest/; cuando los docs se muden a
+                /docs/ hay que actualizarlo AQUI y en un solo sitio. */}
+            <li>
+              <a
+                href={`https://docs.e-nation.org${locale === DEFAULT_LOCALE ? '' : '/' + locale}/latest/`}
+                class="text-sm text-ink hover:text-brand dark:text-border-soft"
+              >
+                {t.enlaceConstitucion}
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="flex items-center gap-4">
+          {/* Selector de idioma: lleva a la MISMA pagina en el otro idioma, no al
+              inicio. Es lo que el original no conseguia con el frances (su enlace
+              llevaba a /fr/, que redirigia a la home inglesa). */}
+          <nav aria-label={t.idiomaLabel}>
+            <ul class="flex items-center gap-2 text-sm">
+              {LOCALES.map((l) => {
+                const destino = rutaDe(page, l);
+                if (!destino) return null;
+                return (
+                  <li>
+                    <a
+                      href={destino}
+                      hreflang={l}
+                      aria-current={l === locale ? 'true' : undefined}
+                      class:list={[
+                        l === locale ? 'font-semibold text-brand' : 'text-ink hover:text-brand dark:text-border-soft',
+                      ]}
+                    >
+                      {LOCALE_LABELS[l]}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+
+          <SelectorTema locale={locale} />
+        </div>
+      </div>
+    </header>
+
+    <main id="contenido">
+      <slot />
+    </main>
+
+    <footer class="mt-16 border-t border-border-soft bg-white py-8 dark:bg-[#0f2236]">
+      <div class="container-site text-sm text-ink dark:text-border-soft">
+        <p>© {new Date().getFullYear()} E-Nation</p>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<script>
+  // El selector de tema. Se declara aqui abajo para que no bloquee el pintado: el
+  // tema ya se aplico en el <head>, esto solo gestiona el clic.
+  document.querySelectorAll('[data-tema]').forEach((boton) => {
+    boton.addEventListener('click', () => {
+      const valor = boton.getAttribute('data-tema');
+      if (!valor) return;
+      try {
+        localStorage.setItem('tema', valor);
+      } catch (e) {
+        /* sin persistencia, pero el tema cambia igual */
+      }
+      const prefiereOscuro = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const oscuro = valor === 'dark' || (valor === 'auto' && prefiereOscuro);
+      document.documentElement.classList.toggle('dark', oscuro);
+      document.querySelectorAll('[data-tema]').forEach((b) => {
+        b.setAttribute('aria-pressed', String(b.getAttribute('data-tema') === valor));
+      });
+    });
+  });
+</script>

@@ -290,3 +290,17 @@ Pendiente de la fase: la **auditoría de imágenes con texto** (visión + OCR) s
 - **La intuición del usuario era correcta**: la gran mayoría de imágenes no tiene texto.
 
 **Un defecto propio que salió aquí, y era grave**: los **59 fondos de parallax NO estaban descargados**. La causa es fina: **Elementor guarda las URLs en su JSON con las barras escapadas** (`https:\/\/…`), así que cualquier expresión que busque `https://` en los datos crudos no las ve. Mi extractor PHP tenía ese fallo, y los fondos —justo el efecto principal del sitio— nunca entraron en el inventario de medios. Se corrigió añadiendo el **CSS generado** como fuente, que sí tiene las URLs normales: **112 → 171 ficheros, 9,2 MB**.
+
+### Fase 5: Stack del sitio — COMPLETA
+**Status:** complete
+
+- `astro-site/` con **Astro 7.3.3 + Tailwind 4.3.3 + @astrojs/sitemap + aos**, `.nvmrc` en 22. `output: 'static'`, **sin adapter de Cloudflare**. Sin `tailwind.config.mjs`: la config vive en `src/styles/global.css` con `@theme`, y todo lo base va dentro de `@layer base`.
+- **Manifiesto i18n generado** de los grupos de traducción de WPML con `tools/build-site-i18n.cjs` → `astro-site/src/i18n/config.ts`. No se escribe a mano.
+- **16 páginas con las URLs exactas del original**: 7 en la raíz, 7 bajo `/es/` con slugs traducidos, 2 francesas. El inglés es el predeterminado del SITIO; en la documentación es el español, porque son decisiones distintas.
+- **Tema claro/oscuro/auto verificado midiendo**: los tres estados cambian el fondo, persisten, marcan el botón, y **al recargar no hay destello** porque el guion va en línea en el `<head>` antes del primer pintado.
+- Cuatro rutas que escalan a cualquier número de idiomas: `index`, `[...slug]`, `[locale]/index`, `[locale]/[...slug]`.
+
+**Tres fallos por el camino, dos silenciosos:**
+1. **El CSS no se aplicaba en absoluto** y el build pasaba igual (Astro no exige importar la hoja). Las páginas salían sin estilos. Detectado midiendo el HTML construido, no el log.
+2. **Un test mío dio falso positivo**: `grep … | head -1 && echo "presente"` imprimía «presente» aunque el grep no encontrara nada, porque `head` siempre devuelve 0. De ahí concluí que el CSS estaba bien cuando no existía.
+3. Los ids con guion (`privacy-policy`) no son claves válidas sin comillas en TypeScript; el build lo cazó y el generador ahora las entrecomilla.

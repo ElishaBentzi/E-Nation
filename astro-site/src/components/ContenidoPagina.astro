@@ -1,0 +1,57 @@
+---
+/*
+ * Contenido de una pagina del sitio.
+ *
+ * ESTADO ACTUAL: esqueleto. Las rutas, el idioma y el SEO ya son reales y se
+ * generan del manifiesto; el CONTENIDO de cada pagina se reconstruye en la Fase 6,
+ * midiendo contra las capturas de referencia.
+ *
+ * Se deja asi a proposito: primero se comprueba que la arquitectura de rutas e
+ * idiomas funciona (que es lo que no se puede cambiar despues sin romper URLs
+ * indexadas), y solo entonces se rellena el contenido. Al reves, cualquier error
+ * de rutas obligaria a rehacer el contenido.
+ */
+import type { Locale, PageId } from '../i18n/config.ts';
+import { PAGES, rutaDe } from '../i18n/config.ts';
+
+interface Props {
+  page: PageId;
+  locale: Locale;
+}
+const { page, locale } = Astro.props;
+const def = PAGES[page];
+const seo = def.seo[locale];
+---
+
+<section class="container-site py-12">
+  <h1 class="font-heading text-4xl text-blue-dark dark:text-white">
+    {seo?.titulo || page}
+  </h1>
+
+  <p class="mt-4 max-w-2xl text-ink dark:text-border-soft">
+    Contenido pendiente de reconstruir en la fase de reconstrucción. Esta página
+    existe ya con su ruta y su idioma reales, generados del manifiesto de
+    traducciones de WPML.
+  </p>
+
+  <dl class="mt-8 grid gap-2 text-sm text-ink dark:text-border-soft">
+    <div class="flex gap-2">
+      <dt class="font-semibold">Página:</dt>
+      <dd><code>{page}</code> ({def.kind})</dd>
+    </div>
+    <div class="flex gap-2">
+      <dt class="font-semibold">Idioma:</dt>
+      <dd><code>{locale}</code></dd>
+    </div>
+    <div class="flex gap-2">
+      <dt class="font-semibold">Ruta:</dt>
+      <dd><code>{rutaDe(page, locale)}</code></dd>
+    </div>
+    {seo?.keyword && (
+      <div class="flex gap-2">
+        <dt class="font-semibold">Focus keyword original:</dt>
+        <dd><code>{seo.keyword}</code></dd>
+      </div>
+    )}
+  </dl>
+</section>

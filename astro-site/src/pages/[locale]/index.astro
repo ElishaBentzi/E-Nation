@@ -1,0 +1,20 @@
+---
+// Portada de cada idioma NO predeterminado: /es/, /fr/...
+import Base from '../../layouts/Base.astro';
+import ContenidoPagina from '../../components/ContenidoPagina.astro';
+import { LOCALES, DEFAULT_LOCALE, PAGES, type Locale } from '../../i18n/config.ts';
+
+export function getStaticPaths() {
+  return LOCALES.filter((l) => l !== DEFAULT_LOCALE && PAGES.home.slugs[l] !== undefined).map((l) => ({
+    params: { locale: l },
+    props: { locale: l },
+  }));
+}
+
+const { locale } = Astro.props as { locale: Locale };
+const seo = PAGES.home.seo[locale];
+---
+
+<Base locale={locale} page="home" title={seo?.titulo || 'E-Nation'}>
+  <ContenidoPagina page="home" locale={locale} />
+</Base>

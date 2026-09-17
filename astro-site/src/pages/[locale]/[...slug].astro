@@ -1,0 +1,32 @@
+---
+// Paginas interiores de los idiomas NO predeterminados: /es/presentacion/,
+// /fr/nouvelles/...
+//
+// Se genera una ruta por cada par pagina x idioma QUE EXISTA. Por eso el frances
+// solo produce dos paginas: no hay que decidir nada a mano ni se crean huecos con
+// 404, simplemente las que el manifiesto declara.
+import Base from '../../layouts/Base.astro';
+import ContenidoPagina from '../../components/ContenidoPagina.astro';
+import { LOCALES, DEFAULT_LOCALE, PAGES, type Locale, type PageId } from '../../i18n/config.ts';
+
+export function getStaticPaths() {
+  const rutas = [];
+  for (const locale of LOCALES) {
+    if (locale === DEFAULT_LOCALE) continue; // esas van en la raiz
+    for (const page of Object.keys(PAGES) as PageId[]) {
+      if (page === 'home') continue; // la portada tiene su propia ruta
+      const slug = PAGES[page].slugs[locale];
+      if (slug === undefined) continue; // esa pagina no existe en ese idioma
+      rutas.push({ params: { locale, slug }, props: { page, locale } });
+    }
+  }
+  return rutas;
+}
+
+const { page, locale } = Astro.props as { page: PageId; locale: Locale };
+const seo = PAGES[page].seo[locale];
+---
+
+<Base locale={locale} page={page} title={seo?.titulo || page}>
+  <ContenidoPagina page={page} locale={locale} />
+</Base>

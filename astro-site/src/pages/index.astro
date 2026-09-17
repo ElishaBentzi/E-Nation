@@ -1,0 +1,13 @@
+---
+// La portada del idioma predeterminado, en la raiz. Es la unica ruta que no sale
+// de `getStaticPaths` porque su slug es la cadena vacia.
+import Base from '../layouts/Base.astro';
+import ContenidoPagina from '../components/ContenidoPagina.astro';
+import { DEFAULT_LOCALE, PAGES } from '../i18n/config.ts';
+
+const seo = PAGES.home.seo[DEFAULT_LOCALE];
+---
+
+<Base locale={DEFAULT_LOCALE} page="home" title={seo?.titulo || 'E-Nation'} description={seo?.titulo}>
+  <ContenidoPagina page="home" locale={DEFAULT_LOCALE} />
+</Base>

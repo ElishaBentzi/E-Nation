@@ -480,3 +480,44 @@ Pendiente. Aún no se ha capturado nada del original. Cuando se haga (Fase 2): c
 **Consecuencia práctica: el trabajo de «imagen con texto → texto superpuesto» se reduce a UNA imagen.** Lo que en el plan inicial era un capítulo entero del proyecto queda en una pieza, y además es un diagrama, así que lo más probable es reconstruirlo como SVG o con capas de texto posicionadas en vez de recortar el fondo.
 
 Las coordenadas y el tamaño de los textos de esa imagen hay que medirlos sobre el original cuando se aborde la conversión (Fase 6), no antes.
+
+### Fase 5: el stack del sitio, y las rutas generadas del manifiesto
+
+**16 páginas construidas con las URLs EXACTAS del original.** El manifiesto i18n se **genera** de los grupos de traducción de WPML (`tools/build-site-i18n.cjs` → `astro-site/src/i18n/config.ts`), no se escribe a mano: Astro no soporta slugs traducidos por configuración, y escribir a mano 7 páginas × 3 idiomas es donde se cuelan los errores.
+
+| idioma | rutas |
+|---|---|
+| **en** (raíz, sin prefijo) | `/` `/articles/` `/news/` `/privacy-policy/` `/terms-and-conditions/` `/presentation/` `/verify/` |
+| **es** | `/es/` `/es/articulos/` `/es/noticias/` `/es/politica-de-privacidad/` `/es/terminos-condiciones-del-servicio/` `/es/presentacion/` `/es/verificar/` |
+| **fr** | `/fr/articles/` `/fr/nouvelles/` |
+
+7 + 7 + 2 = **16, las mismas que el WordPress original.** Verificado: canonical, hreflang de los tres idiomas más `x-default`, y el sitemap con las 16.
+
+**El inglés es el predeterminado del SITIO** (vive en la raíz, como el original) mientras que en la **documentación** el predeterminado es el **español**, porque allí el español es el idioma de autoría. Son dos decisiones distintas y conviene no confundirlas.
+
+**Añadir un cuarto idioma no toca componentes**: una línea en el manifiesto, contenido, y las cuatro rutas (`index`, `[...slug]`, `[locale]/index`, `[locale]/[...slug]`) lo generan todo. El filtro `slugs[locale] !== undefined` hace que solo se cree lo que existe, sin 404 ni huecos: por eso el francés produce exactamente dos páginas.
+
+#### El tema claro/oscuro/auto: verificado midiendo
+
+| prueba | resultado |
+|---|---|
+| Estado inicial | Carga en oscuro porque el navegador prefiere oscuro (`auto`) |
+| Fondo oscuro | `rgb(11, 26, 43)` — construido desde los azules **medidos** del original |
+| Texto oscuro | `rgb(232, 232, 232)` = el `#e8e8e8` medido |
+| Tipografía del `h1` | **Roboto Slab**, la del original |
+| Pulsar «claro» | `dark: false`, fondo `rgb(255,255,255)`, guardado `light` |
+| Pulsar «oscuro» | `dark: true`, fondo `rgb(11,26,43)`, guardado `dark` |
+| Pulsar «auto» | Vuelve a seguir al sistema, guardado `auto` |
+| Marcado del botón | `aria-pressed="true"` en el activo |
+| **Sin destello al recargar** | Con `light` guardado y el navegador prefiriendo **oscuro**, carga en blanco **desde el primer momento** |
+
+Lo último es lo delicado: el guion del tema va **en línea en el `<head>`**, antes del primer pintado. Si se cargara diferido, se vería un destello oscuro antes del claro y el selector parecería roto aunque funcionara.
+
+**El modo oscuro es la única parte del diseño que NO se extrae del original** (el WordPress no tiene modo oscuro) y por eso está construido **solo con colores medidos**: fondos desde `#003f7f`/`#234965`, texto `#e8e8e8`, acentos los mismos. **Ningún color nuevo.** Queda pendiente que el usuario lo vea y lo apruebe o ajuste.
+
+#### Dos fallos silenciosos del build que conviene recordar
+
+1. **El CSS no se aplicaba en absoluto.** El build pasaba —Astro no exige que la hoja se importe— y las páginas salían **sin ningún estilo**. Se detectó midiendo el HTML construido, no el log del build.
+2. **Mi propio test dio un falso positivo**: un `grep … | head -1 && echo "presente"` imprimía «presente» aunque el grep no encontrara nada, porque `head` siempre devuelve 0. De ahí saqué la conclusión errónea de que el CSS estaba bien cuando no existía.
+
+Y un tercero, de sintaxis, que el build sí cazó: los ids con guion (`privacy-policy`) **no son claves válidas sin comillas en TypeScript**; el generador ahora las entrecomilla solo cuando hace falta.

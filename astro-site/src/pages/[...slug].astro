@@ -1,0 +1,21 @@
+---
+// Paginas interiores del idioma PREDETERMINADO, en la raiz: /presentation/,
+// /articles/, etc. El slug de cada una sale del manifiesto, que es lo que permite
+// que el espanol use /es/presentacion/ y el ingles /presentation/.
+import Base from '../layouts/Base.astro';
+import ContenidoPagina from '../components/ContenidoPagina.astro';
+import { DEFAULT_LOCALE, PAGES, type PageId } from '../i18n/config.ts';
+
+export function getStaticPaths() {
+  return (Object.keys(PAGES) as PageId[])
+    .filter((p) => p !== 'home' && PAGES[p].slugs[DEFAULT_LOCALE] !== undefined)
+    .map((p) => ({ params: { slug: PAGES[p].slugs[DEFAULT_LOCALE] }, props: { page: p } }));
+}
+
+const { page } = Astro.props as { page: PageId };
+const seo = PAGES[page].seo[DEFAULT_LOCALE];
+---
+
+<Base locale={DEFAULT_LOCALE} page={page} title={seo?.titulo || page}>
+  <ContenidoPagina page={page} locale={DEFAULT_LOCALE} />
+</Base>
