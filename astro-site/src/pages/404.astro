@@ -1,0 +1,111 @@
+---
+/*
+ * Pagina 404.
+ *
+ * POR QUE HACE FALTA, y no es un detalle de cortesia:
+ *   Al construirse el sitio SIN `404.html`, Cloudflare Pages **servia la portada con
+ *   un 200 en CUALQUIER ruta inexistente**. Comprobado: `/foo/`, `/es/no-existe/` y
+ *   `/fr/inventada/` devolvian 200 con el titulo de la portada, mientras que en local
+ *   daban 404 correctamente. Son *soft 404s*: el buscador ve una pagina valida en
+ *   infinitas URLs y las indexa como contenido duplicado.
+ *
+ *   El sintoma no aparece en el build —que esta bien— sino en el comportamiento de
+ *   Cloudflare, y solo se ve pidiendo una ruta que no existe.
+ *
+ * IDIOMA: el fichero es UNO para todo el sitio, asi que el idioma se resuelve en el
+ * cliente leyendo el prefijo de la ruta. Un guion en linea y pequeno, sin hidratar
+ * nada: el texto ya esta en el HTML en los tres idiomas y el guion solo muestra uno.
+ */
+// Sin este import la pagina sale SIN ESTILOS: no usa el layout, asi que no hereda
+// la hoja del sitio. Es el mismo fallo que ya aparecio con el resto de paginas.
+import '../styles/global.css';
+
+const IDIOMAS = [
+  { code: 'en', prefijo: '', lang: 'en' },
+  { code: 'es', prefijo: 'es', lang: 'es' },
+  { code: 'fr', prefijo: 'fr', lang: 'fr' },
+];
+const TEXTOS = {
+  en: {
+    titulo: 'Page not found',
+    texto: 'The page you were looking for does not exist or has moved.',
+    inicio: 'Back to the home page',
+    presentacion: 'See the presentation',
+  },
+  es: {
+    titulo: 'Página no encontrada',
+    texto: 'La página que buscas no existe o se ha movido.',
+    inicio: 'Volver a la portada',
+    presentacion: 'Ver la presentación',
+  },
+  fr: {
+    titulo: 'Page introuvable',
+    texto: "La page que vous cherchez n'existe pas ou a été déplacée.",
+    inicio: "Retour à l'accueil",
+    presentacion: 'Voir la présentation',
+  },
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>404</title>
+    <meta name="robots" content="noindex" />
+    {/* La 404 de Astro se importa como cualquier pagina, asi que hereda los estilos
+        del sitio sin duplicar la cabecera ni el pie. */}
+    <link rel="icon" type="image/png" href="/favicon.png" />
+  </head>
+  <body>
+    <main class="container-site flex min-h-screen flex-col items-center justify-center gap-6 py-16 text-center">
+      <img src="/e-nation300x300.png" alt="E-Nation" width="96" height="96" class="h-24 w-24" />
+
+      <p class="font-heading text-6xl font-semibold text-brand">404</p>
+
+      {IDIOMAS.map((idi) => {
+        const t = TEXTOS[idi.code as keyof typeof TEXTOS];
+        const prefijo = idi.prefijo ? `/${idi.prefijo}` : '';
+        return (
+          <div data-idioma={idi.code} hidden class="flex flex-col items-center gap-4">
+            <h1 class="font-heading text-2xl text-blue-dark dark:text-white">{t.titulo}</h1>
+            <p class="max-w-md text-ink dark:text-border-soft">{t.texto}</p>
+            <div class="flex flex-wrap items-center justify-center gap-3">
+              <a
+                href={`${prefijo}/`}
+                class="rounded bg-brand px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-dark"
+              >
+                {t.inicio}
+              </a>
+              <a
+                href={`${prefijo}${idi.code === 'en' ? '/presentation/' : idi.code === 'es' ? '/presentacion/' : '/presentation/'}`}
+                class="rounded border border-border-soft px-5 py-2.5 text-sm font-semibold text-ink hover:border-brand hover:text-brand dark:border-[#2a4a6b] dark:text-border-soft"
+              >
+                {t.presentacion}
+              </a>
+            </div>
+          </div>
+        );
+      })}
+    </main>
+
+    <script is:inline>
+      /*
+       * Se muestra el idioma que corresponde al prefijo de la ruta. Es un guion en
+       * linea porque este fichero es UNO solo para todo el sitio: no puede generarse
+       * por idioma sin duplicar la pagina 404 tres veces.
+       */
+      (() => {
+        const seg = window.location.pathname.split('/').filter(Boolean)[0] || '';
+        const code = ['es', 'fr'].includes(seg) ? seg : 'en';
+        const bloque = document.querySelector('[data-idioma="' + code + '"]');
+        if (bloque) {
+          bloque.hidden = false;
+          document.documentElement.lang = code;
+          document.title = code === 'es' ? 'Página no encontrada' : code === 'fr' ? 'Page introuvable' : 'Page not found';
+        }
+      })();
+    </script>
+  </body>
+</html>
