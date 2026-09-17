@@ -909,3 +909,33 @@ Leer el anclaje de la base de datos colocaba esa capa **527 px a la izquierda** 
 Implementado en el componente con `@keyframes`, animando la **mitad** del recorrido (el 50 %) para que vuelva al estado original, con `ease-in-out` para que acelere y frene como un latido, e infinito mientras el slide esté activo. Se animan las propiedades individuales `scale` y `rotate`, no `transform`, por el mismo motivo que la entrada: las capas ancladas ya ocupan `transform` para posicionarse.
 
 **Pendiente de decisión**: el usuario pidió animación continua también para **SBM Juegos**, donde el original **no tiene ninguna**. Eso es un añadido, no fidelidad, así que se propone en vez de inventarlo.
+
+### Las diapositivas francesas NO se muestran en ninguna parte
+
+El «problema del francés» que había anotado **no existe en la práctica**, y se resolvió midiendo en vez de trabajando.
+
+Medido con la API del propio plugin en el original (`revapi17.revmaxslide()`): **el carrusel del original tiene 5 diapositivas, solo las de su idioma.** WPML filtra las demás.
+
+Y **el original no tiene presentación en francés**:
+
+| ruta | qué hace el original |
+|---|---|
+| `/fr/presentacion/` | **301** → `/es/presentacion/` |
+| `/fr/presentation/` | **301** → `/presentation/` |
+| `/fr/` | **301** → `/` |
+
+O sea: las 5 diapositivas francesas se prepararon para una presentación francesa **que nunca se publicó**, y **no se muestran en ninguna página del original**. En mi sitio tampoco: el francés solo tiene `/fr/articles/` y `/fr/nouvelles/`, así que no hay `/fr/presentacion/` donde aparezcan.
+
+**Consecuencia**: no hay nada que arreglar en su geometría. Es dato muerto, igual que en el original. Queda pendiente decidir si se conservan para cuando exista una presentación en francés, o se retiran.
+
+### Fallo serio corregido: las rutas inexistentes devolvían 200
+
+Al construirse el sitio **sin `404.html`**, **Cloudflare Pages servía la portada con un 200 en cualquier ruta inexistente**. Comprobado: `/foo/`, `/es/no-existe/` y `/fr/inventada/` devolvían 200 con el título de la portada, **mientras que en local daban 404 correctamente**.
+
+Son *soft 404s*: el buscador ve una página válida en infinitas URLs y las indexa como contenido duplicado. En el cutover eso habría sido un problema de SEO difícil de diagnosticar, porque el sitio «funciona».
+
+**Dónde estaba el fallo**: ni en el build ni en local, que estaban bien. Es el comportamiento de Cloudflare Pages ante la falta de `404.html`, y solo se ve **pidiendo una ruta que no existe**. Verificado tras el arreglo: las 4 rutas inventadas dan **404** y las 8 válidas siguen en **200**.
+
+La página nueva resuelve el idioma leyendo el prefijo de la ruta con un guion en línea, porque el fichero es **uno solo para todo el sitio**: generarlo por idioma obligaría a duplicar la página tres veces. Lleva `noindex`.
+
+**Y un recordatorio que casi se cuela otra vez**: la 404 **no usa el layout**, así que tiene que importar la hoja de estilos ella misma. Sin ese import saldría **sin estilos y sin ningún error de build** — exactamente el fallo que ya apareció antes.
