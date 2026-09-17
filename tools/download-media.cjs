@@ -36,6 +36,39 @@ for (const p of j.paginas || []) {
   for (const u of p.imagenes || []) urls.add(u);
 }
 
+// ---------------------------------------------------------------------------
+// LOS FONDOS DE SECCION NO ESTAN EN EL EXPORT, estan en el CSS de Elementor.
+//
+// Y hay una trampa que los escondia por partida doble: Elementor guarda las URLs
+// dentro de su JSON con las BARRAS ESCAPADAS ("https:\/\/...\/uploads\/..."), asi
+// que cualquier expresion que busque "https://" en los datos crudos no las ve.
+// Por eso los 59 fondos de parallax -justo el efecto principal del sitio- no
+// entraban en el inventario de medios.
+//
+// La fuente fiable es el CSS generado: ahi las URLs son normales.
+// ---------------------------------------------------------------------------
+const CSSDIR = path.join(ROOT, 'reference', 'css');
+let deCss = 0;
+const sumarDesdeCss = (d) => {
+  if (!fs.existsSync(d)) return;
+  for (const e of fs.readdirSync(d, { withFileTypes: true })) {
+    const p = path.join(d, e.name);
+    if (e.isDirectory()) { sumarDesdeCss(p); continue; }
+    if (!/\.css$/i.test(e.name)) continue;
+    // Solo el CSS propio del sitio y el del tema generan fondos suyos; el de los
+    // plugins trae imagenes de la interfaz del plugin, que no son del sitio.
+    if (!/uploads[\\/]elementor[\\/]css[\\/]post-\d+\.css$/i.test(p) && !/the7-css/i.test(p)) continue;
+    const css = fs.readFileSync(p, 'utf8');
+    for (const m of css.matchAll(/background(?:-image)?:[^;{}]*url\(["']?([^"')]+)["']?\)/gi)) {
+      const u = m[1];
+      if (!/\/uploads\//.test(u)) continue;
+      if (!urls.has(u)) { urls.add(u); deCss++; }
+    }
+  }
+};
+sumarDesdeCss(CSSDIR);
+if (deCss) console.log(`fondos de seccion anadidos desde el CSS: ${deCss} (no estaban en el export)`);
+
 /**
  * Expande una referencia del export a las URLs sueltas que contiene.
  *

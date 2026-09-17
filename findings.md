@@ -274,6 +274,53 @@ section.elementor-section.elementor-top-section
 
 **`fullPage: true` SÍ funciona aquí** (generó un PNG de 6,87 MB de la home entera), al contrario de lo que advierte la skill. **Pero no sirve para nuestro caso**: con `background-attachment: fixed` el fondo es relativo al viewport, así que en una captura de página completa las secciones de parallax se renderizan mal (el fondo se ancla a la posición del viewport en el momento de capturar, no a la sección). **Los tramos son la opción correcta para las páginas con fondo fijo**, que son precisamente las dos presentaciones. El PNG de prueba se conserva renombrado `AVISO-fullpage-deforma-parallax-home-en.png` para que su limitación sea evidente.
 
+### Auditoría de imágenes con texto: el resultado
+
+**La intuición del usuario era correcta: la gran mayoría no tiene texto.** De 171 ficheros (118 imágenes únicas), solo **54 son de contenido** y de esas **19 tienen letras dentro de los píxeles**. Pero el desglose importa mucho, porque no todas las que tienen texto hay que tocarlas.
+
+#### Clasificación por papel (medida, no supuesta)
+
+| papel | imágenes | ¿lleva texto que traducir? |
+|---|---|---|
+| **decorativa (fondo de sección)** | **59** | No por diseño: es un fondo |
+| **contenido** | **54** | Hay que mirarlas |
+| variantes de tamaño de WordPress | 57 | Son la misma imagen a otra escala |
+
+Los fondos no se revisan: su papel lo dice el diseño. Eso descarta 59 imágenes de entrada, sin mirarlas.
+
+#### Lo que encontró la revisión visual de las 54 de contenido
+
+**19 tienen texto. Y de esas, la mayoría NO hay que tocarlas:**
+
+**a) 11 son LOGOTIPOS DE MEDIOS DE PRENSA** — una sección de "aparecemos en" que no había detectado:
+
+`WSJ` (The Wall Street Journal), `Newsweek`, `Forbes`, `Wired`, `The Guardian`, `The Hill`, `Zero Hedge`, `eldiario.es`, `Expansión (en alianza con CNN)`, `Up Worthy`, `YouTube`.
+
+**Estos NO se traducen ni se convierten a texto superpuesto**: son marcas de terceros y nombres propios. Se quedan como imagen. Es la respuesta correcta y además la única legalmente sensata.
+
+**b) 4 tienen texto incidental que forma parte de la fotografía**, no un rótulo añadido:
+- `problem-loss-savings.jpg` — el texto del billete de 100 USD, bajo el fuego
+- `problem-police-state-1.jpg` — una marca de agua de stock (`DDe`) recortada por el borde
+- `6-internet.jpg` — el glifo `₿` grabado en una moneda dorada
+- `8-pact-science.jpg` — dos dígitos, `18` y `3`
+
+Traducir eso sería absurdo: es la realidad fotografiada. Se quedan.
+
+**c) Solo 4 son candidatas REALES a conversión**, porque son ilustraciones propias con palabras que un lector francés o inglés leería:
+
+| imagen | texto que lleva | por qué es candidata |
+|---|---|---|
+| `org-piramid.png` | Responsibility · Power · Wages · Decisions | **Diagrama propio con cuatro conceptos**: es contenido del sitio, no decoración |
+| `31-coin.png` | UNION FOR OUR MONETARY FREEDOM · UNITY COIN · … | **Lema de marca sobre una moneda**: el lema se lee |
+| `8-pact-economy.jpg` | BANK · ASIA + cifras del gráfico | Ilustración de un gráfico: las dos palabras se leen |
+| `2-hand-passport.png` | PASSPORT · E-NATION | Mayormente nombres propios; la palabra «PASSPORT» sí se leería |
+
+#### La lección del método
+
+Mirar las 54 una por una era inevitable, pero **clasificar antes por papel descartó 59 de entrada**, y el reparto por lotes entre tres revisores en paralelo lo hizo viable. Y dos veces el revisor tuvo que **ampliar la imagen** para decidir: `problem-police-state-1.jpg` a tamaño real parecía una mancha y ampliada eran letras. Es la misma lección de siempre: medir, no juzgar por impresión.
+
+Un detalle que confirmó un revisor y vale la pena retener: **cuatro logotipos son texto blanco sobre fondo blanco** y a simple vista parecían imágenes vacías. Solo se ven si se componen sobre gris. Una revisión por impresión los habría dado por buenos.
+
 ### Requisito 7 en detalle: el tema oscuro del sitio
 
 El usuario vio el selector claro/oscuro/auto de Starlight en los docs y quiere algo similar en las páginas de e-nation.
