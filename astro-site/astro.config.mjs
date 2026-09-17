@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 import { LOCALES, DEFAULT_LOCALE } from './src/i18n/config.ts';
+import { SITE } from './site.config.mjs';
 
 // El sitio e-nation.org: Astro estatico + Tailwind v4, desplegado en Cloudflare
 // Pages.
@@ -19,7 +20,9 @@ import { LOCALES, DEFAULT_LOCALE } from './src/i18n/config.ts';
 // decisiones distintas y cada una responde a su contenido.
 
 export default defineConfig({
-  site: 'https://e-nation.org',
+  // El origen canonico sale de site.config.mjs, que es el unico sitio donde se
+  // cambia el dominio al pasar del despliegue de revision al definitivo.
+  site: SITE,
   output: 'static',
   integrations: [sitemap()],
   i18n: {

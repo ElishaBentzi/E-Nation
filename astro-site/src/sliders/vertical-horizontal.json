@@ -49,7 +49,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/09/slide-piramid.png",
+          "imagen": "/images/2018/09/slide-piramid.png",
           "alt": null,
           "posicion": {
             "horizontal": "center",
@@ -80,7 +80,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/09/slide-1.png",
+          "imagen": "/images/2018/09/slide-1.png",
           "alt": null,
           "posicion": {
             "horizontal": null,
@@ -102,7 +102,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/09/slide-2.png",
+          "imagen": "/images/2018/09/slide-2.png",
           "alt": null,
           "posicion": {
             "horizontal": null,
@@ -124,7 +124,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/09/slide-8.png",
+          "imagen": "/images/2018/09/slide-8.png",
           "alt": null,
           "posicion": {
             "horizontal": null,
@@ -146,7 +146,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/09/slide-3.png",
+          "imagen": "/images/2018/09/slide-3.png",
           "alt": null,
           "posicion": {
             "horizontal": null,
@@ -168,7 +168,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/09/slide-7.png",
+          "imagen": "/images/2018/09/slide-7.png",
           "alt": null,
           "posicion": {
             "horizontal": null,
@@ -190,7 +190,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/09/slide-5.png",
+          "imagen": "/images/2018/09/slide-5.png",
           "alt": null,
           "posicion": {
             "horizontal": null,
@@ -212,7 +212,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/09/slide-4.png",
+          "imagen": "/images/2018/09/slide-4.png",
           "alt": null,
           "posicion": {
             "horizontal": null,
@@ -234,7 +234,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/09/slide-6.png",
+          "imagen": "/images/2018/09/slide-6.png",
           "alt": null,
           "posicion": {
             "horizontal": null,
@@ -256,7 +256,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/10/slide-circular.png",
+          "imagen": "/images/2018/10/slide-circular.png",
           "alt": null,
           "posicion": {
             "horizontal": "center",
@@ -287,7 +287,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/10/slide-circular-inside.png",
+          "imagen": "/images/2018/10/slide-circular-inside.png",
           "alt": null,
           "posicion": {
             "horizontal": "center",
@@ -318,7 +318,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/10/slide-bottom-1.png",
+          "imagen": "/images/2018/10/slide-bottom-1.png",
           "alt": null,
           "posicion": {
             "horizontal": null,
@@ -349,7 +349,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/10/slide-bottom-2.png",
+          "imagen": "/images/2018/10/slide-bottom-2.png",
           "alt": null,
           "posicion": {
             "horizontal": null,
@@ -380,7 +380,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/10/slide-bottom-3.png",
+          "imagen": "/images/2018/10/slide-bottom-3.png",
           "alt": null,
           "posicion": {
             "horizontal": null,
@@ -411,7 +411,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/10/slide-bottom-4.png",
+          "imagen": "/images/2018/10/slide-bottom-4.png",
           "alt": null,
           "posicion": {
             "horizontal": null,
@@ -442,7 +442,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/10/slide-bottom-5.png",
+          "imagen": "/images/2018/10/slide-bottom-5.png",
           "alt": null,
           "posicion": {
             "horizontal": null,
@@ -473,7 +473,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/10/slide-bottom-7.png",
+          "imagen": "/images/2018/10/slide-bottom-7.png",
           "alt": null,
           "posicion": {
             "horizontal": null,
@@ -504,7 +504,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/10/slide-bottom-8.png",
+          "imagen": "/images/2018/10/slide-bottom-8.png",
           "alt": null,
           "posicion": {
             "horizontal": null,
@@ -535,7 +535,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/10/slide-bottom-6.png",
+          "imagen": "/images/2018/10/slide-bottom-6.png",
           "alt": null,
           "posicion": {
             "horizontal": null,
@@ -566,7 +566,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/09/slide-1.png",
+          "imagen": "/images/2018/09/slide-1.png",
           "alt": null,
           "posicion": {
             "horizontal": null,
@@ -597,7 +597,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/09/slide-8.png",
+          "imagen": "/images/2018/09/slide-8.png",
           "alt": null,
           "posicion": {
             "horizontal": null,
@@ -628,7 +628,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/09/slide-2.png",
+          "imagen": "/images/2018/09/slide-2.png",
           "alt": null,
           "posicion": {
             "horizontal": null,
@@ -659,7 +659,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/09/slide-3.png",
+          "imagen": "/images/2018/09/slide-3.png",
           "alt": null,
           "posicion": {
             "horizontal": null,
@@ -690,7 +690,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/09/slide-7.png",
+          "imagen": "/images/2018/09/slide-7.png",
           "alt": null,
           "posicion": {
             "horizontal": null,
@@ -721,7 +721,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/09/slide-5.png",
+          "imagen": "/images/2018/09/slide-5.png",
           "alt": null,
           "posicion": {
             "horizontal": null,
@@ -752,7 +752,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/09/slide-4.png",
+          "imagen": "/images/2018/09/slide-4.png",
           "alt": null,
           "posicion": {
             "horizontal": null,
@@ -783,7 +783,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/09/slide-6.png",
+          "imagen": "/images/2018/09/slide-6.png",
           "alt": null,
           "posicion": {
             "horizontal": null,
@@ -954,7 +954,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/10/slide-gray-1.png",
+          "imagen": "/images/2018/10/slide-gray-1.png",
           "alt": null,
           "posicion": {
             "horizontal": "center",
@@ -985,7 +985,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/10/slide-gray-2.png",
+          "imagen": "/images/2018/10/slide-gray-2.png",
           "alt": null,
           "posicion": {
             "horizontal": "center",
@@ -1016,7 +1016,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/10/slide-gray-3.png",
+          "imagen": "/images/2018/10/slide-gray-3.png",
           "alt": null,
           "posicion": {
             "horizontal": "center",

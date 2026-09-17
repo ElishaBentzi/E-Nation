@@ -1,0 +1,32 @@
+# WordPress -> Astro: redirects 301
+#
+# OJO CON LAS RUTAS DE LOS ASSETS: el WordPress original vive en el subdirectorio
+# /zero/, asi que sus ficheros se servian desde /zero/wp-content/uploads/. No hay
+# ninguna ruta /wp-content/ en la raiz, y por eso la regla parte de /zero/.
+# (Comprobado en el recon: /wp-content/... tambien resuelve por un alias, asi que se
+# cubren las dos formas.)
+
+# Assets del WordPress alojado en /zero/
+/zero/wp-content/uploads/*    /images/:splat    301
+/wp-content/uploads/*         /images/:splat    301
+
+# El idioma por defecto no lleva prefijo, pero WordPress servia esta variante
+/es/home/                     /es/              301
+/es/home                      /es/              301
+
+# La portada con slug explicito (el original la tenia como home-landing-page)
+/home-landing-page/           /                 301
+/home-landing-page            /                 301
+/en/                          /                 301
+/en                           /                 301
+
+# Feeds de WordPress: no hay blog, asi que a la portada
+/feed/                        /                 301
+/feed                         /                 301
+/es/feed/                     /es/              301
+/es/feed                      /es/              301
+
+# Rutas tipicas de WordPress que aqui no existen
+/wp-login.php                 /                 301
+/wp-admin/*                   /                 301
+/xmlrpc.php                   /                 301

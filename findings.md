@@ -765,3 +765,28 @@ Cada idioma ve **solo sus banners**. El original servía los 21 en las dos prese
 Una diapositiva sin texto traducible se marca `*` (**neutra**, se ve en todos los idiomas) en vez de dejarla sin determinar: esconderla de todos sería peor que mostrarla.
 
 El filtrado se aplica en `slidersDe(page, locale)`, que entrega al componente la configuración **ya filtrada**: el componente no sabe nada de idiomas, y sigue siendo reutilizable en otro proyecto.
+
+### El sitio queda listo para desplegar en el dominio de prueba
+
+Preparado para Cloudflare Pages en **`web.unitygenerator.com`**, un subdominio nuevo. **No se usa el apex a propósito**: en `unitygenerator.com` el apex ya redirige a la documentación, y usarlo para el sitio rompería esa redirección. Un subdominio no toca nada de lo que ya funciona.
+
+**Configuración, en un solo archivo** (`astro-site/site.config.mjs`): `SITE`, `PRIMARY_HOST` e `INDEXABLE`, con la lista de cambio al dominio definitivo escrita dentro. El `robots.txt` y el `site` de Astro salen de ahí, así que no pueden desincronizarse.
+
+| pieza | estado |
+|---|---|
+| 16 rutas construidas (7 en · 7 es · 2 fr) | verificado, todas 200 |
+| `robots.txt` | `Disallow: /` (es revisión; el WordPress de e-nation.org sigue siendo el que debe posicionar) |
+| `_redirects` | 301 desde el WordPress, **con las rutas de assets partiendo de `/zero/`** |
+| `functions/[[path]].js` | 301 por host, deja pasar `*.pages.dev` para poder verificar antes de tocar el DNS |
+| canonical, hreflang y sitemap | las 16 URLs apuntan a `web.unitygenerator.com` |
+| imágenes | **171 locales** en `/images/AAAA/MM/`, más las de otros proyectos que se quedan externas |
+
+#### Un fallo real que salió al servir el sitio
+
+Al verificar el artefacto servido, **`/images/2018/10/e-nation-logo-L.png` devolvía 404**. Causa: **34 imágenes que solo se referencian desde los sliders no estaban en el inventario de medios**, porque ese inventario salió del export de WordPress y hay assets que viven únicamente en la configuración del plugin (la carpeta `2017/12/`, entre otras). Descargadas las 34. Ahora **cero referencias locales sin fichero**.
+
+**Lección**: verificar el artefacto *servido*, no solo construido. Un `dist/` correcto puede tener referencias a ficheros que no existen, y el build no lo detecta.
+
+#### Qué va a mostrar el despliegue de prueba
+
+El contenido de las páginas es todavía un esqueleto, porque la reconstrucción es la fase siguiente. **Lo que sí se puede revisar ya son los sliders**, que es lo que el usuario quiere ver: el carrusel de banners con sus enlaces, sus colores resueltos, sus tipografías y el escalonado de entrada, y **solo las diapositivas del idioma de cada página**.

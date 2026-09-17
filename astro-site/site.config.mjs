@@ -1,44 +1,58 @@
 /*
- * Configuracion de despliegue y enlaces externos del SITIO.
+ * Configuracion de despliegue del SITIO.
  *
- * EL DOMINIO Y EL DESTINO DE LOS DOCS VIVEN AQUI, en un solo sitio, para que
- * cambiarlos sea un punto y no una caceria por los componentes.
+ * EL DOMINIO VIVE AQUI, en un solo sitio, para que pasar del dominio de prueba al
+ * definitivo sea cambiar tres lineas y no una caceria por los componentes.
  *
  * ---------------------------------------------------------------------------
- * ESTADO ACTUAL DE LOS DOCS: desplegados en docs.unitygenerator.com
+ * ESTADO ACTUAL: PRUEBA sobre web.unitygenerator.com
  * ---------------------------------------------------------------------------
- * La documentacion del Pacto Social ya esta migrada y sirviendose en
- * docs.unitygenerator.com (Astro Starlight en Cloudflare Pages), pero su dominio
- * definitivo sera docs.e-nation.org. Mientras `docs.e-nation.org` siga sirviendo
- * Read the Docs, el enlace del menu apunta al despliegue nuevo: si apuntara al
- * dominio viejo, el visitante acabaria en Read the Docs, que es justo lo que
- * estamos dejando de usar.
+ * Se despliega primero en un subdominio de unitygenerator.com, que el usuario
+ * tiene en la misma cuenta de Cloudflare, para poder REVISAR EL RESULTADO sin
+ * tocar el dominio real ni su correo.
  *
- * LISTA DE CAMBIO cuando los docs pasen a su dominio definitivo:
- *   1. Aqui: DOCS_HOST = 'docs.e-nation.org'
- *   2. En astro-docs: site.config.mjs y functions/[[path]].js
- *   Nada mas. El enlace del menu se construye de esta constante.
+ * POR QUE UN SUBDOMINIO Y NO EL APEX: en unitygenerator.com el apex ya redirige a
+ * la documentacion (docs.unitygenerator.com). Usarlo para el sitio rompería esa
+ * redireccion. Un subdominio nuevo no toca nada de lo que ya funciona.
+ *
+ * ---------------------------------------------------------------------------
+ * LISTA DE CAMBIO AL DOMINIO DEFINITIVO (los cuatro puntos van juntos)
+ * ---------------------------------------------------------------------------
+ *   1. En este archivo: SITE, PRIMARY_HOST e INDEXABLE (ponerla en true).
+ *   2. En astro-site/functions/[[path]].js: PRIMARY. No puede importar este archivo
+ *      porque Cloudflare empaqueta las Functions aparte.
+ *   3. Nada mas: `site` en astro.config.mjs y el robots.txt salen de aqui.
+ *
+ * Y en Cloudflare: anadir e-nation.org como dominio propio del proyecto de Pages,
+ * y ejecutar el runbook del CORREO de la Fase 9 de la skill. Este es el unico
+ * cambio del proyecto que puede tumbar el email.
  * ---------------------------------------------------------------------------
  */
 
 /** Origen canonico del sitio. */
-export const SITE = 'https://e-nation.org';
+export const SITE = 'https://web.unitygenerator.com';
+
+/** Host que se sirve; cualquier otro host recibe un 301 a este. */
+export const PRIMARY_HOST = 'web.unitygenerator.com';
+
+/**
+ * Mientras sea false, el robots.txt bloquea el rastreo: es un despliegue de
+ * revision y no debe competir en buscadores con el WordPress que sigue vivo en
+ * e-nation.org.
+ */
+export const INDEXABLE = false;
 
 /**
  * Host de la documentacion, SIN protocolo.
- * Es lo unico que hay que cambiar el dia que los docs muden de dominio.
+ *
+ * OJO, EL MAPA DE IDIOMAS NO ES EL MISMO QUE EL DEL SITIO: en la documentacion el
+ * idioma predeterminado es el ESPANOL (vive en la raiz, porque es el idioma de
+ * autoria del Pacto), mientras que en el sitio el predeterminado es el INGLES. Por
+ * eso alli el espanol va a la raiz y aqui no. Es correcto en cada caso.
  */
 export const DOCS_HOST = 'docs.unitygenerator.com';
 
-/**
- * Ruta de la documentacion en un idioma.
- *
- * OJO, EL MAPA NO ES EL MISMO QUE EL DEL SITIO: en la documentacion el idioma
- * predeterminado es el ESPANOL (vive en la raiz, porque es el idioma de autoria
- * del Pacto), mientras que en el sitio el predeterminado es el INGLES. Por eso
- * aqui el espanol va a la raiz y el ingles a /en/: es lo contrario que en el menu
- * del sitio, y es correcto en cada caso.
- */
+/** Ruta de la documentacion en un idioma. */
 export function rutaDocs(locale) {
   return locale === 'es' ? '/' : `/${locale}/`;
 }
