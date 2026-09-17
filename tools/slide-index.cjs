@@ -20,7 +20,9 @@ const ROOT = path.resolve(__dirname, '..');
 const SLIDERS = path.join(ROOT, 'astro-site', 'src', 'sliders');
 const DESTINO = path.join(ROOT, 'reference', 'INDICE-DIAPOSITIVAS.md');
 
-const ficheros = fs.readdirSync(SLIDERS).filter((f) => f.endsWith('.json'));
+const ficheros = fs.readdirSync(SLIDERS).filter((f) => f.endsWith('.json') && f !== 'idiomas.json');
+// Idioma de cada diapositiva: archivo de decision, no de datos.
+const IDIOMAS = fs.existsSync(path.join(SLIDERS, 'idiomas.json')) ? JSON.parse(fs.readFileSync(path.join(SLIDERS, 'idiomas.json'), 'utf8')) : {};
 const lineas = [];
 const p = (s = '') => lineas.push(s);
 
@@ -45,8 +47,8 @@ for (const f of ficheros.sort()) {
   p();
 
   if (c.slides.length > 1) {
-    p('| # | título | destino | textos visibles |');
-    p('|---|---|---|---|');
+    p('| # | idioma | título | destino | textos visibles |');
+    p('|---|---|---|---|---|');
     c.slides.forEach((s, i) => {
       const textos = [...new Set(
         (s.capas || [])
@@ -57,7 +59,10 @@ for (const f of ficheros.sort()) {
       const destino = s.enlace ? s.enlace.href.replace(/^https?:\/\//, '') : '—';
       const titulo = (s.titulo || '').slice(0, 24) || '—';
       const txt = textos.join(' · ').slice(0, 78) || '—';
-      p(`| **${i + 1}** | ${titulo} | ${destino} | ${txt} |`);
+      // El idioma sale de `idiomas.json`, que es un archivo de DECISION: se genero
+      // detectandolo, pero se puede corregir a mano y no se pisa al regenerar.
+      const idioma = ((IDIOMAS[c.id] || {})[String(i + 1)]) || '?';
+      p(`| **${i + 1}** | ${idioma === '*' ? 'todos' : idioma} | ${titulo} | ${destino} | ${txt} |`);
     });
     p();
   } else {

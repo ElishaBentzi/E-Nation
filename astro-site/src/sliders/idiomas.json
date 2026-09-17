@@ -1,0 +1,37 @@
+{
+  "_nota": "Idioma de cada diapositiva, por numero. ARCHIVO DE DECISION: se puede editar a mano y NO se pisa al regenerar. null = sin determinar (revisar).",
+  "_generado": "tools/detect-slide-locales.cjs",
+  "banner-publicidad": {
+    "1": "es",
+    "2": "en",
+    "3": "fr",
+    "4": "en",
+    "5": "fr",
+    "6": "en",
+    "7": "fr",
+    "8": "en",
+    "9": "es",
+    "10": "en",
+    "11": "fr",
+    "12": "fr",
+    "13": "es",
+    "14": "en",
+    "15": "fr",
+    "16": "es",
+    "17": "en",
+    "18": "fr",
+    "19": "es",
+    "20": "en",
+    "21": "fr"
+  },
+  "e-nation": {
+    "1": "en",
+    "2": "es"
+  },
+  "snake": {
+    "1": "*"
+  },
+  "vertical-horizontal": {
+    "1": "*"
+  }
+}

@@ -724,3 +724,44 @@ Es un defecto del original, o una decisión deliberada de mostrar todos los idio
 ### Herramienta nueva: índice de diapositivas
 
 `tools/slide-index.cjs` → `reference/INDICE-DIAPOSITIVAS.md`. Da a cada diapositiva **un número estable**, su título, su destino y los textos que aparecen dentro, que es por donde se reconoce de un vistazo. Permite decir «la 7, la de SBM Juegos» y hablar de la misma sin ambigüedad. Se regenera solo, así que no se desincroniza.
+
+### Defecto corregido: cada idioma muestra solo sus banners
+
+Decisión del usuario: ver varios idiomas a la vez **es un defecto**. Corregido.
+
+#### Cómo se detectó el idioma de cada diapositiva
+
+RevSlider **no guarda el idioma en ninguna parte**: sus diapositivas son solo un orden. Hubo que deducirlo, y se usaron **dos señales**:
+
+1. **El texto de las capas** — caracteres propios (ñ, ¿, ç, à) y palabras que existan en un idioma y no en los otros.
+2. **La imagen de fondo**, y esta es la fuerte: las variantes de idioma de una misma diapositiva **comparten el visual y solo cambian el texto**, así que agrupar por fondo revela las familias. Se encontraron **8 grupos de visual repetido**, que confirma la hipótesis.
+
+**Trampa que costó un falso empate**: puse `union` entre las palabras del inglés y del francés, y como es **idéntica en los tres idiomas**, hizo empatar una diapositiva claramente española (`"para Nuestra Verdadera Libertad"`). **Solo sirven palabras que discriminen.**
+
+**Reparto resultante del carrusel de banners** (21 diapositivas):
+
+| idioma | diapositivas |
+|---|---|
+| **en** | 2, 4, 6, 8, 10, 14, 17, 20 → **8** |
+| **fr** | 3, 5, 7, 11, 12, 15, 18, 21 → **8** |
+| **es** | 1, 9, 13, 16, 19 → **5** |
+| **neutras** | las sin texto traducible (una letra suelta o solo imágenes) → se ven en **todos** |
+
+Y se ve la estructura: **#9 / #10 / #11 son el mismo mensaje en tres idiomas** («SOCIEDAD DEL BIENESTAR MUTUO · ¡UNA VENEZUELA 100% NUEVA!» / «MUTUAL WELFARE SOCIETY · A 100% NEW VENEZUELA!» / «Société du Bien-être Mutuel · Une nouvelle venezuela à 100%!»).
+
+#### Resultado verificado
+
+| página | diapositivas | textos |
+|---|---|---|
+| `/presentation/` (inglés) | 9 (8 en + 1 neutra) | Mutual Welfare Society · Model of Participation · POLITICS |
+| `/es/presentacion/` (español) | 6 (5 es + 1 neutra) | Juega y Coopera para Crecer · SOCIEDAD DEL BIENESTAR MUTUO |
+
+Cada idioma ve **solo sus banners**. El original servía los 21 en las dos presentaciones.
+
+#### Decisión de diseño: el archivo de idiomas es de DECISIÓN, no de datos
+
+`astro-site/src/sliders/idiomas.json` se genera detectando, **pero no se pisa al regenerar**. Si el detector volviera a escribir encima, cualquier corrección a mano se perdería — y es justo lo que hay que poder corregir, porque clasificar rótulos cortos por palabras puede fallar. Al existir, el generador solo **informa de las diferencias**.
+
+Una diapositiva sin texto traducible se marca `*` (**neutra**, se ve en todos los idiomas) en vez de dejarla sin determinar: esconderla de todos sería peor que mostrarla.
+
+El filtrado se aplica en `slidersDe(page, locale)`, que entrega al componente la configuración **ya filtrada**: el componente no sabe nada de idiomas, y sigue siendo reutilizable en otro proyecto.
