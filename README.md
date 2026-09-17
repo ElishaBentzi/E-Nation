@@ -57,6 +57,19 @@ Para añadir un idioma nuevo: una línea en `src/i18n/config.ts`, la matriz marc
 
 Los tokens de marca se extraen del CSS real del original y **nunca se inventan**. La paleta medida es naranja `#ff7100` (principal), azul `#095287`, azul oscuro `#003f7f` y rojo `#ff3a2d`, con Roboto y Roboto Slab.
 
+## Despliegue
+
+Dos proyectos de Cloudflare Pages sobre este mismo repositorio:
+
+| proyecto | Root directory | dominio | estado |
+|---|---|---|---|
+|  |  |  | desplegado y verificado |
+|  |  |  | pendiente de crear |
+
+En los dos: build , output , y **Node 22** por variable de entorno. **El Root directory es lo que mas importa**: es un monorepo y sin el, el build corre en la raiz del repositorio, donde el  no tiene script .
+
+El dominio vive en un solo archivo por app (), con la lista de cambio al dominio definitivo escrita dentro.
+
 ## Aviso crítico: el correo vive en el servidor del sitio
 
 ```
