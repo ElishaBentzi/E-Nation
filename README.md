@@ -63,12 +63,14 @@ Dos proyectos de Cloudflare Pages sobre este mismo repositorio:
 
 | proyecto | Root directory | dominio | estado |
 |---|---|---|---|
-|  |  |  | desplegado y verificado |
-|  |  |  | pendiente de crear |
+| `e-nation-docs` | `astro-docs` | `docs.unitygenerator.com` | desplegado y verificado |
+| `e-nation-site` | `astro-site` | `web.unitygenerator.com` | pendiente de crear |
 
-En los dos: build , output , y **Node 22** por variable de entorno. **El Root directory es lo que mas importa**: es un monorepo y sin el, el build corre en la raiz del repositorio, donde el  no tiene script .
+En los dos: build `npm run build`, output `dist`, y **Node 22** por variable de entorno.
 
-El dominio vive en un solo archivo por app (), con la lista de cambio al dominio definitivo escrita dentro.
+**El Root directory es lo que más importa**: es un monorepo, y sin él el build corre en la raíz del repositorio, donde el `package.json` no tiene script `build`. El síntoma es un 404 en la URL de Pages, que despista bastante.
+
+El dominio vive en un solo archivo por app (`site.config.mjs` en cada una), con la lista de cambio al dominio definitivo escrita dentro. En el sitio, ese archivo gobierna además el `robots.txt`: el despliegue de prueba bloquea el rastreo, porque el WordPress de `e-nation.org` sigue siendo el que debe posicionar.
 
 ## Aviso crítico: el correo vive en el servidor del sitio
 
