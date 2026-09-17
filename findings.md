@@ -1016,3 +1016,10 @@ El daño no era cosmético: con 900 el titular **no cabía en su caja**, envolv�
 - `tools/verify-carrusel-geometria.js` — las **seis** diapositivas a la vez: desbordes, solapes por líneas reales (en reposo y con la ola arriba), encuadre de imágenes y el guardián de declaraciones descartadas.
 - `tools/sonda-grosor.cjs`, `tools/sonda-idle.cjs`, `tools/sonda-customcss.cjs` — rastrean de qué fuente sale cada valor de estilo.
 
+#### La comprobación del despliegue también puede mentir
+
+Tras desplegar se sondeó producción buscando `banner-slider__letra" … data-astro-cid-jpthgoh5>P</span>` y durante **cinco minutos** dijo que la versión nueva no había llegado. Sí había llegado: **Astro deriva el identificador de ámbito del contenido del bloque de estilos**, así que al tocar los estilos cambió de `jpthgoh5` a `vukvhwsg` y el marcador dejó de existir. Un marcador que incluya un identificador generado por el build **no sirve para comprobar un despliegue**. La comprobación buena es sobre los datos del cambio (`white-space:nowrap`, `calc(0px + …)`, `font-weight:900` a 0) o, mejor, midiendo el estilo computado en el navegador.
+
+**Verificado en producción** (`web.unitygenerator.com`): letras pegadas, 13 capas con `nowrap`, 0 apariciones de `calc(0 + …)` y de `font-weight:900`, **0 solapes** en las 5 diapositivas y en los dos idiomas, y la ola moviendo `top` de 0 a `-7,99px` a mitad de ciclo.
+
+
