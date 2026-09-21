@@ -11,9 +11,9 @@ Migrar todo lo que hoy vive en WordPress y Read the Docs —el sitio `e-nation.o
 
 ## Next Step
 
-**Desplegar y pedir al usuario que revise las animaciones nuevas** en `web.unitygenerator.com/presentation/` (ola en las letras y flotación de la imagen, en SBM Juegos, SBM Libre y Mutual Welfare). En local están verificadas: 0 solapes en las 6 diapositivas y en los dos idiomas, y la ola y la flotación medidas en movimiento.
+**Esperar la revisión del usuario** de los cinco ajustes de efectos ya desplegados en `web.unitygenerator.com/presentation/`: el brillo del logotipo de SBM Juegos, la ola recuperada en Venezuela, el palpitar del logotipo de SBM Pagos, el de las monedas de UnityCoin y el del mapamundi de Mutual Welfare. Todo verificado en producción: deriva de centro 0,00 px, 0 solapes y 0 declaraciones descartadas en los dos idiomas.
 
-Después, seguir con la Fase 6 (contenido real de la home y las presentaciones, parallax, `org-piramid`). Antes conviene resolver los tres pendientes que aparecieron al medir el carrusel (ver `findings.md`): el slider `snake` trae 1 diapositiva y el original 2, nuestro banner mide 1166 px frente a los 1120 del original, y el original aplica `text-shadow` a las capas de texto.
+Cuando confirme, seguir con la Fase 6 (contenido real de la home y las presentaciones, parallax, `org-piramid`). Los tres pendientes que salieron al medir el carrusel están anotados en `findings.md`: el slider `snake` trae 1 diapositiva y el original 2, nuestro banner mide 1166 px frente a los 1120 del original, y el original aplica `text-shadow` a las capas de texto.
 
 ## Current Phase
 
