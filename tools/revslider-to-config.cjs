@@ -614,9 +614,35 @@ function traducir(s) {
           c.efectoTexto = c.textoConHtml ? null : 'ola';
           if (c.efectoTexto) animaciones++;
         }
-        if (efectosDeLaDiapositiva.imagen === 'flotar' && c.tipo === 'imagen' && /logo|logotipo/i.test(String(c.imagen || ''))) {
-          c.efectoImagen = 'flotar';
-          animaciones++;
+        /*
+         * La imagen se identifica POR NOMBRE DE ARCHIVO, no por parecido.
+         *
+         * Antes se buscaba la palabra "logo"/"logotipo" dentro de la ruta, y eso
+         * dejaba fuera justo los elementos que el usuario queria animar: el
+         * mapamundi (`org-banner-mundo.png`) y las monedas (`unity-banner-A/B.png`)
+         * no llevan "logo" en el nombre, asi que no recibian nada. Adivinar por el
+         * nombre del fichero es fragile de por si: ahora el archivo de decision dice
+         * exactamente cual.
+         */
+        const img = efectosDeLaDiapositiva.imagen;
+        if (img && c.tipo === 'imagen' && c.imagen) {
+          const nombres = Array.isArray(img.archivos) ? img.archivos : (img.archivo ? [img.archivo] : []);
+          const archivo = String(c.imagen).split('/').pop().split('?')[0];
+          if (nombres.includes(archivo)) {
+            c.efectoImagen = img.efecto || 'flotar';
+            /*
+             * `anulaBucle`: el efecto declarado SUSTITUYE al bucle del marcado en vez
+             * de sumarse. Las monedas traen `loop_0="sX:0.8"` del original; con el
+             * latido al 80 % encima del palpitar, encogian un 20 % y parecian
+             * descentradas. Dos animaciones sobre el mismo elemento nunca es lo que
+             * se quiere: manda la declarada.
+             */
+            if (img.anulaBucle && c.bucle) delete c.bucle;
+            animaciones++;
+          }
+        }
+        if (typeof img === 'string') {
+          avisar(alias, `diapositiva ${sl.id}: efectos.json usa el formato antiguo (imagen: "${img}"); ahora hay que nombrar los archivos`);
         }
       }
 

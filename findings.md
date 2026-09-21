@@ -1022,4 +1022,30 @@ Tras desplegar se sondeó producción buscando `banner-slider__letra" … data-a
 
 **Verificado en producción** (`web.unitygenerator.com`): letras pegadas, 13 capas con `nowrap`, 0 apariciones de `calc(0 + …)` y de `font-weight:900`, **0 solapes** en las 5 diapositivas y en los dos idiomas, y la ola moviendo `top` de 0 a `-7,99px` a mitad de ciclo.
 
+### El vocabulario de efectos de imagen, y la regla que lo decide todo
+
+El usuario pidió ajustar los efectos pieza por pieza, y la petición dejó una regla clara:
+
+> **Si una pieza tiene que verse CENTRADA, no puede desplazarse ni encogerse.**
+
+De ahí salen tres efectos de imagen, con la elección motivada y no estética:
+
+| efecto | qué hace | cuándo |
+|---|---|---|
+| `flotar` | sube y baja 10 px, 4 s | piezas que pueden moverse |
+| `palpitar` | crece a 1,06 y vuelve, 3 s — **nunca por debajo de 1** | logotipos y monedas: al no encoger, conservan tamaño y centro |
+| `brillo` | un halo cálido que respira, 3,2 s — **no mueve nada** | piezas centradas donde no se quiere ni un píxel de movimiento |
+
+Medido con el reloj de la animación en los dos extremos del ciclo: el `palpitar` crece **+13,5 px** de ancho y la **deriva del centro es 0,00 px**; el `brillo` mantiene el centro y el ancho idénticos.
+
+**Por qué el latido del original hacía ver las monedas descentradas**: el marcado trae `loop_0="sX:0.8;sY:0.8"`, o sea que las **encogía un 20 %**. Una pieza que cambia de tamaño un 20 % se lee como «movida», aunque su centro no se mueva. Se sustituyó por el `palpitar`, que solo crece. La decisión se expresa con `anulaBucle` en el archivo de efectos: **el efecto declarado sustituye al bucle del original en vez de sumarse** — dos animaciones sobre el mismo elemento nunca es lo que se quiere.
+
+#### Dos fallos de fondo que aparecieron al hacerlo
+
+1. **La imagen del efecto se elegía adivinando por el nombre del fichero.** El generador aplicaba el efecto solo si la ruta contenía «logo»/«logotipo». Por eso el mapamundi (`org-banner-mundo.png`) y las monedas (`unity-banner-A/B.png`) **no recibían nada**, y eran justo las piezas que el usuario quería animar. Ahora el archivo de decisión **nombra los archivos exactos**.
+2. **La diapositiva de Venezuela estaba sin ola por una clave mal escrita.** `efectos.json` decía `bienestarmutuo.org` y el destino real es `bienestarmutuo.org.ve`; con emparejamiento por **host exacto** —que se puso precisamente para que `.org.ve` no se confundiera con `.org`— la clave no coincidía y la diapositiva se quedó fuera. Se añadió la clave correcta, y ahora las cuatro diapositivas del carrusel ondulan (24, 38, 78 y 77 letras) mientras UnityCoin, como se pidió, no ondula.
+
+**Verificado**: ola con `top` de `-0,02px` a `-7,98px` en las cuatro diapositivas, los tres tipos de efecto aplicados a la pieza correcta, **0 solapes** y **0 declaraciones descartadas** en las dos páginas de idioma, y la ola no crea ningún solape nuevo (comprobado midiendo con la onda en su punto más alto).
+
+
 

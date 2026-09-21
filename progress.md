@@ -225,6 +225,11 @@ Files created/modified:
 | 2026-09-17 ~19:25 | 57 capas se pintaban con `font-weight:900` donde el original usa 400 | 1 | **Corregido.** Tienen el peso **vacío** (`{"d":{"e":true}}`) y el generador caía al preset, que declara 900 — pero **medido en el original esa capa se pinta con 400**: el plugin no aplica el peso del preset. Con 900 el titular no cabía y envolvía. Sin valor no se emite `font-weight` y el navegador usa el suyo. Las 36 capas que sí declaran 700 lo conservan. |
 | 2026-09-17 ~19:21 | Comparar cajas de elementos daba 6 solapes en la diapositiva de UnityCoin y 2 en la de SBM Libre | 1 | **Eran falsos positivos de medición en parte.** Una caja puede ser más alta que su texto, así que hay que comparar **líneas** (`Range.getClientRects()`), no cajas. Y con la ola **cada letra es un elemento**, así que `Range` devuelve un rectángulo por letra: hay que agruparlos por fila y tomar el ancho completo de cada fila. |
 | 2026-09-17 ~19:24 | `tab.screenshot()` se colgó (timeout de 30 s) con la pestaña trabada | 1 | **Sin resolver en esa pestaña; se abrió una nueva**, que es el remedio ya documentado. Las mediciones siguientes se hicieron con `evaluate`, que no se colgó. |
+| 2026-09-17 ~19:26 | El sondeo del despliegue dijo durante 5 minutos que la versión nueva no había llegado, y sí había llegado | 1 | **Marcador equivocado.** Astro deriva el identificador de ámbito del contenido del bloque de estilos, así que al tocar los estilos pasó de `jpthgoh5` a `vukvhwsg` y el texto que buscaba dejó de existir. **Un marcador que incluya un identificador generado por el build no sirve para comprobar un despliegue**: comprobar datos del cambio o medir el estilo computado. |
+| 2026-09-17 ~19:30 | La diapositiva de Venezuela no ondulaba y yo creía que sí | 1 | **Corregido.** La clave de `efectos.json` era `bienestarmutuo.org` y el destino real `bienestarmutuo.org.ve`: con emparejamiento por host exacto no coincidía. **La trampa que justificaba el host exacto —`.org.ve` contiene `.org`— se volvió en contra por una clave mal escrita.** Verificado ahora: 38 letras ondulando en esa diapositiva. |
+| 2026-09-17 ~19:30 | El mapamundi y las monedas no recibían ningún efecto pese a estar pedidos | 1 | **Corregido.** El generador aplicaba el efecto de imagen solo si la ruta del fichero contenía «logo»/«logotipo», y esos archivos no lo llevan. Adivinar por el nombre del fichero es frágil: ahora el archivo de decisión **nombra los archivos exactos**. |
+| 2026-09-17 ~19:32 | Medí el latido leyendo `getBoundingClientRect()` y salía que las piezas no cambiaban de tamaño | 1 | **Medición no concluyente.** Con la pestaña en segundo plano Chrome congela las animaciones y el rectángulo puede quedar sin actualizar. Se midió el **`scale` computado** con el reloj de la animación en los dos extremos del ciclo, que sí es determinista. |
+| 2026-09-17 ~19:33 | La ola de la diapositiva de Venezuela no se podía medir: no había animación que leer | 1 | **Esperado, no un fallo.** La regla de la ola alcanza solo a la diapositiva **activa** (`aria-hidden="false"`), y en el carrusel solo una lo está. Para medirla se activó cada diapositiva un momento con un guion y se restauró el valor después. |
 
 ## 5-Question Reboot Check
 <!-- Answer these after any /clear or compaction to re-orient quickly. -->
@@ -342,4 +347,21 @@ Acciones tomadas:
 **Medido tras los arreglos**: **0 solapes** en las 6 diapositivas y en los dos idiomas, 0 declaraciones descartadas, y la ola y la flotación confirmadas en movimiento.
 
 **Pendiente anotado, sin tocar**: el slider `snake` trae 1 diapositiva y el original 2; nuestro banner mide 1166 px y el original 1120 (misma proporción); y el original aplica `text-shadow` a las capas de texto.
+
+### Ajustes de efectos pieza por pieza
+**Status:** complete
+
+El usuario revisó el carrusel y pidió cinco ajustes concretos. La petición dejó una regla que ahora gobierna el vocabulario: **si una pieza tiene que verse centrada, no puede desplazarse ni encogerse**.
+
+Acciones tomadas:
+- **Vocabulario de efectos de imagen** en el componente, elegido por `data-efecto` (no por clase, para poder añadir más sin tocar el marcado): `flotar` (sube y baja), `palpitar` (crece a 1,06, **nunca por debajo de 1**, así conserva tamaño y centro) y `brillo` (un halo cálido que respira, sin mover nada).
+- **SBM Juegos**: el logotipo ya no hace el sube y baja del texto; lleva el `brillo`. Es el efecto inventado para esa diapositiva: se queda perfectamente centrado y es un movimiento distinto del de las letras.
+- **Venezuela** («A 100% NEW VENEZUELA!»): se le puso la ola. **Estaba sin ella por un fallo mío**: la clave del archivo decía `bienestarmutuo.org` y el destino real es `bienestarmutuo.org.ve`. Con emparejamiento por host exacto —que se puso justamente para no confundir `.org.ve` con `.org`— no coincidía. Ahora ondulan las cuatro diapositivas (24, 38, 78 y 77 letras) y UnityCoin, como se pidió, no ondula.
+- **SBM Pagos**: el logotipo redondo pasa de `flotar` a `palpitar`.
+- **UnityCoin**: las monedas pasan de `escala` (el latido del original, que las **encogía un 20 %**) a `palpitar`, que solo crece. Ese encogimiento era lo que las hacía parecer descentradas. Se expresa con `anulaBucle`, que **sustituye** el bucle del original en vez de sumarse.
+- **Mutual Welfare**: el mapamundi con las manos y el corazón lleva `palpitar`.
+- **La imagen del efecto ya no se adivina**: antes solo se aplicaba si el nombre del fichero contenía «logo»/«logotipo», y por eso el mapamundi y las monedas quedaban fuera. Ahora el archivo de decisión **nombra los archivos exactos**.
+
+**Medido**: `palpitar` crece +13,5 px de ancho con **deriva de centro 0,00 px**; `brillo` mantiene centro y ancho idénticos; la ola mueve `top` de `-0,02px` a `-7,98px`; **0 solapes** y 0 declaraciones descartadas en las dos páginas de idioma.
+
 

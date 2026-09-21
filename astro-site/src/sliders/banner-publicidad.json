@@ -148,7 +148,7 @@
             "alto": "163px"
           },
           "estilos": null,
-          "efectoImagen": "flotar",
+          "efectoImagen": "brillo",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -340,7 +340,7 @@
             "alto": "163px"
           },
           "estilos": null,
-          "efectoImagen": "flotar",
+          "efectoImagen": "brillo",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -469,6 +469,7 @@
               "color": "capa"
             }
           },
+          "efectoTexto": "ola",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -548,6 +549,7 @@
               "color": "capa"
             }
           },
+          "efectoTexto": "ola",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -596,6 +598,7 @@
               "color": "capa"
             }
           },
+          "efectoTexto": "ola",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -728,6 +731,7 @@
               "color": "capa"
             }
           },
+          "efectoTexto": "ola",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -807,6 +811,7 @@
               "color": "capa"
             }
           },
+          "efectoTexto": "ola",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -855,6 +860,7 @@
               "color": "capa"
             }
           },
+          "efectoTexto": "ola",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -987,6 +993,7 @@
               "color": "capa"
             }
           },
+          "efectoTexto": "ola",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -1066,6 +1073,7 @@
               "color": "capa"
             }
           },
+          "efectoTexto": "ola",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -1114,6 +1122,7 @@
               "color": "capa"
             }
           },
+          "efectoTexto": "ola",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -1305,7 +1314,7 @@
             "alto": "163px"
           },
           "estilos": null,
-          "efectoImagen": "flotar",
+          "efectoImagen": "brillo",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -1644,7 +1653,7 @@
             "alto": "176px"
           },
           "estilos": null,
-          "efectoImagen": "flotar",
+          "efectoImagen": "palpitar",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -1921,7 +1930,7 @@
             "alto": "176px"
           },
           "estilos": null,
-          "efectoImagen": "flotar",
+          "efectoImagen": "palpitar",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -2198,7 +2207,7 @@
             "alto": "176px"
           },
           "estilos": null,
-          "efectoImagen": "flotar",
+          "efectoImagen": "palpitar",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -2296,10 +2305,7 @@
             "alto": "236px"
           },
           "estilos": null,
-          "bucle": {
-            "tipo": "escala",
-            "valor": 0.95
-          },
+          "efectoImagen": "palpitar",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -2331,10 +2337,7 @@
             "alto": "236px"
           },
           "estilos": null,
-          "bucle": {
-            "tipo": "escala",
-            "valor": 0.95
-          },
+          "efectoImagen": "palpitar",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -2607,10 +2610,7 @@
             "alto": "236px"
           },
           "estilos": null,
-          "bucle": {
-            "tipo": "escala",
-            "valor": 0.95
-          },
+          "efectoImagen": "palpitar",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -2642,10 +2642,7 @@
             "alto": "236px"
           },
           "estilos": null,
-          "bucle": {
-            "tipo": "escala",
-            "valor": 0.95
-          },
+          "efectoImagen": "palpitar",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -2918,6 +2915,7 @@
             "alto": "236"
           },
           "estilos": null,
+          "efectoImagen": "palpitar",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -2949,6 +2947,7 @@
             "alto": "236"
           },
           "estilos": null,
+          "efectoImagen": "palpitar",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -3400,6 +3399,7 @@
             "alto": "249px"
           },
           "estilos": null,
+          "efectoImagen": "palpitar",
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -3707,6 +3707,7 @@
             "alto": "249px"
           },
           "estilos": null,
+          "efectoImagen": "palpitar",
           "animacion": {
             "desde": {
               "opacidad": 0,

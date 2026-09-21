@@ -77,8 +77,16 @@ interface Capa {
    * que cada letra sube y baja en cascada.
    */
   efectoTexto?: 'ola' | null;
-  /** Efecto de imagen AÑADIDO por el usuario: flotacion vertical suave. */
-  efectoImagen?: 'flotar' | null;
+  /**
+   * Efecto de imagen AÑADIDO por el usuario (no extraido del original).
+   *
+   *   `flotar`   sube y baja 10 px. Solo vale para elementos que pueden desplazarse.
+   *   `palpitar` crece hasta 1,06 y vuelve. NUNCA encoge, asi que el elemento
+   *              conserva su tamano y su centro: es lo que hay que usar cuando la
+   *              pieza tiene que verse centrada (un logotipo, una moneda).
+   *   `brillo`   emite un halo que respira, sin moverse nada.
+   */
+  efectoImagen?: 'flotar' | 'palpitar' | 'brillo' | null;
 }
 
 interface Slide {
@@ -427,13 +435,16 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
                   c.texto
                 )}
               </span>
-            ) : c.efectoImagen === 'flotar' ? (
+            ) : c.efectoImagen ? (
               /*
-               * CON ENVOLTORIO, y es necesario: la animacion de entrada y la de
-               * flotacion animan las dos `translate`. En el MISMO elemento competirian
-               * —la segunda gana mientras se solapan— y una de las dos se perderia. Con
-               * el padre haciendo la entrada y el hijo flotando, cada una anima su
-               * propio `translate` y se componen.
+               * CON ENVOLTORIO, y es necesario: la animacion de entrada del padre y
+               * la de flotacion animan las dos `translate`. En el MISMO elemento
+               * competirian —la segunda gana mientras se solapan— y una de las dos se
+               * perderia. Con el padre haciendo la entrada y el hijo llevando el
+               * efecto, cada uno anima lo suyo y se componen.
+               *
+               * El efecto se elige por `data-efecto`, no por clase: asi anadir uno
+               * nuevo (palpitar, brillo) no obliga a tocar el marcado.
                */
               <span
                 class="banner-slider__capa absolute"
@@ -446,7 +457,8 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
                   alt={c.alt ?? ''}
                   loading="lazy"
                   decoding="async"
-                  class="banner-slider__flota"
+                  class="banner-slider__efecto"
+                  data-efecto={c.efectoImagen}
                 />
               </span>
             ) : (
@@ -633,24 +645,56 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
   }
 
   /*
-   * FLOTACION: la imagen sube 10 px y vuelve, lento. Va en el elemento interior para
-   * no competir con la entrada del padre.
+   * EFECTOS DE IMAGEN.
+   *
+   * Tres, y la eleccion no es estetica sino funcional, por un motivo medido: si la
+   * pieza tiene que verse CENTRADA, no puede desplazarse ni encogerse.
+   *
+   *   flotar   sube y baja 10 px. Solo para piezas que pueden moverse.
+   *   palpitar crece hasta 1,06 y vuelve, NUNCA por debajo de 1. Al no encoger,
+   *            el elemento conserva tamano y centro: vale para logotipos y monedas.
+   *            (El bucle del original encogia al 80 % y por eso las monedas
+   *            parecian descentradas.)
+   *   brillo   no mueve nada: respira un halo calido alrededor. Se queda clavado en
+   *            su sitio, que es lo mas seguro para una pieza centrada.
+   *
+   * Los tres van en el elemento INTERIOR, para no competir con la entrada del padre.
    */
   @keyframes bs-flotar {
     0%, 100% { translate: 0 0; }
     50% { translate: 0 -10px; }
   }
-  .banner-slider__flota {
+  @keyframes bs-palpitar {
+    0%, 100% { scale: 1; }
+    50% { scale: 1.06; }
+  }
+  @keyframes bs-brillo {
+    0%, 100% { filter: drop-shadow(0 0 0 rgba(255, 113, 0, 0)); }
+    50% { filter: drop-shadow(0 0 16px rgba(255, 113, 0, 0.75)); }
+  }
+
+  .banner-slider__efecto {
     display: block;
     width: 100%;
     height: auto;
+  }
+  .banner-slider__efecto[data-efecto='flotar'] {
     animation: bs-flotar 4000ms ease-in-out infinite;
   }
+  .banner-slider__efecto[data-efecto='palpitar'] {
+    animation: bs-palpitar 3000ms ease-in-out infinite;
+    /* Late desde su centro: sin esto, un `transform-origin` heredado desplazaria
+       el crecimiento hacia un lado. */
+    transform-origin: 50% 50%;
+  }
+  .banner-slider__efecto[data-efecto='brillo'] {
+    animation: bs-brillo 3200ms ease-in-out infinite;
+  }
 
-  /* Sin movimiento: ni ola ni flotacion. El texto y las imagenes, quietos. */
+  /* Sin movimiento: ni ola ni efectos de imagen. El texto y las imagenes, quietos. */
   @media (prefers-reduced-motion: reduce) {
     .banner-slider__slide[aria-hidden='false'] .banner-slider__letra,
-    .banner-slider__flota {
+    .banner-slider__efecto {
       animation: none;
     }
   }
