@@ -364,4 +364,19 @@ Acciones tomadas:
 
 **Medido**: `palpitar` crece +13,5 px de ancho con **deriva de centro 0,00 px**; `brillo` mantiene centro y ancho idénticos; la ola mueve `top` de `-0,02px` a `-7,98px`; **0 solapes** y 0 declaraciones descartadas en las dos páginas de idioma.
 
+### Geometría del carrusel: dos fallos que solo se ven al cambiar el ancho
+**Status:** complete
+
+El usuario reportó que en UnityCoin las monedas estaban mal colocadas y que «UNT» aparecía descolocado. No era cuestión de gusto: eran dos fallos de la extracción.
+
+Acciones tomadas:
+- **Los desplazamientos de las capas ancladas se emitían en píxeles absolutos** y por tanto no escalaban con el banner, mientras que todo lo demás sí. A 1166 px el error es del 6 %; medido con el banner a 620 px, «UNT» se iba a **−35 %** del ancho y los titulares al **133 %** de la altura, o sea fuera del banner. Ahora van en **`cqw`**.
+- **El anclaje vertical se declara `center` y el mapa solo conocía `middle`**, así que cualquier valor fuera del mapa caía a `0` sin avisar: **9 capas de los cuatro sliders** perdían el centrado vertical y aparecían pegadas arriba. Es lo que le pasaba a las dos monedas. Arreglado con una tabla única que asocia cada nombre con su base y su corrimiento, para que las dos listas no puedan desincronizarse.
+- **Trampa dentro de mi propio arreglo, cazada por la medición**: `cqw` es una unidad de ancho, así que el desplazamiento vertical también se divide por el ancho del lienzo. Dividirlo por el alto lo multiplicaba por ~2,7 y mandaba los titulares al 271 % de la altura.
+- **`ajustes.json`**, tercer archivo de decisión, para las desviaciones del original: `desplazamientos` (suma píxeles del lienzo a una capa) y `alinearCentroXCon` (centra una capa sobre el centro de otra, con las capas nombradas por su archivo o su texto). La petición del usuario vive ahí, no en la geometría extraída, para que se vea de un vistazo qué es del original y qué no.
+- **De las tres cosas que pidió el usuario, «un poco más abajo» NO fue a `ajustes.json`**: era el fallo del anclaje vertical, y se corrigió en la extracción. Regla: si se puede arreglar en la extracción, se arregla ahí.
+
+**Medido**: las monedas pasan de 41,06 % a **51,66 %** de altura contra el **51,50 %** del original; todas las piezas coinciden dentro del **0,8 %**; el centro de «UNT» queda sobre el de la primera moneda con diferencia **0,00**; las posiciones son **idénticas a 1166 y a 620 px** en las 29 capas de las 5 diapositivas; **0 solapes** y 0 declaraciones descartadas.
+
+
 

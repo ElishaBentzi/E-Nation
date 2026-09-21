@@ -343,6 +343,82 @@ const fuentesVistas = new Map();
 const presetsVistos = new Map();
 let capasSinColor = 0;
 
+/*
+ * AJUSTES FINOS DEL USUARIO (`ajustes.json`).
+ *
+ * Es otro archivo de DECISION, como `efectos.json`: la geometria que sale del
+ * original se respeta, y lo que se aparta de ella se declara aqui, con su motivo.
+ * Asi una regeneracion no borra el ajuste y se ve de un vistazo que NO es fidelidad.
+ *
+ * Dos operaciones:
+ *   `desplazamientos`   suma pixeles del lienzo de diseno al eje que se indique.
+ *   `alinearCentroXCon` centra una capa sobre el centro horizontal de otra. La
+ *                       cuenta se hace en pixeles del lienzo, asi que funciona
+ *                       aunque las dos capas usen sistemas de anclaje distintos.
+ */
+const RUTA_AJUSTES = path.join(ROOT, 'astro-site', 'src', 'sliders', 'ajustes.json');
+const AJUSTES = fs.existsSync(RUTA_AJUSTES) ? JSON.parse(fs.readFileSync(RUTA_AJUSTES, 'utf8')) : {};
+
+/** Numero a partir de un valor de la config, que puede venir como "240px". */
+const aNumero = (v) => {
+  const n = parseFloat(String(v ?? '').replace('px', ''));
+  return Number.isNaN(n) ? null : n;
+};
+
+/** Nombre con el que se identifica una capa en `ajustes.json`: su archivo o su texto. */
+const nombreDe = (c) => (c.imagen ? String(c.imagen).split('/').pop() : String(c.texto ?? ''));
+
+/**
+ * Centro horizontal de una capa, en pixeles del lienzo de diseno.
+ *
+ * Los dos sistemas dan formulas distintas y hay que respetarlas: las capas por
+ * pixeles colocan su esquina, y las ancladas colocan un borde y luego se corren un
+ * porcentaje de SU PROPIO ancho (`-50%` para centrar), asi que el centro sale de
+ * mezclar el anclaje con el tamano.
+ */
+function centroX(c, lienzo) {
+  const p = c.posicion || {};
+  const ancho = aNumero(c.tamano?.ancho) ?? 0;
+  const x = aNumero(p.x) ?? 0;
+  if (p.porPixeles) return x + ancho / 2;
+  const h = String(p.horizontal ?? 'left');
+  const frac = h === 'center' || h === 'middle' ? 0.5 : h === 'right' || h === 'end' ? 1 : 0;
+  return frac * (lienzo.ancho ?? 0) + x + ancho * (0.5 - frac);
+}
+
+/** Mueve una capa sumandole pixeles del lienzo, sin cambiar su sistema de anclaje. */
+function desplazar(c, dx, dy) {
+  const p = (c.posicion = c.posicion || {});
+  p.x = `${(aNumero(p.x) ?? 0) + dx}px`;
+  p.y = `${(aNumero(p.y) ?? 0) + dy}px`;
+}
+
+function aplicarAjustes(slide, alias, lienzo) {
+  let host = '';
+  try { host = new URL(slide.enlace?.href || '').hostname.replace(/^www\./, ''); } catch (e) { host = ''; }
+  const delSlider = AJUSTES[slide.id] || AJUSTES[alias] || {};
+  const conf = Object.entries(delSlider)
+    .filter(([k]) => k && !k.startsWith('_') && host === k.replace(/^www\./, ''))
+    .map(([, v]) => v)[0];
+  if (!conf) return;
+
+  for (const [clave, d] of Object.entries(conf.desplazamientos || {})) {
+    const capa = slide.capas.find((c) => nombreDe(c) === clave);
+    if (!capa) { avisar(alias, `ajustes.json: no existe la capa "${clave}" en la diapositiva ${slide.id}`); continue; }
+    desplazar(capa, aNumero(d.dx) ?? 0, aNumero(d.dy) ?? 0);
+    ajustesAplicados++;
+  }
+
+  for (const [origen, destino] of Object.entries(conf.alinearCentroXCon || {})) {
+    const a = slide.capas.find((c) => nombreDe(c) === origen);
+    const b = slide.capas.find((c) => nombreDe(c) === destino);
+    if (!a || !b) { avisar(alias, `ajustes.json: alineacion "${origen}" con "${destino}" no encontrada en la diapositiva ${slide.id}`); continue; }
+    desplazar(a, centroX(b, lienzo) - centroX(a, lienzo), 0);
+    ajustesAplicados++;
+  }
+}
+let ajustesAplicados = 0;
+
 /** Traduce un slider completo. */
 function traducir(s) {
   const alias = s.alias;
@@ -662,6 +738,14 @@ function traducir(s) {
 
       slide.capas.push(c);
     }
+
+    /*
+     * AJUSTES FINOS pedidos por el usuario, encima de la geometria del original.
+     *
+     * Van aqui, y no en el componente, porque necesitan conocer TODAS las capas de la
+     * diapositiva: alinear una pieza con el centro de otra exige leer las dos.
+     */
+    aplicarAjustes(slide, alias, config.lienzo);
 
     config.slides.push(slide);
   }

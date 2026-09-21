@@ -1047,5 +1047,53 @@ Medido con el reloj de la animación en los dos extremos del ciclo: el `palpitar
 
 **Verificado**: ola con `top` de `-0,02px` a `-7,98px` en las cuatro diapositivas, los tres tipos de efecto aplicados a la pieza correcta, **0 solapes** y **0 declaraciones descartadas** en las dos páginas de idioma, y la ola no crea ningún solape nuevo (comprobado midiendo con la onda en su punto más alto).
 
+### Dos fallos de geometría que solo se ven al cambiar el ancho de la ventana
+
+El usuario reportó que en UnityCoin las monedas estaban mal de sitio y que «UNT» aparecía descolocado. La causa no era el gusto: eran **dos fallos de la extracción de geometría**, y el segundo explica por qué el usuario lo veía y yo no.
+
+#### Fallo 1: los desplazamientos de las capas ancladas eran medidas absolutas
+
+Una capa anclada se coloca con `left:50%` y luego se corre un desplazamiento que en la configuración viene **en píxeles del lienzo de diseño** (por ejemplo `-527px`). Yo lo emitía tal cual:
+
+```
+transform: translate(calc(-50% + -527px), calc(0px + 186px))
+```
+
+Ese `-527px` **no se entera del tamaño del banner**, mientras que todo lo que lo rodea —el `left:50%`, los anchos en `%`, las fuentes en `cqw`— sí escala. A 1166 px de ancho el desajuste es del 6 % y pasa desapercibido; al estrecharse la ventana crece.
+
+**Medido con el banner a 620 px**: el texto «UNT» se colocaba a **−35 % del ancho** (fuera del banner por la izquierda) y los titulares al **133 % de la altura** (por debajo). Cualquiera que mire el sitio en una ventana más estrecha que yo ve esto, y yo no lo veía porque medía siempre a 1440.
+
+Arreglado emitiendo los desplazamientos en **`cqw`** (el 1 % del ancho del contenedor, que es lo que hace que escalen como el resto).
+
+**Trampa dentro del arreglo, cazada por la medición**: `cqw` es una unidad de **ancho**, así que el desplazamiento **vertical** también se divide por el ancho del lienzo, no por el alto. Dividirlo por el alto lo multiplicaba por ~2,7 y mandaba los titulares al **271 % de la altura**. El lienzo conserva su proporción, así que los dos ejes escalan con el ancho.
+
+#### Fallo 2: el anclaje vertical tiene DOS nombres y solo entendía uno
+
+El centrado vertical se declara `vertical: "center"` —la misma palabra que en horizontal— pero mi mapa solo conocía `middle`, que es como lo nombra la otra convención. **Cualquier valor fuera del mapa caía a `'0'` sin avisar**, así que esas capas se quedaban pegadas arriba.
+
+**9 capas de los cuatro sliders** perdían el centrado vertical. Era exactamente lo que le pasaba a las dos monedas de UnityCoin, que aparecían 10,4 % de la altura más arriba de donde van.
+
+Arreglado con una **tabla única** que asocia cada nombre de anclaje con su base y su corrimiento (`center` y `middle`; `left`/`start`, `right`/`end`, `top`, `bottom`). Antes el corrimiento se calculaba con una cadena de comparaciones aparte de la tabla de bases, y las dos listas podían desincronizarse — que es justo lo que había pasado.
+
+**Resultado medido**: las monedas pasan de 41,06 % a **51,66 %** de la altura, contra el **51,50 %** del original. Todas las piezas de esa diapositiva coinciden ahora con el original dentro del **0,8 %**, y las posiciones son **idénticas a 1166 y a 620 px** en las 29 capas de las 5 diapositivas.
+
+#### Cómo se detecta esto (y por qué no se detectaba)
+
+Midiendo **siempre a un solo ancho** el fallo es invisible: a 1440 el error del 6 % se lee como «casi bien». La comprobación que lo caza es **medir la posición relativa de cada capa a dos anchos distintos y comparar los porcentajes**: si una capa no guarda su proporción, ahí está el fallo. Queda como comprobación obligatoria del carrusel.
+
+### `ajustes.json`: las desviaciones del original, declaradas
+
+La petición del usuario («las monedas un poco más a la derecha y el texto UNT alineado con el centro de la primera moneda») es una **desviación deliberada**, así que no se aplica editando la geometría extraída —eso la haría indistinguible de un dato del original— sino en un tercer archivo de decisión, `astro-site/src/sliders/ajustes.json`, con dos operaciones:
+
+- **`desplazamientos`**: suma píxeles del lienzo a una capa, sin cambiar su sistema de anclaje.
+- **`alinearCentroXCon`**: centra una capa sobre el centro horizontal de otra. La cuenta se hace en píxeles del lienzo, así que funciona aunque las dos capas usen sistemas distintos (una por píxeles y otra anclada).
+
+Se nombran las capas **por el archivo de su imagen o por su texto**, igual que en `efectos.json`.
+
+**Y una distinción que conviene no perder**: de las tres cosas que pidió el usuario, «un poco más abajo» **no** fue a `ajustes.json`, porque no era un gusto sino el fallo 2 — estaba mal y se corrigió en la extracción. Cuando algo se puede arreglar en la extracción, se arregla ahí; `ajustes.json` es solo para lo que de verdad se aparta del original.
+
+Verificado renderizado: el centro de «UNT» coincide con el de la primera moneda **con diferencia 0,00**, las monedas quedan en 22,82 % y 80,64 % (18 px a la derecha del original), y siguen **0 solapes** y **0 declaraciones descartadas**.
+
+
 
 

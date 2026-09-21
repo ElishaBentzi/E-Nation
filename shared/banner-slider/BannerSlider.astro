@@ -245,11 +245,37 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
     // formas del reves. No es cromo de la interfaz, es una ilustracion.
     partes.push(`left:${x.toFixed(4)}%`, `top:${y.toFixed(4)}%`);
   } else {
-    const anclajesH: Record<string, string> = { left: '0', center: '50%', right: '100%' };
-    const anclajesV: Record<string, string> = { top: '0', middle: '50%', bottom: '100%' };
-    const h = p.horizontal ?? 'left';
-    const v = p.vertical ?? 'top';
-    partes.push(`left:${anclajesH[h] ?? '0'}`, `top:${anclajesV[v] ?? '0'}`);
+    /*
+     * EL NOMBRE DEL ANCLAJE VERTICAL NO ES UNO SOLO, y confundirlos es un fallo
+     * MUDO: la capa se queda en `top:0` y nadie avisa.
+     *
+     * RevSlider declara el centrado vertical como `center` —la misma palabra que en
+     * horizontal— pero el mapa solo conocia `middle`, que es como lo nombra la otra
+     * convencion. Cualquier valor fuera del mapa cae a `'0'`, asi que **9 capas de
+     * los cuatro sliders perdian el centrado vertical** y aparecian pegadas arriba.
+     * Es lo que le pasaba a las dos monedas de UnityCoin.
+     *
+     * Se aceptan las dos convenciones (y `start`/`end` por si aparecen), y el
+     * desplazamiento que compensa el anclaje se calcula de la MISMA tabla, no con
+     * una cadena de comparaciones aparte que se puede desincronizar.
+     */
+    const anclajes: Record<string, { base: string; corrimiento: string }> = {
+      left: { base: '0', corrimiento: '0px' },
+      start: { base: '0', corrimiento: '0px' },
+      center: { base: '50%', corrimiento: '-50%' },
+      middle: { base: '50%', corrimiento: '-50%' },
+      right: { base: '100%', corrimiento: '-100%' },
+      end: { base: '100%', corrimiento: '-100%' },
+      top: { base: '0', corrimiento: '0px' },
+      bottom: { base: '100%', corrimiento: '-100%' },
+    };
+    const ancla = (valor: string | null | undefined, porDefecto: string) =>
+      anclajes[String(valor ?? porDefecto)] ?? anclajes[porDefecto];
+    const ah = ancla(p.horizontal, 'left');
+    const av = ancla(p.vertical, 'top');
+    partes.push(`left:${ah.base}`, `top:${av.base}`);
+    const tx = ah.corrimiento;
+    const ty = av.corrimiento;
 
     /*
      * LAS BASES LLEVAN UNIDAD, y no es un detalle de estilo: es un fallo que costo
@@ -266,16 +292,37 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
      * punto del banner y el logotipo de la moneda descentrado y cortado. El HTML
      * parecia correcto y el build pasaba sin una queja.
      */
-    const largo = (valor: unknown) => {
+    /*
+     * EL DESPLAZAMIENTO VA EN `cqw`, NO EN PICELES. Y es el segundo fallo de esta
+     * misma linea, mas sutil que el de `calc(0 + 72px)`.
+     *
+     * El desplazamiento sale de la configuracion en PICELES DEL LIENZO DE DISENO
+     * (por ejemplo `186px` sobre un lienzo de 1240). Emitido tal cual, es una medida
+     * ABSOLUTA que no se entera del tamano real del banner, mientras que todo lo que
+     * lo rodea —el `left:50%`, los `%` de ancho, las fuentes en `cqw`— si escala.
+     *
+     * A 1166 px de ancho el error es del 6 % y pasa desapercibido. Al estrecharse la
+     * ventana el desajuste crece y las capas se van: MEDIDO, con el banner a 620 px
+     * el texto «UNT» se colocaba a −35 % del ancho y los titulares a 133 % de la
+     * altura, o sea fuera del banner por la izquierda y por abajo. El usuario lo
+     * estaba viendo como piezas «tiradas» a un lado.
+     *
+     * `cqw` es el 1 % del ANCHO del contenedor (el banner tiene
+     * `container-type: inline-size`), asi que escala igual que el resto. Y por eso
+     * LOS DOS EJES SE DIVIDEN POR EL ANCHO DEL LIENZO, incluido el vertical: el
+     * lienzo conserva su proporcion, de modo que la altura escala con el ancho.
+     * Dividir el vertical por el ALTO del lienzo fue un error que la medicion cazo
+     * enseguida: el desplazamiento salia multiplicado por ~2,7 y los titulares se
+     * iban al 271 % de la altura, muy por debajo del banner.
+     */
+    const largo = (valor: unknown, total: number) => {
       if (valor === null || valor === undefined || valor === '') return null;
-      const s = String(valor).trim();
-      if (/^-?\d*\.?\d+$/.test(s)) return `${s}px`; // numero suelto -> pixeles
-      return s;
+      const n = parseFloat(String(valor).replace('px', ''));
+      if (Number.isNaN(n) || !total) return null;
+      return `${((n / total) * 100).toFixed(4)}cqw`;
     };
-    const dx = largo(p.x);
-    const dy = largo(p.y);
-    const tx = h === 'right' ? '-100%' : h === 'center' ? '-50%' : '0px';
-    const ty = v === 'bottom' ? '-100%' : v === 'middle' ? '-50%' : '0px';
+    const dx = largo(p.x, anchoLienzo);
+    const dy = largo(p.y, anchoLienzo);
     const sx = dx ? `calc(${tx} + ${dx})` : tx;
     const sy = dy ? `calc(${ty} + ${dy})` : ty;
     partes.push(`transform:translate(${sx},${sy})`);
@@ -300,9 +347,22 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
    */
   if (c.animacion) {
     const a = c.animacion;
+    /*
+     * El desplazamiento de entrada tambien va en `cqw` por el mismo motivo que el de
+     * los anclajes: viene en pixeles del lienzo de diseno, y en pixeles absolutos no
+     * guarda proporcion con el banner. Los dos ejes se dividen por el ANCHO, porque
+     * `cqw` es una unidad de ancho.
+     */
+    const enCqw = (valor: unknown, total: number) => {
+      const n = parseFloat(String(valor ?? '').replace('px', ''));
+      if (Number.isNaN(n) || !total) return null;
+      return `${((n / total) * 100).toFixed(4)}cqw`;
+    };
     if (a.desde?.opacidad !== undefined && a.desde.opacidad !== 1) partes.push(`--bs-op0:${a.desde.opacidad}`);
-    if (a.desde?.x) partes.push(`--bs-x0:${a.desde.x}`);
-    if (a.desde?.y) partes.push(`--bs-y0:${a.desde.y}`);
+    const x0 = enCqw(a.desde?.x, anchoLienzo);
+    const y0 = enCqw(a.desde?.y, anchoLienzo);
+    if (x0) partes.push(`--bs-x0:${x0}`);
+    if (y0) partes.push(`--bs-y0:${y0}`);
     if (a.duracionMs) partes.push(`--bs-dur:${a.duracionMs}ms`);
     if (a.retardoMs) partes.push(`--bs-delay:${a.retardoMs}ms`);
   }

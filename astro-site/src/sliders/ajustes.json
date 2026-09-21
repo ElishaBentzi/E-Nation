@@ -1,0 +1,21 @@
+{
+  "_nota": "AJUSTES FINOS pedidos por el usuario, encima de la geometría que sale del original. Este archivo es de DECISIÓN: se edita a mano y NO se pisa al regenerar la configuración. Todo lo que hay aquí es una DESVIACIÓN del original, así que si algo se puede corregir arreglando la extracción, se arregla allí y no aquí.",
+  "_clave": "por DESTINO del banner (host exacto, sin www), igual que efectos.json: así el ajuste cubre todas las variantes de idioma de esa diapositiva.",
+  "_capa": "una capa se nombra por el ARCHIVO de su imagen o por su TEXTO, tal cual aparecen en la configuración generada.",
+  "_operaciones": {
+    "desplazamientos": "{ \"<capa>\": { \"dx\": \"12px\", \"dy\": \"0px\" } } — suma píxeles del LIENZO DE DISEÑO al eje indicado, sin cambiar el sistema de anclaje",
+    "alinearCentroXCon": "{ \"<capa que se mueve>\": \"<capa de referencia>\" } — centra la primera sobre el centro horizontal de la segunda"
+  },
+  "banner-publicidad": {
+    "unitycoin.net": {
+      "_nota": "Petición del usuario: «las monedas un poco más abajo y un poco más a la derecha, y el texto UNT alineado con el centro de la primera moneda». Lo de «más abajo» NO se ajusta aquí a propósito: era un fallo de verdad —las monedas perdían el centrado vertical porque el anclaje se declara «center» y el componente solo entendía «middle»— y ya está corregido en la extracción. Ahora están a la altura del original (51,66 % frente a 51,50 %). Esto de aquí es solo el desplazamiento lateral y la alineación.",
+      "desplazamientos": {
+        "unity-banner-A.png": { "dx": "18px", "dy": "0px" },
+        "unity-banner-B.png": { "dx": "18px", "dy": "0px" }
+      },
+      "alinearCentroXCon": {
+        "UNT": "unity-banner-A.png"
+      }
+    }
+  }
+}
