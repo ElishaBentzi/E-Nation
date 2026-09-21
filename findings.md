@@ -1097,3 +1097,38 @@ Verificado renderizado: el centro de «UNT» coincide con el de la primera moned
 
 
 
+
+### El contenido de las páginas: qué faltaba de verdad (y qué no)
+
+Con el carrusel cerrado se auditó el contenido de las 14 páginas comparando **texto visible, imágenes y encabezados** contra el HTML capturado del original. La comparación por **tamaño de fichero no sirve**: el HTML del original arrastra ~21 KB de CSS en línea de Elementor/The7 más el JavaScript del page builder, así que medir bytes mide el andamiaje, no lo que se ve. Herramienta: `tools/compare-paginas.cjs`.
+
+**El punto de partida era peor de lo que parecía**: las páginas llevaban entre el **3 % y el 16 % del texto** del original, con 1 encabezado frente a 34. Eran esqueleto, cabecera y pie: el `ContenidoPagina.astro` estaba declarado como esqueleto a propósito, esperando esta fase.
+
+#### La mitad de las rutas casi no tienen contenido, y eso NO es un fallo nuestro
+
+Las páginas de **noticias, artículos y verificar** del original están prácticamente **vacías**: lo que hay es el título, el buscador y el **formulario de suscripción de Mailchimp**. Sus 3,2 k caracteres de texto son la barra de navegación y el desplegable de países del formulario. Se ve al extraer el texto en orden. O sea: no había contenido que reconstruir, y perseguirlo habría sido trabajo inventado.
+
+Las que sí tienen contenido son **la home** (5,4 k caracteres, 23 imágenes, 34 encabezados) y **las presentaciones** (21 k y 22 k caracteres, 57 imágenes, 63 encabezados). Y no usan la misma tecnología que las demás: la home y las presentaciones son **Elementor con widgets de JetElements**; noticias, artículos, verificar y las legales son **Gutenberg**.
+
+#### El camino: un modelo de contenido, no el HTML copiado
+
+`tools/elementor-a-contenido.cjs` convierte el árbol de Elementor en un modelo en JSON (`astro-site/src/contenido/`): secciones en orden, el fondo de cada una y los bloques con sus datos. Copiar el HTML del original habría arrastrado sus clases y sus estilos en línea, dejando dos sistemas de estilo peleándose por el mismo elemento.
+
+**Cobertura medida tras renderizar desde el modelo**
+
+| página | texto antes | texto ahora | encabezados | imágenes |
+|---|---|---|---|---|
+| home EN/ES | 8 % | **93 %** | 34/34 | faltan 9, del encabezado y el pie |
+| presentación EN | 4 % | **99 %** | 60/63 | faltan 15 |
+| presentación ES | 4 % | **99 %** | 60/61 | faltan 15 |
+
+Lo que resta en esas dos son casi todas piezas del **encabezado y el pie** (los iconos de idioma `en/fr/es.png` —que se sustituyeron por el selector a petición del usuario—, el logo pequeño, un `dummy.png`) más la miniatura de un vídeo.
+
+#### Cuatro trampas por el camino, todas silenciosas
+
+1. **`jet-slider` no guarda sus elementos en `slides` sino en `item_list`.** Leer `slides` devolvía una lista vacía sin ningún error: las cuatro imágenes del carrusel y sus títulos desaparecían de la página.
+2. **`jet-animated-box` tiene CUATRO textos**, no dos: título y descripción por cada cara. Leía `front_side_title` y `back_side_description`, así que se perdían el título del dorso y la descripción del frontal.
+3. **37 de los 141 encabezados de la presentación traen etiquetas dentro** (`<br>`), porque el autor partía las frases a propósito. El texto plano para comparar tiene que perderlas —si no, el mismo encabezado parece distinto— y el salto de línea tiene que conservarse, porque pintado como texto las etiquetas **se verían literalmente**.
+4. **El nivel del encabezado no es libre**: el original pinta los títulos de los banners y los elementos del JetSlider como **`h5`**. Al pintarlos como `h3` la comparación decía «faltan 18 encabezados» cuando lo que faltaba era la etiqueta, no el texto. Cambiarlo altera la jerarquía que leen buscadores y lectores de pantalla.
+
+**Las páginas legales no se tocan aquí**: su texto se migra mecánicamente por script y **nunca pasa por el chat** ni por estos extractores, porque dispara falsos positivos de filtros de seguridad (error [1301] real). Están pendientes de ese script, no de este camino.

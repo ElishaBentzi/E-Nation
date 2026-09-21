@@ -1,20 +1,30 @@
 ---
 /*
- * Contenido de una pagina del sitio.
+ * CONTENIDO DE UNA PAGINA, reconstruido desde el modelo extraido de Elementor.
  *
- * ESTADO ACTUAL: esqueleto. Las rutas, el idioma y el SEO ya son reales y se
- * generan del manifiesto; el CONTENIDO de cada pagina se reconstruye en la Fase 6,
- * midiendo contra las capturas de referencia.
+ * COMO SE GENERA EL MODELO
+ *   `tools/elementor-a-contenido.cjs` convierte el arbol de Elementor del original
+ *   en `src/contenido/<pagina>.json`: las secciones en orden, el fondo de cada una y
+ *   los bloques con sus datos. Aqui solo se pinta.
  *
- * Se deja asi a proposito: primero se comprueba que la arquitectura de rutas e
- * idiomas funciona (que es lo que no se puede cambiar despues sin romper URLs
- * indexadas), y solo entonces se rellena el contenido. Al reves, cualquier error
- * de rutas obligaria a rehacer el contenido.
+ * POR QUE UN MODELO Y NO EL HTML COPIADO
+ *   Copiar el HTML del original arrastraria su andamiaje —las clases de Elementor,
+ *   sus estilos en linea, sus filas y columnas— y dejaria dos sistemas de estilo
+ *   peleandose por el mismo elemento. El modelo conserva lo que se VE (textos,
+ *   imagenes, colores medidos, orden y jerarquia) y lo pinta con Tailwind y los
+ *   tokens de marca.
+ *
+ * LO QUE NO SE INVENTA
+ *   Los colores, los tamanos en `em` y las imagenes salen del original. Cuando el
+ *   modelo no trae un dato se usa el valor de marca; nunca se inventa un color.
+ *
+ * PENDIENTE: el JetSlider se pinta como tira de imagenes, sin su comportamiento.
  */
 import type { Locale, PageId } from '../i18n/config.ts';
 import { PAGES, rutaDe } from '../i18n/config.ts';
 import BannerSlider from '../../../shared/banner-slider/BannerSlider.astro';
 import { slidersDe } from '../sliders/index.ts';
+import { leerContenido } from '../contenido/index.ts';
 
 interface Props {
   page: PageId;
@@ -24,50 +34,290 @@ const { page, locale } = Astro.props;
 const def = PAGES[page];
 const seo = def.seo[locale];
 const sliders = slidersDe(page, locale);
+
+/** El modelo de contenido de ESTA pagina e idioma, si ya esta extraido. */
+const modelo = await leerContenido(page, locale);
+
+/** Los sliders se consumen en el orden en que aparecen en la pagina. */
+let siguienteSlider = 0;
+const tomarSlider = () => sliders[siguienteSlider++];
+
+/** Estilo del fondo de una seccion. */
+function estiloFondo(fondo: any) {
+  if (!fondo) return undefined;
+  const partes: string[] = [];
+  if (fondo.color) partes.push(`background-color:${fondo.color}`);
+  if (fondo.imagen) {
+    partes.push(`background-image:url('${fondo.imagen}')`);
+    partes.push(`background-size:${fondo.tamano === 'contain' ? 'contain' : 'cover'}`);
+    partes.push(`background-repeat:${fondo.repetir || 'no-repeat'}`);
+    partes.push(`background-position:${(fondo.posicion || 'center center').replace('-', ' ')}`);
+    /*
+     * `fixed` es la tecnica que MEDIMOS en el original y hay que conservarla:
+     * cambiar un fondo fijo por uno que se desplaza se percibe como que el efecto
+     * desaparecio, aunque el color y la imagen sean los mismos.
+     */
+    if (fondo.attachment === 'fixed') partes.push('background-attachment:fixed');
+  }
+  return partes.join(';') || undefined;
+}
+
+const baseColumna = (ancho: number) => (ancho && ancho > 0 && ancho < 100 ? `${ancho}%` : undefined);
 ---
 
-{/* Los sliders del original, reconstruidos y alimentados por la configuracion
-    extraida del plugin. En la home son de adorno (el logo animado); en la
-    presentacion, el carrusel de banners a los demas proyectos. */}
-{sliders.map((s) => (
-  <BannerSlider
-    config={s.config}
-    etiqueta={s.etiqueta}
-    etiquetaAnterior={s.anterior}
-    etiquetaSiguiente={s.siguiente}
-    clase="bg-[#0b1a2b]"
-  />
-))}
+{modelo ? (
+  (modelo.secciones as any[]).map((seccion) => (
+    <section class="relative w-full" style={estiloFondo(seccion.fondo)} data-seccion={seccion._id}>
+      {seccion.fondo?.velo && (
+        <div class="pointer-events-none absolute inset-0" style={`background-color:${seccion.fondo.velo}`} />
+      )}
+      <div class="relative mx-auto flex w-full max-w-[1240px] flex-col gap-8 px-4 py-10 lg:flex-row lg:flex-wrap lg:items-start">
+        {(seccion.columnas as any[]).map((columna) => (
+          <div
+            class="flex min-w-0 flex-1 flex-col gap-6"
+            style={baseColumna(columna.ancho) ? `flex-basis:${baseColumna(columna.ancho)}` : undefined}
+          >
+            {(columna.bloques as any[]).map((bloque) => {
+              const estTitulo = [
+                bloque.color ? `color:${bloque.color}` : '',
+                bloque.tamanoEm ? `font-size:${bloque.tamanoEm}em` : '',
+                bloque.grosor ? `font-weight:${bloque.grosor}` : '',
+                bloque.interlineadoEm ? `line-height:${bloque.interlineadoEm}` : '',
+                bloque.alineacion === 'center' ? 'text-align:center' : '',
+              ].filter(Boolean).join(';') || undefined;
 
-<section class="container-site py-12">
-  <h1 class="font-heading text-4xl text-blue-dark dark:text-white">
-    {seo?.titulo || page}
-  </h1>
+              switch (bloque.tipo) {
+                case 'encabezado': {
+                  const Etiqueta = (bloque.nivel || 'h2') as any;
+                  /* Cuando el autor partio el texto en varias lineas, el salto se
+                     conserva con `set:html`. El marcado ya viene reducido a una lista
+                     blanca minima desde el extractor (`<br>`, `<strong>`, `<em>`),
+                     asi que no hay HTML ajeno pintandose en la pagina. */
+                  return bloque.html
+                    ? <Etiqueta style={estTitulo} set:html={bloque.html} />
+                    : <Etiqueta style={estTitulo}>{bloque.texto}</Etiqueta>;
+                }
 
-  <p class="mt-4 max-w-2xl text-ink dark:text-border-soft">
-    Contenido pendiente de reconstruir en la fase de reconstrucción. Esta página
-    existe ya con su ruta y su idioma reales, generados del manifiesto de
-    traducciones de WPML.
-  </p>
+                case 'texto':
+                case 'html':
+                  return <div class="prosa" set:html={bloque.html} />;
 
-  <dl class="mt-8 grid gap-2 text-sm text-ink dark:text-border-soft">
-    <div class="flex gap-2">
-      <dt class="font-semibold">Página:</dt>
-      <dd><code>{page}</code> ({def.kind})</dd>
-    </div>
-    <div class="flex gap-2">
-      <dt class="font-semibold">Idioma:</dt>
-      <dd><code>{locale}</code></dd>
-    </div>
-    <div class="flex gap-2">
-      <dt class="font-semibold">Ruta:</dt>
-      <dd><code>{rutaDe(page, locale)}</code></dd>
-    </div>
-    {seo?.keyword && (
-      <div class="flex gap-2">
-        <dt class="font-semibold">Focus keyword original:</dt>
-        <dd><code>{seo.keyword}</code></dd>
+                case 'banner':
+                  /* Las tarjetas de problemáticas: imagen de fondo, titulo y texto,
+                     con el color del original y su color al pasar el raton. */
+                  return (
+                    <article class:list={['group relative overflow-hidden rounded', bloque.clases]}>
+                      {bloque.imagen && (
+                        <img
+                          src={bloque.imagen}
+                          alt=""
+                          loading="lazy"
+                          decoding="async"
+                          class="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                      )}
+                      <div
+                        class="flex flex-col gap-2 p-4"
+                        style={`background-color:${bloque.fondoHover || bloque.fondo || 'transparent'}`}
+                      >
+                        {/* El nivel NO es una eleccion nuestra: el original pinta
+                            estos titulos como `h5`, y cambiarlo altera la jerarquia
+                            de encabezados de la pagina, que es lo que leen los
+                            buscadores y los lectores de pantalla. */}
+                        <h5
+                          class="font-semibold"
+                          style={[
+                            bloque.tamanoTituloEm ? `font-size:${bloque.tamanoTituloEm}em` : '',
+                            bloque.colorTitulo ? `color:${bloque.colorTitulo}` : '',
+                          ].filter(Boolean).join(';') || undefined}
+                        >
+                          {bloque.titulo}
+                        </h5>
+                        {bloque.texto && (
+                          <p style={bloque.colorTexto ? `color:${bloque.colorTexto}` : undefined}>{bloque.texto}</p>
+                        )}
+                      </div>
+                    </article>
+                  );
+
+                case 'caja':
+                  /*
+                   * Tarjeta de dos caras. La delantera lleva la imagen con el titulo y
+                   * su descripcion; la trasera, el titulo del dorso y la explicacion.
+                   * En el original gira al pasar el raton, y ese giro se conserva.
+                   */
+                  return (
+                    <article
+                      class="group relative w-full [perspective:1200px]"
+                      style={bloque.alto ? `min-height:${bloque.alto}px` : undefined}
+                    >
+                      <div class="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                        <div class="relative overflow-hidden rounded [backface-visibility:hidden]">
+                          {bloque.imagen && (
+                            <img src={bloque.imagen} alt="" loading="lazy" decoding="async" class="h-64 w-full object-cover" />
+                          )}
+                          <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4">
+                            <h3
+                              class="text-2xl font-semibold"
+                              style={bloque.colorTitulo ? `color:${bloque.colorTitulo}` : undefined}
+                            >
+                              {bloque.titulo}
+                            </h3>
+                            {bloque.descripcion && <p class="text-sm">{bloque.descripcion}</p>}
+                          </div>
+                        </div>
+                        <div
+                          class="absolute inset-0 flex flex-col justify-center gap-2 rounded p-4 [backface-visibility:hidden] [transform:rotateY(180deg)]"
+                          style={bloque.fondoDorso ? `background-color:${bloque.fondoDorso}` : undefined}
+                        >
+                          {bloque.tituloDorso && <h3 class="text-xl font-semibold">{bloque.tituloDorso}</h3>}
+                          <p style={bloque.colorDescripcion ? `color:${bloque.colorDescripcion}` : undefined}>
+                            {bloque.descripcionDorso}
+                          </p>
+                        </div>
+                      </div>
+                    </article>
+                  );
+
+                case 'textoAnimado':
+                  /* La palabra que rota. Se deja la primera visible; el resto lo
+                     levanta el guion, y sin guion queda un texto correcto igual. */
+                  return (
+                    <p
+                      class="font-semibold"
+                      style={[
+                        bloque.color ? `color:${bloque.color}` : '',
+                        bloque.tamanoEm ? `font-size:${bloque.tamanoEm}em` : '',
+                      ].filter(Boolean).join(';') || undefined}
+                      data-texto-animado
+                      data-palabras={JSON.stringify(bloque.palabras ?? [])}
+                    >
+                      {bloque.antes} <span class="text-[var(--color-acento)]">{bloque.palabras?.[0]}</span> {bloque.despues}
+                    </p>
+                  );
+
+                case 'lista':
+                  return (
+                    <ul class="ms-5 list-disc space-y-2">
+                      {(bloque.items as string[]).map((x) => <li>{x}</li>)}
+                    </ul>
+                  );
+
+                case 'imagen':
+                  return bloque.imagen ? (
+                    <img src={bloque.imagen} alt={bloque.alt || ''} loading="lazy" decoding="async" class="h-auto w-full rounded" />
+                  ) : null;
+
+                case 'boton':
+                  return (
+                    <a
+                      href={bloque.enlace || rutaDe('presentation', locale)}
+                      class="inline-flex w-fit items-center gap-2 rounded bg-[var(--color-acento)] px-6 py-3 font-semibold text-white"
+                    >
+                      {bloque.etiqueta}
+                    </a>
+                  );
+
+                case 'slider': {
+                  const s = tomarSlider();
+                  return s ? (
+                    <BannerSlider
+                      config={s.config}
+                      etiqueta={s.etiqueta}
+                      etiquetaAnterior={s.anterior}
+                      etiquetaSiguiente={s.siguiente}
+                      clase="bg-[#0b1a2b]"
+                    />
+                  ) : null;
+                }
+
+                case 'sliderJet':
+                  /*
+                   * El JetSlider es swiper por debajo y todavia no tiene su
+                   * comportamiento: se muestran sus elementos como tarjetas para que
+                   * el CONTENIDO no falte. Los titulos van en `h5` porque asi los
+                   * pinta el original. Queda marcado como pendiente a proposito.
+                   */
+                  return (
+                    <div class="grid w-full grid-cols-1 gap-6 sm:grid-cols-2" data-pendiente="jetslider">
+                      {(bloque.items as any[]).map((d) =>
+                        d.imagen ? (
+                          <figure class="overflow-hidden rounded">
+                            <img src={d.imagen} alt="" loading="lazy" decoding="async" class="h-auto w-full" />
+                            <figcaption class="flex flex-col gap-1 p-3">
+                              {d.titulo && <h5 class="font-semibold">{d.titulo}</h5>}
+                              {d.texto && <p class="text-sm">{d.texto}</p>}
+                            </figcaption>
+                          </figure>
+                        ) : null
+                      )}
+                    </div>
+                  );
+
+                case 'video':
+                  /* La miniatura enlaza al video. El original lo abre en una ventana
+                     emergente; esto queda pendiente, pero el video es accesible. */
+                  return bloque.miniatura || bloque.youtube ? (
+                    <a
+                      href={bloque.youtube || bloque.vimeo || '#'}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="group relative block overflow-hidden rounded"
+                      data-pendiente="video-emergente"
+                    >
+                      {bloque.miniatura && (
+                        <img src={bloque.miniatura} alt="" loading="lazy" decoding="async" class="h-auto w-full" />
+                      )}
+                      <span class="absolute inset-0 grid place-items-center">
+                        <span class="grid h-14 w-14 place-items-center rounded-full bg-white/80 text-2xl">▶</span>
+                      </span>
+                    </a>
+                  ) : null;
+
+                case 'menu-anchor':
+                  /* Es solo una marca de ancla para la navegacion interna: no pinta. */
+                  return null;
+
+                case 'separador':
+                  return <hr class="w-full border-t border-current opacity-20" />;
+
+                case 'espacio':
+                  return <div style={`height:${bloque.alto || 24}px`} aria-hidden="true" />;
+
+                default:
+                  /* Un widget sin mapear se deja VISIBLE como marca, para que no
+                     desaparezca en silencio: se ve que existe y que queda pendiente. */
+                  return (
+                    <div class="rounded border border-dashed border-current/30 p-2 text-xs opacity-60" data-sin-mapear={bloque.widget}>
+                      {bloque.widget}
+                    </div>
+                  );
+              }
+            })}
+          </div>
+        ))}
       </div>
-    )}
-  </dl>
-</section>
+    </section>
+  ))
+) : (
+  /* Sin modelo extraido todavia: se dejan los sliders, que ya son reales, para que
+     la pagina no quede vacia mientras se reconstruye el resto. */
+  <>
+    {sliders.map((s) => (
+      <BannerSlider
+        config={s.config}
+        etiqueta={s.etiqueta}
+        etiquetaAnterior={s.anterior}
+        etiquetaSiguiente={s.siguiente}
+        clase="bg-[#0b1a2b]"
+      />
+    ))}
+    <section class="container-site py-12">
+      <h1 class="font-heading text-4xl text-blue-dark dark:text-white">{seo?.titulo || page}</h1>
+      <p class="mt-4 max-w-2xl text-ink dark:text-border-soft">
+        Página pendiente de reconstruir. Su ruta y su idioma ya son los reales, generados
+        del manifiesto de traducciones de WPML.
+      </p>
+    </section>
+  </>
+)}
