@@ -380,3 +380,18 @@ Acciones tomadas:
 
 
 
+
+### Contenido de las páginas: modelo extraído y renderizado
+**Status:** in_progress
+
+Auditoría de las 14 páginas comparando texto visible, imágenes y encabezados contra el HTML capturado (`tools/compare-paginas.cjs`). Punto de partida: entre el 3 % y el 16 % del texto del original, con 1 encabezado frente a 34.
+
+Acciones tomadas:
+- **`tools/elementor-a-contenido.cjs`**: convierte el árbol de Elementor del original en un modelo JSON por página e idioma (`astro-site/src/contenido/`), con las secciones en orden, el fondo de cada una y los bloques con sus datos (textos, imágenes, colores medidos, tamaños). Es la base para las cuatro páginas grandes.
+- **`ContenidoPagina.astro`**: renderiza el modelo. Ya no es un esqueleto. Los bloques cubren encabezados, texto, banners, cajas de dos caras, texto animado, listas, imágenes, botón, los tres sliders y el JetSlider; lo que no está mapeado se deja **visible como marca** para que no desaparezca en silencio.
+- **Cuatro trampas corregidas**, todas silenciosas: `jet-slider` guarda sus elementos en `item_list` (no en `slides`); `jet-animated-box` tiene cuatro textos y no dos; 37 de 141 encabezados traen `<br>` dentro (hay que perderlo para comparar y conservarlo al pintar); y el original usa `h5` para los títulos de banners y JetSlider, no `h3`.
+- **`tools/paridad-produccion.cjs`**: mide la paridad contra el sitio desplegado con el mismo normalizador, porque medir con `sed` sobre HTML minificado da números inflados.
+
+**Medido en producción**: home 8 % → **93 %** con 34/34 encabezados; presentación 4 % → **99 %** con 60/63. Lo que resta son piezas del encabezado y el pie (los iconos de idioma, que se sustituyeron por el selector a petición del usuario, el logo pequeño) y la miniatura de un vídeo.
+
+**Sin tocar a propósito**: las páginas legales, cuyo texto se migra por script y nunca pasa por el chat.

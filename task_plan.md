@@ -79,7 +79,9 @@ El 301 desde los hostnames del ensayo al real sale solo del punto 2. El orden es
 ### Phase 6: Reconstrucción del sitio
 - [x] Header y footer
 - [x] **Carrusel de banners** (`banner-publicidad`): 5 diapositivas por idioma, huérfanas descartadas, fuentes auto-hospedadas, geometría del marcado resuelto, ola en las letras y flotación. **0 solapes medidos** en las 6 diapositivas y en los dos idiomas
-- [ ] Contenido real de la home y de las presentaciones (textos e imágenes)
+- [x] Contenido real de la home y de las presentaciones: modelo extraído de Elementor y renderizado (93 % y 99 % del texto del original)
+- [ ] Noticias, artículos y verificar: en el original son casi vacías (título, buscador y formulario de Mailchimp); reproducir ese formulario
+- [ ] Páginas legales por script (su texto no pasa por el chat)
 - [ ] Parallax de la home: medir por elemento (fondo fijo vs transform) antes de reconstruir
 - [ ] `org-piramid.png`: reconstruir la superposición
 - [ ] Interiores; páginas legales por script
