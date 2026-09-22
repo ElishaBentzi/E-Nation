@@ -23,6 +23,7 @@
 import type { Locale, PageId } from '../i18n/config.ts';
 import { PAGES, rutaDe } from '../i18n/config.ts';
 import BannerSlider from '../../../shared/banner-slider/BannerSlider.astro';
+import JetSlider from '../../../shared/jet-slider/JetSlider.astro';
 import { slidersDe } from '../sliders/index.ts';
 import { leerContenido } from '../contenido/index.ts';
 
@@ -123,6 +124,14 @@ const baseColumna = (ancho: number) => (ancho && ancho > 0 && ancho < 100 ? `${a
             style={`--columnas:${Math.max(1, Math.round(columna.ancho || 100))}`}
           >
             {(columna.bloques as any[]).map((bloque) => {
+              /* El margen y el relleno que el autor puso ALREDEDOR de este bloque.
+                 Sin ellos las secciones quedan mas altas que en el original: es el
+                 aire entre piezas, no un adorno. */
+              const estBloque = [
+                bloque.margen ? `margin:${bloque.margen}` : '',
+                bloque.relleno ? `padding:${bloque.relleno}` : '',
+              ].filter(Boolean).join(';');
+
               const estTitulo = [
                 bloque.color ? `color:${bloque.color}` : '',
                 bloque.tamanoEm ? `font-size:${bloque.tamanoEm}em` : '',
@@ -138,14 +147,15 @@ const baseColumna = (ancho: number) => (ancho && ancho > 0 && ancho < 100 ? `${a
                      conserva con `set:html`. El marcado ya viene reducido a una lista
                      blanca minima desde el extractor (`<br>`, `<strong>`, `<em>`),
                      asi que no hay HTML ajeno pintandose en la pagina. */
+                  const estilo = [estTitulo, estBloque].filter(Boolean).join(';') || undefined;
                   return bloque.html
-                    ? <Etiqueta style={estTitulo} set:html={bloque.html} />
-                    : <Etiqueta style={estTitulo}>{bloque.texto}</Etiqueta>;
+                    ? <Etiqueta style={estilo} set:html={bloque.html} />
+                    : <Etiqueta style={estilo}>{bloque.texto}</Etiqueta>;
                 }
 
                 case 'texto':
                 case 'html':
-                  return <div class="prosa" set:html={bloque.html} />;
+                  return <div class="prosa" style={estBloque || undefined} set:html={bloque.html} />;
 
                 case 'banner':
                   /*
@@ -261,14 +271,15 @@ const baseColumna = (ancho: number) => (ancho && ancho > 0 && ancho < 100 ? `${a
 
                 case 'lista':
                   return (
-                    <ul class="ms-5 list-disc space-y-2">
+                    <ul class="ms-5 list-disc space-y-2" style={estBloque || undefined}>
                       {(bloque.items as string[]).map((x) => <li>{x}</li>)}
                     </ul>
                   );
 
                 case 'imagen':
                   return bloque.imagen ? (
-                    <img src={bloque.imagen} alt={bloque.alt || ''} loading="lazy" decoding="async" class="h-auto w-full rounded" />
+                    <img src={bloque.imagen} alt={bloque.alt || ''} loading="lazy" decoding="async"
+                      class="h-auto w-full rounded" style={estBloque || undefined} />
                   ) : null;
 
                 case 'boton':
@@ -296,25 +307,27 @@ const baseColumna = (ancho: number) => (ancho && ancho > 0 && ancho < 100 ? `${a
 
                 case 'sliderJet':
                   /*
-                   * El JetSlider es swiper por debajo y todavia no tiene su
-                   * comportamiento: se muestran sus elementos como tarjetas para que
-                   * el CONTENIDO no falte. Los titulos van en `h5` porque asi los
-                   * pinta el original. Queda marcado como pendiente a proposito.
+                   * El carrusel de tarjetas del original: una diapositiva a la vez,
+                   * imagen a sangre con el titulo y el texto encima, y flechas. Su
+                   * comportamiento y sus medidas estan en el componente, todas tomadas
+                   * del original. Antes se pintaba como rejilla de tarjetas —que
+                   * mantenia el contenido pero hacia que su seccion midiera el DOBLE
+                   * que alli, porque un carrusel de una fila pasaba a dos filas.
                    */
                   return (
-                    <div class="grid w-full grid-cols-1 gap-6 sm:grid-cols-2" data-pendiente="jetslider">
-                      {(bloque.items as any[]).map((d) =>
-                        d.imagen ? (
-                          <figure class="overflow-hidden rounded">
-                            <img src={d.imagen} alt="" loading="lazy" decoding="async" class="h-auto w-full" />
-                            <figcaption class="flex flex-col gap-1 p-3">
-                              {d.titulo && <h5 class="font-semibold">{d.titulo}</h5>}
-                              {d.texto && <p class="text-sm">{d.texto}</p>}
-                            </figcaption>
-                          </figure>
-                        ) : null
-                      )}
-                    </div>
+                    <JetSlider
+                      items={bloque.items ?? []}
+                      alto={bloque.alto}
+                      altoTableta={bloque.altoTableta}
+                      altoMovil={bloque.altoMovil}
+                      veloColor={bloque.veloColor}
+                      veloOpacidad={bloque.veloOpacidad}
+                      flechaFondo={bloque.flechaFondo}
+                      flechaFondoHover={bloque.flechaFondoHover}
+                      etiqueta={locale === 'es' ? 'Carrusel de tarjetas' : 'Card carousel'}
+                      etiquetaAnterior={locale === 'es' ? 'Anterior' : 'Previous'}
+                      etiquetaSiguiente={locale === 'es' ? 'Siguiente' : 'Next'}
+                    />
                   );
 
                 case 'video':

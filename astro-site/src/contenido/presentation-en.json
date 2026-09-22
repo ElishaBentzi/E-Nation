@@ -22,6 +22,8 @@
      "bloques": [
       {
        "_id": "79156cb",
+       "margen": null,
+       "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/08/0-L.png",
        "alt": ""
@@ -35,12 +37,16 @@
      "bloques": [
       {
        "_id": "511b47d",
+       "margen": null,
+       "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/08/2-logo.png",
        "alt": ""
       },
       {
        "_id": "aafb067",
+       "margen": "-3% 0% 0% 0%",
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "E-NATION",
        "nivel": "h1",
@@ -52,6 +58,8 @@
       },
       {
        "_id": "7ce33d0",
+       "margen": "-2% 0% 0% 0%",
+       "relleno": "1% 0% 1% 0%",
        "tipo": "encabezado",
        "texto": "World Citizenship",
        "nivel": "h2",
@@ -63,6 +71,8 @@
       },
       {
        "_id": "ef9a1e7",
+       "margen": "-2% 0% 0% 0%",
+       "relleno": "1% 0% 1% 0%",
        "tipo": "encabezado",
        "texto": "NEW PACT FOR SOCIAL HARMONY AND POWER DISTRIBUTION",
        "nivel": "h2",
@@ -81,6 +91,8 @@
      "bloques": [
       {
        "_id": "44f7bd6",
+       "margen": null,
+       "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/08/2-hand-passport.png",
        "alt": ""
@@ -94,6 +106,8 @@
      "bloques": [
       {
        "_id": "b6f24d4",
+       "margen": null,
+       "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/08/0-R.png",
        "alt": ""
@@ -128,6 +142,8 @@
      "bloques": [
       {
        "_id": "dd13a3e",
+       "margen": null,
+       "relleno": "6% 4% 6% 4%",
        "tipo": "encabezado",
        "texto": "Do you feel yourself as a member of a society designed for your happiness, or do you feel that you are only a piece of a system of exploitation?",
        "nivel": "p",
@@ -169,6 +185,8 @@
      "bloques": [
       {
        "_id": "333628c",
+       "margen": "0% 0% 2% 0%",
+       "relleno": "1% 0% 1% 2%",
        "tipo": "encabezado",
        "texto": "Are you tired of corruption and overcharging taxes?",
        "nivel": "h2",
@@ -180,6 +198,8 @@
       },
       {
        "_id": "eb0f090",
+       "margen": "2% 0% 0% 0%",
+       "relleno": "0% 5% 1% 5%",
        "tipo": "encabezado",
        "texto": "Are you tired of being asked to be held accountable for every penny you earn, while you do not receive detailed accounts of how they spend your money?",
        "nivel": "p",
@@ -191,6 +211,8 @@
       },
       {
        "_id": "bd5493b",
+       "margen": "0% 0% 5% 0%",
+       "relleno": null,
        "tipo": "textoAnimado",
        "antes": "",
        "despues": "",
@@ -202,6 +224,8 @@
       },
       {
        "_id": "70bf320",
+       "margen": "0px 0px -9px 0px",
+       "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/08/0-bottom.png",
        "alt": ""
@@ -215,6 +239,8 @@
      "bloques": [
       {
        "_id": "73704ed",
+       "margen": null,
+       "relleno": null,
        "tipo": "banner",
        "imagen": "/images/2018/10/6-change-base.jpg",
        "titulo": "Imposition",
@@ -236,6 +262,8 @@
      "bloques": [
       {
        "_id": "9375f56",
+       "margen": null,
+       "relleno": null,
        "tipo": "banner",
        "imagen": "/images/2018/10/ini-banner-burocracia.jpg",
        "titulo": "Bureaucracy",
@@ -257,6 +285,8 @@
      "bloques": [
       {
        "_id": "430cf75",
+       "margen": null,
+       "relleno": null,
        "tipo": "banner",
        "imagen": "/images/2020/12/Riesgo-de-quiebra.jpg",
        "titulo": "Bad Management",
@@ -278,6 +308,8 @@
      "bloques": [
       {
        "_id": "2c2f39a",
+       "margen": null,
+       "relleno": null,
        "tipo": "banner",
        "imagen": "/images/2018/10/problem-loss-savings.jpg",
        "titulo": "Innecesary Expenses",
@@ -299,6 +331,8 @@
      "bloques": [
       {
        "_id": "700c0b1",
+       "margen": null,
+       "relleno": null,
        "tipo": "banner",
        "imagen": "/images/2018/10/problem-police-state-1.jpg",
        "titulo": "Police State",
@@ -335,6 +369,8 @@
      "bloques": [
       {
        "_id": "5263c91",
+       "margen": null,
+       "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/10/farm-cow.gif",
        "alt": ""
@@ -348,6 +384,8 @@
      "bloques": [
       {
        "_id": "6b97f80",
+       "margen": null,
+       "relleno": "0% 0% 1% 0%",
        "tipo": "encabezado",
        "texto": "There are farms of chickens and cows, and we call the human farms “countries”",
        "nivel": "h2",
@@ -359,6 +397,8 @@
       },
       {
        "_id": "c701131",
+       "margen": null,
+       "relleno": "2% 5% 2% 5%",
        "tipo": "encabezado",
        "texto": "Do you want them not to treat you like a cow? Then you have to take power. But power is not given, power is taken! Here we tell you Why and How.",
        "nivel": "p",
@@ -400,6 +440,8 @@
      "bloques": [
       {
        "_id": "fdde934",
+       "margen": null,
+       "relleno": "1% 5% 1% 5%",
        "tipo": "encabezado",
        "texto": "Citizens are the heads of government, all who are in government are our employees, and their job is to serve to us, the citizens, not the other way around! So why do governments treat us like their pawns? The government works with the taxes we pay, and it's the excuse they use to monitor what we do and take away a lot of the money we make. An Orwellian world where the State is virtually omnipotent. Do we get the same treatment from the government? NO! Do we know the details of what they spend and to whom they pay each penny? NO!",
        "nivel": "p",
@@ -419,6 +461,8 @@
      "bloques": [
       {
        "_id": "f3c3395",
+       "margen": null,
+       "relleno": "0% 0% 7% 0%",
        "tipo": "imagen",
        "imagen": "/images/2018/08/0-2-R.png",
        "alt": ""
@@ -453,6 +497,8 @@
      "bloques": [
       {
        "_id": "034e84e",
+       "margen": null,
+       "relleno": "1% 0% 1% 0%",
        "tipo": "encabezado",
        "texto": "Corruption and bad management everywhere!",
        "nivel": "h2",
@@ -464,6 +510,8 @@
       },
       {
        "_id": "f1c9e15",
+       "margen": null,
+       "relleno": "0% 5% 0% 5%",
        "tipo": "encabezado",
        "texto": "http://www.newsweek.com/pentagon-800-million-799740",
        "nivel": "p",
@@ -475,6 +523,8 @@
       },
       {
        "_id": "8a77078",
+       "margen": null,
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "\"The pentagon loses 800 million dollars\"",
        "nivel": "p",
@@ -486,6 +536,8 @@
       },
       {
        "_id": "d723245",
+       "margen": null,
+       "relleno": "0% 5% 0% 5%",
        "tipo": "encabezado",
        "texto": "http://thehill.com/opinion/technology/372994-spacex-could-save-nasa-and-the-future-of-space-exploration",
        "nivel": "p",
@@ -497,6 +549,8 @@
       },
       {
        "_id": "7d57cf1",
+       "margen": null,
+       "relleno": "2% 5% 0% 5%",
        "tipo": "encabezado",
        "texto": "NASA has spent more than $15 billion to try and develop their own heavy lift rocket. Once operational, SLS will cost NASA over $1 billion per launch, The Falcon Heavy of SpaceX, developed at zero cost to the taxpayer, and 10X lower cost per launch. They give us vague, confusing, cumbersome and even incomplete summaries. Citizens are in an inferiority relationship, which we have submissively accepted. It's time to change!",
        "nivel": "p",
@@ -515,6 +569,8 @@
      "bloques": [
       {
        "_id": "9a0d9a0",
+       "margen": null,
+       "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/08/7-The-Hill.png",
        "alt": ""
@@ -528,6 +584,8 @@
      "bloques": [
       {
        "_id": "3b97f2b",
+       "margen": null,
+       "relleno": "10% 0% 0% 0%",
        "tipo": "imagen",
        "imagen": "/images/2018/08/7-Newsweek.png",
        "alt": ""
@@ -569,6 +627,8 @@
      "bloques": [
       {
        "_id": "c92991e",
+       "margen": null,
+       "relleno": "1% 0% 1% 0%",
        "tipo": "encabezado",
        "texto": "If the government is corrupt and complicit and does not address the crimes ... Is the solution more government?",
        "nivel": "h2",
@@ -580,6 +640,8 @@
       },
       {
        "_id": "c11dce0",
+       "margen": "-2% 0% 0% 0%",
+       "relleno": "1% 0% 1% 0%",
        "tipo": "encabezado",
        "texto": "Governments want to use crypto currencies to control us even more, with the excuse that the crypto currencies favor money laundering and tax evasion. In the current banking system, do the powerful and the well connected to the government not wash money and evade taxes?",
        "nivel": "p",
@@ -592,6 +654,8 @@
       },
       {
        "_id": "e95552d",
+       "margen": null,
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "https://www.zerohedge.com/news/2013-12-20/hsbc-gets-slap-wrist-helping-finance-terrorists",
        "nivel": "p",
@@ -603,6 +667,8 @@
       },
       {
        "_id": "673d0b3",
+       "margen": "1% 0% 0% 0%",
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "https://www.eldiario.es/politica/Falciani-fugitivo-trabajaba-Gobierno_0_757325279.html",
        "nivel": "p",
@@ -614,6 +680,8 @@
       },
       {
        "_id": "cd48e44",
+       "margen": null,
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "https://www.wsj.com/articles/global-banks-to-pay-5-6-billion-in-penalties-in-fx-libor-probe-1432130400",
        "nivel": "p",
@@ -625,6 +693,8 @@
       },
       {
        "_id": "99878b4",
+       "margen": "-1% 0% 0% 0%",
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "https://expansion.mx/negocios/2015/04/23/deutsche-bank-recibe-multa-por-2500-mdd",
        "nivel": "p",
@@ -636,6 +706,8 @@
       },
       {
        "_id": "b9b6c54",
+       "margen": null,
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "https://www.wired.com/2016/08/apple-rest-silicon-valley-avoids-tax-man/",
        "nivel": "p",
@@ -647,6 +719,8 @@
       },
       {
        "_id": "03e2e5c",
+       "margen": "0px 0px -9px 0px",
+       "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/08/0-bottom.png",
        "alt": ""
@@ -660,6 +734,8 @@
      "bloques": [
       {
        "_id": "5025186",
+       "margen": null,
+       "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/08/8-Zero-Hedge.png",
        "alt": ""
@@ -673,6 +749,8 @@
      "bloques": [
       {
        "_id": "3e0b329",
+       "margen": null,
+       "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/08/8-El-diario.png",
        "alt": ""
@@ -686,6 +764,8 @@
      "bloques": [
       {
        "_id": "daf0b0a",
+       "margen": null,
+       "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/08/8-WSJ-Logo.png",
        "alt": ""
@@ -699,6 +779,8 @@
      "bloques": [
       {
        "_id": "b9be594",
+       "margen": null,
+       "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/08/8-Expansión-MX.png",
        "alt": ""
@@ -712,6 +794,8 @@
      "bloques": [
       {
        "_id": "70e8ddc",
+       "margen": "15% 0% 0% 0%",
+       "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/08/8-Wired.png",
        "alt": ""
@@ -752,6 +836,8 @@
      "bloques": [
       {
        "_id": "20f07cd",
+       "margen": null,
+       "relleno": "1% 0% 1% 0%",
        "tipo": "encabezado",
        "texto": "Do you think there are incorruptible governments?",
        "nivel": "h2",
@@ -763,6 +849,8 @@
       },
       {
        "_id": "63851b9",
+       "margen": null,
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "That's what governments are behind the facade of morality.",
        "nivel": "p",
@@ -781,6 +869,8 @@
      "bloques": [
       {
        "_id": "ee845d5",
+       "margen": null,
+       "relleno": null,
        "tipo": "caja",
        "titulo": "Film",
        "descripcion": "",
@@ -803,6 +893,8 @@
      "bloques": [
       {
        "_id": "00950be",
+       "margen": null,
+       "relleno": null,
        "tipo": "caja",
        "titulo": "John Perkins",
        "descripcion": "",
@@ -825,6 +917,8 @@
      "bloques": [
       {
        "_id": "f5bac61",
+       "margen": null,
+       "relleno": null,
        "tipo": "caja",
        "titulo": "Ronald Bernard",
        "descripcion": "",
@@ -875,6 +969,8 @@
      "bloques": [
       {
        "_id": "a9775b6",
+       "margen": null,
+       "relleno": "1% 0% 1% 0%",
        "tipo": "encabezado",
        "texto": "Army forces are gangsters",
        "nivel": "h2",
@@ -886,12 +982,16 @@
       },
       {
        "_id": "fe1a932",
+       "margen": null,
+       "relleno": "0% 36% 0% 36%",
        "tipo": "imagen",
        "imagen": "/images/2019/10/circles-Smedley-1.png",
        "alt": ""
       },
       {
        "_id": "16f43dc",
+       "margen": null,
+       "relleno": "1% 5% 1% 5%",
        "tipo": "encabezado",
        "texto": "\"I coulda given a few hints to Al Capone, he only operated in 3-districts. I operated on three continents !!!\" ”I spent 33 years and 4 months in active military service... during that period I spent most of my time as a high-class muscle man for Big Business, for Wall Street and the bankers. In short, I was a racketeer, a gangster for capitalism.”",
        "nivel": "p",
@@ -904,6 +1004,8 @@
       },
       {
        "_id": "95725e5",
+       "margen": null,
+       "relleno": "1% 5% 1% 5%",
        "tipo": "encabezado",
        "texto": "“Our boys were sent off to die with beautiful ideals painted in front of them. No one told them that dollars and cents were the real reason they were marching off to kill and die.”",
        "nivel": "p",
@@ -916,6 +1018,8 @@
       },
       {
        "_id": "ce528f2",
+       "margen": null,
+       "relleno": "0% 5% 0% 5%",
        "tipo": "encabezado",
        "texto": "- Sen. Ron Wyden -",
        "nivel": "p",
@@ -928,6 +1032,8 @@
       },
       {
        "_id": "0e1b51c",
+       "margen": null,
+       "relleno": "0% 5% 1% 5%",
        "tipo": "encabezado",
        "texto": "US Hero, winner of two medals of honor.",
        "nivel": "p",
@@ -975,6 +1081,8 @@
      "bloques": [
       {
        "_id": "22d56ce",
+       "margen": "0% 10% 0% -1%",
+       "relleno": "1% 0% 1% 2%",
        "tipo": "encabezado",
        "texto": "Vertical power systems are corrupt!",
        "nivel": "h2",
@@ -986,12 +1094,16 @@
       },
       {
        "_id": "424901e",
+       "margen": "2% 0% 0% 0%",
+       "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/09/10-youtube.png",
        "alt": ""
       },
       {
        "_id": "49e1ff6",
+       "margen": null,
+       "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/08/0-bottom.png",
        "alt": ""
@@ -1005,6 +1117,8 @@
      "bloques": [
       {
        "_id": "6463aba",
+       "margen": null,
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "Rules for Rulers",
        "nivel": "p",
@@ -1017,6 +1131,8 @@
       },
       {
        "_id": "9ed79a9",
+       "margen": null,
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "#1 Have the Key People on your side #2 Money Control #3 Decrease Key People",
        "nivel": "p",
@@ -1029,6 +1145,8 @@
       },
       {
        "_id": "f2bd381",
+       "margen": null,
+       "relleno": null,
        "tipo": "boton",
        "etiqueta": "Watch on Youtube",
        "etiquetaHover": "GO",
@@ -1044,6 +1162,8 @@
      "bloques": [
       {
        "_id": "b947c28",
+       "margen": null,
+       "relleno": null,
        "tipo": "video",
        "youtube": "https://www.youtube.com/watch?v=rStL7niR7gs",
        "vimeo": "https://vimeo.com/235215203",
@@ -1086,6 +1206,8 @@
      "bloques": [
       {
        "_id": "42e7738",
+       "margen": "0% 10% 0% -1%",
+       "relleno": "1% 0% 1% 2%",
        "tipo": "encabezado",
        "texto": "The Policy does not give solutions",
        "nivel": "h2",
@@ -1097,6 +1219,8 @@
       },
       {
        "_id": "c09d653",
+       "margen": null,
+       "relleno": "1% 5% 1% 5%",
        "tipo": "encabezado",
        "texto": "Politicians tell us what we want to hear and then, once elected, they make their agenda, often something completely different, and most of the time, not for our benefit! All the time spending and wasting our hard earned money, without responsibility!",
        "nivel": "p",
@@ -1109,6 +1233,8 @@
       },
       {
        "_id": "ac0ba01",
+       "margen": null,
+       "relleno": "1% 5% 1% 5%",
        "tipo": "encabezado",
        "texto": "<b>\"The Myth is Canada\", Nephalem Films</b>",
        "nivel": "p",
@@ -1121,6 +1247,8 @@
       },
       {
        "_id": "38b4075",
+       "margen": null,
+       "relleno": "0% 20% 0% 20%",
        "tipo": "imagen",
        "imagen": "/images/2018/08/10-canada.jpg",
        "alt": ""
@@ -1162,6 +1290,8 @@
      "bloques": [
       {
        "_id": "65d682e",
+       "margen": null,
+       "relleno": "1% 0% 1% 0%",
        "tipo": "encabezado",
        "texto": "\"Democracy\" no longer works",
        "nivel": "h2",
@@ -1173,6 +1303,8 @@
       },
       {
        "_id": "8807366",
+       "margen": null,
+       "relleno": "0% 5% 0% 5%",
        "tipo": "encabezado",
        "texto": "\"Although technology and communication have advanced a lot, bringing more ways for citizens to make their voices heard, democratic participation is largely limited to casting a vote between the parties once every few years. 'Democracy' has not changed for two centuries! It’s frozen in time, at a particular moment, increasingly distant from what we are now. A radical reform of the system of political participation is not only desirable but absolutely necessary.\"",
        "nivel": "p",
@@ -1184,6 +1316,8 @@
       },
       {
        "_id": "b8f47b0",
+       "margen": null,
+       "relleno": "5% 5% 0% 5%",
        "tipo": "encabezado",
        "texto": "https://www.theguardian.com/news/2018/apr/05/demise-of-the-nation-state-rana-dasgupta",
        "nivel": "p",
@@ -1195,6 +1329,8 @@
       },
       {
        "_id": "01286c3",
+       "margen": null,
+       "relleno": "0% 25% 0% 25%",
        "tipo": "imagen",
        "imagen": "/images/2018/09/12-the-guardianwhite.png",
        "alt": ""
@@ -1235,6 +1371,8 @@
      "bloques": [
       {
        "_id": "d29c54f",
+       "margen": "0% 10% 0% -1%",
+       "relleno": "1% 0% 1% 2%",
        "tipo": "encabezado",
        "texto": "We need a more immediate and direct participation",
        "nivel": "h2",
@@ -1253,6 +1391,8 @@
      "bloques": [
       {
        "_id": "9aa0f41",
+       "margen": "6% 0% 0% 0%",
+       "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/08/12-michael-krieger-1.png",
        "alt": ""
@@ -1266,6 +1406,8 @@
      "bloques": [
       {
        "_id": "f44fd2f",
+       "margen": null,
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "“The idea that we need to argue and bicker endlessly in order to convince a small majority of Congress to pass legislation that will then apply to 325 million people is idiotic.” “There’s this erroneous belief that the key thing we need to do is “elect good people.” I disagree. What we need are more appropriate political structures.”",
        "nivel": "p",
@@ -1278,6 +1420,8 @@
       },
       {
        "_id": "0f50143",
+       "margen": null,
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "- Michael Krieger -",
        "nivel": "p",
@@ -1290,6 +1434,8 @@
       },
       {
        "_id": "e534258",
+       "margen": null,
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "https://www.zerohedge.com/news/2018-04-24/road-2025-part-4-very-bright-future-if-we-demand-it",
        "nivel": "p",
@@ -1309,6 +1455,8 @@
      "bloques": [
       {
        "_id": "8198219",
+       "margen": "6% 0% 0% 0%",
+       "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/08/12-geoff-mulgan.png",
        "alt": ""
@@ -1322,6 +1470,8 @@
      "bloques": [
       {
        "_id": "b79d662",
+       "margen": null,
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "\"You have to do things in a completely different way, than we do now, where some people in the capital that write a law and then implement it to millions\", that does not work anymore.",
        "nivel": "p",
@@ -1334,6 +1484,8 @@
       },
       {
        "_id": "1bf5901",
+       "margen": null,
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "- Geoff Mulgan -",
        "nivel": "p",
@@ -1346,6 +1498,8 @@
       },
       {
        "_id": "e9c9bec",
+       "margen": "-3% 0% 0% 0%",
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "Chief executive of innovation foundation Nesta",
        "nivel": "p",
@@ -1393,6 +1547,8 @@
      "bloques": [
       {
        "_id": "edd2fb5",
+       "margen": null,
+       "relleno": "1% 2% 1% 2%",
        "tipo": "encabezado",
        "texto": "The government has a bad decision-making system",
        "nivel": "h2",
@@ -1404,12 +1560,16 @@
       },
       {
        "_id": "26dbd88",
+       "margen": null,
+       "relleno": "0% 35% 0% 35%",
        "tipo": "imagen",
        "imagen": "/images/2018/08/13-photo.png",
        "alt": ""
       },
       {
        "_id": "1c3d007",
+       "margen": null,
+       "relleno": "0% 5% 0% 5%",
        "tipo": "encabezado",
        "texto": "\"They expect the market to lead the way and then rush to catch up. They make last-minute decisions that are implemented throughout society, without first prototyping or testing ideas in smaller populations. \"You can not use the word 'experiment' in government: it's an unpleasant word, because it means you can fail\"",
        "nivel": "p",
@@ -1421,6 +1581,8 @@
       },
       {
        "_id": "ed71681",
+       "margen": null,
+       "relleno": "0% 5% 0% 5%",
        "tipo": "encabezado",
        "texto": "- Angela Wilkinson -",
        "nivel": "p",
@@ -1432,6 +1594,8 @@
       },
       {
        "_id": "7eee6a6",
+       "margen": null,
+       "relleno": "0% 5% 0% 5%",
        "tipo": "encabezado",
        "texto": "http://www.bbc.com/future/story/20180116-why-governments-are-broken-and-how-to-fix-them",
        "nivel": "p",
@@ -1477,6 +1641,8 @@
      "bloques": [
       {
        "_id": "ae9fd4a",
+       "margen": "3% 0% 0% 0%",
+       "relleno": "0% 35% 0% 35%",
        "tipo": "imagen",
        "imagen": "/images/2018/09/15-Forbes-Logo.png",
        "alt": ""
@@ -1490,6 +1656,8 @@
      "bloques": [
       {
        "_id": "52e47b6",
+       "margen": "0% 10% 0% -1%",
+       "relleno": "1% 0% 1% 2%",
        "tipo": "encabezado",
        "texto": "American Congress takes 81 years to correct its own mistake",
        "nivel": "h2",
@@ -1501,12 +1669,16 @@
       },
       {
        "_id": "f3fe31a",
+       "margen": null,
+       "relleno": "0% 36% 0% 36%",
        "tipo": "imagen",
        "imagen": "/images/2018/08/14-Ron-Wyden.png",
        "alt": ""
       },
       {
        "_id": "d06c500",
+       "margen": null,
+       "relleno": "1% 5% 1% 5%",
        "tipo": "encabezado",
        "texto": "“Legalizing hemp nationwide ends decades of bad policymaking and opens up untold economic opportunity for farmers in Oregon and across the country”",
        "nivel": "p",
@@ -1519,6 +1691,8 @@
       },
       {
        "_id": "82737a5",
+       "margen": null,
+       "relleno": "1% 5% 1% 5%",
        "tipo": "encabezado",
        "texto": "- Sen. Ron Wyden -",
        "nivel": "p",
@@ -1531,6 +1705,8 @@
       },
       {
        "_id": "621a277",
+       "margen": null,
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "https://www.forbes.com/sites/tomangell/2018/06/28/u-s-senate-votes-to-legalize-hemp-after-decades-long-ban-under-marijuana-prohibition/#31cffdab418a",
        "nivel": "p",
@@ -1578,6 +1754,8 @@
      "bloques": [
       {
        "_id": "f5226e3",
+       "margen": null,
+       "relleno": "1% 0% 1% 0%",
        "tipo": "encabezado",
        "texto": "Governments do not care what you need",
        "nivel": "h2",
@@ -1589,6 +1767,8 @@
       },
       {
        "_id": "3e5ca6e",
+       "margen": null,
+       "relleno": "0% 5% 0% 5%",
        "tipo": "encabezado",
        "texto": "\"If there is something that consistently catches the attention of politicians, it is money.\" Statistically, it is shown that it is easier to pass laws that favor the financiers of politicians, than the approval of laws that favor citizens.",
        "nivel": "p",
@@ -1600,6 +1780,8 @@
       },
       {
        "_id": "07623b8",
+       "margen": null,
+       "relleno": "0% 5% 0% 5%",
        "tipo": "encabezado",
        "texto": "https://www.upworthy.com/20-years-of-data-reveals-that-congress-doesnt-care-what-you-think",
        "nivel": "p",
@@ -1611,12 +1793,16 @@
       },
       {
        "_id": "0ab74e5",
+       "margen": null,
+       "relleno": "0% 35% 0% 35%",
        "tipo": "imagen",
        "imagen": "/images/2018/08/15-Up-Worthy.png",
        "alt": ""
       },
       {
        "_id": "2b1be24",
+       "margen": null,
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "The vertical structure of government tends to be the main obstacle to reinvention.",
        "nivel": "p",
@@ -1628,6 +1814,8 @@
       },
       {
        "_id": "2ad27e9",
+       "margen": "0% 0% -1% 0%",
+       "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/08/0-bottom.png",
        "alt": ""
@@ -1668,6 +1856,8 @@
      "bloques": [
       {
        "_id": "7738a4d",
+       "margen": "0% 10% 0% -1%",
+       "relleno": "1% 0% 1% 2%",
        "tipo": "encabezado",
        "texto": "Governments are in decline",
        "nivel": "h2",
@@ -1679,12 +1869,16 @@
       },
       {
        "_id": "028b546",
+       "margen": null,
+       "relleno": "0% 36% 0% 36%",
        "tipo": "imagen",
        "imagen": "/images/2018/08/16-Rana-Dasgupta.png",
        "alt": ""
       },
       {
        "_id": "81d603e",
+       "margen": null,
+       "relleno": "1% 5% 1% 5%",
        "tipo": "encabezado",
        "texto": "“We may buy the same products in every country of the world, we may all use Google and Facebook, but political life, curiously, is anchored in a distant past and maintains the old faith of the frontiers.\" The most transcendental opportunity of our age, precisely, will be the diminution of the nation state, due to its inability to resist the complementary and antagonistic forces of integration and regionalization of the 21st century. National states everywhere are in an advanced state of political and moral decadence. And, since we do not know any other sort, it feels like the end of the world.”",
        "nivel": "p",
@@ -1697,6 +1891,8 @@
       },
       {
        "_id": "8739ccf",
+       "margen": null,
+       "relleno": "1% 5% 1% 5%",
        "tipo": "encabezado",
        "texto": "- Rana Dasgupta -",
        "nivel": "p",
@@ -1709,6 +1905,8 @@
       },
       {
        "_id": "329d113",
+       "margen": null,
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "https://www.theguardian.com/news/2018/apr/05/demise-of-the-nation-state-rana-dasgupta",
        "nivel": "p",
@@ -1756,6 +1954,8 @@
      "bloques": [
       {
        "_id": "21a8706",
+       "margen": null,
+       "relleno": "1% 0% 1% 0%",
        "tipo": "encabezado",
        "texto": "The family and the quality of life are deteriorating",
        "nivel": "h2",
@@ -1767,6 +1967,8 @@
       },
       {
        "_id": "84ad410",
+       "margen": null,
+       "relleno": "2% 5% 0% 5%",
        "tipo": "encabezado",
        "texto": "Life expectancy is decreasing, depression, suicide, crime, drug addiction, and depopulation. Surveys show that both men and women are increasingly unhappy!",
        "nivel": "p",
@@ -1778,6 +1980,8 @@
       },
       {
        "_id": "d84847f",
+       "margen": null,
+       "relleno": "2% 5% 0% 5%",
        "tipo": "encabezado",
        "texto": "Men and women are using each other only by sex, without any commitment, which further affirms the feelings of depression and anxiety and the feeling of being used. Couples have fewer economic opportunities to settle and have children.",
        "nivel": "p",
@@ -1789,6 +1993,8 @@
       },
       {
        "_id": "28401e9",
+       "margen": "0% 0% -1% 0%",
+       "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/08/0-bottom.png",
        "alt": ""
@@ -1802,6 +2008,8 @@
      "bloques": [
       {
        "_id": "e203d12",
+       "margen": null,
+       "relleno": null,
        "tipo": "banner",
        "imagen": "/images/2018/10/family-banner-women.jpg",
        "titulo": "Women",
@@ -1823,6 +2031,8 @@
      "bloques": [
       {
        "_id": "b4b4d94",
+       "margen": null,
+       "relleno": null,
        "tipo": "banner",
        "imagen": "/images/2018/10/family-banner-men.jpg",
        "titulo": "Men",
@@ -1865,6 +2075,8 @@
      "bloques": [
       {
        "_id": "4b5f54b",
+       "margen": null,
+       "relleno": "1% 0% 1% 0%",
        "tipo": "encabezado",
        "texto": "The planned destruction of the family",
        "nivel": "h2",
@@ -1876,6 +2088,8 @@
       },
       {
        "_id": "543bcf4",
+       "margen": null,
+       "relleno": "1% 5% 1% 5%",
        "tipo": "encabezado",
        "texto": "Although many women are happier staying at home as wives and mothers, government and consumerism press them to go to work. Women are forced to choose between being wives and mothers, or being professionals. It is choosing between money or family. With fewer mothers, there are fewer children, less family, it is the slow death of society.",
        "nivel": "p",
@@ -1895,6 +2109,8 @@
      "bloques": [
       {
        "_id": "bf9e534",
+       "margen": null,
+       "relleno": null,
        "tipo": "banner",
        "imagen": "/images/2018/10/women-banner.jpg",
        "titulo": "If both parents work:",
@@ -1938,6 +2154,8 @@
      "bloques": [
       {
        "_id": "fd6d50e",
+       "margen": null,
+       "relleno": "1% 0% 1% 0%",
        "tipo": "encabezado",
        "texto": "The economic system does not work",
        "nivel": "h2",
@@ -1949,6 +2167,8 @@
       },
       {
        "_id": "a065764",
+       "margen": null,
+       "relleno": "2% 5% 0% 5%",
        "tipo": "encabezado",
        "texto": "The current economic model enslaves us financially to the consumerist machinery that destroys the planet, and that does not make us happy, consume more, get more debt, pollute more. The race of the rat, with the eternal promise that the next product will give us happiness. We live on a finite planet, but the current economic model requires an infinite expansion, which is contrary to common sense. While automation eliminates jobs, this anachronistic economic model requires increasing the retirement age. That is why we see the twisted reality of older adults working while young people do not get a job.",
        "nivel": "p",
@@ -1967,6 +2187,8 @@
      "bloques": [
       {
        "_id": "2959bab",
+       "margen": null,
+       "relleno": "0% 0% 7% 0%",
        "tipo": "imagen",
        "imagen": "/images/2018/08/0-2-R.png",
        "alt": ""
@@ -1996,6 +2218,8 @@
      "bloques": [
       {
        "_id": "e68e1e1",
+       "margen": null,
+       "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/10/pact-broken-down.gif",
        "alt": ""
@@ -2009,6 +2233,8 @@
      "bloques": [
       {
        "_id": "d8d6cdf",
+       "margen": null,
+       "relleno": "2% 0% 2% 0%",
        "tipo": "encabezado",
        "texto": "The Social Pact is Broken",
        "nivel": "h2",
@@ -2020,6 +2246,8 @@
       },
       {
        "_id": "ceca591",
+       "margen": null,
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "There is no longer the feeling of family, companionship and support among citizens. Every day we are more divided and alone, with the feeling that we fight against all other citizens.",
        "nivel": "p",
@@ -2032,6 +2260,8 @@
       },
       {
        "_id": "1618338",
+       "margen": null,
+       "relleno": "1% 5% 1% 5%",
        "tipo": "encabezado",
        "texto": "WE ARE IN A SOCIETY THAT INSTEAD OF SUPPORTING US IS AGAINST OUR DEVELOPMENT.",
        "nivel": "p",
@@ -2073,6 +2303,8 @@
      "bloques": [
       {
        "_id": "a6d2af7",
+       "margen": null,
+       "relleno": "1% 0% 1% 0%",
        "tipo": "encabezado",
        "texto": "There is no purpose or goals in society",
        "nivel": "h2",
@@ -2084,6 +2316,8 @@
       },
       {
        "_id": "80399d8",
+       "margen": null,
+       "relleno": "2% 5% 0% 5%",
        "tipo": "encabezado",
        "texto": "There are public goals, of what we should achieve in my society, in my city, in my community? NOT! Can you achieve a goal, without wanting to achieve that goal first? Society has no definite purpose. But as an individual if there is clearly a purpose: selfish material satisfaction, demonstrated by the materialistic nature of many publications on social networks. If there is no social purpose, then social welfare does not matter, therefore what must be done is to take full advantage of the individual, which results in the destruction we see in society.",
        "nivel": "p",
@@ -2102,6 +2336,8 @@
      "bloques": [
       {
        "_id": "e0b904a",
+       "margen": null,
+       "relleno": "0% 0% 7% 0%",
        "tipo": "imagen",
        "imagen": "/images/2018/08/0-2-R.png",
        "alt": ""
@@ -2136,6 +2372,8 @@
      "bloques": [
       {
        "_id": "0706d80",
+       "margen": null,
+       "relleno": "1% 5% 1% 5%",
        "tipo": "encabezado",
        "texto": "The increase in stupidity is not an evolutionary issue, but a historical one. In a society full of contradictions (like ours), one of the ways in which an elite can stay in power, is by intentionally idiotizing the majorities, so that, within their confusion, they are more docile and easier to manipulate. That's why intelligence is not proportional to labor and social success; If you want to be smart, you will have to pay the price of being misunderstood.",
        "nivel": "p",
@@ -2148,6 +2386,8 @@
       },
       {
        "_id": "a03684e",
+       "margen": null,
+       "relleno": "1% 5% 1% 5%",
        "tipo": "encabezado",
        "texto": "- Jorge Adan Romero Zepeda (2.018) -",
        "nivel": "p",
@@ -2195,6 +2435,8 @@
      "bloques": [
       {
        "_id": "e07d2cf",
+       "margen": null,
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "It is documented, that Elites and Government do everything possible to control the population.",
        "nivel": "p",
@@ -2206,6 +2448,8 @@
       },
       {
        "_id": "f19e67a",
+       "margen": null,
+       "relleno": null,
        "tipo": "video",
        "youtube": "https://www.youtube.com/watch?v=KQ_tqgnvJdQ&list=PLdaVCVrkty71kPjyLIW8qBl93jP8tgoLJ",
        "vimeo": "https://vimeo.com/235215203",
@@ -2214,6 +2458,8 @@
       },
       {
        "_id": "ef70e44",
+       "margen": null,
+       "relleno": "1% 0% 1% 0%",
        "tipo": "encabezado",
        "texto": "Documentary \"The century of the self\"",
        "nivel": "h2",
@@ -2225,6 +2471,8 @@
       },
       {
        "_id": "066bf1b",
+       "margen": null,
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "https://www.youtube.com/watchv=DotBVZ26asI&amp;list=PLmlumDatcRkypRBN3FY0pWLJNIT2tNXIn",
        "nivel": "p",
@@ -2236,6 +2484,8 @@
       },
       {
        "_id": "56dccf5",
+       "margen": "0% 0% -1% 0%",
+       "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/08/0-bottom.png",
        "alt": ""
@@ -2276,12 +2526,16 @@
      "bloques": [
       {
        "_id": "616d9b1",
+       "margen": null,
+       "relleno": "0% 36% 0% 36%",
        "tipo": "imagen",
        "imagen": "/images/2018/08/24-Peter-Underwood.png",
        "alt": ""
       },
       {
        "_id": "8f78786",
+       "margen": null,
+       "relleno": "1% 5% 2% 5%",
        "tipo": "encabezado",
        "texto": "The ruling elite is determined to preserve their dominance over all nations through economic stealth, financial repression and anaesthetisation of the populations by mass media propaganda.",
        "nivel": "p",
@@ -2294,6 +2548,8 @@
       },
       {
        "_id": "08a3e04",
+       "margen": null,
+       "relleno": "1% 5% 2% 5%",
        "tipo": "encabezado",
        "texto": "- Peter Underwood - 2017",
        "nivel": "p",
@@ -2341,6 +2597,8 @@
      "bloques": [
       {
        "_id": "6f87e1b",
+       "margen": "0% 8% 0% -1%",
+       "relleno": "1% 0% 1% 2%",
        "tipo": "encabezado",
        "texto": "Let's also assume our fault",
        "nivel": "h2",
@@ -2352,12 +2610,16 @@
       },
       {
        "_id": "8ce97ce",
+       "margen": null,
+       "relleno": "0% 35% 0% 35%",
        "tipo": "imagen",
        "imagen": "/images/2018/08/25-Ben-Shapiro.png",
        "alt": ""
       },
       {
        "_id": "a0c383a",
+       "margen": null,
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "We have been conformists with the mediocre performance of the government. Because human beings are conformists. \"The big lie of being an adult, is to believe that other adults know what they do, generally do not know !. And this also applies to the government. If we really want to have a better country, let's stop treating people in government as if they were experts and knew what they are doing, and take away all power from the government that is humanly possible. \"",
        "nivel": "p",
@@ -2369,6 +2631,8 @@
       },
       {
        "_id": "d68f8f1",
+       "margen": "4% 0% 0% 0%",
+       "relleno": "0% 5% 0% 5%",
        "tipo": "encabezado",
        "texto": "- Ben Shapiro -",
        "nivel": "p",
@@ -2380,6 +2644,8 @@
       },
       {
        "_id": "b06c436",
+       "margen": null,
+       "relleno": "0% 5% 0% 5%",
        "tipo": "encabezado",
        "texto": "Citizens must take responsibility for the direction of our country.",
        "nivel": "p",
@@ -2391,6 +2657,8 @@
       },
       {
        "_id": "2180124",
+       "margen": "0% 0% -1% 0%",
+       "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/08/0-bottom.png",
        "alt": ""
@@ -2431,12 +2699,16 @@
      "bloques": [
       {
        "_id": "a8b8c03",
+       "margen": null,
+       "relleno": "0% 36% 0% 36%",
        "tipo": "imagen",
        "imagen": "/images/2018/08/26-George-Orwell.png",
        "alt": ""
       },
       {
        "_id": "46eadf9",
+       "margen": null,
+       "relleno": "1% 5% 2% 5%",
        "tipo": "encabezado",
        "texto": "\"A people that chooses corrupt, impostors, thieves and traitors, is not a victim, is an accomplice\"",
        "nivel": "p",
@@ -2449,6 +2721,8 @@
       },
       {
        "_id": "16d3169",
+       "margen": null,
+       "relleno": "1% 5% 2% 5%",
        "tipo": "encabezado",
        "texto": "- George Orwell -",
        "nivel": "p",
@@ -2496,6 +2770,8 @@
      "bloques": [
       {
        "_id": "6da52e4",
+       "margen": "0% 8% 0% -1%",
+       "relleno": "1% 0% 1% 2%",
        "tipo": "encabezado",
        "texto": "Do not fight hiding your head in the sand",
        "nivel": "h2",
@@ -2507,12 +2783,16 @@
       },
       {
        "_id": "817be0d",
+       "margen": null,
+       "relleno": "0% 35% 0% 35%",
        "tipo": "imagen",
        "imagen": "/images/2018/08/27-John-W.png",
        "alt": ""
       },
       {
        "_id": "3bc626d",
+       "margen": null,
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "“You don’t fight it by hiding your head in the sand. Stop being apathetic. Stop being neutral. Stop being accomplices. Start recognizing evil and injustice and tyranny for what they are. Demand government transparency. Vote with your feet (i.e., engage in activism, not just politics). “The only thing necessary for the triumph of evil is for good men [and women] to do nothing.” It’s time for good men and women to do something. And soon.”",
        "nivel": "p",
@@ -2524,6 +2804,8 @@
       },
       {
        "_id": "c9c1e33",
+       "margen": "4% 0% 0% 0%",
+       "relleno": "0% 5% 0% 5%",
        "tipo": "encabezado",
        "texto": "- John W. Whitehead -",
        "nivel": "p",
@@ -2535,6 +2817,8 @@
       },
       {
        "_id": "a9f678c",
+       "margen": null,
+       "relleno": "0% 3% 0% 3%",
        "tipo": "encabezado",
        "texto": "https://www.rutherford.org/publications_resources/john_whiteheads_commentary/is_th e_u.s._government_evil_you_tell_me_short",
        "nivel": "p",
@@ -2546,6 +2830,8 @@
       },
       {
        "_id": "21de8a0",
+       "margen": "0% 0% -1% 0%",
+       "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/08/0-bottom.png",
        "alt": ""
@@ -2586,6 +2872,8 @@
      "bloques": [
       {
        "_id": "ecc7d0e",
+       "margen": null,
+       "relleno": "2% 0% 2% 0%",
        "tipo": "textoAnimado",
        "antes": "",
        "despues": "",
@@ -2597,6 +2885,8 @@
       },
       {
        "_id": "f350bc6",
+       "margen": null,
+       "relleno": "1% 5% 1% 5%",
        "tipo": "encabezado",
        "texto": "We must not tear down existing systems and start from scratch. Nor try to apply failed systems that have not worked and have rather brought hunger and misery like communism. Nor can we wait for things to be perfect, and we can not continue using yesterday's solutions. Instead, we must take what works best from current governments and reform them in more appropriate ways for modern life.",
        "nivel": "p",
@@ -2644,6 +2934,8 @@
      "bloques": [
       {
        "_id": "36b0cc1",
+       "margen": null,
+       "relleno": "1% 0% 1% 0%",
        "tipo": "encabezado",
        "texto": "George Orwell’s Animal Farm, resume:",
        "nivel": "h2",
@@ -2655,6 +2947,8 @@
       },
       {
        "_id": "543b9a6",
+       "margen": null,
+       "relleno": "2% 0% 0% 0%",
        "tipo": "encabezado",
        "texto": "There is a farm run by a Mr. Jones, who drinks so much he becomes unable to take care of the farm and feed his animals. Eventually the animals, (in particular the pigs), decide human beings are parasites and the pigs lead a revolt and chase Mr. Jones off his property. They change the farm’s name from ‘Manor Farm’ to ‘Animal Farm’ and create a list of seven commandments. They are:",
        "nivel": "p",
@@ -2666,6 +2960,8 @@
       },
       {
        "_id": "08798a5",
+       "margen": null,
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "• Whatever goes upon two legs is an enemy. • Whatever goes upon four legs, or has wings, is a friend. • No animal shall wear clothes. • No animal shall sleep in a bed. • No animal shall drink alcohol. • No animal shall kill any other animal. • All animals are equal.",
        "nivel": "p",
@@ -2677,6 +2973,8 @@
       },
       {
        "_id": "facfba5",
+       "margen": null,
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "In a short space of time the pigs assume leadership over the farm and one pig in particular, Napoleon, consolidates power after running his primary competitor off the property. It is not long before the pigs begin to walk on two legs, drink alcohol, sleep in beds and generally act like humans. Recognising that their new lifestyle is contrary to the inspirations listed in their original seven commandments; they simply decide to make up some new ones:",
        "nivel": "p",
@@ -2688,6 +2986,8 @@
       },
       {
        "_id": "d74bc91",
+       "margen": null,
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "• No animal shall sleep in a bed with sheets. • No animal shall drink alcohol to excess. • No animal shall kill any other animal without cause.",
        "nivel": "p",
@@ -2699,6 +2999,8 @@
       },
       {
        "_id": "90a34ef",
+       "margen": null,
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "Before long even these adjustments become too binding for the gluttonous and power-hungry pig, oligarch class. They decide to condense everything down into one commandment:",
        "nivel": "p",
@@ -2710,6 +3012,8 @@
       },
       {
        "_id": "622e957",
+       "margen": null,
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "• All animals are equal, but some animals are more equal than others.",
        "nivel": "p",
@@ -2721,6 +3025,8 @@
       },
       {
        "_id": "505e59a",
+       "margen": null,
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "This process describes what has happened to governments all over the world, and which has especially accelerated since the 2008 financial crisis, as the ruling class of the military/industrial complex have formed a cabal with bankers and politicians to manage the global economy for their own benefit with no regard whatsoever for the remaining 95% of the people.",
        "nivel": "p",
@@ -2732,6 +3038,8 @@
       },
       {
        "_id": "ceed48e",
+       "margen": "4% 0% 0% 0%",
+       "relleno": "0% 5% 0% 5%",
        "tipo": "encabezado",
        "texto": "- Peter Underwood 2.017 -",
        "nivel": "p",
@@ -2743,6 +3051,8 @@
       },
       {
        "_id": "9e45497",
+       "margen": "0% 0% -1% 0%",
+       "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/08/0-bottom.png",
        "alt": ""
@@ -2783,6 +3093,8 @@
      "bloques": [
       {
        "_id": "2cd11a7",
+       "margen": null,
+       "relleno": "1% 0% 1% 0%",
        "tipo": "encabezado",
        "texto": "The Sure, there are farms that are worse than others, and that's why people migrate.",
        "nivel": "h2",
@@ -2794,6 +3106,8 @@
       },
       {
        "_id": "1bdce8e",
+       "margen": null,
+       "relleno": "4% 5% 1% 5%",
        "tipo": "encabezado",
        "texto": "If it were not for the blatant corruption of the owners of the farm, this would never change, and some human beings would be content to live like obedient cows.",
        "nivel": "p",
@@ -2835,6 +3149,8 @@
      "bloques": [
       {
        "_id": "00c0dcb",
+       "margen": null,
+       "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/08/0-L.png",
        "alt": ""
@@ -2848,12 +3164,16 @@
      "bloques": [
       {
        "_id": "c6f70ed",
+       "margen": null,
+       "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/08/2-logo.png",
        "alt": ""
       },
       {
        "_id": "0bf19a3",
+       "margen": null,
+       "relleno": null,
        "tipo": "textoAnimado",
        "antes": "",
        "despues": "",
@@ -2865,6 +3185,8 @@
       },
       {
        "_id": "c0491ca",
+       "margen": "0% 0% 6% 0%",
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "A society made by design, that solves all these problems. E-Nation a crypto State physically distributed throughout the world, and its brother project the Cryptocurrency UnityCoin.",
        "nivel": "p",
@@ -2883,6 +3205,8 @@
      "bloques": [
       {
        "_id": "9480de1",
+       "margen": null,
+       "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/08/31-coin.png",
        "alt": ""
@@ -2896,6 +3220,8 @@
      "bloques": [
       {
        "_id": "1aa9f80",
+       "margen": null,
+       "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/08/0-R.png",
        "alt": ""
@@ -2930,6 +3256,8 @@
      "bloques": [
       {
        "_id": "a7f17fc",
+       "margen": "0% 0% -2% 0%",
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "Make the World a Better Place",
        "nivel": "p",
@@ -2942,6 +3270,8 @@
       },
       {
        "_id": "9678b38",
+       "margen": "0% 0% -2% 0%",
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "(for me and my friends )",
        "nivel": "p",
@@ -2954,6 +3284,8 @@
       },
       {
        "_id": "49a0990",
+       "margen": null,
+       "relleno": null,
        "tipo": "textoAnimado",
        "antes": "",
        "despues": "",
@@ -3000,6 +3332,8 @@
      "bloques": [
       {
        "_id": "f50c7e9",
+       "margen": null,
+       "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/08/0-bottom.png",
        "alt": ""
@@ -3013,6 +3347,8 @@
      "bloques": [
       {
        "_id": "e296f81",
+       "margen": "0% 10% 0% -1%",
+       "relleno": "1% 0% 1% 2%",
        "tipo": "encabezado",
        "texto": "E-Nation, the First Authentic Revolution",
        "nivel": "h2",
@@ -3024,6 +3360,8 @@
       },
       {
        "_id": "9f70d89",
+       "margen": null,
+       "relleno": "1% 5% 1% 5%",
        "tipo": "encabezado",
        "texto": "So far, the Revolutions were 'take off you to put me', an oligarchy that replaces another oligarchy, changing the faces but maintaining the vertical power system",
        "nivel": "p",
@@ -3043,12 +3381,16 @@
      "bloques": [
       {
        "_id": "48164dc",
+       "margen": null,
+       "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/09/org-piramid.png",
        "alt": ""
       },
       {
        "_id": "34d674b",
+       "margen": null,
+       "relleno": "1% 5% 2% 5%",
        "tipo": "encabezado",
        "texto": "Vertical Organization",
        "nivel": "p",
@@ -3068,12 +3410,16 @@
      "bloques": [
       {
        "_id": "b04fd53",
+       "margen": null,
+       "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/09/org-horizon.png",
        "alt": ""
       },
       {
        "_id": "a038dc9",
+       "margen": null,
+       "relleno": "1% 5% 2% 5%",
        "tipo": "encabezado",
        "texto": "Horizontal Organization",
        "nivel": "p",
@@ -3114,6 +3460,8 @@
      "bloques": [
       {
        "_id": "81f2140",
+       "margen": null,
+       "relleno": "1% 0% 1% 0%",
        "tipo": "encabezado",
        "texto": "E-Nation - A New Social Pact",
        "nivel": "h2",
@@ -3132,6 +3480,8 @@
      "bloques": [
       {
        "_id": "8f1cd24",
+       "margen": null,
+       "relleno": null,
        "tipo": "banner",
        "imagen": "/images/2018/09/8-pact-family.jpg",
        "titulo": "To Unite us",
@@ -3153,6 +3503,8 @@
      "bloques": [
       {
        "_id": "ed58c36",
+       "margen": null,
+       "relleno": null,
        "tipo": "banner",
        "imagen": "/images/2018/09/8-pact-education.jpg",
        "titulo": "New Educational Model",
@@ -3174,6 +3526,8 @@
      "bloques": [
       {
        "_id": "426793d",
+       "margen": null,
+       "relleno": null,
        "tipo": "banner",
        "imagen": "/images/2018/09/8-pact-economy.jpg",
        "titulo": "New Economic Model",
@@ -3195,6 +3549,8 @@
      "bloques": [
       {
        "_id": "f6285b3",
+       "margen": null,
+       "relleno": null,
        "tipo": "banner",
        "imagen": "/images/2018/09/8-pact-moms.jpg",
        "titulo": "Centered in the Family",
@@ -3216,6 +3572,8 @@
      "bloques": [
       {
        "_id": "d1f7e85",
+       "margen": null,
+       "relleno": null,
        "tipo": "banner",
        "imagen": "/images/2018/09/8-pact-participation.jpg",
        "titulo": "New Model of Political Participation",
@@ -3237,6 +3595,8 @@
      "bloques": [
       {
        "_id": "b05b544",
+       "margen": null,
+       "relleno": null,
        "tipo": "banner",
        "imagen": "/images/2018/09/8-pact-science.jpg",
        "titulo": "Apply the Scientific Method",
@@ -3280,6 +3640,8 @@
      "bloques": [
       {
        "_id": "efe2fde",
+       "margen": null,
+       "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/08/0-bottom.png",
        "alt": ""
@@ -3293,6 +3655,8 @@
      "bloques": [
       {
        "_id": "f7b63bd",
+       "margen": "-2% 0% 0% 0%",
+       "relleno": "1% 0% 1% 0%",
        "tipo": "encabezado",
        "texto": "E-Nation - The Solution",
        "nivel": "h2",
@@ -3304,6 +3668,8 @@
       },
       {
        "_id": "d118531",
+       "margen": null,
+       "relleno": "1% 5% 1% 5%",
        "tipo": "encabezado",
        "texto": "• Change government centered on the State, to polycentrism: a lack of central control. • Based on common guiding principles to ensure cooperation and prevent a force from dominating. With joint efforts towards common goals such as increasing happiness, reducing pollution or eliminating poverty. • Producing a vibrant, dynamic, diverse and imperfect system, which in the end will unite everyone under a shared vision. Allowing that if someone has an idea, make it, otherwise there will be no growth and people will not be happy.",
        "nivel": "p",
@@ -3351,6 +3717,8 @@
      "bloques": [
       {
        "_id": "ff0b89e",
+       "margen": null,
+       "relleno": "1% 0% 1% 0%",
        "tipo": "encabezado",
        "texto": "E-Nation - The Solution",
        "nivel": "h2",
@@ -3362,6 +3730,8 @@
       },
       {
        "_id": "9bb3100",
+       "margen": null,
+       "relleno": "1% 0% 1% 0%",
        "tipo": "encabezado",
        "texto": "Companies, Products, Services and People are evaluated transparently and publicly according to a matrix of indicators.",
        "nivel": "p",
@@ -3373,6 +3743,8 @@
       },
       {
        "_id": "fad1616",
+       "margen": null,
+       "relleno": "1% 5% 1% 5%",
        "tipo": "encabezado",
        "texto": "• It facilitates making informed decisions in the selection of products, services. • It makes it easy to trust people based on their reputation. • Eliminate bureaucracy, regulations, manipulation and scams. • Leave the last decision in the hands of the citizen.",
        "nivel": "p",
@@ -3384,6 +3756,8 @@
       },
       {
        "_id": "f580c15",
+       "margen": null,
+       "relleno": "1% 0% 1% 0%",
        "tipo": "encabezado",
        "texto": "It establishes a punishment reward mechanism that ensures the proper behavior of companies and individuals.",
        "nivel": "p",
@@ -3430,6 +3804,8 @@
      "bloques": [
       {
        "_id": "bce5528",
+       "margen": null,
+       "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/08/0-bottom.png",
        "alt": ""
@@ -3443,6 +3819,8 @@
      "bloques": [
       {
        "_id": "166985f",
+       "margen": "-2% 0% 0% 0%",
+       "relleno": "1% 0% 1% 0%",
        "tipo": "encabezado",
        "texto": "E-Nation-Objections",
        "nivel": "h2",
@@ -3454,6 +3832,8 @@
       },
       {
        "_id": "ad0a455",
+       "margen": null,
+       "relleno": "1% 0% 1% 0%",
        "tipo": "encabezado",
        "texto": "It will be objected, inevitably, that any alternative to the nation-state system is a utopian impossibility. But even the technological accomplishments of the last few decades seemed implausible before they arrived.",
        "nivel": "p",
@@ -3500,6 +3880,8 @@
      "bloques": [
       {
        "_id": "4aaa53a",
+       "margen": "0% 8% 0% -1%",
+       "relleno": "1% 0% 1% 2%",
        "tipo": "encabezado",
        "texto": "The traditional way of changing the world does not work",
        "nivel": "h2",
@@ -3511,12 +3893,16 @@
       },
       {
        "_id": "0791598",
+       "margen": null,
+       "relleno": "0% 35% 0% 35%",
        "tipo": "imagen",
        "imagen": "/images/2018/08/37-Deborah-Frieze.png",
        "alt": ""
       },
       {
        "_id": "17e0ee1",
+       "margen": null,
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "\"The way we want to change the world does not work, and it will never work. You can not change the basis of complex systems, we can only abandon them and start a new one, or provide hospice to what dies. \"",
        "nivel": "p",
@@ -3528,6 +3914,8 @@
       },
       {
        "_id": "9ade68e",
+       "margen": "4% 0% 0% 0%",
+       "relleno": "0% 5% 0% 5%",
        "tipo": "encabezado",
        "texto": "- Deborah Frieze -",
        "nivel": "p",
@@ -3539,6 +3927,8 @@
       },
       {
        "_id": "d5fc88c",
+       "margen": null,
+       "relleno": "0% 3% 0% 3%",
        "tipo": "encabezado",
        "texto": "https://www.youtube.com/watch?v=2jTdZSPBRRE&amp;vl=en",
        "nivel": "p",
@@ -3550,6 +3940,8 @@
       },
       {
        "_id": "920780f",
+       "margen": null,
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "Es lo mismo que dice la Teoría Evolutiva TESI.",
        "nivel": "p",
@@ -3561,6 +3953,8 @@
       },
       {
        "_id": "96f7971",
+       "margen": null,
+       "relleno": "0% 3% 0% 3%",
        "tipo": "encabezado",
        "texto": "https://bienestarmutuo.org/la-evolucion-biologica/",
        "nivel": "p",
@@ -3607,6 +4001,8 @@
      "bloques": [
       {
        "_id": "b82221a",
+       "margen": null,
+       "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/08/0-bottom.png",
        "alt": ""
@@ -3620,6 +4016,8 @@
      "bloques": [
       {
        "_id": "598c68a",
+       "margen": "-2% 0% 0% 0%",
+       "relleno": "1% 0% 1% 0%",
        "tipo": "encabezado",
        "texto": "We do not want to eliminate the government or fight against it",
        "nivel": "h2",
@@ -3631,6 +4029,8 @@
       },
       {
        "_id": "e08ec7f",
+       "margen": null,
+       "relleno": "1% 5% 1% 5%",
        "tipo": "encabezado",
        "texto": "We want to show that there are better ways of doing things, where we ALL can benefit.",
        "nivel": "p",
@@ -3672,6 +4072,8 @@
      "bloques": [
       {
        "_id": "67d8742",
+       "margen": null,
+       "relleno": "1% 0% 1% 0%",
        "tipo": "encabezado",
        "texto": "A Spiritual Society",
        "nivel": "h2",
@@ -3683,6 +4085,8 @@
       },
       {
        "_id": "210a793",
+       "margen": null,
+       "relleno": "1% 0% 1% 0%",
        "tipo": "encabezado",
        "texto": "Man does not live by his own values, but by the values that society says are important. Apart from the bodily needs, the other needs are only for the pride that society demands.",
        "nivel": "p",
@@ -3694,6 +4098,8 @@
       },
       {
        "_id": "e538f0a",
+       "margen": null,
+       "relleno": "1% 0% 1% 0%",
        "tipo": "encabezado",
        "texto": "We need a society that values the spirituality of \"we are all one\", the love of our neighbor.",
        "nivel": "p",
@@ -3705,6 +4111,8 @@
       },
       {
        "_id": "63ca75c",
+       "margen": null,
+       "relleno": "1% 0% 1% 0%",
        "tipo": "encabezado",
        "texto": "But we will continue to lose, in a society that not only does not support us, but also plays against our happiness.",
        "nivel": "p",
@@ -3716,6 +4124,8 @@
       },
       {
        "_id": "552ccd9",
+       "margen": null,
+       "relleno": "2% 0% 0% 0%",
        "tipo": "textoAnimado",
        "antes": "",
        "despues": "",
@@ -3734,6 +4144,8 @@
      "bloques": [
       {
        "_id": "05fd0d9",
+       "margen": null,
+       "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/10/spirituality.gif",
        "alt": ""
@@ -3769,6 +4181,8 @@
      "bloques": [
       {
        "_id": "0a1f197",
+       "margen": null,
+       "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/08/0-bottom.png",
        "alt": ""
@@ -3782,6 +4196,8 @@
      "bloques": [
       {
        "_id": "d61aec9",
+       "margen": "-2% 0% 0% 0%",
+       "relleno": "1% 0% 1% 0%",
        "tipo": "encabezado",
        "texto": "The first step: Take the financial power",
        "nivel": "h2",
@@ -3793,6 +4209,8 @@
       },
       {
        "_id": "f4e4643",
+       "margen": null,
+       "relleno": "1% 5% 1% 5%",
        "tipo": "encabezado",
        "texto": "We need a country that supports cryptocurrencies, in order to face as peers the persecution by the global financial system and governments. The currencies are generated by the states, therefore, for our cryptocurrencies to have the same level of hierarchy, we need our own country. Uniting all who support the various cryptocurrencies, without secession the current nation state. E-Nation the multi-nationality. Because in the union of the many there is strength!",
        "nivel": "p",
@@ -3839,12 +4257,16 @@
      "bloques": [
       {
        "_id": "4ec6ed0",
+       "margen": null,
+       "relleno": "0% 35% 0% 35%",
        "tipo": "imagen",
        "imagen": "/images/2018/08/41-Vince-Lombardi.png",
        "alt": ""
       },
       {
        "_id": "c64670f",
+       "margen": null,
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "“People who work together will win, whether it be against complex football defences, or the problems of modern society.”",
        "nivel": "p",
@@ -3856,6 +4278,8 @@
       },
       {
        "_id": "561267f",
+       "margen": "4% 0% 0% 0%",
+       "relleno": "0% 5% 0% 5%",
        "tipo": "encabezado",
        "texto": "- Vince Lombardi -",
        "nivel": "p",
@@ -3902,6 +4326,8 @@
      "bloques": [
       {
        "_id": "1981b3a",
+       "margen": null,
+       "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/08/0-bottom.png",
        "alt": ""
@@ -3915,6 +4341,8 @@
      "bloques": [
       {
        "_id": "fa2bef8",
+       "margen": null,
+       "relleno": "1% 0% 1% 0%",
        "tipo": "encabezado",
        "texto": "We need your participation Quantity is our strength",
        "nivel": "h2",
@@ -3926,6 +4354,8 @@
       },
       {
        "_id": "3c26190",
+       "margen": null,
+       "relleno": null,
        "tipo": "lista",
        "items": [
         "Subscribe to our mailing list."
@@ -3933,6 +4363,8 @@
       },
       {
        "_id": "3eb0199",
+       "margen": null,
+       "relleno": null,
        "tipo": "lista",
        "items": [
         "Share this page with everyone who wants a change.",
@@ -3943,6 +4375,8 @@
       },
       {
        "_id": "776fab1",
+       "margen": null,
+       "relleno": null,
        "tipo": "lista",
        "items": [
         "Support us economically, participating in the launch of UnityCoin."
@@ -3950,6 +4384,8 @@
       },
       {
        "_id": "177bf28",
+       "margen": null,
+       "relleno": null,
        "tipo": "lista",
        "items": [
         "Participate in the management of this whole project, we have done it for you, so that you have control."
@@ -3985,6 +4421,8 @@
      "bloques": [
       {
        "_id": "ed505be",
+       "margen": null,
+       "relleno": "1% 0% 1% 0%",
        "tipo": "encabezado",
        "texto": "Join the Last Revolution (peaceful)",
        "nivel": "h2",
@@ -3996,6 +4434,8 @@
       },
       {
        "_id": "3ed4d12",
+       "margen": null,
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "E-Nation, the worldwide physical distributed nation",
        "nivel": "p",
@@ -4007,6 +4447,8 @@
       },
       {
        "_id": "b1cbf55",
+       "margen": null,
+       "relleno": "0% 5% 1% 0%",
        "tipo": "encabezado",
        "texto": "The end of the industrial age and the birth of the era of knowledge, from being a people to being a conscious citizen. It is also the end of egoistic development that becomes stupid and begins to devour itself.",
        "nivel": "p",
@@ -4026,6 +4468,8 @@
      "bloques": [
       {
        "_id": "eedf789",
+       "margen": null,
+       "relleno": null,
        "tipo": "slider",
        "alias": "snake",
        "shortcode": null
@@ -4061,6 +4505,8 @@
      "bloques": [
       {
        "_id": "96504a3",
+       "margen": null,
+       "relleno": "1% 0% 1% 0%",
        "tipo": "encabezado",
        "texto": "Subscribe to our mailing list​",
        "nivel": "h2",
@@ -4072,15 +4518,21 @@
       },
       {
        "_id": "d375d84",
+       "margen": null,
+       "relleno": null,
        "tipo": "ancla"
       },
       {
        "_id": "aa1931c",
+       "margen": null,
+       "relleno": null,
        "tipo": "html",
        "html": "<!-- Begin Mailchimp Signup Form -->\n<link href=\"//cdn-images.mailchimp.com/embedcode/classic-10_7.css\" rel=\"stylesheet\" type=\"text/css\">\n<style type=\"text/css\">\n\t#mc_embed_signup{clear:left; font:14px Helvetica,Arial,sans-serif; width:40%;}\n\t.centrar-boton {\n        text-align: center;\n\t}\n\t.centrar-todo{\n\t   margin: 0 auto;\n\t}\n\t\n\t/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.\n\t   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */\n</style>\n<div id=\"mc_embed_signup\" class=\"centrar-todo\">\n<form action=\"https://bienestarmutuo.us13.list-manage.com/subscribe/post?u=31ec7ced51097b06e1479d117&amp;id=e7611434d6\" method=\"post\" id=\"mc-embedded-subscribe-form\" name=\"mc-embedded-subscribe-form\" class=\"validate\" target=\"_blank\" novalidate>\n    <div id=\"mc_embed_signup_scroll\">\n<div class=\"indicates-required\"><span class=\"asterisk\"></span> </div>\n<div class=\"mc-field-group\">\n\t<label for=\"mce-FNAME\"> </label>\n\t<input type=\"text\" value=\"\" placeholder=\"Name\" name=\"FNAME\" class=\"\" id=\"mce-FNAME\">\n</div>\n<div class=\"mc-field-group\">\n\t<label for=\"mce-EMAIL\"> <span class=\"asterisk\"> </span>\n</label>\n\t<input type=\"email\" value=\"\" placeholder=\"Email\" name=\"EMAIL\" class=\"required email\" id=\"mce-EMAIL\">\n</div>\n<div style=\"display:none;\" class=\"mc-field-group input-group\">\n    <strong>Interested Sites </strong>\n    <ul><li><input type=\"checkbox\" value=\"1\" name=\"group[17297][1]\" id=\"mce-group[17297]-17297-0\"><label for=\"mce-group[17297]-17297-0\">MWS - SBM - BEM</label></li>\n<li><input type=\"checkbox\" value=\"2\" name=\"group[17297][2]\" id=\"mce-group[17297]-17297-1\"><label for=\"mce-group[17297]-17297-1\">UnityCoin</label></li>\n<li><input type=\"checkbox\" value=\"4\" name=\"group[17297][4]\" id=\"mce-group[17297]-17297-2\" checked><label for=\"mce-group[17297]-17297-2\">E-Nation</label></li>\n<li><input type=\"checkbox\" value=\"8\" name=\"group[17297][8]\" id=\"mce-group[17297]-17297-3\"><label for=\"mce-group[17297]-17297-3\">SBM Libre</label></li>\n</ul>\n</div>\n\t<div id=\"mce-responses\" class=\"clear\">\n\t\t<div class=\"response\" id=\"mce-error-response\" style=\"display:none\"></div>\n\t\t<div class=\"response\" id=\"mce-success-response\" style=\"display:none\"></div>\n\t</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->\n    <div style=\"position: absolute; left: -5000px;\" aria-hidden=\"true\"><input type=\"text\" name=\"b_31ec7ced51097b06e1479d117_e7611434d6\" tabindex=\"-1\" value=\"\"></div>\n    <div class=\"clear centrar-boton\"><input type=\"submit\" value=\"Subscribe\" name=\"subscribe\" id=\"mc-embedded-subscribe\" class=\"button\"></div>\n    </div>\n</form>\n</div>\n<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[1]='FNAME';ftypes[1]='text';fnames[0]='EMAIL';ftypes[0]='email';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='TELEFONO';ftypes[3]='phone';fnames[4]='PAIS';ftypes[4]='dropdown';fnames[5]='COLLABORA';ftypes[5]='dropdown'; /*\n * Translated default messages for the $ validation plugin.\n * Locale: ES\n */\n$.extend($.validator.messages, {\n  required: \"Este campo es obligatorio.\",\n  remote: \"Por favor, rellena este campo.\",\n  email: \"Por favor, escribe una dirección de correo válida\",\n  url: \"Por favor, escribe una URL válida.\",\n  date: \"Por favor, escribe una fecha válida.\",\n  dateISO: \"Por favor, escribe una fecha (ISO) válida.\",\n  number: \"Por favor, escribe un número entero válido.\",\n  digits: \"Por favor, escribe sólo dígitos.\",\n  creditcard: \"Por favor, escribe un número de tarjeta válido.\",\n  equalTo: \"Por favor, escribe el mismo valor de nuevo.\",\n  accept: \"Por favor, escribe un valor con una extensión aceptada.\",\n  maxlength: $.validator.format(\"Por favor, no escribas más de {0} caracteres.\"),\n  minlength: $.validator.format(\"Por favor, no escribas menos de {0} caracteres.\"),\n  rangelength: $.validator.format(\"Por favor, escribe un valor entre {0} y {1} caracteres.\"),\n  range: $.validator.format(\"Por favor, escribe un valor entre {0} y {1}.\"),\n  max: $.validator.format(\"Por favor, escribe un valor menor o igual a {0}.\"),\n  min: $.validator.format(\"Por favor, escribe un valor mayor o igual a {0}.\")\n});}(jQuery));var $mcj = jQuery.noConflict(true);</script>\n<!--End mc_embed_signup-->"
       },
       {
        "_id": "3184781",
+       "margen": null,
+       "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/08/0-bottom.png",
        "alt": ""
@@ -4115,12 +4567,16 @@
      "bloques": [
       {
        "_id": "638c975",
+       "margen": null,
+       "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/09/home-elisha.png",
        "alt": ""
       },
       {
        "_id": "be98519",
+       "margen": "-1% 0% 0% 0%",
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "Robinson Ochoa",
        "nivel": "p",
@@ -4132,6 +4588,8 @@
       },
       {
        "_id": "042de1f",
+       "margen": "-2% 0% 0% 0%",
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "Electronics Engineer, Economist, Kabbalist, Programming Director, Author of the laws of Economics and the New Evolutionary Theory TESI",
        "nivel": "span",
@@ -4159,6 +4617,8 @@
      "bloques": [
       {
        "_id": "d1b616f",
+       "margen": "0% 8% 0% -1%",
+       "relleno": "1% 0% 1% 2%",
        "tipo": "encabezado",
        "texto": "Visit Our others Sites",
        "nivel": "h2",
@@ -4170,6 +4630,8 @@
       },
       {
        "_id": "0ff81c2",
+       "margen": null,
+       "relleno": null,
        "tipo": "slider",
        "alias": "banner-publicidad",
        "shortcode": null

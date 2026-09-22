@@ -22,6 +22,8 @@
      "bloques": [
       {
        "_id": "5d4ab0a",
+       "margen": null,
+       "relleno": null,
        "tipo": "slider",
        "alias": "e-nation",
        "shortcode": null
@@ -51,6 +53,8 @@
      "bloques": [
       {
        "_id": "1a811a7",
+       "margen": null,
+       "relleno": null,
        "tipo": "slider",
        "alias": "vertical-horizontal",
        "shortcode": null
@@ -64,6 +68,8 @@
      "bloques": [
       {
        "_id": "5c057cc",
+       "margen": null,
+       "relleno": "0% 4% 0% 4%",
        "tipo": "encabezado",
        "texto": "Vertical Power systems are Inherently Corrupt.",
        "nivel": "h2",
@@ -76,6 +82,8 @@
       },
       {
        "_id": "44854e7",
+       "margen": "5% 0% 0% 0%",
+       "relleno": "0% 4% 0% 4%",
        "tipo": "encabezado",
        "texto": "E-Nation is",
        "nivel": "h2",
@@ -87,6 +95,8 @@
       },
       {
        "_id": "82d2db3",
+       "margen": "0% 0% 1% 0%",
+       "relleno": null,
        "tipo": "textoAnimado",
        "antes": "",
        "despues": "",
@@ -115,6 +125,8 @@
      "bloques": [
       {
        "_id": "6a0ee8c",
+       "margen": null,
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "Subscribe to our mailing list",
        "nivel": "h2",
@@ -126,6 +138,8 @@
       },
       {
        "_id": "ada703e",
+       "margen": null,
+       "relleno": null,
        "tipo": "html",
        "html": "<!-- Begin Mailchimp Signup Form -->\n<link href=\"//cdn-images.mailchimp.com/embedcode/classic-10_7.css\" rel=\"stylesheet\" type=\"text/css\">\n<style type=\"text/css\">\n\t#mc_embed_signup{clear:left; font:14px Helvetica,Arial,sans-serif; width:40%;}\n\t.centrar-boton {\n        text-align: center;\n\t}\n\t.centrar-todo{\n\t   margin: 0 auto;\n\t}\n\t\n\t/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.\n\t   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */\n</style>\n<div id=\"mc_embed_signup\" class=\"centrar-todo\">\n<form action=\"https://bienestarmutuo.us13.list-manage.com/subscribe/post?u=31ec7ced51097b06e1479d117&amp;id=e7611434d6\" method=\"post\" id=\"mc-embedded-subscribe-form\" name=\"mc-embedded-subscribe-form\" class=\"validate\" target=\"_blank\" novalidate>\n    <div id=\"mc_embed_signup_scroll\">\n<div class=\"indicates-required\"><span class=\"asterisk\"></span> </div>\n<div class=\"mc-field-group\">\n\t<label for=\"mce-FNAME\"> </label>\n\t<input type=\"text\" value=\"\" placeholder=\"Name\" name=\"FNAME\" class=\"\" id=\"mce-FNAME\">\n</div>\n<div class=\"mc-field-group\">\n\t<label for=\"mce-EMAIL\"> <span class=\"asterisk\"> </span>\n</label>\n\t<input type=\"email\" value=\"\" placeholder=\"Email\" name=\"EMAIL\" class=\"required email\" id=\"mce-EMAIL\">\n</div>\n<div style=\"display:none;\" class=\"mc-field-group input-group\">\n    <strong>Interested Sites </strong>\n    <ul><li><input type=\"checkbox\" value=\"1\" name=\"group[17297][1]\" id=\"mce-group[17297]-17297-0\"><label for=\"mce-group[17297]-17297-0\">MWS - SBM - BEM</label></li>\n<li><input type=\"checkbox\" value=\"2\" name=\"group[17297][2]\" id=\"mce-group[17297]-17297-1\"><label for=\"mce-group[17297]-17297-1\">UnityCoin</label></li>\n<li><input type=\"checkbox\" value=\"4\" name=\"group[17297][4]\" id=\"mce-group[17297]-17297-2\" checked><label for=\"mce-group[17297]-17297-2\">E-Nation</label></li>\n<li><input type=\"checkbox\" value=\"8\" name=\"group[17297][8]\" id=\"mce-group[17297]-17297-3\"><label for=\"mce-group[17297]-17297-3\">SBM Libre</label></li>\n</ul>\n</div>\n\t<div id=\"mce-responses\" class=\"clear\">\n\t\t<div class=\"response\" id=\"mce-error-response\" style=\"display:none\"></div>\n\t\t<div class=\"response\" id=\"mce-success-response\" style=\"display:none\"></div>\n\t</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->\n    <div style=\"position: absolute; left: -5000px;\" aria-hidden=\"true\"><input type=\"text\" name=\"b_31ec7ced51097b06e1479d117_e7611434d6\" tabindex=\"-1\" value=\"\"></div>\n    <div class=\"clear centrar-boton\"><input type=\"submit\" value=\"Subscribe\" name=\"subscribe\" id=\"mc-embedded-subscribe\" class=\"button\"></div>\n    </div>\n</form>\n</div>\n<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[1]='FNAME';ftypes[1]='text';fnames[0]='EMAIL';ftypes[0]='email';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='TELEFONO';ftypes[3]='phone';fnames[4]='PAIS';ftypes[4]='dropdown';fnames[5]='COLLABORA';ftypes[5]='dropdown'; /*\n * Translated default messages for the $ validation plugin.\n * Locale: ES\n */\n$.extend($.validator.messages, {\n  required: \"Este campo es obligatorio.\",\n  remote: \"Por favor, rellena este campo.\",\n  email: \"Por favor, escribe una dirección de correo válida\",\n  url: \"Por favor, escribe una URL válida.\",\n  date: \"Por favor, escribe una fecha válida.\",\n  dateISO: \"Por favor, escribe una fecha (ISO) válida.\",\n  number: \"Por favor, escribe un número entero válido.\",\n  digits: \"Por favor, escribe sólo dígitos.\",\n  creditcard: \"Por favor, escribe un número de tarjeta válido.\",\n  equalTo: \"Por favor, escribe el mismo valor de nuevo.\",\n  accept: \"Por favor, escribe un valor con una extensión aceptada.\",\n  maxlength: $.validator.format(\"Por favor, no escribas más de {0} caracteres.\"),\n  minlength: $.validator.format(\"Por favor, no escribas menos de {0} caracteres.\"),\n  rangelength: $.validator.format(\"Por favor, escribe un valor entre {0} y {1} caracteres.\"),\n  range: $.validator.format(\"Por favor, escribe un valor entre {0} y {1}.\"),\n  max: $.validator.format(\"Por favor, escribe un valor menor o igual a {0}.\"),\n  min: $.validator.format(\"Por favor, escribe un valor mayor o igual a {0}.\")\n});}(jQuery));var $mcj = jQuery.noConflict(true);</script>\n<!--End mc_embed_signup-->"
       }
@@ -154,6 +168,8 @@
      "bloques": [
       {
        "_id": "32b3a7a",
+       "margen": "0% 0% 5% 0%",
+       "relleno": null,
        "tipo": "textoAnimado",
        "antes": "",
        "despues": "",
@@ -165,6 +181,8 @@
       },
       {
        "_id": "62b9e49",
+       "margen": null,
+       "relleno": null,
        "tipo": "sliderJet",
        "items": [
         {
@@ -191,7 +209,12 @@
          "texto": "E-Nation proposes a society made by design, that solves all these problems. A crypto State physically distributed throughout the world, and its brother project of monetary freedom the Cryptocurrency UnityCoin.",
          "boton": "Project Here"
         }
-       ]
+       ],
+       "alto": 400,
+       "altoTableta": 300,
+       "altoMovil": 280,
+       "flechaFondo": "#003f7f",
+       "flechaFondoHover": "#ff7100"
       }
      ]
     }
@@ -213,6 +236,8 @@
      "bloques": [
       {
        "_id": "4d05a58",
+       "margen": null,
+       "relleno": null,
        "tipo": "slider",
        "alias": "snake",
        "shortcode": null
@@ -226,6 +251,8 @@
      "bloques": [
       {
        "_id": "be915c1",
+       "margen": null,
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "The snake that eats its own tail",
        "nivel": "h2",
@@ -237,6 +264,8 @@
       },
       {
        "_id": "bdb3215",
+       "margen": null,
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "The conditions to which modern society subjects us are a discouraging cocktail that intoxicates us with unhappiness.",
        "nivel": "h2",
@@ -248,6 +277,8 @@
       },
       {
        "_id": "c09992c",
+       "margen": null,
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "Modern society under the paradigms of individualism and materialism to the detriment of family, spiritual and ecological values, has closed its cycle and begins to be dangerous for humanity: the snake that eats its own tail.",
        "nivel": "h2",
@@ -266,6 +297,8 @@
      "bloques": [
       {
        "_id": "2bc9ca7",
+       "margen": null,
+       "relleno": null,
        "tipo": "caja",
        "titulo": "Corruption & Incompetence",
        "descripcion": "",
@@ -288,6 +321,8 @@
      "bloques": [
       {
        "_id": "2220c96",
+       "margen": null,
+       "relleno": null,
        "tipo": "caja",
        "titulo": "Slavery",
        "descripcion": "",
@@ -310,6 +345,8 @@
      "bloques": [
       {
        "_id": "faf09f7",
+       "margen": null,
+       "relleno": null,
        "tipo": "caja",
        "titulo": "Disintegration of the Family",
        "descripcion": "",
@@ -332,6 +369,8 @@
      "bloques": [
       {
        "_id": "8c95c88",
+       "margen": null,
+       "relleno": null,
        "tipo": "caja",
        "titulo": "Media Brain Washing",
        "descripcion": "",
@@ -370,6 +409,8 @@
      "bloques": [
       {
        "_id": "fe67e7a",
+       "margen": null,
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "What will happen to us if we continue in this Society?",
        "nivel": "h2",
@@ -388,6 +429,8 @@
      "bloques": [
       {
        "_id": "f8891c5",
+       "margen": null,
+       "relleno": null,
        "tipo": "banner",
        "imagen": "/images/2018/10/problem-war.jpg",
        "titulo": "3rd World War",
@@ -409,6 +452,8 @@
      "bloques": [
       {
        "_id": "88e2c2c",
+       "margen": null,
+       "relleno": null,
        "tipo": "banner",
        "imagen": "/images/2018/10/problem-loss-savings.jpg",
        "titulo": "Loss of Savings",
@@ -430,6 +475,8 @@
      "bloques": [
       {
        "_id": "3fb79ba",
+       "margen": null,
+       "relleno": null,
        "tipo": "banner",
        "imagen": "/images/2018/10/problem-natural-1.jpg",
        "titulo": "Natural Disasters",
@@ -451,6 +498,8 @@
      "bloques": [
       {
        "_id": "b4943b9",
+       "margen": null,
+       "relleno": null,
        "tipo": "banner",
        "imagen": "/images/2018/10/problem-police-state-1.jpg",
        "titulo": "Police State",
@@ -472,6 +521,8 @@
      "bloques": [
       {
        "_id": "517c62c",
+       "margen": null,
+       "relleno": null,
        "tipo": "banner",
        "imagen": "/images/2018/10/problem-women-1.jpg",
        "titulo": "Prostitution of Wives and Daughters",
@@ -493,6 +544,8 @@
      "bloques": [
       {
        "_id": "54ad1de",
+       "margen": null,
+       "relleno": null,
        "tipo": "banner",
        "imagen": "/images/2018/10/problem-son-1.jpg",
        "titulo": "Sodomization of your Children",
@@ -530,6 +583,8 @@
      "bloques": [
       {
        "_id": "b2fc78d",
+       "margen": null,
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "The only way for evil to triumph is for the good guys to do nothing",
        "nivel": "h2",
@@ -541,6 +596,8 @@
       },
       {
        "_id": "a49b171",
+       "margen": "0% 0% 2% 0%",
+       "relleno": null,
        "tipo": "textoAnimado",
        "antes": "",
        "despues": "",
@@ -559,6 +616,8 @@
      "bloques": [
       {
        "_id": "2190731",
+       "margen": null,
+       "relleno": null,
        "tipo": "banner",
        "imagen": "/images/2018/10/6-change-base.jpg",
        "titulo": "We take the best",
@@ -580,6 +639,8 @@
      "bloques": [
       {
        "_id": "c23a6c4",
+       "margen": null,
+       "relleno": null,
        "tipo": "banner",
        "imagen": "/images/2018/09/6-internet.jpg",
        "titulo": "Internet Power",
@@ -617,6 +678,8 @@
      "bloques": [
       {
        "_id": "a27017c",
+       "margen": null,
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "A New Social Pact",
        "nivel": "h2",
@@ -635,6 +698,8 @@
      "bloques": [
       {
        "_id": "9690997",
+       "margen": null,
+       "relleno": "0px 10px 0px 10px",
        "tipo": "encabezado",
        "texto": "Going from measuring life only with money to living life adding other social and ecological values:",
        "nivel": "h2",
@@ -646,6 +711,8 @@
       },
       {
        "_id": "3d92142",
+       "margen": "-1% 0% 0% 0%",
+       "relleno": null,
        "tipo": "textoAnimado",
        "antes": "",
        "despues": "",
@@ -664,6 +731,8 @@
      "bloques": [
       {
        "_id": "92679de",
+       "margen": null,
+       "relleno": null,
        "tipo": "banner",
        "imagen": "/images/2018/09/8-pact-family.jpg",
        "titulo": "To Unite us",
@@ -685,6 +754,8 @@
      "bloques": [
       {
        "_id": "0dc8265",
+       "margen": null,
+       "relleno": null,
        "tipo": "banner",
        "imagen": "/images/2018/09/8-pact-education.jpg",
        "titulo": "New Educational Model",
@@ -722,6 +793,8 @@
      "bloques": [
       {
        "_id": "b905c3c",
+       "margen": null,
+       "relleno": null,
        "tipo": "banner",
        "imagen": "/images/2018/09/8-pact-economy.jpg",
        "titulo": "New Economic Model",
@@ -743,6 +816,8 @@
      "bloques": [
       {
        "_id": "0f8e627",
+       "margen": null,
+       "relleno": null,
        "tipo": "banner",
        "imagen": "/images/2018/09/8-pact-moms.jpg",
        "titulo": "Centered in the Family",
@@ -780,6 +855,8 @@
      "bloques": [
       {
        "_id": "ddf20b4",
+       "margen": null,
+       "relleno": null,
        "tipo": "banner",
        "imagen": "/images/2018/09/8-pact-participation.jpg",
        "titulo": "New Model of Political Participation",
@@ -801,6 +878,8 @@
      "bloques": [
       {
        "_id": "733c31f",
+       "margen": null,
+       "relleno": null,
        "tipo": "banner",
        "imagen": "/images/2018/09/8-pact-science.jpg",
        "titulo": "Apply the Scientific Method",
@@ -832,6 +911,8 @@
      "bloques": [
       {
        "_id": "d0955e1",
+       "margen": null,
+       "relleno": null,
        "tipo": "encabezado",
        "texto": "Subscribe to our mailing list",
        "nivel": "h2",
@@ -843,6 +924,8 @@
       },
       {
        "_id": "63d9d08",
+       "margen": null,
+       "relleno": null,
        "tipo": "html",
        "html": "<!-- Begin Mailchimp Signup Form -->\n<link href=\"//cdn-images.mailchimp.com/embedcode/classic-10_7.css\" rel=\"stylesheet\" type=\"text/css\">\n<style type=\"text/css\">\n\t#mc_embed_signup{clear:left; font:14px Helvetica,Arial,sans-serif; width:40%;}\n\t.centrar-boton {\n        text-align: center;\n\t}\n\t.centrar-todo{\n\t   margin: 0 auto;\n\t}\n\t\n\t/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.\n\t   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */\n</style>\n<div id=\"mc_embed_signup\" class=\"centrar-todo\">\n<form action=\"https://bienestarmutuo.us13.list-manage.com/subscribe/post?u=31ec7ced51097b06e1479d117&amp;id=e7611434d6\" method=\"post\" id=\"mc-embedded-subscribe-form\" name=\"mc-embedded-subscribe-form\" class=\"validate\" target=\"_blank\" novalidate>\n    <div id=\"mc_embed_signup_scroll\">\n<div class=\"indicates-required\"><span class=\"asterisk\"></span> </div>\n<div class=\"mc-field-group\">\n\t<label for=\"mce-FNAME\"> </label>\n\t<input type=\"text\" value=\"\" placeholder=\"Name\" name=\"FNAME\" class=\"\" id=\"mce-FNAME\">\n</div>\n<div class=\"mc-field-group\">\n\t<label for=\"mce-EMAIL\"> <span class=\"asterisk\"> </span>\n</label>\n\t<input type=\"email\" value=\"\" placeholder=\"Email\" name=\"EMAIL\" class=\"required email\" id=\"mce-EMAIL\">\n</div>\n<div style=\"display:none;\" class=\"mc-field-group input-group\">\n    <strong>Interested Sites </strong>\n    <ul><li><input type=\"checkbox\" value=\"1\" name=\"group[17297][1]\" id=\"mce-group[17297]-17297-0\"><label for=\"mce-group[17297]-17297-0\">MWS - SBM - BEM</label></li>\n<li><input type=\"checkbox\" value=\"2\" name=\"group[17297][2]\" id=\"mce-group[17297]-17297-1\"><label for=\"mce-group[17297]-17297-1\">UnityCoin</label></li>\n<li><input type=\"checkbox\" value=\"4\" name=\"group[17297][4]\" id=\"mce-group[17297]-17297-2\" checked><label for=\"mce-group[17297]-17297-2\">E-Nation</label></li>\n<li><input type=\"checkbox\" value=\"8\" name=\"group[17297][8]\" id=\"mce-group[17297]-17297-3\"><label for=\"mce-group[17297]-17297-3\">SBM Libre</label></li>\n</ul>\n</div>\n\t<div id=\"mce-responses\" class=\"clear\">\n\t\t<div class=\"response\" id=\"mce-error-response\" style=\"display:none\"></div>\n\t\t<div class=\"response\" id=\"mce-success-response\" style=\"display:none\"></div>\n\t</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->\n    <div style=\"position: absolute; left: -5000px;\" aria-hidden=\"true\"><input type=\"text\" name=\"b_31ec7ced51097b06e1479d117_e7611434d6\" tabindex=\"-1\" value=\"\"></div>\n    <div class=\"clear centrar-boton\"><input type=\"submit\" value=\"Subscribe\" name=\"subscribe\" id=\"mc-embedded-subscribe\" class=\"button\"></div>\n    </div>\n</form>\n</div>\n<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[1]='FNAME';ftypes[1]='text';fnames[0]='EMAIL';ftypes[0]='email';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='TELEFONO';ftypes[3]='phone';fnames[4]='PAIS';ftypes[4]='dropdown';fnames[5]='COLLABORA';ftypes[5]='dropdown'; /*\n * Translated default messages for the $ validation plugin.\n * Locale: ES\n */\n$.extend($.validator.messages, {\n  required: \"Este campo es obligatorio.\",\n  remote: \"Por favor, rellena este campo.\",\n  email: \"Por favor, escribe una dirección de correo válida\",\n  url: \"Por favor, escribe una URL válida.\",\n  date: \"Por favor, escribe una fecha válida.\",\n  dateISO: \"Por favor, escribe una fecha (ISO) válida.\",\n  number: \"Por favor, escribe un número entero válido.\",\n  digits: \"Por favor, escribe sólo dígitos.\",\n  creditcard: \"Por favor, escribe un número de tarjeta válido.\",\n  equalTo: \"Por favor, escribe el mismo valor de nuevo.\",\n  accept: \"Por favor, escribe un valor con una extensión aceptada.\",\n  maxlength: $.validator.format(\"Por favor, no escribas más de {0} caracteres.\"),\n  minlength: $.validator.format(\"Por favor, no escribas menos de {0} caracteres.\"),\n  rangelength: $.validator.format(\"Por favor, escribe un valor entre {0} y {1} caracteres.\"),\n  range: $.validator.format(\"Por favor, escribe un valor entre {0} y {1}.\"),\n  max: $.validator.format(\"Por favor, escribe un valor menor o igual a {0}.\"),\n  min: $.validator.format(\"Por favor, escribe un valor mayor o igual a {0}.\")\n});}(jQuery));var $mcj = jQuery.noConflict(true);</script>\n<!--End mc_embed_signup-->"
       }
@@ -863,6 +946,8 @@
      "bloques": [
       {
        "_id": "353c335",
+       "margen": null,
+       "relleno": "0% 4% 0% 4%",
        "tipo": "encabezado",
        "texto": "If you want to know more, click on the button and look at the full presentation",
        "nivel": "h2",
@@ -874,6 +959,8 @@
       },
       {
        "_id": "10aebee",
+       "margen": null,
+       "relleno": null,
        "tipo": "boton",
        "etiqueta": "Presentation",
        "etiquetaHover": "Watch",

@@ -118,7 +118,15 @@ function fondoDe(s) {
 function bloqueDe(w) {
   const s = w.settings || {};
   const t = w.widgetType;
-  const comun = { _id: w.id };
+  /*
+   * `_margin` y `_padding` del widget. Son las claves con guion bajo de Elementor y
+   * son las que SEPARAN unas piezas de otras: sin ellas, las secciones quedan mas
+   * altas que en el original porque falta el aire que el autor puso alrededor de cada
+   * encabezado y cada parrafo. Se emiten en la unidad que declara el original; en `%`
+   * se dejan tal cual, porque CSS tambien resuelve los porcentajes de `margin` contra
+   * el ANCHO del contenedor.
+   */
+  const comun = { _id: w.id, margen: medidas(s, '_margin'), relleno: medidas(s, '_padding') };
 
   if (t === 'heading') {
     return { ...comun, tipo: 'encabezado',
@@ -198,7 +206,20 @@ function bloqueDe(w) {
       imagen: rutaImg(x.item_image), titulo: limpio(x.item_title), texto: limpio(x.item_desc),
       boton: limpio(x.item_button_primary_text),
     }));
-    return { ...comun, tipo: 'sliderJet', items };
+    /*
+     * Los ajustes del carrusel son CONTENIDO a efectos de fidelidad: el alto (400 px,
+     * 300 en tableta, 280 en movil) y los colores de las flechas. Sin ellos habria que
+     * inventarselos.
+     *
+     * EL VELO NO SE EMITE, y no es un olvido: el original DECLARA
+     * `overlay_background_color: #6ec1e4` con `overlay_opacity: 0.1`, pero medido en
+     * su pagina **no pinta ninguna capa de velo** (ni un elemento con fondo, ni un
+     * pseudoelemento, ni un filtro sobre la imagen). El plugin no lo aplica. Pintarlo
+     * porque esta declarado seria anadir sobre la imagen algo que alli no se ve.
+     */
+    return { ...comun, tipo: 'sliderJet', items,
+      alto: num(s.slider_height), altoTableta: num(s.slider_height_tablet), altoMovil: num(s.slider_height_mobile),
+      flechaFondo: s.normal_navigation_bg_color || null, flechaFondoHover: s.hover_navigation_bg_color || null };
   }
   if (t === 'jet-video') {
     return { ...comun, tipo: 'video',
