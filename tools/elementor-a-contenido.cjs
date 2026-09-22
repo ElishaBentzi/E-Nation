@@ -179,6 +179,13 @@ function bloqueDe(w) {
     return { ...comun, tipo: 'lista', items };
   }
   if (t === 'divider') return { ...comun, tipo: 'separador' };
+  /*
+   * El ancla de menu (`menu-anchor`) es solo una MARCA para la navegacion interna:
+   * no pinta nada. Sin este caso caia en `sinMapear` y el marcador de "pendiente"
+   * aparecia como una caja con el texto «menu-anchor» en medio de la pagina, que es
+   * justo lo contrario de lo que busca una marca de diagnostico.
+   */
+  if (t === 'menu-anchor') return { ...comun, tipo: 'ancla' };
   if (t === 'spacer') return { ...comun, tipo: 'espacio', alto: num(s.space) };
   if (t === 'jet-slider') {
     /*

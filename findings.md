@@ -1166,3 +1166,9 @@ Las tarjetas de problemáticas **no se parecen a las mías**. En el original la 
 #### Imágenes que faltaban
 
 La auditoría de rutas encontró **9 imágenes referenciadas sin fichero**, incluida una que era el fondo entero de una sección (`26-background.jpg`). Descargadas del original. Ya no falta ninguna de las 119 que referencian las páginas.
+
+#### Un marcador de diagnóstico que se veía
+
+El widget `menu-anchor` de Elementor es solo una marca para la navegación interna y no pinta nada, pero no tenía caso propio: caía en el cajón de «sin mapear», y ese cajón **se pinta a propósito** como una caja de borde discontinuo con el nombre del widget, para que nada desaparezca en silencio. Resultado: una caja con el texto «menu-anchor» en medio de la página de presentación.
+
+Se vio en una captura, no en el build. La marca cumple su función —hacer visible lo que falta— pero conviene recordar que **todo lo que se pinta se ve**, incluidos los diagnósticos. Corregido con su caso propio.

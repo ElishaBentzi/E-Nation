@@ -4072,9 +4072,7 @@
       },
       {
        "_id": "d375d84",
-       "tipo": "sinMapear",
-       "widget": "menu-anchor",
-       "muestra": "{\"anchor\":\"submit\"}"
+       "tipo": "ancla"
       },
       {
        "_id": "aa1931c",
