@@ -70,6 +70,14 @@ const rutaImg = (v) => {
 };
 const num = (v) => (v && typeof v === 'object' && v.size !== undefined ? v.size : v);
 
+/** Color con alfa, para los velos: `rgba()` a partir de un hex y una opacidad. */
+const conAlfa = (hex, alfa) => {
+  const m = String(hex || '').replace('#', '');
+  if (!/^[0-9a-f]{6}$/i.test(m)) return hex || null;
+  const n = parseInt(m, 16);
+  return `rgba(${(n >> 16) & 255}, ${(n >> 8) & 255}, ${n & 255}, ${alfa})`;
+};
+
 /** Fondo y parallax de un contenedor. Es lo que gobierna el fondo fijo medido. */
 function fondoDe(s) {
   if (!s) return null;
@@ -88,7 +96,21 @@ function fondoDe(s) {
   // Los efectos de movimiento de Elementor se guardan como JSON en `data-settings`
   const mf = s.motion_fx_motion_fx_scrolling || s.motion_fx_translateY_effect;
   if (mf) f.movimiento = { scrolling: !!s.motion_fx_motion_fx_scrolling, velocidadY: s.motion_fx_translateY_speed ?? null };
-  if (s.background_overlay_background === 'classic' && s.background_overlay_color) f.velo = s.background_overlay_color;
+
+  /*
+   * EL VELO LLEVA OPACIDAD, y pintarlo opaco tapa la imagen de fondo entera.
+   *
+   * Elementor guarda el color del velo y su opacidad por separado, y la opacidad
+   * viene con `unit: "px"` y el valor como fraccion (0.62), que es una rareza suya.
+   * Leyendo solo el color, el velo se pintaba a plena opacidad: el fondo con imagen
+   * quedaba convertido en un rectangulo de color plano y NO SE VEIA NINGUNA IMAGEN.
+   * De ahi venia la sensacion de que los fondos no hacian nada: no habia nada que
+   * ver moverse.
+   */
+  if (s.background_overlay_background === 'classic' && s.background_overlay_color) {
+    const alfa = Number(s.background_overlay_opacity?.size ?? 1);
+    f.velo = conAlfa(s.background_overlay_color, Number.isFinite(alfa) ? alfa : 1);
+  }
   return Object.keys(f).length ? f : null;
 }
 
@@ -181,44 +203,115 @@ function bloqueDe(w) {
 }
 
 /**
+ * Medidas de un contenedor (relleno y margen), listas para CSS.
+ *
+ * Elementor las guarda con su unidad. En `%` se emiten tal cual, y eso es correcto
+ * porque CSS tambien resuelve los porcentajes de `padding` contra el ANCHO, igual
+ * que Elementor. Sin esto, todas las secciones recibian el mismo relleno fijo y las
+ * alturas no tenian nada que ver con el original.
+ */
+function medidas(ajustes, prop) {
+  const m = ajustes?.[prop];
+  if (!m || typeof m !== 'object') return null;
+  const u = m.unit === '%' ? '%' : 'px';
+  const v = (x) => (x === undefined || x === null || x === '' ? 0 : parseFloat(x));
+  const [t, r, b, l] = [v(m.top), v(m.right), v(m.bottom), v(m.left)];
+  if (!t && !r && !b && !l) return null;
+  return `${t}${u} ${r}${u} ${b}${u} ${l}${u}`;
+}
+
+/**
+ * COLUMNAS REALES DE UNA SECCION.
+ *
+ * Aqui estaba el fallo mas caro de esta fase. Elementor envuelve las columnas de
+ * verdad dentro de una columna exterior cuando la seccion tiene una sola, y mi
+ * version anterior recorria el arbol empujando cada columna interior como HERMANA de
+ * la exterior. El resultado: secciones con seis o siete columnas donde las primeras
+ * estaban VACIAS y la ultima se llevaba todos los widgets — y todas con ancho 100 %,
+ * asi que una rejilla de catorce tarjetas se pintaba como una pila de 4800 px de alto
+ * contra los 1049 del original.
+ *
+ * La regla es simple: **una columna que solo envuelve a otras columnas no es una
+ * columna, es un envoltorio**, y se baja un nivel. Los widgets pertenecen a la
+ * columna que los contiene directamente.
+ */
+function columnasDe(hijos) {
+  const hojas = [];
+  const visitar = (nodos) => {
+    for (const c of nodos || []) {
+      /*
+       * Un widget suelto (sin columna que lo envuelva) se cuelga de una columna
+       * propia. Descartarlo hacia desaparecer contenido sin ningun error.
+       */
+      if (c.elType === 'widget') {
+        hojas.push({ ancho: 100, bloques: [bloqueDe(c)] });
+        continue;
+      }
+      /*
+       * SECCION INTERNA: Elementor permite meter una seccion dentro de una columna.
+       * Sus columnas suben al nivel de la seccion exterior, que es como se comporta
+       * en pantalla. Filtrar solo por `column` las descartaba enteras — y con ellas
+       * se iban las catorce tarjetas de problematicas de la home.
+       */
+      if (c.elType === 'section' || c.elType === 'container') {
+        const dentro = c.elements || [];
+        const pareceColumna = dentro.length > 0 && dentro.every((h) => h.elType === 'column');
+        if (!pareceColumna) { visitar(dentro); continue; }
+      }
+      if (c.elType !== 'column' && c.elType !== 'container') {
+        if (c.elements) visitar(c.elements);
+        continue;
+      }
+      const dentro = c.elements || [];
+      const subColumnas = dentro.filter((h) => h.elType === 'column' || h.elType === 'container' || h.elType === 'section');
+      const widgets = dentro.filter((h) => h.elType === 'widget');
+      // Una columna que SOLO envuelve a otras columnas no es una columna: es un
+      // envoltorio, y se baja un nivel.
+      if (subColumnas.length && !widgets.length) {
+        visitar(subColumnas);
+        continue;
+      }
+      hojas.push({
+        fondo: fondoDe(c.settings),
+        /*
+         * EL ANCHO DE COLUMNA NO ESTA EN `width`. Elementor lo guarda en
+         * `_column_size` (el reparto base: 100 entera, 50 media, 33 un tercio) y en
+         * `_inline_size` cuando el autor lo afina. Leer `settings.width` devolvia
+         * `undefined` SIEMPRE, asi que todas las columnas quedaban al 100 % y una
+         * rejilla de seis tarjetas se pintaba como seis filas en vez de dos.
+         */
+        ancho: num(c.settings?._inline_size) ?? num(c.settings?._column_size) ?? 100,
+        relleno: medidas(c.settings, 'padding'),
+        bloques: widgets.map(bloqueDe),
+      });
+      if (subColumnas.length) visitar(subColumnas);
+    }
+  };
+  visitar(hijos);
+  return hojas;
+}
+
+/**
  * Recorre el arbol conservando la jerarquia: seccion -> columna -> widget.
- * La jerarquia importa porque el fondo y el parallax son de la SECCION, y las
- * columnas reparten el ancho.
+ * La jerarquia importa porque el fondo es de la SECCION y las columnas reparten el
+ * ancho.
  */
 function recorrer(nodos, acumulador) {
   for (const n of nodos || []) {
-    if (n.elType === 'section') {
-      const seccion = { _id: n.id, fondo: fondoDe(n.settings), columnas: [] };
-      for (const col of n.elements || []) {
-        if (col.elType !== 'column') continue;
-        const columnas = { fondo: fondoDe(col.settings), ancho: num(col.settings?.width) ?? 100, bloques: [] };
-        const visitar = (hijos) => {
-          for (const h of hijos || []) {
-            if (h.elType === 'widget') columnas.bloques.push(bloqueDe(h));
-            else if (h.elType === 'column') {
-              // Columnas interiores: se aplanan, anotando su ancho
-              const interior = { fondo: fondoDe(h.settings), ancho: num(h.settings?.width) ?? 100, bloques: [] };
-              visitar(h.elements);
-              seccion.columnas.push(interior);
-            } else if (h.elements) visitar(h.elements);
-          }
-        };
-        visitar(col.elements);
-        seccion.columnas.push(columnas);
-      }
-      acumulador.push(seccion);
-    } else if (n.elType === 'container') {
-      // Elementor nuevo: contenedores flex en lugar de secciones
-      const seccion = { _id: n.id, contenedor: true, fondo: fondoDe(n.settings), columnas: [{ ancho: 100, bloques: [] }] };
-      const visitar = (hijos) => {
-        for (const h of hijos || []) {
-          if (h.elType === 'widget') seccion.columnas[0].bloques.push(bloqueDe(h));
-          else if (h.elements) visitar(h.elements);
-        }
+    if (n.elType === 'section' || n.elType === 'container') {
+      const seccion = {
+        _id: n.id,
+        ...(n.elType === 'container' ? { contenedor: true } : {}),
+        fondo: fondoDe(n.settings),
+        relleno: medidas(n.settings, 'padding'),
+        margen: medidas(n.settings, 'margin'),
+        estirada: n.settings?.stretch_section === 'section-stretched' || undefined,
+        columnas: columnasDe(n.elements),
       };
-      visitar(n.elements);
       acumulador.push(seccion);
-    } else if (n.elements) recorrer(n.elements, acumulador);
+    } else if (n.elements) {
+      recorrer(n.elements, acumulador);
+    }
   }
 }
 

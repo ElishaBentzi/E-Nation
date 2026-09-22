@@ -41,3 +41,20 @@ export const PRIMARY_HOST = 'docs.unitygenerator.com';
  * y el robots.txt pasa a permitir y a anunciar el sitemap.
  */
 export const INDEXABLE = false;
+
+/**
+ * EL SITIO PRINCIPAL, para el enlace de vuelta.
+ *
+ * Los docs y el sitio son dos aplicaciones con dos dominios distintos, y sin este
+ * enlace la constitucion se siente como otro sitio: se llega desde E-Nation pero no
+ * hay camino de regreso. Es un problema de navegacion real, no cosmetico, y se noto
+ * al usarlo.
+ *
+ * Va aqui, junto al resto de los dominios, porque este es el unico archivo que hay
+ * que tocar al pasar del ensayo al dominio real.
+ *
+ * OJO: tiene que coincidir con `SITE` de `astro-site/site.config.mjs`. Si cambia uno
+ * y no el otro, el enlace de vuelta manda al host equivocado — y al ser un enlace
+ * externo no daria ningun error, solo un salto a un sitio que no toca.
+ */
+export const SITIO_PRINCIPAL = 'https://web.unitygenerator.com';

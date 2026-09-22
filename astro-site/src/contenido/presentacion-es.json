@@ -9,12 +9,16 @@
     "posicion": null,
     "repetir": "no-repeat",
     "attachment": "fixed",
-    "velo": "#234965"
+    "velo": "rgba(35, 73, 101, 0.58)"
    },
+   "relleno": null,
+   "margen": "0% 0% -2% 0%",
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 13.983,
+     "relleno": null,
      "bloques": [
       {
        "_id": "9dba477",
@@ -26,12 +30,8 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
-     "bloques": []
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
+     "ancho": 72.035,
+     "relleno": null,
      "bloques": [
       {
        "_id": "98f4c7d",
@@ -71,7 +71,14 @@
        "color": "#ffffff",
        "tamanoEm": 1.6,
        "grosor": "600"
-      },
+      }
+     ]
+    },
+    {
+     "fondo": null,
+     "ancho": 100,
+     "relleno": null,
+     "bloques": [
       {
        "_id": "72ccda1",
        "tipo": "imagen",
@@ -82,7 +89,8 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 13.978,
+     "relleno": null,
      "bloques": [
       {
        "_id": "4d506de",
@@ -103,20 +111,20 @@
     "repetir": "no-repeat",
     "attachment": null
    },
+   "relleno": "15% 0% 15% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 10.029,
+     "relleno": null,
      "bloques": []
     },
     {
      "fondo": null,
      "ancho": 100,
-     "bloques": []
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
+     "relleno": null,
      "bloques": [
       {
        "_id": "7285aa9",
@@ -134,7 +142,8 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 10.025,
+     "relleno": null,
      "bloques": []
     }
    ]
@@ -147,37 +156,16 @@
     "posicion": "top center",
     "repetir": "no-repeat",
     "attachment": "fixed",
-    "velo": "#234965"
+    "velo": "rgba(35, 73, 101, 0.58)"
    },
+   "relleno": "6% 0% 0% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
      "ancho": 100,
-     "bloques": []
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
-     "bloques": []
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
-     "bloques": []
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
-     "bloques": []
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
-     "bloques": []
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
+     "relleno": null,
      "bloques": [
       {
        "_id": "333628c",
@@ -189,76 +177,6 @@
        "color": "#ffffff",
        "tamanoEm": 2.5,
        "grosor": "600"
-      },
-      {
-       "_id": "73704ed",
-       "tipo": "banner",
-       "imagen": "/images/2018/10/6-change-base.jpg",
-       "titulo": "Imposición",
-       "texto": "Forzada de malas decisiones del gobierno.",
-       "fondo": "#356193",
-       "fondoHover": "#ff7100",
-       "colorTitulo": "#ffffff",
-       "colorTexto": "#ffffff",
-       "efecto": "roxy",
-       "clases": "reborde_negro_sombra",
-       "tamanoTituloEm": 2.5
-      },
-      {
-       "_id": "9375f56",
-       "tipo": "banner",
-       "imagen": "/images/2018/10/ini-banner-burocracia.jpg",
-       "titulo": "Burocracias",
-       "texto": "Burocracias que entorpecen tu trabajo.",
-       "fondo": "#356193",
-       "fondoHover": "#ff7100",
-       "colorTitulo": "#ffffff",
-       "colorTexto": "#ffffff",
-       "efecto": "roxy",
-       "clases": "reborde_negro_sombra",
-       "tamanoTituloEm": 2.5
-      },
-      {
-       "_id": "430cf75",
-       "tipo": "banner",
-       "imagen": "/images/2020/12/Riesgo-de-quiebra.jpg",
-       "titulo": "Mala gestión",
-       "texto": "Proyectos mal gestionados que no solucionan nada.",
-       "fondo": "#356193",
-       "fondoHover": "#ff7100",
-       "colorTitulo": "#ffffff",
-       "colorTexto": "#ffffff",
-       "efecto": "roxy",
-       "clases": "reborde_negro_sombra",
-       "tamanoTituloEm": 2.5
-      },
-      {
-       "_id": "2c2f39a",
-       "tipo": "banner",
-       "imagen": "/images/2018/10/problem-loss-savings.jpg",
-       "titulo": "Gastos Innecesarios",
-       "texto": "Guerras y material bélico carísimos e innecesarios.",
-       "fondo": "#356193",
-       "fondoHover": "#ff7100",
-       "colorTitulo": "#ffffff",
-       "colorTexto": "#ffffff",
-       "efecto": "roxy",
-       "clases": "reborde_negro_sombra",
-       "tamanoTituloEm": 2.5
-      },
-      {
-       "_id": "700c0b1",
-       "tipo": "banner",
-       "imagen": "/images/2018/10/problem-police-state-1.jpg",
-       "titulo": "Estado Policial",
-       "texto": "Pagando para que te vigilen a tí, pero no a ellos.",
-       "fondo": "#356193",
-       "fondoHover": "#ff7100",
-       "colorTitulo": "#ffffff",
-       "colorTexto": "#ffffff",
-       "efecto": "roxy",
-       "clases": "reborde_negro_sombra",
-       "tamanoTituloEm": 2.5
       },
       {
        "_id": "eb0f090",
@@ -290,6 +208,111 @@
        "alt": ""
       }
      ]
+    },
+    {
+     "fondo": null,
+     "ancho": 50,
+     "relleno": null,
+     "bloques": [
+      {
+       "_id": "73704ed",
+       "tipo": "banner",
+       "imagen": "/images/2018/10/6-change-base.jpg",
+       "titulo": "Imposición",
+       "texto": "Forzada de malas decisiones del gobierno.",
+       "fondo": "#356193",
+       "fondoHover": "#ff7100",
+       "colorTitulo": "#ffffff",
+       "colorTexto": "#ffffff",
+       "efecto": "roxy",
+       "clases": "reborde_negro_sombra",
+       "tamanoTituloEm": 2.5
+      }
+     ]
+    },
+    {
+     "fondo": null,
+     "ancho": 50,
+     "relleno": null,
+     "bloques": [
+      {
+       "_id": "9375f56",
+       "tipo": "banner",
+       "imagen": "/images/2018/10/ini-banner-burocracia.jpg",
+       "titulo": "Burocracias",
+       "texto": "Burocracias que entorpecen tu trabajo.",
+       "fondo": "#356193",
+       "fondoHover": "#ff7100",
+       "colorTitulo": "#ffffff",
+       "colorTexto": "#ffffff",
+       "efecto": "roxy",
+       "clases": "reborde_negro_sombra",
+       "tamanoTituloEm": 2.5
+      }
+     ]
+    },
+    {
+     "fondo": null,
+     "ancho": 50,
+     "relleno": null,
+     "bloques": [
+      {
+       "_id": "430cf75",
+       "tipo": "banner",
+       "imagen": "/images/2020/12/Riesgo-de-quiebra.jpg",
+       "titulo": "Mala gestión",
+       "texto": "Proyectos mal gestionados que no solucionan nada.",
+       "fondo": "#356193",
+       "fondoHover": "#ff7100",
+       "colorTitulo": "#ffffff",
+       "colorTexto": "#ffffff",
+       "efecto": "roxy",
+       "clases": "reborde_negro_sombra",
+       "tamanoTituloEm": 2.5
+      }
+     ]
+    },
+    {
+     "fondo": null,
+     "ancho": 50,
+     "relleno": null,
+     "bloques": [
+      {
+       "_id": "2c2f39a",
+       "tipo": "banner",
+       "imagen": "/images/2018/10/problem-loss-savings.jpg",
+       "titulo": "Gastos Innecesarios",
+       "texto": "Guerras y material bélico carísimos e innecesarios.",
+       "fondo": "#356193",
+       "fondoHover": "#ff7100",
+       "colorTitulo": "#ffffff",
+       "colorTexto": "#ffffff",
+       "efecto": "roxy",
+       "clases": "reborde_negro_sombra",
+       "tamanoTituloEm": 2.5
+      }
+     ]
+    },
+    {
+     "fondo": null,
+     "ancho": 50,
+     "relleno": null,
+     "bloques": [
+      {
+       "_id": "700c0b1",
+       "tipo": "banner",
+       "imagen": "/images/2018/10/problem-police-state-1.jpg",
+       "titulo": "Estado Policial",
+       "texto": "Pagando para que te vigilen a tí, pero no a ellos.",
+       "fondo": "#356193",
+       "fondoHover": "#ff7100",
+       "colorTitulo": "#ffffff",
+       "colorTexto": "#ffffff",
+       "efecto": "roxy",
+       "clases": "reborde_negro_sombra",
+       "tamanoTituloEm": 2.5
+      }
+     ]
     }
    ]
   },
@@ -302,10 +325,14 @@
     "repetir": "no-repeat",
     "attachment": null
    },
+   "relleno": "15% 0% 15% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 30,
+     "relleno": null,
      "bloques": [
       {
        "_id": "5263c91",
@@ -317,7 +344,8 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 70,
+     "relleno": "2% 0% 0% 0%",
      "bloques": [
       {
        "_id": "6b97f80",
@@ -354,22 +382,22 @@
     "posicion": "center left",
     "repetir": "no-repeat",
     "attachment": "fixed",
-    "velo": "#234965"
+    "velo": "rgba(35, 73, 101, 0.58)"
    },
+   "relleno": "5% 0% 0% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 9.991,
+     "relleno": null,
      "bloques": []
     },
     {
      "fondo": null,
      "ancho": 100,
-     "bloques": []
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
+     "relleno": null,
      "bloques": [
       {
        "_id": "fdde934",
@@ -387,7 +415,8 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 11.579,
+     "relleno": null,
      "bloques": [
       {
        "_id": "f3c3395",
@@ -408,25 +437,20 @@
     "repetir": "no-repeat",
     "attachment": null
    },
+   "relleno": "5% 0% 5% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 13.97,
+     "relleno": null,
      "bloques": []
     },
     {
      "fondo": null,
-     "ancho": 100,
-     "bloques": []
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
-     "bloques": []
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
+     "ancho": 72.06,
+     "relleno": null,
      "bloques": [
       {
        "_id": "034e84e",
@@ -482,13 +506,27 @@
        "color": "#052743",
        "tamanoEm": 1.8,
        "grosor": "600"
-      },
+      }
+     ]
+    },
+    {
+     "fondo": null,
+     "ancho": 50,
+     "relleno": null,
+     "bloques": [
       {
        "_id": "9a0d9a0",
        "tipo": "imagen",
        "imagen": "/images/2018/08/7-The-Hill.png",
        "alt": ""
-      },
+      }
+     ]
+    },
+    {
+     "fondo": null,
+     "ancho": 50,
+     "relleno": null,
+     "bloques": [
       {
        "_id": "3b97f2b",
        "tipo": "imagen",
@@ -499,7 +537,8 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 13.966,
+     "relleno": null,
      "bloques": []
     }
    ]
@@ -512,42 +551,22 @@
     "posicion": "center center",
     "repetir": "no-repeat",
     "attachment": "fixed",
-    "velo": "#234965"
+    "velo": "rgba(35, 73, 101, 0.58)"
    },
+   "relleno": "5% 0% 0% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 13.97,
+     "relleno": null,
      "bloques": []
     },
     {
      "fondo": null,
-     "ancho": 100,
-     "bloques": []
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
-     "bloques": []
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
-     "bloques": []
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
-     "bloques": []
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
-     "bloques": []
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
+     "ancho": 72.046,
+     "relleno": null,
      "bloques": [
       {
        "_id": "c92991e",
@@ -628,36 +647,6 @@
        "grosor": "600"
       },
       {
-       "_id": "5025186",
-       "tipo": "imagen",
-       "imagen": "/images/2018/08/8-Zero-Hedge.png",
-       "alt": ""
-      },
-      {
-       "_id": "3e0b329",
-       "tipo": "imagen",
-       "imagen": "/images/2018/08/8-El-diario.png",
-       "alt": ""
-      },
-      {
-       "_id": "daf0b0a",
-       "tipo": "imagen",
-       "imagen": "/images/2018/08/8-WSJ-Logo.png",
-       "alt": ""
-      },
-      {
-       "_id": "b9be594",
-       "tipo": "imagen",
-       "imagen": "/images/2018/08/8-Expansión-MX.png",
-       "alt": ""
-      },
-      {
-       "_id": "70e8ddc",
-       "tipo": "imagen",
-       "imagen": "/images/2018/08/8-Wired.png",
-       "alt": ""
-      },
-      {
        "_id": "03e2e5c",
        "tipo": "imagen",
        "imagen": "/images/2018/08/0-bottom.png",
@@ -667,7 +656,73 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 17.987,
+     "relleno": null,
+     "bloques": [
+      {
+       "_id": "5025186",
+       "tipo": "imagen",
+       "imagen": "/images/2018/08/8-Zero-Hedge.png",
+       "alt": ""
+      }
+     ]
+    },
+    {
+     "fondo": null,
+     "ancho": 26.032,
+     "relleno": null,
+     "bloques": [
+      {
+       "_id": "3e0b329",
+       "tipo": "imagen",
+       "imagen": "/images/2018/08/8-El-diario.png",
+       "alt": ""
+      }
+     ]
+    },
+    {
+     "fondo": null,
+     "ancho": 15.094,
+     "relleno": null,
+     "bloques": [
+      {
+       "_id": "daf0b0a",
+       "tipo": "imagen",
+       "imagen": "/images/2018/08/8-WSJ-Logo.png",
+       "alt": ""
+      }
+     ]
+    },
+    {
+     "fondo": null,
+     "ancho": 14.717,
+     "relleno": null,
+     "bloques": [
+      {
+       "_id": "b9be594",
+       "tipo": "imagen",
+       "imagen": "/images/2018/08/8-Expansión-MX.png",
+       "alt": ""
+      }
+     ]
+    },
+    {
+     "fondo": null,
+     "ancho": 26.14,
+     "relleno": null,
+     "bloques": [
+      {
+       "_id": "70e8ddc",
+       "tipo": "imagen",
+       "imagen": "/images/2018/08/8-Wired.png",
+       "alt": ""
+      }
+     ]
+    },
+    {
+     "fondo": null,
+     "ancho": 13.98,
+     "relleno": null,
      "bloques": []
     }
    ]
@@ -681,30 +736,20 @@
     "repetir": "no-repeat",
     "attachment": null
    },
+   "relleno": "5% 0% 5% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 10,
+     "relleno": null,
      "bloques": []
     },
     {
      "fondo": null,
-     "ancho": 100,
-     "bloques": []
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
-     "bloques": []
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
-     "bloques": []
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
+     "ancho": 80,
+     "relleno": null,
      "bloques": [
       {
        "_id": "20f07cd",
@@ -727,7 +772,14 @@
        "color": "#052743",
        "tamanoEm": 2.5,
        "grosor": "600"
-      },
+      }
+     ]
+    },
+    {
+     "fondo": null,
+     "ancho": 33,
+     "relleno": null,
+     "bloques": [
       {
        "_id": "ecb68c2",
        "tipo": "caja",
@@ -742,7 +794,14 @@
        "alto": 400,
        "efecto": "jet-box-effect-7",
        "enlace": "https://www.youtube.com/watch?v=P3GdyaVQ20I"
-      },
+      }
+     ]
+    },
+    {
+     "fondo": null,
+     "ancho": 33,
+     "relleno": null,
+     "bloques": [
       {
        "_id": "e8b68c1",
        "tipo": "caja",
@@ -757,7 +816,14 @@
        "alto": 400,
        "efecto": "jet-box-effect-7",
        "enlace": "https://www.youtube.com/watch?v=btF6nKHo2i0"
-      },
+      }
+     ]
+    },
+    {
+     "fondo": null,
+     "ancho": 33,
+     "relleno": null,
+     "bloques": [
       {
        "_id": "90623bd",
        "tipo": "caja",
@@ -777,7 +843,8 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 9.996,
+     "relleno": null,
      "bloques": []
     }
    ]
@@ -790,17 +857,22 @@
     "posicion": null,
     "repetir": "no-repeat",
     "attachment": null,
-    "velo": "#176313"
+    "velo": "rgba(23, 99, 19, 0.45)"
    },
+   "relleno": "5% 0% 5% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 10,
+     "relleno": null,
      "bloques": []
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 80,
+     "relleno": null,
      "bloques": [
       {
        "_id": "72b62b3",
@@ -871,7 +943,8 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 9.996,
+     "relleno": null,
      "bloques": []
     }
    ]
@@ -884,27 +957,22 @@
     "posicion": "top center",
     "repetir": "no-repeat",
     "attachment": "fixed",
-    "velo": "#234965"
+    "velo": "rgba(35, 73, 101, 0.58)"
    },
+   "relleno": "5% 0% 0% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 10,
+     "relleno": null,
      "bloques": []
     },
     {
      "fondo": null,
-     "ancho": 100,
-     "bloques": []
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
-     "bloques": []
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
+     "ancho": 80,
+     "relleno": null,
      "bloques": [
       {
        "_id": "acc2f8f",
@@ -917,6 +985,25 @@
        "tamanoEm": 2.5,
        "grosor": "600"
       },
+      {
+       "_id": "86b8323",
+       "tipo": "imagen",
+       "imagen": "/images/2018/09/10-youtube.png",
+       "alt": ""
+      },
+      {
+       "_id": "fe01d3f",
+       "tipo": "imagen",
+       "imagen": "/images/2018/08/0-bottom.png",
+       "alt": ""
+      }
+     ]
+    },
+    {
+     "fondo": null,
+     "ancho": 50.004,
+     "relleno": null,
+     "bloques": [
       {
        "_id": "7cd7a13",
        "tipo": "encabezado",
@@ -948,7 +1035,14 @@
        "etiquetaHover": "IR",
        "enlace": "https://www.youtube.com/watch?v=rStL7niR7gs",
        "icono": ""
-      },
+      }
+     ]
+    },
+    {
+     "fondo": null,
+     "ancho": 50,
+     "relleno": null,
+     "bloques": [
       {
        "_id": "82c0dfb",
        "tipo": "video",
@@ -956,24 +1050,13 @@
        "vimeo": "https://vimeo.com/235215203",
        "miniatura": "/images/2018/09/14-Piramid-Power.jpg",
        "aspecto": "4-3"
-      },
-      {
-       "_id": "86b8323",
-       "tipo": "imagen",
-       "imagen": "/images/2018/09/10-youtube.png",
-       "alt": ""
-      },
-      {
-       "_id": "fe01d3f",
-       "tipo": "imagen",
-       "imagen": "/images/2018/08/0-bottom.png",
-       "alt": ""
       }
      ]
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 9.996,
+     "relleno": null,
      "bloques": []
     }
    ]
@@ -987,20 +1070,20 @@
     "repetir": "no-repeat",
     "attachment": null
    },
+   "relleno": "5% 0% 4% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 10,
+     "relleno": null,
      "bloques": []
     },
     {
      "fondo": null,
      "ancho": 100,
-     "bloques": []
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
+     "relleno": null,
      "bloques": [
       {
        "_id": "42e7738",
@@ -1047,7 +1130,8 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 9.996,
+     "relleno": null,
      "bloques": []
     }
    ]
@@ -1060,17 +1144,22 @@
     "posicion": "center center",
     "repetir": "no-repeat",
     "attachment": "fixed",
-    "velo": "#234965"
+    "velo": "rgba(35, 73, 101, 0.58)"
    },
+   "relleno": "5% 0% 5% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 13.97,
+     "relleno": null,
      "bloques": []
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 72.018,
+     "relleno": null,
      "bloques": [
       {
        "_id": "65d682e",
@@ -1115,7 +1204,8 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 14.008,
+     "relleno": null,
      "bloques": []
     }
    ]
@@ -1129,35 +1219,20 @@
     "repetir": "no-repeat",
     "attachment": null
    },
+   "relleno": "5% 0% 0% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 10,
+     "relleno": null,
      "bloques": []
     },
     {
      "fondo": null,
-     "ancho": 100,
-     "bloques": []
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
-     "bloques": []
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
-     "bloques": []
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
-     "bloques": []
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
+     "ancho": 80,
+     "relleno": null,
      "bloques": [
       {
        "_id": "d29c54f",
@@ -1169,13 +1244,27 @@
        "color": "#ffffff",
        "tamanoEm": 2.5,
        "grosor": "600"
-      },
+      }
+     ]
+    },
+    {
+     "fondo": null,
+     "ancho": 20.134,
+     "relleno": null,
+     "bloques": [
       {
        "_id": "9aa0f41",
        "tipo": "imagen",
        "imagen": "/images/2018/08/12-michael-krieger-1.png",
        "alt": ""
-      },
+      }
+     ]
+    },
+    {
+     "fondo": null,
+     "ancho": 79.87,
+     "relleno": null,
+     "bloques": [
       {
        "_id": "f44fd2f",
        "tipo": "encabezado",
@@ -1211,13 +1300,27 @@
        "tamanoEm": 1.2,
        "grosor": "600",
        "interlineadoEm": 1.2
-      },
+      }
+     ]
+    },
+    {
+     "fondo": null,
+     "ancho": 20.134,
+     "relleno": null,
+     "bloques": [
       {
        "_id": "8198219",
        "tipo": "imagen",
        "imagen": "/images/2018/08/12-geoff-mulgan.png",
        "alt": ""
-      },
+      }
+     ]
+    },
+    {
+     "fondo": null,
+     "ancho": 79.87,
+     "relleno": null,
+     "bloques": [
       {
        "_id": "b79d662",
        "tipo": "encabezado",
@@ -1258,7 +1361,8 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 9.996,
+     "relleno": null,
      "bloques": []
     }
    ]
@@ -1271,17 +1375,22 @@
     "posicion": "center center",
     "repetir": "no-repeat",
     "attachment": "fixed",
-    "velo": "#234965"
+    "velo": "rgba(35, 73, 101, 0.58)"
    },
+   "relleno": "5% 0% 5% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 13.97,
+     "relleno": null,
      "bloques": []
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 72.018,
+     "relleno": null,
      "bloques": [
       {
        "_id": "edd2fb5",
@@ -1337,7 +1446,8 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 14.008,
+     "relleno": null,
      "bloques": []
     }
    ]
@@ -1351,20 +1461,33 @@
     "repetir": "no-repeat",
     "attachment": null
    },
+   "relleno": "5% 0% 5% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 10,
+     "relleno": null,
      "bloques": []
     },
     {
      "fondo": null,
-     "ancho": 100,
-     "bloques": []
+     "ancho": 79.996,
+     "relleno": null,
+     "bloques": [
+      {
+       "_id": "ae9fd4a",
+       "tipo": "imagen",
+       "imagen": "/images/2018/09/15-Forbes-Logo.png",
+       "alt": ""
+      }
+     ]
     },
     {
      "fondo": null,
      "ancho": 100,
+     "relleno": null,
      "bloques": [
       {
        "_id": "52e47b6",
@@ -1418,18 +1541,13 @@
        "tamanoEm": 1.2,
        "grosor": "600",
        "interlineadoEm": 1.2
-      },
-      {
-       "_id": "ae9fd4a",
-       "tipo": "imagen",
-       "imagen": "/images/2018/09/15-Forbes-Logo.png",
-       "alt": ""
       }
      ]
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 10,
+     "relleno": null,
      "bloques": []
     }
    ]
@@ -1442,17 +1560,22 @@
     "posicion": "center center",
     "repetir": "no-repeat",
     "attachment": "fixed",
-    "velo": "#234965"
+    "velo": "rgba(35, 73, 101, 0.58)"
    },
+   "relleno": "5% 0% 0% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 14,
+     "relleno": null,
      "bloques": []
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 71.996,
+     "relleno": null,
      "bloques": [
       {
        "_id": "f5226e3",
@@ -1514,7 +1637,8 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 14,
+     "relleno": null,
      "bloques": []
     }
    ]
@@ -1528,20 +1652,20 @@
     "repetir": "no-repeat",
     "attachment": null
    },
+   "relleno": "5% 0% 5% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 9.991,
+     "relleno": null,
      "bloques": []
     },
     {
      "fondo": null,
      "ancho": 100,
-     "bloques": []
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
+     "relleno": null,
      "bloques": [
       {
        "_id": "7738a4d",
@@ -1600,7 +1724,8 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 10.005,
+     "relleno": null,
      "bloques": []
     }
    ]
@@ -1613,27 +1738,22 @@
     "posicion": "center center",
     "repetir": "no-repeat",
     "attachment": "fixed",
-    "velo": "#234965"
+    "velo": "rgba(35, 73, 101, 0.58)"
    },
+   "relleno": "5% 0% 0% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 10,
+     "relleno": null,
      "bloques": []
     },
     {
      "fondo": null,
-     "ancho": 100,
-     "bloques": []
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
-     "bloques": []
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
+     "ancho": 80,
+     "relleno": null,
      "bloques": [
       {
        "_id": "21a8706",
@@ -1658,34 +1778,6 @@
        "grosor": "600"
       },
       {
-       "_id": "e203d12",
-       "tipo": "banner",
-       "imagen": "/images/2018/10/family-banner-women.jpg",
-       "titulo": "Mujeres",
-       "texto": "La competencia por el trabajo con los hombres no les está dando la felicidad prometida a las mujeres. Los hombres no quieren compromisos con las mujeres, ya que el 80% de los divorcios son iniciados por mujeres, y los hombres pueden perder el 50% de sus activos.",
-       "fondo": "#356193",
-       "fondoHover": "#ff7100",
-       "colorTitulo": "#ffffff",
-       "colorTexto": "#ffffff",
-       "efecto": "roxy",
-       "clases": "reborde_negro_sombra",
-       "tamanoTituloEm": 3
-      },
-      {
-       "_id": "b4b4d94",
-       "tipo": "banner",
-       "imagen": "/images/2018/10/family-banner-men.jpg",
-       "titulo": "Hombres",
-       "texto": "Sin familia, aumenta la violencia y el abuso infantil, ya que los hombres dirigen su energía en competir con otros hombres por sexo, en vez de dirigirla hacia la productividad para mantener a su familia.",
-       "fondo": "#356193",
-       "fondoHover": "#ff7100",
-       "colorTitulo": "#ffffff",
-       "colorTexto": "#ffffff",
-       "efecto": "roxy",
-       "clases": "reborde_negro_sombra",
-       "tamanoTituloEm": 3
-      },
-      {
        "_id": "d84847f",
        "tipo": "encabezado",
        "texto": "Hombres y mujeres se están usando mutuamente solo por sexo, sin ningún tipo de compromiso, lo cual afirma aún más las sensaciones de depresión y ansiedad y el sentimiento de estar siendo usado. Las parejas tienen menos oportunidades económicas, para asentarse y tener hijos.",
@@ -1706,7 +1798,50 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 50,
+     "relleno": null,
+     "bloques": [
+      {
+       "_id": "e203d12",
+       "tipo": "banner",
+       "imagen": "/images/2018/10/family-banner-women.jpg",
+       "titulo": "Mujeres",
+       "texto": "La competencia por el trabajo con los hombres no les está dando la felicidad prometida a las mujeres. Los hombres no quieren compromisos con las mujeres, ya que el 80% de los divorcios son iniciados por mujeres, y los hombres pueden perder el 50% de sus activos.",
+       "fondo": "#356193",
+       "fondoHover": "#ff7100",
+       "colorTitulo": "#ffffff",
+       "colorTexto": "#ffffff",
+       "efecto": "roxy",
+       "clases": "reborde_negro_sombra",
+       "tamanoTituloEm": 3
+      }
+     ]
+    },
+    {
+     "fondo": null,
+     "ancho": 50,
+     "relleno": null,
+     "bloques": [
+      {
+       "_id": "b4b4d94",
+       "tipo": "banner",
+       "imagen": "/images/2018/10/family-banner-men.jpg",
+       "titulo": "Hombres",
+       "texto": "Sin familia, aumenta la violencia y el abuso infantil, ya que los hombres dirigen su energía en competir con otros hombres por sexo, en vez de dirigirla hacia la productividad para mantener a su familia.",
+       "fondo": "#356193",
+       "fondoHover": "#ff7100",
+       "colorTitulo": "#ffffff",
+       "colorTexto": "#ffffff",
+       "efecto": "roxy",
+       "clases": "reborde_negro_sombra",
+       "tamanoTituloEm": 3
+      }
+     ]
+    },
+    {
+     "fondo": null,
+     "ancho": 9.996,
+     "relleno": null,
      "bloques": []
     }
    ]
@@ -1720,10 +1855,14 @@
     "repetir": "no-repeat",
     "attachment": null
    },
+   "relleno": "5% 0% 5% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 60,
+     "relleno": "0% 2% 0% 0%",
      "bloques": [
       {
        "_id": "4b5f54b",
@@ -1752,7 +1891,8 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 40,
+     "relleno": null,
      "bloques": [
       {
        "_id": "bf9e534",
@@ -1780,17 +1920,22 @@
     "posicion": "center center",
     "repetir": "no-repeat",
     "attachment": "fixed",
-    "velo": "#234965"
+    "velo": "rgba(35, 73, 101, 0.58)"
    },
+   "relleno": "5% 0% 0% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 10,
+     "relleno": null,
      "bloques": []
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 78.324,
+     "relleno": null,
      "bloques": [
       {
        "_id": "fd6d50e",
@@ -1818,7 +1963,8 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 11.672,
+     "relleno": null,
      "bloques": [
       {
        "_id": "2959bab",
@@ -1838,12 +1984,16 @@
     "posicion": "center right",
     "repetir": "no-repeat",
     "attachment": null,
-    "velo": "#ffffff"
+    "velo": "rgba(255, 255, 255, 0.3)"
    },
+   "relleno": "5% 0% 5% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 40,
+     "relleno": null,
      "bloques": [
       {
        "_id": "e68e1e1",
@@ -1855,7 +2005,8 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 60,
+     "relleno": null,
      "bloques": [
       {
        "_id": "d8d6cdf",
@@ -1904,17 +2055,22 @@
     "posicion": "center center",
     "repetir": "no-repeat",
     "attachment": "fixed",
-    "velo": "#234965"
+    "velo": "rgba(35, 73, 101, 0.58)"
    },
+   "relleno": "5% 0% 5% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 10,
+     "relleno": null,
      "bloques": []
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 78.324,
+     "relleno": null,
      "bloques": [
       {
        "_id": "a6d2af7",
@@ -1942,7 +2098,8 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 11.672,
+     "relleno": null,
      "bloques": [
       {
        "_id": "e0b904a",
@@ -1963,20 +2120,20 @@
     "repetir": "no-repeat",
     "attachment": null
    },
+   "relleno": "6% 0% 6% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 9.991,
+     "relleno": null,
      "bloques": []
     },
     {
      "fondo": null,
      "ancho": 100,
-     "bloques": []
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
+     "relleno": null,
      "bloques": [
       {
        "_id": "0706d80",
@@ -2006,7 +2163,8 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 11.579,
+     "relleno": null,
      "bloques": []
     }
    ]
@@ -2019,17 +2177,22 @@
     "posicion": "center center",
     "repetir": "no-repeat",
     "attachment": "fixed",
-    "velo": "#234965"
+    "velo": "rgba(35, 73, 101, 0.58)"
    },
+   "relleno": "5% 0% 0% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 13.97,
+     "relleno": null,
      "bloques": []
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 72.018,
+     "relleno": null,
      "bloques": [
       {
        "_id": "e07d2cf",
@@ -2082,7 +2245,8 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 14.008,
+     "relleno": null,
      "bloques": []
     }
    ]
@@ -2096,20 +2260,20 @@
     "repetir": "no-repeat",
     "attachment": null
    },
+   "relleno": "5% 0% 5% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 9.991,
+     "relleno": null,
      "bloques": []
     },
     {
      "fondo": null,
      "ancho": 100,
-     "bloques": []
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
+     "relleno": null,
      "bloques": [
       {
        "_id": "616d9b1",
@@ -2145,7 +2309,8 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 10.005,
+     "relleno": null,
      "bloques": []
     }
    ]
@@ -2158,17 +2323,22 @@
     "posicion": "center center",
     "repetir": "no-repeat",
     "attachment": "fixed",
-    "velo": "#234965"
+    "velo": "rgba(35, 73, 101, 0.58)"
    },
+   "relleno": "5% 0% 0% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 13.97,
+     "relleno": null,
      "bloques": []
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 72.018,
+     "relleno": null,
      "bloques": [
       {
        "_id": "6f87e1b",
@@ -2230,7 +2400,8 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 14.008,
+     "relleno": null,
      "bloques": []
     }
    ]
@@ -2244,20 +2415,20 @@
     "repetir": "no-repeat",
     "attachment": null
    },
+   "relleno": "5% 0% 5% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 10,
+     "relleno": null,
      "bloques": []
     },
     {
      "fondo": null,
      "ancho": 100,
-     "bloques": []
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
+     "relleno": null,
      "bloques": [
       {
        "_id": "a8b8c03",
@@ -2293,7 +2464,8 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 10,
+     "relleno": null,
      "bloques": []
     }
    ]
@@ -2306,17 +2478,22 @@
     "posicion": "center center",
     "repetir": "no-repeat",
     "attachment": "fixed",
-    "velo": "#234965"
+    "velo": "rgba(35, 73, 101, 0.58)"
    },
+   "relleno": "5% 0% 0% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 13.97,
+     "relleno": null,
      "bloques": []
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 72.018,
+     "relleno": null,
      "bloques": [
       {
        "_id": "6da52e4",
@@ -2378,7 +2555,8 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 14.008,
+     "relleno": null,
      "bloques": []
     }
    ]
@@ -2392,15 +2570,20 @@
     "repetir": "no-repeat",
     "attachment": null
    },
+   "relleno": "5% 0% 5% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 14,
+     "relleno": null,
      "bloques": []
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 71.996,
+     "relleno": null,
      "bloques": [
       {
        "_id": "ecc7d0e",
@@ -2429,7 +2612,8 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 14,
+     "relleno": null,
      "bloques": []
     }
    ]
@@ -2442,17 +2626,22 @@
     "posicion": "center right",
     "repetir": "no-repeat",
     "attachment": "fixed",
-    "velo": "#234965"
+    "velo": "rgba(35, 73, 101, 0.58)"
    },
+   "relleno": "5% 0% 0% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 13,
+     "relleno": null,
      "bloques": []
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 73.996,
+     "relleno": null,
      "bloques": [
       {
        "_id": "36b0cc1",
@@ -2563,7 +2752,8 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 13,
+     "relleno": null,
      "bloques": []
     }
    ]
@@ -2577,20 +2767,20 @@
     "repetir": "no-repeat",
     "attachment": null
    },
+   "relleno": "5% 0% 5% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 9.991,
+     "relleno": null,
      "bloques": []
     },
     {
      "fondo": null,
      "ancho": 100,
-     "bloques": []
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
+     "relleno": null,
      "bloques": [
       {
        "_id": "2cd11a7",
@@ -2619,7 +2809,8 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 11.579,
+     "relleno": null,
      "bloques": []
     }
    ]
@@ -2632,12 +2823,16 @@
     "posicion": null,
     "repetir": "no-repeat",
     "attachment": "fixed",
-    "velo": "#234965"
+    "velo": "rgba(35, 73, 101, 0.58)"
    },
+   "relleno": "4% 0% 4% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 13.983,
+     "relleno": null,
      "bloques": [
       {
        "_id": "00c0dcb",
@@ -2649,12 +2844,8 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
-     "bloques": []
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
+     "ancho": 72.035,
+     "relleno": null,
      "bloques": [
       {
        "_id": "c6f70ed",
@@ -2683,7 +2874,14 @@
        "color": "#ffffff",
        "tamanoEm": 1.8,
        "grosor": "600"
-      },
+      }
+     ]
+    },
+    {
+     "fondo": null,
+     "ancho": 100,
+     "relleno": null,
+     "bloques": [
       {
        "_id": "9480de1",
        "tipo": "imagen",
@@ -2694,7 +2892,8 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 13.978,
+     "relleno": null,
      "bloques": [
       {
        "_id": "1aa9f80",
@@ -2715,20 +2914,20 @@
     "repetir": "no-repeat",
     "attachment": null
    },
+   "relleno": "6% 0% 6% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 9.991,
+     "relleno": null,
      "bloques": []
     },
     {
      "fondo": null,
      "ancho": 100,
-     "bloques": []
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
+     "relleno": null,
      "bloques": [
       {
        "_id": "a7f17fc",
@@ -2769,7 +2968,8 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 10.005,
+     "relleno": null,
      "bloques": []
     }
    ]
@@ -2782,32 +2982,35 @@
     "posicion": "center center",
     "repetir": "no-repeat",
     "attachment": "fixed",
-    "velo": "#234965"
+    "velo": "rgba(35, 73, 101, 0.58)"
    },
+   "relleno": "5% 0% 0% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 9.991,
+     "relleno": null,
      "bloques": []
     },
     {
      "fondo": null,
-     "ancho": 100,
-     "bloques": []
+     "ancho": 80,
+     "relleno": null,
+     "bloques": [
+      {
+       "_id": "f50c7e9",
+       "tipo": "imagen",
+       "imagen": "/images/2018/08/0-bottom.png",
+       "alt": ""
+      }
+     ]
     },
     {
      "fondo": null,
      "ancho": 100,
-     "bloques": []
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
-     "bloques": []
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
+     "relleno": null,
      "bloques": [
       {
        "_id": "e296f81",
@@ -2831,7 +3034,14 @@
        "tamanoEm": 1.8,
        "grosor": "600",
        "interlineadoEm": 1.2
-      },
+      }
+     ]
+    },
+    {
+     "fondo": null,
+     "ancho": 50,
+     "relleno": null,
+     "bloques": [
       {
        "_id": "48164dc",
        "tipo": "imagen",
@@ -2849,7 +3059,14 @@
        "tamanoEm": 2.2,
        "grosor": "600",
        "interlineadoEm": 1.2
-      },
+      }
+     ]
+    },
+    {
+     "fondo": null,
+     "ancho": 50,
+     "relleno": null,
+     "bloques": [
       {
        "_id": "b04fd53",
        "tipo": "imagen",
@@ -2867,18 +3084,13 @@
        "tamanoEm": 2.2,
        "grosor": "600",
        "interlineadoEm": 1.2
-      },
-      {
-       "_id": "f50c7e9",
-       "tipo": "imagen",
-       "imagen": "/images/2018/08/0-bottom.png",
-       "alt": ""
       }
      ]
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 10.005,
+     "relleno": null,
      "bloques": []
     }
    ]
@@ -2892,40 +3104,14 @@
     "repetir": "no-repeat",
     "attachment": null
    },
+   "relleno": "5% 0% 5% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
      "ancho": 100,
-     "bloques": []
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
-     "bloques": []
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
-     "bloques": []
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
-     "bloques": []
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
-     "bloques": []
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
-     "bloques": []
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
+     "relleno": null,
      "bloques": [
       {
        "_id": "81f2140",
@@ -2937,7 +3123,14 @@
        "color": "#ffffff",
        "tamanoEm": 4,
        "grosor": "600"
-      },
+      }
+     ]
+    },
+    {
+     "fondo": null,
+     "ancho": 33,
+     "relleno": "0% 1% 0% 1%",
+     "bloques": [
       {
        "_id": "8f1cd24",
        "tipo": "banner",
@@ -2951,7 +3144,14 @@
        "efecto": "oscar",
        "clases": "reborde_negro_sombra",
        "tamanoTituloEm": 1.8
-      },
+      }
+     ]
+    },
+    {
+     "fondo": null,
+     "ancho": 33,
+     "relleno": "0% 1% 0% 1%",
+     "bloques": [
       {
        "_id": "ed58c36",
        "tipo": "banner",
@@ -2965,7 +3165,14 @@
        "efecto": "oscar",
        "clases": "reborde_negro_sombra",
        "tamanoTituloEm": 1.8
-      },
+      }
+     ]
+    },
+    {
+     "fondo": null,
+     "ancho": 33,
+     "relleno": "0% 1% 0% 1%",
+     "bloques": [
       {
        "_id": "426793d",
        "tipo": "banner",
@@ -2979,7 +3186,14 @@
        "efecto": "oscar",
        "clases": "reborde_negro_sombra",
        "tamanoTituloEm": 1.8
-      },
+      }
+     ]
+    },
+    {
+     "fondo": null,
+     "ancho": 33,
+     "relleno": "0% 1% 0% 1%",
+     "bloques": [
       {
        "_id": "f6285b3",
        "tipo": "banner",
@@ -2993,7 +3207,14 @@
        "efecto": "oscar",
        "clases": "reborde_negro_sombra",
        "tamanoTituloEm": 1.8
-      },
+      }
+     ]
+    },
+    {
+     "fondo": null,
+     "ancho": 33,
+     "relleno": "0% 1% 0% 1%",
+     "bloques": [
       {
        "_id": "d1f7e85",
        "tipo": "banner",
@@ -3007,7 +3228,14 @@
        "efecto": "oscar",
        "clases": "reborde_negro_sombra",
        "tamanoTituloEm": 1.8
-      },
+      }
+     ]
+    },
+    {
+     "fondo": null,
+     "ancho": 33,
+     "relleno": "0% 1% 0% 1%",
+     "bloques": [
       {
        "_id": "b05b544",
        "tipo": "banner",
@@ -3034,22 +3262,35 @@
     "posicion": "center right",
     "repetir": "no-repeat",
     "attachment": "fixed",
-    "velo": "#234965"
+    "velo": "rgba(35, 73, 101, 0.58)"
    },
+   "relleno": "5% 0% 0% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 9.991,
+     "relleno": null,
      "bloques": []
     },
     {
      "fondo": null,
-     "ancho": 100,
-     "bloques": []
+     "ancho": 78.426,
+     "relleno": null,
+     "bloques": [
+      {
+       "_id": "efe2fde",
+       "tipo": "imagen",
+       "imagen": "/images/2018/08/0-bottom.png",
+       "alt": ""
+      }
+     ]
     },
     {
      "fondo": null,
      "ancho": 100,
+     "relleno": null,
      "bloques": [
       {
        "_id": "f7b63bd",
@@ -3073,18 +3314,13 @@
        "tamanoEm": 1.8,
        "grosor": "600",
        "interlineadoEm": 1.2
-      },
-      {
-       "_id": "efe2fde",
-       "tipo": "imagen",
-       "imagen": "/images/2018/08/0-bottom.png",
-       "alt": ""
       }
      ]
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 11.579,
+     "relleno": null,
      "bloques": []
     }
    ]
@@ -3097,17 +3333,22 @@
     "posicion": null,
     "repetir": "no-repeat",
     "attachment": null,
-    "velo": "#ffffff"
+    "velo": "rgba(255, 255, 255, 0.31)"
    },
+   "relleno": "5% 0% 5% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 13.5,
+     "relleno": null,
      "bloques": []
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 72.996,
+     "relleno": null,
      "bloques": [
       {
        "_id": "ff0b89e",
@@ -3157,7 +3398,8 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 13.5,
+     "relleno": null,
      "bloques": []
     }
    ]
@@ -3170,22 +3412,35 @@
     "posicion": "center right",
     "repetir": "no-repeat",
     "attachment": "fixed",
-    "velo": "#234965"
+    "velo": "rgba(35, 73, 101, 0.58)"
    },
+   "relleno": "10% 0% 0% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 10,
+     "relleno": null,
      "bloques": []
     },
     {
      "fondo": null,
-     "ancho": 100,
-     "bloques": []
+     "ancho": 79.991,
+     "relleno": null,
+     "bloques": [
+      {
+       "_id": "bce5528",
+       "tipo": "imagen",
+       "imagen": "/images/2018/08/0-bottom.png",
+       "alt": ""
+      }
+     ]
     },
     {
      "fondo": null,
      "ancho": 100,
+     "relleno": null,
      "bloques": [
       {
        "_id": "166985f",
@@ -3209,18 +3464,13 @@
        "tamanoEm": 2.8,
        "grosor": "600",
        "interlineadoEm": 1.2
-      },
-      {
-       "_id": "bce5528",
-       "tipo": "imagen",
-       "imagen": "/images/2018/08/0-bottom.png",
-       "alt": ""
       }
      ]
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 10.005,
+     "relleno": null,
      "bloques": []
     }
    ]
@@ -3234,15 +3484,20 @@
     "repetir": "no-repeat",
     "attachment": null
    },
+   "relleno": "5% 0% 3% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 13.97,
+     "relleno": null,
      "bloques": []
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 72.018,
+     "relleno": null,
      "bloques": [
       {
        "_id": "4aaa53a",
@@ -3320,7 +3575,8 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 14.008,
+     "relleno": null,
      "bloques": []
     }
    ]
@@ -3333,22 +3589,35 @@
     "posicion": "center center",
     "repetir": "no-repeat",
     "attachment": "fixed",
-    "velo": "#234965"
+    "velo": "rgba(35, 73, 101, 0.58)"
    },
+   "relleno": "10% 0% 0% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 10,
+     "relleno": null,
      "bloques": []
     },
     {
      "fondo": null,
-     "ancho": 100,
-     "bloques": []
+     "ancho": 79.991,
+     "relleno": null,
+     "bloques": [
+      {
+       "_id": "b82221a",
+       "tipo": "imagen",
+       "imagen": "/images/2018/08/0-bottom.png",
+       "alt": ""
+      }
+     ]
     },
     {
      "fondo": null,
      "ancho": 100,
+     "relleno": null,
      "bloques": [
       {
        "_id": "598c68a",
@@ -3372,18 +3641,13 @@
        "tamanoEm": 2.8,
        "grosor": "600",
        "interlineadoEm": 1.2
-      },
-      {
-       "_id": "b82221a",
-       "tipo": "imagen",
-       "imagen": "/images/2018/08/0-bottom.png",
-       "alt": ""
       }
      ]
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 10.005,
+     "relleno": null,
      "bloques": []
     }
    ]
@@ -3396,12 +3660,16 @@
     "posicion": null,
     "repetir": "no-repeat",
     "attachment": null,
-    "velo": "#ffffff"
+    "velo": "rgba(255, 255, 255, 0.31)"
    },
+   "relleno": "15% 0% 15% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 65,
+     "relleno": "1% 1% 1% 1%",
      "bloques": [
       {
        "_id": "67d8742",
@@ -3462,7 +3730,8 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 35,
+     "relleno": "1% 1% 1% 1%",
      "bloques": [
       {
        "_id": "05fd0d9",
@@ -3482,22 +3751,35 @@
     "posicion": "center right",
     "repetir": "no-repeat",
     "attachment": "fixed",
-    "velo": "#234965"
+    "velo": "rgba(35, 73, 101, 0.58)"
    },
+   "relleno": "5% 0% 0% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 9.991,
+     "relleno": null,
      "bloques": []
     },
     {
      "fondo": null,
-     "ancho": 100,
-     "bloques": []
+     "ancho": 78.426,
+     "relleno": null,
+     "bloques": [
+      {
+       "_id": "0a1f197",
+       "tipo": "imagen",
+       "imagen": "/images/2018/08/0-bottom.png",
+       "alt": ""
+      }
+     ]
     },
     {
      "fondo": null,
      "ancho": 100,
+     "relleno": null,
      "bloques": [
       {
        "_id": "d61aec9",
@@ -3521,18 +3803,13 @@
        "tamanoEm": 1.8,
        "grosor": "600",
        "interlineadoEm": 1.2
-      },
-      {
-       "_id": "0a1f197",
-       "tipo": "imagen",
-       "imagen": "/images/2018/08/0-bottom.png",
-       "alt": ""
       }
      ]
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 11.579,
+     "relleno": null,
      "bloques": []
     }
    ]
@@ -3546,15 +3823,20 @@
     "repetir": "no-repeat",
     "attachment": null
    },
+   "relleno": "5% 0% 6% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 13.97,
+     "relleno": null,
      "bloques": []
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 72.018,
+     "relleno": null,
      "bloques": [
       {
        "_id": "4ec6ed0",
@@ -3588,7 +3870,8 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 14.008,
+     "relleno": null,
      "bloques": []
     }
    ]
@@ -3601,22 +3884,35 @@
     "posicion": "center center",
     "repetir": "no-repeat",
     "attachment": "fixed",
-    "velo": "#234965"
+    "velo": "rgba(35, 73, 101, 0.58)"
    },
+   "relleno": "5% 0% 0% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 10,
+     "relleno": null,
      "bloques": []
     },
     {
      "fondo": null,
-     "ancho": 100,
-     "bloques": []
+     "ancho": 79.991,
+     "relleno": null,
+     "bloques": [
+      {
+       "_id": "1981b3a",
+       "tipo": "imagen",
+       "imagen": "/images/2018/08/0-bottom.png",
+       "alt": ""
+      }
+     ]
     },
     {
      "fondo": null,
      "ancho": 100,
+     "relleno": null,
      "bloques": [
       {
        "_id": "fa2bef8",
@@ -3659,18 +3955,13 @@
        "items": [
         "Participa en la dirección de todo este proyecto, lo hemos hecho para ti, para que tú tengas el control."
        ]
-      },
-      {
-       "_id": "1981b3a",
-       "tipo": "imagen",
-       "imagen": "/images/2018/08/0-bottom.png",
-       "alt": ""
       }
      ]
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 10.005,
+     "relleno": null,
      "bloques": []
     }
    ]
@@ -3684,10 +3975,14 @@
     "repetir": "no-repeat",
     "attachment": null
    },
+   "relleno": "7% 0% 7% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 65,
+     "relleno": null,
      "bloques": [
       {
        "_id": "ed505be",
@@ -3727,7 +4022,8 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 35,
+     "relleno": null,
      "bloques": [
       {
        "_id": "eedf789",
@@ -3747,17 +4043,22 @@
     "posicion": "center center",
     "repetir": "no-repeat",
     "attachment": "fixed",
-    "velo": "#234965"
+    "velo": "rgba(35, 73, 101, 0.58)"
    },
+   "relleno": "5% 0% 0% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 10,
+     "relleno": null,
      "bloques": []
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 79.991,
+     "relleno": null,
      "bloques": [
       {
        "_id": "96504a3",
@@ -3791,7 +4092,8 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 10.005,
+     "relleno": null,
      "bloques": []
     }
    ]
@@ -3805,10 +4107,14 @@
     "repetir": "no-repeat",
     "attachment": null
    },
+   "relleno": "7% 0% 7% 0%",
+   "margen": null,
+   "estirada": true,
    "columnas": [
     {
      "fondo": null,
      "ancho": 100,
+     "relleno": null,
      "bloques": [
       {
        "_id": "638c975",
@@ -3846,10 +4152,13 @@
   {
    "_id": "5d40c47",
    "fondo": null,
+   "relleno": null,
+   "margen": null,
    "columnas": [
     {
      "fondo": null,
      "ancho": 100,
+     "relleno": null,
      "bloques": [
       {
        "_id": "d1b616f",

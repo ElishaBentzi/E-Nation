@@ -55,6 +55,16 @@ export default defineConfig({
       customCss: ['../brand/tokens.css', './src/styles/docs.css'],
       pagination: true,
       lastUpdated: false,
+      /*
+       * Se sustituye el componente de iconos sociales por el enlace de vuelta al
+       * sitio principal. Starlight NO ofrece una opcion para anadir un enlace suelto
+       * a la cabecera: sus enlaces de cabecera son los sociales, y sus iconos se
+       * resuelven por nombre contra un catalogo cerrado, asi que ni un icono propio
+       * se puede meter por configuracion.
+       */
+      components: {
+        SocialIcons: './src/components/VolverAlSitio.astro',
+      },
     }),
     sitemap(),
   ],

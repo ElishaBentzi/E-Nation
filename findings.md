@@ -1132,3 +1132,37 @@ Lo que resta en esas dos son casi todas piezas del **encabezado y el pie** (los 
 4. **El nivel del encabezado no es libre**: el original pinta los títulos de los banners y los elementos del JetSlider como **`h5`**. Al pintarlos como `h3` la comparación decía «faltan 18 encabezados» cuando lo que faltaba era la etiqueta, no el texto. Cambiarlo altera la jerarquía que leen buscadores y lectores de pantalla.
 
 **Las páginas legales no se tocan aquí**: su texto se migra mecánicamente por script y **nunca pasa por el chat** ni por estos extractores, porque dispara falsos positivos de filtros de seguridad (error [1301] real). Están pendientes de ese script, no de este camino.
+
+### Los fondos de la home: por qué no se veía ningún efecto
+
+El usuario reportó que los fondos de parallax se veían fijos y que la mayoría de secciones estaban desalineadas. Investigado con `tools/sonda-fondos.js` (compara la posición del elemento y la del fondo a varios desplazamientos, que es la única forma de distinguir un fondo fijo de uno normal o de uno movido por `transform`) y con capturas a la misma altura en los dos sitios.
+
+#### Lo que NO era
+
+- **No era que faltara la técnica.** El original usa `background-attachment: fixed` en 5 secciones de la home y mi versión en 4. Medido, y comprobado además que **ningún antecesor rompe el `fixed`**: un `transform`, `filter` o `will-change` en un contenedor lo degrada a fondo normal, y aquí no había ninguno.
+- **No era un parallax por `transform` sin reproducir.** El original sí tiene capas `jet-parallax-section__image` con velocidad al 50 %, pero **medidas no desplazan nada**: se mueven exactamente con la página (`desplazamiento: 1500` sobre 1500 px de scroll) y su `transform` acaba en la matriz identidad. Lo que parecía parallax en una primera lectura era contenido reacomodándose al cargar imágenes.
+
+#### Lo que SÍ era: un velo opaco tapando la imagen
+
+Cada sección lleva en Elementor un **velo** sobre la imagen de fondo. Elementor guarda el color y su **opacidad por separado** (y con la rareza de venir con `unit: "px"` y el valor como fracción, 0,58). Yo leía solo el color y lo pintaba **a plena opacidad**: el fondo con imagen quedaba convertido en un rectángulo de color plano.
+
+**No se veía ninguna imagen de fondo, así que no había nada que ver moverse.** Esa era la causa real de «se ven fijos»: el efecto estaba, pero tapado. Arreglado emitiendo `rgba()` con la opacidad declarada (0,4 a 0,96 según la sección).
+
+#### Y las alturas: cuatro fallos de extracción en el mismo sitio
+
+Las secciones estaban desproporcionadas y eso desalineaba todo lo demás. La sección de `26-bg.jpg` medía 1049 px en el original y **4875** en la mía; la página entera, 8627 contra **17406**.
+
+1. **Las columnas anidadas se aplanaban mal.** Elementor envuelve las columnas reales dentro de una columna exterior cuando la sección tiene una sola. Mi recorrido empujaba cada columna interior como HERMANA de la exterior, así que salían secciones con seis o siete columnas donde las primeras estaban vacías y la última se llevaba todos los widgets. Una rejilla de tarjetas se pintaba como una pila.
+2. **El ancho de columna no está en `width`.** Está en `_column_size` (100 entera, 50 media, 33 un tercio) y en `_inline_size` cuando el autor lo afina. Leer `width` devolvía `undefined` siempre, así que todas las columnas quedaban al 100 %.
+3. **`gap` no vale para repartir columnas.** Con `flex: 0 0 33%` más un `gap` de 24 px, tres columnas suman 99 % + 48 px y la tercera ya no cabe: seis tarjetas salían de dos en dos. Se usa la técnica de Elementor —rejilla de 100 columnas con el hueco como RELLENO INTERIOR— que es la que hace que los anchos cuadren.
+4. **`_margin` y `_padding` de cada widget** siguen sin aplicarse, así que las alturas quedan cerca pero no exactas.
+
+**Resultado medido**: la página pasa de 17406 a **9032 px** (el original 8627), y las secciones a 628/576/374/1622/818/1266/781/950/619/671 frente a 600/519/374/863/…/1049/842/918/748. Lo que más se desvía es la sección del JetSlider, que al pintarse como rejilla ocupa el doble que el carrusel original.
+
+#### Otra cosa que la comparación de capturas dejó clara
+
+Las tarjetas de problemáticas **no se parecen a las mías**. En el original la **imagen es la tarjeta**, el título va **encima** de la imagen y la descripción solo aparece al pasar el ratón sobre el velo azul (`#095287` al 90 %). Yo pintaba una caja de color con la imagen encima y todo el texto siempre visible. Reconstruido desde los ajustes del original: título blanco a 2,2 em con grosor 500 y texto a 1,2 em.
+
+#### Imágenes que faltaban
+
+La auditoría de rutas encontró **9 imágenes referenciadas sin fichero**, incluida una que era el fondo entero de una sección (`26-background.jpg`). Descargadas del original. Ya no falta ninguna de las 119 que referencian las páginas.

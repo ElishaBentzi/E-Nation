@@ -30,3 +30,14 @@
 /wp-login.php                 /                 301
 /wp-admin/*                   /                 301
 /xmlrpc.php                   /                 301
+
+# La pagina de verificacion se retiro por decision del usuario.
+#
+# Se redirige en vez de dejarla caer en el 404: la URL existe en el original y puede
+# estar indexada, asi que un 404 perderia lo que tenga y es un error que el buscador
+# tarda en olvidar. El 301 avisa de que la pagina ya no esta y manda a la portada,
+# que es lo que interesa conservar.
+/verify/                      /                 301
+/verify                       /                 301
+/es/verificar/                /es/              301
+/es/verificar                 /es/              301

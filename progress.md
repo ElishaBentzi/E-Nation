@@ -395,3 +395,17 @@ Acciones tomadas:
 **Medido en producción**: home 8 % → **93 %** con 34/34 encabezados; presentación 4 % → **99 %** con 60/63. Lo que resta son piezas del encabezado y el pie (los iconos de idioma, que se sustituyeron por el selector a petición del usuario, el logo pequeño) y la miniatura de un vídeo.
 
 **Sin tocar a propósito**: las páginas legales, cuyo texto se migra por script y nunca pasa por el chat.
+
+### Fondos de la home, capturas y comparación
+**Status:** complete
+
+Petición del usuario: quitar `verify`, añadir camino de vuelta desde la constitución, una última pasada sobre los banners del carrusel y arreglar los fondos de parallax que «se ven fijos» y desalineados.
+
+Acciones tomadas:
+- **`verify` eliminada** del manifiesto (con eso desaparecen sus rutas, `/verify/` y `/es/verificar/`, y baja de 17 a 15 páginas) y **redirigida con 301 a la portada**, porque la URL existe en el original y puede estar indexada: un 404 perdería lo que tenga.
+- **Camino de vuelta desde los docs**: se sustituye el componente de iconos sociales de Starlight —hueco aquí y con los iconos resueltos por nombre contra un catálogo cerrado— por un enlace rotulado a `SITIO_PRINCIPAL`, declarado en `astro-docs/site.config.mjs` junto al resto de los dominios.
+- **El parallax no faltaba: estaba tapado.** Las secciones llevan un velo de Elementor cuya **opacidad** no se leía (0,4 a 0,96, y guardada con una unidad que no le corresponde), así que se pintaba opaco y **no se veía ninguna imagen de fondo**. Corregido a `rgba()`.
+- **Cuatro fallos de extracción** que desproporcionaban las secciones: las columnas anidadas se aplanaban mal (una rejilla se volvía una pila), el ancho de columna está en `_column_size`/`_inline_size` y no en `width`, el `gap` de flex desbordaba los anchos declarados (ahora rejilla de 100 columnas con hueco por relleno, como Elementor) y el relleno de sección ahora sale del original.
+- **Las tarjetas de problemáticas** se rehicieron a partir de las capturas: imagen como tarjeta, título encima, descripción al pasar el ratón.
+- **9 imágenes descargadas** que faltaban, una de ellas el fondo entero de una sección.
+- **Medido**: la home pasa de 17406 a **9032 px** (el original 8627) y de 4875 a 1266 px en la sección que estaba peor. Paridad de contenido mantenida: 93 % en la home y 99 % en las presentaciones.

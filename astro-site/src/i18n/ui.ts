@@ -43,7 +43,6 @@ export const UI: Record<Locale, CadenasUI> = {
       presentation: 'Presentation',
       articles: 'Articles',
       news: 'News',
-      verify: 'Verify',
       'privacy-policy': 'Privacy Policy',
       'terms-and-conditions': 'Terms and Conditions',
     },
@@ -61,7 +60,6 @@ export const UI: Record<Locale, CadenasUI> = {
       presentation: 'Presentación',
       articles: 'Artículos',
       news: 'Noticias',
-      verify: 'Verificar',
       'privacy-policy': 'Política de Privacidad',
       'terms-and-conditions': 'Términos y Condiciones',
     },
@@ -79,7 +77,6 @@ export const UI: Record<Locale, CadenasUI> = {
       presentation: 'Présentation',
       articles: 'Articles',
       news: 'Nouvelles',
-      verify: 'Vérifier',
       'privacy-policy': 'Politique de Confidentialité',
       'terms-and-conditions': 'Termes et Conditions',
     },
@@ -94,4 +91,4 @@ export const UI: Record<Locale, CadenasUI> = {
 };
 
 /** Orden del menu principal, del original: Inicio, Presentacion, Constitucion, Articulos, Noticias. */
-export const ORDEN_NAV = ['home', 'presentation', 'articles', 'news', 'verify'] as const;
+export const ORDEN_NAV = ['home', 'presentation', 'articles', 'news'] as const;

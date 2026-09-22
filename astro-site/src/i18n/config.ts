@@ -30,7 +30,6 @@ export type PageId =
   | 'terms-and-conditions'
   | 'presentation'
   | 'home'
-  | 'verify'
 ;
 
 export interface PageDef {
@@ -111,17 +110,6 @@ export const PAGES: Record<PageId, PageDef> = {
     seo: {
       en: { titulo: 'Home', keyword: null },
       es: { titulo: 'Home', keyword: null },
-    },
-  },
-  verify: {
-    slugs: {
-      en: 'verify',
-      es: 'verificar',
-    },
-    kind: 'plana',
-    seo: {
-      en: { titulo: 'Verify', keyword: null },
-      es: { titulo: 'Verificar', keyword: null },
     },
   },
 };

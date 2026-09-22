@@ -1,0 +1,65 @@
+---
+/*
+ * ENLACE DE VUELTA AL SITIO PRINCIPAL.
+ *
+ * Sustituye al componente de iconos sociales de Starlight, que es hueco para este
+ * proyecto (no hay redes sociales que enlazar) y ademas resuelve los iconos por
+ * NOMBRE, contra su catalogo cerrado.
+ *
+ * POR QUE HACE FALTA
+ *   Los docs son otra aplicacion y otro dominio. Se llega desde E-Nation pulsando
+ *   «Constitucion», pero no habia forma de volver: se sentia como dos sitios, uno
+ *   que manda al otro y se queda sin camino de regreso. Es navegacion, no adorno.
+ *
+ * VA EN LA CABECERA, junto al buscador y el selector de tema, porque es donde se
+ * busca una salida. Se rotula con texto y no solo con un icono: un simbolo sin
+ * palabra obliga a adivinar, y aqui el destino es otro sitio.
+ */
+import { SITIO_PRINCIPAL } from '../../site.config.mjs';
+
+const ETIQUETA: Record<string, string> = {
+  es: 'Volver a E-Nation',
+  en: 'Back to E-Nation',
+  fr: 'Retour à E-Nation',
+};
+const locale = Astro.currentLocale ?? 'es';
+const etiqueta = ETIQUETA[locale] ?? ETIQUETA.es;
+---
+
+<a href={SITIO_PRINCIPAL} class="volver-al-sitio" rel="noopener">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M19 12H5"></path>
+    <path d="M12 19l-7-7 7-7"></path>
+  </svg>
+  <span>{etiqueta}</span>
+</a>
+
+<style>
+  @layer starlight.core {
+    .volver-al-sitio {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      color: var(--sl-color-text-accent);
+      font-size: var(--sl-text-sm);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .volver-al-sitio:hover {
+      color: var(--sl-color-white);
+      text-decoration: underline;
+    }
+    /* En pantallas estrechas solo cabe el icono, pero el texto sigue ahi para los
+       lectores de pantalla y para cuando la cabecera tiene sitio. */
+    @media (max-width: 30rem) {
+      .volver-al-sitio span {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+      }
+    }
+  }
+</style>
