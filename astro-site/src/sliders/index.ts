@@ -106,3 +106,29 @@ export function slidersDe(page: PageId, locale: Locale): SliderEnPagina[] {
     // ausente que vacio.
     .filter((s) => (s.config.slides as unknown[]).length > 0);
 }
+
+/**
+ * EL CARRUSEL DE BANNERS PARA EL PIE, en todas las paginas.
+ *
+ * Es el mismo `banner-publicidad` que lleva la presentacion: enlaza a los proyectos
+ * hermanos, asi que tiene sentido en cualquier pagina y no solo en una. Se declara
+ * aparte de `POR_PAGINA` porque no pertenece a una pagina concreta: va en el pie, que
+ * es comun a todas.
+ *
+ * Devuelve la configuracion YA FILTRADA por idioma, igual que `slidersDe`, para que el
+ * componente no tenga que saber nada de idiomas.
+ */
+export function carruselDeBanners(locale: Locale): SliderEnPagina | null {
+  const alias = 'banner-publicidad';
+  if (!POR_ALIAS[alias]) return null;
+  const slides = diapositivasDe(alias, locale);
+  if (!slides.length) return null;
+  const t = ETIQUETAS[locale];
+  return {
+    alias,
+    config: { ...(POR_ALIAS[alias] as Record<string, unknown>), slides },
+    etiqueta: t.carrusel,
+    anterior: t.anterior,
+    siguiente: t.siguiente,
+  };
+}
