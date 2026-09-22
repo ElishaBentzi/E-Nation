@@ -1172,3 +1172,37 @@ La auditoría de rutas encontró **9 imágenes referenciadas sin fichero**, incl
 El widget `menu-anchor` de Elementor es solo una marca para la navegación interna y no pinta nada, pero no tenía caso propio: caía en el cajón de «sin mapear», y ese cajón **se pinta a propósito** como una caja de borde discontinuo con el nombre del widget, para que nada desaparezca en silencio. Resultado: una caja con el texto «menu-anchor» en medio de la página de presentación.
 
 Se vio en una captura, no en el build. La marca cumple su función —hacer visible lo que falta— pero conviene recordar que **todo lo que se pinta se ve**, incluidos los diagnósticos. Corregido con su caso propio.
+
+### El JetSlider: un carrusel que se pintaba como rejilla
+
+La sección del JetSlider medía **1622 px** donde el original tiene **863**, y era la que más desviaba las alturas de la home. La causa: se pintaba como rejilla de tarjetas para no dejar el contenido fuera (decisión razonable mientras no hubiera componente), y un carrusel de una fila se convertía en dos filas de tarjetas.
+
+Reutilizar el carrusel de banners no valía: su modelo son **capas con coordenadas**, y el JetSlider es una **imagen con un texto centrado**. Es otro tipo de pieza, así que tiene componente propio (`shared/jet-slider/JetSlider.astro`).
+
+**Todo lo que pinta está medido en el original, nada elegido:**
+
+| qué | valor medido |
+|---|---|
+| tamaño de la diapositiva | 1026 × 400 px |
+| alto por corte | 400 px, 300 en tableta, 280 en móvil (`slider_height`) |
+| título | `h5` a **75 px**, peso 600, blanco, centrado |
+| descripción | **22,5 px**, blanco, centrada, al 70 % de ancho |
+| colocación | contenido centrado en los dos ejes (flex) |
+| flechas | **53 × 53**, a 20 px del borde, `#003f7f` y `#ff7100` al pasar el ratón |
+| avance | **no avanza solo**: su pista no se mueve al esperar |
+
+La tipografía va en `cqw` para que escale con el carrusel: 75 px sobre 1026 es **el mismo 7,31 %** que 89,5 px sobre 1224, así que el título se ve igual de grande en las dos versiones aunque el contenedor no mida lo mismo.
+
+#### Un velo declarado que el original no pinta
+
+El JetSlider **declara** `overlay_background_color: #6ec1e4` con `overlay_opacity: 0.1`, y mi primera versión lo pintaba. Medido en el original: **no hay ninguna capa de velo** —ni un elemento con fondo, ni un pseudoelemento, ni un filtro sobre la imagen—: el plugin no lo aplica.
+
+Se retiró. La regla que se aplica es la del proyecto: **un ajuste declarado no es una prueba de que se vea**; si la medición dice que no se pinta, no se pinta. Es el mismo criterio que con el `font-weight: 900` del preset, que también estaba declarado y el original no aplicaba.
+
+**Resultado medido**: la sección del JetSlider pasa de **1622 a 837 px** (el original: 863). La página entera queda en **9041** frente a 8627.
+
+### `_margin` y `_padding` de los widgets
+
+Se extraen y se aplican en los bloques simples (encabezado, texto, html, imagen y lista). Son las claves con guion bajo de Elementor y son las que **separan** unas piezas de otras: sin ellas faltaba el aire que el autor puso alrededor de cada encabezado.
+
+Rendimiento limitado: en la home **solo 8 de 41 bloques declaran margen o relleno**, y los que lo declaran suelen ser horizontales (`0% 4% 0% 4%`), así que la altura apenas cambia. Las diferencias que quedan (1188 frente a 1049 en la sección de problemáticas, 1150 frente a 918) vienen del tamaño de las tarjetas, no del espaciado.

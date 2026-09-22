@@ -409,3 +409,16 @@ Acciones tomadas:
 - **Las tarjetas de problemáticas** se rehicieron a partir de las capturas: imagen como tarjeta, título encima, descripción al pasar el ratón.
 - **9 imágenes descargadas** que faltaban, una de ellas el fondo entero de una sección.
 - **Medido**: la home pasa de 17406 a **9032 px** (el original 8627) y de 4875 a 1266 px en la sección que estaba peor. Paridad de contenido mantenida: 93 % en la home y 99 % en las presentaciones.
+
+### JetSlider con su comportamiento, y márgenes de widget
+**Status:** complete
+
+El JetSlider se pintaba como rejilla de tarjetas y su sección medía el doble que en el original. Se le dio componente propio (`shared/jet-slider/JetSlider.astro`) con todo medido en el original: carrusel de una diapositiva a la vez, alto 400/300/280 px, título `h5` a 75 px y peso 600, descripción a 22,5 px, contenido centrado, flechas de 53×53 a 20 px del borde con `#003f7f` y `#ff7100`, sin avance automático (comprobado que su pista no se mueve al esperar), arrastre con el ratón o el dedo y respuesta al teclado. La tipografía va en `cqw`, así que escala igual que en el original.
+
+**Un velo declarado que no se pinta**: el JetSlider declara `overlay_background_color` con opacidad 0,1 y la primera versión lo pintaba; medido en el original no hay ninguna capa de velo, así que se retiró. Un ajuste declarado no prueba que se vea.
+
+También se extraen y aplican `_margin` y `_padding` de cada widget en los bloques simples. En la home solo 8 de 41 los declaran, así que el efecto en la altura es pequeño: las diferencias que quedan vienen del tamaño de las tarjetas.
+
+**Medido**: la sección del JetSlider de 1622 a **837 px** (original 863); la home de 17406 a **9041** (original 8627). Desplegado y verificado en producción: 48 secciones con la rejilla nueva en la presentación y 0 marcadores de diagnóstico.
+
+**Pendiente que no se pudo cerrar**: la comparación visual del carrusel de banners con capturas. La captura de esa página **se cuelga** (timeout del navegador, el mismo fallo de pestaña trabada ya documentado) y los dos intentos fallaron. La verificación de ese carrusel sigue siendo por medición: 0 solapes, la ola y el palpitar en movimiento, y las posiciones idénticas a dos anchos.
