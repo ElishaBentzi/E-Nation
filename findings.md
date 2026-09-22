@@ -1206,3 +1206,28 @@ Se retiró. La regla que se aplica es la del proyecto: **un ajuste declarado no 
 Se extraen y se aplican en los bloques simples (encabezado, texto, html, imagen y lista). Son las claves con guion bajo de Elementor y son las que **separan** unas piezas de otras: sin ellas faltaba el aire que el autor puso alrededor de cada encabezado.
 
 Rendimiento limitado: en la home **solo 8 de 41 bloques declaran margen o relleno**, y los que lo declaran suelen ser horizontales (`0% 4% 0% 4%`), así que la altura apenas cambia. Las diferencias que quedan (1188 frente a 1049 en la sección de problemáticas, 1150 frente a 918) vienen del tamaño de las tarjetas, no del espaciado.
+
+### Por qué algunas secciones de la presentación miden 4,8 veces de más
+
+Revisando la presentación contra el original: **48 secciones frente a 79** (las 31 de más del original son secciones internas), 47 fondos frente a 49, 96 imágenes frente a 94 y **+6,5 % de altura total** (38931 frente a 36540). La estructura ya está cerca, pero algunas secciones se disparan: la primera mide **3116 px** donde el original tiene **652**.
+
+La causa es de **anidamiento**, y se ve leyendo el árbol de Elementor:
+
+```
+section
+├── column [13.983%]  → imagen
+├── column [72.035%]  → imagen, 3 encabezados, y una SECCIÓN INTERNA
+│                                 └── column [100%] → imagen
+└── column [13.978%]  → imagen
+```
+
+La sección interna va **dentro** de la columna del 72 %. Mi aplanado la sube a hermana de las otras tres, y entonces el reparto por filas es 14 + 72 + 100 + 14 = **200 %**, que se parte en tres filas. De ahí que la sección mida 4,8 veces lo que debe.
+
+**La regla que falta**: una sección interna no es una fila hermana, es un **bloque dentro de su columna**, con sus propias columnas dentro. El arreglo tiene dos partes y ninguna es de una línea:
+
+1. En el extractor: una sección interna pasa a ser un bloque anidado (`columnas` con sus columnas), en vez de subir sus columnas al nivel de arriba.
+2. En el renderizador: hace falta **recursión** —una rejilla dentro de una columna—, y eso obliga a sacar el reparto de bloques a un componente propio, porque hoy es un `switch` dentro de la plantilla y no se puede llamar a sí mismo.
+
+Se deja sin hacer a propósito en vez de a medias: el cambio toca el modelo y el renderizador a la vez, y una parte sin la otra deja las secciones vacías.
+
+**Un detalle menor, localizado**: el `aspect-ratio: 350/380` de las tarjetas de problemáticas está fijado a partir de las de la home. En la presentación el original pinta esas imágenes a su tamaño natural (599×599 cuadradas) y las mías salen 604×656, un 10 % más altas cada una. Son 14 tarjetas por página, así que suma; y el dato real es que el autor fijó alturas distintas por sitio, que no están en el JSON.
