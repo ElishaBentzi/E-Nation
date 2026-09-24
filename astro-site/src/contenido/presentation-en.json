@@ -25,8 +25,9 @@
        "margen": null,
        "relleno": null,
        "tipo": "imagen",
-       "imagen": "/images/2018/08/0-L.png",
-       "alt": ""
+       "imagen": "/images/2018/08/0-L-226x1024.png",
+       "alt": "",
+       "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/0-L-226x1024.png"
       }
      ]
     },
@@ -40,8 +41,9 @@
        "margen": null,
        "relleno": null,
        "tipo": "imagen",
-       "imagen": "/images/2018/08/2-logo.png",
-       "alt": ""
+       "imagen": "/images/2018/08/2-logo-150x150.png",
+       "alt": "",
+       "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/2-logo-150x150.png"
       },
       {
        "_id": "aafb067",
@@ -81,21 +83,37 @@
        "color": "#ffffff",
        "tamanoEm": 1.6,
        "grosor": "600"
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
-     "relleno": null,
-     "bloques": [
+      },
       {
-       "_id": "44f7bd6",
-       "margen": null,
+       "tipo": "grupo",
+       "fondo": {
+        "imagen": "/images/2018/08/2-map.png",
+        "tamano": null,
+        "posicion": null,
+        "repetir": "no-repeat",
+        "attachment": null
+       },
        "relleno": null,
-       "tipo": "imagen",
-       "imagen": "/images/2018/08/2-hand-passport.png",
-       "alt": ""
+       "ancho": 100,
+       "bloques": [],
+       "columnas": [
+        {
+         "fondo": null,
+         "ancho": 100,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "44f7bd6",
+           "margen": null,
+           "relleno": null,
+           "tipo": "imagen",
+           "imagen": "/images/2018/08/2-hand-passport-300x291.png",
+           "alt": "",
+           "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/2-hand-passport-300x291.png"
+          }
+         ]
+        }
+       ]
       }
      ]
     },
@@ -109,8 +127,9 @@
        "margen": null,
        "relleno": null,
        "tipo": "imagen",
-       "imagen": "/images/2018/08/0-R.png",
-       "alt": ""
+       "imagen": "/images/2018/08/0-R-226x1024.png",
+       "alt": "",
+       "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/0-R-226x1024.png"
       }
      ]
     }
@@ -137,22 +156,40 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 79.942,
      "relleno": null,
      "bloques": [
       {
-       "_id": "dd13a3e",
-       "margen": null,
-       "relleno": "6% 4% 6% 4%",
-       "tipo": "encabezado",
-       "texto": "Do you feel yourself as a member of a society designed for your happiness, or do you feel that you are only a piece of a system of exploitation?",
-       "nivel": "p",
-       "alineacion": "center",
-       "html": null,
-       "color": "#ffffff",
-       "tamanoEm": 2.5,
-       "grosor": "600",
-       "interlineadoEm": 1.1
+       "tipo": "grupo",
+       "fondo": {
+        "color": "#052743"
+       },
+       "relleno": null,
+       "ancho": 100,
+       "bloques": [],
+       "columnas": [
+        {
+         "fondo": null,
+         "ancho": 100,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "dd13a3e",
+           "margen": null,
+           "relleno": "6% 4% 6% 4%",
+           "tipo": "encabezado",
+           "texto": "Do you feel yourself as a member of a society designed for your happiness, or do you feel that you are only a piece of a system of exploitation?",
+           "nivel": "p",
+           "alineacion": "center",
+           "html": null,
+           "color": "#ffffff",
+           "tamanoEm": 2.5,
+           "grosor": "600",
+           "interlineadoEm": 1.1
+          }
+         ]
+        }
+       ]
       }
      ]
     },
@@ -197,6 +234,139 @@
        "grosor": "600"
       },
       {
+       "tipo": "grupo",
+       "fondo": null,
+       "relleno": null,
+       "ancho": 100,
+       "bloques": [],
+       "columnas": [
+        {
+         "fondo": null,
+         "ancho": 50,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "73704ed",
+           "margen": null,
+           "relleno": null,
+           "tipo": "banner",
+           "imagen": "/images/2018/10/6-change-base.jpg",
+           "titulo": "Imposition",
+           "texto": "Forced Imposition of bad government decisions.",
+           "fondo": "#356193",
+           "fondoHover": "#ff7100",
+           "colorTitulo": "#ffffff",
+           "colorTexto": "#ffffff",
+           "efecto": "roxy",
+           "clases": "reborde_negro_sombra",
+           "tamanoTituloEm": 2.5
+          }
+         ]
+        },
+        {
+         "fondo": null,
+         "ancho": 50,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "9375f56",
+           "margen": null,
+           "relleno": null,
+           "tipo": "banner",
+           "imagen": "/images/2018/10/ini-banner-burocracia.jpg",
+           "titulo": "Bureaucracy",
+           "texto": "Bureaucracies that hinder your work.",
+           "fondo": "#356193",
+           "fondoHover": "#ff7100",
+           "colorTitulo": "#ffffff",
+           "colorTexto": "#ffffff",
+           "efecto": "roxy",
+           "clases": "reborde_negro_sombra",
+           "tamanoTituloEm": 2.5
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "tipo": "grupo",
+       "fondo": null,
+       "relleno": null,
+       "ancho": 100,
+       "bloques": [],
+       "columnas": [
+        {
+         "fondo": null,
+         "ancho": 50,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "430cf75",
+           "margen": null,
+           "relleno": null,
+           "tipo": "banner",
+           "imagen": "/images/2020/12/Riesgo-de-quiebra.jpg",
+           "titulo": "Bad Management",
+           "texto": "Badly managed projects that do not solve anything.",
+           "fondo": "#356193",
+           "fondoHover": "#ff7100",
+           "colorTitulo": "#ffffff",
+           "colorTexto": "#ffffff",
+           "efecto": "roxy",
+           "clases": "reborde_negro_sombra",
+           "tamanoTituloEm": 2.5
+          }
+         ]
+        },
+        {
+         "fondo": null,
+         "ancho": 50,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "2c2f39a",
+           "margen": null,
+           "relleno": null,
+           "tipo": "banner",
+           "imagen": "/images/2018/10/problem-loss-savings.jpg",
+           "titulo": "Innecesary Expenses",
+           "texto": "Expenses Financial and material wars expensive and unnecessary.",
+           "fondo": "#356193",
+           "fondoHover": "#ff7100",
+           "colorTitulo": "#ffffff",
+           "colorTexto": "#ffffff",
+           "efecto": "roxy",
+           "clases": "reborde_negro_sombra",
+           "tamanoTituloEm": 2.5
+          }
+         ]
+        },
+        {
+         "fondo": null,
+         "ancho": 50,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "700c0b1",
+           "margen": null,
+           "relleno": null,
+           "tipo": "banner",
+           "imagen": "/images/2018/10/problem-police-state-1.jpg",
+           "titulo": "Police State",
+           "texto": "Paying to be watched, but not to them.",
+           "fondo": "#356193",
+           "fondoHover": "#ff7100",
+           "colorTitulo": "#ffffff",
+           "colorTexto": "#ffffff",
+           "efecto": "roxy",
+           "clases": "reborde_negro_sombra",
+           "tamanoTituloEm": 2.5
+          }
+         ]
+        }
+       ]
+      },
+      {
        "_id": "eb0f090",
        "margen": "2% 0% 0% 0%",
        "relleno": "0% 5% 1% 5%",
@@ -227,123 +397,9 @@
        "margen": "0px 0px -9px 0px",
        "relleno": null,
        "tipo": "imagen",
-       "imagen": "/images/2018/08/0-bottom.png",
-       "alt": ""
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 50,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "73704ed",
-       "margen": null,
-       "relleno": null,
-       "tipo": "banner",
-       "imagen": "/images/2018/10/6-change-base.jpg",
-       "titulo": "Imposition",
-       "texto": "Forced Imposition of bad government decisions.",
-       "fondo": "#356193",
-       "fondoHover": "#ff7100",
-       "colorTitulo": "#ffffff",
-       "colorTexto": "#ffffff",
-       "efecto": "roxy",
-       "clases": "reborde_negro_sombra",
-       "tamanoTituloEm": 2.5
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 50,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "9375f56",
-       "margen": null,
-       "relleno": null,
-       "tipo": "banner",
-       "imagen": "/images/2018/10/ini-banner-burocracia.jpg",
-       "titulo": "Bureaucracy",
-       "texto": "Bureaucracies that hinder your work.",
-       "fondo": "#356193",
-       "fondoHover": "#ff7100",
-       "colorTitulo": "#ffffff",
-       "colorTexto": "#ffffff",
-       "efecto": "roxy",
-       "clases": "reborde_negro_sombra",
-       "tamanoTituloEm": 2.5
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 50,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "430cf75",
-       "margen": null,
-       "relleno": null,
-       "tipo": "banner",
-       "imagen": "/images/2020/12/Riesgo-de-quiebra.jpg",
-       "titulo": "Bad Management",
-       "texto": "Badly managed projects that do not solve anything.",
-       "fondo": "#356193",
-       "fondoHover": "#ff7100",
-       "colorTitulo": "#ffffff",
-       "colorTexto": "#ffffff",
-       "efecto": "roxy",
-       "clases": "reborde_negro_sombra",
-       "tamanoTituloEm": 2.5
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 50,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "2c2f39a",
-       "margen": null,
-       "relleno": null,
-       "tipo": "banner",
-       "imagen": "/images/2018/10/problem-loss-savings.jpg",
-       "titulo": "Innecesary Expenses",
-       "texto": "Expenses Financial and material wars expensive and unnecessary.",
-       "fondo": "#356193",
-       "fondoHover": "#ff7100",
-       "colorTitulo": "#ffffff",
-       "colorTexto": "#ffffff",
-       "efecto": "roxy",
-       "clases": "reborde_negro_sombra",
-       "tamanoTituloEm": 2.5
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 50,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "700c0b1",
-       "margen": null,
-       "relleno": null,
-       "tipo": "banner",
-       "imagen": "/images/2018/10/problem-police-state-1.jpg",
-       "titulo": "Police State",
-       "texto": "Paying to be watched, but not to them.",
-       "fondo": "#356193",
-       "fondoHover": "#ff7100",
-       "colorTitulo": "#ffffff",
-       "colorTexto": "#ffffff",
-       "efecto": "roxy",
-       "clases": "reborde_negro_sombra",
-       "tamanoTituloEm": 2.5
+       "imagen": "/images/2018/08/0-bottom-1024x82.png",
+       "alt": "",
+       "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/0-bottom-1024x82.png"
       }
      ]
     }
@@ -373,7 +429,8 @@
        "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/10/farm-cow.gif",
-       "alt": ""
+       "alt": "",
+       "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/10/farm-cow.gif"
       }
      ]
     },
@@ -435,22 +492,38 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 78.426,
      "relleno": null,
      "bloques": [
       {
-       "_id": "fdde934",
-       "margen": null,
-       "relleno": "1% 5% 1% 5%",
-       "tipo": "encabezado",
-       "texto": "Citizens are the heads of government, all who are in government are our employees, and their job is to serve to us, the citizens, not the other way around! So why do governments treat us like their pawns? The government works with the taxes we pay, and it's the excuse they use to monitor what we do and take away a lot of the money we make. An Orwellian world where the State is virtually omnipotent. Do we get the same treatment from the government? NO! Do we know the details of what they spend and to whom they pay each penny? NO!",
-       "nivel": "p",
-       "alineacion": "center",
-       "html": "Citizens are the heads of government, all who are in government are our employees, and their job is to serve to us, the citizens, not the other way around!<br>So why do governments treat us like their pawns?<br>The government works with the taxes we pay, and it's the excuse they use to monitor what we do and take away a lot of the money we make.<br>An Orwellian world where the State is virtually omnipotent.<br>Do we get the same treatment from the government? NO! Do we know the details of what they spend and to whom they pay each penny? NO!",
-       "color": "#ffffff",
-       "tamanoEm": 1.8,
-       "grosor": "600",
-       "interlineadoEm": 1.2
+       "tipo": "grupo",
+       "fondo": null,
+       "relleno": null,
+       "ancho": 100,
+       "bloques": [],
+       "columnas": [
+        {
+         "fondo": null,
+         "ancho": 100,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "fdde934",
+           "margen": null,
+           "relleno": "1% 5% 1% 5%",
+           "tipo": "encabezado",
+           "texto": "Citizens are the heads of government, all who are in government are our employees, and their job is to serve to us, the citizens, not the other way around! So why do governments treat us like their pawns? The government works with the taxes we pay, and it's the excuse they use to monitor what we do and take away a lot of the money we make. An Orwellian world where the State is virtually omnipotent. Do we get the same treatment from the government? NO! Do we know the details of what they spend and to whom they pay each penny? NO!",
+           "nivel": "p",
+           "alineacion": "center",
+           "html": "Citizens are the heads of government, all who are in government are our employees, and their job is to serve to us, the citizens, not the other way around!<br>So why do governments treat us like their pawns?<br>The government works with the taxes we pay, and it's the excuse they use to monitor what we do and take away a lot of the money we make.<br>An Orwellian world where the State is virtually omnipotent.<br>Do we get the same treatment from the government? NO! Do we know the details of what they spend and to whom they pay each penny? NO!",
+           "color": "#ffffff",
+           "tamanoEm": 1.8,
+           "grosor": "600",
+           "interlineadoEm": 1.2
+          }
+         ]
+        }
+       ]
       }
      ]
     },
@@ -464,8 +537,9 @@
        "margen": null,
        "relleno": "0% 0% 7% 0%",
        "tipo": "imagen",
-       "imagen": "/images/2018/08/0-2-R.png",
-       "alt": ""
+       "imagen": "/images/2018/08/0-2-R-226x1024.png",
+       "alt": "",
+       "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/0-2-R-226x1024.png"
       }
      ]
     }
@@ -559,36 +633,47 @@
        "color": "#052743",
        "tamanoEm": 1.8,
        "grosor": "600"
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 50,
-     "relleno": null,
-     "bloques": [
+      },
       {
-       "_id": "9a0d9a0",
-       "margen": null,
+       "tipo": "grupo",
+       "fondo": null,
        "relleno": null,
-       "tipo": "imagen",
-       "imagen": "/images/2018/08/7-The-Hill.png",
-       "alt": ""
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 50,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "3b97f2b",
-       "margen": null,
-       "relleno": "10% 0% 0% 0%",
-       "tipo": "imagen",
-       "imagen": "/images/2018/08/7-Newsweek.png",
-       "alt": ""
+       "ancho": 100,
+       "bloques": [],
+       "columnas": [
+        {
+         "fondo": null,
+         "ancho": 50,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "9a0d9a0",
+           "margen": null,
+           "relleno": null,
+           "tipo": "imagen",
+           "imagen": "/images/2018/08/7-The-Hill-150x150.png",
+           "alt": "",
+           "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/7-The-Hill-150x150.png"
+          }
+         ]
+        },
+        {
+         "fondo": null,
+         "ancho": 50,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "3b97f2b",
+           "margen": null,
+           "relleno": "10% 0% 0% 0%",
+           "tipo": "imagen",
+           "imagen": "/images/2018/08/7-Newsweek.png",
+           "alt": "",
+           "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/7-Newsweek.png"
+          }
+         ]
+        }
+       ]
       }
      ]
     },
@@ -718,87 +803,102 @@
        "grosor": "600"
       },
       {
+       "tipo": "grupo",
+       "fondo": null,
+       "relleno": null,
+       "ancho": 100,
+       "bloques": [],
+       "columnas": [
+        {
+         "fondo": null,
+         "ancho": 20,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "5025186",
+           "margen": null,
+           "relleno": null,
+           "tipo": "imagen",
+           "imagen": "/images/2018/08/8-Zero-Hedge.png",
+           "alt": "",
+           "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/8-Zero-Hedge.png"
+          }
+         ]
+        },
+        {
+         "fondo": null,
+         "ancho": 44.032,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "3e0b329",
+           "margen": null,
+           "relleno": null,
+           "tipo": "imagen",
+           "imagen": "/images/2018/08/8-El-diario.png",
+           "alt": "",
+           "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/8-El-diario.png"
+          }
+         ]
+        },
+        {
+         "fondo": null,
+         "ancho": 15.094,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "daf0b0a",
+           "margen": null,
+           "relleno": null,
+           "tipo": "imagen",
+           "imagen": "/images/2018/08/8-WSJ-Logo.png",
+           "alt": "",
+           "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/8-WSJ-Logo.png"
+          }
+         ]
+        },
+        {
+         "fondo": null,
+         "ancho": 14.717,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "b9be594",
+           "margen": null,
+           "relleno": null,
+           "tipo": "imagen",
+           "imagen": "/images/2018/08/8-Expansión-MX.png",
+           "alt": "",
+           "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/8-Expansión-MX.png"
+          }
+         ]
+        },
+        {
+         "fondo": null,
+         "ancho": 26.14,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "70e8ddc",
+           "margen": "15% 0% 0% 0%",
+           "relleno": null,
+           "tipo": "imagen",
+           "imagen": "/images/2018/08/8-Wired.png",
+           "alt": "",
+           "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/8-Wired.png"
+          }
+         ]
+        }
+       ]
+      },
+      {
        "_id": "03e2e5c",
        "margen": "0px 0px -9px 0px",
        "relleno": null,
        "tipo": "imagen",
-       "imagen": "/images/2018/08/0-bottom.png",
-       "alt": ""
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 20,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "5025186",
-       "margen": null,
-       "relleno": null,
-       "tipo": "imagen",
-       "imagen": "/images/2018/08/8-Zero-Hedge.png",
-       "alt": ""
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 44.032,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "3e0b329",
-       "margen": null,
-       "relleno": null,
-       "tipo": "imagen",
-       "imagen": "/images/2018/08/8-El-diario.png",
-       "alt": ""
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 15.094,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "daf0b0a",
-       "margen": null,
-       "relleno": null,
-       "tipo": "imagen",
-       "imagen": "/images/2018/08/8-WSJ-Logo.png",
-       "alt": ""
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 14.717,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "b9be594",
-       "margen": null,
-       "relleno": null,
-       "tipo": "imagen",
-       "imagen": "/images/2018/08/8-Expansión-MX.png",
-       "alt": ""
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 26.14,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "70e8ddc",
-       "margen": "15% 0% 0% 0%",
-       "relleno": null,
-       "tipo": "imagen",
-       "imagen": "/images/2018/08/8-Wired.png",
-       "alt": ""
+       "imagen": "/images/2018/08/0-bottom-1024x82.png",
+       "alt": "",
+       "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/0-bottom-1024x82.png"
       }
      ]
     },
@@ -859,78 +959,87 @@
        "color": "#052743",
        "tamanoEm": 2.5,
        "grosor": "600"
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 33,
-     "relleno": null,
-     "bloques": [
+      },
       {
-       "_id": "ee845d5",
-       "margen": null,
+       "tipo": "grupo",
+       "fondo": null,
        "relleno": null,
-       "tipo": "caja",
-       "titulo": "Film",
-       "descripcion": "",
-       "tituloDorso": "Movie Trailer",
-       "descripcionDorso": "Backstabbing for beginners",
-       "imagen": "/images/2018/08/9-Backstabbing.jpg",
-       "fondoDorso": null,
-       "colorTitulo": null,
-       "colorDescripcion": null,
-       "alto": 400,
-       "efecto": "jet-box-effect-7",
-       "enlace": "https://www.youtube.com/watch?v=P3GdyaVQ20I"
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 33,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "00950be",
-       "margen": null,
-       "relleno": null,
-       "tipo": "caja",
-       "titulo": "John Perkins",
-       "descripcion": "",
-       "tituloDorso": "John Perkins",
-       "descripcionDorso": "",
-       "imagen": "/images/2018/08/9-Hit-Man.jpg",
-       "fondoDorso": null,
-       "colorTitulo": null,
-       "colorDescripcion": null,
-       "alto": 400,
-       "efecto": "jet-box-effect-7",
-       "enlace": "https://www.youtube.com/watch?v=btF6nKHo2i0"
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 33,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "f5bac61",
-       "margen": null,
-       "relleno": null,
-       "tipo": "caja",
-       "titulo": "Ronald Bernard",
-       "descripcion": "",
-       "tituloDorso": "Ronald Bernard",
-       "descripcionDorso": "",
-       "imagen": "/images/2018/08/9-revelations.jpg",
-       "fondoDorso": null,
-       "colorTitulo": null,
-       "colorDescripcion": null,
-       "alto": 400,
-       "efecto": "jet-box-effect-7",
-       "enlace": "https://www.youtube.com/watch?v=VzoaxTudJks"
+       "ancho": 100,
+       "bloques": [],
+       "columnas": [
+        {
+         "fondo": null,
+         "ancho": 33,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "ee845d5",
+           "margen": null,
+           "relleno": null,
+           "tipo": "caja",
+           "titulo": "Film",
+           "descripcion": "",
+           "tituloDorso": "Movie Trailer",
+           "descripcionDorso": "Backstabbing for beginners",
+           "imagen": "/images/2018/08/9-Backstabbing.jpg",
+           "fondoDorso": null,
+           "colorTitulo": null,
+           "colorDescripcion": null,
+           "alto": 400,
+           "efecto": "jet-box-effect-7",
+           "enlace": "https://www.youtube.com/watch?v=P3GdyaVQ20I"
+          }
+         ]
+        },
+        {
+         "fondo": null,
+         "ancho": 33,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "00950be",
+           "margen": null,
+           "relleno": null,
+           "tipo": "caja",
+           "titulo": "John Perkins",
+           "descripcion": "",
+           "tituloDorso": "John Perkins",
+           "descripcionDorso": "",
+           "imagen": "/images/2018/08/9-Hit-Man.jpg",
+           "fondoDorso": null,
+           "colorTitulo": null,
+           "colorDescripcion": null,
+           "alto": 400,
+           "efecto": "jet-box-effect-7",
+           "enlace": "https://www.youtube.com/watch?v=btF6nKHo2i0"
+          }
+         ]
+        },
+        {
+         "fondo": null,
+         "ancho": 33,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "f5bac61",
+           "margen": null,
+           "relleno": null,
+           "tipo": "caja",
+           "titulo": "Ronald Bernard",
+           "descripcion": "",
+           "tituloDorso": "Ronald Bernard",
+           "descripcionDorso": "",
+           "imagen": "/images/2018/08/9-revelations.jpg",
+           "fondoDorso": null,
+           "colorTitulo": null,
+           "colorDescripcion": null,
+           "alto": 400,
+           "efecto": "jet-box-effect-7",
+           "enlace": "https://www.youtube.com/watch?v=VzoaxTudJks"
+          }
+         ]
+        }
+       ]
       }
      ]
     },
@@ -986,7 +1095,8 @@
        "relleno": "0% 36% 0% 36%",
        "tipo": "imagen",
        "imagen": "/images/2019/10/circles-Smedley-1.png",
-       "alt": ""
+       "alt": "",
+       "_origen": "https://e-nation.org/zero/wp-content/uploads/2019/10/circles-Smedley-1.png"
       },
       {
        "_id": "16f43dc",
@@ -1093,82 +1203,93 @@
        "grosor": "600"
       },
       {
+       "tipo": "grupo",
+       "fondo": null,
+       "relleno": null,
+       "ancho": 100,
+       "bloques": [],
+       "columnas": [
+        {
+         "fondo": null,
+         "ancho": 50.004,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "6463aba",
+           "margen": null,
+           "relleno": null,
+           "tipo": "encabezado",
+           "texto": "Rules for Rulers",
+           "nivel": "p",
+           "alineacion": "center",
+           "html": null,
+           "color": "#ffffff",
+           "tamanoEm": 1.8,
+           "grosor": "600",
+           "interlineadoEm": 1.2
+          },
+          {
+           "_id": "9ed79a9",
+           "margen": null,
+           "relleno": null,
+           "tipo": "encabezado",
+           "texto": "#1 Have the Key People on your side #2 Money Control #3 Decrease Key People",
+           "nivel": "p",
+           "alineacion": "left",
+           "html": "#1 Have the Key People on your side<br>#2 Money Control<br>#3 Decrease Key People",
+           "color": "#ffffff",
+           "tamanoEm": 1.6,
+           "grosor": "600",
+           "interlineadoEm": 1.2
+          },
+          {
+           "_id": "f2bd381",
+           "margen": null,
+           "relleno": null,
+           "tipo": "boton",
+           "etiqueta": "Watch on Youtube",
+           "etiquetaHover": "GO",
+           "enlace": "https://www.youtube.com/watch?v=rStL7niR7gs",
+           "icono": ""
+          }
+         ]
+        },
+        {
+         "fondo": null,
+         "ancho": 50,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "b947c28",
+           "margen": null,
+           "relleno": null,
+           "tipo": "video",
+           "youtube": "https://www.youtube.com/watch?v=rStL7niR7gs",
+           "vimeo": "https://vimeo.com/235215203",
+           "miniatura": "/images/2018/09/14-Piramid-Power.jpg",
+           "aspecto": "4-3"
+          }
+         ]
+        }
+       ]
+      },
+      {
        "_id": "424901e",
        "margen": "2% 0% 0% 0%",
        "relleno": null,
        "tipo": "imagen",
-       "imagen": "/images/2018/09/10-youtube.png",
-       "alt": ""
+       "imagen": "/images/2018/09/10-youtube-300x70.png",
+       "alt": "",
+       "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/09/10-youtube-300x70.png"
       },
       {
        "_id": "49e1ff6",
        "margen": null,
        "relleno": null,
        "tipo": "imagen",
-       "imagen": "/images/2018/08/0-bottom.png",
-       "alt": ""
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 50.004,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "6463aba",
-       "margen": null,
-       "relleno": null,
-       "tipo": "encabezado",
-       "texto": "Rules for Rulers",
-       "nivel": "p",
-       "alineacion": "center",
-       "html": null,
-       "color": "#ffffff",
-       "tamanoEm": 1.8,
-       "grosor": "600",
-       "interlineadoEm": 1.2
-      },
-      {
-       "_id": "9ed79a9",
-       "margen": null,
-       "relleno": null,
-       "tipo": "encabezado",
-       "texto": "#1 Have the Key People on your side #2 Money Control #3 Decrease Key People",
-       "nivel": "p",
-       "alineacion": "left",
-       "html": "#1 Have the Key People on your side<br>#2 Money Control<br>#3 Decrease Key People",
-       "color": "#ffffff",
-       "tamanoEm": 1.6,
-       "grosor": "600",
-       "interlineadoEm": 1.2
-      },
-      {
-       "_id": "f2bd381",
-       "margen": null,
-       "relleno": null,
-       "tipo": "boton",
-       "etiqueta": "Watch on Youtube",
-       "etiquetaHover": "GO",
-       "enlace": "https://www.youtube.com/watch?v=rStL7niR7gs",
-       "icono": ""
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 50,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "b947c28",
-       "margen": null,
-       "relleno": null,
-       "tipo": "video",
-       "youtube": "https://www.youtube.com/watch?v=rStL7niR7gs",
-       "vimeo": "https://vimeo.com/235215203",
-       "miniatura": "/images/2018/09/14-Piramid-Power.jpg",
-       "aspecto": "4-3"
+       "imagen": "/images/2018/08/0-bottom-1024x82.png",
+       "alt": "",
+       "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/0-bottom-1024x82.png"
       }
      ]
     },
@@ -1201,57 +1322,74 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 80,
      "relleno": null,
      "bloques": [
       {
-       "_id": "42e7738",
-       "margen": "0% 10% 0% -1%",
-       "relleno": "1% 0% 1% 2%",
-       "tipo": "encabezado",
-       "texto": "The Policy does not give solutions",
-       "nivel": "h2",
-       "alineacion": "left",
-       "html": null,
-       "color": "#ffffff",
-       "tamanoEm": 2.5,
-       "grosor": "600"
-      },
-      {
-       "_id": "c09d653",
-       "margen": null,
-       "relleno": "1% 5% 1% 5%",
-       "tipo": "encabezado",
-       "texto": "Politicians tell us what we want to hear and then, once elected, they make their agenda, often something completely different, and most of the time, not for our benefit! All the time spending and wasting our hard earned money, without responsibility!",
-       "nivel": "p",
-       "alineacion": "center",
-       "html": null,
-       "color": "#052743",
-       "tamanoEm": 1.8,
-       "grosor": "600",
-       "interlineadoEm": 1.2
-      },
-      {
-       "_id": "ac0ba01",
-       "margen": null,
-       "relleno": "1% 5% 1% 5%",
-       "tipo": "encabezado",
-       "texto": "<b>\"The Myth is Canada\", Nephalem Films</b>",
-       "nivel": "p",
-       "alineacion": "center",
-       "html": "<b>\"The Myth is Canada\", Nephalem Films</b>",
-       "color": "#ff7100",
-       "tamanoEm": 1.8,
-       "grosor": "600",
-       "interlineadoEm": 1.2
-      },
-      {
-       "_id": "38b4075",
-       "margen": null,
-       "relleno": "0% 20% 0% 20%",
-       "tipo": "imagen",
-       "imagen": "/images/2018/08/10-canada.jpg",
-       "alt": ""
+       "tipo": "grupo",
+       "fondo": null,
+       "relleno": null,
+       "ancho": 100,
+       "bloques": [],
+       "columnas": [
+        {
+         "fondo": null,
+         "ancho": 100,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "42e7738",
+           "margen": "0% 10% 0% -1%",
+           "relleno": "1% 0% 1% 2%",
+           "tipo": "encabezado",
+           "texto": "The Policy does not give solutions",
+           "nivel": "h2",
+           "alineacion": "left",
+           "html": null,
+           "color": "#ffffff",
+           "tamanoEm": 2.5,
+           "grosor": "600"
+          },
+          {
+           "_id": "c09d653",
+           "margen": null,
+           "relleno": "1% 5% 1% 5%",
+           "tipo": "encabezado",
+           "texto": "Politicians tell us what we want to hear and then, once elected, they make their agenda, often something completely different, and most of the time, not for our benefit! All the time spending and wasting our hard earned money, without responsibility!",
+           "nivel": "p",
+           "alineacion": "center",
+           "html": null,
+           "color": "#052743",
+           "tamanoEm": 1.8,
+           "grosor": "600",
+           "interlineadoEm": 1.2
+          },
+          {
+           "_id": "ac0ba01",
+           "margen": null,
+           "relleno": "1% 5% 1% 5%",
+           "tipo": "encabezado",
+           "texto": "<b>\"The Myth is Canada\", Nephalem Films</b>",
+           "nivel": "p",
+           "alineacion": "center",
+           "html": "<b>\"The Myth is Canada\", Nephalem Films</b>",
+           "color": "#ff7100",
+           "tamanoEm": 1.8,
+           "grosor": "600",
+           "interlineadoEm": 1.2
+          },
+          {
+           "_id": "38b4075",
+           "margen": null,
+           "relleno": "0% 20% 0% 20%",
+           "tipo": "imagen",
+           "imagen": "/images/2018/08/10-canada.jpg",
+           "alt": "",
+           "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/10-canada.jpg"
+          }
+         ]
+        }
+       ]
       }
      ]
     },
@@ -1333,7 +1471,8 @@
        "relleno": "0% 25% 0% 25%",
        "tipo": "imagen",
        "imagen": "/images/2018/09/12-the-guardianwhite.png",
-       "alt": ""
+       "alt": "",
+       "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/09/12-the-guardianwhite.png"
       }
      ]
     },
@@ -1381,134 +1520,154 @@
        "color": "#ffffff",
        "tamanoEm": 2.5,
        "grosor": "600"
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 20.134,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "9aa0f41",
-       "margen": "6% 0% 0% 0%",
-       "relleno": null,
-       "tipo": "imagen",
-       "imagen": "/images/2018/08/12-michael-krieger-1.png",
-       "alt": ""
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 79.87,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "f44fd2f",
-       "margen": null,
-       "relleno": null,
-       "tipo": "encabezado",
-       "texto": "“The idea that we need to argue and bicker endlessly in order to convince a small majority of Congress to pass legislation that will then apply to 325 million people is idiotic.” “There’s this erroneous belief that the key thing we need to do is “elect good people.” I disagree. What we need are more appropriate political structures.”",
-       "nivel": "p",
-       "alineacion": "left",
-       "html": "“The idea that we need to argue and bicker endlessly in order to convince a small majority of Congress to pass legislation that will then apply to 325 million people is idiotic.”<br>“There’s this erroneous belief that the key thing we need to do is “elect good people.” I disagree. What we need are more appropriate political structures.”",
-       "color": "#052743",
-       "tamanoEm": 1.6,
-       "grosor": "600",
-       "interlineadoEm": 1.2
       },
       {
-       "_id": "0f50143",
-       "margen": null,
+       "tipo": "grupo",
+       "fondo": null,
        "relleno": null,
-       "tipo": "encabezado",
-       "texto": "- Michael Krieger -",
-       "nivel": "p",
-       "alineacion": "left",
-       "html": null,
-       "color": "#ff7100",
-       "tamanoEm": 1.6,
-       "grosor": "600",
-       "interlineadoEm": 1.2
+       "ancho": 100,
+       "bloques": [],
+       "columnas": [
+        {
+         "fondo": null,
+         "ancho": 20.134,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "9aa0f41",
+           "margen": "6% 0% 0% 0%",
+           "relleno": null,
+           "tipo": "imagen",
+           "imagen": "/images/2018/08/12-michael-krieger-1.png",
+           "alt": "",
+           "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/12-michael-krieger-1.png"
+          }
+         ]
+        },
+        {
+         "fondo": null,
+         "ancho": 79.87,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "f44fd2f",
+           "margen": null,
+           "relleno": null,
+           "tipo": "encabezado",
+           "texto": "“The idea that we need to argue and bicker endlessly in order to convince a small majority of Congress to pass legislation that will then apply to 325 million people is idiotic.” “There’s this erroneous belief that the key thing we need to do is “elect good people.” I disagree. What we need are more appropriate political structures.”",
+           "nivel": "p",
+           "alineacion": "left",
+           "html": "“The idea that we need to argue and bicker endlessly in order to convince a small majority of Congress to pass legislation that will then apply to 325 million people is idiotic.”<br>“There’s this erroneous belief that the key thing we need to do is “elect good people.” I disagree. What we need are more appropriate political structures.”",
+           "color": "#052743",
+           "tamanoEm": 1.6,
+           "grosor": "600",
+           "interlineadoEm": 1.2
+          },
+          {
+           "_id": "0f50143",
+           "margen": null,
+           "relleno": null,
+           "tipo": "encabezado",
+           "texto": "- Michael Krieger -",
+           "nivel": "p",
+           "alineacion": "left",
+           "html": null,
+           "color": "#ff7100",
+           "tamanoEm": 1.6,
+           "grosor": "600",
+           "interlineadoEm": 1.2
+          },
+          {
+           "_id": "e534258",
+           "margen": null,
+           "relleno": null,
+           "tipo": "encabezado",
+           "texto": "https://www.zerohedge.com/news/2018-04-24/road-2025-part-4-very-bright-future-if-we-demand-it",
+           "nivel": "p",
+           "alineacion": "left",
+           "html": null,
+           "color": "#052743",
+           "tamanoEm": 1.2,
+           "grosor": "600",
+           "interlineadoEm": 1.2
+          }
+         ]
+        }
+       ]
       },
       {
-       "_id": "e534258",
-       "margen": null,
+       "tipo": "grupo",
+       "fondo": null,
        "relleno": null,
-       "tipo": "encabezado",
-       "texto": "https://www.zerohedge.com/news/2018-04-24/road-2025-part-4-very-bright-future-if-we-demand-it",
-       "nivel": "p",
-       "alineacion": "left",
-       "html": null,
-       "color": "#052743",
-       "tamanoEm": 1.2,
-       "grosor": "600",
-       "interlineadoEm": 1.2
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 20.134,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "8198219",
-       "margen": "6% 0% 0% 0%",
-       "relleno": null,
-       "tipo": "imagen",
-       "imagen": "/images/2018/08/12-geoff-mulgan.png",
-       "alt": ""
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 79.87,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "b79d662",
-       "margen": null,
-       "relleno": null,
-       "tipo": "encabezado",
-       "texto": "\"You have to do things in a completely different way, than we do now, where some people in the capital that write a law and then implement it to millions\", that does not work anymore.",
-       "nivel": "p",
-       "alineacion": "left",
-       "html": null,
-       "color": "#052743",
-       "tamanoEm": 1.6,
-       "grosor": "600",
-       "interlineadoEm": 1.2
-      },
-      {
-       "_id": "1bf5901",
-       "margen": null,
-       "relleno": null,
-       "tipo": "encabezado",
-       "texto": "- Geoff Mulgan -",
-       "nivel": "p",
-       "alineacion": "left",
-       "html": null,
-       "color": "#ff7100",
-       "tamanoEm": 1.6,
-       "grosor": "600",
-       "interlineadoEm": 1.2
-      },
-      {
-       "_id": "e9c9bec",
-       "margen": "-3% 0% 0% 0%",
-       "relleno": null,
-       "tipo": "encabezado",
-       "texto": "Chief executive of innovation foundation Nesta",
-       "nivel": "p",
-       "alineacion": "left",
-       "html": null,
-       "color": "#052743",
-       "tamanoEm": 1.6,
-       "grosor": "600",
-       "interlineadoEm": 1.2
+       "ancho": 100,
+       "bloques": [],
+       "columnas": [
+        {
+         "fondo": null,
+         "ancho": 20.134,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "8198219",
+           "margen": "6% 0% 0% 0%",
+           "relleno": null,
+           "tipo": "imagen",
+           "imagen": "/images/2018/08/12-geoff-mulgan.png",
+           "alt": "",
+           "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/12-geoff-mulgan.png"
+          }
+         ]
+        },
+        {
+         "fondo": null,
+         "ancho": 79.87,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "b79d662",
+           "margen": null,
+           "relleno": null,
+           "tipo": "encabezado",
+           "texto": "\"You have to do things in a completely different way, than we do now, where some people in the capital that write a law and then implement it to millions\", that does not work anymore.",
+           "nivel": "p",
+           "alineacion": "left",
+           "html": null,
+           "color": "#052743",
+           "tamanoEm": 1.6,
+           "grosor": "600",
+           "interlineadoEm": 1.2
+          },
+          {
+           "_id": "1bf5901",
+           "margen": null,
+           "relleno": null,
+           "tipo": "encabezado",
+           "texto": "- Geoff Mulgan -",
+           "nivel": "p",
+           "alineacion": "left",
+           "html": null,
+           "color": "#ff7100",
+           "tamanoEm": 1.6,
+           "grosor": "600",
+           "interlineadoEm": 1.2
+          },
+          {
+           "_id": "e9c9bec",
+           "margen": "-3% 0% 0% 0%",
+           "relleno": null,
+           "tipo": "encabezado",
+           "texto": "Chief executive of innovation foundation Nesta",
+           "nivel": "p",
+           "alineacion": "left",
+           "html": null,
+           "color": "#052743",
+           "tamanoEm": 1.6,
+           "grosor": "600",
+           "interlineadoEm": 1.2
+          }
+         ]
+        }
+       ]
       }
      ]
     },
@@ -1564,7 +1723,8 @@
        "relleno": "0% 35% 0% 35%",
        "tipo": "imagen",
        "imagen": "/images/2018/08/13-photo.png",
-       "alt": ""
+       "alt": "",
+       "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/13-photo.png"
       },
       {
        "_id": "1c3d007",
@@ -1640,82 +1800,93 @@
      "relleno": null,
      "bloques": [
       {
+       "tipo": "grupo",
+       "fondo": null,
+       "relleno": null,
+       "ancho": 100,
+       "bloques": [],
+       "columnas": [
+        {
+         "fondo": null,
+         "ancho": 100,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "52e47b6",
+           "margen": "0% 10% 0% -1%",
+           "relleno": "1% 0% 1% 2%",
+           "tipo": "encabezado",
+           "texto": "American Congress takes 81 years to correct its own mistake",
+           "nivel": "h2",
+           "alineacion": "left",
+           "html": null,
+           "color": "#ffffff",
+           "tamanoEm": 2.5,
+           "grosor": "600"
+          },
+          {
+           "_id": "f3fe31a",
+           "margen": null,
+           "relleno": "0% 36% 0% 36%",
+           "tipo": "imagen",
+           "imagen": "/images/2018/08/14-Ron-Wyden.png",
+           "alt": "",
+           "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/14-Ron-Wyden.png"
+          },
+          {
+           "_id": "d06c500",
+           "margen": null,
+           "relleno": "1% 5% 1% 5%",
+           "tipo": "encabezado",
+           "texto": "“Legalizing hemp nationwide ends decades of bad policymaking and opens up untold economic opportunity for farmers in Oregon and across the country”",
+           "nivel": "p",
+           "alineacion": "center",
+           "html": null,
+           "color": "#052743",
+           "tamanoEm": 1.8,
+           "grosor": "600",
+           "interlineadoEm": 1.2
+          },
+          {
+           "_id": "82737a5",
+           "margen": null,
+           "relleno": "1% 5% 1% 5%",
+           "tipo": "encabezado",
+           "texto": "- Sen. Ron Wyden -",
+           "nivel": "p",
+           "alineacion": "center",
+           "html": null,
+           "color": "#ff7100",
+           "tamanoEm": 1.8,
+           "grosor": "600",
+           "interlineadoEm": 1.2
+          },
+          {
+           "_id": "621a277",
+           "margen": null,
+           "relleno": null,
+           "tipo": "encabezado",
+           "texto": "https://www.forbes.com/sites/tomangell/2018/06/28/u-s-senate-votes-to-legalize-hemp-after-decades-long-ban-under-marijuana-prohibition/#31cffdab418a",
+           "nivel": "p",
+           "alineacion": "center",
+           "html": "https://www.forbes.com/sites/tomangell/2018/06/28/u-s-senate-votes-to-legalize-hemp-after-decades-long-ban-under-marijuana-prohibition/#31cffdab418a",
+           "color": "#052743",
+           "tamanoEm": 1.2,
+           "grosor": "600",
+           "interlineadoEm": 1.2
+          }
+         ]
+        }
+       ]
+      },
+      {
        "_id": "ae9fd4a",
        "margen": "3% 0% 0% 0%",
        "relleno": "0% 35% 0% 35%",
        "tipo": "imagen",
        "imagen": "/images/2018/09/15-Forbes-Logo.png",
-       "alt": ""
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "52e47b6",
-       "margen": "0% 10% 0% -1%",
-       "relleno": "1% 0% 1% 2%",
-       "tipo": "encabezado",
-       "texto": "American Congress takes 81 years to correct its own mistake",
-       "nivel": "h2",
-       "alineacion": "left",
-       "html": null,
-       "color": "#ffffff",
-       "tamanoEm": 2.5,
-       "grosor": "600"
-      },
-      {
-       "_id": "f3fe31a",
-       "margen": null,
-       "relleno": "0% 36% 0% 36%",
-       "tipo": "imagen",
-       "imagen": "/images/2018/08/14-Ron-Wyden.png",
-       "alt": ""
-      },
-      {
-       "_id": "d06c500",
-       "margen": null,
-       "relleno": "1% 5% 1% 5%",
-       "tipo": "encabezado",
-       "texto": "“Legalizing hemp nationwide ends decades of bad policymaking and opens up untold economic opportunity for farmers in Oregon and across the country”",
-       "nivel": "p",
-       "alineacion": "center",
-       "html": null,
-       "color": "#052743",
-       "tamanoEm": 1.8,
-       "grosor": "600",
-       "interlineadoEm": 1.2
-      },
-      {
-       "_id": "82737a5",
-       "margen": null,
-       "relleno": "1% 5% 1% 5%",
-       "tipo": "encabezado",
-       "texto": "- Sen. Ron Wyden -",
-       "nivel": "p",
-       "alineacion": "center",
-       "html": null,
-       "color": "#ff7100",
-       "tamanoEm": 1.8,
-       "grosor": "600",
-       "interlineadoEm": 1.2
-      },
-      {
-       "_id": "621a277",
-       "margen": null,
-       "relleno": null,
-       "tipo": "encabezado",
-       "texto": "https://www.forbes.com/sites/tomangell/2018/06/28/u-s-senate-votes-to-legalize-hemp-after-decades-long-ban-under-marijuana-prohibition/#31cffdab418a",
-       "nivel": "p",
-       "alineacion": "center",
-       "html": "https://www.forbes.com/sites/tomangell/2018/06/28/u-s-senate-votes-to-legalize-hemp-after-decades-long-ban-under-marijuana-prohibition/#31cffdab418a",
-       "color": "#052743",
-       "tamanoEm": 1.2,
-       "grosor": "600",
-       "interlineadoEm": 1.2
+       "alt": "",
+       "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/09/15-Forbes-Logo.png"
       }
      ]
     },
@@ -1797,7 +1968,8 @@
        "relleno": "0% 35% 0% 35%",
        "tipo": "imagen",
        "imagen": "/images/2018/08/15-Up-Worthy.png",
-       "alt": ""
+       "alt": "",
+       "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/15-Up-Worthy.png"
       },
       {
        "_id": "2b1be24",
@@ -1817,8 +1989,9 @@
        "margen": "0% 0% -1% 0%",
        "relleno": null,
        "tipo": "imagen",
-       "imagen": "/images/2018/08/0-bottom.png",
-       "alt": ""
+       "imagen": "/images/2018/08/0-bottom-1024x82.png",
+       "alt": "",
+       "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/0-bottom-1024x82.png"
       }
      ]
     },
@@ -1851,71 +2024,88 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 80,
      "relleno": null,
      "bloques": [
       {
-       "_id": "7738a4d",
-       "margen": "0% 10% 0% -1%",
-       "relleno": "1% 0% 1% 2%",
-       "tipo": "encabezado",
-       "texto": "Governments are in decline",
-       "nivel": "h2",
-       "alineacion": "left",
-       "html": null,
-       "color": "#ffffff",
-       "tamanoEm": 2.5,
-       "grosor": "600"
-      },
-      {
-       "_id": "028b546",
-       "margen": null,
-       "relleno": "0% 36% 0% 36%",
-       "tipo": "imagen",
-       "imagen": "/images/2018/08/16-Rana-Dasgupta.png",
-       "alt": ""
-      },
-      {
-       "_id": "81d603e",
-       "margen": null,
-       "relleno": "1% 5% 1% 5%",
-       "tipo": "encabezado",
-       "texto": "“We may buy the same products in every country of the world, we may all use Google and Facebook, but political life, curiously, is anchored in a distant past and maintains the old faith of the frontiers.\" The most transcendental opportunity of our age, precisely, will be the diminution of the nation state, due to its inability to resist the complementary and antagonistic forces of integration and regionalization of the 21st century. National states everywhere are in an advanced state of political and moral decadence. And, since we do not know any other sort, it feels like the end of the world.”",
-       "nivel": "p",
-       "alineacion": "center",
-       "html": "“We may buy the same products in every country of the world, we may all use Google and Facebook, but political life, curiously, is anchored in a distant past and maintains the old faith of the frontiers.\"<br>The most transcendental opportunity of our age, precisely, will be the diminution of the nation state, due to its inability to resist the complementary and antagonistic forces of integration and regionalization of the 21st century.<br>National states everywhere are in an advanced state of political and moral decadence. And, since we do not know any other sort, it feels like the end of the world.”",
-       "color": "#052743",
-       "tamanoEm": 1.8,
-       "grosor": "600",
-       "interlineadoEm": 1.2
-      },
-      {
-       "_id": "8739ccf",
-       "margen": null,
-       "relleno": "1% 5% 1% 5%",
-       "tipo": "encabezado",
-       "texto": "- Rana Dasgupta -",
-       "nivel": "p",
-       "alineacion": "center",
-       "html": null,
-       "color": "#ff7100",
-       "tamanoEm": 1.8,
-       "grosor": "600",
-       "interlineadoEm": 1.2
-      },
-      {
-       "_id": "329d113",
-       "margen": null,
+       "tipo": "grupo",
+       "fondo": null,
        "relleno": null,
-       "tipo": "encabezado",
-       "texto": "https://www.theguardian.com/news/2018/apr/05/demise-of-the-nation-state-rana-dasgupta",
-       "nivel": "p",
-       "alineacion": "center",
-       "html": null,
-       "color": "#052743",
-       "tamanoEm": 1.2,
-       "grosor": "600",
-       "interlineadoEm": 1.2
+       "ancho": 100,
+       "bloques": [],
+       "columnas": [
+        {
+         "fondo": null,
+         "ancho": 100,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "7738a4d",
+           "margen": "0% 10% 0% -1%",
+           "relleno": "1% 0% 1% 2%",
+           "tipo": "encabezado",
+           "texto": "Governments are in decline",
+           "nivel": "h2",
+           "alineacion": "left",
+           "html": null,
+           "color": "#ffffff",
+           "tamanoEm": 2.5,
+           "grosor": "600"
+          },
+          {
+           "_id": "028b546",
+           "margen": null,
+           "relleno": "0% 36% 0% 36%",
+           "tipo": "imagen",
+           "imagen": "/images/2018/08/16-Rana-Dasgupta.png",
+           "alt": "",
+           "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/16-Rana-Dasgupta.png"
+          },
+          {
+           "_id": "81d603e",
+           "margen": null,
+           "relleno": "1% 5% 1% 5%",
+           "tipo": "encabezado",
+           "texto": "“We may buy the same products in every country of the world, we may all use Google and Facebook, but political life, curiously, is anchored in a distant past and maintains the old faith of the frontiers.\" The most transcendental opportunity of our age, precisely, will be the diminution of the nation state, due to its inability to resist the complementary and antagonistic forces of integration and regionalization of the 21st century. National states everywhere are in an advanced state of political and moral decadence. And, since we do not know any other sort, it feels like the end of the world.”",
+           "nivel": "p",
+           "alineacion": "center",
+           "html": "“We may buy the same products in every country of the world, we may all use Google and Facebook, but political life, curiously, is anchored in a distant past and maintains the old faith of the frontiers.\"<br>The most transcendental opportunity of our age, precisely, will be the diminution of the nation state, due to its inability to resist the complementary and antagonistic forces of integration and regionalization of the 21st century.<br>National states everywhere are in an advanced state of political and moral decadence. And, since we do not know any other sort, it feels like the end of the world.”",
+           "color": "#052743",
+           "tamanoEm": 1.8,
+           "grosor": "600",
+           "interlineadoEm": 1.2
+          },
+          {
+           "_id": "8739ccf",
+           "margen": null,
+           "relleno": "1% 5% 1% 5%",
+           "tipo": "encabezado",
+           "texto": "- Rana Dasgupta -",
+           "nivel": "p",
+           "alineacion": "center",
+           "html": null,
+           "color": "#ff7100",
+           "tamanoEm": 1.8,
+           "grosor": "600",
+           "interlineadoEm": 1.2
+          },
+          {
+           "_id": "329d113",
+           "margen": null,
+           "relleno": null,
+           "tipo": "encabezado",
+           "texto": "https://www.theguardian.com/news/2018/apr/05/demise-of-the-nation-state-rana-dasgupta",
+           "nivel": "p",
+           "alineacion": "center",
+           "html": null,
+           "color": "#052743",
+           "tamanoEm": 1.2,
+           "grosor": "600",
+           "interlineadoEm": 1.2
+          }
+         ]
+        }
+       ]
       }
      ]
     },
@@ -1979,6 +2169,61 @@
        "grosor": "600"
       },
       {
+       "tipo": "grupo",
+       "fondo": null,
+       "relleno": null,
+       "ancho": 100,
+       "bloques": [],
+       "columnas": [
+        {
+         "fondo": null,
+         "ancho": 50,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "e203d12",
+           "margen": null,
+           "relleno": null,
+           "tipo": "banner",
+           "imagen": "/images/2018/10/family-banner-women.jpg",
+           "titulo": "Women",
+           "texto": "Competition for work with men is not giving them the happiness promised to women. Men do not want compromises with women, since 80% of divorces are initiated by women, and men can lose 50% of their assets.",
+           "fondo": "#356193",
+           "fondoHover": "#ff7100",
+           "colorTitulo": "#ffffff",
+           "colorTexto": "#ffffff",
+           "efecto": "roxy",
+           "clases": "reborde_negro_sombra",
+           "tamanoTituloEm": 3
+          }
+         ]
+        },
+        {
+         "fondo": null,
+         "ancho": 50,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "b4b4d94",
+           "margen": null,
+           "relleno": null,
+           "tipo": "banner",
+           "imagen": "/images/2018/10/family-banner-men.jpg",
+           "titulo": "Men",
+           "texto": "Without family, violence and child abuse increases, since men direct their energy in competing with other men for sex, instead of directing it towards productivity to support their family.",
+           "fondo": "#356193",
+           "fondoHover": "#ff7100",
+           "colorTitulo": "#ffffff",
+           "colorTexto": "#ffffff",
+           "efecto": "roxy",
+           "clases": "reborde_negro_sombra",
+           "tamanoTituloEm": 3
+          }
+         ]
+        }
+       ]
+      },
+      {
        "_id": "d84847f",
        "margen": null,
        "relleno": "2% 5% 0% 5%",
@@ -1996,54 +2241,9 @@
        "margen": "0% 0% -1% 0%",
        "relleno": null,
        "tipo": "imagen",
-       "imagen": "/images/2018/08/0-bottom.png",
-       "alt": ""
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 50,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "e203d12",
-       "margen": null,
-       "relleno": null,
-       "tipo": "banner",
-       "imagen": "/images/2018/10/family-banner-women.jpg",
-       "titulo": "Women",
-       "texto": "Competition for work with men is not giving them the happiness promised to women. Men do not want compromises with women, since 80% of divorces are initiated by women, and men can lose 50% of their assets.",
-       "fondo": "#356193",
-       "fondoHover": "#ff7100",
-       "colorTitulo": "#ffffff",
-       "colorTexto": "#ffffff",
-       "efecto": "roxy",
-       "clases": "reborde_negro_sombra",
-       "tamanoTituloEm": 3
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 50,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "b4b4d94",
-       "margen": null,
-       "relleno": null,
-       "tipo": "banner",
-       "imagen": "/images/2018/10/family-banner-men.jpg",
-       "titulo": "Men",
-       "texto": "Without family, violence and child abuse increases, since men direct their energy in competing with other men for sex, instead of directing it towards productivity to support their family.",
-       "fondo": "#356193",
-       "fondoHover": "#ff7100",
-       "colorTitulo": "#ffffff",
-       "colorTexto": "#ffffff",
-       "efecto": "roxy",
-       "clases": "reborde_negro_sombra",
-       "tamanoTituloEm": 3
+       "imagen": "/images/2018/08/0-bottom-1024x82.png",
+       "alt": "",
+       "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/0-bottom-1024x82.png"
       }
      ]
     },
@@ -2190,8 +2390,9 @@
        "margen": null,
        "relleno": "0% 0% 7% 0%",
        "tipo": "imagen",
-       "imagen": "/images/2018/08/0-2-R.png",
-       "alt": ""
+       "imagen": "/images/2018/08/0-2-R-226x1024.png",
+       "alt": "",
+       "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/0-2-R-226x1024.png"
       }
      ]
     }
@@ -2222,7 +2423,8 @@
        "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/10/pact-broken-down.gif",
-       "alt": ""
+       "alt": "",
+       "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/10/pact-broken-down.gif"
       }
      ]
     },
@@ -2339,8 +2541,9 @@
        "margen": null,
        "relleno": "0% 0% 7% 0%",
        "tipo": "imagen",
-       "imagen": "/images/2018/08/0-2-R.png",
-       "alt": ""
+       "imagen": "/images/2018/08/0-2-R-226x1024.png",
+       "alt": "",
+       "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/0-2-R-226x1024.png"
       }
      ]
     }
@@ -2367,36 +2570,52 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 78.426,
      "relleno": null,
      "bloques": [
       {
-       "_id": "0706d80",
-       "margen": null,
-       "relleno": "1% 5% 1% 5%",
-       "tipo": "encabezado",
-       "texto": "The increase in stupidity is not an evolutionary issue, but a historical one. In a society full of contradictions (like ours), one of the ways in which an elite can stay in power, is by intentionally idiotizing the majorities, so that, within their confusion, they are more docile and easier to manipulate. That's why intelligence is not proportional to labor and social success; If you want to be smart, you will have to pay the price of being misunderstood.",
-       "nivel": "p",
-       "alineacion": "center",
-       "html": null,
-       "color": "#052743",
-       "tamanoEm": 1.8,
-       "grosor": "600",
-       "interlineadoEm": 1.2
-      },
-      {
-       "_id": "a03684e",
-       "margen": null,
-       "relleno": "1% 5% 1% 5%",
-       "tipo": "encabezado",
-       "texto": "- Jorge Adan Romero Zepeda (2.018) -",
-       "nivel": "p",
-       "alineacion": "center",
-       "html": null,
-       "color": "#ff7100",
-       "tamanoEm": 2,
-       "grosor": "800",
-       "interlineadoEm": 1.2
+       "tipo": "grupo",
+       "fondo": null,
+       "relleno": null,
+       "ancho": 100,
+       "bloques": [],
+       "columnas": [
+        {
+         "fondo": null,
+         "ancho": 100,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "0706d80",
+           "margen": null,
+           "relleno": "1% 5% 1% 5%",
+           "tipo": "encabezado",
+           "texto": "The increase in stupidity is not an evolutionary issue, but a historical one. In a society full of contradictions (like ours), one of the ways in which an elite can stay in power, is by intentionally idiotizing the majorities, so that, within their confusion, they are more docile and easier to manipulate. That's why intelligence is not proportional to labor and social success; If you want to be smart, you will have to pay the price of being misunderstood.",
+           "nivel": "p",
+           "alineacion": "center",
+           "html": null,
+           "color": "#052743",
+           "tamanoEm": 1.8,
+           "grosor": "600",
+           "interlineadoEm": 1.2
+          },
+          {
+           "_id": "a03684e",
+           "margen": null,
+           "relleno": "1% 5% 1% 5%",
+           "tipo": "encabezado",
+           "texto": "- Jorge Adan Romero Zepeda (2.018) -",
+           "nivel": "p",
+           "alineacion": "center",
+           "html": null,
+           "color": "#ff7100",
+           "tamanoEm": 2,
+           "grosor": "800",
+           "interlineadoEm": 1.2
+          }
+         ]
+        }
+       ]
       }
      ]
     },
@@ -2487,8 +2706,9 @@
        "margen": "0% 0% -1% 0%",
        "relleno": null,
        "tipo": "imagen",
-       "imagen": "/images/2018/08/0-bottom.png",
-       "alt": ""
+       "imagen": "/images/2018/08/0-bottom-1024x82.png",
+       "alt": "",
+       "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/0-bottom-1024x82.png"
       }
      ]
     },
@@ -2521,44 +2741,61 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 80,
      "relleno": null,
      "bloques": [
       {
-       "_id": "616d9b1",
-       "margen": null,
-       "relleno": "0% 36% 0% 36%",
-       "tipo": "imagen",
-       "imagen": "/images/2018/08/24-Peter-Underwood.png",
-       "alt": ""
-      },
-      {
-       "_id": "8f78786",
-       "margen": null,
-       "relleno": "1% 5% 2% 5%",
-       "tipo": "encabezado",
-       "texto": "The ruling elite is determined to preserve their dominance over all nations through economic stealth, financial repression and anaesthetisation of the populations by mass media propaganda.",
-       "nivel": "p",
-       "alineacion": "center",
-       "html": null,
-       "color": "#052743",
-       "tamanoEm": 1.8,
-       "grosor": "600",
-       "interlineadoEm": 1.2
-      },
-      {
-       "_id": "08a3e04",
-       "margen": null,
-       "relleno": "1% 5% 2% 5%",
-       "tipo": "encabezado",
-       "texto": "- Peter Underwood - 2017",
-       "nivel": "p",
-       "alineacion": "center",
-       "html": null,
-       "color": "#ff7100",
-       "tamanoEm": 2,
-       "grosor": "600",
-       "interlineadoEm": 1.2
+       "tipo": "grupo",
+       "fondo": null,
+       "relleno": null,
+       "ancho": 100,
+       "bloques": [],
+       "columnas": [
+        {
+         "fondo": null,
+         "ancho": 100,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "616d9b1",
+           "margen": null,
+           "relleno": "0% 36% 0% 36%",
+           "tipo": "imagen",
+           "imagen": "/images/2018/08/24-Peter-Underwood.png",
+           "alt": "",
+           "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/24-Peter-Underwood.png"
+          },
+          {
+           "_id": "8f78786",
+           "margen": null,
+           "relleno": "1% 5% 2% 5%",
+           "tipo": "encabezado",
+           "texto": "The ruling elite is determined to preserve their dominance over all nations through economic stealth, financial repression and anaesthetisation of the populations by mass media propaganda.",
+           "nivel": "p",
+           "alineacion": "center",
+           "html": null,
+           "color": "#052743",
+           "tamanoEm": 1.8,
+           "grosor": "600",
+           "interlineadoEm": 1.2
+          },
+          {
+           "_id": "08a3e04",
+           "margen": null,
+           "relleno": "1% 5% 2% 5%",
+           "tipo": "encabezado",
+           "texto": "- Peter Underwood - 2017",
+           "nivel": "p",
+           "alineacion": "center",
+           "html": null,
+           "color": "#ff7100",
+           "tamanoEm": 2,
+           "grosor": "600",
+           "interlineadoEm": 1.2
+          }
+         ]
+        }
+       ]
       }
      ]
     },
@@ -2614,7 +2851,8 @@
        "relleno": "0% 35% 0% 35%",
        "tipo": "imagen",
        "imagen": "/images/2018/08/25-Ben-Shapiro.png",
-       "alt": ""
+       "alt": "",
+       "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/25-Ben-Shapiro.png"
       },
       {
        "_id": "a0c383a",
@@ -2660,8 +2898,9 @@
        "margen": "0% 0% -1% 0%",
        "relleno": null,
        "tipo": "imagen",
-       "imagen": "/images/2018/08/0-bottom.png",
-       "alt": ""
+       "imagen": "/images/2018/08/0-bottom-1024x82.png",
+       "alt": "",
+       "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/0-bottom-1024x82.png"
       }
      ]
     },
@@ -2694,44 +2933,61 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 79.996,
      "relleno": null,
      "bloques": [
       {
-       "_id": "a8b8c03",
-       "margen": null,
-       "relleno": "0% 36% 0% 36%",
-       "tipo": "imagen",
-       "imagen": "/images/2018/08/26-George-Orwell.png",
-       "alt": ""
-      },
-      {
-       "_id": "46eadf9",
-       "margen": null,
-       "relleno": "1% 5% 2% 5%",
-       "tipo": "encabezado",
-       "texto": "\"A people that chooses corrupt, impostors, thieves and traitors, is not a victim, is an accomplice\"",
-       "nivel": "p",
-       "alineacion": "center",
-       "html": null,
-       "color": "#052743",
-       "tamanoEm": 2,
-       "grosor": "600",
-       "interlineadoEm": 1.2
-      },
-      {
-       "_id": "16d3169",
-       "margen": null,
-       "relleno": "1% 5% 2% 5%",
-       "tipo": "encabezado",
-       "texto": "- George Orwell -",
-       "nivel": "p",
-       "alineacion": "center",
-       "html": null,
-       "color": "#ff7100",
-       "tamanoEm": 2.2,
-       "grosor": "600",
-       "interlineadoEm": 1.2
+       "tipo": "grupo",
+       "fondo": null,
+       "relleno": null,
+       "ancho": 100,
+       "bloques": [],
+       "columnas": [
+        {
+         "fondo": null,
+         "ancho": 100,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "a8b8c03",
+           "margen": null,
+           "relleno": "0% 36% 0% 36%",
+           "tipo": "imagen",
+           "imagen": "/images/2018/08/26-George-Orwell.png",
+           "alt": "",
+           "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/26-George-Orwell.png"
+          },
+          {
+           "_id": "46eadf9",
+           "margen": null,
+           "relleno": "1% 5% 2% 5%",
+           "tipo": "encabezado",
+           "texto": "\"A people that chooses corrupt, impostors, thieves and traitors, is not a victim, is an accomplice\"",
+           "nivel": "p",
+           "alineacion": "center",
+           "html": null,
+           "color": "#052743",
+           "tamanoEm": 2,
+           "grosor": "600",
+           "interlineadoEm": 1.2
+          },
+          {
+           "_id": "16d3169",
+           "margen": null,
+           "relleno": "1% 5% 2% 5%",
+           "tipo": "encabezado",
+           "texto": "- George Orwell -",
+           "nivel": "p",
+           "alineacion": "center",
+           "html": null,
+           "color": "#ff7100",
+           "tamanoEm": 2.2,
+           "grosor": "600",
+           "interlineadoEm": 1.2
+          }
+         ]
+        }
+       ]
       }
      ]
     },
@@ -2787,7 +3043,8 @@
        "relleno": "0% 35% 0% 35%",
        "tipo": "imagen",
        "imagen": "/images/2018/08/27-John-W.png",
-       "alt": ""
+       "alt": "",
+       "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/27-John-W.png"
       },
       {
        "_id": "3bc626d",
@@ -2833,8 +3090,9 @@
        "margen": "0% 0% -1% 0%",
        "relleno": null,
        "tipo": "imagen",
-       "imagen": "/images/2018/08/0-bottom.png",
-       "alt": ""
+       "imagen": "/images/2018/08/0-bottom-1024x82.png",
+       "alt": "",
+       "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/0-bottom-1024x82.png"
       }
      ]
     },
@@ -3054,8 +3312,9 @@
        "margen": "0% 0% -1% 0%",
        "relleno": null,
        "tipo": "imagen",
-       "imagen": "/images/2018/08/0-bottom.png",
-       "alt": ""
+       "imagen": "/images/2018/08/0-bottom-1024x82.png",
+       "alt": "",
+       "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/0-bottom-1024x82.png"
       }
      ]
     },
@@ -3088,35 +3347,51 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 78.426,
      "relleno": null,
      "bloques": [
       {
-       "_id": "2cd11a7",
-       "margen": null,
-       "relleno": "1% 0% 1% 0%",
-       "tipo": "encabezado",
-       "texto": "The Sure, there are farms that are worse than others, and that's why people migrate.",
-       "nivel": "h2",
-       "alineacion": "center",
-       "html": null,
-       "color": "#ffffff",
-       "tamanoEm": 2.5,
-       "grosor": "600"
-      },
-      {
-       "_id": "1bdce8e",
-       "margen": null,
-       "relleno": "4% 5% 1% 5%",
-       "tipo": "encabezado",
-       "texto": "If it were not for the blatant corruption of the owners of the farm, this would never change, and some human beings would be content to live like obedient cows.",
-       "nivel": "p",
-       "alineacion": "center",
-       "html": null,
-       "color": "#052743",
-       "tamanoEm": 2.5,
-       "grosor": "600",
-       "interlineadoEm": 1.2
+       "tipo": "grupo",
+       "fondo": null,
+       "relleno": "7% 0% 9% 0%",
+       "ancho": 100,
+       "bloques": [],
+       "columnas": [
+        {
+         "fondo": null,
+         "ancho": 100,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "2cd11a7",
+           "margen": null,
+           "relleno": "1% 0% 1% 0%",
+           "tipo": "encabezado",
+           "texto": "The Sure, there are farms that are worse than others, and that's why people migrate.",
+           "nivel": "h2",
+           "alineacion": "center",
+           "html": null,
+           "color": "#ffffff",
+           "tamanoEm": 2.5,
+           "grosor": "600"
+          },
+          {
+           "_id": "1bdce8e",
+           "margen": null,
+           "relleno": "4% 5% 1% 5%",
+           "tipo": "encabezado",
+           "texto": "If it were not for the blatant corruption of the owners of the farm, this would never change, and some human beings would be content to live like obedient cows.",
+           "nivel": "p",
+           "alineacion": "center",
+           "html": null,
+           "color": "#052743",
+           "tamanoEm": 2.5,
+           "grosor": "600",
+           "interlineadoEm": 1.2
+          }
+         ]
+        }
+       ]
       }
      ]
     },
@@ -3152,8 +3427,9 @@
        "margen": null,
        "relleno": null,
        "tipo": "imagen",
-       "imagen": "/images/2018/08/0-L.png",
-       "alt": ""
+       "imagen": "/images/2018/08/0-L-226x1024.png",
+       "alt": "",
+       "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/0-L-226x1024.png"
       }
      ]
     },
@@ -3167,8 +3443,9 @@
        "margen": null,
        "relleno": null,
        "tipo": "imagen",
-       "imagen": "/images/2018/08/2-logo.png",
-       "alt": ""
+       "imagen": "/images/2018/08/2-logo-150x150.png",
+       "alt": "",
+       "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/2-logo-150x150.png"
       },
       {
        "_id": "0bf19a3",
@@ -3195,21 +3472,37 @@
        "color": "#ffffff",
        "tamanoEm": 1.8,
        "grosor": "600"
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
-     "relleno": null,
-     "bloques": [
+      },
       {
-       "_id": "9480de1",
-       "margen": null,
-       "relleno": null,
-       "tipo": "imagen",
-       "imagen": "/images/2018/08/31-coin.png",
-       "alt": ""
+       "tipo": "grupo",
+       "fondo": {
+        "imagen": "/images/2018/08/2-map.png",
+        "tamano": null,
+        "posicion": null,
+        "repetir": "no-repeat",
+        "attachment": null
+       },
+       "relleno": "1% 0% 0% 0%",
+       "ancho": 100,
+       "bloques": [],
+       "columnas": [
+        {
+         "fondo": null,
+         "ancho": 100,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "9480de1",
+           "margen": null,
+           "relleno": null,
+           "tipo": "imagen",
+           "imagen": "/images/2018/08/31-coin.png",
+           "alt": "",
+           "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/31-coin.png"
+          }
+         ]
+        }
+       ]
       }
      ]
     },
@@ -3223,8 +3516,9 @@
        "margen": null,
        "relleno": null,
        "tipo": "imagen",
-       "imagen": "/images/2018/08/0-R.png",
-       "alt": ""
+       "imagen": "/images/2018/08/0-R-226x1024.png",
+       "alt": "",
+       "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/0-R-226x1024.png"
       }
      ]
     }
@@ -3251,49 +3545,65 @@
     },
     {
      "fondo": null,
-     "ancho": 100,
+     "ancho": 80,
      "relleno": null,
      "bloques": [
       {
-       "_id": "a7f17fc",
-       "margen": "0% 0% -2% 0%",
-       "relleno": null,
-       "tipo": "encabezado",
-       "texto": "Make the World a Better Place",
-       "nivel": "p",
-       "alineacion": "center",
-       "html": null,
-       "color": "#052743",
-       "tamanoEm": 3.2,
-       "grosor": "600",
-       "interlineadoEm": 1.2
-      },
-      {
-       "_id": "9678b38",
-       "margen": "0% 0% -2% 0%",
-       "relleno": null,
-       "tipo": "encabezado",
-       "texto": "(for me and my friends )",
-       "nivel": "p",
-       "alineacion": "center",
-       "html": null,
-       "color": "#052743",
-       "tamanoEm": 3.2,
-       "grosor": "600",
-       "interlineadoEm": 1.2
-      },
-      {
-       "_id": "49a0990",
-       "margen": null,
-       "relleno": null,
-       "tipo": "textoAnimado",
-       "antes": "",
-       "despues": "",
-       "palabras": [
-        "For all of Us!"
-       ],
-       "color": "#ff7100",
-       "tamanoEm": 6
+       "tipo": "grupo",
+       "fondo": null,
+       "relleno": "15% 0% 6% 0%",
+       "ancho": 100,
+       "bloques": [],
+       "columnas": [
+        {
+         "fondo": null,
+         "ancho": 100,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "a7f17fc",
+           "margen": "0% 0% -2% 0%",
+           "relleno": null,
+           "tipo": "encabezado",
+           "texto": "Make the World a Better Place",
+           "nivel": "p",
+           "alineacion": "center",
+           "html": null,
+           "color": "#052743",
+           "tamanoEm": 3.2,
+           "grosor": "600",
+           "interlineadoEm": 1.2
+          },
+          {
+           "_id": "9678b38",
+           "margen": "0% 0% -2% 0%",
+           "relleno": null,
+           "tipo": "encabezado",
+           "texto": "(for me and my friends )",
+           "nivel": "p",
+           "alineacion": "center",
+           "html": null,
+           "color": "#052743",
+           "tamanoEm": 3.2,
+           "grosor": "600",
+           "interlineadoEm": 1.2
+          },
+          {
+           "_id": "49a0990",
+           "margen": null,
+           "relleno": null,
+           "tipo": "textoAnimado",
+           "antes": "",
+           "despues": "",
+           "palabras": [
+            "For all of Us!"
+           ],
+           "color": "#ff7100",
+           "tamanoEm": 6
+          }
+         ]
+        }
+       ]
       }
      ]
     },
@@ -3331,104 +3641,125 @@
      "relleno": null,
      "bloques": [
       {
+       "tipo": "grupo",
+       "fondo": null,
+       "relleno": null,
+       "ancho": 100,
+       "bloques": [],
+       "columnas": [
+        {
+         "fondo": null,
+         "ancho": 100,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "e296f81",
+           "margen": "0% 10% 0% -1%",
+           "relleno": "1% 0% 1% 2%",
+           "tipo": "encabezado",
+           "texto": "E-Nation, the First Authentic Revolution",
+           "nivel": "h2",
+           "alineacion": "left",
+           "html": null,
+           "color": "#ffffff",
+           "tamanoEm": 2.5,
+           "grosor": "600"
+          },
+          {
+           "_id": "9f70d89",
+           "margen": null,
+           "relleno": "1% 5% 1% 5%",
+           "tipo": "encabezado",
+           "texto": "So far, the Revolutions were 'take off you to put me', an oligarchy that replaces another oligarchy, changing the faces but maintaining the vertical power system",
+           "nivel": "p",
+           "alineacion": "center",
+           "html": null,
+           "color": "#ffffff",
+           "tamanoEm": 1.8,
+           "grosor": "600",
+           "interlineadoEm": 1.2
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "tipo": "grupo",
+       "fondo": null,
+       "relleno": null,
+       "ancho": 100,
+       "bloques": [],
+       "columnas": [
+        {
+         "fondo": null,
+         "ancho": 50,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "48164dc",
+           "margen": null,
+           "relleno": null,
+           "tipo": "imagen",
+           "imagen": "/images/2018/09/org-piramid.png",
+           "alt": "",
+           "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/09/org-piramid.png"
+          },
+          {
+           "_id": "34d674b",
+           "margen": null,
+           "relleno": "1% 5% 2% 5%",
+           "tipo": "encabezado",
+           "texto": "Vertical Organization",
+           "nivel": "p",
+           "alineacion": "center",
+           "html": null,
+           "color": "#ff7100",
+           "tamanoEm": 2.2,
+           "grosor": "600",
+           "interlineadoEm": 1.2
+          }
+         ]
+        },
+        {
+         "fondo": null,
+         "ancho": 50,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "b04fd53",
+           "margen": null,
+           "relleno": null,
+           "tipo": "imagen",
+           "imagen": "/images/2018/09/org-horizon.png",
+           "alt": "",
+           "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/09/org-horizon.png"
+          },
+          {
+           "_id": "a038dc9",
+           "margen": null,
+           "relleno": "1% 5% 2% 5%",
+           "tipo": "encabezado",
+           "texto": "Horizontal Organization",
+           "nivel": "p",
+           "alineacion": "center",
+           "html": null,
+           "color": "#ff7100",
+           "tamanoEm": 2.2,
+           "grosor": "600",
+           "interlineadoEm": 1.2
+          }
+         ]
+        }
+       ]
+      },
+      {
        "_id": "f50c7e9",
        "margen": null,
        "relleno": null,
        "tipo": "imagen",
-       "imagen": "/images/2018/08/0-bottom.png",
-       "alt": ""
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "e296f81",
-       "margen": "0% 10% 0% -1%",
-       "relleno": "1% 0% 1% 2%",
-       "tipo": "encabezado",
-       "texto": "E-Nation, the First Authentic Revolution",
-       "nivel": "h2",
-       "alineacion": "left",
-       "html": null,
-       "color": "#ffffff",
-       "tamanoEm": 2.5,
-       "grosor": "600"
-      },
-      {
-       "_id": "9f70d89",
-       "margen": null,
-       "relleno": "1% 5% 1% 5%",
-       "tipo": "encabezado",
-       "texto": "So far, the Revolutions were 'take off you to put me', an oligarchy that replaces another oligarchy, changing the faces but maintaining the vertical power system",
-       "nivel": "p",
-       "alineacion": "center",
-       "html": null,
-       "color": "#ffffff",
-       "tamanoEm": 1.8,
-       "grosor": "600",
-       "interlineadoEm": 1.2
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 50,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "48164dc",
-       "margen": null,
-       "relleno": null,
-       "tipo": "imagen",
-       "imagen": "/images/2018/09/org-piramid.png",
-       "alt": ""
-      },
-      {
-       "_id": "34d674b",
-       "margen": null,
-       "relleno": "1% 5% 2% 5%",
-       "tipo": "encabezado",
-       "texto": "Vertical Organization",
-       "nivel": "p",
-       "alineacion": "center",
-       "html": null,
-       "color": "#ff7100",
-       "tamanoEm": 2.2,
-       "grosor": "600",
-       "interlineadoEm": 1.2
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 50,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "b04fd53",
-       "margen": null,
-       "relleno": null,
-       "tipo": "imagen",
-       "imagen": "/images/2018/09/org-horizon.png",
-       "alt": ""
-      },
-      {
-       "_id": "a038dc9",
-       "margen": null,
-       "relleno": "1% 5% 2% 5%",
-       "tipo": "encabezado",
-       "texto": "Horizontal Organization",
-       "nivel": "p",
-       "alineacion": "center",
-       "html": null,
-       "color": "#ff7100",
-       "tamanoEm": 2.2,
-       "grosor": "600",
-       "interlineadoEm": 1.2
+       "imagen": "/images/2018/08/0-bottom-1024x82.png",
+       "alt": "",
+       "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/0-bottom-1024x82.png"
       }
      ]
     },
@@ -3470,144 +3801,162 @@
        "color": "#ffffff",
        "tamanoEm": 4,
        "grosor": "600"
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 33,
-     "relleno": "0% 1% 0% 1%",
-     "bloques": [
+      },
       {
-       "_id": "8f1cd24",
-       "margen": null,
+       "tipo": "grupo",
+       "fondo": null,
        "relleno": null,
-       "tipo": "banner",
-       "imagen": "/images/2018/09/8-pact-family.jpg",
-       "titulo": "To Unite us",
-       "texto": "United as a great family, with a balance between freedom and responsibility.",
-       "fondo": "#095287",
-       "fondoHover": "#ff7100",
-       "colorTitulo": "#ffffff",
-       "colorTexto": "#ffffff",
-       "efecto": "oscar",
-       "clases": "reborde_negro_sombra",
-       "tamanoTituloEm": 1.8
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 33,
-     "relleno": "0% 1% 0% 1%",
-     "bloques": [
+       "ancho": 100,
+       "bloques": [],
+       "columnas": [
+        {
+         "fondo": null,
+         "ancho": 33,
+         "relleno": "0% 1% 0% 1%",
+         "bloques": [
+          {
+           "_id": "8f1cd24",
+           "margen": null,
+           "relleno": null,
+           "tipo": "banner",
+           "imagen": "/images/2018/09/8-pact-family.jpg",
+           "titulo": "To Unite us",
+           "texto": "United as a great family, with a balance between freedom and responsibility.",
+           "fondo": "#095287",
+           "fondoHover": "#ff7100",
+           "colorTitulo": "#ffffff",
+           "colorTexto": "#ffffff",
+           "efecto": "oscar",
+           "clases": "reborde_negro_sombra",
+           "tamanoTituloEm": 1.8
+          }
+         ]
+        },
+        {
+         "fondo": null,
+         "ancho": 33,
+         "relleno": "0% 1% 0% 1%",
+         "bloques": [
+          {
+           "_id": "ed58c36",
+           "margen": null,
+           "relleno": null,
+           "tipo": "banner",
+           "imagen": "/images/2018/09/8-pact-education.jpg",
+           "titulo": "New Educational Model",
+           "texto": "Focused on human development, its individual characteristics and collective happiness.",
+           "fondo": "#095287",
+           "fondoHover": "#ff7100",
+           "colorTitulo": "#ffffff",
+           "colorTexto": "#ffffff",
+           "efecto": "oscar",
+           "clases": "reborde_negro_sombra",
+           "tamanoTituloEm": 1.8
+          }
+         ]
+        },
+        {
+         "fondo": null,
+         "ancho": 33,
+         "relleno": "0% 1% 0% 1%",
+         "bloques": [
+          {
+           "_id": "426793d",
+           "margen": null,
+           "relleno": null,
+           "tipo": "banner",
+           "imagen": "/images/2018/09/8-pact-economy.jpg",
+           "titulo": "New Economic Model",
+           "texto": "Free of financial bubbles, which provides monetary freedom and equal importance to all human beings.",
+           "fondo": "#095287",
+           "fondoHover": "#ff7100",
+           "colorTitulo": "#ffffff",
+           "colorTexto": "#ffffff",
+           "efecto": "oscar",
+           "clases": "reborde_negro_sombra",
+           "tamanoTituloEm": 1.8
+          }
+         ]
+        }
+       ]
+      },
       {
-       "_id": "ed58c36",
-       "margen": null,
+       "tipo": "grupo",
+       "fondo": null,
        "relleno": null,
-       "tipo": "banner",
-       "imagen": "/images/2018/09/8-pact-education.jpg",
-       "titulo": "New Educational Model",
-       "texto": "Focused on human development, its individual characteristics and collective happiness.",
-       "fondo": "#095287",
-       "fondoHover": "#ff7100",
-       "colorTitulo": "#ffffff",
-       "colorTexto": "#ffffff",
-       "efecto": "oscar",
-       "clases": "reborde_negro_sombra",
-       "tamanoTituloEm": 1.8
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 33,
-     "relleno": "0% 1% 0% 1%",
-     "bloques": [
-      {
-       "_id": "426793d",
-       "margen": null,
-       "relleno": null,
-       "tipo": "banner",
-       "imagen": "/images/2018/09/8-pact-economy.jpg",
-       "titulo": "New Economic Model",
-       "texto": "Free of financial bubbles, which provides monetary freedom and equal importance to all human beings.",
-       "fondo": "#095287",
-       "fondoHover": "#ff7100",
-       "colorTitulo": "#ffffff",
-       "colorTexto": "#ffffff",
-       "efecto": "oscar",
-       "clases": "reborde_negro_sombra",
-       "tamanoTituloEm": 1.8
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 33,
-     "relleno": "0% 1% 0% 1%",
-     "bloques": [
-      {
-       "_id": "f6285b3",
-       "margen": null,
-       "relleno": null,
-       "tipo": "banner",
-       "imagen": "/images/2018/09/8-pact-moms.jpg",
-       "titulo": "Centered in the Family",
-       "texto": "Where the woman can be wife, mother and professional, without having to choose between money or family, truly free and responsible.",
-       "fondo": "#095287",
-       "fondoHover": "#ff7100",
-       "colorTitulo": "#ffffff",
-       "colorTexto": "#ffffff",
-       "efecto": "oscar",
-       "clases": "reborde_negro_sombra",
-       "tamanoTituloEm": 1.8
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 33,
-     "relleno": "0% 1% 0% 1%",
-     "bloques": [
-      {
-       "_id": "d1f7e85",
-       "margen": null,
-       "relleno": null,
-       "tipo": "banner",
-       "imagen": "/images/2018/09/8-pact-participation.jpg",
-       "titulo": "New Model of Political Participation",
-       "texto": "Direct democracy with meritocracy and consensus voting.",
-       "fondo": "#095287",
-       "fondoHover": "#ff7100",
-       "colorTitulo": "#ffffff",
-       "colorTexto": "#ffffff",
-       "efecto": "oscar",
-       "clases": "reborde_negro_sombra",
-       "tamanoTituloEm": 1.8
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 33,
-     "relleno": "0% 1% 0% 1%",
-     "bloques": [
-      {
-       "_id": "b05b544",
-       "margen": null,
-       "relleno": null,
-       "tipo": "banner",
-       "imagen": "/images/2018/09/8-pact-science.jpg",
-       "titulo": "Apply the Scientific Method",
-       "texto": "To the whole government, applying technological knowledge, making decisions based on data and understanding that we live in an interconnected planet.",
-       "fondo": "#095287",
-       "fondoHover": "#ff7100",
-       "colorTitulo": "#ffffff",
-       "colorTexto": "#ffffff",
-       "efecto": "oscar",
-       "clases": "reborde_negro_sombra",
-       "tamanoTituloEm": 1.8
+       "ancho": 100,
+       "bloques": [],
+       "columnas": [
+        {
+         "fondo": null,
+         "ancho": 33,
+         "relleno": "0% 1% 0% 1%",
+         "bloques": [
+          {
+           "_id": "f6285b3",
+           "margen": null,
+           "relleno": null,
+           "tipo": "banner",
+           "imagen": "/images/2018/09/8-pact-moms.jpg",
+           "titulo": "Centered in the Family",
+           "texto": "Where the woman can be wife, mother and professional, without having to choose between money or family, truly free and responsible.",
+           "fondo": "#095287",
+           "fondoHover": "#ff7100",
+           "colorTitulo": "#ffffff",
+           "colorTexto": "#ffffff",
+           "efecto": "oscar",
+           "clases": "reborde_negro_sombra",
+           "tamanoTituloEm": 1.8
+          }
+         ]
+        },
+        {
+         "fondo": null,
+         "ancho": 33,
+         "relleno": "0% 1% 0% 1%",
+         "bloques": [
+          {
+           "_id": "d1f7e85",
+           "margen": null,
+           "relleno": null,
+           "tipo": "banner",
+           "imagen": "/images/2018/09/8-pact-participation.jpg",
+           "titulo": "New Model of Political Participation",
+           "texto": "Direct democracy with meritocracy and consensus voting.",
+           "fondo": "#095287",
+           "fondoHover": "#ff7100",
+           "colorTitulo": "#ffffff",
+           "colorTexto": "#ffffff",
+           "efecto": "oscar",
+           "clases": "reborde_negro_sombra",
+           "tamanoTituloEm": 1.8
+          }
+         ]
+        },
+        {
+         "fondo": null,
+         "ancho": 33,
+         "relleno": "0% 1% 0% 1%",
+         "bloques": [
+          {
+           "_id": "b05b544",
+           "margen": null,
+           "relleno": null,
+           "tipo": "banner",
+           "imagen": "/images/2018/09/8-pact-science.jpg",
+           "titulo": "Apply the Scientific Method",
+           "texto": "To the whole government, applying technological knowledge, making decisions based on data and understanding that we live in an interconnected planet.",
+           "fondo": "#095287",
+           "fondoHover": "#ff7100",
+           "colorTitulo": "#ffffff",
+           "colorTexto": "#ffffff",
+           "efecto": "oscar",
+           "clases": "reborde_negro_sombra",
+           "tamanoTituloEm": 1.8
+          }
+         ]
+        }
+       ]
       }
      ]
     }
@@ -3639,46 +3988,56 @@
      "relleno": null,
      "bloques": [
       {
+       "tipo": "grupo",
+       "fondo": null,
+       "relleno": "5% 0% 2% 0%",
+       "ancho": 100,
+       "bloques": [],
+       "columnas": [
+        {
+         "fondo": null,
+         "ancho": 100,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "f7b63bd",
+           "margen": "-2% 0% 0% 0%",
+           "relleno": "1% 0% 1% 0%",
+           "tipo": "encabezado",
+           "texto": "E-Nation - The Solution",
+           "nivel": "h2",
+           "alineacion": "center",
+           "html": null,
+           "color": "#ffffff",
+           "tamanoEm": 2.5,
+           "grosor": "600"
+          },
+          {
+           "_id": "d118531",
+           "margen": null,
+           "relleno": "1% 5% 1% 5%",
+           "tipo": "encabezado",
+           "texto": "• Change government centered on the State, to polycentrism: a lack of central control. • Based on common guiding principles to ensure cooperation and prevent a force from dominating. With joint efforts towards common goals such as increasing happiness, reducing pollution or eliminating poverty. • Producing a vibrant, dynamic, diverse and imperfect system, which in the end will unite everyone under a shared vision. Allowing that if someone has an idea, make it, otherwise there will be no growth and people will not be happy.",
+           "nivel": "p",
+           "alineacion": "left",
+           "html": "• Change government centered on the State, to polycentrism: a lack of central control.<br>• Based on common guiding principles to ensure cooperation and prevent a force from dominating. With joint efforts towards common goals such as increasing happiness, reducing pollution or eliminating poverty.<br>• Producing a vibrant, dynamic, diverse and imperfect system, which in the end will unite everyone under a shared vision. Allowing that if someone has an idea, make it, otherwise there will be no growth and people will not be happy.",
+           "color": "#ffffff",
+           "tamanoEm": 1.8,
+           "grosor": "600",
+           "interlineadoEm": 1.2
+          }
+         ]
+        }
+       ]
+      },
+      {
        "_id": "efe2fde",
        "margen": null,
        "relleno": null,
        "tipo": "imagen",
-       "imagen": "/images/2018/08/0-bottom.png",
-       "alt": ""
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "f7b63bd",
-       "margen": "-2% 0% 0% 0%",
-       "relleno": "1% 0% 1% 0%",
-       "tipo": "encabezado",
-       "texto": "E-Nation - The Solution",
-       "nivel": "h2",
-       "alineacion": "center",
-       "html": null,
-       "color": "#ffffff",
-       "tamanoEm": 2.5,
-       "grosor": "600"
-      },
-      {
-       "_id": "d118531",
-       "margen": null,
-       "relleno": "1% 5% 1% 5%",
-       "tipo": "encabezado",
-       "texto": "• Change government centered on the State, to polycentrism: a lack of central control. • Based on common guiding principles to ensure cooperation and prevent a force from dominating. With joint efforts towards common goals such as increasing happiness, reducing pollution or eliminating poverty. • Producing a vibrant, dynamic, diverse and imperfect system, which in the end will unite everyone under a shared vision. Allowing that if someone has an idea, make it, otherwise there will be no growth and people will not be happy.",
-       "nivel": "p",
-       "alineacion": "left",
-       "html": "• Change government centered on the State, to polycentrism: a lack of central control.<br>• Based on common guiding principles to ensure cooperation and prevent a force from dominating. With joint efforts towards common goals such as increasing happiness, reducing pollution or eliminating poverty.<br>• Producing a vibrant, dynamic, diverse and imperfect system, which in the end will unite everyone under a shared vision. Allowing that if someone has an idea, make it, otherwise there will be no growth and people will not be happy.",
-       "color": "#ffffff",
-       "tamanoEm": 1.8,
-       "grosor": "600",
-       "interlineadoEm": 1.2
+       "imagen": "/images/2018/08/0-bottom-1024x82.png",
+       "alt": "",
+       "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/0-bottom-1024x82.png"
       }
      ]
     },
@@ -3803,46 +4162,56 @@
      "relleno": null,
      "bloques": [
       {
+       "tipo": "grupo",
+       "fondo": null,
+       "relleno": "0% 0% 6% 0%",
+       "ancho": 100,
+       "bloques": [],
+       "columnas": [
+        {
+         "fondo": null,
+         "ancho": 100,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "166985f",
+           "margen": "-2% 0% 0% 0%",
+           "relleno": "1% 0% 1% 0%",
+           "tipo": "encabezado",
+           "texto": "E-Nation-Objections",
+           "nivel": "h2",
+           "alineacion": "center",
+           "html": "E-Nation-Objections",
+           "color": "#ffffff",
+           "tamanoEm": 2.5,
+           "grosor": "600"
+          },
+          {
+           "_id": "ad0a455",
+           "margen": null,
+           "relleno": "1% 0% 1% 0%",
+           "tipo": "encabezado",
+           "texto": "It will be objected, inevitably, that any alternative to the nation-state system is a utopian impossibility. But even the technological accomplishments of the last few decades seemed implausible before they arrived.",
+           "nivel": "p",
+           "alineacion": "center",
+           "html": null,
+           "color": "#ffffff",
+           "tamanoEm": 2.8,
+           "grosor": "600",
+           "interlineadoEm": 1.2
+          }
+         ]
+        }
+       ]
+      },
+      {
        "_id": "bce5528",
        "margen": null,
        "relleno": null,
        "tipo": "imagen",
-       "imagen": "/images/2018/08/0-bottom.png",
-       "alt": ""
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "166985f",
-       "margen": "-2% 0% 0% 0%",
-       "relleno": "1% 0% 1% 0%",
-       "tipo": "encabezado",
-       "texto": "E-Nation-Objections",
-       "nivel": "h2",
-       "alineacion": "center",
-       "html": "E-Nation-Objections",
-       "color": "#ffffff",
-       "tamanoEm": 2.5,
-       "grosor": "600"
-      },
-      {
-       "_id": "ad0a455",
-       "margen": null,
-       "relleno": "1% 0% 1% 0%",
-       "tipo": "encabezado",
-       "texto": "It will be objected, inevitably, that any alternative to the nation-state system is a utopian impossibility. But even the technological accomplishments of the last few decades seemed implausible before they arrived.",
-       "nivel": "p",
-       "alineacion": "center",
-       "html": null,
-       "color": "#ffffff",
-       "tamanoEm": 2.8,
-       "grosor": "600",
-       "interlineadoEm": 1.2
+       "imagen": "/images/2018/08/0-bottom-1024x82.png",
+       "alt": "",
+       "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/0-bottom-1024x82.png"
       }
      ]
     },
@@ -3897,7 +4266,8 @@
        "relleno": "0% 35% 0% 35%",
        "tipo": "imagen",
        "imagen": "/images/2018/08/37-Deborah-Frieze.png",
-       "alt": ""
+       "alt": "",
+       "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/37-Deborah-Frieze.png"
       },
       {
        "_id": "17e0ee1",
@@ -4000,46 +4370,56 @@
      "relleno": null,
      "bloques": [
       {
+       "tipo": "grupo",
+       "fondo": null,
+       "relleno": "0% 0% 6% 0%",
+       "ancho": 100,
+       "bloques": [],
+       "columnas": [
+        {
+         "fondo": null,
+         "ancho": 100,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "598c68a",
+           "margen": "-2% 0% 0% 0%",
+           "relleno": "1% 0% 1% 0%",
+           "tipo": "encabezado",
+           "texto": "We do not want to eliminate the government or fight against it",
+           "nivel": "h2",
+           "alineacion": "center",
+           "html": null,
+           "color": "#ffffff",
+           "tamanoEm": 2.5,
+           "grosor": "600"
+          },
+          {
+           "_id": "e08ec7f",
+           "margen": null,
+           "relleno": "1% 5% 1% 5%",
+           "tipo": "encabezado",
+           "texto": "We want to show that there are better ways of doing things, where we ALL can benefit.",
+           "nivel": "p",
+           "alineacion": "center",
+           "html": null,
+           "color": "#ffffff",
+           "tamanoEm": 2.8,
+           "grosor": "600",
+           "interlineadoEm": 1.2
+          }
+         ]
+        }
+       ]
+      },
+      {
        "_id": "b82221a",
        "margen": null,
        "relleno": null,
        "tipo": "imagen",
-       "imagen": "/images/2018/08/0-bottom.png",
-       "alt": ""
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "598c68a",
-       "margen": "-2% 0% 0% 0%",
-       "relleno": "1% 0% 1% 0%",
-       "tipo": "encabezado",
-       "texto": "We do not want to eliminate the government or fight against it",
-       "nivel": "h2",
-       "alineacion": "center",
-       "html": null,
-       "color": "#ffffff",
-       "tamanoEm": 2.5,
-       "grosor": "600"
-      },
-      {
-       "_id": "e08ec7f",
-       "margen": null,
-       "relleno": "1% 5% 1% 5%",
-       "tipo": "encabezado",
-       "texto": "We want to show that there are better ways of doing things, where we ALL can benefit.",
-       "nivel": "p",
-       "alineacion": "center",
-       "html": null,
-       "color": "#ffffff",
-       "tamanoEm": 2.8,
-       "grosor": "600",
-       "interlineadoEm": 1.2
+       "imagen": "/images/2018/08/0-bottom-1024x82.png",
+       "alt": "",
+       "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/0-bottom-1024x82.png"
       }
      ]
     },
@@ -4148,7 +4528,8 @@
        "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/10/spirituality.gif",
-       "alt": ""
+       "alt": "",
+       "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/10/spirituality.gif"
       }
      ]
     }
@@ -4180,46 +4561,56 @@
      "relleno": null,
      "bloques": [
       {
+       "tipo": "grupo",
+       "fondo": null,
+       "relleno": "5% 0% 2% 0%",
+       "ancho": 100,
+       "bloques": [],
+       "columnas": [
+        {
+         "fondo": null,
+         "ancho": 100,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "d61aec9",
+           "margen": "-2% 0% 0% 0%",
+           "relleno": "1% 0% 1% 0%",
+           "tipo": "encabezado",
+           "texto": "The first step: Take the financial power",
+           "nivel": "h2",
+           "alineacion": "center",
+           "html": null,
+           "color": "#ffffff",
+           "tamanoEm": 2.5,
+           "grosor": "600"
+          },
+          {
+           "_id": "f4e4643",
+           "margen": null,
+           "relleno": "1% 5% 1% 5%",
+           "tipo": "encabezado",
+           "texto": "We need a country that supports cryptocurrencies, in order to face as peers the persecution by the global financial system and governments. The currencies are generated by the states, therefore, for our cryptocurrencies to have the same level of hierarchy, we need our own country. Uniting all who support the various cryptocurrencies, without secession the current nation state. E-Nation the multi-nationality. Because in the union of the many there is strength!",
+           "nivel": "p",
+           "alineacion": "center",
+           "html": "We need a country that supports cryptocurrencies, in order to face as peers the persecution by the global financial system and governments.<br>The currencies are generated by the states, therefore, for our cryptocurrencies to have the same level of hierarchy, we need our own country.<br>Uniting all who support the various cryptocurrencies, without secession the current nation state.<br>E-Nation the multi-nationality. Because in the union of the many there is strength!",
+           "color": "#ffffff",
+           "tamanoEm": 1.8,
+           "grosor": "600",
+           "interlineadoEm": 1.2
+          }
+         ]
+        }
+       ]
+      },
+      {
        "_id": "0a1f197",
        "margen": null,
        "relleno": null,
        "tipo": "imagen",
-       "imagen": "/images/2018/08/0-bottom.png",
-       "alt": ""
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "d61aec9",
-       "margen": "-2% 0% 0% 0%",
-       "relleno": "1% 0% 1% 0%",
-       "tipo": "encabezado",
-       "texto": "The first step: Take the financial power",
-       "nivel": "h2",
-       "alineacion": "center",
-       "html": null,
-       "color": "#ffffff",
-       "tamanoEm": 2.5,
-       "grosor": "600"
-      },
-      {
-       "_id": "f4e4643",
-       "margen": null,
-       "relleno": "1% 5% 1% 5%",
-       "tipo": "encabezado",
-       "texto": "We need a country that supports cryptocurrencies, in order to face as peers the persecution by the global financial system and governments. The currencies are generated by the states, therefore, for our cryptocurrencies to have the same level of hierarchy, we need our own country. Uniting all who support the various cryptocurrencies, without secession the current nation state. E-Nation the multi-nationality. Because in the union of the many there is strength!",
-       "nivel": "p",
-       "alineacion": "center",
-       "html": "We need a country that supports cryptocurrencies, in order to face as peers the persecution by the global financial system and governments.<br>The currencies are generated by the states, therefore, for our cryptocurrencies to have the same level of hierarchy, we need our own country.<br>Uniting all who support the various cryptocurrencies, without secession the current nation state.<br>E-Nation the multi-nationality. Because in the union of the many there is strength!",
-       "color": "#ffffff",
-       "tamanoEm": 1.8,
-       "grosor": "600",
-       "interlineadoEm": 1.2
+       "imagen": "/images/2018/08/0-bottom-1024x82.png",
+       "alt": "",
+       "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/0-bottom-1024x82.png"
       }
      ]
     },
@@ -4261,7 +4652,8 @@
        "relleno": "0% 35% 0% 35%",
        "tipo": "imagen",
        "imagen": "/images/2018/08/41-Vince-Lombardi.png",
-       "alt": ""
+       "alt": "",
+       "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/41-Vince-Lombardi.png"
       },
       {
        "_id": "c64670f",
@@ -4325,71 +4717,81 @@
      "relleno": null,
      "bloques": [
       {
+       "tipo": "grupo",
+       "fondo": null,
+       "relleno": "0% 0% 6% 0%",
+       "ancho": 100,
+       "bloques": [],
+       "columnas": [
+        {
+         "fondo": null,
+         "ancho": 100,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "fa2bef8",
+           "margen": null,
+           "relleno": "1% 0% 1% 0%",
+           "tipo": "encabezado",
+           "texto": "We need your participation Quantity is our strength",
+           "nivel": "h2",
+           "alineacion": "center",
+           "html": "We need your participation<br>Quantity is our strength",
+           "color": "#ffffff",
+           "tamanoEm": 2.5,
+           "grosor": "600"
+          },
+          {
+           "_id": "3c26190",
+           "margen": null,
+           "relleno": null,
+           "tipo": "lista",
+           "items": [
+            "Subscribe to our mailing list."
+           ]
+          },
+          {
+           "_id": "3eb0199",
+           "margen": null,
+           "relleno": null,
+           "tipo": "lista",
+           "items": [
+            "Share this page with everyone who wants a change.",
+            "Become a citizen of E-Nation.",
+            "Create or join an E-Nation community.",
+            "Buy your E-Nation identity card."
+           ]
+          },
+          {
+           "_id": "776fab1",
+           "margen": null,
+           "relleno": null,
+           "tipo": "lista",
+           "items": [
+            "Support us economically, participating in the launch of UnityCoin."
+           ]
+          },
+          {
+           "_id": "177bf28",
+           "margen": null,
+           "relleno": null,
+           "tipo": "lista",
+           "items": [
+            "Participate in the management of this whole project, we have done it for you, so that you have control."
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
        "_id": "1981b3a",
        "margen": null,
        "relleno": null,
        "tipo": "imagen",
-       "imagen": "/images/2018/08/0-bottom.png",
-       "alt": ""
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "fa2bef8",
-       "margen": null,
-       "relleno": "1% 0% 1% 0%",
-       "tipo": "encabezado",
-       "texto": "We need your participation Quantity is our strength",
-       "nivel": "h2",
-       "alineacion": "center",
-       "html": "We need your participation<br>Quantity is our strength",
-       "color": "#ffffff",
-       "tamanoEm": 2.5,
-       "grosor": "600"
-      },
-      {
-       "_id": "3c26190",
-       "margen": null,
-       "relleno": null,
-       "tipo": "lista",
-       "items": [
-        "Subscribe to our mailing list."
-       ]
-      },
-      {
-       "_id": "3eb0199",
-       "margen": null,
-       "relleno": null,
-       "tipo": "lista",
-       "items": [
-        "Share this page with everyone who wants a change.",
-        "Become a citizen of E-Nation.",
-        "Create or join an E-Nation community.",
-        "Buy your E-Nation identity card."
-       ]
-      },
-      {
-       "_id": "776fab1",
-       "margen": null,
-       "relleno": null,
-       "tipo": "lista",
-       "items": [
-        "Support us economically, participating in the launch of UnityCoin."
-       ]
-      },
-      {
-       "_id": "177bf28",
-       "margen": null,
-       "relleno": null,
-       "tipo": "lista",
-       "items": [
-        "Participate in the management of this whole project, we have done it for you, so that you have control."
-       ]
+       "imagen": "/images/2018/08/0-bottom-1024x82.png",
+       "alt": "",
+       "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/0-bottom-1024x82.png"
       }
      ]
     },
@@ -4534,8 +4936,9 @@
        "margen": null,
        "relleno": null,
        "tipo": "imagen",
-       "imagen": "/images/2018/08/0-bottom.png",
-       "alt": ""
+       "imagen": "/images/2018/08/0-bottom-1024x82.png",
+       "alt": "",
+       "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/08/0-bottom-1024x82.png"
       }
      ]
     },
@@ -4571,7 +4974,8 @@
        "relleno": null,
        "tipo": "imagen",
        "imagen": "/images/2018/09/home-elisha.png",
-       "alt": ""
+       "alt": "",
+       "_origen": "https://e-nation.org/zero/wp-content/uploads/2018/09/home-elisha.png"
       },
       {
        "_id": "be98519",

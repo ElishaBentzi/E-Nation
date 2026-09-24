@@ -8,10 +8,10 @@
   },
   "banner-publicidad": {
     "unitycoin.net": {
-      "_nota": "Petición del usuario: «las monedas un poco más abajo y un poco más a la derecha, y el texto UNT alineado con el centro de la primera moneda». Lo de «más abajo» NO se ajusta aquí a propósito: era un fallo de verdad —las monedas perdían el centrado vertical porque el anclaje se declara «center» y el componente solo entendía «middle»— y ya está corregido en la extracción. Ahora están a la altura del original (51,66 % frente a 51,50 %). Esto de aquí es solo el desplazamiento lateral y la alineación.",
+      "_nota": "Petición del usuario: monedas desplazadas a la derecha y UNT alineado con el centro de la primera moneda. Tras la primera revisión el usuario las quiso UN POCO MÁS A LA IZQUIERDA, así que el desplazamiento pasó de 18px a 8px. El número es fácil de tocar aquí; la alineación de UNT se recalcula sola tras cualquier cambio. Lo de «más abajo» NO se ajusta aquí a propósito: era un fallo de verdad —las monedas perdían el centrado vertical porque el anclaje se declara «center» y el componente solo entendía «middle»— y ya está corregido en la extracción. Ahora están a la altura del original (51,66 % frente a 51,50 %). Esto de aquí es solo el desplazamiento lateral y la alineación.",
       "desplazamientos": {
-        "unity-banner-A.png": { "dx": "18px", "dy": "0px" },
-        "unity-banner-B.png": { "dx": "18px", "dy": "0px" }
+        "unity-banner-A.png": { "dx": "8px", "dy": "0px" },
+        "unity-banner-B.png": { "dx": "8px", "dy": "0px" }
       },
       "alinearCentroXCon": {
         "UNT": "unity-banner-A.png"

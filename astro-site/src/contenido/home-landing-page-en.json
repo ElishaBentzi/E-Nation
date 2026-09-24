@@ -231,158 +231,183 @@
    "columnas": [
     {
      "fondo": null,
-     "ancho": 30,
+     "ancho": 100,
      "relleno": null,
      "bloques": [
       {
-       "_id": "4d05a58",
-       "margen": null,
+       "tipo": "grupo",
+       "fondo": null,
        "relleno": null,
-       "tipo": "slider",
-       "alias": "snake",
-       "shortcode": null
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 70,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "be915c1",
-       "margen": null,
-       "relleno": null,
-       "tipo": "encabezado",
-       "texto": "The snake that eats its own tail",
-       "nivel": "h2",
-       "alineacion": "center",
-       "html": null,
-       "color": "#ff7100",
-       "tamanoEm": 3,
-       "grosor": null
+       "ancho": 100,
+       "bloques": [],
+       "columnas": [
+        {
+         "fondo": null,
+         "ancho": 30,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "4d05a58",
+           "margen": null,
+           "relleno": null,
+           "tipo": "slider",
+           "alias": "snake",
+           "shortcode": null
+          }
+         ]
+        },
+        {
+         "fondo": null,
+         "ancho": 70,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "be915c1",
+           "margen": null,
+           "relleno": null,
+           "tipo": "encabezado",
+           "texto": "The snake that eats its own tail",
+           "nivel": "h2",
+           "alineacion": "center",
+           "html": null,
+           "color": "#ff7100",
+           "tamanoEm": 3,
+           "grosor": null
+          },
+          {
+           "_id": "bdb3215",
+           "margen": null,
+           "relleno": null,
+           "tipo": "encabezado",
+           "texto": "The conditions to which modern society subjects us are a discouraging cocktail that intoxicates us with unhappiness.",
+           "nivel": "h2",
+           "alineacion": "left",
+           "html": null,
+           "color": "#54595f",
+           "tamanoEm": 1.8,
+           "grosor": "400"
+          },
+          {
+           "_id": "c09992c",
+           "margen": null,
+           "relleno": null,
+           "tipo": "encabezado",
+           "texto": "Modern society under the paradigms of individualism and materialism to the detriment of family, spiritual and ecological values, has closed its cycle and begins to be dangerous for humanity: the snake that eats its own tail.",
+           "nivel": "h2",
+           "alineacion": "left",
+           "html": null,
+           "color": "#54595f",
+           "tamanoEm": 1.8,
+           "grosor": "400"
+          }
+         ]
+        }
+       ]
       },
       {
-       "_id": "bdb3215",
-       "margen": null,
+       "tipo": "grupo",
+       "fondo": null,
        "relleno": null,
-       "tipo": "encabezado",
-       "texto": "The conditions to which modern society subjects us are a discouraging cocktail that intoxicates us with unhappiness.",
-       "nivel": "h2",
-       "alineacion": "left",
-       "html": null,
-       "color": "#54595f",
-       "tamanoEm": 1.8,
-       "grosor": "400"
-      },
-      {
-       "_id": "c09992c",
-       "margen": null,
-       "relleno": null,
-       "tipo": "encabezado",
-       "texto": "Modern society under the paradigms of individualism and materialism to the detriment of family, spiritual and ecological values, has closed its cycle and begins to be dangerous for humanity: the snake that eats its own tail.",
-       "nivel": "h2",
-       "alineacion": "left",
-       "html": null,
-       "color": "#54595f",
-       "tamanoEm": 1.8,
-       "grosor": "400"
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 25,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "2bc9ca7",
-       "margen": null,
-       "relleno": null,
-       "tipo": "caja",
-       "titulo": "Corruption & Incompetence",
-       "descripcion": "",
-       "tituloDorso": "",
-       "descripcionDorso": "For centuries we have been deceived, making us believe that through a vote, a few would be in charge of serving us and ensuring the prosperity of all, when the truth is that they deceived us into working to benefit a minority that controls us.",
-       "imagen": "/images/2018/09/3-complement.jpg",
-       "fondoDorso": "#e8e8e8",
-       "colorTitulo": null,
-       "colorDescripcion": null,
-       "alto": 280,
-       "efecto": "jet-box-effect-7",
-       "enlace": null
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 25,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "2220c96",
-       "margen": null,
-       "relleno": null,
-       "tipo": "caja",
-       "titulo": "Slavery",
-       "descripcion": "",
-       "tituloDorso": "",
-       "descripcionDorso": "An Economy at the service of unhappiness. The rat cycle: consume - pay - work",
-       "imagen": "/images/2018/09/4-complement.png",
-       "fondoDorso": "#e8e8e8",
-       "colorTitulo": null,
-       "colorDescripcion": null,
-       "alto": 280,
-       "efecto": "jet-box-effect-7",
-       "enlace": null
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 25,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "faf09f7",
-       "margen": null,
-       "relleno": null,
-       "tipo": "caja",
-       "titulo": "Disintegration of the Family",
-       "descripcion": "",
-       "tituloDorso": "",
-       "descripcionDorso": "With both parents working, the family finds it difficult to form values at home. A society that is not oriented to family values, is a society that is lost in individualism and materialism. Without family, society dies.",
-       "imagen": "/images/2018/09/5-esclavitud.png",
-       "fondoDorso": "#e8e8e8",
-       "colorTitulo": null,
-       "colorDescripcion": null,
-       "alto": 280,
-       "efecto": "jet-box-effect-7",
-       "enlace": null
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 25,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "8c95c88",
-       "margen": null,
-       "relleno": null,
-       "tipo": "caja",
-       "titulo": "Media Brain Washing",
-       "descripcion": "",
-       "tituloDorso": "",
-       "descripcionDorso": "With the continuous repetition of half-truths, the use of psycho-terror and the abuse of our confidence in the \"experts\", which are used to manipulate our opinion, to justify the decisions of the elites.",
-       "imagen": "/images/2020/12/tv-control-media.jpg",
-       "fondoDorso": "#e8e8e8",
-       "colorTitulo": null,
-       "colorDescripcion": null,
-       "alto": 280,
-       "efecto": "jet-box-effect-7",
-       "enlace": null
+       "ancho": 100,
+       "bloques": [],
+       "columnas": [
+        {
+         "fondo": null,
+         "ancho": 25,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "2bc9ca7",
+           "margen": null,
+           "relleno": null,
+           "tipo": "caja",
+           "titulo": "Corruption & Incompetence",
+           "descripcion": "",
+           "tituloDorso": "",
+           "descripcionDorso": "For centuries we have been deceived, making us believe that through a vote, a few would be in charge of serving us and ensuring the prosperity of all, when the truth is that they deceived us into working to benefit a minority that controls us.",
+           "imagen": "/images/2018/09/3-complement.jpg",
+           "fondoDorso": "#e8e8e8",
+           "colorTitulo": null,
+           "colorDescripcion": null,
+           "alto": 280,
+           "efecto": "jet-box-effect-7",
+           "enlace": null
+          }
+         ]
+        },
+        {
+         "fondo": null,
+         "ancho": 25,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "2220c96",
+           "margen": null,
+           "relleno": null,
+           "tipo": "caja",
+           "titulo": "Slavery",
+           "descripcion": "",
+           "tituloDorso": "",
+           "descripcionDorso": "An Economy at the service of unhappiness. The rat cycle: consume - pay - work",
+           "imagen": "/images/2018/09/4-complement.png",
+           "fondoDorso": "#e8e8e8",
+           "colorTitulo": null,
+           "colorDescripcion": null,
+           "alto": 280,
+           "efecto": "jet-box-effect-7",
+           "enlace": null
+          }
+         ]
+        },
+        {
+         "fondo": null,
+         "ancho": 25,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "faf09f7",
+           "margen": null,
+           "relleno": null,
+           "tipo": "caja",
+           "titulo": "Disintegration of the Family",
+           "descripcion": "",
+           "tituloDorso": "",
+           "descripcionDorso": "With both parents working, the family finds it difficult to form values at home. A society that is not oriented to family values, is a society that is lost in individualism and materialism. Without family, society dies.",
+           "imagen": "/images/2018/09/5-esclavitud.png",
+           "fondoDorso": "#e8e8e8",
+           "colorTitulo": null,
+           "colorDescripcion": null,
+           "alto": 280,
+           "efecto": "jet-box-effect-7",
+           "enlace": null
+          }
+         ]
+        },
+        {
+         "fondo": null,
+         "ancho": 25,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "8c95c88",
+           "margen": null,
+           "relleno": null,
+           "tipo": "caja",
+           "titulo": "Media Brain Washing",
+           "descripcion": "",
+           "tituloDorso": "",
+           "descripcionDorso": "With the continuous repetition of half-truths, the use of psycho-terror and the abuse of our confidence in the \"experts\", which are used to manipulate our opinion, to justify the decisions of the elites.",
+           "imagen": "/images/2020/12/tv-control-media.jpg",
+           "fondoDorso": "#e8e8e8",
+           "colorTitulo": null,
+           "colorDescripcion": null,
+           "alto": 280,
+           "efecto": "jet-box-effect-7",
+           "enlace": null
+          }
+         ]
+        }
+       ]
       }
      ]
     }
@@ -419,144 +444,162 @@
        "color": "#ffffff",
        "tamanoEm": 3,
        "grosor": null
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 33,
-     "relleno": null,
-     "bloques": [
+      },
       {
-       "_id": "f8891c5",
-       "margen": null,
+       "tipo": "grupo",
+       "fondo": null,
        "relleno": null,
-       "tipo": "banner",
-       "imagen": "/images/2018/10/problem-war.jpg",
-       "titulo": "3rd World War",
-       "texto": "The confusion of selfishness inevitably leads to polarization, which translates into fascism, nationalism, economic warfare and, ultimately, physical warfare.",
-       "fondo": "#ff7100",
-       "fondoHover": "#095287",
-       "colorTitulo": "#ffffff",
-       "colorTexto": "#ffffff",
-       "efecto": "sarah",
-       "clases": "reborde_negro_sombra",
-       "tamanoTituloEm": 2.2
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 33,
-     "relleno": null,
-     "bloques": [
+       "ancho": 100,
+       "bloques": [],
+       "columnas": [
+        {
+         "fondo": null,
+         "ancho": 33,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "f8891c5",
+           "margen": null,
+           "relleno": null,
+           "tipo": "banner",
+           "imagen": "/images/2018/10/problem-war.jpg",
+           "titulo": "3rd World War",
+           "texto": "The confusion of selfishness inevitably leads to polarization, which translates into fascism, nationalism, economic warfare and, ultimately, physical warfare.",
+           "fondo": "#ff7100",
+           "fondoHover": "#095287",
+           "colorTitulo": "#ffffff",
+           "colorTexto": "#ffffff",
+           "efecto": "sarah",
+           "clases": "reborde_negro_sombra",
+           "tamanoTituloEm": 2.2
+          }
+         ]
+        },
+        {
+         "fondo": null,
+         "ancho": 33,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "88e2c2c",
+           "margen": null,
+           "relleno": null,
+           "tipo": "banner",
+           "imagen": "/images/2018/10/problem-loss-savings.jpg",
+           "titulo": "Loss of Savings",
+           "texto": "Inflation, implosion of money, 4th dollar default, confiscation of property, loss of purchasing power.",
+           "fondo": "#fc6d00",
+           "fondoHover": "#095287",
+           "colorTitulo": "#ffffff",
+           "colorTexto": "#ffffff",
+           "efecto": "sarah",
+           "clases": "reborde_negro_sombra",
+           "tamanoTituloEm": 2.2
+          }
+         ]
+        },
+        {
+         "fondo": null,
+         "ancho": 33,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "3fb79ba",
+           "margen": null,
+           "relleno": null,
+           "tipo": "banner",
+           "imagen": "/images/2018/10/problem-natural-1.jpg",
+           "titulo": "Natural Disasters",
+           "texto": "Pollution, climate change, deforestation, droughts, floods, extinction of species.",
+           "fondo": "#ff7100",
+           "fondoHover": "#095287",
+           "colorTitulo": "#ffffff",
+           "colorTexto": "#ffffff",
+           "efecto": "sarah",
+           "clases": "reborde_negro_sombra",
+           "tamanoTituloEm": 2.2
+          }
+         ]
+        }
+       ]
+      },
       {
-       "_id": "88e2c2c",
-       "margen": null,
+       "tipo": "grupo",
+       "fondo": null,
        "relleno": null,
-       "tipo": "banner",
-       "imagen": "/images/2018/10/problem-loss-savings.jpg",
-       "titulo": "Loss of Savings",
-       "texto": "Inflation, implosion of money, 4th dollar default, confiscation of property, loss of purchasing power.",
-       "fondo": "#fc6d00",
-       "fondoHover": "#095287",
-       "colorTitulo": "#ffffff",
-       "colorTexto": "#ffffff",
-       "efecto": "sarah",
-       "clases": "reborde_negro_sombra",
-       "tamanoTituloEm": 2.2
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 33,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "3fb79ba",
-       "margen": null,
-       "relleno": null,
-       "tipo": "banner",
-       "imagen": "/images/2018/10/problem-natural-1.jpg",
-       "titulo": "Natural Disasters",
-       "texto": "Pollution, climate change, deforestation, droughts, floods, extinction of species.",
-       "fondo": "#ff7100",
-       "fondoHover": "#095287",
-       "colorTitulo": "#ffffff",
-       "colorTexto": "#ffffff",
-       "efecto": "sarah",
-       "clases": "reborde_negro_sombra",
-       "tamanoTituloEm": 2.2
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 33,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "b4943b9",
-       "margen": null,
-       "relleno": null,
-       "tipo": "banner",
-       "imagen": "/images/2018/10/problem-police-state-1.jpg",
-       "titulo": "Police State",
-       "texto": "Loss of personal privacy, excessive bureaucracy, uniformity, the communist state.",
-       "fondo": "#ff7100",
-       "fondoHover": "#095287",
-       "colorTitulo": "#ffffff",
-       "colorTexto": "#ffffff",
-       "efecto": "sarah",
-       "clases": "reborde_negro_sombra",
-       "tamanoTituloEm": 2.2
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 33,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "517c62c",
-       "margen": null,
-       "relleno": null,
-       "tipo": "banner",
-       "imagen": "/images/2018/10/problem-women-1.jpg",
-       "titulo": "Prostitution of Wives and Daughters",
-       "texto": "Without family values, the woman is naturally inclined to leave with the few wealthy, of higher social status and handsome men. The good guys have no value.",
-       "fondo": "#ff7100",
-       "fondoHover": "#095287",
-       "colorTitulo": "#ffffff",
-       "colorTexto": "#ffffff",
-       "efecto": "sarah",
-       "clases": "reborde_negro_sombra",
-       "tamanoTituloEm": 2.2
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 33,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "54ad1de",
-       "margen": null,
-       "relleno": null,
-       "tipo": "banner",
-       "imagen": "/images/2018/10/problem-son-1.jpg",
-       "titulo": "Sodomization of your Children",
-       "texto": "The moral confusion in society and in schools means that critical thinking is no longer taught, but rather the dogmatization of confusion.",
-       "fondo": "#ff7100",
-       "fondoHover": "#095287",
-       "colorTitulo": "#ffffff",
-       "colorTexto": "#ffffff",
-       "efecto": "sarah",
-       "clases": "reborde_negro_sombra",
-       "tamanoTituloEm": 2.2
+       "ancho": 100,
+       "bloques": [],
+       "columnas": [
+        {
+         "fondo": null,
+         "ancho": 33,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "b4943b9",
+           "margen": null,
+           "relleno": null,
+           "tipo": "banner",
+           "imagen": "/images/2018/10/problem-police-state-1.jpg",
+           "titulo": "Police State",
+           "texto": "Loss of personal privacy, excessive bureaucracy, uniformity, the communist state.",
+           "fondo": "#ff7100",
+           "fondoHover": "#095287",
+           "colorTitulo": "#ffffff",
+           "colorTexto": "#ffffff",
+           "efecto": "sarah",
+           "clases": "reborde_negro_sombra",
+           "tamanoTituloEm": 2.2
+          }
+         ]
+        },
+        {
+         "fondo": null,
+         "ancho": 33,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "517c62c",
+           "margen": null,
+           "relleno": null,
+           "tipo": "banner",
+           "imagen": "/images/2018/10/problem-women-1.jpg",
+           "titulo": "Prostitution of Wives and Daughters",
+           "texto": "Without family values, the woman is naturally inclined to leave with the few wealthy, of higher social status and handsome men. The good guys have no value.",
+           "fondo": "#ff7100",
+           "fondoHover": "#095287",
+           "colorTitulo": "#ffffff",
+           "colorTexto": "#ffffff",
+           "efecto": "sarah",
+           "clases": "reborde_negro_sombra",
+           "tamanoTituloEm": 2.2
+          }
+         ]
+        },
+        {
+         "fondo": null,
+         "ancho": 33,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "54ad1de",
+           "margen": null,
+           "relleno": null,
+           "tipo": "banner",
+           "imagen": "/images/2018/10/problem-son-1.jpg",
+           "titulo": "Sodomization of your Children",
+           "texto": "The moral confusion in society and in schools means that critical thinking is no longer taught, but rather the dogmatization of confusion.",
+           "fondo": "#ff7100",
+           "fondoHover": "#095287",
+           "colorTitulo": "#ffffff",
+           "colorTexto": "#ffffff",
+           "efecto": "sarah",
+           "clases": "reborde_negro_sombra",
+           "tamanoTituloEm": 2.2
+          }
+         ]
+        }
+       ]
       }
      ]
     }
@@ -606,52 +649,61 @@
        ],
        "color": "#ff7100",
        "tamanoEm": 3
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 50,
-     "relleno": null,
-     "bloques": [
+      },
       {
-       "_id": "2190731",
-       "margen": null,
-       "relleno": null,
-       "tipo": "banner",
-       "imagen": "/images/2018/10/6-change-base.jpg",
-       "titulo": "We take the best",
-       "texto": "It is not necessary to tear down all the systems and start from scratch. At E-Nation we have taken what works from the constitutions, discarded what does not work, adapting everything to current times. Read E-Nation.",
+       "tipo": "grupo",
        "fondo": null,
-       "fondoHover": "#095287",
-       "colorTitulo": "#ffffff",
-       "colorTexto": "#ffffff",
-       "efecto": "oscar",
-       "clases": "reborde_negro_sombra",
-       "tamanoTituloEm": 3
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 49.821,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "c23a6c4",
-       "margen": null,
        "relleno": null,
-       "tipo": "banner",
-       "imagen": "/images/2018/09/6-internet.jpg",
-       "titulo": "Internet Power",
-       "texto": "To take power and achieve freedom, we have two powerful weapons available: The Internet and the Cryptocurrency.",
-       "fondo": null,
-       "fondoHover": "#095287",
-       "colorTitulo": "#ffffff",
-       "colorTexto": "#ffffff",
-       "efecto": "oscar",
-       "clases": "reborde_negro_sombra",
-       "tamanoTituloEm": 3
+       "ancho": 100,
+       "bloques": [],
+       "columnas": [
+        {
+         "fondo": null,
+         "ancho": 50,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "2190731",
+           "margen": null,
+           "relleno": null,
+           "tipo": "banner",
+           "imagen": "/images/2018/10/6-change-base.jpg",
+           "titulo": "We take the best",
+           "texto": "It is not necessary to tear down all the systems and start from scratch. At E-Nation we have taken what works from the constitutions, discarded what does not work, adapting everything to current times. Read E-Nation.",
+           "fondo": null,
+           "fondoHover": "#095287",
+           "colorTitulo": "#ffffff",
+           "colorTexto": "#ffffff",
+           "efecto": "oscar",
+           "clases": "reborde_negro_sombra",
+           "tamanoTituloEm": 3
+          }
+         ]
+        },
+        {
+         "fondo": null,
+         "ancho": 49.821,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "c23a6c4",
+           "margen": null,
+           "relleno": null,
+           "tipo": "banner",
+           "imagen": "/images/2018/09/6-internet.jpg",
+           "titulo": "Internet Power",
+           "texto": "To take power and achieve freedom, we have two powerful weapons available: The Internet and the Cryptocurrency.",
+           "fondo": null,
+           "fondoHover": "#095287",
+           "colorTitulo": "#ffffff",
+           "colorTexto": "#ffffff",
+           "efecto": "oscar",
+           "clases": "reborde_negro_sombra",
+           "tamanoTituloEm": 3
+          }
+         ]
+        }
+       ]
       }
      ]
     }
@@ -688,85 +740,105 @@
        "color": "#ffffff",
        "tamanoEm": 5,
        "grosor": null
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 100,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "9690997",
-       "margen": null,
-       "relleno": "0px 10px 0px 10px",
-       "tipo": "encabezado",
-       "texto": "Going from measuring life only with money to living life adding other social and ecological values:",
-       "nivel": "h2",
-       "alineacion": "center",
-       "html": null,
-       "color": "#ffffff",
-       "tamanoEm": 2,
-       "grosor": "300"
       },
       {
-       "_id": "3d92142",
-       "margen": "-1% 0% 0% 0%",
-       "relleno": null,
-       "tipo": "textoAnimado",
-       "antes": "",
-       "despues": "",
-       "palabras": [
-        "A Balanced Happy Life"
-       ],
-       "color": "#ff7100",
-       "tamanoEm": 3
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 50,
-     "relleno": null,
-     "bloques": [
+       "tipo": "grupo",
+       "fondo": {
+        "color": "rgba(0,46,99,0.36)"
+       },
+       "relleno": "0.5% 0% 0.5% 0%",
+       "ancho": 100,
+       "bloques": [],
+       "columnas": [
+        {
+         "fondo": null,
+         "ancho": 100,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "9690997",
+           "margen": null,
+           "relleno": "0px 10px 0px 10px",
+           "tipo": "encabezado",
+           "texto": "Going from measuring life only with money to living life adding other social and ecological values:",
+           "nivel": "h2",
+           "alineacion": "center",
+           "html": null,
+           "color": "#ffffff",
+           "tamanoEm": 2,
+           "grosor": "300"
+          },
+          {
+           "_id": "3d92142",
+           "margen": "-1% 0% 0% 0%",
+           "relleno": null,
+           "tipo": "textoAnimado",
+           "antes": "",
+           "despues": "",
+           "palabras": [
+            "A Balanced Happy Life"
+           ],
+           "color": "#ff7100",
+           "tamanoEm": 3
+          }
+         ]
+        }
+       ]
+      },
       {
-       "_id": "92679de",
-       "margen": null,
-       "relleno": null,
-       "tipo": "banner",
-       "imagen": "/images/2018/09/8-pact-family.jpg",
-       "titulo": "To Unite us",
-       "texto": "A Society of do-gooders. United as a great family, with a balance between freedom and responsibility.",
+       "tipo": "grupo",
        "fondo": null,
-       "fondoHover": "#ff7100",
-       "colorTitulo": "#ffffff",
-       "colorTexto": "#ffffff",
-       "efecto": "oscar",
-       "clases": "reborde_negro_sombra",
-       "tamanoTituloEm": 3
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 49.821,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "0dc8265",
-       "margen": null,
        "relleno": null,
-       "tipo": "banner",
-       "imagen": "/images/2018/09/8-pact-education.jpg",
-       "titulo": "New Educational Model",
-       "texto": "Focused on human development, its individual characteristics and collective happiness. Empathy and Science.",
-       "fondo": null,
-       "fondoHover": "#ff7100",
-       "colorTitulo": "#ffffff",
-       "colorTexto": "#ffffff",
-       "efecto": "oscar",
-       "clases": "reborde_negro_sombra",
-       "tamanoTituloEm": 3
+       "ancho": 100,
+       "bloques": [],
+       "columnas": [
+        {
+         "fondo": null,
+         "ancho": 50,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "92679de",
+           "margen": null,
+           "relleno": null,
+           "tipo": "banner",
+           "imagen": "/images/2018/09/8-pact-family.jpg",
+           "titulo": "To Unite us",
+           "texto": "A Society of do-gooders. United as a great family, with a balance between freedom and responsibility.",
+           "fondo": null,
+           "fondoHover": "#ff7100",
+           "colorTitulo": "#ffffff",
+           "colorTexto": "#ffffff",
+           "efecto": "oscar",
+           "clases": "reborde_negro_sombra",
+           "tamanoTituloEm": 3
+          }
+         ]
+        },
+        {
+         "fondo": null,
+         "ancho": 49.821,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "0dc8265",
+           "margen": null,
+           "relleno": null,
+           "tipo": "banner",
+           "imagen": "/images/2018/09/8-pact-education.jpg",
+           "titulo": "New Educational Model",
+           "texto": "Focused on human development, its individual characteristics and collective happiness. Empathy and Science.",
+           "fondo": null,
+           "fondoHover": "#ff7100",
+           "colorTitulo": "#ffffff",
+           "colorTexto": "#ffffff",
+           "efecto": "oscar",
+           "clases": "reborde_negro_sombra",
+           "tamanoTituloEm": 3
+          }
+         ]
+        }
+       ]
       }
      ]
     }
@@ -788,47 +860,63 @@
    "columnas": [
     {
      "fondo": null,
-     "ancho": 50,
+     "ancho": 100,
      "relleno": null,
      "bloques": [
       {
-       "_id": "b905c3c",
-       "margen": null,
-       "relleno": null,
-       "tipo": "banner",
-       "imagen": "/images/2018/09/8-pact-economy.jpg",
-       "titulo": "New Economic Model",
-       "texto": "The Citizen control the money, not the State, not the banks. With guaranteed income to everyone, means that every improvement in society like automatization and AI produce less working hours to everyone. No taxes, only contributions at the discretion of the citizen.",
+       "tipo": "grupo",
        "fondo": null,
-       "fondoHover": "#095287",
-       "colorTitulo": "#ffffff",
-       "colorTexto": "#ffffff",
-       "efecto": "oscar",
-       "clases": "reborde_negro_sombra",
-       "tamanoTituloEm": 3
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 49.821,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "0f8e627",
-       "margen": null,
        "relleno": null,
-       "tipo": "banner",
-       "imagen": "/images/2018/09/8-pact-moms.jpg",
-       "titulo": "Centered in the Family",
-       "texto": "Where the woman can be wife, mother and professional, without having to choose between money or family, truly free and responsible.",
-       "fondo": null,
-       "fondoHover": "#095287",
-       "colorTitulo": "#ffffff",
-       "colorTexto": "#ffffff",
-       "efecto": "oscar",
-       "clases": "reborde_negro_sombra",
-       "tamanoTituloEm": 3
+       "ancho": 100,
+       "bloques": [],
+       "columnas": [
+        {
+         "fondo": null,
+         "ancho": 50,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "b905c3c",
+           "margen": null,
+           "relleno": null,
+           "tipo": "banner",
+           "imagen": "/images/2018/09/8-pact-economy.jpg",
+           "titulo": "New Economic Model",
+           "texto": "The Citizen control the money, not the State, not the banks. With guaranteed income to everyone, means that every improvement in society like automatization and AI produce less working hours to everyone. No taxes, only contributions at the discretion of the citizen.",
+           "fondo": null,
+           "fondoHover": "#095287",
+           "colorTitulo": "#ffffff",
+           "colorTexto": "#ffffff",
+           "efecto": "oscar",
+           "clases": "reborde_negro_sombra",
+           "tamanoTituloEm": 3
+          }
+         ]
+        },
+        {
+         "fondo": null,
+         "ancho": 49.821,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "0f8e627",
+           "margen": null,
+           "relleno": null,
+           "tipo": "banner",
+           "imagen": "/images/2018/09/8-pact-moms.jpg",
+           "titulo": "Centered in the Family",
+           "texto": "Where the woman can be wife, mother and professional, without having to choose between money or family, truly free and responsible.",
+           "fondo": null,
+           "fondoHover": "#095287",
+           "colorTitulo": "#ffffff",
+           "colorTexto": "#ffffff",
+           "efecto": "oscar",
+           "clases": "reborde_negro_sombra",
+           "tamanoTituloEm": 3
+          }
+         ]
+        }
+       ]
       }
      ]
     }
@@ -850,47 +938,63 @@
    "columnas": [
     {
      "fondo": null,
-     "ancho": 50,
+     "ancho": 100,
      "relleno": null,
      "bloques": [
       {
-       "_id": "ddf20b4",
-       "margen": null,
-       "relleno": null,
-       "tipo": "banner",
-       "imagen": "/images/2018/09/8-pact-participation.jpg",
-       "titulo": "New Model of Political Participation",
-       "texto": "Direct democracy with meritocracy and consensus voting.",
+       "tipo": "grupo",
        "fondo": null,
-       "fondoHover": "#ff7100",
-       "colorTitulo": "#ffffff",
-       "colorTexto": "#ffffff",
-       "efecto": "oscar",
-       "clases": "reborde_negro_sombra",
-       "tamanoTituloEm": 3
-      }
-     ]
-    },
-    {
-     "fondo": null,
-     "ancho": 49.821,
-     "relleno": null,
-     "bloques": [
-      {
-       "_id": "733c31f",
-       "margen": null,
        "relleno": null,
-       "tipo": "banner",
-       "imagen": "/images/2018/09/8-pact-science.jpg",
-       "titulo": "Apply the Scientific Method",
-       "texto": "To the whole government, applying technological knowledge, making decisions based on data and understanding that we live in an interconnected planet.",
-       "fondo": null,
-       "fondoHover": "#ff7100",
-       "colorTitulo": "#ffffff",
-       "colorTexto": "#ffffff",
-       "efecto": "oscar",
-       "clases": "reborde_negro_sombra",
-       "tamanoTituloEm": 3
+       "ancho": 100,
+       "bloques": [],
+       "columnas": [
+        {
+         "fondo": null,
+         "ancho": 50,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "ddf20b4",
+           "margen": null,
+           "relleno": null,
+           "tipo": "banner",
+           "imagen": "/images/2018/09/8-pact-participation.jpg",
+           "titulo": "New Model of Political Participation",
+           "texto": "Direct democracy with meritocracy and consensus voting.",
+           "fondo": null,
+           "fondoHover": "#ff7100",
+           "colorTitulo": "#ffffff",
+           "colorTexto": "#ffffff",
+           "efecto": "oscar",
+           "clases": "reborde_negro_sombra",
+           "tamanoTituloEm": 3
+          }
+         ]
+        },
+        {
+         "fondo": null,
+         "ancho": 49.821,
+         "relleno": null,
+         "bloques": [
+          {
+           "_id": "733c31f",
+           "margen": null,
+           "relleno": null,
+           "tipo": "banner",
+           "imagen": "/images/2018/09/8-pact-science.jpg",
+           "titulo": "Apply the Scientific Method",
+           "texto": "To the whole government, applying technological knowledge, making decisions based on data and understanding that we live in an interconnected planet.",
+           "fondo": null,
+           "fondoHover": "#ff7100",
+           "colorTitulo": "#ffffff",
+           "colorTexto": "#ffffff",
+           "efecto": "oscar",
+           "clases": "reborde_negro_sombra",
+           "tamanoTituloEm": 3
+          }
+         ]
+        }
+       ]
       }
      ]
     }

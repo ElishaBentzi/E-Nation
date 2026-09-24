@@ -24,6 +24,68 @@ if (!NOMBRE) { console.error('Falta el nombre, por ejemplo: home-landing-page-en
 
 const j = JSON.parse(fs.readFileSync(path.join(RAIZ, 'reference', 'elementor', NOMBRE + '.json'), 'utf8'));
 
+/*
+ * LAS VARIANTES QUE SERVIA EL ORIGINAL.
+ *
+ * WordPress deriva tamanos de cada imagen (`2-hand-passport-300x291.png` a partir de
+ * `2-hand-passport.png`), y Elementor declara CUAL servir en `image_size` — pero el
+ * JSON de la imagen solo trae la URL del FICHERO COMPLETO. Pintar el completo en vez
+ * de la variante hinchaba las paginas: el pasaporte renderizaba a 1224x1186 donde el
+ * original lo servia de 300x291.
+ *
+ * El volcado de medios trae, por pagina, la URL EXACTA que servia el original. De ahi
+ * sale este mapa: base (`2-hand-passport.png`) -> variante servida, para esta pagina.
+ */
+const VARIANTES = (() => {
+  const mapa = {};
+  try {
+    const volcado = JSON.parse(fs.readFileSync(path.join(RAIZ, 'reference', 'wp-export.json'), 'utf8'));
+    const clavePagina = NOMBRE.replace(/-(en|es|fr)$/, '');
+    for (const m of volcado.medios ?? []) {
+      if (m.pagina && m.pagina !== clavePagina) continue;
+      const fichero = String(m.url || '').split('/').pop();
+      const base = fichero.replace(/-\d+x\d+(?=\.\w+$)/, '');
+      // Ante varias variantes de la misma base, gana la primera (la que sirvio).
+      if (!mapa[base]) mapa[base] = String(m.url);
+    }
+  } catch (e) { /* sin volcado de medios, se queda el fichero completo */ }
+  return mapa;
+})();
+
+/** Ruta local de una URL de imagen del original (o null si es de otro dominio). */
+const rutaLocalDe = (u) => {
+  const m = String(u).match(/\/wp-content\/uploads\/(.+)$/);
+  return m ? '/images/' + m[1] : null;
+};
+
+/** Si la variante no esta en el espejo, se descarga: sin esto, la ruta daria 404. */
+const descargadas = [];
+async function descargarSiFalta(urlLocal, urlOrigen) {
+  if (!urlLocal || fs.existsSync(path.join(RAIZ, 'astro-site', 'public', urlLocal))) return;
+  if (!/^https:/.test(urlOrigen)) return;
+  const destino = path.join(RAIZ, 'astro-site', 'public', urlLocal);
+  fs.mkdirSync(path.dirname(destino), { recursive: true });
+  try {
+    const r = await fetch(urlOrigen);
+    if (!r.ok) return;
+    fs.writeFileSync(destino, Buffer.from(await r.arrayBuffer()));
+    descargadas.push(urlLocal);
+  } catch (e) { /* sin red, se queda pendiente: la auditoria de rutas lo delata */ }
+}
+
+/**
+ * ELIGE LA IMAGEN DE UN WIDGET `image`: la variante que servia el original si la hay,
+ * y si no el fichero completo. Devuelve { ruta, url } para poder descargarla.
+ */
+function imagenDeWidget(s) {
+  const completa = url(s.image);
+  if (!completa) return null;
+  const base = completa.split('/').pop();
+  const variante = VARIANTES[base];
+  const elegida = variante || completa;
+  return { ruta: rutaLocalDe(elegida) ?? rutaImg(s.image), url: elegida };
+}
+
 const limpio = (s) => String(s ?? '').replace(/\s+/g, ' ').trim();
 /**
  * TEXTO DE UN ENCABEZADO, conservando los saltos de linea.
@@ -179,7 +241,12 @@ function bloqueDe(w) {
       etiqueta: limpio(s.button_label_normal), etiquetaHover: limpio(s.button_label_hover),
       enlace: url(s.button_url), icono: limpio(s.button_icon_normal) };
   }
-  if (t === 'image') return { ...comun, tipo: 'imagen', imagen: rutaImg(s.image), alt: limpio(s.image?.alt) };
+  if (t === 'image') {
+    const im = imagenDeWidget(s);
+    return { ...comun, tipo: 'imagen', imagen: im ? im.ruta : null, alt: limpio(s.image?.alt),
+      // La URL de origen, para que el paso de descarga recupere la variante si falta.
+      _origen: im ? im.url : null };
+  }
   if (t === 'html') return { ...comun, tipo: 'html', html: s.html || '' };
   if (t === 'video') return { ...comun, tipo: 'video', youtube: s.youtube_url || null, enlace: url(s.hosted_url) };
   if (t === 'icon-list') {
@@ -265,57 +332,67 @@ function medidas(ajustes, prop) {
  */
 function columnasDe(hijos) {
   const hojas = [];
-  const visitar = (nodos) => {
+
+  /** Un grupo: seccion interna convertida en bloque, con sus columnas dentro. */
+  const grupoDe = (c) => ({
+    tipo: 'grupo',
+    fondo: fondoDe(c.settings),
+    relleno: medidas(c.settings, 'padding'),
+    ancho: 100,
+    bloques: [],
+    columnas: columnasDe(c.elements),
+  });
+
+  /** Nivel de columnas: cada hijo suelto se convierte en una entrada de `hojas`. */
+  const visitarNivel = (nodos) => {
     for (const c of nodos || []) {
-      /*
-       * Un widget suelto (sin columna que lo envuelva) se cuelga de una columna
-       * propia. Descartarlo hacia desaparecer contenido sin ningun error.
-       */
       if (c.elType === 'widget') {
+        // Widget sin columna que lo envuelva: columna propia, para no perderlo.
         hojas.push({ ancho: 100, bloques: [bloqueDe(c)] });
         continue;
       }
-      /*
-       * SECCION INTERNA: Elementor permite meter una seccion dentro de una columna.
-       * Sus columnas suben al nivel de la seccion exterior, que es como se comporta
-       * en pantalla. Filtrar solo por `column` las descartaba enteras — y con ellas
-       * se iban las catorce tarjetas de problematicas de la home.
-       */
       if (c.elType === 'section' || c.elType === 'container') {
-        const dentro = c.elements || [];
-        const pareceColumna = dentro.length > 0 && dentro.every((h) => h.elType === 'column');
-        if (!pareceColumna) { visitar(dentro); continue; }
-      }
-      if (c.elType !== 'column' && c.elType !== 'container') {
-        if (c.elements) visitar(c.elements);
+        // Seccion en posicion directa: grupo a lo ancho.
+        hojas.push(grupoDe(c));
         continue;
       }
-      const dentro = c.elements || [];
-      const subColumnas = dentro.filter((h) => h.elType === 'column' || h.elType === 'container' || h.elType === 'section');
-      const widgets = dentro.filter((h) => h.elType === 'widget');
-      // Una columna que SOLO envuelve a otras columnas no es una columna: es un
-      // envoltorio, y se baja un nivel.
-      if (subColumnas.length && !widgets.length) {
-        visitar(subColumnas);
+      if (c.elType !== 'column') {
+        if (c.elements) visitarNivel(c.elements);
         continue;
       }
+
+      /*
+       * UNA COLUMNA. Sus bloques se recogen EN ORDEN DE DOCUMENTO, y una seccion
+       * interna queda DENTRO de la columna como bloque grupo — no como hermana.
+       *
+       * Sacarla fuera era un fallo caro: el grupo a lo ancho partia la rejilla en
+       * filas (14 + 72 | GRUPO | 14) y una seccion de 652 px medía 1767.
+       */
+      const bloques = [];
+      const recogerContenido = (nodos2) => {
+        for (const h of nodos2 || []) {
+          if (h.elType === 'widget') bloques.push(bloqueDe(h));
+          else if (h.elType === 'section' || h.elType === 'container') bloques.push(grupoDe(h));
+          else if (h.elType === 'column') recogerContenido(h.elements);
+          else if (h.elements) recogerContenido(h.elements);
+        }
+      };
+      recogerContenido(c.elements);
+
       hojas.push({
         fondo: fondoDe(c.settings),
         /*
          * EL ANCHO DE COLUMNA NO ESTA EN `width`. Elementor lo guarda en
-         * `_column_size` (el reparto base: 100 entera, 50 media, 33 un tercio) y en
-         * `_inline_size` cuando el autor lo afina. Leer `settings.width` devolvia
-         * `undefined` SIEMPRE, asi que todas las columnas quedaban al 100 % y una
-         * rejilla de seis tarjetas se pintaba como seis filas en vez de dos.
+         * `_column_size` (100 entera, 50 media, 33 un tercio) y en `_inline_size`
+         * cuando el autor lo afina.
          */
         ancho: num(c.settings?._inline_size) ?? num(c.settings?._column_size) ?? 100,
         relleno: medidas(c.settings, 'padding'),
-        bloques: widgets.map(bloqueDe),
+        bloques,
       });
-      if (subColumnas.length) visitar(subColumnas);
     }
   };
-  visitar(hijos);
+  visitarNivel(hijos);
   return hojas;
 }
 
@@ -351,15 +428,33 @@ const salida = path.join(RAIZ, 'astro-site', 'src', 'contenido', NOMBRE + '.json
 fs.mkdirSync(path.dirname(salida), { recursive: true });
 fs.writeFileSync(salida, JSON.stringify(modelo, null, 1), 'utf8');
 
-const bloques = secciones.reduce((a, s) => a + s.columnas.reduce((b, c) => b + c.bloques.length, 0), 0);
+const cuentaBloques = (bs) => (bs ?? []).reduce((n, b) => b.tipo === 'grupo'
+  ? n + cuentaBloques(b.bloques) + (b.columnas ?? []).reduce((m, c) => m + cuentaBloques(c.bloques), 0)
+  : n + 1, 0);
+const bloques = secciones.reduce((a, s) => a + s.columnas.reduce((b, c) => b + cuentaBloques(c.bloques), 0), 0);
 const sinMapear = new Map();
 const contar = (m) => m.secciones.forEach((s) => s.columnas.forEach((c) => c.bloques.forEach((b) => {
   if (b.tipo === 'sinMapear') sinMapear.set(b.widget, (sinMapear.get(b.widget) || 0) + 1);
 })));
 contar(modelo);
 
-console.log(`${NOMBRE}: ${secciones.length} secciones, ${bloques} bloques -> ${path.relative(RAIZ, salida)}`);
-if (sinMapear.size) console.log('  widgets sin mapear: ' + [...sinMapear].map(([k, v]) => `${k}:${v}`).join(', '));
+// Descargar las variantes que no esten en el espejo. Es lo ultimo del script: el
+// modelo ya esta en disco con las rutas definitivas.
+const origenes = [];
+const recoger = (m) => m.secciones.forEach((x) => x.columnas.forEach((c) => {
+  (c.bloques ?? []).forEach((b) => { if (b._origen) origenes.push([b.imagen, b._origen]); });
+  (c.bloques ?? []).forEach((b) => { if (b.tipo === 'grupo') (b.columnas ?? []).forEach((cc) => (cc.bloques ?? []).forEach((bb) => { if (bb._origen) origenes.push([bb.imagen, bb._origen]); })); });
+}));
+recoger(modelo);
+
+const descartadasLog = (lista) => lista.length + ' (' + lista.slice(0, 3).join(', ') + (lista.length > 3 ? '...)' : ')');
+
+(async () => {
+  await Promise.all(origenes.map(([ruta, origen]) => descargarSiFalta(ruta, origen)));
+  if (descargadas.length) console.log('  variantes descargadas: ' + descartadasLog(descargadas));
+  console.log(`${NOMBRE}: ${secciones.length} secciones, ${bloques} bloques -> ${path.relative(RAIZ, salida)}`);
+  if (sinMapear.size) console.log('  widgets sin mapear: ' + [...sinMapear].map(([k, v]) => `${k}:${v}`).join(', '));
+})();
 console.log('  tipos: ' + (() => {
   const c = {};
   modelo.secciones.forEach((s) => s.columnas.forEach((x) => x.bloques.forEach((b) => { c[b.tipo] = (c[b.tipo] || 0) + 1; })));

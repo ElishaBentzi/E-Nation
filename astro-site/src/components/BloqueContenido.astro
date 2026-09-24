@@ -1,0 +1,317 @@
+---
+/*
+ * UN BLOQUE DE CONTENIDO (un widget de Elementor ya traducido a modelo).
+ *
+ * POR QUE VIVE EN COMPONENTE PROPIO
+ *   Elementor permite meter una SECCION dentro de una columna, y esa seccion trae
+ *   sus propias columnas y widgets. Pintar eso exige recursión —un grupo que contiene
+ *   columnas que contienen bloques, uno de los cuales puede ser otro grupo— y un
+ *   `switch` dentro de una plantilla no puede llamarse a sí mismo. Aqui sí: el caso
+ *   `grupo` se vuelve a renderizar a este mismo componente.
+ *
+ * EL CASO `grupo`
+ *   Una sección interna NO es una fila hermana de las columnas de fuera: es un BLOQUE
+ *   dentro de su columna. Subirla de nivel era el fallo que hacía que el reparto por
+ *   filas sumara 200 % (14 + 72 + 100 + 14) y una sección de 652 px midiera 3116.
+ *
+ * LOS ESTILOS DEL CARRIL VAN AQUI CON `is:global`
+ *   Los estilos con ámbito de Astro se dedican por componente; si el carril se
+ *   pintara desde dos componentes, el segundo saldría sin estilos y sin ningún error.
+ *   Las clases ya tienen namespace propio (`contenedor-columnas`, `columna`), así que
+ *   globalizarlas no pisa nada.
+ */
+import BloqueContenido from './BloqueContenido.astro';
+import BannerSlider from '../../../shared/banner-slider/BannerSlider.astro';
+import JetSlider from '../../../shared/jet-slider/JetSlider.astro';
+import type { Locale } from '../i18n/config.ts';
+import { rutaDe } from '../i18n/config.ts';
+
+interface Props {
+  bloque: any;
+  locale: Locale;
+}
+const { bloque, locale } = Astro.props;
+
+/* El margen y el relleno que el autor puso ALREDEDOR de este bloque: es el aire entre
+   piezas, no un adorno. */
+const estBloque = [
+  bloque.margen ? `margin:${bloque.margen}` : '',
+  bloque.relleno ? `padding:${bloque.relleno}` : '',
+].filter(Boolean).join(';') || undefined;
+
+---
+<style is:global>
+  /*
+   * LA REJILLA DE COLUMNAS.
+   *
+   * Cien columnas de una fraccion cada una, y cada columna de la seccion ocupa tantas
+   * como diga su ancho. El hueco entre columnas se hace con RELLENO INTERIOR, no con
+   * `gap`: con `gap`, tres columnas del 33 % mas dos huecos suman mas del 100 % y la
+   * tercera se cae a la fila siguiente.
+   */
+  .contenedor-columnas {
+    display: grid;
+    grid-template-columns: repeat(100, minmax(0, 1fr));
+  }
+  .columna {
+    grid-column: span 100;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-inline: 0.5rem;
+    padding-block: 0.5rem;
+  }
+  @media (min-width: 768px) {
+    .columna {
+      grid-column: span var(--columnas, 100);
+    }
+  }
+  /* Un grupo en posicion de columna (seccion dentro de seccion directa) ocupa el
+     ancho completo del carril: sin esto, entra en la rejilla ocupando 1/100 y su
+     contenido se estruja en una columna estrechisima. */
+  .contenedor-columnas > .grupo {
+    grid-column: 1 / -1;
+  }
+</style>
+
+{(() => {
+  const estTitulo = [
+    bloque.color ? `color:${bloque.color}` : '',
+    bloque.tamanoEm ? `font-size:${bloque.tamanoEm}em` : '',
+    bloque.grosor ? `font-weight:${bloque.grosor}` : '',
+    bloque.interlineadoEm ? `line-height:${bloque.interlineadoEm}` : '',
+    bloque.alineacion === 'center' ? 'text-align:center' : '',
+  ].filter(Boolean).join(';') || undefined;
+
+  switch (bloque.tipo) {
+    case 'grupo':
+      /*
+       * SECCION INTERNA: su fondo y su relleno son suyos, y dentro trae un carril de
+       * columnas con mas bloques. La recursión esta aqui.
+       */
+      return (
+        <div class="grupo relative w-full" style={bloque.fondo?.color ? `background-color:${bloque.fondo.color}` : undefined}>
+          {bloque.fondo?.velo && (
+            <div class="pointer-events-none absolute inset-0" style={`background-color:${bloque.fondo.velo}`} />
+          )}
+          <div
+            class="contenedor-columnas relative mx-auto w-full max-w-[1240px]"
+            style={bloque.relleno ? `padding:${bloque.relleno}` : undefined}
+          >
+            {(bloque.columnas as any[]).map((columna) => (
+              <div class="columna" style={`--columnas:${Math.max(1, Math.round(columna.ancho || 100))}`}>
+                {(columna.bloques as any[]).map((interno: any) => (
+                  <BloqueContenido bloque={interno} locale={locale} />
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+
+    case 'encabezado': {
+      const Etiqueta = (bloque.nivel || 'h2') as any;
+      /* Cuando el autor partio el texto en varias lineas, el salto se conserva con
+         `set:html`. El marcado ya viene reducido a una lista blanca minima desde el
+         extractor (`<br>`, `<strong>`, `<em>`). */
+      const estilo = [estTitulo, estBloque].filter(Boolean).join(';') || undefined;
+      return bloque.html
+        ? <Etiqueta style={estilo} set:html={bloque.html} />
+        : <Etiqueta style={estilo}>{bloque.texto}</Etiqueta>;
+    }
+
+    case 'texto':
+    case 'html':
+      return <div class="prosa" style={estBloque} set:html={bloque.html} />;
+
+    case 'banner':
+      return (
+        <article
+          class:list={['banner-tarjeta group relative overflow-hidden rounded', bloque.clases]}
+          style={estBloque}
+        >
+          {bloque.imagen && (
+            /* La imagen VA EN EL FLUJO, no absoluta: es la que da a la tarjeta su
+               altura, igual que en el original — alli la tarjeta mide lo que mide la
+               imagen (en la presentacion salen cuadradas, a tamano natural). Con la
+               imagen absoluta la tarjeta colapsaba a la altura del titulo. */
+            <img
+              src={bloque.imagen}
+              alt=""
+              loading="lazy"
+              decoding="async"
+              class="banner-tarjeta__imagen block h-auto w-full"
+            />
+          )}
+          {/* El velo del original aparece al pasar el raton, con el texto. */}
+          <div
+            class="banner-tarjeta__velo pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-90"
+            style={`background-color:${bloque.fondoHover || '#095287'}`}
+          />
+          <h5
+            class="banner-tarjeta__titulo absolute inset-x-0 top-0 p-4 text-center font-medium"
+            style={[
+              'color:' + (bloque.colorTitulo || '#ffffff'),
+              bloque.tamanoTituloEm ? `font-size:${bloque.tamanoTituloEm}em` : 'font-size:2.2em',
+            ].join(';')}
+          >
+            {bloque.titulo}
+          </h5>
+          {bloque.texto && (
+            <p
+              class="banner-tarjeta__texto absolute inset-x-0 bottom-0 translate-y-2 p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+              style={[
+                'color:' + (bloque.colorTexto || '#ffffff'),
+                'font-size:1.2em',
+                'line-height:1.2',
+              ].join(';')}
+            >
+              {bloque.texto}
+            </p>
+          )}
+        </article>
+      );
+
+    case 'caja':
+      return (
+        <article
+          class="group relative w-full [perspective:1200px]"
+          style={[bloque.alto ? `min-height:${bloque.alto}px` : '', estBloque ?? ''].filter(Boolean).join(';') || undefined}
+        >
+          <div class="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+            <div class="relative overflow-hidden rounded [backface-visibility:hidden]">
+              {bloque.imagen && (
+                <img src={bloque.imagen} alt="" loading="lazy" decoding="async" class="h-64 w-full object-cover" />
+              )}
+              <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4">
+                <h3
+                  class="text-2xl font-semibold"
+                  style={bloque.colorTitulo ? `color:${bloque.colorTitulo}` : undefined}
+                >
+                  {bloque.titulo}
+                </h3>
+                {bloque.descripcion && <p class="text-sm">{bloque.descripcion}</p>}
+              </div>
+            </div>
+            <div
+              class="absolute inset-0 flex flex-col justify-center gap-2 rounded p-4 [backface-visibility:hidden] [transform:rotateY(180deg)]"
+              style={bloque.fondoDorso ? `background-color:${bloque.fondoDorso}` : undefined}
+            >
+              {bloque.tituloDorso && <h3 class="text-xl font-semibold">{bloque.tituloDorso}</h3>}
+              <p style={bloque.colorDescripcion ? `color:${bloque.colorDescripcion}` : undefined}>
+                {bloque.descripcionDorso}
+              </p>
+            </div>
+          </div>
+        </article>
+      );
+
+    case 'textoAnimado':
+      /* La palabra que rota entre las que declara el original. Sin guion queda la
+         primera, que es un texto correcto. El guion del sitio la hace girar. */
+      return (
+        <p
+          class="font-semibold"
+          style={[estTitulo ?? '', estBloque ?? ''].filter(Boolean).join(';') || undefined}
+          data-texto-animado
+          data-palabras={JSON.stringify(bloque.palabras ?? [])}
+        >
+          {bloque.antes} <span class="texto-rotante text-[var(--color-acento)]">{bloque.palabras?.[0]}</span> {bloque.despues}
+        </p>
+      );
+
+    case 'lista':
+      return (
+        <ul class="ms-5 list-disc space-y-2" style={estBloque}>
+          {(bloque.items as string[]).map((x) => <li>{x}</li>)}
+        </ul>
+      );
+
+    case 'imagen':
+      return bloque.imagen ? (
+        /* A TAMANO NATURAL y centrada, como la pinta Elementor: estirarla a
+           `w-full` multiplicaba su tamano (un pasaporte de 300x291 se renderizaba a
+           1224 de ancho). `max-w-full` solo la limita si la columna es mas estrecha. */
+        <img src={bloque.imagen} alt={bloque.alt || ''} loading="lazy" decoding="async"
+          class="mx-auto block h-auto w-auto max-w-full rounded" style={estBloque} />
+      ) : null;
+
+    case 'boton':
+      return (
+        <a
+          href={bloque.enlace || rutaDe('presentation', locale)}
+          class="inline-flex w-fit items-center gap-2 rounded bg-[var(--color-acento)] px-6 py-3 font-semibold text-white"
+          style={estBloque}
+        >
+          {bloque.etiqueta}
+        </a>
+      );
+
+    case 'slider': {
+      const s = bloque._slider;
+      return s ? (
+        <BannerSlider
+          config={s.config}
+          etiqueta={s.etiqueta}
+          etiquetaAnterior={s.anterior}
+          etiquetaSiguiente={s.siguiente}
+          clase="bg-[#0b1a2b]"
+        />
+      ) : null;
+    }
+
+    case 'sliderJet':
+      return (
+        <JetSlider
+          items={bloque.items ?? []}
+          alto={bloque.alto}
+          altoTableta={bloque.altoTableta}
+          altoMovil={bloque.altoMovil}
+          flechaFondo={bloque.flechaFondo}
+          flechaFondoHover={bloque.flechaFondoHover}
+          etiqueta={locale === 'es' ? 'Carrusel de tarjetas' : 'Card carousel'}
+          etiquetaAnterior={locale === 'es' ? 'Anterior' : 'Previous'}
+          etiquetaSiguiente={locale === 'es' ? 'Siguiente' : 'Next'}
+        />
+      );
+
+    case 'video':
+      return bloque.miniatura || bloque.youtube ? (
+        <a
+          href={bloque.youtube || bloque.vimeo || '#'}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group relative block overflow-hidden rounded"
+          style={estBloque}
+          data-pendiente="video-emergente"
+        >
+          {bloque.miniatura && (
+            <img src={bloque.miniatura} alt="" loading="lazy" decoding="async" class="h-auto w-full" />
+          )}
+          <span class="absolute inset-0 grid place-items-center">
+            <span class="grid h-14 w-14 place-items-center rounded-full bg-white/80 text-2xl">▶</span>
+          </span>
+        </a>
+      ) : null;
+
+    case 'ancla':
+      /* Marca de ancla para la navegacion interna: no pinta nada. */
+      return null;
+
+    case 'separador':
+      return <hr class="w-full border-t border-current opacity-20" />;
+
+    case 'espacio':
+      return <div style={`height:${bloque.alto || 24}px`} aria-hidden="true" />;
+
+    default:
+      /* Un widget sin mapear se deja VISIBLE como marca, para que no desaparezca en
+         silencio: se ve que existe y que queda pendiente. */
+      return (
+        <div class="rounded border border-dashed border-current/30 p-2 text-xs opacity-60" data-sin-mapear={bloque.widget}>
+          {bloque.widget}
+        </div>
+      );
+  }
+})()}

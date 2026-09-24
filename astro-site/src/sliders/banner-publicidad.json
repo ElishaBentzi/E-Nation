@@ -2295,7 +2295,7 @@
           "posicion": {
             "horizontal": null,
             "vertical": "center",
-            "x": "880px",
+            "x": "870px",
             "y": "5px",
             "porPixeles": false,
             "zIndex": 6
@@ -2327,7 +2327,7 @@
           "posicion": {
             "horizontal": null,
             "vertical": "center",
-            "x": "163px",
+            "x": "153px",
             "y": "5px",
             "porPixeles": false,
             "zIndex": 7
@@ -2359,7 +2359,7 @@
           "posicion": {
             "horizontal": "center",
             "vertical": null,
-            "x": "-337px",
+            "x": "-347px",
             "y": "186px",
             "porPixeles": false,
             "zIndex": 8
@@ -2600,7 +2600,7 @@
           "posicion": {
             "horizontal": null,
             "vertical": "center",
-            "x": "880px",
+            "x": "870px",
             "y": "5px",
             "porPixeles": false,
             "zIndex": 6
@@ -2632,7 +2632,7 @@
           "posicion": {
             "horizontal": null,
             "vertical": "center",
-            "x": "163px",
+            "x": "153px",
             "y": "5px",
             "porPixeles": false,
             "zIndex": 7
@@ -2664,7 +2664,7 @@
           "posicion": {
             "horizontal": "center",
             "vertical": null,
-            "x": "-337px",
+            "x": "-347px",
             "y": "186px",
             "porPixeles": false,
             "zIndex": 8
@@ -2905,7 +2905,7 @@
           "posicion": {
             "horizontal": null,
             "vertical": "middle",
-            "x": "880px",
+            "x": "870px",
             "y": "5px",
             "porPixeles": false,
             "zIndex": 6
@@ -2937,7 +2937,7 @@
           "posicion": {
             "horizontal": null,
             "vertical": "middle",
-            "x": "163px",
+            "x": "153px",
             "y": "5px",
             "porPixeles": false,
             "zIndex": 7
@@ -2969,7 +2969,7 @@
           "posicion": {
             "horizontal": "center",
             "vertical": null,
-            "x": "-337px",
+            "x": "-347px",
             "y": "186px",
             "porPixeles": false,
             "zIndex": 8
