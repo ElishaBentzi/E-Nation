@@ -1231,3 +1231,24 @@ La sección interna va **dentro** de la columna del 72 %. Mi aplanado la sube a 
 Se deja sin hacer a propósito en vez de a medias: el cambio toca el modelo y el renderizador a la vez, y una parte sin la otra deja las secciones vacías.
 
 **Un detalle menor, localizado**: el `aspect-ratio: 350/380` de las tarjetas de problemáticas está fijado a partir de las de la home. En la presentación el original pinta esas imágenes a su tamaño natural (599×599 cuadradas) y las mías salen 604×656, un 10 % más altas cada una. Son 14 tarjetas por página, así que suma; y el dato real es que el autor fijó alturas distintas por sitio, que no están en el JSON.
+
+### La ola del anidamiento: el orden de documento mandaba
+
+Continuando la revisión de la presentación, quedaban dos fuentes de desvío y salió una tercera de camino.
+
+**1. La sección interna salía de su columna.** El aplanado convertía la sección interna en HERMANA de las columnas exteriores, y al ser de ancho completo partía la rejilla en filas: 14 + 72 | GRUPO | 14 → la hero de 652 px medía 1767. Ahora la sección interna queda **dentro de su columna como bloque grupo, en su orden de documento**, y el renderizador es recursivo (`BloqueContenido.astro` con auto-import para el caso `grupo`).
+
+Dos detalles del arreglo:
+
+- Un grupo puede caer en **posición de columna** (sección dentro de sección directa): lleva también las claves de columna (`ancho`, `bloques` vacío) para que los recorridos no revienten, y ocupa el ancho completo del carril (`.contenedor-columnas > .grupo`). Sin esa regla entraba en la rejilla de 100 columnas ocupando **1/100** y su contenido se estrujaba — la página llegó a medir 67879 px por eso.
+- Los sliders se consumen en orden de aparición y ahora los bloques se pintan en otro componente: en vez de llevar un contador mutable a través de props, se hace un **recorrido previo** que anota en cada bloque `slider` el carrusel que le toca (`_slider`).
+
+**2. El original servía VARIANTES de imagen y yo el fichero completo.** WordPress deriva tamaños (`2-hand-passport-300x291.png` desde el de 700×678) y el HTML original sirve la variante; el JSON de Elementor solo trae la URL completa más `image_size: "medium"`. Pintando el completo, el pasaporte renderizaba a **1224×1186** donde el original lo servía de 300×291.
+
+El volcado de medios trae la URL **exacta** que servía cada página: el extractor resuelve la variante por página, la **descarga sola** si falta el fichero, y la imagen se pinta a **tamaño natural centrada** (como hace Elementor), no a `w-full`. 26 variantes en uso en la presentación, ninguna con fichero ausente.
+
+**3. La imagen de tarjeta volvió al flujo.** Sin `aspect-ratio` fijo, la imagen es la que da la altura de la tarjeta (en la presentación salen cuadradas, como el original). Con la imagen absoluta, la tarjeta colapsaba a la altura del título.
+
+**Resultado medido**: home **9156** frente a 8627 (+6 %, secciones todas dentro del 8 %); presentación **42217** frente a 36540 (+15 %; al empezar la ola estaba en +70 %). El delta restante es reparto fino de tarjetas por fila (el original pone 2 por fila en su sección de 1536 px; revisar con la comparación visual).
+
+**Pendiente de animaciones, con dato**: el original NO usa AOS —las 134 clases «animated» son de los widgets de JetElements—. Lo que falta de verdad: (a) el **texto rotativo** de `jet-animated-text` (el modelo trae las palabras; falta el guion que las rote), y (b) los **efectos hover de banner** (`roxy`, `oscar`, `fx2`) que hoy se aproximan con un fundido genérico. El parallax de JetElements se midió y no desplaza nada: nada que reproducir.

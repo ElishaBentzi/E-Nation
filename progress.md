@@ -422,3 +422,16 @@ También se extraen y aplican `_margin` y `_padding` de cada widget en los bloqu
 **Medido**: la sección del JetSlider de 1622 a **837 px** (original 863); la home de 17406 a **9041** (original 8627). Desplegado y verificado en producción: 48 secciones con la rejilla nueva en la presentación y 0 marcadores de diagnóstico.
 
 **Pendiente que no se pudo cerrar**: la comparación visual del carrusel de banners con capturas. La captura de esa página **se cuelga** (timeout del navegador, el mismo fallo de pestaña trabada ya documentado) y los dos intentos fallaron. La verificación de ese carrusel sigue siendo por medición: 0 solapes, la ola y el palpitar en movimiento, y las posiciones idénticas a dos anchos.
+
+### Anidamiento real, variantes de imagen y monedas
+**Status:** complete
+
+- **Monedas**: de +18px a +8px (petición del usuario); «UNT» se realinea solo (diferencia 0,0).
+- **Animaciones, con dato**: el original no usa AOS. Faltan el texto rotativo de `jet-animated-text` y los efectos hover `roxy`/`oscar` de los banners (hoy aproximados con un fundido). El parallax de JetElements se midió y no desplaza nada.
+- **Secciones internas**: quedan dentro de su columna como bloque grupo, en orden de documento. El renderizador es recursivo (`BloqueContenido.astro`). Los grupos en posición de columna ocupan el ancho completo.
+- **Variantes de imagen**: el extractor resuelve la variante que servía el original (mapa desde `medios` del volcado), la descarga si falta, y las imágenes van a tamaño natural centrado.
+- **Tarjetas**: imagen en flujo (da la altura), título encima, texto al hover.
+
+**Medido tras la ola**: home 9156 vs 8627 (+6 %); presentación 42217 vs 36540 (+15 %; era +70 %). Desplegado y verificado en producción.
+
+**Propendiente**: el texto rotativo y los efectos hover exactos (`roxy`/`oscar`), y el reparto fino de tarjetas por fila en la presentación — con la comparación visual.
