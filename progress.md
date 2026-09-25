@@ -435,3 +435,10 @@ También se extraen y aplican `_margin` y `_padding` de cada widget en los bloqu
 **Medido tras la ola**: home 9156 vs 8627 (+6 %); presentación 42217 vs 36540 (+15 %; era +70 %). Desplegado y verificado en producción.
 
 **Propendiente**: el texto rotativo y los efectos hover exactos (`roxy`/`oscar`), y el reparto fino de tarjetas por fila en la presentación — con la comparación visual.
+
+### Tipografía y formulario Mailchimp aprobado
+**Status:** complete
+
+- **La fuente**: el usuario la vio distinta y tenía razón — mis títulos iban con Roboto Slab (elección temprana en los tokens, no dato del original) y el original usa Roboto para todo, también en títulos (medido: h2/h5 Roboto 600). Corregido en `brand/tokens.css`.
+- **Mailchimp**: aprobada la propuesta. `FormularioSuscripcion.astro` con la misma cuenta y lista, variante AJAX/JSONP sin jQuery, honeypot, mensajes en línea por idioma, PAIS como texto libre opcional. El extractor detecta el embed viejo y emite `formulario`; el HTML viejo no llega al navegador. Probado: validación local + ida y vuelta real a Mailchimp con dominio inválido (error en línea, sin suscriptor). **Falta la prueba de alta real, con el correo del usuario.**
+- **Fotos** (comparando con el original): la tipografía ya coincide; salieron a la vista los siguientes ajustes: el slider decorativo de la cabecera sin sus adornos (mapa de puntos, diagonales naranjas), el diagrama piramidal del slider vertical-horizontal mal renderizado, y la cabecera (logo y nav) más simple que la del original.

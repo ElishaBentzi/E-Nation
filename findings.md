@@ -1252,3 +1252,35 @@ El volcado de medios trae la URL **exacta** que servía cada página: el extract
 **Resultado medido**: home **9156** frente a 8627 (+6 %, secciones todas dentro del 8 %); presentación **42217** frente a 36540 (+15 %; al empezar la ola estaba en +70 %). El delta restante es reparto fino de tarjetas por fila (el original pone 2 por fila en su sección de 1536 px; revisar con la comparación visual).
 
 **Pendiente de animaciones, con dato**: el original NO usa AOS —las 134 clases «animated» son de los widgets de JetElements—. Lo que falta de verdad: (a) el **texto rotativo** de `jet-animated-text` (el modelo trae las palabras; falta el guion que las rote), y (b) los **efectos hover de banner** (`roxy`, `oscar`, `fx2`) que hoy se aproximan con un fundido genérico. El parallax de JetElements se midió y no desplaza nada: nada que reproducir.
+
+### La tipografía era una elección mía, no un dato del original
+
+El usuario lo vio de inmediato: el tipo de letra no era el mismo. Medido con el estilo computado en los dos sitios:
+
+| qué | original | mío antes |
+|---|---|---|
+| body | Roboto 400, 15px | Roboto 400, 16px |
+| h2 | **Roboto** 600 | **Roboto Slab** (serif) |
+| h5 | **Roboto** 600 | **Roboto Slab** (serif) |
+
+El original usa **Roboto para todo**, también en los títulos. La pila serif «Roboto Slab» venía de la primera versión de `brand/tokens.css` — una elección temprana que se coló como si fuera dato. Corregido en `brand/tokens.css`, que comparten sitio y docs (un recordatorio de que los tokens también se auditan contra el original).
+
+Diferencia menor: el body del original va a 15px y el mío a 16px. Dejado a 16 a propósito (legibilidad), anotado por si la comparación visual lo delata.
+
+### El formulario de Mailchimp, actualizado (aprobado por el usuario)
+
+El original traía el embed clásico de 2018: `<form target="_blank">` que **abría una pestaña nueva** de Mailchimp, más `mc-validate.js` (30 KB **con jQuery incluido**) solo para validar un correo, más un desplegable de ~250 países.
+
+`FormularioSuscripcion.astro`, con la MISMA cuenta y lista (no hay que tocar nada en Mailchimp ni se pierden suscriptores):
+
+- la variante AJAX del mismo endpoint (`/subscribe/post-json`), que es **JSONP** porque list-manage.com no manda cabeceras CORS: la respuesta llega inyectando un `<script>` con el nombre del callback;
+- el **honeypot** del propio Mailchimp (`b_<u>_<id>` fuera de pantalla, vacío);
+- validación de correo propia, mensaje de resultado **en línea y en el idioma de la página** (los mensajes de error de Mailchimp llegan con etiquetas propias, se limpian antes de pintarlos);
+- el campo PAIS pasa a texto libre **opcional** con el mismo merge field — era lo que pesaba y rompía el móvil;
+- un callback único por envío (`mc_cb_<timestamp>`), para que un envio lento de antes no responda sobre el resultado de otro.
+
+El extractor detecta los bloques del embed (`mc-embedded-subscribe-form` / `list-manage.com`) y emite `formulario`: los 4,4 KB de HTML viejo por bloque no llegan al navegador. Los formularios: 2 en la home y 1 en cada presentación, como el original. Las páginas de noticias/artículos llevan el suyo y lo tomarán cuando se construya su contenido.
+
+**Probado en local**: validación local del correo, e ida y vuelta real a Mailchimp por JSONP con un dominio inválido (respuesta de error en línea, sin navegación y **sin crear suscriptor**). La prueba de alta real, con el correo del usuario, queda para él — como el resto de las pruebas de correo.
+
+**Los títulos**: el encabezado «Subscribe to our mailing list» ya viene como bloque del modelo; llevarlo también en el componente lo duplicaba (visto en captura).
