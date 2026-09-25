@@ -23,6 +23,7 @@
 import BloqueContenido from './BloqueContenido.astro';
 import BannerSlider from '../../../shared/banner-slider/BannerSlider.astro';
 import JetSlider from '../../../shared/jet-slider/JetSlider.astro';
+import FormularioSuscripcion from './FormularioSuscripcion.astro';
 import type { Locale } from '../i18n/config.ts';
 import { rutaDe } from '../i18n/config.ts';
 
@@ -124,6 +125,11 @@ const estBloque = [
     case 'texto':
     case 'html':
       return <div class="prosa" style={estBloque} set:html={bloque.html} />;
+
+    case 'formulario':
+      /* Suscripcion a la lista de Mailchimp: la cuenta y los campos son los del
+         original; el formulario es el componente AJAX sin jQuery. */
+      return <div style={estBloque}><FormularioSuscripcion locale={locale} /></div>;
 
     case 'banner':
       return (

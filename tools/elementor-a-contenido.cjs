@@ -247,7 +247,19 @@ function bloqueDe(w) {
       // La URL de origen, para que el paso de descarga recupere la variante si falta.
       _origen: im ? im.url : null };
   }
-  if (t === 'html') return { ...comun, tipo: 'html', html: s.html || '' };
+  if (t === 'html') {
+    /*
+     * EL EMBED CLASICO DE MAILCHIMP NO SE PINTA TAL CUAL. Trae un <form> que abre
+     * pestaña nueva y carga `mc-validate.js` (30 KB con jQuery). La cuenta y la lista
+     * son las mismas, pero el formulario lo pinta `FormularioSuscripcion.astro` en su
+     * variante AJAX sin jQuery. Detectarlo aqui y no en el renderizador: el modelo
+     * queda limpio y el HTML viejo (4,4 KB por bloque) no llega nunca al navegador.
+     */
+    if (/mc-embedded-subscribe-form|list-manage\.com/.test(String(s.html || ''))) {
+      return { ...comun, tipo: 'formulario' };
+    }
+    return { ...comun, tipo: 'html', html: s.html || '' };
+  }
   if (t === 'video') return { ...comun, tipo: 'video', youtube: s.youtube_url || null, enlace: url(s.hosted_url) };
   if (t === 'icon-list') {
     const items = (s.icon_list || []).map((x) => limpio(x.text)).filter(Boolean);

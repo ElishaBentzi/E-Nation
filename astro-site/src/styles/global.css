@@ -61,7 +61,7 @@
   --color-ink: var(--en-color-ink); /* #333333 */
   --color-border-soft: var(--en-color-border); /* #e8e8e8 */
 
-  --font-heading: var(--en-font-heading); /* Roboto Slab */
+  --font-heading: var(--en-font-heading); /* Roboto: el original usa la misma familia en titulos y cuerpo */
   --font-body: var(--en-font-body); /* Roboto */
 }
 

@@ -1,0 +1,251 @@
+---
+/*
+ * FORMULARIO DE SUSCRIPCION (Mailchimp, sin jQuery).
+ *
+ * QUE SUSTITUYE
+ *   El embed clasico de 2018 que traia el original: un <form target="_blank"> que
+ *   abria una pestaña nueva de Mailchimp y cargaba `mc-validate.js` (30 KB con jQuery
+ *   incluido) solo para validar un correo. La cuenta y la lista son las MISMAS: el
+ *   endpoint, los campos y el doble opt-in no cambian, asi que no hay que tocar nada
+ *   en Mailchimp ni se pierden suscriptores.
+ *
+ * COMO FUNCIONA
+ *   La variante AJAX del mismo endpoint (`/subscribe/post-json?...&c=callback`) es
+ *   JSONP: list-manage.com no manda cabeceras CORS, asi que la respuesta llega
+ *   inyectando un <script> con el nombre del callback. Sin dependencias.
+ *
+ * EL HONEYPOT
+ *   El campo oculto `b_<u>_<id>` es el mecanismo antispam del propio Mailchimp: un
+ *   bot lo rellena y Mailchimp descarta el alta. Hay que enviarlo vacio.
+ *
+ * EL CAMPO PAIS
+ *   El original lo trae como un desplegable de ~250 paises (eso es lo que pesaba y
+ *   rompia el diseno movil de esas paginas). Aqui va como texto libre OPCIONAL con el
+ *   MISMO merge field (`PAIS`), asi que el dato llega igual a la lista. Si se quiere
+ *   volver al desplegable, es cambiar este input por el select del original.
+ */
+import type { Locale } from '../i18n/config.ts';
+
+interface Props {
+  locale?: Locale;
+}
+const { locale = 'es' } = Astro.props;
+
+/** Credenciales del embed del original: u e id, tal cual estaban en su <form>. */
+const MC_U = '31ec7ced51097b06e1479d117';
+const MC_ID = 'e7611434d6';
+const ID_FORM = `mc-${Math.random().toString(36).slice(2, 8)}`;
+
+const TEXTOS = {
+  es: { titulo: 'Suscríbete a nuestra lista de correo',
+    nombre: 'Nombre', apellido: 'Apellido', email: 'Email', pais: 'País',
+    enviar: 'Suscribirse', enviando: 'Enviando…',
+    ok: 'Casi listo: revisa tu correo y confirma la suscripción.',
+    error: 'No se pudo suscribir. Revisa los datos e inténtalo de nuevo.',
+    emailInvalido: 'Introduce un correo válido.' },
+  en: { titulo: 'Subscribe to our mailing list',
+    nombre: 'Name', apellido: 'Last name', email: 'Email', pais: 'Country',
+    enviar: 'Subscribe', enviando: 'Sending…',
+    ok: 'Almost done: check your inbox and confirm the subscription.',
+    error: 'Could not subscribe. Check the details and try again.',
+    emailInvalido: 'Enter a valid email.' },
+  fr: { titulo: 'Abonnez-vous à notre liste de diffusion',
+    nombre: 'Prénom', apellido: 'Nom', email: 'E-mail', pais: 'Pays',
+    enviar: 'S’abonner', enviando: 'Envoi…',
+    ok: 'Presque fini : vérifiez votre boîte mail et confirmez l’abonnement.',
+    error: 'Abonnement impossible. Vérifiez les données et réessayez.',
+    emailInvalido: 'Entrez une adresse e-mail valide.' },
+} as const;
+const t = TEXTOS[locale] ?? TEXTOS.es;
+---
+
+<div class="mc" id={ID_FORM} data-mc data-u={MC_U} data-id={MC_ID} data-locale={locale}>
+  {/* SIN titulo propio: el encabezado "Subscribe to our mailing list" ya viene como
+      bloque del modelo, y llevarlo aqui lo duplicaba. */}
+
+  <form class="mc__form" novalidate>
+    <div class="mc__campos">
+      <label class="mc__campo">
+        <span class="mc__etiqueta">{t.nombre} *</span>
+        <input type="text" name="FNAME" required autocomplete="given-name" />
+      </label>
+      <label class="mc__campo">
+        <span class="mc__etiqueta">{t.apellido} *</span>
+        <input type="text" name="LNAME" required autocomplete="family-name" />
+      </label>
+    </div>
+    <label class="mc__campo">
+      <span class="mc__etiqueta">{t.email} *</span>
+      <input type="email" name="EMAIL" required autocomplete="email" />
+    </label>
+    <label class="mc__campo">
+      <span class="mc__etiqueta">{t.pais}</span>
+      <input type="text" name="PAIS" autocomplete="country-name" />
+    </label>
+
+    {/* Honeypot de Mailchimp: debe enviarse VACIO. Los humanos no lo vemos. */}
+    <div class="mc__trampa" aria-hidden="true">
+      <input type="text" name={`b_${MC_U}_${MC_ID}`} tabindex="-1" value="" autocomplete="off" />
+    </div>
+
+    <button type="submit" class="mc__enviar">{t.enviar}</button>
+    <p class="mc__mensaje" role="status" aria-live="polite"></p>
+  </form>
+</div>
+
+<style>
+  .mc {
+    max-width: 34rem;
+    margin-inline: auto;
+  }
+  .mc__form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+  .mc__campos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.9rem;
+  }
+  @media (max-width: 480px) {
+    .mc__campos { grid-template-columns: 1fr; }
+  }
+  .mc__campo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .mc__etiqueta {
+    font-size: 0.85rem;
+    opacity: 0.85;
+  }
+  .mc input {
+    padding: 0.55rem 0.7rem;
+    font: inherit;
+    color: inherit;
+    background: transparent;
+    border: 1px solid color-mix(in srgb, currentColor 35%, transparent);
+    border-radius: 3px;
+  }
+  .mc input:focus-visible {
+    outline: 2px solid var(--color-acento, #ff7100);
+    outline-offset: 1px;
+  }
+  /* El honeypot, fuera de pantalla: oculto con display:none lo rellenan algunos
+     bots listando el DOM; fuera de pantalla es lo que hace el propio Mailchimp. */
+  .mc__trampa {
+    position: absolute;
+    inset-inline-start: -9999px;
+  }
+  .mc__enviar {
+    padding: 0.65rem 1.4rem;
+    font: inherit;
+    font-weight: 600;
+    color: #ffffff;
+    cursor: pointer;
+    background: var(--color-acento, #ff7100);
+    border: 0;
+    border-radius: 3px;
+  }
+  .mc__enviar:hover { filter: brightness(1.08); }
+  .mc__enviar[disabled] { opacity: 0.6; cursor: wait; }
+  .mc__mensaje {
+    min-height: 1.2em;
+    font-size: 0.95rem;
+    text-align: center;
+  }
+  .mc__mensaje--ok { color: #2e7d32; }
+  .mc__mensaje--error { color: #c62828; }
+</style>
+
+<script>
+  /*
+   * JSONP a mano: se inyecta un <script> cuya URL termina en `&c=<callback>`, y
+   * Mailchimp responde llamando a esa funcion global con el resultado. Sin jQuery,
+   * sin pestaña nueva, y el mensaje queda en el propio formulario.
+   */
+  type RespuestaMc = { result: 'success' | 'error'; msg: string };
+
+  function suscribir(bloque: HTMLElement) {
+    if (bloque.dataset.listo === 'si') return;
+    bloque.dataset.listo = 'si';
+
+    const form = bloque.querySelector<HTMLFormElement>('.mc__form');
+    const mensaje = bloque.querySelector<HTMLElement>('.mc__mensaje');
+    const boton = bloque.querySelector<HTMLButtonElement>('.mc__enviar');
+    if (!form || !mensaje || !boton) return;
+
+    const u = bloque.dataset.u ?? '';
+    const id = bloque.dataset.id ?? '';
+    const textos = (estado: 'ok' | 'error' | 'email') => {
+      const locale = bloque.dataset.locale ?? 'es';
+      const t: Record<string, Record<string, string>> = {
+        es: { ok: 'Casi listo: revisa tu correo y confirma la suscripción.',
+              error: 'No se pudo suscribir. Revisa los datos e inténtalo de nuevo.',
+              email: 'Introduce un correo válido.' },
+        en: { ok: 'Almost done: check your inbox and confirm the subscription.',
+              error: 'Could not subscribe. Check the details and try again.',
+              email: 'Enter a valid email.' },
+        fr: { ok: 'Presque fini : vérifiez votre boîte mail et confirmez l’abonnement.',
+              error: 'Abonnement impossible. Vérifiez les données et réessayez.',
+              email: 'Entrez une adresse e-mail valide.' },
+      };
+      return t[locale]?.[estado] ?? t.es[estado];
+    };
+
+    const pintar = (texto: string, clase: string) => {
+      mensaje.textContent = texto;
+      mensaje.className = 'mc__mensaje ' + clase;
+    };
+
+    form.addEventListener('submit', (ev) => {
+      ev.preventDefault();
+      const email = form.querySelector<HTMLInputElement>('input[name="EMAIL"]');
+      if (!email?.value || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+        pintar(textos('email'), 'mc__mensaje--error');
+        email?.focus();
+        return;
+      }
+
+      boton.disabled = true;
+      mensaje.textContent = '…';
+      mensaje.className = 'mc__mensaje';
+
+      // Los campos del formulario, tal cual los espera Mailchimp.
+      const datos = new URLSearchParams(new FormData(form) as unknown as Record<string, string>);
+
+      // Un callback unico por envio: si se reutiliza el nombre, un envio lento de
+      // antes podria responder sobre el resultado de otro.
+      const nombreCallback = `mc_cb_${Date.now()}`;
+      const conCallback = (globalThis as unknown as Record<string, unknown>);
+      (window as unknown as Record<string, unknown>)[nombreCallback] = (respuesta: RespuestaMc) => {
+        boton.disabled = false;
+        // Mailchimp devuelve el mensaje con etiquetas propias (`<em>`, `<strong>`):
+        // se queda solo el texto, que aqui se pinta con estilo propio.
+        const limpio = String(respuesta.msg ?? '').replace(/<[^>]+>/g, '').replace(/\s+-\s+all\s+right.*$/i, '').trim();
+        if (respuesta.result === 'success') {
+          form.reset();
+          pintar(textos('ok'), 'mc__mensaje--ok');
+        } else {
+          pintar(limpio || textos('error'), 'mc__mensaje--error');
+        }
+        delete conCallback[nombreCallback];
+        script.remove();
+      };
+
+      const script = document.createElement('script');
+      script.src = `https://bienestarmutuo.us13.list-manage.com/subscribe/post-json?u=${u}&id=${id}&c=${nombreCallback}&${datos}`;
+      script.onerror = () => {
+        boton.disabled = false;
+        pintar(textos('error'), 'mc__mensaje--error');
+        script.remove();
+      };
+      document.head.appendChild(script);
+    });
+  }
+
+  const arrancar = () => document.querySelectorAll<HTMLElement>('[data-mc]').forEach(suscribir);
+  arrancar();
+  document.addEventListener('astro:page-load', arrancar);
+</script>

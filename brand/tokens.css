@@ -34,16 +34,13 @@
 
   /* ---------------------------------------------------------------
    * Tipografía
-   * Globales de Elementor, auto-hospedadas por el propio WordPress en
-   * /zero/wp-content/uploads/elementor/google-fonts/. Las familias del
-   * tema (Arimo, Maven Pro, Open Sans) se declaran pero no se usan en
-   * la home.
-   *
-   * PENDIENTE (Fase 4): al espejar los uploads hay que añadir aquí los
-   * @font-face con los .woff2 del original. Hasta entonces estas pilas
-   * resuelven por fallback del sistema si la fuente no está instalada.
+   * MEDIDO en el original con el estilo computado (ver findings.md):
+   * body Roboto 400 a 15px, h2 Roboto 600, h5 Roboto 600. El original
+   * usa ROBOTO PARA TODO, tambien en los titulos — la pila serif de
+   * "Roboto Slab" que habia aqui era una eleccion temprana nuestra, no
+   * un dato del original, y se veia distinta a simple vista.
    * ------------------------------------------------------------- */
-  --en-font-heading: "Roboto Slab", Georgia, "Times New Roman", serif;
+  --en-font-heading: "Roboto", Helvetica, Arial, Verdana, sans-serif;
   --en-font-body: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Arial, sans-serif;
 
