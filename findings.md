@@ -1284,3 +1284,29 @@ El extractor detecta los bloques del embed (`mc-embedded-subscribe-form` / `list
 **Probado en local**: validación local del correo, e ida y vuelta real a Mailchimp por JSONP con un dominio inválido (respuesta de error en línea, sin navegación y **sin crear suscriptor**). La prueba de alta real, con el correo del usuario, queda para él — como el resto de las pruebas de correo.
 
 **Los títulos**: el encabezado «Subscribe to our mailing list» ya viene como bloque del modelo; llevarlo también en el componente lo duplicaba (visto en captura).
+
+### Los sliders decorativos, leídos desde las capturas comparativas
+
+La ola fue íntegramente visual: fotos parejas original/réplica en los mismos puntos y diagnóstico desde lo que se ve. Primera lección de método: **el DOM decía "todo visible y opacidad 1" mientras la foto mostraba el hero oscuro** — la foto pillaba la transición entre diapositivas (el slider rota su variante en español). Por eso la regla del usuario es la correcta: lo visual se verifica con fotos, y el DOM solo como diagnóstico complementario.
+
+#### Hero: la banda naranja y el subrayado eran capas `forma`
+
+El original enmarca "World Citizenship" con una **banda naranja** y subraya "NEW PACT…" — son **dos capas `shape`** del slider (`forma`, 762×64 y la línea). Sus estilos no vienen en el JSON de la base de datos (`estilos: null`) ni en el `idle` (vacío): **el color vive en el atributo `style` del marcado renderizado** (`background-color:#ff7100`). El generador ahora lo captura en RESUELTOS y el componente pinta las formas como rectángulos de color con **tamaño en los dos ejes** — una banda de 762×64 px sin `height` colapsa a un hilo invisible.
+
+#### Hotlinking: las imágenes propias de los sliders iban al original
+
+Las 22 imágenes del slider del diagrama (y las del hero) tenían URL **absoluta** a e-nation.org — el sitio las enlazaba al original en vez de servirlas. Las de OTROS dominios se quedan absolutas a propósito (proyectos hermanos). El generador reescribe las propias a `/images/` y `tools/descargar-espejo-sliders.cjs` baja las que falten: 38 piezas, todas en el espejo.
+
+#### El diagrama piramidal alterna DOS estados
+
+El original anima **pirámide (poder vertical) ↔ red circular (democracia directa)**, con capas transitorias marcadas en `frame_999` (la **X roja** aparece a los 4 s y sale a los 6,7 s; los tres `slide-gray-*` son estados del montaje que retira a los 2,3-4 s). La réplica estática no puede seguir la línea de tiempo, así que se queda con el **estado montado** (pirámide + figuras + plataformas + líneas), que es el que abre la sección y el que captura la comparación. Las capas transitorias se retiran con `ocultar` en `ajustes.json`, que ahora acepta listas a nivel de alias y nombra formas como `forma:<uid>`.
+
+El `desapareceMs` queda extraído en la configuración (dato real del original) por si se aborda la línea de tiempo completa más adelante.
+
+#### Lección de proceso: el heredoc corruptor
+
+Una edición del generador por heredoc de Python (con secuencias de escape y plantillas de por medio) **corrompió el fichero de forma silenciosa**: `node --check` pasaba, el build pasaba, y la rama de texto de la construcción de estilos simplemente **no se ejecutaba** — los textos del hero quedaron en su tamaño mínimo sin un solo aviso. Los marcadores de debug se contradecían entre sí hasta que la cirugía por índices con node (el mismo runtime que ejecuta el fichero) lo reveló. **Regla: no editar JavaScript con heredoc cuando hay plantillas y escapes; rehacer el bloque limpio.**
+
+#### Dato corregido: el JetSlider sí avanza
+
+Dos fotos del original separadas 3 s mostraron tarjetas distintas del JetSlider — mi medición anterior ("no avanza") usó una ventana de 2,5 s, más corta que su intervalo. Corregido en la memoria: el componente hoy no avanza solo, y darle el avance automático queda pendiente con el intervalo medido.
