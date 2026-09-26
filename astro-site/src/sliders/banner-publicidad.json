@@ -43,7 +43,7 @@
       "fondo": {
         "tipo": "image",
         "color": "#E7E7E7",
-        "imagen": "https://e-nation.org/zero/wp-content/uploads/2017/12/games-banner-bg.jpg",
+        "imagen": "/images/2017/12/games-banner-bg.jpg",
         "sinMapear": null
       },
       "capas": [
@@ -85,6 +85,7 @@
               "color": "marcado"
             }
           },
+          "desapareceMs": null,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -117,6 +118,7 @@
             "alto": "58px"
           },
           "estilos": null,
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -148,6 +150,7 @@
             "alto": "163px"
           },
           "estilos": null,
+          "desapareceMs": null,
           "efectoImagen": "brillo",
           "animacion": {
             "desde": {
@@ -180,6 +183,7 @@
             "alto": "87px"
           },
           "estilos": null,
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 1,
@@ -211,6 +215,7 @@
             "alto": "131px"
           },
           "estilos": null,
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 1,
@@ -235,7 +240,7 @@
       "fondo": {
         "tipo": "image",
         "color": "#E7E7E7",
-        "imagen": "https://e-nation.org/zero/wp-content/uploads/2017/12/games-banner-bg.jpg",
+        "imagen": "/images/2017/12/games-banner-bg.jpg",
         "sinMapear": null
       },
       "capas": [
@@ -277,6 +282,7 @@
               "color": "marcado"
             }
           },
+          "desapareceMs": null,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -309,6 +315,7 @@
             "alto": "58px"
           },
           "estilos": null,
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -340,6 +347,7 @@
             "alto": "163px"
           },
           "estilos": null,
+          "desapareceMs": null,
           "efectoImagen": "brillo",
           "animacion": {
             "desde": {
@@ -372,6 +380,7 @@
             "alto": "87px"
           },
           "estilos": null,
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 1,
@@ -403,6 +412,7 @@
             "alto": "131px"
           },
           "estilos": null,
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 1,
@@ -427,7 +437,7 @@
       "fondo": {
         "tipo": "image",
         "color": "#E7E7E7",
-        "imagen": "https://e-nation.org/zero/wp-content/uploads/2017/12/ve-banner-bground.jpg",
+        "imagen": "/images/2017/12/ve-banner-bground.jpg",
         "sinMapear": null
       },
       "capas": [
@@ -469,6 +479,7 @@
               "color": "capa"
             }
           },
+          "desapareceMs": null,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -501,6 +512,7 @@
             "alto": "177px"
           },
           "estilos": null,
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -549,6 +561,7 @@
               "color": "capa"
             }
           },
+          "desapareceMs": null,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -598,6 +611,7 @@
               "color": "capa"
             }
           },
+          "desapareceMs": null,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -630,6 +644,7 @@
             "alto": "269px"
           },
           "estilos": null,
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -661,6 +676,7 @@
             "alto": "85px"
           },
           "estilos": null,
+          "desapareceMs": null,
           "bucle": {
             "tipo": "escala",
             "valor": 0.8
@@ -689,7 +705,7 @@
       "fondo": {
         "tipo": "image",
         "color": "#E7E7E7",
-        "imagen": "https://e-nation.org/zero/wp-content/uploads/2017/12/ve-banner-bground.jpg",
+        "imagen": "/images/2017/12/ve-banner-bground.jpg",
         "sinMapear": null
       },
       "capas": [
@@ -731,6 +747,7 @@
               "color": "capa"
             }
           },
+          "desapareceMs": null,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -763,6 +780,7 @@
             "alto": "177px"
           },
           "estilos": null,
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -811,6 +829,7 @@
               "color": "capa"
             }
           },
+          "desapareceMs": null,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -860,6 +879,7 @@
               "color": "capa"
             }
           },
+          "desapareceMs": null,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -892,6 +912,7 @@
             "alto": "269px"
           },
           "estilos": null,
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -923,6 +944,7 @@
             "alto": "85px"
           },
           "estilos": null,
+          "desapareceMs": null,
           "bucle": {
             "tipo": "escala",
             "valor": 0.8
@@ -951,7 +973,7 @@
       "fondo": {
         "tipo": "image",
         "color": "#E7E7E7",
-        "imagen": "https://e-nation.org/zero/wp-content/uploads/2017/12/ve-banner-bground.jpg",
+        "imagen": "/images/2017/12/ve-banner-bground.jpg",
         "sinMapear": null
       },
       "capas": [
@@ -993,6 +1015,7 @@
               "color": "capa"
             }
           },
+          "desapareceMs": null,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -1025,6 +1048,7 @@
             "alto": "177px"
           },
           "estilos": null,
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -1073,6 +1097,7 @@
               "color": "capa"
             }
           },
+          "desapareceMs": null,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -1122,6 +1147,7 @@
               "color": "capa"
             }
           },
+          "desapareceMs": null,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -1154,6 +1180,7 @@
             "alto": "269px"
           },
           "estilos": null,
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -1185,6 +1212,7 @@
             "alto": "85px"
           },
           "estilos": null,
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -1209,7 +1237,7 @@
       "fondo": {
         "tipo": "image",
         "color": "#E7E7E7",
-        "imagen": "https://e-nation.org/zero/wp-content/uploads/2017/12/ve-banner-bground.jpg",
+        "imagen": "/images/2017/12/ve-banner-bground.jpg",
         "sinMapear": null
       },
       "capas": [
@@ -1251,6 +1279,7 @@
               "color": "marcado"
             }
           },
+          "desapareceMs": null,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -1283,6 +1312,7 @@
             "alto": "58px"
           },
           "estilos": null,
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -1314,6 +1344,7 @@
             "alto": "163px"
           },
           "estilos": null,
+          "desapareceMs": null,
           "efectoImagen": "brillo",
           "animacion": {
             "desde": {
@@ -1346,6 +1377,7 @@
             "alto": "87px"
           },
           "estilos": null,
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 1,
@@ -1377,6 +1409,7 @@
             "alto": "131px"
           },
           "estilos": null,
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 1,
@@ -1401,7 +1434,7 @@
       "fondo": {
         "tipo": "image",
         "color": "#E7E7E7",
-        "imagen": "https://e-nation.org/zero/wp-content/uploads/2017/12/pagos-banner-bground.jpg",
+        "imagen": "/images/2017/12/pagos-banner-bground.jpg",
         "sinMapear": null
       },
       "capas": [
@@ -1443,6 +1476,7 @@
               "color": "capa"
             }
           },
+          "desapareceMs": null,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -1492,6 +1526,7 @@
               "color": "capa"
             }
           },
+          "desapareceMs": null,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -1541,6 +1576,7 @@
               "color": "marcado"
             }
           },
+          "desapareceMs": null,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -1572,7 +1608,10 @@
             "ancho": "741px",
             "alto": "136px"
           },
-          "estilos": null,
+          "estilos": {
+            "fondo": "rgba(0,0,0,0.35)"
+          },
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 1,
@@ -1621,6 +1660,7 @@
               "color": "marcado"
             }
           },
+          "desapareceMs": null,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -1653,6 +1693,7 @@
             "alto": "176px"
           },
           "estilos": null,
+          "desapareceMs": null,
           "efectoImagen": "palpitar",
           "animacion": {
             "desde": {
@@ -1678,7 +1719,7 @@
       "fondo": {
         "tipo": "image",
         "color": "#E7E7E7",
-        "imagen": "https://e-nation.org/zero/wp-content/uploads/2017/12/pagos-banner-bground.jpg",
+        "imagen": "/images/2017/12/pagos-banner-bground.jpg",
         "sinMapear": null
       },
       "capas": [
@@ -1720,6 +1761,7 @@
               "color": "capa"
             }
           },
+          "desapareceMs": null,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -1769,6 +1811,7 @@
               "color": "capa"
             }
           },
+          "desapareceMs": null,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -1818,6 +1861,7 @@
               "color": "marcado"
             }
           },
+          "desapareceMs": null,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -1849,7 +1893,10 @@
             "ancho": "741px",
             "alto": "133px"
           },
-          "estilos": null,
+          "estilos": {
+            "fondo": "rgba(0,0,0,0.35)"
+          },
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 1,
@@ -1898,6 +1945,7 @@
               "color": "marcado"
             }
           },
+          "desapareceMs": null,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -1930,6 +1978,7 @@
             "alto": "176px"
           },
           "estilos": null,
+          "desapareceMs": null,
           "efectoImagen": "palpitar",
           "animacion": {
             "desde": {
@@ -1955,7 +2004,7 @@
       "fondo": {
         "tipo": "image",
         "color": "#E7E7E7",
-        "imagen": "https://e-nation.org/zero/wp-content/uploads/2017/12/pagos-banner-bground.jpg",
+        "imagen": "/images/2017/12/pagos-banner-bground.jpg",
         "sinMapear": null
       },
       "capas": [
@@ -1997,6 +2046,7 @@
               "color": "capa"
             }
           },
+          "desapareceMs": null,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -2046,6 +2096,7 @@
               "color": "capa"
             }
           },
+          "desapareceMs": null,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -2095,6 +2146,7 @@
               "color": "marcado"
             }
           },
+          "desapareceMs": null,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -2126,7 +2178,10 @@
             "ancho": "741px",
             "alto": "133px"
           },
-          "estilos": null,
+          "estilos": {
+            "fondo": "rgba(0,0,0,0.35)"
+          },
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 1,
@@ -2175,6 +2230,7 @@
               "color": "marcado"
             }
           },
+          "desapareceMs": null,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -2207,6 +2263,7 @@
             "alto": "176px"
           },
           "estilos": null,
+          "desapareceMs": null,
           "efectoImagen": "palpitar",
           "animacion": {
             "desde": {
@@ -2232,7 +2289,7 @@
       "fondo": {
         "tipo": "image",
         "color": "#E7E7E7",
-        "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/unity-banner-BG.jpg",
+        "imagen": "/images/2018/08/unity-banner-BG.jpg",
         "sinMapear": null
       },
       "capas": [
@@ -2274,6 +2331,7 @@
               "color": "capa"
             }
           },
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -2290,7 +2348,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/unity-banner-B.png",
+          "imagen": "/images/2018/08/unity-banner-B.png",
           "alt": null,
           "posicion": {
             "horizontal": null,
@@ -2305,6 +2363,7 @@
             "alto": "236px"
           },
           "estilos": null,
+          "desapareceMs": null,
           "efectoImagen": "palpitar",
           "animacion": {
             "desde": {
@@ -2322,7 +2381,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/unity-banner-A.png",
+          "imagen": "/images/2018/08/unity-banner-A.png",
           "alt": null,
           "posicion": {
             "horizontal": null,
@@ -2337,6 +2396,7 @@
             "alto": "236px"
           },
           "estilos": null,
+          "desapareceMs": null,
           "efectoImagen": "palpitar",
           "animacion": {
             "desde": {
@@ -2386,6 +2446,7 @@
               "color": "marcado"
             }
           },
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -2434,6 +2495,7 @@
               "color": "marcado"
             }
           },
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -2482,6 +2544,7 @@
               "color": "marcado"
             }
           },
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -2513,6 +2576,7 @@
             "alto": "203px"
           },
           "estilos": null,
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -2537,7 +2601,7 @@
       "fondo": {
         "tipo": "image",
         "color": "#E7E7E7",
-        "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/unity-banner-BG.jpg",
+        "imagen": "/images/2018/08/unity-banner-BG.jpg",
         "sinMapear": null
       },
       "capas": [
@@ -2579,6 +2643,7 @@
               "color": "capa"
             }
           },
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -2595,7 +2660,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/unity-banner-B.png",
+          "imagen": "/images/2018/08/unity-banner-B.png",
           "alt": null,
           "posicion": {
             "horizontal": null,
@@ -2610,6 +2675,7 @@
             "alto": "236px"
           },
           "estilos": null,
+          "desapareceMs": null,
           "efectoImagen": "palpitar",
           "animacion": {
             "desde": {
@@ -2627,7 +2693,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/unity-banner-A.png",
+          "imagen": "/images/2018/08/unity-banner-A.png",
           "alt": null,
           "posicion": {
             "horizontal": null,
@@ -2642,6 +2708,7 @@
             "alto": "236px"
           },
           "estilos": null,
+          "desapareceMs": null,
           "efectoImagen": "palpitar",
           "animacion": {
             "desde": {
@@ -2691,6 +2758,7 @@
               "color": "marcado"
             }
           },
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -2739,6 +2807,7 @@
               "color": "marcado"
             }
           },
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -2787,6 +2856,7 @@
               "color": "marcado"
             }
           },
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -2818,6 +2888,7 @@
             "alto": "203px"
           },
           "estilos": null,
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -2842,7 +2913,7 @@
       "fondo": {
         "tipo": "image",
         "color": "#E7E7E7",
-        "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/unity-banner-BG.jpg",
+        "imagen": "/images/2018/08/unity-banner-BG.jpg",
         "sinMapear": null
       },
       "capas": [
@@ -2884,6 +2955,7 @@
               "color": "capa"
             }
           },
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -2900,7 +2972,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/unity-banner-B.png",
+          "imagen": "/images/2018/08/unity-banner-B.png",
           "alt": null,
           "posicion": {
             "horizontal": null,
@@ -2915,6 +2987,7 @@
             "alto": "236"
           },
           "estilos": null,
+          "desapareceMs": null,
           "efectoImagen": "palpitar",
           "animacion": {
             "desde": {
@@ -2932,7 +3005,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/unity-banner-A.png",
+          "imagen": "/images/2018/08/unity-banner-A.png",
           "alt": null,
           "posicion": {
             "horizontal": null,
@@ -2947,6 +3020,7 @@
             "alto": "236"
           },
           "estilos": null,
+          "desapareceMs": null,
           "efectoImagen": "palpitar",
           "animacion": {
             "desde": {
@@ -2996,6 +3070,7 @@
               "color": "marcado"
             }
           },
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -3044,6 +3119,7 @@
               "color": "marcado"
             }
           },
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -3092,6 +3168,7 @@
               "color": "marcado"
             }
           },
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -3123,6 +3200,7 @@
             "alto": "203px"
           },
           "estilos": null,
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -3147,7 +3225,7 @@
       "fondo": {
         "tipo": "image",
         "color": "#E7E7E7",
-        "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/org-banner-bground.jpg",
+        "imagen": "/images/2018/08/org-banner-bground.jpg",
         "sinMapear": null
       },
       "capas": [
@@ -3189,6 +3267,7 @@
               "color": "marcado"
             }
           },
+          "desapareceMs": null,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -3238,6 +3317,7 @@
               "color": "marcado"
             }
           },
+          "desapareceMs": null,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -3287,6 +3367,7 @@
               "color": "capa"
             }
           },
+          "desapareceMs": null,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -3318,7 +3399,10 @@
             "ancho": "865px",
             "alto": "96px"
           },
-          "estilos": null,
+          "estilos": {
+            "fondo": "rgba(0,0,0,0.35)"
+          },
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -3367,6 +3451,7 @@
               "color": "capa"
             }
           },
+          "desapareceMs": null,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -3384,7 +3469,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/org-banner-mundo.png",
+          "imagen": "/images/2018/08/org-banner-mundo.png",
           "alt": null,
           "posicion": {
             "horizontal": null,
@@ -3399,6 +3484,7 @@
             "alto": "249px"
           },
           "estilos": null,
+          "desapareceMs": null,
           "efectoImagen": "palpitar",
           "animacion": {
             "desde": {
@@ -3416,7 +3502,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/org-banner-bar.jpg",
+          "imagen": "/images/2018/08/org-banner-bar.jpg",
           "alt": null,
           "posicion": {
             "horizontal": null,
@@ -3431,6 +3517,7 @@
             "alto": "178px"
           },
           "estilos": null,
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -3455,7 +3542,7 @@
       "fondo": {
         "tipo": "image",
         "color": "#E7E7E7",
-        "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/org-banner-bground.jpg",
+        "imagen": "/images/2018/08/org-banner-bground.jpg",
         "sinMapear": null
       },
       "capas": [
@@ -3497,6 +3584,7 @@
               "color": "marcado"
             }
           },
+          "desapareceMs": null,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -3546,6 +3634,7 @@
               "color": "marcado"
             }
           },
+          "desapareceMs": null,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -3595,6 +3684,7 @@
               "color": "capa"
             }
           },
+          "desapareceMs": null,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -3626,7 +3716,10 @@
             "ancho": "865px",
             "alto": "96px"
           },
-          "estilos": null,
+          "estilos": {
+            "fondo": "rgba(0,0,0,0.35)"
+          },
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -3675,6 +3768,7 @@
               "color": "capa"
             }
           },
+          "desapareceMs": null,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -3692,7 +3786,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/org-banner-mundo.png",
+          "imagen": "/images/2018/08/org-banner-mundo.png",
           "alt": null,
           "posicion": {
             "horizontal": null,
@@ -3707,6 +3801,7 @@
             "alto": "249px"
           },
           "estilos": null,
+          "desapareceMs": null,
           "efectoImagen": "palpitar",
           "animacion": {
             "desde": {
@@ -3724,7 +3819,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/org-banner-bar.jpg",
+          "imagen": "/images/2018/08/org-banner-bar.jpg",
           "alt": null,
           "posicion": {
             "horizontal": null,
@@ -3739,6 +3834,7 @@
             "alto": "178px"
           },
           "estilos": null,
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -3763,7 +3859,7 @@
       "fondo": {
         "tipo": "image",
         "color": "#E7E7E7",
-        "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/org-banner-bground.jpg",
+        "imagen": "/images/2018/08/org-banner-bground.jpg",
         "sinMapear": null
       },
       "capas": [
@@ -3805,6 +3901,7 @@
               "color": "marcado"
             }
           },
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -3853,6 +3950,7 @@
               "color": "marcado"
             }
           },
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -3901,6 +3999,7 @@
               "color": "capa"
             }
           },
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -3931,7 +4030,10 @@
             "ancho": "865px",
             "alto": "96px"
           },
-          "estilos": null,
+          "estilos": {
+            "fondo": "rgba(0,0,0,0.35)"
+          },
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -3980,6 +4082,7 @@
               "color": "capa"
             }
           },
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -3996,7 +4099,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/org-banner-mundo.png",
+          "imagen": "/images/2018/08/org-banner-mundo.png",
           "alt": null,
           "posicion": {
             "horizontal": null,
@@ -4011,6 +4114,7 @@
             "alto": "249px"
           },
           "estilos": null,
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -4027,7 +4131,7 @@
           "tipo": "imagen",
           "texto": null,
           "textoConHtml": false,
-          "imagen": "https://e-nation.org/zero/wp-content/uploads/2018/08/org-banner-bar.jpg",
+          "imagen": "/images/2018/08/org-banner-bar.jpg",
           "alt": null,
           "posicion": {
             "horizontal": null,
@@ -4042,6 +4146,7 @@
             "alto": "178px"
           },
           "estilos": null,
+          "desapareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 0,

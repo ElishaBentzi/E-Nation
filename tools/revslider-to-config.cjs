@@ -242,8 +242,27 @@ if (fs.existsSync(RENDERED)) {
         const i = trozo.indexOf(':');
         if (i > 0) t[trozo.slice(0, i).trim()] = trozo.slice(i + 1).trim();
       }
+      // Las FORMAS no llevan data-color: su color vive en el atributo `style`
+      // que el plugin escribe en linea (`style="z-index:8;background-color:#ff7100;"`).
+      // Es lo que pinta la banda naranja del hero y las lineas del diagrama.
+      const estiloEnLinea = (attrs.match(/style="([^"]*)"/) || [, ''])[1];
+      const fondo = (estiloEnLinea.match(/background-color:\s*([^;"]+)/) || [, null])[1];
+
+      /*
+       * `frame_999` es el fotograma de SALIDA del original. Con `o:0` la capa
+       * DESAPARECE en el momento `st` y no vuelve: es la X roja del diagrama, que
+       * se marca a los 4 s, dura 2,7 s y se va. Sin esta lectura, esas capas
+       * quedarian visibles para siempre y el diagrama mostraria una X que el
+       * original solo ensena un momento.
+       */
+      const f999 = String(d.frame_999 || '');
+      const stSalida = f999.match(/st:(\d+)/);
+      const desapareceMs = /o:0/.test(f999) && stSalida ? Number(stSalida[1]) : null;
+
       RESUELTOS.set(`${idm[1]}-${idm[2]}`, {
         color: d.color || null,
+        desapareceMs,
+        fondo: fondo && fondo !== 'transparent' ? fondo.trim() : null,
         tamano: t.s ? t.s + 'px' : null,
         interlineado: t.l ? t.l + 'px' : null,
         grosor: t.fw || null,
@@ -400,6 +419,23 @@ function aplicarAjustes(slide, alias, lienzo) {
   const conf = Object.entries(delSlider)
     .filter(([k]) => k && !k.startsWith('_') && host === k.replace(/^www\./, ''))
     .map(([, v]) => v)[0];
+
+  /*
+   * `ocultar` a nivel de ALIAS: capas que el original solo ensena un momento de su
+   * linea de tiempo (la X roja del diagrama aparece a los 4 s y se va a los 6,7 s).
+   * La replica estatica se queda con el estado montado, y esa marca no forma parte
+   * de el. Se nombra la capa por archivo, texto, o `forma:<uid>` si no tiene ninguno.
+   */
+  const ocultar = AJUSTES[alias]?.ocultar;
+  if (Array.isArray(ocultar) && ocultar.length) {
+    slide.capas = slide.capas.filter((c) => {
+      const nombre = c.tipo === 'forma' ? 'forma:' + c.uid : (c.imagen ? String(c.imagen).split('/').pop() : String(c.texto ?? ''));
+      const fuera = ocultar.includes(nombre);
+      if (fuera) ajustesAplicados++;
+      return !fuera;
+    });
+  }
+
   if (!conf) return;
 
   for (const [clave, d] of Object.entries(conf.desplazamientos || {})) {
@@ -418,6 +454,21 @@ function aplicarAjustes(slide, alias, lienzo) {
   }
 }
 let ajustesAplicados = 0;
+
+/*
+ * LAS IMAGENES PROPIAS VAN AL ESPEJO LOCAL, las ajenas se quedan donde estan.
+ *
+ * Copiar `media.imageUrl` tal cual dejaba las imagenes de e-nation.org ABSOLUTAS: el
+ * sitio las enlazaba al original (hotlinking), y no estabamos sirviendo 22 piezas del
+ * slider del diagrama. Las de OTROS dominios (bienestarmutuo.org, etc.) SI se quedan
+ * absolutas a proposito: son de los proyectos hermanos. El fichero local, si falta,
+ * lo baja `tools/descargar-espejo-sliders.cjs`.
+ */
+const reescribirPropia = (u) => {
+  if (!u) return u;
+  const m = String(u).match(/^https?:\/\/(?:www\.)?e-nation\.org\/zero\/wp-content\/uploads\/(.+)$/);
+  return m ? `/images/${m[1]}` : u;
+};
 
 /** Traduce un slider completo. */
 function traducir(s) {
@@ -505,7 +556,7 @@ function traducir(s) {
       fondo: {
         tipo: tipoFondo,
         color: colorFondo && colorFondo !== 'transparent' ? colorFondo : null,
-        imagen: imagenFondo,
+        imagen: reescribirPropia(imagenFondo),
         // TODO lo que no sea color ni imagen simple (video, gradiente) hay que
         // mirarlo a mano: se avisa en vez de perderlo.
         sinMapear: null,
@@ -560,6 +611,20 @@ function traducir(s) {
       const ox = porDispositivo(pos.x);
       const oy = porDispositivo(pos.y);
 
+      let estilosCapa;
+      if (/image/i.test(tipo)) {
+        estilosCapa = null;
+      } else if (/shape/i.test(tipo)) {
+        const clave = s.id + '-' + capa.uid;
+        const r = RESUELTOS.get(clave);
+        estilosCapa = r && r.fondo ? { fondo: r.fondo } : null;
+      } else {
+        const e = estilosDe(capa, capa.uid, s.id);
+        if (e.familia) fuentesVistas.set(e.familia, (fuentesVistas.get(e.familia) || 0) + 1);
+        if (!e.color) avisar(alias, 'capa ' + capa.uid + ': sin color declarado (se resuelve por el preset "' + (e.preset || '?') + '")');
+        estilosCapa = e;
+      }
+
       const c = {
         uid: capa.uid,
         alias: capa.alias || null,
@@ -570,7 +635,7 @@ function traducir(s) {
         // que el original SI renderizaba. Se marca para que el componente sepa
         // que debe interpretarlo, y no mostrarlo como codigo.
         textoConHtml: !/image|shape/i.test(tipo) && /<[a-z][^>]*>/i.test(String(capa.text || '')),
-        imagen: ruta(capa, 'media.imageUrl', null),
+        imagen: reescribirPropia(ruta(capa, 'media.imageUrl', null)),
         alt: ruta(capa, 'media.alt', null),
         /*
          * POSICION: se usa la que RESUELVE EL MARCADO cuando esta disponible, y solo
@@ -611,12 +676,13 @@ function traducir(s) {
           ancho: (resuelta && resuelta.ancho) || (w.valor !== undefined ? w.valor : null),
           alto: h.valor !== undefined ? h.valor : null,
         },
-        // Tipografia y color, del estado `idle`
-        estilos: /image|shape/i.test(tipo) ? null : (() => {
-          const e = estilosDe(capa, capa.uid, s.id);
-          if (e.familia) fuentesVistas.set(e.familia, (fuentesVistas.get(e.familia) || 0) + 1);
-          if (!e.color) avisar(alias, `capa ${capa.uid}: sin color declarado (se resuelve por el preset "${e.preset || '?'}")`);
-          return e;
+        // Tipografia y color: del idle de la capa, del marcado resuelto o del
+        // preset, en ese orden. Las FORMAS llevan el color del marcado.
+        estilos: estilosCapa,
+        // Momento en que el original SACA esta capa de escena, si lo hace.
+        desapareceMs: (() => {
+          const r = RESUELTOS.get(String(s.id) + '-' + String(capa.uid));
+          return r ? r.desapareceMs : null;
         })(),
         // Variantes responsive: solo se anotan cuando DIFIEREN del escritorio.
         variantes: {},

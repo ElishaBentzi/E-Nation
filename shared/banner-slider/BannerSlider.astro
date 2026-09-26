@@ -334,6 +334,18 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
   if (ancho) partes.push(`width:${ancho.toFixed(4)}%`);
 
   /*
+   * LAS FORMAS (bandas, subrayados, lineas) necesitan TAMANO EN LOS DOS EJES y su
+   * color de fondo: son lo que pinta la banda naranja del hero y las lineas del
+   * diagrama. Una banda de 762x64 px sin `height` colapsa a un hilo invisible.
+   * El fondo lo resuelve el generador desde el marcado (el JSON no lo declara).
+   */
+  if (c.tipo === 'forma') {
+    const altoPct = aPct(c.tamano?.alto, altoLienzo);
+    if (altoPct) partes.push(`height:${altoPct.toFixed(4)}%`);
+    if (c.estilos?.fondo) partes.push(`background-color:${c.estilos.fondo}`);
+  }
+
+  /*
    * ANIMACION DE ENTRADA.
    *
    * El ESCALONADO es lo que hace atractivo el banner: en el original las capas
@@ -423,7 +435,10 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
   <div class="banner-slider__pista relative h-full w-full" data-pista>
     {slides.map((s, i) => {
       const capasConContenido = (s.capas ?? []).filter(
-        (c) => (c.tipo === 'texto' && c.texto) || (c.tipo === 'imagen' && c.imagen)
+        (c) =>
+          (c.tipo === 'texto' && c.texto) ||
+          (c.tipo === 'imagen' && c.imagen) ||
+          (c.tipo === 'forma' && c.estilos?.fondo)
       );
       // El enlace del slide envuelve TODA la superficie: es lo que hace que el
       // banner sea clicable entero y no solo un boton.

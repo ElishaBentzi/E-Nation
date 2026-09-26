@@ -6,6 +6,10 @@
     "desplazamientos": "{ \"<capa>\": { \"dx\": \"12px\", \"dy\": \"0px\" } } — suma píxeles del LIENZO DE DISEÑO al eje indicado, sin cambiar el sistema de anclaje",
     "alinearCentroXCon": "{ \"<capa que se mueve>\": \"<capa de referencia>\" } — centra la primera sobre el centro horizontal de la segunda"
   },
+  "vertical-horizontal": {
+    "ocultar": ["forma:45", "X", "slide-gray-1.png", "slide-gray-2.png", "slide-gray-3.png", "slide-circular.png", "slide-circular-inside.png"],
+    "_nota_ocultar": "La X roja del diagrama es TRANSITORIA en el original: aparece a los 4 s (frame_999 st:4000) y sale a los 6,7 s. La replica estatica muestra el estado montado, donde la X no esta. `forma:45` es el cuadro rojo; `X` el texto. Los tres `slide-gray-*` son ESTADOS de la animación de montaje del triángulo: el original los retira a los 2,3-4 s (desapareceMs medido) y en la réplica estática quedaban clavados tapando la pirámide. Y `slide-circular*` es el SEGUNDO estado del diagrama: el original alterna pirámide (poder vertical) ↔ red circular (democracia directa); la réplica estática se queda la pirámide, que es el estado que abre la sección."
+  },
   "banner-publicidad": {
     "unitycoin.net": {
       "_nota": "Petición del usuario: monedas desplazadas a la derecha y UNT alineado con el centro de la primera moneda. Tras la primera revisión el usuario las quiso UN POCO MÁS A LA IZQUIERDA, así que el desplazamiento pasó de 18px a 8px. El número es fácil de tocar aquí; la alineación de UNT se recalcula sola tras cualquier cambio. Lo de «más abajo» NO se ajusta aquí a propósito: era un fallo de verdad —las monedas perdían el centrado vertical porque el anclaje se declara «center» y el componente solo entendía «middle»— y ya está corregido en la extracción. Ahora están a la altura del original (51,66 % frente a 51,50 %). Esto de aquí es solo el desplazamiento lateral y la alineación.",
