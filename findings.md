@@ -1424,3 +1424,5 @@ El widget guarda el texto fijo en **`before_text_content`**. El extractor leía 
 Secciones de la home dentro del 1–7 % (hero, vertical y formulario exactos); las 48 de la presentación también. Cero solapes y cero declaraciones descartadas en las 6 diapositivas del carrusel de la presentación. El carrusel del pie no se repite en la presentación, que ya lo lleva en su contenido.
 
 **Responsive comprobado a 620 px**: hero **605×302** (original 605×303), JetSlider **544×312** (original 545×312) y diagrama vertical **589×589** (original 585×585). El `aspect-ratio` de un slider es **siempre el del lienzo**; las `variantes` del JSON son tamaños de capa por dispositivo, y usarlas como proporción hacía que el hero midiera 605×600 en vez de 605×302.
+
+**Una captura antes de cargar las fuentes miente.** En la primera foto de producción la línea blanca parecía cruzar «NEW PACT…»; era que Arimo todavía no había cargado y el fallback tenía otras métricas. Tras `document.fonts.ready` la línea queda bajo el texto, como el original. En las capturas de verificación hay que esperar a las fuentes (o comprobar `document.fonts.check`).
