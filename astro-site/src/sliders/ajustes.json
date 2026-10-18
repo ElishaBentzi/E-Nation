@@ -7,8 +7,7 @@
     "alinearCentroXCon": "{ \"<capa que se mueve>\": \"<capa de referencia>\" } — centra la primera sobre el centro horizontal de la segunda"
   },
   "vertical-horizontal": {
-    "ocultar": ["forma:45", "X", "slide-gray-1.png", "slide-gray-2.png", "slide-gray-3.png", "slide-circular.png", "slide-circular-inside.png"],
-    "_nota_ocultar": "La X roja del diagrama es TRANSITORIA en el original: aparece a los 4 s (frame_999 st:4000) y sale a los 6,7 s. La replica estatica muestra el estado montado, donde la X no esta. `forma:45` es el cuadro rojo; `X` el texto. Los tres `slide-gray-*` son ESTADOS de la animación de montaje del triángulo: el original los retira a los 2,3-4 s (desapareceMs medido) y en la réplica estática quedaban clavados tapando la pirámide. Y `slide-circular*` es el SEGUNDO estado del diagrama: el original alterna pirámide (poder vertical) ↔ red circular (democracia directa); la réplica estática se queda la pirámide, que es el estado que abre la sección."
+    "_nota_timeline": "Ya NO se oculta ninguna capa: el componente reproduce la linea de tiempo medida en el original. La piramide desaparece a 1,3 s; las grises y la X entran y salen entre 1 y 4 s; el circulo entra a 4,3 s; las figuras y los thumbnails a 4,8-5,1 s; la comprobacion a 7,8 s; y el ciclo se reinicia a los 10,5 s (`timeline.delay`). Las capas `slide-circular*` son el segundo estado del diagrama, no decoracion que hubiera que esconder."
   },
   "banner-publicidad": {
     "unitycoin.net": {

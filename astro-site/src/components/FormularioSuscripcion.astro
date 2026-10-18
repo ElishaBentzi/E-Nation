@@ -64,23 +64,17 @@ const t = TEXTOS[locale] ?? TEXTOS.es;
       bloque del modelo, y llevarlo aqui lo duplicaba. */}
 
   <form class="mc__form" novalidate>
-    <div class="mc__campos">
-      <label class="mc__campo">
-        <span class="mc__etiqueta">{t.nombre} *</span>
-        <input type="text" name="FNAME" required autocomplete="given-name" />
-      </label>
-      <label class="mc__campo">
-        <span class="mc__etiqueta">{t.apellido} *</span>
-        <input type="text" name="LNAME" required autocomplete="family-name" />
-      </label>
-    </div>
+    {/* El original solo muestra Nombre y Email, con placeholders y sin etiquetas
+        visibles. La etiqueta accesible va oculta: un placeholder no es una etiqueta
+        para lectores de pantalla. El apellido y el pais del embed viejo se retiran
+        de la vista, pero el merge field PAIS no se envia si queda vacio. */}
     <label class="mc__campo">
-      <span class="mc__etiqueta">{t.email} *</span>
-      <input type="email" name="EMAIL" required autocomplete="email" />
+      <span class="sr-only">{t.nombre}</span>
+      <input type="text" name="FNAME" placeholder={t.nombre} autocomplete="given-name" />
     </label>
     <label class="mc__campo">
-      <span class="mc__etiqueta">{t.pais}</span>
-      <input type="text" name="PAIS" autocomplete="country-name" />
+      <span class="sr-only">{t.email}</span>
+      <input type="email" name="EMAIL" placeholder={t.email} required autocomplete="email" />
     </label>
 
     {/* Honeypot de Mailchimp: debe enviarse VACIO. Los humanos no lo vemos. */}
@@ -95,41 +89,37 @@ const t = TEXTOS[locale] ?? TEXTOS.es;
 
 <style>
   .mc {
-    max-width: 34rem;
+    /* Medido en el original: la caja del formulario mide 442 px y los campos
+       411, o sea 15,5 px de aire a cada lado. */
+    max-width: 442px;
     margin-inline: auto;
+    padding-inline: 15px;
   }
   .mc__form {
     display: flex;
     flex-direction: column;
-    gap: 0.9rem;
-  }
-  .mc__campos {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.9rem;
-  }
-  @media (max-width: 480px) {
-    .mc__campos { grid-template-columns: 1fr; }
+    gap: 24px;
   }
   .mc__campo {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-  }
-  .mc__etiqueta {
-    font-size: 0.85rem;
-    opacity: 0.85;
+    display: block;
   }
   .mc input {
-    padding: 0.55rem 0.7rem;
-    font: inherit;
-    color: inherit;
-    background: transparent;
-    border: 1px solid color-mix(in srgb, currentColor 35%, transparent);
+    display: block;
+    width: 100%;
+    height: 42px;
+    padding: 8px 12px;
+    font-family: inherit;
+    font-size: 14px;
+    color: #333333;
+    background: #ffffff;
+    border: 1px solid #abb0b2;
     border-radius: 3px;
   }
+  .mc input::placeholder {
+    color: #999999;
+  }
   .mc input:focus-visible {
-    outline: 2px solid var(--color-acento, #ff7100);
+    outline: 2px solid #1ebbf0;
     outline-offset: 1px;
   }
   /* El honeypot, fuera de pantalla: oculto con display:none lo rellenan algunos
@@ -139,24 +129,32 @@ const t = TEXTOS[locale] ?? TEXTOS.es;
     inset-inline-start: -9999px;
   }
   .mc__enviar {
-    padding: 0.65rem 1.4rem;
-    font: inherit;
-    font-weight: 600;
+    /* Boton del original: 110x32, degradado cian→verde del tema, radio 4. */
+    align-self: center;
+    min-width: 110px;
+    height: 32px;
+    padding: 0 16px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 500;
     color: #ffffff;
     cursor: pointer;
-    background: var(--color-acento, #ff7100);
+    background-color: #1ebbf0;
+    background-image: linear-gradient(135deg, #1ebbf0 30%, #39dfaa 100%);
     border: 0;
-    border-radius: 3px;
+    border-radius: 4px;
   }
-  .mc__enviar:hover { filter: brightness(1.08); }
+  .mc__enviar:hover { filter: brightness(1.06); }
   .mc__enviar[disabled] { opacity: 0.6; cursor: wait; }
   .mc__mensaje {
     min-height: 1.2em;
-    font-size: 0.95rem;
+    margin: 0;
+    font-size: 15px;
     text-align: center;
+    color: #ffffff;
   }
-  .mc__mensaje--ok { color: #2e7d32; }
-  .mc__mensaje--error { color: #c62828; }
+  .mc__mensaje--ok { color: #d9ffe9; }
+  .mc__mensaje--error { color: #ffe0e0; }
 </style>
 
 <script>

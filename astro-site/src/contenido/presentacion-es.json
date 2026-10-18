@@ -12,7 +12,7 @@
     "velo": "rgba(35, 73, 101, 0.58)"
    },
    "relleno": null,
-   "margen": "0% 0% -2% 0%",
+   "margen": "0px 0px -24px 0px",
    "estirada": true,
    "columnas": [
     {
@@ -56,7 +56,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 5,
-       "grosor": "800"
+       "grosor": "800",
+       "fondo": null,
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "762544f",
@@ -69,7 +71,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 2.5,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": "#ff7100",
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "d4889a6",
@@ -82,7 +86,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 1.6,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "tipo": "grupo",
@@ -144,7 +150,7 @@
     "repetir": "no-repeat",
     "attachment": null
    },
-   "relleno": "15% 0% 15% 0%",
+   "relleno": "180px 0px 180px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -185,7 +191,9 @@
            "color": "#ffffff",
            "tamanoEm": 2.5,
            "grosor": "600",
-           "interlineadoEm": 1.1
+           "interlineadoEm": 1.1,
+           "fondo": null,
+           "sombra": null
           }
          ]
         }
@@ -211,7 +219,7 @@
     "attachment": "fixed",
     "velo": "rgba(35, 73, 101, 0.58)"
    },
-   "relleno": "6% 0% 0% 0%",
+   "relleno": "72px 0px 0px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -231,7 +239,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 2.5,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": "#ff7100",
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "tipo": "grupo",
@@ -297,7 +307,7 @@
        "columnas": [
         {
          "fondo": null,
-         "ancho": 50,
+         "ancho": 33.333333333333336,
          "relleno": null,
          "bloques": [
           {
@@ -320,7 +330,7 @@
         },
         {
          "fondo": null,
-         "ancho": 50,
+         "ancho": 33.333333333333336,
          "relleno": null,
          "bloques": [
           {
@@ -343,7 +353,7 @@
         },
         {
          "fondo": null,
-         "ancho": 50,
+         "ancho": 33.333333333333336,
          "relleno": null,
          "bloques": [
           {
@@ -378,7 +388,9 @@
        "color": "#ffffff",
        "tamanoEm": 1.8,
        "grosor": "300",
-       "interlineadoEm": 1.3
+       "interlineadoEm": 1.3,
+       "fondo": null,
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "bd5493b",
@@ -391,7 +403,9 @@
         "¿Quieres ser verdaderamente libre?"
        ],
        "color": "#ffffff",
-       "tamanoEm": 4
+       "tamanoEm": 4,
+       "colorAntes": "#ff7100",
+       "efecto": "fx2"
       },
       {
        "_id": "70bf320",
@@ -415,7 +429,7 @@
     "repetir": "no-repeat",
     "attachment": null
    },
-   "relleno": "15% 0% 15% 0%",
+   "relleno": "180px 0px 180px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -451,7 +465,9 @@
        "html": null,
        "color": "#052743",
        "tamanoEm": 2.5,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": null
       },
       {
        "_id": "c701131",
@@ -465,7 +481,9 @@
        "color": "#ffffff",
        "tamanoEm": 2,
        "grosor": "600",
-       "interlineadoEm": 1.2
+       "interlineadoEm": 1.2,
+       "fondo": "#052743",
+       "sombra": null
       }
      ]
     }
@@ -481,7 +499,7 @@
     "attachment": "fixed",
     "velo": "rgba(35, 73, 101, 0.58)"
    },
-   "relleno": "5% 0% 0% 0%",
+   "relleno": "60px 0px 0px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -520,7 +538,9 @@
            "color": "#ffffff",
            "tamanoEm": 1.8,
            "grosor": "600",
-           "interlineadoEm": 1.2
+           "interlineadoEm": 1.2,
+           "fondo": null,
+           "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
           }
          ]
         }
@@ -555,7 +575,7 @@
     "repetir": "no-repeat",
     "attachment": null
    },
-   "relleno": "5% 0% 5% 0%",
+   "relleno": "60px 0px 60px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -581,7 +601,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 2.5,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": "#052743",
+       "sombra": null
       },
       {
        "_id": "f1c9e15",
@@ -594,7 +616,9 @@
        "html": null,
        "color": "#052743",
        "tamanoEm": 1.2,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": null
       },
       {
        "_id": "8a77078",
@@ -607,7 +631,9 @@
        "html": null,
        "color": "#052743",
        "tamanoEm": 2.5,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": null
       },
       {
        "_id": "d723245",
@@ -620,7 +646,9 @@
        "html": null,
        "color": "#052743",
        "tamanoEm": 1.2,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": null
       },
       {
        "_id": "7d57cf1",
@@ -633,7 +661,9 @@
        "html": "La NASA ha gastado más de $ 15 billones para tratar de desarrollar su propio cohete de elevación pesado. Una vez que esté operativo, SLS costará a la NASA más de $ 1 billón por lanzamiento, The Falcon Heavy de SpaceX, desarrollado a costo cero para el contribuyente, y 10 veces menor costo por lanzamiento.<br>Nos dan resúmenes vagos, confusos, engorrosos y hasta incompletos.<br>Los ciudadanos estamos en una relación de inferioridad, que hemos aceptado sumisamente. ¡Es hora de cambiar!",
        "color": "#052743",
        "tamanoEm": 1.8,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": null
       },
       {
        "tipo": "grupo",
@@ -696,7 +726,7 @@
     "attachment": "fixed",
     "velo": "rgba(35, 73, 101, 0.58)"
    },
-   "relleno": "5% 0% 0% 0%",
+   "relleno": "60px 0px 0px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -722,7 +752,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 2.5,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": "#ff7100",
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "c11dce0",
@@ -736,7 +768,9 @@
        "color": "#ffffff",
        "tamanoEm": 1.8,
        "grosor": "600",
-       "interlineadoEm": 1.4
+       "interlineadoEm": 1.4,
+       "fondo": null,
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "e95552d",
@@ -749,7 +783,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 1.1,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "673d0b3",
@@ -762,7 +798,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 1.1,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "cd48e44",
@@ -775,7 +813,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 1.1,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "99878b4",
@@ -788,7 +828,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 1.1,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "b9b6c54",
@@ -801,7 +843,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 1.1,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "tipo": "grupo",
@@ -920,7 +964,7 @@
     "repetir": "no-repeat",
     "attachment": null
    },
-   "relleno": "5% 0% 5% 0%",
+   "relleno": "60px 0px 60px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -946,7 +990,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 2.5,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": "#052743",
+       "sombra": null
       },
       {
        "_id": "63851b9",
@@ -959,7 +1005,9 @@
        "html": null,
        "color": "#052743",
        "tamanoEm": 2.5,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": null
       },
       {
        "tipo": "grupo",
@@ -1062,7 +1110,7 @@
     "attachment": null,
     "velo": "rgba(23, 99, 19, 0.45)"
    },
-   "relleno": "5% 0% 5% 0%",
+   "relleno": "60px 0px 60px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -1088,7 +1136,9 @@
        "html": null,
        "color": "#052743",
        "tamanoEm": 2.5,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": "#ffffff",
+       "sombra": null
       },
       {
        "_id": "2a4b57e",
@@ -1111,7 +1161,9 @@
        "color": "#ffffff",
        "tamanoEm": 1.8,
        "grosor": "600",
-       "interlineadoEm": 1.2
+       "interlineadoEm": 1.2,
+       "fondo": null,
+       "sombra": null
       },
       {
        "_id": "1fffb3e",
@@ -1125,7 +1177,9 @@
        "color": "#ffffff",
        "tamanoEm": 1.8,
        "grosor": "600",
-       "interlineadoEm": 1.2
+       "interlineadoEm": 1.2,
+       "fondo": null,
+       "sombra": null
       },
       {
        "_id": "b69496d",
@@ -1139,7 +1193,9 @@
        "color": "#ff7100",
        "tamanoEm": 1.8,
        "grosor": "600",
-       "interlineadoEm": 1.2
+       "interlineadoEm": 1.2,
+       "fondo": null,
+       "sombra": null
       },
       {
        "_id": "cd4bd0c",
@@ -1153,7 +1209,9 @@
        "color": "#ffffff",
        "tamanoEm": 1.4,
        "grosor": "600",
-       "interlineadoEm": 1.2
+       "interlineadoEm": 1.2,
+       "fondo": null,
+       "sombra": null
       }
      ]
     },
@@ -1175,7 +1233,7 @@
     "attachment": "fixed",
     "velo": "rgba(35, 73, 101, 0.58)"
    },
-   "relleno": "5% 0% 0% 0%",
+   "relleno": "60px 0px 0px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -1201,7 +1259,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 2.5,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": "#ff7100",
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "tipo": "grupo",
@@ -1227,7 +1287,9 @@
            "color": "#ffffff",
            "tamanoEm": 2.5,
            "grosor": "600",
-           "interlineadoEm": 1.2
+           "interlineadoEm": 1.2,
+           "fondo": null,
+           "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
           },
           {
            "_id": "1a002d9",
@@ -1241,7 +1303,9 @@
            "color": "#ffffff",
            "tamanoEm": 1.6,
            "grosor": "600",
-           "interlineadoEm": 1.2
+           "interlineadoEm": 1.2,
+           "fondo": null,
+           "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
           },
           {
            "_id": "ce6c8dd",
@@ -1251,7 +1315,12 @@
            "etiqueta": "Ver en Youtube",
            "etiquetaHover": "IR",
            "enlace": "https://www.youtube.com/watch?v=rStL7niR7gs",
-           "icono": ""
+           "icono": "",
+           "fondo": "#052743",
+           "fondoHover": "#ff7100",
+           "borde": "2px solid #ffffff",
+           "tamanoEm": 2,
+           "alineacion": "center"
           }
          ]
         },
@@ -1311,7 +1380,7 @@
     "repetir": "no-repeat",
     "attachment": null
    },
-   "relleno": "5% 0% 4% 0%",
+   "relleno": "60px 0px 48px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -1349,7 +1418,9 @@
            "html": null,
            "color": "#ffffff",
            "tamanoEm": 2.5,
-           "grosor": "600"
+           "grosor": "600",
+           "fondo": "#052743",
+           "sombra": null
           },
           {
            "_id": "c09d653",
@@ -1363,7 +1434,9 @@
            "color": "#052743",
            "tamanoEm": 1.8,
            "grosor": "600",
-           "interlineadoEm": 1.2
+           "interlineadoEm": 1.2,
+           "fondo": null,
+           "sombra": null
           },
           {
            "_id": "ac0ba01",
@@ -1377,7 +1450,9 @@
            "color": "#ff7100",
            "tamanoEm": 1.8,
            "grosor": "600",
-           "interlineadoEm": 1.2
+           "interlineadoEm": 1.2,
+           "fondo": null,
+           "sombra": null
           },
           {
            "_id": "38b4075",
@@ -1412,7 +1487,7 @@
     "attachment": "fixed",
     "velo": "rgba(35, 73, 101, 0.58)"
    },
-   "relleno": "5% 0% 5% 0%",
+   "relleno": "60px 0px 60px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -1438,7 +1513,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 2.5,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": "#ff7100",
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "8807366",
@@ -1451,7 +1528,9 @@
        "html": "“A pesar de que la tecnología y la comunicación han avanzado mucho, trayendo más formas para que los ciudadanos hagan oír su voz, la participación democrática se limita en gran medida a emitir un voto entre las partes una vez cada pocos años.<br>La ‘Democracia’ tiene 2 siglos sin cambiar!, se congeló en el tiempo, en un momento particular, cada vez más distante de lo que somos ahora.<br>Una reforma radical del sistema de participación política, no solo es deseable sino absolutamente necesaria”",
        "color": "#ffffff",
        "tamanoEm": 1.8,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "b8f47b0",
@@ -1464,7 +1543,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 1.2,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "01286c3",
@@ -1494,7 +1575,7 @@
     "repetir": "no-repeat",
     "attachment": null
    },
-   "relleno": "5% 0% 0% 0%",
+   "relleno": "60px 0px 0px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -1520,7 +1601,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 2.5,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": "#052743",
+       "sombra": null
       },
       {
        "tipo": "grupo",
@@ -1562,7 +1645,9 @@
            "color": "#052743",
            "tamanoEm": 1.6,
            "grosor": "600",
-           "interlineadoEm": 1.2
+           "interlineadoEm": 1.2,
+           "fondo": null,
+           "sombra": null
           },
           {
            "_id": "0f50143",
@@ -1576,7 +1661,9 @@
            "color": "#ff7100",
            "tamanoEm": 1.6,
            "grosor": "600",
-           "interlineadoEm": 1.2
+           "interlineadoEm": 1.2,
+           "fondo": null,
+           "sombra": null
           },
           {
            "_id": "e534258",
@@ -1590,7 +1677,9 @@
            "color": "#052743",
            "tamanoEm": 1.2,
            "grosor": "600",
-           "interlineadoEm": 1.2
+           "interlineadoEm": 1.2,
+           "fondo": null,
+           "sombra": null
           }
          ]
         }
@@ -1636,7 +1725,9 @@
            "color": "#052743",
            "tamanoEm": 1.6,
            "grosor": "600",
-           "interlineadoEm": 1.2
+           "interlineadoEm": 1.2,
+           "fondo": null,
+           "sombra": null
           },
           {
            "_id": "1bf5901",
@@ -1650,7 +1741,9 @@
            "color": "#ff7100",
            "tamanoEm": 1.6,
            "grosor": "600",
-           "interlineadoEm": 1.2
+           "interlineadoEm": 1.2,
+           "fondo": null,
+           "sombra": null
           },
           {
            "_id": "e9c9bec",
@@ -1664,7 +1757,9 @@
            "color": "#052743",
            "tamanoEm": 1.6,
            "grosor": "600",
-           "interlineadoEm": 1.2
+           "interlineadoEm": 1.2,
+           "fondo": null,
+           "sombra": null
           }
          ]
         }
@@ -1690,7 +1785,7 @@
     "attachment": "fixed",
     "velo": "rgba(35, 73, 101, 0.58)"
    },
-   "relleno": "5% 0% 5% 0%",
+   "relleno": "60px 0px 60px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -1716,7 +1811,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 2.5,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": "#ff7100",
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "26dbd88",
@@ -1738,7 +1835,9 @@
        "html": "“Esperan que el mercado lidere el camino y luego se apresuran a ponerse al día.<br>Elaboran decisiones de última hora que se implementan en toda la sociedad, sin primero prototipar o probar ideas en poblaciones más pequeñas. No se puede usar la palabra 'experimento' en el gobierno: es una palabra desagradable, porque significa que puedes fallar\"",
        "color": "#ffffff",
        "tamanoEm": 1.8,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "ed71681",
@@ -1751,7 +1850,9 @@
        "html": null,
        "color": "#ff7100",
        "tamanoEm": 1.8,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "7eee6a6",
@@ -1764,7 +1865,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 1.2,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": "1px 1px 2px #000000"
       }
      ]
     },
@@ -1785,7 +1888,7 @@
     "repetir": "no-repeat",
     "attachment": null
    },
-   "relleno": "5% 0% 5% 0%",
+   "relleno": "60px 0px 60px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -1823,7 +1926,9 @@
            "html": null,
            "color": "#ffffff",
            "tamanoEm": 2.5,
-           "grosor": "600"
+           "grosor": "600",
+           "fondo": "#052743",
+           "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
           },
           {
            "_id": "fe1a932",
@@ -1846,7 +1951,9 @@
            "color": "#052743",
            "tamanoEm": 1.8,
            "grosor": "600",
-           "interlineadoEm": 1.2
+           "interlineadoEm": 1.2,
+           "fondo": null,
+           "sombra": null
           },
           {
            "_id": "ce528f2",
@@ -1860,7 +1967,9 @@
            "color": "#ff7100",
            "tamanoEm": 1.8,
            "grosor": "600",
-           "interlineadoEm": 1.2
+           "interlineadoEm": 1.2,
+           "fondo": null,
+           "sombra": null
           },
           {
            "_id": "621a277",
@@ -1874,7 +1983,9 @@
            "color": "#052743",
            "tamanoEm": 1.2,
            "grosor": "600",
-           "interlineadoEm": 1.2
+           "interlineadoEm": 1.2,
+           "fondo": null,
+           "sombra": null
           }
          ]
         }
@@ -1909,7 +2020,7 @@
     "attachment": "fixed",
     "velo": "rgba(35, 73, 101, 0.58)"
    },
-   "relleno": "5% 0% 0% 0%",
+   "relleno": "60px 0px 0px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -1935,7 +2046,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 2.5,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": "#ff7100",
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "3e5ca6e",
@@ -1948,7 +2061,9 @@
        "html": "“Si hay algo que consistentemente llama la atención de los políticos, es el dinero”.<br>Estadísticamente, está demostrado que es más fácil que se aprueban leyes que favorezcan a los financistas de los políticos, que la aprobación de leyes que favorezcan a los ciudadanos.",
        "color": "#ffffff",
        "tamanoEm": 1.8,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "07623b8",
@@ -1961,7 +2076,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 1.2,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "0ab74e5",
@@ -1983,7 +2100,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 2.5,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "2ad27e9",
@@ -2013,7 +2132,7 @@
     "repetir": "no-repeat",
     "attachment": null
    },
-   "relleno": "5% 0% 5% 0%",
+   "relleno": "60px 0px 60px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -2051,7 +2170,9 @@
            "html": null,
            "color": "#ffffff",
            "tamanoEm": 2.5,
-           "grosor": "600"
+           "grosor": "600",
+           "fondo": "#052743",
+           "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
           },
           {
            "_id": "028b546",
@@ -2074,7 +2195,9 @@
            "color": "#052743",
            "tamanoEm": 1.8,
            "grosor": "600",
-           "interlineadoEm": 1.2
+           "interlineadoEm": 1.2,
+           "fondo": null,
+           "sombra": null
           },
           {
            "_id": "8739ccf",
@@ -2088,7 +2211,9 @@
            "color": "#ff7100",
            "tamanoEm": 1.8,
            "grosor": "600",
-           "interlineadoEm": 1.2
+           "interlineadoEm": 1.2,
+           "fondo": null,
+           "sombra": null
           },
           {
            "_id": "329d113",
@@ -2102,7 +2227,9 @@
            "color": "#052743",
            "tamanoEm": 1.2,
            "grosor": "600",
-           "interlineadoEm": 1.2
+           "interlineadoEm": 1.2,
+           "fondo": null,
+           "sombra": null
           }
          ]
         }
@@ -2128,7 +2255,7 @@
     "attachment": "fixed",
     "velo": "rgba(35, 73, 101, 0.58)"
    },
-   "relleno": "5% 0% 0% 0%",
+   "relleno": "60px 0px 0px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -2154,7 +2281,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 2.5,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": "#ff7100",
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "84ad410",
@@ -2167,7 +2296,9 @@
        "html": "La esperanza de vida está disminuyendo, depresión, suicidio, crimen, adicción a las drogas, y despoblamiento.<br>Las encuestas muestran que tanto hombres como mujeres son ¡cada dia mas infelices!",
        "color": "#ffffff",
        "tamanoEm": 1.8,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "tipo": "grupo",
@@ -2235,7 +2366,9 @@
        "html": "Hombres y mujeres se están usando mutuamente solo por sexo, sin ningún tipo de compromiso, lo cual afirma aún más las sensaciones de depresión y ansiedad y el sentimiento de estar siendo usado.<br>Las parejas tienen menos oportunidades económicas, para asentarse y tener hijos.",
        "color": "#ffffff",
        "tamanoEm": 1.8,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "28401e9",
@@ -2265,7 +2398,7 @@
     "repetir": "no-repeat",
     "attachment": null
    },
-   "relleno": "5% 0% 5% 0%",
+   "relleno": "60px 0px 60px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -2285,7 +2418,9 @@
        "html": "La Destrucción<br>planificada de la Familia",
        "color": "#ffffff",
        "tamanoEm": 2.5,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": "#052743",
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "543bcf4",
@@ -2299,7 +2434,9 @@
        "color": "#052743",
        "tamanoEm": 1.8,
        "grosor": "600",
-       "interlineadoEm": 1.2
+       "interlineadoEm": 1.2,
+       "fondo": null,
+       "sombra": null
       }
      ]
     },
@@ -2338,7 +2475,7 @@
     "attachment": "fixed",
     "velo": "rgba(35, 73, 101, 0.58)"
    },
-   "relleno": "5% 0% 0% 0%",
+   "relleno": "60px 0px 0px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -2364,7 +2501,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 2.5,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": "#ff7100",
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "a065764",
@@ -2377,7 +2516,9 @@
        "html": "El actual modelo económico nos esclaviza financieramente a la maquinaria consumista que destruye al planeta, y que no nos hace feliz, consumir más, endeudarnos más, contaminar más. La carrera de la rata, con la eterna promesa de que el siguiente producto nos dará felicidad.<br>Vivimos en un planeta finito, pero el actual modelo económico requiere una expansión infinita, lo cual es contrario al sentido común.<br>Mientras la automatización elimina puestos de trabajo, éste modelo económico anacrónico, obliga a aumentar la edad de jubilación. Por eso vemos esta realidad torcida, de adultos mayores trabajando mientras los jóvenes no consiguen empleo.",
        "color": "#ffffff",
        "tamanoEm": 1.8,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       }
      ]
     },
@@ -2409,7 +2550,7 @@
     "attachment": null,
     "velo": "rgba(255, 255, 255, 0.3)"
    },
-   "relleno": "5% 0% 5% 0%",
+   "relleno": "60px 0px 60px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -2445,7 +2586,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 2.5,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": "#052743",
+       "sombra": null
       },
       {
        "_id": "ceca591",
@@ -2459,7 +2602,9 @@
        "color": "#052743",
        "tamanoEm": 1.8,
        "grosor": "600",
-       "interlineadoEm": 1.2
+       "interlineadoEm": 1.2,
+       "fondo": null,
+       "sombra": null
       },
       {
        "_id": "1618338",
@@ -2473,7 +2618,9 @@
        "color": "#ff7100",
        "tamanoEm": 2.2,
        "grosor": "600",
-       "interlineadoEm": 1.2
+       "interlineadoEm": 1.2,
+       "fondo": null,
+       "sombra": null
       }
      ]
     }
@@ -2489,7 +2636,7 @@
     "attachment": "fixed",
     "velo": "rgba(35, 73, 101, 0.58)"
    },
-   "relleno": "5% 0% 5% 0%",
+   "relleno": "60px 0px 60px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -2515,7 +2662,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 2.5,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": "#ff7100",
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "80399d8",
@@ -2528,7 +2677,9 @@
        "html": "¿Hay metas públicas, de lo que debemos lograr en mi sociedad, en mi ciudad, en mi comunidad? NO!<br>¿Se puede lograr un objetivo, sin querer lograr ese objetivo primero?<br>La sociedad no tiene un propósito definido. Pero como individuo si hay claramente un propósito: la satisfacción material egoísta, demostrado por lo materialista de muchas publicaciones en las redes sociales.<br>Sí no hay un propósito social, entonces no importa el bienestar social, por lo tanto lo que hay que hacer es sacar el máximo provecho individual, lo que resulta en la destrucción que vemos en la sociedad.",
        "color": "#ffffff",
        "tamanoEm": 1.8,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       }
      ]
     },
@@ -2559,7 +2710,7 @@
     "repetir": "no-repeat",
     "attachment": null
    },
-   "relleno": "6% 0% 6% 0%",
+   "relleno": "72px 0px 72px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -2598,7 +2749,9 @@
            "color": "#052743",
            "tamanoEm": 1.8,
            "grosor": "600",
-           "interlineadoEm": 1.2
+           "interlineadoEm": 1.2,
+           "fondo": null,
+           "sombra": null
           },
           {
            "_id": "a03684e",
@@ -2612,7 +2765,9 @@
            "color": "#ff7100",
            "tamanoEm": 2,
            "grosor": "800",
-           "interlineadoEm": 1.2
+           "interlineadoEm": 1.2,
+           "fondo": null,
+           "sombra": null
           }
          ]
         }
@@ -2638,7 +2793,7 @@
     "attachment": "fixed",
     "velo": "rgba(35, 73, 101, 0.58)"
    },
-   "relleno": "5% 0% 0% 0%",
+   "relleno": "60px 0px 0px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -2664,7 +2819,9 @@
        "html": "Está documentado, que<br>Elites y Gobierno hacen todo lo posible para controlar la población.",
        "color": "#ffffff",
        "tamanoEm": 2.5,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "f19e67a",
@@ -2687,7 +2844,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 2.5,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": "#ff7100",
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "066bf1b",
@@ -2700,7 +2859,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 1.1,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "56dccf5",
@@ -2730,7 +2891,7 @@
     "repetir": "no-repeat",
     "attachment": null
    },
-   "relleno": "5% 0% 5% 0%",
+   "relleno": "60px 0px 60px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -2778,7 +2939,9 @@
            "color": "#052743",
            "tamanoEm": 1.8,
            "grosor": "600",
-           "interlineadoEm": 1.2
+           "interlineadoEm": 1.2,
+           "fondo": null,
+           "sombra": null
           },
           {
            "_id": "08a3e04",
@@ -2792,7 +2955,9 @@
            "color": "#ff7100",
            "tamanoEm": 2,
            "grosor": "600",
-           "interlineadoEm": 1.2
+           "interlineadoEm": 1.2,
+           "fondo": null,
+           "sombra": null
           }
          ]
         }
@@ -2818,7 +2983,7 @@
     "attachment": "fixed",
     "velo": "rgba(35, 73, 101, 0.58)"
    },
-   "relleno": "5% 0% 0% 0%",
+   "relleno": "60px 0px 0px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -2844,7 +3009,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 2.5,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": "#ff7100",
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "8ce97ce",
@@ -2866,7 +3033,9 @@
        "html": "Hemos sido conformistas con el desempeño mediocre del gobierno. Porque los seres humanos somos conformistas.<br>“La gran mentira de ser un adulto, es creer que otros adultos saben lo que hacen, generalmente no lo saben!. y esto aplica también para el gobierno.<br>Si realmente deseamos tener un país mejor, dejemos de tratar a las personas en el gobierno como si fueran expertos y supieran lo que están haciendo, y quitemosle todo el poder al gobierno que sea humanamente posible.”",
        "color": "#ffffff",
        "tamanoEm": 1.8,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "d68f8f1",
@@ -2879,7 +3048,9 @@
        "html": null,
        "color": "#ff7100",
        "tamanoEm": 2,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "b06c436",
@@ -2892,7 +3063,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 1.8,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "2180124",
@@ -2922,7 +3095,7 @@
     "repetir": "no-repeat",
     "attachment": null
    },
-   "relleno": "5% 0% 5% 0%",
+   "relleno": "60px 0px 60px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -2970,7 +3143,9 @@
            "color": "#052743",
            "tamanoEm": 2,
            "grosor": "600",
-           "interlineadoEm": 1.2
+           "interlineadoEm": 1.2,
+           "fondo": null,
+           "sombra": null
           },
           {
            "_id": "16d3169",
@@ -2984,7 +3159,9 @@
            "color": "#ff7100",
            "tamanoEm": 2.2,
            "grosor": "600",
-           "interlineadoEm": 1.2
+           "interlineadoEm": 1.2,
+           "fondo": null,
+           "sombra": null
           }
          ]
         }
@@ -3010,7 +3187,7 @@
     "attachment": "fixed",
     "velo": "rgba(35, 73, 101, 0.58)"
    },
-   "relleno": "5% 0% 0% 0%",
+   "relleno": "60px 0px 0px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -3036,7 +3213,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 2.2,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": "#ff7100",
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "817be0d",
@@ -3058,7 +3237,9 @@
        "html": "Deja de ser apático. Deja de ser neutral. Deja de ser cómplice.<br>Comience a reconocer el mal, la injusticia y la tiranía por lo que son. Exigir transparencia gubernamental. Vote con los pies (es decir, participe en el activismo, no solo en la política).<br>“Lo único necesario para el triunfo del mal es que los hombres buenos [y las mujeres] no hagan nada\". Es hora de que hombres y mujeres buenos hagan algo. Y pronto”",
        "color": "#ffffff",
        "tamanoEm": 1.8,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "c9c1e33",
@@ -3071,7 +3252,9 @@
        "html": null,
        "color": "#ff7100",
        "tamanoEm": 2,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "a9f678c",
@@ -3084,7 +3267,9 @@
        "html": "https://www.rutherford.org/publications_resources/john_whiteheads_commentary/is_th<br>e_u.s._government_evil_you_tell_me_short",
        "color": "#ffffff",
        "tamanoEm": 1.2,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "21de8a0",
@@ -3114,7 +3299,7 @@
     "repetir": "no-repeat",
     "attachment": null
    },
-   "relleno": "5% 0% 5% 0%",
+   "relleno": "60px 0px 60px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -3140,7 +3325,10 @@
         "¿Qué no podemos hacer?"
        ],
        "color": "#ffffff",
-       "tamanoEm": 4.3
+       "tamanoEm": 4.3,
+       "colorAntes": null,
+       "tamanoAntesEm": "",
+       "efecto": "fx2"
       },
       {
        "_id": "f350bc6",
@@ -3154,7 +3342,9 @@
        "color": "#052743",
        "tamanoEm": 1.8,
        "grosor": "600",
-       "interlineadoEm": 1.2
+       "interlineadoEm": 1.2,
+       "fondo": null,
+       "sombra": null
       }
      ]
     },
@@ -3176,7 +3366,7 @@
     "attachment": "fixed",
     "velo": "rgba(35, 73, 101, 0.58)"
    },
-   "relleno": "5% 0% 0% 0%",
+   "relleno": "60px 0px 0px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -3202,7 +3392,9 @@
        "html": "Resumen de<br>La Granja de Animales de George Orwell",
        "color": "#ffffff",
        "tamanoEm": 2.5,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": "#ff7100",
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "543b9a6",
@@ -3215,7 +3407,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 1.8,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "08798a5",
@@ -3228,7 +3422,9 @@
        "html": "• Lo que sea que pase sobre dos piernas es un enemigo.<br>• Lo que sea que tenga cuatro patas, o tenga alas, es un amigo.<br>• Ningún animal debe usar ropa.<br>• Ningún animal debe dormir en una cama.<br>• Ningún animal debe beber alcohol.<br>• Ningún animal debe matar a ningún otro animal.<br>• Todos los animales son iguales.",
        "color": "#ffffff",
        "tamanoEm": 1.8,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "facfba5",
@@ -3241,7 +3437,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 1.8,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "d74bc91",
@@ -3254,7 +3452,9 @@
        "html": "• Ningún animal debe dormir en una cama con sábanas.<br>• Ningún animal debe beber alcohol en exceso.<br>• Ningún animal debe matar a ningún otro animal sin causa.",
        "color": "#ffffff",
        "tamanoEm": 1.8,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "90a34ef",
@@ -3267,7 +3467,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 1.8,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "622e957",
@@ -3280,7 +3482,9 @@
        "html": "• Todos los animales son iguales, pero algunos animales son más iguales que otros.",
        "color": "#ffffff",
        "tamanoEm": 1.8,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "505e59a",
@@ -3293,7 +3497,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 1.8,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "ceed48e",
@@ -3306,7 +3512,9 @@
        "html": null,
        "color": "#ff7100",
        "tamanoEm": 2,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "9e45497",
@@ -3336,7 +3544,7 @@
     "repetir": "no-repeat",
     "attachment": null
    },
-   "relleno": "5% 0% 5% 0%",
+   "relleno": "60px 0px 60px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -3374,7 +3582,9 @@
            "html": null,
            "color": "#ffffff",
            "tamanoEm": 2.5,
-           "grosor": "600"
+           "grosor": "600",
+           "fondo": "#052743",
+           "sombra": null
           },
           {
            "_id": "1bdce8e",
@@ -3388,7 +3598,9 @@
            "color": "#052743",
            "tamanoEm": 2.5,
            "grosor": "600",
-           "interlineadoEm": 1.2
+           "interlineadoEm": 1.2,
+           "fondo": null,
+           "sombra": null
           }
          ]
         }
@@ -3414,7 +3626,7 @@
     "attachment": "fixed",
     "velo": "rgba(35, 73, 101, 0.58)"
    },
-   "relleno": "4% 0% 4% 0%",
+   "relleno": "48px 0px 48px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -3459,7 +3671,9 @@
         "¿Qué Proponemos?"
        ],
        "color": "#ffffff",
-       "tamanoEm": 5
+       "tamanoEm": 5,
+       "colorAntes": null,
+       "efecto": "fx2"
       },
       {
        "_id": "c0491ca",
@@ -3472,7 +3686,9 @@
        "html": "Una sociedad hecha por diseño, que solucione todos estos problemas.<br>E-Nation un cripto Estado distribuido físicamente en todo el mundo, y su proyecto hermano la Cripto moneda UnityCoin.",
        "color": "#ffffff",
        "tamanoEm": 1.8,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "tipo": "grupo",
@@ -3534,7 +3750,7 @@
     "repetir": "no-repeat",
     "attachment": null
    },
-   "relleno": "6% 0% 6% 0%",
+   "relleno": "72px 0px 72px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -3573,7 +3789,9 @@
            "color": "#052743",
            "tamanoEm": 3.2,
            "grosor": "600",
-           "interlineadoEm": 1.2
+           "interlineadoEm": 1.2,
+           "fondo": null,
+           "sombra": null
           },
           {
            "_id": "9678b38",
@@ -3587,7 +3805,9 @@
            "color": "#052743",
            "tamanoEm": 3.2,
            "grosor": "600",
-           "interlineadoEm": 1.2
+           "interlineadoEm": 1.2,
+           "fondo": null,
+           "sombra": null
           },
           {
            "_id": "49a0990",
@@ -3600,7 +3820,9 @@
             "¡Para Todos Nosotros!"
            ],
            "color": "#ff7100",
-           "tamanoEm": 5.3
+           "tamanoEm": 5.3,
+           "colorAntes": null,
+           "efecto": "fx2"
           }
          ]
         }
@@ -3626,7 +3848,7 @@
     "attachment": "fixed",
     "velo": "rgba(35, 73, 101, 0.58)"
    },
-   "relleno": "5% 0% 0% 0%",
+   "relleno": "60px 0px 0px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -3664,7 +3886,9 @@
            "html": null,
            "color": "#ffffff",
            "tamanoEm": 2.5,
-           "grosor": "600"
+           "grosor": "600",
+           "fondo": "#ff7100",
+           "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
           },
           {
            "_id": "9f70d89",
@@ -3678,7 +3902,9 @@
            "color": "#ffffff",
            "tamanoEm": 1.8,
            "grosor": "600",
-           "interlineadoEm": 1.2
+           "interlineadoEm": 1.2,
+           "fondo": null,
+           "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
           }
          ]
         }
@@ -3717,7 +3943,9 @@
            "color": "#ff7100",
            "tamanoEm": 2.2,
            "grosor": "600",
-           "interlineadoEm": 1.2
+           "interlineadoEm": 1.2,
+           "fondo": null,
+           "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
           }
          ]
         },
@@ -3747,7 +3975,9 @@
            "color": "#ff7100",
            "tamanoEm": 2.2,
            "grosor": "600",
-           "interlineadoEm": 1.2
+           "interlineadoEm": 1.2,
+           "fondo": null,
+           "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
           }
          ]
         }
@@ -3781,7 +4011,7 @@
     "repetir": "no-repeat",
     "attachment": null
    },
-   "relleno": "5% 0% 5% 0%",
+   "relleno": "60px 0px 60px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -3801,7 +4031,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 4,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": "#ff7100",
+       "sombra": null
       },
       {
        "tipo": "grupo",
@@ -3973,7 +4205,7 @@
     "attachment": "fixed",
     "velo": "rgba(35, 73, 101, 0.58)"
    },
-   "relleno": "5% 0% 0% 0%",
+   "relleno": "60px 0px 0px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -4011,7 +4243,9 @@
            "html": null,
            "color": "#ffffff",
            "tamanoEm": 2.5,
-           "grosor": "600"
+           "grosor": "600",
+           "fondo": "#ff7100",
+           "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
           },
           {
            "_id": "d118531",
@@ -4025,7 +4259,9 @@
            "color": "#ffffff",
            "tamanoEm": 1.8,
            "grosor": "600",
-           "interlineadoEm": 1.2
+           "interlineadoEm": 1.2,
+           "fondo": null,
+           "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
           }
          ]
         }
@@ -4060,7 +4296,7 @@
     "attachment": null,
     "velo": "rgba(255, 255, 255, 0.31)"
    },
-   "relleno": "5% 0% 5% 0%",
+   "relleno": "60px 0px 60px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -4086,7 +4322,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 2.5,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": "#052743",
+       "sombra": null
       },
       {
        "_id": "9bb3100",
@@ -4099,7 +4337,9 @@
        "html": null,
        "color": "#052743",
        "tamanoEm": 1.8,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": null
       },
       {
        "_id": "fad1616",
@@ -4112,7 +4352,9 @@
        "html": "• Facilita tomar decisiones informadas en la selección de productos, servicios.<br>• Facilita confiar en personas basado en su reputación.<br>• Elimina burocracia, regulaciones, manipulación y estafas.<br>• Deja la última decisión en manos del ciudadano.",
        "color": "#052743",
        "tamanoEm": 1.8,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": null
       },
       {
        "_id": "f580c15",
@@ -4125,7 +4367,9 @@
        "html": null,
        "color": "#052743",
        "tamanoEm": 1.8,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": null
       }
      ]
     },
@@ -4147,7 +4391,7 @@
     "attachment": "fixed",
     "velo": "rgba(35, 73, 101, 0.58)"
    },
-   "relleno": "10% 0% 0% 0%",
+   "relleno": "120px 0px 0px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -4185,7 +4429,9 @@
            "html": null,
            "color": "#ffffff",
            "tamanoEm": 2.5,
-           "grosor": "600"
+           "grosor": "600",
+           "fondo": "#ff7100",
+           "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
           },
           {
            "_id": "ad0a455",
@@ -4199,7 +4445,9 @@
            "color": "#ffffff",
            "tamanoEm": 2.8,
            "grosor": "600",
-           "interlineadoEm": 1.2
+           "interlineadoEm": 1.2,
+           "fondo": null,
+           "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
           }
          ]
         }
@@ -4233,7 +4481,7 @@
     "repetir": "no-repeat",
     "attachment": null
    },
-   "relleno": "5% 0% 3% 0%",
+   "relleno": "60px 0px 36px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -4259,7 +4507,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 2.5,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": "#052743",
+       "sombra": null
       },
       {
        "_id": "0791598",
@@ -4281,7 +4531,9 @@
        "html": null,
        "color": "#052743",
        "tamanoEm": 1.8,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": null
       },
       {
        "_id": "9ade68e",
@@ -4294,7 +4546,9 @@
        "html": null,
        "color": "#ff7100",
        "tamanoEm": 2,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": null
       },
       {
        "_id": "d5fc88c",
@@ -4307,7 +4561,9 @@
        "html": null,
        "color": "#052743",
        "tamanoEm": 1.2,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": null
       },
       {
        "_id": "920780f",
@@ -4320,7 +4576,9 @@
        "html": null,
        "color": "#052743",
        "tamanoEm": 1.8,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": null
       },
       {
        "_id": "96f7971",
@@ -4333,7 +4591,9 @@
        "html": null,
        "color": "#052743",
        "tamanoEm": 1.2,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": null
       }
      ]
     },
@@ -4355,7 +4615,7 @@
     "attachment": "fixed",
     "velo": "rgba(35, 73, 101, 0.58)"
    },
-   "relleno": "10% 0% 0% 0%",
+   "relleno": "120px 0px 0px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -4393,7 +4653,9 @@
            "html": "No queremos<br>eliminar al gobierno o luchar contra él",
            "color": "#ffffff",
            "tamanoEm": 2.5,
-           "grosor": "600"
+           "grosor": "600",
+           "fondo": "#ff7100",
+           "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
           },
           {
            "_id": "e08ec7f",
@@ -4407,7 +4669,9 @@
            "color": "#ffffff",
            "tamanoEm": 2.8,
            "grosor": "600",
-           "interlineadoEm": 1.2
+           "interlineadoEm": 1.2,
+           "fondo": null,
+           "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
           }
          ]
         }
@@ -4442,7 +4706,7 @@
     "attachment": null,
     "velo": "rgba(255, 255, 255, 0.31)"
    },
-   "relleno": "15% 0% 15% 0%",
+   "relleno": "180px 0px 180px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -4462,7 +4726,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 2.5,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": "#052743",
+       "sombra": null
       },
       {
        "_id": "210a793",
@@ -4475,7 +4741,9 @@
        "html": "El hombre no vive por sus propios valores, sino por los valores que la sociedad dice que son importantes.<br>Aparte de las necesidades corporales, las demás necesidades son solo por el orgullo que la sociedad demanda.",
        "color": "#052743",
        "tamanoEm": 1.8,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": null
       },
       {
        "_id": "e538f0a",
@@ -4488,7 +4756,9 @@
        "html": null,
        "color": "#ff7100",
        "tamanoEm": 1.8,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": null
       },
       {
        "_id": "63ca75c",
@@ -4501,7 +4771,9 @@
        "html": null,
        "color": "#052743",
        "tamanoEm": 1.8,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": null
       },
       {
        "_id": "552ccd9",
@@ -4514,7 +4786,9 @@
         "Necesitamos E-Nation"
        ],
        "color": "#ff7100",
-       "tamanoEm": 3
+       "tamanoEm": 3,
+       "colorAntes": null,
+       "efecto": "fx2"
       }
      ]
     },
@@ -4546,7 +4820,7 @@
     "attachment": "fixed",
     "velo": "rgba(35, 73, 101, 0.58)"
    },
-   "relleno": "5% 0% 0% 0%",
+   "relleno": "60px 0px 0px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -4584,7 +4858,9 @@
            "html": null,
            "color": "#ffffff",
            "tamanoEm": 2.5,
-           "grosor": "600"
+           "grosor": "600",
+           "fondo": "#ff7100",
+           "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
           },
           {
            "_id": "f4e4643",
@@ -4598,7 +4874,9 @@
            "color": "#ffffff",
            "tamanoEm": 1.8,
            "grosor": "600",
-           "interlineadoEm": 1.2
+           "interlineadoEm": 1.2,
+           "fondo": null,
+           "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
           }
          ]
         }
@@ -4632,7 +4910,7 @@
     "repetir": "no-repeat",
     "attachment": null
    },
-   "relleno": "5% 0% 6% 0%",
+   "relleno": "60px 0px 72px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -4667,7 +4945,9 @@
        "html": null,
        "color": "#052743",
        "tamanoEm": 2,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": null
       },
       {
        "_id": "561267f",
@@ -4680,7 +4960,9 @@
        "html": null,
        "color": "#ff7100",
        "tamanoEm": 2.5,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": null
       }
      ]
     },
@@ -4702,7 +4984,7 @@
     "attachment": "fixed",
     "velo": "rgba(35, 73, 101, 0.58)"
    },
-   "relleno": "5% 0% 0% 0%",
+   "relleno": "60px 0px 0px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -4740,7 +5022,9 @@
            "html": "Necesitamos tu participación<br>La cantidad es nuestra fuerza",
            "color": "#ffffff",
            "tamanoEm": 2.5,
-           "grosor": "600"
+           "grosor": "600",
+           "fondo": "#ff7100",
+           "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
           },
           {
            "_id": "3c26190",
@@ -4813,7 +5097,7 @@
     "repetir": "no-repeat",
     "attachment": null
    },
-   "relleno": "7% 0% 7% 0%",
+   "relleno": "84.00000000000001px 0px 84.00000000000001px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -4833,7 +5117,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 2.5,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": "#052743",
+       "sombra": null
       },
       {
        "_id": "3ed4d12",
@@ -4846,7 +5132,9 @@
        "html": null,
        "color": "#052743",
        "tamanoEm": 2,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": null
       },
       {
        "_id": "b1cbf55",
@@ -4860,7 +5148,9 @@
        "color": "#052743",
        "tamanoEm": 1.8,
        "grosor": "600",
-       "interlineadoEm": 1.2
+       "interlineadoEm": 1.2,
+       "fondo": null,
+       "sombra": null
       }
      ]
     },
@@ -4891,7 +5181,7 @@
     "attachment": "fixed",
     "velo": "rgba(35, 73, 101, 0.58)"
    },
-   "relleno": "5% 0% 0% 0%",
+   "relleno": "60px 0px 0px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -4917,7 +5207,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 2.5,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": "#ff7100",
+       "sombra": "1px 1px 2px rgba(0,0,0,0.88)"
       },
       {
        "_id": "d375d84",
@@ -4959,7 +5251,7 @@
     "repetir": "no-repeat",
     "attachment": null
    },
-   "relleno": "7% 0% 7% 0%",
+   "relleno": "84.00000000000001px 0px 84.00000000000001px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -4988,7 +5280,9 @@
        "html": null,
        "color": "#052743",
        "tamanoEm": 1.2,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": "0px 0px 5px #FFFFFF"
       },
       {
        "_id": "042de1f",
@@ -5002,7 +5296,9 @@
        "color": "#052743",
        "tamanoEm": 1,
        "grosor": "300",
-       "interlineadoEm": 1.1
+       "interlineadoEm": 1.1,
+       "fondo": null,
+       "sombra": null
       }
      ]
     }
@@ -5030,7 +5326,9 @@
        "html": null,
        "color": "#052743",
        "tamanoEm": 2.5,
-       "grosor": "600"
+       "grosor": "600",
+       "fondo": null,
+       "sombra": null
       },
       {
        "_id": "0ff81c2",

@@ -11,9 +11,9 @@ Migrar todo lo que hoy vive en WordPress y Read the Docs —el sitio `e-nation.o
 
 ## Next Step
 
-**Esperar la revisión del usuario** de los cinco ajustes de efectos ya desplegados en `web.unitygenerator.com/presentation/`: el brillo del logotipo de SBM Juegos, la ola recuperada en Venezuela, el palpitar del logotipo de SBM Pagos, el de las monedas de UnityCoin y el del mapamundi de Mutual Welfare. Todo verificado en producción: deriva de centro 0,00 px, 0 solapes y 0 declaraciones descartadas en los dos idiomas.
+**Revisar en producción la ola visual 3** (cabecera con iconos y subrayado, hero full-bleed con el lienzo centrado, contenedor 1140 y secciones boxed, formulario y tarjetas, JetSlider con puntos y avance cada 5 s, línea de tiempo del diagrama y texto animado). Todo está verificado en local con capturas: home **8949 px** frente a 8627 del original y presentación **36782** frente a 36540, 0 solapes y 0 declaraciones descartadas.
 
-Cuando confirme, seguir con la Fase 6 (contenido real de la home y las presentaciones, parallax, `org-piramid`). Los tres pendientes que salieron al medir el carrusel están anotados en `findings.md`: el slider `snake` trae 1 diapositiva y el original 2, nuestro banner mide 1166 px frente a los 1120 del original, y el original aplica `text-shadow` a las capas de texto.
+Si el usuario confirma, seguir con lo que queda de la Fase 6: **páginas legales por script** (sin que el texto pase por el chat) y el contenido de `/articles/` y `/news/`. Después, Fase 7 (SEO y juez visual).
 
 ## Current Phase
 
@@ -78,16 +78,21 @@ El 301 desde los hostnames del ensayo al real sale solo del punto 2. El orden es
 
 ### Phase 6: Reconstrucción del sitio
 - [x] Header y footer
+- [x] **Cabecera fiel al original**: 70 px, logo ouroboros 70×70 sin wordmark, iconos FontAwesome auto-hospedados, orden Home/Presentation/Constitution/Articles/News y subrayado cian→verde del ítem activo
 - [x] **Carrusel de banners** (`banner-publicidad`): 5 diapositivas por idioma, huérfanas descartadas, fuentes auto-hospedadas, geometría del marcado resuelto, ola en las letras y flotación. **0 solapes medidos** en las 6 diapositivas y en los dos idiomas
 - [x] Contenido real de la home y de las presentaciones: modelo extraído de Elementor y renderizado (93 % y 99 % del texto del original)
+- [x] **Hero full-bleed** a 1425 px, capas con techo de escala (`min(px,cqw)`) y lienzo de 1200 centrado para las capas por píxeles
+- [x] **Contenedor 1140** y secciones boxed con su caja de 1200; porcentajes de Elementor convertidos a px solo en secciones de primer nivel
+- [x] **Parallax de la home**: fondo fijo reproducido; el velo de Elementor ya no tapa la imagen
+- [x] **Diagrama piramidal**: línea de tiempo completa (pirámide → círculo → comprobación SVG) con ciclo de 10,5 s
+- [x] **JetSlider**: avance cada 5 s, puntos 15×15, flechas circulares de 53 px, franja de 32 px
+- [x] **Texto animado** (`jet-animated-text`): `before_text_content` extraído y onda de letras al entrar en pantalla
+- [x] **Formulario** a la medida del original (442 px, dos campos, botón degradado cian→verde) y **tarjetas** con marco naranja y título centrado
+- [x] **Banners de la presentación** con el efecto `roxy` (imagen 111,3 %, título al 27 %) y botón azul de YouTube
 - [ ] Noticias, artículos y verificar: en el original son casi vacías (título, buscador y formulario de Mailchimp); reproducir ese formulario
 - [ ] Páginas legales por script (su texto no pasa por el chat)
-- [ ] Parallax de la home: medir por elemento (fondo fijo vs transform) antes de reconstruir
-- [ ] `org-piramid.png`: reconstruir la superposición
-- [ ] Interiores; páginas legales por script
-- [ ] `/verify/` inspeccionado antes de prometer nada
-- [ ] Pendientes del carrusel, medidos: el slider `snake` trae 1 diapositiva y el original 2; el ancho del banner es 1166 px frente a 1120 del original; el original aplica `text-shadow` a las capas de texto
-**Status:** in_progress
+- [ ] Interiores (noticias y artículos) y contenido enlazado al otro WordPress
+**Status:** in_progress (queda lo legal y las interiores)
 
 ### Phase 7: SEO y verificación visual
 - [ ] Titles/meta traducidos por idioma; focus keywords de Rank Math verificadas tras el build

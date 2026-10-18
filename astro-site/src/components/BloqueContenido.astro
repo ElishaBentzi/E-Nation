@@ -24,6 +24,7 @@ import BloqueContenido from './BloqueContenido.astro';
 import BannerSlider from '../../../shared/banner-slider/BannerSlider.astro';
 import JetSlider from '../../../shared/jet-slider/JetSlider.astro';
 import FormularioSuscripcion from './FormularioSuscripcion.astro';
+import TextoAnimado from './TextoAnimado.astro';
 import type { Locale } from '../i18n/config.ts';
 import { rutaDe } from '../i18n/config.ts';
 
@@ -74,6 +75,34 @@ const estBloque = [
   .contenedor-columnas > .grupo {
     grid-column: 1 / -1;
   }
+
+  /*
+   * TARJETAS DEL EFECTO `roxy`. La imagen es mas ancha que la tarjeta y se
+   * desplaza a la izquierda; es lo que da la altura y el recorte del original.
+   * El titulo va a ~27 % de la altura y la descripcion aparece al pasar el raton.
+   */
+  .banner-tarjeta__imagen {
+    width: 111.3%;
+    max-width: none;
+    margin-inline-start: -5.65%;
+    transition: transform 350ms ease;
+  }
+  .banner-tarjeta:hover .banner-tarjeta__imagen {
+    transform: translateX(5.65%);
+  }
+  .banner-tarjeta__titulo {
+    top: 27%;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  .banner-tarjeta__texto {
+    top: 36%;
+  }
+
+  /* Hover del boton de JetElements: fondo naranja declarado en el original. */
+  .boton-jet:hover {
+    background-color: var(--boton-hover, #ff7100) !important;
+  }
 </style>
 
 {(() => {
@@ -83,6 +112,8 @@ const estBloque = [
     bloque.grosor ? `font-weight:${bloque.grosor}` : '',
     bloque.interlineadoEm ? `line-height:${bloque.interlineadoEm}` : '',
     bloque.alineacion === 'center' ? 'text-align:center' : '',
+    bloque.fondo ? `background-color:${bloque.fondo}` : '',
+    bloque.sombra ? `text-shadow:${bloque.sombra}` : '',
   ].filter(Boolean).join(';') || undefined;
 
   switch (bloque.tipo) {
@@ -97,11 +128,11 @@ const estBloque = [
             <div class="pointer-events-none absolute inset-0" style={`background-color:${bloque.fondo.velo}`} />
           )}
           <div
-            class="contenedor-columnas relative mx-auto w-full max-w-[1240px]"
+            class="contenedor-columnas relative mx-auto w-full max-w-[1140px]"
             style={bloque.relleno ? `padding:${bloque.relleno}` : undefined}
           >
             {(bloque.columnas as any[]).map((columna) => (
-              <div class="columna" style={`--columnas:${Math.max(1, Math.round(columna.ancho || 100))}`}>
+              <div class="columna" style={`--columnas:${Math.max(1, Math.round(columna.ancho || 100))};${columna.relleno ? `padding:${columna.relleno};` : ''}`}>
                 {(columna.bloques as any[]).map((interno: any) => (
                   <BloqueContenido bloque={interno} locale={locale} />
                 ))}
@@ -132,44 +163,52 @@ const estBloque = [
       return <div style={estBloque}><FormularioSuscripcion locale={locale} /></div>;
 
     case 'banner':
+      /*
+       * TARJETA DEL EFECTO `roxy` DE JETELEMENTS, medida en el original:
+       *
+       *   - la imagen mide el 111,3 % del ancho de la tarjeta y se desplaza -50 px
+       *     (5,6 %) a la izquierda; eso da la altura de la tarjeta (599 px para un
+       *     ancho de 539) y el recorte lateral que se ve.
+       *   - el título va centrado a ~27 % de la altura, a 37,5 px (2,5 em).
+       *   - la descripción está OCULTA y aparece al pasar el ratón sobre un velo
+       *     negro; el título se queda.
+       *   - el título visible NO lleva el velo: comprobado pixel a pixel, la
+       *     tarjeta no tiene tinte azul; el aspecto azulado de la captura era el
+       *     fondo de la sección, no una capa sobre la imagen.
+       */
       return (
         <article
-          class:list={['banner-tarjeta group relative overflow-hidden rounded', bloque.clases]}
+          class:list={['banner-tarjeta group relative overflow-hidden', bloque.clases]}
           style={estBloque}
         >
           {bloque.imagen && (
-            /* La imagen VA EN EL FLUJO, no absoluta: es la que da a la tarjeta su
-               altura, igual que en el original — alli la tarjeta mide lo que mide la
-               imagen (en la presentacion salen cuadradas, a tamano natural). Con la
-               imagen absoluta la tarjeta colapsaba a la altura del titulo. */
             <img
               src={bloque.imagen}
               alt=""
               loading="lazy"
               decoding="async"
-              class="banner-tarjeta__imagen block h-auto w-full"
+              class="banner-tarjeta__imagen block h-auto"
             />
           )}
-          {/* El velo del original aparece al pasar el raton, con el texto. */}
           <div
-            class="banner-tarjeta__velo pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-90"
-            style={`background-color:${bloque.fondoHover || '#095287'}`}
+            class="banner-tarjeta__velo pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-70"
+            style={`background-color:${bloque.fondoHover || '#000000'}`}
           />
           <h5
-            class="banner-tarjeta__titulo absolute inset-x-0 top-0 p-4 text-center font-medium"
+            class="banner-tarjeta__titulo absolute inset-x-0 text-center"
             style={[
               'color:' + (bloque.colorTitulo || '#ffffff'),
-              bloque.tamanoTituloEm ? `font-size:${bloque.tamanoTituloEm}em` : 'font-size:2.2em',
+              `font-size:${bloque.tamanoTituloEm || 2.5}em`,
             ].join(';')}
           >
             {bloque.titulo}
           </h5>
           {bloque.texto && (
             <p
-              class="banner-tarjeta__texto absolute inset-x-0 bottom-0 translate-y-2 p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+              class="banner-tarjeta__texto absolute inset-x-0 translate-y-2 p-4 text-center opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
               style={[
                 'color:' + (bloque.colorTexto || '#ffffff'),
-                'font-size:1.2em',
+                'font-size:1.5em',
                 'line-height:1.2',
               ].join(';')}
             >
@@ -180,33 +219,44 @@ const estBloque = [
       );
 
     case 'caja':
+      /*
+       * TARJETA CON IMAGEN Y TÍTULO CENTRADO (`jet-animated-box`).
+       *
+       * El original pone el marco naranja en la COLUMNA que envuelve al widget
+       * (`.elementor-widget-wrap`, `border:2px solid #ff7100; padding:10px`), no
+       * en el widget: por eso una inspección del propio widget no encontraba
+       * ningún borde. Aquí el marco va en la tarjeta, que es visualmente lo
+       * mismo y no obliga a extraer el estilo de la columna.
+       *
+       * Título a 30 px, peso 600, blanco y CENTRADO, no abajo a la izquierda. La
+       * descripción del dorso aparece al pasar el ratón sobre el velo azul.
+       */
       return (
         <article
-          class="group relative w-full [perspective:1200px]"
-          style={[bloque.alto ? `min-height:${bloque.alto}px` : '', estBloque ?? ''].filter(Boolean).join(';') || undefined}
+          class="caja-tarjeta group mx-auto w-full max-w-[274px] border-2 border-[#ff7100] p-[10px]"
+          style={estBloque}
         >
-          <div class="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-            <div class="relative overflow-hidden rounded [backface-visibility:hidden]">
-              {bloque.imagen && (
-                <img src={bloque.imagen} alt="" loading="lazy" decoding="async" class="h-64 w-full object-cover" />
-              )}
-              <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4">
-                <h3
-                  class="text-2xl font-semibold"
-                  style={bloque.colorTitulo ? `color:${bloque.colorTitulo}` : undefined}
-                >
-                  {bloque.titulo}
-                </h3>
-                {bloque.descripcion && <p class="text-sm">{bloque.descripcion}</p>}
-              </div>
-            </div>
-            <div
-              class="absolute inset-0 flex flex-col justify-center gap-2 rounded p-4 [backface-visibility:hidden] [transform:rotateY(180deg)]"
-              style={bloque.fondoDorso ? `background-color:${bloque.fondoDorso}` : undefined}
+          <div class="relative aspect-[250/280] w-full overflow-hidden">
+            {bloque.imagen && (
+              <img src={bloque.imagen} alt="" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover" />
+            )}
+            <h3
+              class="absolute inset-0 grid place-items-center p-3 text-center leading-[1.13]"
+              style={[
+                'color:' + (bloque.colorTitulo || '#ffffff'),
+                'font-size:30px',
+                'font-weight:600',
+                'text-shadow:0 2px 5px rgba(0,0,0,.45)',
+              ].join(';')}
             >
-              {bloque.tituloDorso && <h3 class="text-xl font-semibold">{bloque.tituloDorso}</h3>}
-              <p style={bloque.colorDescripcion ? `color:${bloque.colorDescripcion}` : undefined}>
-                {bloque.descripcionDorso}
+              {bloque.titulo}
+            </h3>
+            <div
+              class="absolute inset-0 flex items-center justify-center p-4 text-center opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              style="background-color:rgba(9,82,135,.92)"
+            >
+              <p class="text-[15px] leading-snug text-white">
+                {bloque.descripcionDorso || bloque.descripcion}
               </p>
             </div>
           </div>
@@ -214,17 +264,23 @@ const estBloque = [
       );
 
     case 'textoAnimado':
-      /* La palabra que rota entre las que declara el original. Sin guion queda la
-         primera, que es un texto correcto. El guion del sitio la hace girar. */
+      /*
+       * Dos líneas: el texto fijo que el extractor antes perdía y la palabra
+       * animada. El componente se encarga del efecto `fx2` al entrar en pantalla.
+       * Se le pasa `estBloque` (margen del widget), no `estTitulo`: los tamaños y
+       * colores de cada línea son distintos y los decide el componente.
+       */
       return (
-        <p
-          class="font-semibold"
-          style={[estTitulo ?? '', estBloque ?? ''].filter(Boolean).join(';') || undefined}
-          data-texto-animado
-          data-palabras={JSON.stringify(bloque.palabras ?? [])}
-        >
-          {bloque.antes} <span class="texto-rotante text-[var(--color-acento)]">{bloque.palabras?.[0]}</span> {bloque.despues}
-        </p>
+        <TextoAnimado
+          antes={bloque.antes}
+          despues={bloque.despues}
+          palabras={bloque.palabras ?? []}
+          color={bloque.color}
+          tamanoEm={bloque.tamanoEm}
+          colorAntes={bloque.colorAntes}
+          tamanoAntesEm={bloque.tamanoAntesEm}
+          retardoMs={bloque.retardoMs ?? 400}
+        />
       );
 
     case 'lista':
@@ -238,31 +294,61 @@ const estBloque = [
       return bloque.imagen ? (
         /* A TAMANO NATURAL y centrada, como la pinta Elementor: estirarla a
            `w-full` multiplicaba su tamano (un pasaporte de 300x291 se renderizaba a
-           1224 de ancho). `max-w-full` solo la limita si la columna es mas estrecha. */
+           1224 de ancho). `self-center` es imprescindible: la columna es flex y con
+           `align-items: stretch` la imagen se estiraba al ancho del carril aunque
+           su ancho natural fuera 300 (el logo de YouTube salia a 896 px). */
         <img src={bloque.imagen} alt={bloque.alt || ''} loading="lazy" decoding="async"
-          class="mx-auto block h-auto w-auto max-w-full rounded" style={estBloque} />
+          class="mx-auto block h-auto w-auto max-w-full self-center rounded" style={estBloque} />
       ) : null;
 
-    case 'boton':
+    case 'boton': {
+      /* Boton de JetElements: cuando declara colores, se usan los suyos (fondo,
+         borde y tamano de letra medidos); si no, se mantiene el CTA del tema. */
+      const estiloBoton = bloque.fondo
+        ? [
+            `background-color:${bloque.fondo}`,
+            'color:#ffffff',
+            bloque.borde ? `border:${bloque.borde}` : 'border:0',
+            `font-size:${bloque.tamanoEm || 1.5}em`,
+            'font-weight:600',
+            'line-height:1',
+            'padding:0.6em 1em',
+            bloque.fondoHover ? `--boton-hover:${bloque.fondoHover}` : '',
+            bloque.alineacion === 'center' ? 'margin-inline:auto' : '',
+            estBloque ?? '',
+          ].filter(Boolean).join(';')
+        : undefined;
       return (
         <a
           href={bloque.enlace || rutaDe('presentation', locale)}
-          class="inline-flex w-fit items-center gap-2 rounded bg-[var(--color-acento)] px-6 py-3 font-semibold text-white"
-          style={estBloque}
+          class:list={[
+            'inline-flex w-fit items-center gap-2 rounded font-semibold text-white',
+            bloque.fondo ? 'boton-jet' : 'bg-brand px-6 py-3',
+          ]}
+          style={estiloBoton ?? estBloque}
+          {...(bloque.enlace && /^https?:/.test(bloque.enlace) ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
         >
           {bloque.etiqueta}
         </a>
       );
+    }
 
     case 'slider': {
       const s = bloque._slider;
+      /*
+       * El hero (`e-nation`) va a ANCHO COMPLETO: el original lo renderiza a 1425
+       * px, no a los 1140 del contenedor. Los sliders decorativos y el carrusel
+       * de banners NO: van dentro de su columna.
+       */
+      const anchoCompleto = s?.alias === 'e-nation';
       return s ? (
         <BannerSlider
           config={s.config}
           etiqueta={s.etiqueta}
           etiquetaAnterior={s.anterior}
           etiquetaSiguiente={s.siguiente}
-          clase="bg-[#0b1a2b]"
+          clase=""
+          anchoCompleto={anchoCompleto}
         />
       ) : null;
     }

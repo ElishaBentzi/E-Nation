@@ -18,8 +18,9 @@
  *   - alto 400 px (300 en tableta, 280 en movil), de `slider_height`
  *   - titulo a 75 px y peso 600, descripcion a 22,5 px, los dos blancos y centrados
  *   - contenido centrado en la diapositiva (flex, centrado en los dos ejes)
- *   - flechas de 53x53, fondo #003f7f y #ff7100 al pasar el raton, a 20 px del borde
- *   - NO avanza solo: comprobado que su pista no se mueve al esperar
+ *   - flechas de 53x53 circulares, fondo #003f7f y #ff7100 al pasar el raton, a 20 px del borde
+ *   - puntos de 15x15, borde blanco y activo naranja, en una franja de 32 px bajo la imagen
+ *   - avanza solo cada 5 s (`sliderAutoplayDelay` medido), con pausa al pasar el raton
  *
  * Las medidas de texto van en `cqw` (tanto por ciento del ancho del componente) para
  * que escalen con el, igual que en el carrusel de banners: en `px` se quedarian
@@ -72,6 +73,7 @@ const estiloAlto = `--js-alto:${alto ?? 400}px;--js-alto-t:${altoTableta ?? 300}
     class="jet-slider"
     id={id}
     data-jet-slider
+    data-intervalo="5000"
     role="region"
     aria-roledescription="carrusel"
     aria-label={etiqueta}
@@ -112,11 +114,24 @@ const estiloAlto = `--js-alto:${alto ?? 400}px;--js-alto-t:${altoTableta ?? 300}
     {diapositivas.length > 1 && (
       <>
         <button type="button" class="jet-slider__flecha jet-slider__flecha--antes" data-anterior aria-label={etiquetaAnterior}>
-          <span aria-hidden="true">‹</span>
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m15 18-6-6 6-6" /></svg>
         </button>
         <button type="button" class="jet-slider__flecha jet-slider__flecha--despues" data-siguiente aria-label={etiquetaSiguiente}>
-          <span aria-hidden="true">›</span>
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6" /></svg>
         </button>
+        {/* Puntos del original: 15x15, borde blanco de 2 px, activo naranja. */}
+        <div class="jet-slider__puntos" role="tablist" aria-label={etiqueta}>
+          {diapositivas.map((_, i) => (
+            <button
+              type="button"
+              role="tab"
+              class="jet-slider__punto"
+              data-indice={i}
+              aria-selected={i === 0 ? 'true' : 'false'}
+              aria-label={`${i + 1} / ${diapositivas.length}`}
+            />
+          ))}
+        </div>
       </>
     )}
   </div>
@@ -131,22 +146,30 @@ const estiloAlto = `--js-alto:${alto ?? 400}px;--js-alto-t:${altoTableta ?? 300}
     position: relative;
     overflow: hidden;
     width: 100%;
-    height: var(--js-alto, 400px);
+    /* El original mide 432 de alto: 400 de imagen + 32 de la franja de puntos. */
+    height: calc(var(--js-alto, 400px) + 32px);
     /* Para que el texto en `cqw` escale con el ancho del carrusel. */
     container-type: inline-size;
-    background-color: #54595f;
+    background-color: transparent;
   }
   @media (max-width: 1023px) {
-    .jet-slider { height: var(--js-alto-t, 300px); }
+    .jet-slider { height: calc(var(--js-alto-t, 300px) + 32px); }
   }
   @media (max-width: 767px) {
-    .jet-slider { height: var(--js-alto-m, 280px); }
+    .jet-slider { height: calc(var(--js-alto-m, 280px) + 32px); }
   }
 
   .jet-slider__pista {
     display: flex;
-    height: 100%;
+    height: var(--js-alto, 400px);
     transition: transform 500ms cubic-bezier(0.22, 0.61, 0.36, 1);
+    background-color: #54595f;
+  }
+  @media (max-width: 1023px) {
+    .jet-slider__pista { height: var(--js-alto-t, 300px); }
+  }
+  @media (max-width: 767px) {
+    .jet-slider__pista { height: var(--js-alto-m, 280px); }
   }
   .jet-slider__diapo {
     position: relative;
@@ -194,19 +217,20 @@ const estiloAlto = `--js-alto:${alto ?? 400}px;--js-alto-t:${altoTableta ?? 300}
     color: #ffffff;
   }
 
-  /* Flechas: 53x53, a 20 px del borde y centradas en vertical. */
+  /* Flechas: 53x53 circulares, a 20 px del borde y centradas en la IMAGEN
+     (no en el total, que incluye la franja de puntos). */
   .jet-slider__flecha {
     position: absolute;
-    top: 50%;
+    top: calc((100% - 32px) / 2);
     translate: 0 -50%;
     display: grid;
     place-items: center;
     width: 53px;
     height: 53px;
+    padding: 0;
     border: 0;
+    border-radius: 50%;
     cursor: pointer;
-    font-size: 1.9rem;
-    line-height: 1;
     color: #ffffff;
     background-color: var(--js-flecha, #003f7f);
     transition: background-color 200ms ease;
@@ -218,6 +242,31 @@ const estiloAlto = `--js-alto:${alto ?? 400}px;--js-alto-t:${altoTableta ?? 300}
   .jet-slider__flecha--antes { inset-inline-start: 20px; }
   .jet-slider__flecha--despues { inset-inline-end: 20px; }
 
+  /* Puntos: 15x15 con borde blanco de 2 px; el activo, relleno naranja. */
+  .jet-slider__puntos {
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    z-index: 2;
+  }
+  .jet-slider__punto {
+    width: 15px;
+    height: 15px;
+    padding: 0;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+  }
+  .jet-slider__punto[aria-selected='true'] {
+    background: #ff7100;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .jet-slider__pista { transition: none; }
   }
@@ -225,11 +274,15 @@ const estiloAlto = `--js-alto:${alto ?? 400}px;--js-alto-t:${altoTableta ?? 300}
 
 <script>
   /*
-   * Comportamiento del carrusel. NO avanza solo: medido en el original, su pista no
-   * se mueve al esperar, asi que el avance automatico se deja fuera a proposito.
+   * Comportamiento del carrusel.
    *
-   * Los botones se crean en el marcado y aqui solo se les da vida, para que el
-   * carrusel funcione igual si el guion no llega a cargar (se veria la primera
+   * AVANZA SOLO CADA 5 SEGUNDOS: es el `sliderAutoplayDelay` que declara el propio
+   * widget en el original (`sliderAutoplay: true`, `sliderAutoplayOnHover: pause`).
+   * Una medición anterior había concluido lo contrario porque la ventana de espera
+   * era más corta que el intervalo; dos capturas separadas 3 s lo desmintieron.
+   *
+   * Los botones se crean en el marcado y aquí solo se les da vida, para que el
+   * carrusel funcione igual si el guion no llega a cargar (se vería la primera
    * diapositiva, que es lo que se ve sin JavaScript).
    */
   function activar(raiz: HTMLElement) {
@@ -240,20 +293,39 @@ const estiloAlto = `--js-alto:${alto ?? 400}px;--js-alto-t:${altoTableta ?? 300}
     const diapos = [...raiz.querySelectorAll<HTMLElement>('[data-diapo]')];
     if (!pista || diapos.length < 2) return;
 
+    const puntos = [...raiz.querySelectorAll<HTMLElement>('[data-indice]')];
+    const intervalo = Number(raiz.dataset.intervalo) || 5000;
+    const sinMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     let actual = 0;
+    let temporizador: ReturnType<typeof setTimeout> | null = null;
+    let pausado = false;
+
     const ir = (i: number) => {
       actual = (i + diapos.length) % diapos.length;
       pista.style.transform = `translateX(${-actual * 100}%)`;
       diapos.forEach((d, k) => d.setAttribute('aria-hidden', k === actual ? 'false' : 'true'));
+      puntos.forEach((p, k) => p.setAttribute('aria-selected', k === actual ? 'true' : 'false'));
     };
 
-    raiz.querySelector('[data-anterior]')?.addEventListener('click', () => ir(actual - 1));
-    raiz.querySelector('[data-siguiente]')?.addEventListener('click', () => ir(actual + 1));
+    function programar() {
+      if (sinMovimiento || pausado) return;
+      if (temporizador) clearTimeout(temporizador);
+      temporizador = setTimeout(() => {
+        ir(actual + 1);
+        programar();
+      }, intervalo);
+    }
+
+    const navegar = (i: number) => { ir(i); programar(); };
+
+    raiz.querySelector('[data-anterior]')?.addEventListener('click', () => navegar(actual - 1));
+    raiz.querySelector('[data-siguiente]')?.addEventListener('click', () => navegar(actual + 1));
+    puntos.forEach((p) => p.addEventListener('click', () => navegar(Number(p.dataset.indice))));
 
     // Con el teclado, cuando el foco esta dentro del carrusel
     raiz.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowLeft') { ir(actual - 1); e.preventDefault(); }
-      if (e.key === 'ArrowRight') { ir(actual + 1); e.preventDefault(); }
+      if (e.key === 'ArrowLeft') { navegar(actual - 1); e.preventDefault(); }
+      if (e.key === 'ArrowRight') { navegar(actual + 1); e.preventDefault(); }
     });
 
     // Arrastrar con el raton o el dedo, que es lo que hace un carrusel de verdad
@@ -263,8 +335,21 @@ const estiloAlto = `--js-alto:${alto ?? 400}px;--js-alto-t:${altoTableta ?? 300}
       if (inicio === null) return;
       const recorrido = e.clientX - inicio;
       inicio = null;
-      if (Math.abs(recorrido) > 40) ir(actual + (recorrido < 0 ? 1 : -1));
+      if (Math.abs(recorrido) > 40) navegar(actual + (recorrido < 0 ? 1 : -1));
     });
+
+    // Pausa al pasar el ratón o al entrar con el teclado, como el original.
+    raiz.addEventListener('mouseenter', () => { pausado = true; if (temporizador) clearTimeout(temporizador); });
+    raiz.addEventListener('mouseleave', () => { pausado = false; programar(); });
+    raiz.addEventListener('focusin', () => { pausado = true; if (temporizador) clearTimeout(temporizador); });
+    raiz.addEventListener('focusout', () => { pausado = false; programar(); });
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) { if (temporizador) clearTimeout(temporizador); }
+      else programar();
+    });
+
+    programar();
   }
 
   const arrancar = () => document.querySelectorAll<HTMLElement>('[data-jet-slider]').forEach(activar);

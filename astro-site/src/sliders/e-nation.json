@@ -64,7 +64,8 @@
             "alto": "590px"
           },
           "estilos": null,
-          "desapareceMs": null
+          "desapareceMs": null,
+          "apareceMs": null
         },
         {
           "uid": 2,
@@ -87,7 +88,8 @@
             "alto": "590px"
           },
           "estilos": null,
-          "desapareceMs": null
+          "desapareceMs": null,
+          "apareceMs": null
         },
         {
           "uid": 3,
@@ -127,7 +129,8 @@
               "color": "capa"
             }
           },
-          "desapareceMs": null
+          "desapareceMs": null,
+          "apareceMs": null
         },
         {
           "uid": 4,
@@ -153,6 +156,7 @@
             "fondo": "#ff7100"
           },
           "desapareceMs": null,
+          "apareceMs": null,
           "bucle": {
             "tipo": "escala",
             "valor": 0.97
@@ -197,6 +201,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": null,
           "bucle": {
             "tipo": "escala",
             "valor": 0.97
@@ -240,7 +245,8 @@
               "color": "capa"
             }
           },
-          "desapareceMs": null
+          "desapareceMs": null,
+          "apareceMs": null
         },
         {
           "uid": 7,
@@ -264,6 +270,7 @@
           },
           "estilos": null,
           "desapareceMs": null,
+          "apareceMs": null,
           "bucle": {
             "tipo": "rotacion",
             "valor": 10
@@ -290,7 +297,8 @@
             "alto": "286px"
           },
           "estilos": null,
-          "desapareceMs": null
+          "desapareceMs": null,
+          "apareceMs": null
         },
         {
           "uid": 9,
@@ -313,7 +321,8 @@
             "alto": "219px"
           },
           "estilos": null,
-          "desapareceMs": null
+          "desapareceMs": null,
+          "apareceMs": null
         },
         {
           "uid": 10,
@@ -339,6 +348,7 @@
             "fondo": "#ffffff"
           },
           "desapareceMs": null,
+          "apareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 1,
@@ -387,7 +397,8 @@
               "color": null
             }
           },
-          "desapareceMs": null
+          "desapareceMs": null,
+          "apareceMs": null
         },
         {
           "uid": "middle",
@@ -427,7 +438,8 @@
               "color": null
             }
           },
-          "desapareceMs": null
+          "desapareceMs": null,
+          "apareceMs": null
         },
         {
           "uid": "bottom",
@@ -467,7 +479,8 @@
               "color": null
             }
           },
-          "desapareceMs": null
+          "desapareceMs": null,
+          "apareceMs": null
         }
       ]
     },
@@ -504,7 +517,8 @@
             "alto": "590px"
           },
           "estilos": null,
-          "desapareceMs": null
+          "desapareceMs": null,
+          "apareceMs": null
         },
         {
           "uid": 2,
@@ -527,7 +541,8 @@
             "alto": "590px"
           },
           "estilos": null,
-          "desapareceMs": null
+          "desapareceMs": null,
+          "apareceMs": null
         },
         {
           "uid": 3,
@@ -567,7 +582,8 @@
               "color": "capa"
             }
           },
-          "desapareceMs": null
+          "desapareceMs": null,
+          "apareceMs": null
         },
         {
           "uid": 4,
@@ -593,6 +609,7 @@
             "fondo": "#ff7100"
           },
           "desapareceMs": null,
+          "apareceMs": null,
           "bucle": {
             "tipo": "escala",
             "valor": 0.97
@@ -637,6 +654,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": null,
           "bucle": {
             "tipo": "escala",
             "valor": 0.97
@@ -680,7 +698,8 @@
               "color": "capa"
             }
           },
-          "desapareceMs": null
+          "desapareceMs": null,
+          "apareceMs": null
         },
         {
           "uid": 7,
@@ -704,6 +723,7 @@
           },
           "estilos": null,
           "desapareceMs": null,
+          "apareceMs": null,
           "bucle": {
             "tipo": "rotacion",
             "valor": 10
@@ -730,7 +750,8 @@
             "alto": "286px"
           },
           "estilos": null,
-          "desapareceMs": null
+          "desapareceMs": null,
+          "apareceMs": null
         },
         {
           "uid": 9,
@@ -753,7 +774,8 @@
             "alto": "219px"
           },
           "estilos": null,
-          "desapareceMs": null
+          "desapareceMs": null,
+          "apareceMs": null
         },
         {
           "uid": 10,
@@ -779,6 +801,7 @@
             "fondo": "#ffffff"
           },
           "desapareceMs": null,
+          "apareceMs": null,
           "animacion": {
             "desde": {
               "opacidad": 1,
@@ -827,7 +850,8 @@
               "color": null
             }
           },
-          "desapareceMs": null
+          "desapareceMs": null,
+          "apareceMs": null
         },
         {
           "uid": "middle",
@@ -867,7 +891,8 @@
               "color": null
             }
           },
-          "desapareceMs": null
+          "desapareceMs": null,
+          "apareceMs": null
         },
         {
           "uid": "bottom",
@@ -907,7 +932,8 @@
               "color": null
             }
           },
-          "desapareceMs": null
+          "desapareceMs": null,
+          "apareceMs": null
         }
       ]
     }

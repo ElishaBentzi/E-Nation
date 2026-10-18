@@ -11,7 +11,7 @@
 // LOCALES y LOCALE_LABELS ya no se usan aqui: el selector de idioma se movio a su
 // propio componente, que es quien los necesita.
 import { DEFAULT_LOCALE, type Locale, type PageId, rutaDe, idiomasDe } from '../i18n/config.ts';
-import { UI, ORDEN_NAV } from '../i18n/ui.ts';
+import { UI, ORDEN_NAV, ICONO_NAV } from '../i18n/ui.ts';
 import SelectorTema from '../components/SelectorTema.astro';
 import SelectorIdioma from '../components/SelectorIdioma.astro';
 import { urlDocs } from '../../site.config.mjs';
@@ -37,8 +37,11 @@ const t = UI[locale];
 /*
  * El carrusel del pie. Si el idioma no tiene diapositivas propias, devuelve null y
  * el pie se queda como estaba: mejor sin carrusel que con uno vacio.
+ *
+ * En la presentacion NO se repite: esa pagina ya lleva el mismo carrusel en su
+ * contenido, y ponerlo otra vez en el pie lo duplicaria en la misma pantalla.
  */
-const carrusel = carruselDeBanners(locale);
+const carrusel = page === 'presentation' ? null : carruselDeBanners(locale);
 
 // Origen canonico: la ruta de ESTA pagina en ESTE idioma.
 const canonical = rutaDe(page, locale) ?? '/';
@@ -97,45 +100,41 @@ const rutaXDefault = rutaDe(page, DEFAULT_LOCALE);
       {locale === 'es' ? 'Saltar al contenido' : locale === 'fr' ? 'Aller au contenu' : 'Skip to content'}
     </a>
 
-    <header class="border-b border-border-soft bg-white dark:bg-[#0f2236]">
-      <div class="container-site flex flex-wrap items-center justify-between gap-4 py-4">
-        <a href={rutaDe('home', locale)!} class="flex items-center gap-3">
-          <img src="/e-nation300x300.png" alt="E-Nation" width="48" height="48" class="h-12 w-12" />
-          <span class="font-heading text-xl font-semibold text-blue-dark dark:text-white">E-Nation</span>
+    <header class="relative z-50 border-b border-border-soft bg-white dark:bg-[#0f2236]">
+      <div class="cabecera-site flex flex-wrap items-center justify-between gap-x-6 lg:h-[70px] lg:flex-nowrap">
+        {/* El original pinta SOLO el disco ouroboros de 70x70, sin el nombre al lado. */}
+        <a href={rutaDe('home', locale)!} class="flex shrink-0 items-center" aria-label="E-Nation">
+          <img src="/e-nation300x300.png" alt="" width="70" height="70" class="h-[70px] w-[70px]" />
         </a>
 
-        <nav aria-label={t.navLabel}>
-          <ul class="flex flex-wrap items-center gap-x-6 gap-y-2">
+        <nav aria-label={t.navLabel} class="lg:ms-auto">
+          <ul class="flex flex-wrap items-center">
             {ORDEN_NAV.map((p) => {
-              const destino = rutaDe(p, locale);
+              const esConstitucion = p === 'constitution';
+              const destino = esConstitucion ? urlDocs(locale) : rutaDe(p, locale);
               if (!destino) return null;
-              const actual = p === page;
+              const actual = !esConstitucion && p === page;
               return (
-                <li>
+                <li class="lg:h-[70px]">
                   <a
                     href={destino}
                     aria-current={actual ? 'page' : undefined}
                     class:list={[
-                      'text-sm hover:text-brand',
-                      actual ? 'font-semibold text-brand' : 'text-ink dark:text-border-soft',
+                      'nav-item relative flex h-full items-center gap-[6px] px-[10px] py-[5px] text-[15px] hover:text-brand',
+                      actual ? 'text-ink' : 'text-ink dark:text-border-soft',
                     ]}
                   >
-                    {t.nav[p] ?? p}
+                    <i class="nav-icono" aria-hidden="true">{ICONO_NAV[p]}</i>
+                    {/* El subrayado del original mide lo que mide el TEXTO, no el ítem
+                        entero, va 5 px debajo y es un degradado cian→verde. */}
+                    <span class="nav-etiqueta relative">
+                      {t.nav[p] ?? (esConstitucion ? t.enlaceConstitucion : p)}
+                      {actual && <i class="nav-subrayado" aria-hidden="true" />}
+                    </span>
                   </a>
                 </li>
               );
             })}
-            {/* Enlace a la documentacion del Pacto Social.
-                El destino sale de site.config.mjs, que es el unico sitio donde se
-                cambia cuando los docs muden de dominio. Apunta al despliegue NUEVO
-                (docs.unitygenerator.com) y no a docs.e-nation.org, porque ese
-                ultimo todavia sirve Read the Docs y el visitante acabaria en la
-                herramienta que estamos dejando de usar. */}
-            <li>
-              <a href={urlDocs(locale)} class="text-sm text-ink hover:text-brand dark:text-border-soft">
-                {t.enlaceConstitucion}
-              </a>
-            </li>
           </ul>
         </nav>
 

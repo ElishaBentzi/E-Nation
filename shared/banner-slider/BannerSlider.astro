@@ -32,6 +32,8 @@ interface Capa {
   textoConHtml?: boolean;
   imagen?: string | null;
   alt?: string | null;
+  /** SVG en linea de una capa (la comprobacion del diagrama). */
+  svg?: string | null;
   posicion?: {
     horizontal?: string | null;
     vertical?: string | null;
@@ -64,6 +66,14 @@ interface Capa {
     duracionMs?: number | null;
     retardoMs?: number | null;
   } | null;
+  /**
+   * Línea de tiempo del slide. RevSlider la expresa con `frame_1` (entrada) y
+   * `frame_999` (salida), en milisegundos desde que el slide se activa. El
+   * diagrama de la home la usa: la pirámide desaparece a 1,3 s y el círculo
+   * entra a 4,3 s.
+   */
+  apareceMs?: number | null;
+  desapareceMs?: number | null;
   /**
    * Animacion CONTINUA, que se repite mientras el banner esta visible.
    *
@@ -112,6 +122,8 @@ interface Props {
       intervaloMs?: number | null;
       bucle?: boolean;
       pausaAlPasarRaton?: boolean;
+      /** Duración del ciclo completo de la línea de tiempo, si la hay. */
+      cicloMs?: number | null;
     };
     slides: Slide[];
   };
@@ -120,6 +132,13 @@ interface Props {
   etiquetaAnterior?: string;
   etiquetaSiguiente?: string;
   clase?: string;
+  /**
+   * Slider a ANCHO COMPLETO de la ventana (el hero de la home). El original
+   * renderiza ese slider a 1425 px aunque su lienzo de diseno mida 1200, y las
+   * capas NO se escalan hacia arriba: se quedan en su tamano de diseno y solo se
+   * mueve el centro. Ver la nota de `min(px, cqw)` en `estiloCapa`.
+   */
+  anchoCompleto?: boolean;
 }
 
 const {
@@ -128,6 +147,7 @@ const {
   etiquetaAnterior = 'Previous',
   etiquetaSiguiente = 'Next',
   clase = '',
+  anchoCompleto = false,
 } = Astro.props;
 
 const slides = config.slides ?? [];
@@ -146,21 +166,13 @@ const intervalo = comportamiento.intervaloMs && comportamiento.intervaloMs > 500
 const idCss = `bs-${String(config.id || 'x').replace(/[^a-z0-9-]/gi, '')}`;
 
 /**
- * Relacion de aspecto del lienzo, con sus variantes por dispositivo.
+ * Relacion de aspecto del lienzo.
  *
  * ES LO QUE EVITA QUE EL SLIDER COLAPSE. Sin alto declarado el contenedor mide 0,
  * los slides absolutos se apilan fuera de su sitio y aparecen encima del pie de
  * pagina. Es un fallo puramente visual: el build pasa y el HTML es correcto, asi
  * que solo se ve mirando la pagina.
- *
- * Los puntos de corte siguen los dispositivos de RevSlider (escritorio, portatil,
- * tableta, movil) y van de mayor a menor para que gane el ultimo que coincida.
  */
-const CORTES = [
-  { clave: 'portatil', max: 1199 },
-  { clave: 'tableta', max: 1023 },
-  { clave: 'movil', max: 767 },
-];
 const reglasLienzo = [];
 // Si el original limita el ancho, se respeta: las capas estan posicionadas en
 // pixeles relativos a ESE lienzo, asi que estirarlo a todo el ancho de la ventana
@@ -171,12 +183,22 @@ if (lienzo.anchoMaximo) {
 if (lienzo.ancho && lienzo.alto) {
   reglasLienzo.push(`.${idCss}{aspect-ratio:${lienzo.ancho}/${lienzo.alto};}`);
 }
-for (const c of CORTES) {
-  const v = lienzo.variantes?.[c.clave];
-  if (v?.ancho && v?.alto) {
-    reglasLienzo.push(`@media (max-width:${c.max}px){.${idCss}{aspect-ratio:${v.ancho}/${v.alto};}}`);
-  }
+/*
+ * ANCHO COMPLETO CON TECHO DE ALTO. El hero del original mide 1425x600: el ancho
+ * crece con la ventana pero el ALTO se queda en el del lienzo (600). Sin el
+ * `max-height`, el `aspect-ratio` daria 712 px a 1425 de ancho y el hero seria
+ * mas alto que el original.
+ */
+if (anchoCompleto && lienzo.alto) {
+  reglasLienzo.push(`.${idCss}{width:100%;max-height:${lienzo.alto}px;}`);
 }
+/*
+ * LAS `variantes` NO SON LA PROPORCION DEL SLIDER. Son los tamanos de capa por
+ * dispositivo, y usarlas como `aspect-ratio` rompia el responsive: a 620 px el
+ * hero medía 605×600 (aspecto de la variante movil 480×720) cuando el original
+ * mide 605×303 (su lienzo 1200×600 escalado). RevSlider conserva siempre la
+ * proporcion del lienzo y recoloca las capas por dispositivo.
+ */
 
 // Dimensiones del lienzo para convertir pixeles a porcentaje. Si la config no las
 // trae, se usan las del slider de banners del original, que es el caso conocido.
@@ -237,13 +259,40 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
     return (n / total) * 100;
   };
 
+  /**
+   * TAMANO CON TECHO DE ESCALA. RevSlider no escala las capas por encima del
+   * lienzo de diseno: en el hero fullwidth (1425 px sobre un lienzo de 1200) el
+   * texto sigue midiendo 110 px, no 130. Nuestro componente usaba `cqw` a secas,
+   * asi que a 1440 todo salia un 18 % mas grande y una banda de 762 px media 904.
+   *
+   * `min(px, cqw)` da exactamente ese comportamiento: escala hacia abajo con el
+   * contenedor y se queda clavado en el tamano de diseno cuando el contenedor es
+   * mayor. Para valores negativos (letter-spacing) el techo es en magnitud, asi
+   * que el equivalente es `max()`.
+   */
+  const dim = (valor: unknown, total: number) => {
+    if (valor === null || valor === undefined || valor === '') return null;
+    const n = parseFloat(String(valor).replace('px', ''));
+    if (Number.isNaN(n) || !total) return null;
+    const pct = ((n / total) * 100).toFixed(4);
+    return n < 0 ? `max(${n}px, ${pct}cqw)` : `min(${n}px, ${pct}cqw)`;
+  };
+
   if (p.porPixeles) {
-    const x = aPct(p.x, anchoLienzo) ?? 0;
+    /*
+     * EL LIENZO DE DISENO SE CENTRA cuando el contenedor es MAS ANCHO que el (el
+     * hero fullwidth: 1425 sobre un lienzo de 1200). RevSlider coloca las capas
+     * por pixeles desde la esquina del LIENZO, no de la ventana, asi que hay que
+     * sumar el margen de centrado: 112,5 px a 1425. Sin esto, el pasaporte, la
+     * familia y las diagonales salian 112 px a la izquierda de donde van.
+     *
+     * Cuando el contenedor es mas estrecho, el lienzo se escala y el margen es 0:
+     * `max(0px, ...)` deja ese caso como estaba.
+     */
+    const centrado = `max(0px, calc((100% - ${anchoLienzo}px) / 2))`;
+    const x = dim(p.x, anchoLienzo) ?? '0px';
     const y = aPct(p.y, altoLienzo) ?? 0;
-    // Coordenadas FISICAS (`left`/`top`) a proposito: esto replica una composicion
-    // grafica fija, y en un idioma RTL espejar el banner pondria los logos y las
-    // formas del reves. No es cromo de la interfaz, es una ilustracion.
-    partes.push(`left:${x.toFixed(4)}%`, `top:${y.toFixed(4)}%`);
+    partes.push(`left:calc(${centrado} + ${x})`, `top:${y.toFixed(4)}%`);
   } else {
     /*
      * EL NOMBRE DEL ANCLAJE VERTICAL NO ES UNO SOLO, y confundirlos es un fallo
@@ -273,7 +322,20 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
       anclajes[String(valor ?? porDefecto)] ?? anclajes[porDefecto];
     const ah = ancla(p.horizontal, 'left');
     const av = ancla(p.vertical, 'top');
-    partes.push(`left:${ah.base}`, `top:${av.base}`);
+    /*
+     * EL LIENZO CENTRADO TAMBIEN MANDA EN LOS ANCLAJES LATERALES. `x:11px` con
+     * anclaje izquierdo significa 11 px desde el borde del LIENZO de 1200, no
+     * desde el borde de la ventana. En el hero fullwidth hay 112,5 px de lienzo
+     * a cada lado, y sin sumarlos las diagonales naranjas quedaban pegadas al
+     * borde de la pantalla (medido: x=11 en vez de 123,5).
+     */
+    const centrado = `max(0px, calc((100% - ${anchoLienzo}px) / 2))`;
+    const baseX = ah.base === '50%'
+      ? '50%'
+      : ah.base === '100%'
+        ? `calc(100% - ${centrado})`
+        : `calc(${centrado} + 0px)`;
+    partes.push(`left:${baseX}`, `top:${av.base}`);
     const tx = ah.corrimiento;
     const ty = av.corrimiento;
 
@@ -315,12 +377,7 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
      * enseguida: el desplazamiento salia multiplicado por ~2,7 y los titulares se
      * iban al 271 % de la altura, muy por debajo del banner.
      */
-    const largo = (valor: unknown, total: number) => {
-      if (valor === null || valor === undefined || valor === '') return null;
-      const n = parseFloat(String(valor).replace('px', ''));
-      if (Number.isNaN(n) || !total) return null;
-      return `${((n / total) * 100).toFixed(4)}cqw`;
-    };
+    const largo = (valor: unknown, total: number) => dim(valor, total);
     const dx = largo(p.x, anchoLienzo);
     const dy = largo(p.y, anchoLienzo);
     const sx = dx ? `calc(${tx} + ${dx})` : tx;
@@ -330,8 +387,8 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
 
   if (p.zIndex) partes.push(`z-index:${p.zIndex}`);
 
-  const ancho = aPct(c.tamano?.ancho, anchoLienzo);
-  if (ancho) partes.push(`width:${ancho.toFixed(4)}%`);
+  const ancho = dim(c.tamano?.ancho, anchoLienzo);
+  if (ancho) partes.push(`width:${ancho}`);
 
   /*
    * LAS FORMAS (bandas, subrayados, lineas) necesitan TAMANO EN LOS DOS EJES y su
@@ -339,9 +396,9 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
    * diagrama. Una banda de 762x64 px sin `height` colapsa a un hilo invisible.
    * El fondo lo resuelve el generador desde el marcado (el JSON no lo declara).
    */
-  if (c.tipo === 'forma') {
+  if (c.tipo === 'forma' || c.svg) {
     const altoPct = aPct(c.tamano?.alto, altoLienzo);
-    if (altoPct) partes.push(`height:${altoPct.toFixed(4)}%`);
+    if (altoPct) partes.push(`height:${dim(c.tamano?.alto, altoLienzo) ?? altoPct.toFixed(4) + '%'}`);
     if (c.estilos?.fondo) partes.push(`background-color:${c.estilos.fondo}`);
   }
 
@@ -366,9 +423,14 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
      * `cqw` es una unidad de ancho.
      */
     const enCqw = (valor: unknown, total: number) => {
-      const n = parseFloat(String(valor ?? '').replace('px', ''));
+      const s = String(valor ?? '');
+      // `top`/`bottom` son palabras clave del original: entran desde el borde
+      // superior o inferior del lienzo entero.
+      if (s === 'bottom') return dim(altoLienzo, anchoLienzo);
+      if (s === 'top') return dim(-altoLienzo, anchoLienzo);
+      const n = parseFloat(s.replace('px', ''));
       if (Number.isNaN(n) || !total) return null;
-      return `${((n / total) * 100).toFixed(4)}cqw`;
+      return dim(n, anchoLienzo);
     };
     if (a.desde?.opacidad !== undefined && a.desde.opacidad !== 1) partes.push(`--bs-op0:${a.desde.opacidad}`);
     const x0 = enCqw(a.desde?.x, anchoLienzo);
@@ -394,14 +456,14 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
   // `container-type: inline-size` en los estilos del componente.
   const est = c.estilos;
   if (est) {
-    const fs = aPct(est.tamano, anchoLienzo);
-    if (fs) partes.push(`font-size:${fs.toFixed(4)}cqw`);
+    const fs = dim(est.tamano, anchoLienzo);
+    if (fs) partes.push(`font-size:${fs}`);
     if (est.grosor) partes.push(`font-weight:${est.grosor}`);
-    const lh = aPct(est.interlineado, anchoLienzo);
-    if (lh) partes.push(`line-height:${lh.toFixed(4)}cqw`);
+    const lh = dim(est.interlineado, anchoLienzo);
+    if (lh) partes.push(`line-height:${lh}`);
     if (est.espaciadoLetras && est.espaciadoLetras !== '0px') {
-      const ls = aPct(est.espaciadoLetras, anchoLienzo);
-      if (ls) partes.push(`letter-spacing:${ls.toFixed(4)}cqw`);
+      const ls = dim(est.espaciadoLetras, anchoLienzo);
+      if (ls) partes.push(`letter-spacing:${ls}`);
     }
     if (est.familia) partes.push(`font-family:"${est.familia}", sans-serif`);
     /*
@@ -425,6 +487,7 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
   data-autoplay={comportamiento.autoplay ? 'true' : 'false'}
   data-bucle={comportamiento.bucle === false ? 'false' : 'true'}
   data-pausa-hover={comportamiento.pausaAlPasarRaton === false ? 'false' : 'true'}
+  data-ciclo={comportamiento.cicloMs ?? 0}
   role="region"
   aria-roledescription="carrusel"
   aria-label={etiqueta}
@@ -438,7 +501,8 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
         (c) =>
           (c.tipo === 'texto' && c.texto) ||
           (c.tipo === 'imagen' && c.imagen) ||
-          (c.tipo === 'forma' && c.estilos?.fondo)
+          (c.tipo === 'forma' && c.estilos?.fondo) ||
+          c.svg
       );
       // El enlace del slide envuelve TODA la superficie: es lo que hace que el
       // banner sea clicable entero y no solo un boton.
@@ -447,7 +511,7 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
         <Etiqueta
           class:list={[
             'banner-slider__slide absolute inset-0 transition-opacity duration-700',
-            i === 0 ? 'opacity-100' : 'pointer-events-none opacity-0',
+            i === 0 ? 'bs-activo opacity-100' : 'pointer-events-none opacity-0',
           ]}
           data-slide={i}
           aria-hidden={i === 0 ? 'false' : 'true'}
@@ -465,17 +529,33 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
               class="h-full w-full object-cover"
             />
           )}
-          {s.fondo?.color && !s.fondo?.imagen && (
+          {/* Un slide `transparent` que ademas declara un color NO lo pinta: el
+              original deja ver el fondo de la seccion. Es el caso del slider de la
+              serpiente, que declaraba #E7E7E7 y se veia como una caja gris. */}
+          {s.fondo?.color && !s.fondo?.imagen && s.fondo.tipo !== 'transparent' && (
             <div class="absolute inset-0" style={`background-color:${s.fondo.color}`} />
           )}
 
           {capasConContenido.map((c) => (
-            c.tipo === 'texto' ? (
+            c.svg ? (
+              <span
+                class="banner-slider__capa banner-slider__svg absolute"
+                style={estiloCapa(c, anchoLienzo, altoLienzo)}
+                data-capa={c.uid}
+                data-anim={c.animacion ? '' : undefined}
+                data-aparece={c.apareceMs ?? undefined}
+                data-desaparece={c.desapareceMs ?? undefined}
+              >
+                <Fragment set:html={c.svg} />
+              </span>
+            ) : c.tipo === 'texto' ? (
               <span
                 class="banner-slider__capa absolute"
                 style={estiloCapa(c, anchoLienzo, altoLienzo)}
                 data-capa={c.uid}
                 data-anim={c.animacion ? '' : undefined}
+                data-aparece={c.apareceMs ?? undefined}
+                data-desaparece={c.desapareceMs ?? undefined}
                 data-loop={c.bucle ? c.bucle.tipo : undefined}
               >
                 {/* Si el original traia HTML (texto + icono), se interpreta
@@ -526,6 +606,8 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
                 style={estiloCapa(c, anchoLienzo, altoLienzo)}
                 data-capa={c.uid}
                 data-anim={c.animacion ? '' : undefined}
+                data-aparece={c.apareceMs ?? undefined}
+                data-desaparece={c.desapareceMs ?? undefined}
               >
                 <img
                   src={c.imagen!}
@@ -546,6 +628,8 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
                 style={estiloCapa(c, anchoLienzo, altoLienzo)}
                 data-capa={c.uid}
                 data-anim={c.animacion ? '' : undefined}
+                data-aparece={c.apareceMs ?? undefined}
+                data-desaparece={c.desapareceMs ?? undefined}
                 data-loop={c.bucle ? c.bucle.tipo : undefined}
               />
             )
@@ -609,6 +693,27 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
   .banner-slider__capa {
     max-width: calc(100% - 2rem);
   }
+  /* SVG en linea: ocupa la caja de la capa, como en el original (la capa mide
+     200x200 y el icono se pinta a 108 px en el slider de 379). */
+  .banner-slider__svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .banner-slider__svg svg {
+    width: 100%;
+    height: 100%;
+  }
+  /*
+   * El SVG se inyecta con `set:html`, asi que NO lleva el atributo de ambito de
+   * Astro y el selector con ambito no lo alcanza. Se declara global DENTRO del
+   * contenedor: el atributo `width="24"` del SVG original es solo una sugerencia
+   * y el plugin lo escala a la capa (108 px medidos), no a 24.
+   */
+  .banner-slider__svg :global(svg) {
+    width: 100%;
+    height: 100%;
+  }
 
   /*
    * ENTRADA DE UNA CAPA.
@@ -643,14 +748,14 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
    * El retardo (`--bs-delay`) es lo que produce el escalonado, y la curva imita la
    * salida suave del plugin: arranca rapido y frena.
    */
-  .banner-slider__slide[aria-hidden='false'] .banner-slider__capa[data-anim] {
+  .banner-slider__slide.bs-activo .banner-slider__capa[data-anim] {
     animation: bs-entrada var(--bs-dur, 600ms) cubic-bezier(0.22, 0.61, 0.36, 1)
       var(--bs-delay, 0ms) both;
   }
 
   /* Sin movimiento: las capas se muestran ya en su estado final, sin entrada. */
   @media (prefers-reduced-motion: reduce) {
-    .banner-slider__slide[aria-hidden='false'] .banner-slider__capa[data-anim] {
+    .banner-slider__slide.bs-activo .banner-slider__capa[data-anim] {
       animation: none;
     }
   }
@@ -670,16 +775,43 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
   }
 
   /* El bucle solo corre en el slide ACTIVO, y es infinito mientras lo este. */
-  .banner-slider__slide[aria-hidden='false'] .banner-slider__capa[data-loop='escala'] {
+  .banner-slider__slide.bs-activo .banner-slider__capa[data-loop='escala'] {
     animation: bs-latido var(--bs-loop-dur, 1500ms) ease-in-out infinite;
   }
-  .banner-slider__slide[aria-hidden='false'] .banner-slider__capa[data-loop='rotacion'] {
+  .banner-slider__slide.bs-activo .banner-slider__capa[data-loop='rotacion'] {
     animation: bs-giro var(--bs-loop-dur, 2500ms) ease-in-out infinite;
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .banner-slider__slide[aria-hidden='false'] .banner-slider__capa[data-loop] {
+    .banner-slider__slide.bs-activo .banner-slider__capa[data-loop] {
       animation: none;
+    }
+  }
+
+  /*
+   * LINEA DE TIEMPO. RevSlider declara por capa cuando entra (`frame_1`) y
+   * cuando sale (`frame_999`). Las capas que entran tarde empiezan invisibles y
+   * se muestran al cumplirse su tiempo; las que salen se apagan y se quedan
+   * apagadas. Se hace con clases desde el guion, no con `animation-delay`, para
+   * que una capa pueda tener a la vez entrada animada y salida posterior sin que
+   * las dos declaraciones de `animation` se pisen.
+   */
+  .banner-slider__capa[data-aparece]:not([data-anim]) {
+    opacity: 0;
+  }
+  .banner-slider__capa.bs-visible {
+    opacity: 1 !important;
+    transition: opacity 300ms ease;
+  }
+  .banner-slider__capa.bs-oculta {
+    opacity: 0 !important;
+    animation: none !important;
+    transition: opacity 300ms ease;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .banner-slider__capa.bs-visible,
+    .banner-slider__capa.bs-oculta {
+      transition: none;
     }
   }
 
@@ -714,7 +846,7 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
   .banner-slider__letra {
     position: relative;
   }
-  .banner-slider__slide[aria-hidden='false'] .banner-slider__letra {
+  .banner-slider__slide.bs-activo .banner-slider__letra {
     animation: bs-ola 2500ms ease-in-out infinite;
     animation-delay: calc(var(--i, 0) * 60ms);
   }
@@ -768,7 +900,7 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
 
   /* Sin movimiento: ni ola ni efectos de imagen. El texto y las imagenes, quietos. */
   @media (prefers-reduced-motion: reduce) {
-    .banner-slider__slide[aria-hidden='false'] .banner-slider__letra,
+    .banner-slider__slide.bs-activo .banner-slider__letra,
     .banner-slider__efecto {
       animation: none;
     }
@@ -827,18 +959,56 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
     const pista = raiz.querySelector('[data-pista]');
     if (!pista) return;
     const slides = [...raiz.querySelectorAll('[data-slide]')];
-    if (slides.length < 2) return;
+    if (!slides.length) return;
 
     const puntos = [...raiz.querySelectorAll('[data-indice]')];
     const intervalo = Number(raiz.dataset.intervalo) || 6000;
     const autoplay = raiz.dataset.autoplay === 'true';
-    const bucle = raiz.dataset.bucle !== 'false';
     const pausaHover = raiz.dataset.pausaHover !== 'false';
+    const cicloMs = Number(raiz.dataset.ciclo) || 0;
     const sinMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     let actual = 0;
     let temporizador = null;
     let pausado = false;
+    /** Temporizadores de la linea de tiempo del slide activo. */
+    let marcaTiempos = [];
+
+    /*
+     * LINEA DE TIEMPO DEL SLIDE.
+     *
+     * El diagrama de la home no son dos slides: es UNO que cambia de estado. La
+     * piramide desaparece a 1,3 s y el circulo entra a 4,3 s; el original reinicia
+     * el ciclo a los 10,5 s. `data-aparece`/`data-desaparece` guardan esos
+     * milisegundos. Las capas que entran tarde ya vienen invisibles por CSS; las
+     * que salen se apagan y se quedan apagadas.
+     *
+     * Con `prefers-reduced-motion` se pinta directamente el estado final (el
+     * circulo), que es el que el original deja tras el montaje.
+     */
+    function limpiarTiempos() {
+      marcaTiempos.forEach(clearTimeout);
+      marcaTiempos = [];
+    }
+
+    function programarTiempos(slide) {
+      limpiarTiempos();
+      const aparecen = [...slide.querySelectorAll('[data-aparece]:not([data-anim])')];
+      const desaparecen = [...slide.querySelectorAll('[data-desaparece]')];
+      if (sinMovimiento) {
+        aparecen.forEach((el) => el.classList.add('bs-visible'));
+        desaparecen.forEach((el) => el.classList.add('bs-oculta'));
+        return;
+      }
+      aparecen.forEach((el) => {
+        const ms = Number(el.dataset.aparece) || 0;
+        marcaTiempos.push(setTimeout(() => el.classList.add('bs-visible'), ms));
+      });
+      desaparecen.forEach((el) => {
+        const ms = Number(el.dataset.desaparece) || 0;
+        marcaTiempos.push(setTimeout(() => el.classList.add('bs-oculta'), ms));
+      });
+    }
 
     function mostrar(i, conTransicion = true) {
       if (i === actual) return;
@@ -850,10 +1020,12 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
       }
       slides[anterior].classList.replace('opacity-100', 'opacity-0');
       slides[anterior].classList.add('pointer-events-none');
+      slides[anterior].classList.remove('bs-activo');
       slides[anterior].setAttribute('aria-hidden', 'true');
 
       slides[actual].classList.replace('opacity-0', 'opacity-100');
       slides[actual].classList.remove('pointer-events-none');
+      slides[actual].classList.add('bs-activo');
       slides[actual].setAttribute('aria-hidden', 'false');
 
       if (!conTransicion || sinMovimiento) {
@@ -863,6 +1035,7 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
         slides[anterior].style.transition = '';
       }
 
+      programarTiempos(slides[actual]);
       puntos.forEach((p, k) => p.setAttribute('aria-selected', k === actual ? 'true' : 'false'));
     }
 
@@ -877,6 +1050,26 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
         programar();
       }, intervalo);
     }
+
+    /*
+     * REINICIO DEL CICLO. Quitar y volver a poner `bs-activo` obliga al navegador
+     * a reiniciar TODAS las animaciones CSS del slide (entradas, latidos y ola),
+     * y ademas se limpian las clases de la linea de tiempo. Es lo mismo que hace
+     * el plugin al volver al principio.
+     */
+    function reiniciarCiclo() {
+      const slide = slides[actual];
+      slide.classList.remove('bs-activo');
+      slide.querySelectorAll('.bs-visible, .bs-oculta').forEach((el) => {
+        el.classList.remove('bs-visible', 'bs-oculta');
+      });
+      void slide.offsetWidth;
+      slide.classList.add('bs-activo');
+      programarTiempos(slide);
+    }
+
+    programarTiempos(slides[actual]);
+    if (cicloMs > 0 && !sinMovimiento) setInterval(reiniciarCiclo, cicloMs);
 
     raiz.addEventListener('click', (e) => {
       const boton = e.target.closest('[data-accion]');
@@ -893,6 +1086,7 @@ function estiloCapa(c: Capa, anchoLienzo: number, altoLienzo: number) {
     });
 
     raiz.addEventListener('keydown', (e) => {
+      if (slides.length < 2) return;
       if (e.key === 'ArrowRight') { mostrar(siguiente()); programar(); }
       else if (e.key === 'ArrowLeft') { mostrar(anterior()); programar(); }
     });

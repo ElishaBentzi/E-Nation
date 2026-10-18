@@ -73,29 +73,62 @@ function estiloFondo(fondo: any) {
 ---
 
 {modelo ? (
-  (modelo.secciones as any[]).map((seccion) => (
-    <section class="relative w-full" style={estiloFondo(seccion.fondo)} data-seccion={seccion._id}>
-      {seccion.fondo?.velo && (
-        <div class="pointer-events-none absolute inset-0" style={`background-color:${seccion.fondo.velo}`} />
-      )}
+  (modelo.secciones as any[]).map((seccion, indice) => {
+    /*
+     * DOS ANCHOS DISTINTOS, medidos en el original:
+     *
+     *   - STRETCHED: el fondo ocupa todo el ancho y el contenido va en 1140 px.
+     *   - BOXED: la caja entera mide 1200 px y su relleno horizontal del 4 % deja
+     *     el contenido en 1104. La seccion azul del formulario es este caso: en
+     *     la replica se pintaba a todo el ancho y por eso no se parecia.
+     */
+    const estirada = seccion.estirada !== false;
+    /*
+     * EL HERO NO SE SUELE COLAR BAJO LA CABECERA. El original le pone
+     * `margin-top:-60px` porque The7 reserva 120 px arriba y la cabecera mide 70:
+     * el resultado visible es que el slider empieza JUSTO bajo la cabecera y su
+     * primer tramo queda tapado. Nuestro layout no tiene esos 120 px de reserva,
+     * asi que aplicar el -60 px lo subiria 60 px de mas. Se omite solo ese margen
+     * negativo de la PRIMERA seccion; la diferencia visible es el recorte de 10 px
+     * del borde superior, no un salto de 60.
+     */
+    const margenSeccion = seccion.margen && !(indice === 0 && /^-/.test(String(seccion.margen).trim()))
+      ? `margin:${seccion.margen}`
+      : '';
+    const estiloSeccion = [
+      estiloFondo(seccion.fondo),
+      estirada && seccion.relleno ? `padding:${seccion.relleno}` : '',
+      margenSeccion,
+    ].filter(Boolean).join(';') || undefined;
+    const estiloCaja = [estiloFondo(seccion.fondo), seccion.relleno ? `padding:${seccion.relleno}` : '']
+      .filter(Boolean).join(';') || undefined;
+    const estiloContenido = undefined;
+
+    /*
+     * HERO A ANCHO COMPLETO. Su seccion tiene una sola columna del 100 % con un
+     * solo bloque, y ese bloque es el slider `e-nation`. En el original el slider
+     * mide 1425 px, no 1140: por eso se pinta fuera del contenedor y sin el
+     * relleno de columna.
+     */
+    const columnas = (seccion.columnas ?? []) as any[];
+    const soloHero = columnas.length === 1
+      && columnas[0].tipo !== 'grupo'
+      && (columnas[0].bloques ?? []).length === 1
+      && columnas[0].bloques[0].tipo === 'slider'
+      && columnas[0].bloques[0]._slider?.alias === 'e-nation';
+
+    const contenido = (
       <div
-        class="contenedor-columnas relative mx-auto w-full max-w-[1240px]"
-        /* El relleno de la seccion sale del original: es lo que hace que las secciones
-           tengan la MISMA altura que alli. */
-        style={seccion.relleno ? `padding:${seccion.relleno}` : undefined}
+        class="contenedor-columnas relative mx-auto w-full max-w-[1140px]"
+        style={estiloContenido}
       >
-        {(seccion.columnas as any[]).map((columna) =>
-          /* Un GRUPO en posicion de columna (seccion dentro de seccion directa) se
-             renderiza como el grupo que es, no como un carril de columnas. */
+        {columnas.map((columna) =>
           columna.tipo === 'grupo' ? (
             <BloqueContenido bloque={columna} locale={locale} />
           ) : (
             <div
               class="columna"
-              /* El ancho se declara en COLUMNAS DE UNA REJILLA DE 100. El hueco entre
-                 columnas es relleno interior, no `gap`: con `gap`, tres columnas del
-                 33 % mas dos huecos no caben y la tercera se cae de fila. */
-              style={`--columnas:${Math.max(1, Math.round(columna.ancho || 100))}`}
+              style={`--columnas:${Math.max(1, Math.round(columna.ancho || 100))};${columna.relleno ? `padding:${columna.relleno};` : ''}`}
             >
               {(columna.bloques as any[]).map((bloque) => (
                 <BloqueContenido bloque={bloque} locale={locale} />
@@ -104,8 +137,56 @@ function estiloFondo(fondo: any) {
           )
         )}
       </div>
-    </section>
-  ))
+    );
+
+    if (soloHero) {
+      return (
+        <section class="relative w-full" style={estiloSeccion} data-seccion={seccion._id}>
+          {seccion.fondo?.velo && (
+            <div class="pointer-events-none absolute inset-0" style={`background-color:${seccion.fondo.velo}`} />
+          )}
+          <BloqueContenido bloque={columnas[0].bloques[0]} locale={locale} />
+        </section>
+      );
+    }
+
+    return (
+      <section class="relative w-full" style={estirada ? estiloSeccion : (margenSeccion || undefined)} data-seccion={seccion._id}>
+        {estirada ? (
+          <>
+            {seccion.fondo?.velo && (
+              <div class="pointer-events-none absolute inset-0" style={`background-color:${seccion.fondo.velo}`} />
+            )}
+            {contenido}
+          </>
+        ) : (
+          /* BOXED: el fondo y el relleno viven en la caja de 1200 px, no en la
+             seccion, y el contenido fluye dentro. */
+          <div class="relative mx-auto w-full max-w-[1200px]" style={estiloCaja}>
+            {seccion.fondo?.velo && (
+              <div class="pointer-events-none absolute inset-0" style={`background-color:${seccion.fondo.velo}`} />
+            )}
+            <div class="contenedor-columnas relative mx-auto w-full">
+              {columnas.map((columna) =>
+                columna.tipo === 'grupo' ? (
+                  <BloqueContenido bloque={columna} locale={locale} />
+                ) : (
+                  <div
+                    class="columna"
+                    style={`--columnas:${Math.max(1, Math.round(columna.ancho || 100))};${columna.relleno ? `padding:${columna.relleno};` : ''}`}
+                  >
+                    {(columna.bloques as any[]).map((bloque) => (
+                      <BloqueContenido bloque={bloque} locale={locale} />
+                    ))}
+                  </div>
+                )
+              )}
+            </div>
+          </div>
+        )}
+      </section>
+    );
+  })
 ) : (
   /* Sin modelo extraido todavia: se dejan los sliders, que ya son reales, para que
      la pagina no quede vacia mientras se reconstruye el resto. */

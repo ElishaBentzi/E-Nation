@@ -196,7 +196,18 @@ function bloqueDe(w) {
       // Solo cuando el original parte el texto en varias lineas
       html: tieneMarcado(s.title) ? textoEncabezado(s.title).replace(/\n/g, '<br>') : null,
       color: s.title_color || null, tamanoEm: num(s.typography_font_size),
-      grosor: s.typography_font_weight || null, interlineadoEm: num(s.typography_line_height) };
+      grosor: s.typography_font_weight || null, interlineadoEm: num(s.typography_line_height),
+      /*
+       * LA BANDA NARANJA DEL HERO DE LA PRESENTACION NO ES UNA IMAGEN: es el
+       * fondo del widget (`_background_background: classic`, `_background_color:
+       * #ff7100`). Sin esto, «World Citizenship» salia blanco directamente sobre
+       * el azul y el hero perdia su pieza mas visible.
+       */
+      fondo: s._background_background === 'classic' ? (s._background_color || null) : null,
+      /* Sombra de texto del original: 1px 1px 2px rgba(0,0,0,.88). */
+      sombra: s.text_shadow_text_shadow_type === 'yes' && s.text_shadow_text_shadow
+        ? `${s.text_shadow_text_shadow.horizontal || 0}px ${s.text_shadow_text_shadow.vertical || 0}px ${s.text_shadow_text_shadow.blur || 0}px ${s.text_shadow_text_shadow.color || 'rgba(0,0,0,.5)'}`
+        : null };
   }
   if (t === 'text-editor') return { ...comun, tipo: 'texto', html: s.editor || '' };
   if (t === 'shortcode') {
@@ -231,15 +242,48 @@ function bloqueDe(w) {
   }
   if (t === 'jet-animated-text') {
     const lista = Array.isArray(s.animated_text_list) ? s.animated_text_list : [];
+    /*
+     * EL TEXTO FIJO VIVE EN `before_text_content`, NO EN `before_text`.
+     * Leer la clave equivocada no falla: devuelve vacio y el widget se queda solo
+     * con la palabra naranja. Asi se perdia «E-Nation a Crypto State» (y «Power is
+     * not given,» en otra seccion), que es justo la mitad visible del bloque.
+     */
     return { ...comun, tipo: 'textoAnimado',
-      antes: limpio(s.before_text), despues: limpio(s.after_text),
+      antes: limpio(s.before_text_content ?? s.before_text),
+      despues: limpio(s.after_text_content ?? s.after_text),
       palabras: lista.map((x) => limpio(x.item_text)).filter(Boolean),
-      color: s.animated_text_color || null, tamanoEm: num(s.animated_text_typography_font_size) };
+      color: s.animated_text_color || null,
+      tamanoEm: num(s.animated_text_typography_font_size),
+      colorAntes: s.before_text_color || null,
+      tamanoAntesEm: num(s.before_text_typography_font_size),
+      efecto: s.animation_effect || null,
+      retardoMs: num(s.delay) };
   }
   if (t === 'jet-button') {
+    /*
+     * El boton declara sus colores de plano normal y hover: el «Watch on
+     * Youtube» es azul muy oscuro (#052743) con borde blanco de 2 px, no el
+     * naranja del CTA. Sin extraerlos, todos los botones salian iguales.
+     *
+     * El ancho de borde llega como objeto `{unit:'px', top:'2', ...}`; leerlo con
+     * `num` producia `[object Object]` y el navegador descartaba la declaracion
+     * entera en silencio (detectado por el guardian de estilos del verificador).
+     */
+    const anchoBorde = (() => {
+      const v = s.normal_plane_border_width;
+      if (v && typeof v === 'object') return parseFloat(v.top ?? v.size ?? 2) || 2;
+      return parseFloat(v) || 2;
+    })();
     return { ...comun, tipo: 'boton',
       etiqueta: limpio(s.button_label_normal), etiquetaHover: limpio(s.button_label_hover),
-      enlace: url(s.button_url), icono: limpio(s.button_icon_normal) };
+      enlace: url(s.button_url), icono: limpio(s.button_icon_normal),
+      fondo: s.normal_plane_background_color || null,
+      fondoHover: s.plane_hover_background_color || null,
+      borde: s.normal_plane_border_border && s.normal_plane_border_border !== 'none'
+        ? `${anchoBorde}px solid ${s.normal_plane_border_color || '#ffffff'}`
+        : null,
+      tamanoEm: num(s.normal_label_typography_font_size),
+      alineacion: s.button_alignment || null };
   }
   if (t === 'image') {
     const im = imagenDeWidget(s);
@@ -312,19 +356,29 @@ function bloqueDe(w) {
 /**
  * Medidas de un contenedor (relleno y margen), listas para CSS.
  *
- * Elementor las guarda con su unidad. En `%` se emiten tal cual, y eso es correcto
- * porque CSS tambien resuelve los porcentajes de `padding` contra el ANCHO, igual
- * que Elementor. Sin esto, todas las secciones recibian el mismo relleno fijo y las
- * alturas no tenian nada que ver con el original.
+ * REGLA MEDIDA, y hay dos casos:
+ *
+ *   - WIDGETS Y COLUMNAS: el porcentaje de Elementor se resuelve contra el ancho
+ *     del PROPIO elemento (medido: un titular con `padding:4%` en una columna de
+ *     741 px da 29,64 px; una banda con `padding:1%` en 801 da 8,01). CSS hace
+ *     exactamente lo mismo con `padding:4%` sobre el widget, asi que se deja el
+ *     porcentaje tal cual.
+ *   - SECCIONES DE PRIMER NIVEL: Elementor lo resuelve contra el ancho de
+ *     contenido (1200), no contra el ancho de la ventana. `5%` es 60 px, no 71.
+ *     Ahi se convierte a px con `convertir = true`.
  */
-function medidas(ajustes, prop) {
+function medidas(ajustes, prop, convertir = false) {
   const m = ajustes?.[prop];
   if (!m || typeof m !== 'object') return null;
-  const u = m.unit === '%' ? '%' : 'px';
   const v = (x) => (x === undefined || x === null || x === '' ? 0 : parseFloat(x));
   const [t, r, b, l] = [v(m.top), v(m.right), v(m.bottom), v(m.left)];
   if (!t && !r && !b && !l) return null;
-  return `${t}${u} ${r}${u} ${b}${u} ${l}${u}`;
+  const unidad = m.unit || 'px';
+  const fmt = (n) => {
+    if (unidad !== '%') return `${n}${unidad}`;
+    return convertir ? `${(n / 100) * 1200}px` : `${n}%`;
+  };
+  return `${fmt(t)} ${fmt(r)} ${fmt(b)} ${fmt(l)}`;
 }
 
 /**
@@ -405,6 +459,21 @@ function columnasDe(hijos) {
     }
   };
   visitarNivel(hijos);
+  /*
+   * ELEMENTOR DEJA QUE LAS COLUMNAS SE ENCOJAN. Una seccion interna con TRES
+   * columnas declaradas al 50 % no mide 150 %: son items flex y el navegador las
+   * reparte al 33,3 % cada una. Nuestra rejilla de 100 no encoge, asi que la
+   * tercera se caia a otra fila y una seccion de 1536 px medía 2285.
+   *
+   * Se normaliza SOLO cuando la suma pasa de 100: si suma menos (una columna al
+   * 30 %), el hueco restante es intencionado y no se rellena.
+   */
+  const suma = hojas.reduce((n, c) => n + (Number(c.ancho) || 100), 0);
+  if (suma > 100.5) {
+    hojas.forEach((c) => {
+      c.ancho = ((Number(c.ancho) || 100) * 100) / suma;
+    });
+  }
   return hojas;
 }
 
@@ -420,8 +489,8 @@ function recorrer(nodos, acumulador) {
         _id: n.id,
         ...(n.elType === 'container' ? { contenedor: true } : {}),
         fondo: fondoDe(n.settings),
-        relleno: medidas(n.settings, 'padding'),
-        margen: medidas(n.settings, 'margin'),
+        relleno: medidas(n.settings, 'padding', true),
+        margen: medidas(n.settings, 'margin', true),
         estirada: n.settings?.stretch_section === 'section-stretched' || undefined,
         columnas: columnasDe(n.elements),
       };

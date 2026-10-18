@@ -28,7 +28,8 @@
     "autoplay": false,
     "intervaloMs": null,
     "bucle": true,
-    "pausaAlPasarRaton": true
+    "pausaAlPasarRaton": true,
+    "cicloMs": 10500
   },
   "slides": [
     {
@@ -64,7 +65,8 @@
             "alto": "655px"
           },
           "estilos": null,
-          "desapareceMs": null,
+          "desapareceMs": 10500,
+          "apareceMs": 10,
           "animacion": {
             "desde": {
               "opacidad": 0,

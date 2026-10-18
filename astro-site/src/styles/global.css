@@ -43,6 +43,62 @@
 @source '../../../shared';
 
 
+/*
+ * ICONOS DE LA NAVEGACION.
+ *
+ * El original usa FontAwesome 5 Free Solid (codepoints f015, f008, f02d, f518
+ * y f1ea) a 14 px. Se auto-hospeda el mismo woff2 del tema en vez de cargar un
+ * CDN: es un asset del propio sitio original y no introduce una dependencia
+ * externa en tiempo de ejecucion.
+ */
+@font-face {
+  font-family: 'Font Awesome 5 Free';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('/fonts/fa-solid-900.woff2') format('woff2');
+}
+
+/*
+ * CABECERA. El contenido del original mide 1200 px y el logo cae en x=112,
+ * mientras que las secciones de la pagina usan 1140. Son dos medidas distintas
+ * a proposito y por eso la cabecera no usa `container-site`.
+ */
+.cabecera-site {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 0.5rem 1rem;
+}
+@media (min-width: 1024px) {
+  .cabecera-site {
+    padding: 0;
+  }
+}
+
+.nav-icono {
+  font-family: 'Font Awesome 5 Free';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 1;
+  /* `fa-fw` del original: ancho fijo de 1,25 em para que las etiquetas alineen. */
+  display: inline-block;
+  width: 17.5px;
+  text-align: center;
+}
+
+.nav-subrayado {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% + 5px);
+  height: 2px;
+  opacity: 0.85;
+  background-image: linear-gradient(to left, #1ebbf0 30%, #39dfaa 100%);
+}
+
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* ---------------------------------------------------------------------------
@@ -97,6 +153,7 @@
 
   body {
     font-family: var(--font-body);
+    font-size: 15px;
     color: var(--color-ink);
     background-color: #ffffff;
     -webkit-font-smoothing: antialiased;
@@ -116,6 +173,11 @@
   h6 {
     font-family: var(--font-heading);
     font-weight: 600;
+    /* Elementor pinta sus titulos con `line-height:1` salvo que el autor declare
+       otra cosa, y el modelo la declara como `interlineadoEm`. Sin este valor
+       todos los titulos heredaban el 1,5 del cuerpo y crecian un 50 % de alto
+       (medido: «E-Nation is» 79 px frente a 53 del original). */
+    line-height: 1;
   }
 
   a {
@@ -146,8 +208,10 @@
  * ------------------------------------------------------------------------- */
 @utility container-site {
   width: 100%;
-  /* El original usa un contenedor de page builder; este valor se ajustara al
-     medido en la fase de reconstruccion. 1140px es el ancho tipico de Elementor. */
+  /* Medido en el original: 9 de las 12 secciones de la home usan 1140 px de
+     contenido. Antes eran 1240 y por eso todo salia un 8-10 % mas grande y las
+     tarjetas no cabian a la misma escala. Las secciones boxed van aparte, con
+     1200 px de caja y su relleno. */
   max-width: 1140px;
   margin-inline: auto;
   padding-inline: 1rem;

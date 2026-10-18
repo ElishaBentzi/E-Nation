@@ -91,4 +91,17 @@ export const UI: Record<Locale, CadenasUI> = {
 };
 
 /** Orden del menu principal, del original: Inicio, Presentacion, Constitucion, Articulos, Noticias. */
-export const ORDEN_NAV = ['home', 'presentation', 'articles', 'news'] as const;
+export const ORDEN_NAV = ['home', 'presentation', 'constitution', 'articles', 'news'] as const;
+
+/**
+ * Icono de cada entrada del menu, medido en el original: FontAwesome 5 Free
+ * Solid a 14 px con 6 px de margen. El codepoint es el que el original declara
+ * en el `content` del `::before`; no se elige por parecido.
+ */
+export const ICONO_NAV: Record<string, string> = {
+  home: '\uf015',
+  presentation: '\uf008',
+  constitution: '\uf02d',
+  articles: '\uf518',
+  news: '\uf1ea',
+};

@@ -526,6 +526,15 @@ function traducir(s) {
       intervaloMs: intervalo,
       bucle: ruta(p, 'general.loop') !== 'false',
       pausaAlPasarRaton: ruta(p, 'general.stopOnHover') !== 'false',
+      /*
+       * CICLO DE LA LINEA DE TIEMPO. El diagrama de la home es UN slide que se
+       * monta durante 10,5 s y vuelve a empezar (`timeline.delay`). Solo se anota
+       * en sliders de una diapositiva: en un carrusel normal el ciclo lo marca el
+       * cambio de slide, no un reinicio por reloj.
+       */
+      ...((s.slides || []).length === 1 && Number(ruta(s.slides[0].params, 'timeline.delay')) > 0
+        ? { cicloMs: Number(ruta(s.slides[0].params, 'timeline.delay')) }
+        : {}),
     },
     slides: [],
   };
@@ -682,7 +691,45 @@ function traducir(s) {
         // Momento en que el original SACA esta capa de escena, si lo hace.
         desapareceMs: (() => {
           const r = RESUELTOS.get(String(s.id) + '-' + String(capa.uid));
-          return r ? r.desapareceMs : null;
+          if (r && r.desapareceMs != null) return r.desapareceMs;
+          /*
+           * RESPALDO PARA LOS SLIDERS DE UNA DIAPOSITIVA (el diagrama). El marcado
+           * solo trae `data-frame_999` de las capas que ha renderizado, y las
+           * figuras de la piramide no lo llevan: sin este respaldo se quedaban
+           * encima del circulo para siempre (medido: 8 figuras duplicadas). Aqui
+           * `frame_999` es fiable porque la linea de tiempo se repite entera cada
+           * ciclo; en un carrusel normal no se usa, porque el final de la linea
+           * de tiempo no significa que la capa desaparezca.
+           */
+          if ((s.slides || []).length !== 1) return null;
+          const orden = Array.isArray(capa.timeline?.frameOrder) ? capa.timeline.frameOrder : [];
+          const f999 = orden.find((f) => f && f.id === 'frame_999');
+          return f999 ? Number(f999.start) : null;
+        })(),
+        /*
+         * CAPAS SVG. La comprobacion del diagrama no es texto ni imagen: es un SVG
+         * (alias `SVG`, ic_check_circle_24px) que el plugin inyecta en linea. El
+         * extractor solo miraba texto, asi que la capa quedaba vacia y la
+         * comprobacion no aparecia nunca.
+         */
+        ...(() => {
+          const bruto = capa.svg && capa.svg.renderedData ? String(capa.svg.renderedData) : '';
+          const svg = bruto.match(/<svg[\s\S]*<\/svg>/i);
+          return svg ? { svg: svg[0] } : {};
+        })(),
+        /*
+         * Momento en que el original PONE la capa en escena, cuando no tiene
+         * animacion de entrada. El diagrama lo necesita: las figuras del circulo
+         * y los thumbnails no aparecen hasta 4,8-5,1 s, y el circulo hasta 4,3 s.
+         * Si la capa ya tiene `frame_0`, la entrada la reproduce `animacion` y no
+         * se duplica aqui.
+         */
+        apareceMs: (() => {
+          const orden = Array.isArray(capa.timeline?.frameOrder) ? capa.timeline.frameOrder : [];
+          if (orden.some((f) => f && f.id === 'frame_0')) return null;
+          const f1 = orden.find((f) => f && f.id === 'frame_1');
+          const ms = f1 ? Number(f1.start) : 0;
+          return ms > 0 ? ms : null;
         })(),
         // Variantes responsive: solo se anotan cuando DIFIEREN del escritorio.
         variantes: {},

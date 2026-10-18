@@ -86,6 +86,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 910,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -119,6 +120,7 @@
           },
           "estilos": null,
           "desapareceMs": null,
+          "apareceMs": 490,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -151,6 +153,7 @@
           },
           "estilos": null,
           "desapareceMs": null,
+          "apareceMs": 10,
           "efectoImagen": "brillo",
           "animacion": {
             "desde": {
@@ -184,6 +187,7 @@
           },
           "estilos": null,
           "desapareceMs": null,
+          "apareceMs": 290,
           "animacion": {
             "desde": {
               "opacidad": 1,
@@ -216,6 +220,7 @@
           },
           "estilos": null,
           "desapareceMs": null,
+          "apareceMs": 900,
           "animacion": {
             "desde": {
               "opacidad": 1,
@@ -283,6 +288,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 910,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -316,6 +322,7 @@
           },
           "estilos": null,
           "desapareceMs": null,
+          "apareceMs": 490,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -348,6 +355,7 @@
           },
           "estilos": null,
           "desapareceMs": null,
+          "apareceMs": 10,
           "efectoImagen": "brillo",
           "animacion": {
             "desde": {
@@ -381,6 +389,7 @@
           },
           "estilos": null,
           "desapareceMs": null,
+          "apareceMs": 290,
           "animacion": {
             "desde": {
               "opacidad": 1,
@@ -413,6 +422,7 @@
           },
           "estilos": null,
           "desapareceMs": null,
+          "apareceMs": 900,
           "animacion": {
             "desde": {
               "opacidad": 1,
@@ -480,6 +490,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 910,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -513,6 +524,7 @@
           },
           "estilos": null,
           "desapareceMs": null,
+          "apareceMs": 10,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -562,6 +574,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 910,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -612,6 +625,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 910,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -645,6 +659,7 @@
           },
           "estilos": null,
           "desapareceMs": null,
+          "apareceMs": 1160,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -677,6 +692,7 @@
           },
           "estilos": null,
           "desapareceMs": null,
+          "apareceMs": 1330,
           "bucle": {
             "tipo": "escala",
             "valor": 0.8
@@ -748,6 +764,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 910,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -781,6 +798,7 @@
           },
           "estilos": null,
           "desapareceMs": null,
+          "apareceMs": 10,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -830,6 +848,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 910,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -880,6 +899,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 910,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -913,6 +933,7 @@
           },
           "estilos": null,
           "desapareceMs": null,
+          "apareceMs": 1160,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -945,6 +966,7 @@
           },
           "estilos": null,
           "desapareceMs": null,
+          "apareceMs": 1330,
           "bucle": {
             "tipo": "escala",
             "valor": 0.8
@@ -1016,6 +1038,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 910,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -1049,6 +1072,7 @@
           },
           "estilos": null,
           "desapareceMs": null,
+          "apareceMs": 10,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -1098,6 +1122,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 910,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -1148,6 +1173,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 910,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -1181,6 +1207,7 @@
           },
           "estilos": null,
           "desapareceMs": null,
+          "apareceMs": 1160,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -1213,6 +1240,7 @@
           },
           "estilos": null,
           "desapareceMs": null,
+          "apareceMs": 1330,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -1280,6 +1308,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 910,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -1313,6 +1342,7 @@
           },
           "estilos": null,
           "desapareceMs": null,
+          "apareceMs": 490,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -1345,6 +1375,7 @@
           },
           "estilos": null,
           "desapareceMs": null,
+          "apareceMs": 10,
           "efectoImagen": "brillo",
           "animacion": {
             "desde": {
@@ -1378,6 +1409,7 @@
           },
           "estilos": null,
           "desapareceMs": null,
+          "apareceMs": 290,
           "animacion": {
             "desde": {
               "opacidad": 1,
@@ -1410,6 +1442,7 @@
           },
           "estilos": null,
           "desapareceMs": null,
+          "apareceMs": 900,
           "animacion": {
             "desde": {
               "opacidad": 1,
@@ -1477,6 +1510,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 330,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -1527,6 +1561,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 10,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -1577,6 +1612,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 600,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -1612,6 +1648,7 @@
             "fondo": "rgba(0,0,0,0.35)"
           },
           "desapareceMs": null,
+          "apareceMs": 10,
           "animacion": {
             "desde": {
               "opacidad": 1,
@@ -1661,6 +1698,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 600,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -1694,6 +1732,7 @@
           },
           "estilos": null,
           "desapareceMs": null,
+          "apareceMs": 10,
           "efectoImagen": "palpitar",
           "animacion": {
             "desde": {
@@ -1762,6 +1801,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 330,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -1812,6 +1852,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 10,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -1862,6 +1903,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 600,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -1897,6 +1939,7 @@
             "fondo": "rgba(0,0,0,0.35)"
           },
           "desapareceMs": null,
+          "apareceMs": 10,
           "animacion": {
             "desde": {
               "opacidad": 1,
@@ -1946,6 +1989,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 600,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -1979,6 +2023,7 @@
           },
           "estilos": null,
           "desapareceMs": null,
+          "apareceMs": 10,
           "efectoImagen": "palpitar",
           "animacion": {
             "desde": {
@@ -2047,6 +2092,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 330,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -2097,6 +2143,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 10,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -2147,6 +2194,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 600,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -2182,6 +2230,7 @@
             "fondo": "rgba(0,0,0,0.35)"
           },
           "desapareceMs": null,
+          "apareceMs": 10,
           "animacion": {
             "desde": {
               "opacidad": 1,
@@ -2231,6 +2280,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 600,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -2264,6 +2314,7 @@
           },
           "estilos": null,
           "desapareceMs": null,
+          "apareceMs": 10,
           "efectoImagen": "palpitar",
           "animacion": {
             "desde": {
@@ -2332,6 +2383,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 10,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -2364,6 +2416,7 @@
           },
           "estilos": null,
           "desapareceMs": null,
+          "apareceMs": null,
           "efectoImagen": "palpitar",
           "animacion": {
             "desde": {
@@ -2397,6 +2450,7 @@
           },
           "estilos": null,
           "desapareceMs": null,
+          "apareceMs": null,
           "efectoImagen": "palpitar",
           "animacion": {
             "desde": {
@@ -2447,6 +2501,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 900,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -2496,6 +2551,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 300,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -2545,6 +2601,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 600,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -2577,6 +2634,7 @@
           },
           "estilos": null,
           "desapareceMs": null,
+          "apareceMs": 1290,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -2644,6 +2702,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 10,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -2676,6 +2735,7 @@
           },
           "estilos": null,
           "desapareceMs": null,
+          "apareceMs": null,
           "efectoImagen": "palpitar",
           "animacion": {
             "desde": {
@@ -2709,6 +2769,7 @@
           },
           "estilos": null,
           "desapareceMs": null,
+          "apareceMs": null,
           "efectoImagen": "palpitar",
           "animacion": {
             "desde": {
@@ -2759,6 +2820,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 900,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -2808,6 +2870,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 300,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -2857,6 +2920,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 600,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -2889,6 +2953,7 @@
           },
           "estilos": null,
           "desapareceMs": null,
+          "apareceMs": 1290,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -2956,6 +3021,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 10,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -2988,6 +3054,7 @@
           },
           "estilos": null,
           "desapareceMs": null,
+          "apareceMs": 10,
           "efectoImagen": "palpitar",
           "animacion": {
             "desde": {
@@ -3021,6 +3088,7 @@
           },
           "estilos": null,
           "desapareceMs": null,
+          "apareceMs": 10,
           "efectoImagen": "palpitar",
           "animacion": {
             "desde": {
@@ -3071,6 +3139,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 900,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -3120,6 +3189,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 300,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -3169,6 +3239,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 600,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -3201,6 +3272,7 @@
           },
           "estilos": null,
           "desapareceMs": null,
+          "apareceMs": 1290,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -3268,6 +3340,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 300,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -3318,6 +3391,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 600,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -3368,6 +3442,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 900,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -3403,6 +3478,7 @@
             "fondo": "rgba(0,0,0,0.35)"
           },
           "desapareceMs": null,
+          "apareceMs": 500,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -3452,6 +3528,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 1200,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -3485,6 +3562,7 @@
           },
           "estilos": null,
           "desapareceMs": null,
+          "apareceMs": 10,
           "efectoImagen": "palpitar",
           "animacion": {
             "desde": {
@@ -3518,6 +3596,7 @@
           },
           "estilos": null,
           "desapareceMs": null,
+          "apareceMs": 10,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -3585,6 +3664,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 300,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -3635,6 +3715,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 600,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -3685,6 +3766,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 900,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -3720,6 +3802,7 @@
             "fondo": "rgba(0,0,0,0.35)"
           },
           "desapareceMs": null,
+          "apareceMs": 500,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -3769,6 +3852,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 1200,
           "efectoTexto": "ola",
           "animacion": {
             "desde": {
@@ -3802,6 +3886,7 @@
           },
           "estilos": null,
           "desapareceMs": null,
+          "apareceMs": 10,
           "efectoImagen": "palpitar",
           "animacion": {
             "desde": {
@@ -3835,6 +3920,7 @@
           },
           "estilos": null,
           "desapareceMs": null,
+          "apareceMs": 10,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -3902,6 +3988,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 300,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -3951,6 +4038,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 600,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -4000,6 +4088,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 900,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -4034,6 +4123,7 @@
             "fondo": "rgba(0,0,0,0.35)"
           },
           "desapareceMs": null,
+          "apareceMs": 500,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -4083,6 +4173,7 @@
             }
           },
           "desapareceMs": null,
+          "apareceMs": 1200,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -4115,6 +4206,7 @@
           },
           "estilos": null,
           "desapareceMs": null,
+          "apareceMs": 10,
           "animacion": {
             "desde": {
               "opacidad": 0,
@@ -4147,6 +4239,7 @@
           },
           "estilos": null,
           "desapareceMs": null,
+          "apareceMs": 10,
           "animacion": {
             "desde": {
               "opacidad": 0,

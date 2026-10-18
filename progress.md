@@ -442,3 +442,22 @@ También se extraen y aplican `_margin` y `_padding` de cada widget en los bloqu
 - **La fuente**: el usuario la vio distinta y tenía razón — mis títulos iban con Roboto Slab (elección temprana en los tokens, no dato del original) y el original usa Roboto para todo, también en títulos (medido: h2/h5 Roboto 600). Corregido en `brand/tokens.css`.
 - **Mailchimp**: aprobada la propuesta. `FormularioSuscripcion.astro` con la misma cuenta y lista, variante AJAX/JSONP sin jQuery, honeypot, mensajes en línea por idioma, PAIS como texto libre opcional. El extractor detecta el embed viejo y emite `formulario`; el HTML viejo no llega al navegador. Probado: validación local + ida y vuelta real a Mailchimp con dominio inválido (error en línea, sin suscriptor). **Falta la prueba de alta real, con el correo del usuario.**
 - **Fotos** (comparando con el original): la tipografía ya coincide; salieron a la vista los siguientes ajustes: el slider decorativo de la cabecera sin sus adornos (mapa de puntos, diagonales naranjas), el diagrama piramidal del slider vertical-horizontal mal renderizado, y la cabecera (logo y nav) más simple que la del original.
+
+### Ola visual 3: cabecera, hero, contenedor y presentación
+**Status:** complete (pendiente de revisión del usuario en producción)
+
+Ola guiada por capturas por tramos, no por el DOM. Seis diferencias visibles, todas corregidas y vueltas a fotografiar.
+
+Acciones tomadas:
+- **Cabecera**: 70 px, logo ouroboros 70×70 sin wordmark, iconos FontAwesome 5 auto-hospedados (woff2 descargado del original), orden Home/Presentation/Constitution/Articles/News y subrayado degradado cian→verde. Queda a 0–1 px de la del original.
+- **Hero full-bleed** (1425×600) con el lienzo de 1200 centrado para las capas por píxeles y **techo de escala** `min(px,cqw)`: RevSlider no agranda las capas por encima del diseño. Diagonales, pasaporte y familia en su sitio.
+- **Contenedor 1140** (medido en 9 de 12 secciones de la home) y secciones **boxed** con su caja de 1200: la sección azul del formulario ya tiene márgenes blancos. Los porcentajes de Elementor se convierten a px solo en secciones de primer nivel; en widgets y columnas se dejan en %.
+- **Tipografía**: cuerpo a **15 px** (el original) y titulares con `line-height:1` (Elementor). Los `em` del modelo coinciden al píxel.
+- **Diagrama piramidal**: línea de tiempo completa. La pirámide y las figuras del poder vertical desaparecen (1,3–3,5 s), el círculo y sus figuras entran (4,3–5,1 s), la comprobación SVG aparece a 7,8 s y el ciclo se reinicia a 10,5 s. El SVG de la comprobación se extrae; las figuras duplicadas se corrigen con `frame_999` como respaldo.
+- **JetSlider**: avance cada **5 s** (dato del widget), puntos 15×15, flechas circulares de 53 px y franja de 32 px bajo la imagen.
+- **Texto animado**: el texto fijo estaba en `before_text_content` y se perdía; ahora se pinta con su color y tamaño y la palabra animada hace la onda de letras al entrar.
+- **Formulario** a la medida del original (442/411/110×32, degradado cian→verde) y **tarjetas** con marco naranja en la tarjeta y título centrado.
+- **Banners de la presentación**: efecto `roxy` (imagen 111,3 %, título al 27 %) y botón de YouTube con sus colores reales. La comprobación pixel a pixel descartó el supuesto tinte azul: era el fondo de la sección.
+- **Columnas flex**: si la suma de anchos pasa de 100, se normaliza (3 columnas del 50 % → 33,3 %). **Imágenes** con `self-center`: en una columna flex se estiraban (logo de YouTube a 896 px).
+
+**Medido**: home **8949** px (original 8627), presentación **36782** (original 36540). 0 solapes y 0 declaraciones descartadas en las 6 diapositivas del carrusel. Trampa de medición nueva: en pestaña oculta las imágenes `loading="lazy"` no cargan y las secciones parecen colapsadas; hay que forzarlas a eager antes de medir.

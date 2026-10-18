@@ -1310,3 +1310,117 @@ Una edición del generador por heredoc de Python (con secuencias de escape y pla
 #### Dato corregido: el JetSlider sí avanza
 
 Dos fotos del original separadas 3 s mostraron tarjetas distintas del JetSlider — mi medición anterior ("no avanza") usó una ventana de 2,5 s, más corta que su intervalo. Corregido en la memoria: el componente hoy no avanza solo, y darle el avance automático queda pendiente con el intervalo medido.
+
+### Ola visual 2: lo que ven las fotos y el DOM no estaba diciendo
+
+Comparación por tramos a 1440 px de la home original contra la réplica, con capturas a la misma altura aproximada. **Seis diferencias de estructura**, no de matiz. Todas medidas, no deducidas.
+
+| qué | original (medido) | réplica (antes) |
+|---|---|---|
+| cabecera | **70 px** de alto, fondo **blanco**, logo ouroboros **70×70 sin wordmark**, contenido en 1200 px (x=112) | 81 px, logo 48 + “E-Nation”, contenedor 1140 |
+| nav | 5 ítems **con icono** FontAwesome (home, film, book, book-open, newspaper), 14 px, margen 6 px; activo con **subrayado degradado cian→verde** (`#1ebbf0`→`#39dfaa`), 2 px, 7 px bajo el texto, opacidad .85 | sin iconos, activo solo en naranja, orden distinto (Constitución al final) |
+| hero | **full-bleed 1425 px**, alto 600, capas a tamaño de diseño (no escalan hacia arriba: texto 110 px, banda 762 px) | 1224 px centrado (inset) y capas escaladas por `cqw` |
+| secciones | hay **stretched** (full-bleed) y **boxed** (1200 px con márgenes blancos). La azul del formulario es boxed | todas full-bleed: la azul ocupa 1425 px |
+| slider vertical-horizontal | **2 diapositivas** (pirámide y **círculo**, que es la que se ve a los ~10 s), 379×379 dentro de una columna del 31,6 % | 1 diapositiva (solo pirámide) y 418×418 en columna del 35 % |
+| formulario | 410 px de ancho, solo Nombre y Email, placeholders, botón **degradado cian→verde** de ~118×30 | 540 px, dos columnas, etiquetas, botón naranja a ancho completo |
+| JetSlider | flechas **circulares** 53×53 y **4 puntos** abajo al centro | flechas cuadradas y sin puntos |
+| tarjetas de problemáticas | borde naranja 1 px, título **centrado** en la imagen | sin borde, título abajo a la izquierda |
+| serpiente | imagen sin caja de fondo | caja gris visible detrás de la imagen |
+
+**El título del slider decorativo**: en el original la sección del JetSlider lleva el encabezado blanco centrado «E-Nation a Crypto State»; en la réplica sale «Globally Distributed» naranja a la izquierda. Hay que comprobar si es un bloque mal asignado en el modelo o un encabezado que pertenece a otra sección.
+
+**El hero de la réplica está escalado hacia arriba por `cqw`**: el original **nunca escala por encima del tamaño de diseño** en un slider fullwidth (RevSlider limita la escala a 1); solo encoge cuando el contenedor es menor que el lienzo. Por eso a 1440 el texto del original mide 110 px y el de la réplica 112,2 px, y la banda 762 frente a 777. La corrección es `min(px, cqw)` en tamaños y desplazamientos, no `cqw` a secas.
+
+#### Las medidas que faltaban de la ola 2
+
+| pieza | dato medido en el original |
+|---|---|
+| contenedor de página | **1140 px** (9 de 12 secciones de la home); dos boxed de 1200 con relleno del 4 % → contenido 1104; el hero, 1425 |
+| cabecera | contenido 1200 px, logo 70×70 en x=112, ítem de menú 15 px con relleno 5/10, icono FontAwesome 14 px y margen 6 px, subrayado 2 px `linear-gradient(to left,#1ebbf0 30%,#39dfaa 100%)` con opacidad .85 a 5 px del texto |
+| formulario | caja 442, campos 411×42 (borde 0.667 px #abb0b2, radio 3, 14 px), botón 110×32 degradado 135° `#1ebbf0 30% → #39dfaa 100%`, radio 4, solo Nombre y Email, sin etiquetas |
+| JetSlider | autoplay **5000 ms** (`sliderAutoplayDelay`), pausa al pasar el ratón, flechas `.sp-arrow` 53×53 **radio 50 %** fondo `#003f7f`, puntos `.sp-button` 15×15 borde 2 px blanco, activo `#ff7100`, 4 puntos a 28 px del borde inferior |
+| texto animado | el texto estático vive en **`before_text_content`** (no en `before_text`) y el extractor lo perdía: «E-Nation a Crypto State» en blanco 3 em + «Globally Distributed» naranja 5 em. Efecto `fx2`: las letras del bloque animado caen/suben ±60 px con opacidad 0→1 en cascada, una sola vez al entrar en pantalla |
+| tarjetas | el borde naranja **no es del widget**: está en `.elementor-widget-wrap` de la columna, `border: 2px solid #ff7100; padding: 10px`; el widget mide 250×280 dentro de una columna de 280. Título 30 px/600 blanco, centrado, a 101 px del borde superior |
+| serpiente | el slide declara `#E7E7E7` pero su fondo computado es **transparente**: RevSlider no lo pinta. Nuestro componente lo pintaba y por eso salía la caja gris |
+| slider vertical | una sola diapositiva con **línea de tiempo**: la pirámide desaparece a 1,3 s, las grises y la X entre 2,3 y 4 s, el círculo entra a 4,3 s, las figuras/thumbnails a 4,8-5,1 s y la comprobación a 7,8 s; el ciclo se reinicia a los 10,5 s (`timeline.delay`) |
+
+## Ola visual 3: la cabecera, el hero y las medidas reales del original
+
+La ola salió de comparar capturas por tramos, no de leer el DOM. Las seis diferencias que se vieron (cabecera, hero inset, sección azul a sangre, slider sin segundo estado, formulario ancho y tarjetas sin marco) se corrigieron y **se volvieron a fotografiar**.
+
+### Cabecera: ahora es la del original
+
+| pieza | original | réplica |
+|---|---|---|
+| alto y fondo | 70 px, blanco, contenido 1200 | **70/71 px, blanco, 1200** |
+| logo | ouroboros 70×70, sin wordmark | **igual** |
+| ítems | Home, Presentation, Constitution, Articles, News | **mismo orden** |
+| iconos | FontAwesome 5 Free 14 px, margen 6 px, ancho fijo 17,5 | **misma fuente auto-hospedada** (`fa-solid-900.woff2`, codepoints f015/f008/f02d/f518/f1ea) |
+| activo | subrayado 2 px degradado `#1ebbf0 30% → #39dfaa`, opacidad .85, 5 px bajo el texto | **igual** |
+
+**El cian vuelve a ser diseño, no ruido**: el degradado del subrayado y el del botón del formulario son exactamente el `#1ebbf0`/`#39dfaa` que el recon había descartado como “tema”. Aparece en dos piezas pequeñas y medidas.
+
+### Hero: full-bleed, sin escalar hacia arriba y con el lienzo centrado
+
+Tres correcciones encadenadas, las tres medidas:
+
+1. **El hero va a 1425 px, no a 1140.** El original lo renderiza a ancho completo; las capas se colocan respecto a un lienzo de 1200 **centrado**, así que las capas por píxeles llevan `max(0px, (100% - 1200px)/2)` de desplazamiento. Sin él, las diagonales naranjas quedaban pegadas al borde (x=11 en vez de 123,5) y el pasaporte 112 px a la izquierda.
+2. **`min(px, cqw)` en vez de `cqw` a secas.** RevSlider no escala las capas por encima del tamaño de diseño: a 1425 el texto mide 110 px, no 130. `min()` reproduce el techo; para valores negativos (letter-spacing) se usa `max()` porque el techo es en magnitud.
+3. **`max-height` del lienzo cuando el slider es full-bleed.** El `aspect-ratio` daba 712 px de alto a 1425; el original mide 600. Con el techo, el hero queda 1425×600.
+
+**Resultado medido**: hero 1425×600; E-NATION a 110 px; banda 762×64; subrayado 950×4; diagonales en x=123 y 1170; pasaporte y familia en su sitio. El total de la home queda en **8949 px** (original 8627; +3,7 %), frente a los 9156 de antes.
+
+### El contenedor: 1140, y las secciones boxed con su propia caja de 1200
+
+Medido en el original: **9 de las 12 secciones de la home usan 1140 px de contenido**; la cabecera usa 1200; las dos secciones boxed del formulario usan una caja de 1200 con relleno del 4 % (contenido 1104); el hero, 1425. Nuestro contenedor era 1240 y **todas** las secciones se pintaban a sangre.
+
+Dos reglas nuevas en el renderizador:
+- **Stretched**: fondo a sangre, contenido en 1140.
+- **Boxed**: la caja (1200) lleva fondo, relleno y velo; el contenido fluye dentro. La sección azul del formulario ya tiene los márgenes blancos del original.
+
+Y una corrección de unidades que afectaba a todas las alturas: **los porcentajes de relleno/margen de Elementor no se resuelven como los de CSS**. En una sección de primer nivel, `5%` es **60 px** (base 1200), no el 5 % del ancho de la ventana (71 px). En widgets y columnas, en cambio, `4%` se resuelve contra el ancho del propio elemento (medido: 29,64 px en una columna de 741). El extractor convierte a px **solo los de primer nivel** y deja el porcentaje en widgets/columnas.
+
+### Tipografía: 15 px de base y titulares con `line-height:1`
+
+El original usa **15 px** de cuerpo (el nuestro, 16) y sus titulares de Elementor van con **`line-height:1`**. Con 16 px todos los `em` del modelo salían un 6,7 % grandes, y con el 1,5 heredado los titulares medían un 50 % más de alto («E-Nation is»: 79 px frente a 53). Corregido en `global.css`: el modelo vuelve a coincidir al píxel (52,5 px y 37,5 px en los titulares del bloque vertical).
+
+### La línea de tiempo del diagrama: el segundo estado ya existe
+
+El slider vertical **no son dos slides**: es uno que se monta durante 10,5 s. La pirámide desaparece a 1,3 s; las figuras del poder vertical a 1,5–3,5 s; las grises y la X a 2,3–4 s; el círculo entra a 4,3 s; las figuras y los thumbnails a 4,8–5,1 s; la comprobación (un **SVG** `ic_check_circle_24px`) a 7,8 s; y el ciclo se reinicia a los 10,5 s.
+
+Lo que faltaba:
+- `frame_999` de las figuras de la pirámide **no venía en el marcado** y el generador las dejaba visibles para siempre: en el estado circular salían **8 figuras duplicadas** dentro del círculo. Ahora, en sliders de una diapositiva, se toma `frame_999.start` de la base de datos como respaldo.
+- La comprobación no es texto ni imagen: es un SVG que el extractor ignoraba (`capa.svg.renderedData`). Ahora se inyecta y se escala a la capa (108 px), no a los 24 px de su atributo.
+- El bucle se reinicia con JS cada `timeline.delay` (10,5 s) quitando y poniendo `bs-activo`, que reinicia todas las animaciones CSS.
+
+### JetSlider: sí avanza, cada 5 s
+
+El widget declara `sliderAutoplay:true` y `sliderAutoplayDelay:5000`. La medición anterior había usado una ventana más corta que el intervalo. Ahora avanza cada 5 s, pausa al pasar el ratón, tiene **puntos** (15×15, borde blanco 2 px, activo naranja) y flechas **circulares** de 53 px. El componente mide 432 px: 400 de imagen + 32 de la franja de puntos, como el original.
+
+### Texto animado: `before_text_content`, no `before_text`
+
+El widget guarda el texto fijo en **`before_text_content`**. El extractor leía `before_text`, devolvía vacío y el bloque se quedaba solo con la palabra naranja: se perdían «E-Nation a Crypto State» y «Power is not given,». Corregido. El efecto `fx2` se replica con una onda de letras (±60 px, opacidad 0→1) al entrar en pantalla.
+
+### Tarjetas y banners: el marco estaba en la columna
+
+- **Problemáticas**: el borde naranja **no está en el widget** sino en `.elementor-widget-wrap` de la columna (`2px solid #ff7100; padding:10px`). El título va centrado a 30 px, no abajo a la izquierda. El componente pinta el marco en la tarjeta (mismo resultado visual).
+- **Banners de la presentación** (`jet-banner`, efecto `roxy`): la imagen mide **111,3 %** del ancho y se desplaza −5,65 %; eso da la altura y el recorte del original. Título a 37,5 px centrado al 27 % de la altura; descripción oculta hasta el hover. **No hay tinte azul**: el muestreo de píxeles dio gris (157,151,151) en la tarjeta y el aspecto azulado era el fondo de la sección; el promedio azul de la captura era un artefacto de `sharp.stats()` sobre la imagen completa, no sobre el recorte.
+- **Colores del botón**: se extraen `normal_plane_background_color` (#052743), borde blanco 2 px y tamaño 2 em. El ancho de borde llega como objeto (`{top:'2'}`), y leerlo con `num` producía `[object Object]px`: el navegador descartaba la declaración entera. Lo detectó el guardián de estilos.
+
+### Dos trampas nuevas, las dos silenciosas
+
+1. **Las columnas de Elementor se ENCOGEN como items flex.** Una sección interna con tres columnas declaradas al 50 % no mide 150 %: el navegador las reparte al 33,3 %. Nuestra rejilla de 100 no encoge, así que la tercera caía a otra fila y una sección de 1536 px medía 2285. Ahora, si la suma de anchos pasa de 100, se normaliza proporcionalmente.
+2. **Las imágenes son items flex y se estiran.** Un `<img>` de 300×70 en una columna flex con `align-items:stretch` se pintaba a 896×209 (el logo de YouTube). `self-center` lo devuelve a su tamaño natural; `max-w-full` solo lo limita si la columna es más estrecha.
+
+**Y una trampa de medición**: en una pestaña oculta las imágenes `loading="lazy"` **no cargan**, así que las secciones medían 208 px en vez de 667 y parecía que el layout se había roto. Hay que forzar `loading='eager'` antes de medir alturas.
+
+### Resultado final medido
+
+| página | antes | ahora | original |
+|---|---|---|---|
+| home | 9156 | **8949** | 8627 |
+| presentación | 37803 | **36782** | 36540 |
+
+Secciones de la home dentro del 1–7 % (hero, vertical y formulario exactos); las 48 de la presentación también. Cero solapes y cero declaraciones descartadas en las 6 diapositivas del carrusel de la presentación. El carrusel del pie no se repite en la presentación, que ya lo lleva en su contenido.
+
+**Responsive comprobado a 620 px**: hero **605×302** (original 605×303), JetSlider **544×312** (original 545×312) y diagrama vertical **589×589** (original 585×585). El `aspect-ratio` de un slider es **siempre el del lienzo**; las `variantes` del JSON son tamaños de capa por dispositivo, y usarlas como proporción hacía que el hero midiera 605×600 en vez de 605×302.

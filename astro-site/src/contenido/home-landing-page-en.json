@@ -12,7 +12,7 @@
     "attachment": null
    },
    "relleno": null,
-   "margen": "-5% 0% 0% 0%",
+   "margen": "-60px 0px 0px 0px",
    "estirada": true,
    "columnas": [
     {
@@ -42,7 +42,7 @@
     "attachment": null,
     "velo": "rgba(255, 255, 255, 0.62)"
    },
-   "relleno": "5% 0% 5% 0%",
+   "relleno": "60px 0px 60px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -78,7 +78,9 @@
        "color": "#d80700",
        "tamanoEm": 2.5,
        "grosor": null,
-       "interlineadoEm": 1.1
+       "interlineadoEm": 1.1,
+       "fondo": null,
+       "sombra": null
       },
       {
        "_id": "44854e7",
@@ -91,7 +93,9 @@
        "html": null,
        "color": "#003f7f",
        "tamanoEm": 3.5,
-       "grosor": null
+       "grosor": null,
+       "fondo": null,
+       "sombra": null
       },
       {
        "_id": "82d2db3",
@@ -104,7 +108,9 @@
         "Real Direct Democracy"
        ],
        "color": "#003f7f",
-       "tamanoEm": 3.5
+       "tamanoEm": 3.5,
+       "colorAntes": null,
+       "efecto": null
       }
      ]
     }
@@ -115,8 +121,8 @@
    "fondo": {
     "color": "#2e6f9a"
    },
-   "relleno": "3% 4% 5% 4%",
-   "margen": "0% 0% 3% 0%",
+   "relleno": "36px 48px 60px 48px",
+   "margen": "0px 0px 36px 0px",
    "columnas": [
     {
      "fondo": null,
@@ -134,7 +140,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 2.5,
-       "grosor": null
+       "grosor": null,
+       "fondo": null,
+       "sombra": null
       },
       {
        "_id": "ada703e",
@@ -156,7 +164,7 @@
     "attachment": "fixed",
     "velo": "rgba(35, 73, 101, 0.58)"
    },
-   "relleno": "10% 0% 10% 0%",
+   "relleno": "120px 0px 120px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -170,13 +178,16 @@
        "margen": "0% 0% 5% 0%",
        "relleno": null,
        "tipo": "textoAnimado",
-       "antes": "",
+       "antes": "E-Nation a Crypto State",
        "despues": "",
        "palabras": [
         "Globally Distributed"
        ],
        "color": "#ff7100",
-       "tamanoEm": 5
+       "tamanoEm": 5,
+       "colorAntes": "#ffffff",
+       "tamanoAntesEm": 3,
+       "efecto": "fx2"
       },
       {
        "_id": "62b9e49",
@@ -224,7 +235,7 @@
    "fondo": {
     "color": "#ffffff"
    },
-   "relleno": "5% 0% 5% 0%",
+   "relleno": "60px 0px 60px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -271,7 +282,9 @@
            "html": null,
            "color": "#ff7100",
            "tamanoEm": 3,
-           "grosor": null
+           "grosor": null,
+           "fondo": null,
+           "sombra": null
           },
           {
            "_id": "bdb3215",
@@ -284,7 +297,9 @@
            "html": null,
            "color": "#54595f",
            "tamanoEm": 1.8,
-           "grosor": "400"
+           "grosor": "400",
+           "fondo": null,
+           "sombra": null
           },
           {
            "_id": "c09992c",
@@ -297,7 +312,9 @@
            "html": null,
            "color": "#54595f",
            "tamanoEm": 1.8,
-           "grosor": "400"
+           "grosor": "400",
+           "fondo": null,
+           "sombra": null
           }
          ]
         }
@@ -422,7 +439,7 @@
     "attachment": "fixed",
     "velo": "rgba(35, 73, 101, 0.67)"
    },
-   "relleno": "5% 0% 5% 0%",
+   "relleno": "60px 0px 60px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -442,7 +459,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 3,
-       "grosor": null
+       "grosor": null,
+       "fondo": null,
+       "sombra": null
       },
       {
        "tipo": "grupo",
@@ -614,7 +633,7 @@
     "attachment": null,
     "velo": "rgba(255, 255, 255, 1)"
    },
-   "relleno": "5% 0% 5% 0%",
+   "relleno": "60px 0px 60px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -634,20 +653,25 @@
        "html": null,
        "color": "#003f7f",
        "tamanoEm": 2.3,
-       "grosor": null
+       "grosor": null,
+       "fondo": null,
+       "sombra": null
       },
       {
        "_id": "a49b171",
        "margen": "0% 0% 2% 0%",
        "relleno": null,
        "tipo": "textoAnimado",
-       "antes": "",
+       "antes": "Power is not given,",
        "despues": "",
        "palabras": [
         "It is Taken!"
        ],
        "color": "#ff7100",
-       "tamanoEm": 3
+       "tamanoEm": 3,
+       "colorAntes": "#003f7f",
+       "tamanoAntesEm": 2.5,
+       "efecto": "fx2"
       },
       {
        "tipo": "grupo",
@@ -718,7 +742,7 @@
     "attachment": "fixed",
     "velo": "rgba(35, 73, 101, 0.56)"
    },
-   "relleno": "5% 0% 5% 0%",
+   "relleno": "60px 0px 60px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -738,7 +762,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 5,
-       "grosor": null
+       "grosor": null,
+       "fondo": null,
+       "sombra": "1px 1px 2px rgba(0,0,0,0.71)"
       },
       {
        "tipo": "grupo",
@@ -757,7 +783,7 @@
           {
            "_id": "9690997",
            "margen": null,
-           "relleno": "0px 10px 0px 10px",
+           "relleno": "0em 10em 0em 10em",
            "tipo": "encabezado",
            "texto": "Going from measuring life only with money to living life adding other social and ecological values:",
            "nivel": "h2",
@@ -765,7 +791,9 @@
            "html": null,
            "color": "#ffffff",
            "tamanoEm": 2,
-           "grosor": "300"
+           "grosor": "300",
+           "fondo": null,
+           "sombra": "1px 1px 2px rgba(0,0,0,0.71)"
           },
           {
            "_id": "3d92142",
@@ -778,7 +806,10 @@
             "A Balanced Happy Life"
            ],
            "color": "#ff7100",
-           "tamanoEm": 3
+           "tamanoEm": 3,
+           "colorAntes": "#ffffff",
+           "tamanoAntesEm": 4,
+           "efecto": "fx2"
           }
          ]
         }
@@ -853,7 +884,7 @@
     "attachment": null,
     "velo": "rgba(255, 255, 255, 0.4)"
    },
-   "relleno": "5% 0% 7% 0%",
+   "relleno": "60px 0px 84.00000000000001px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -931,7 +962,7 @@
     "attachment": "fixed",
     "velo": "rgba(35, 73, 101, 0.58)"
    },
-   "relleno": "7% 0% 7% 0%",
+   "relleno": "84.00000000000001px 0px 84.00000000000001px 0px",
    "margen": null,
    "estirada": true,
    "columnas": [
@@ -1004,8 +1035,8 @@
    "fondo": {
     "color": "#2e6f9a"
    },
-   "relleno": "3% 4% 5% 4%",
-   "margen": "4% 0% 3% 0%",
+   "relleno": "36px 48px 60px 48px",
+   "margen": "48px 0px 36px 0px",
    "columnas": [
     {
      "fondo": null,
@@ -1023,7 +1054,9 @@
        "html": null,
        "color": "#ffffff",
        "tamanoEm": 2.5,
-       "grosor": null
+       "grosor": null,
+       "fondo": null,
+       "sombra": null
       },
       {
        "_id": "63d9d08",
@@ -1057,7 +1090,9 @@
        "html": null,
        "color": "#003f7f",
        "tamanoEm": 1.8,
-       "grosor": "400"
+       "grosor": "400",
+       "fondo": null,
+       "sombra": null
       },
       {
        "_id": "10aebee",
@@ -1067,7 +1102,12 @@
        "etiqueta": "Presentation",
        "etiquetaHover": "Watch",
        "enlace": "https://e-nation.org/presentation/",
-       "icono": "fa fa-film"
+       "icono": "fa fa-film",
+       "fondo": "#003f7f",
+       "fondoHover": "#ff7100",
+       "borde": null,
+       "tamanoEm": 2,
+       "alineacion": "center"
       }
      ]
     }

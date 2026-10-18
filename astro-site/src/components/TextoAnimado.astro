@@ -1,0 +1,121 @@
+---
+/*
+ * TEXTO ANIMADO DE JETELEMENTS (`jet-animated-text`, efecto `fx2`).
+ *
+ * QUÉ PINTA EL ORIGINAL, medido: dos líneas. La primera es el texto fijo que el
+ * widget guarda en `before_text_content` («E-Nation a Crypto State», blanco a
+ * 3 em); la segunda es la palabra animada («Globally Distributed», naranja a
+ * 5 em). El efecto `fx2` hace que las letras de la palabra caigan y vuelvan en
+ * cascada, con una opacidad 0 en el punto bajo.
+ *
+ * El texto fijo se perdía porque el extractor leía `before_text` en vez de
+ * `before_text_content`. Sin él, el bloque entero se veía como una sola palabra
+ * naranja suelta, que era justo lo que no cuadraba con el original.
+ *
+ * Se anima UNA VEZ al entrar en pantalla, no en bucle: en el original las letras
+ * se montan y se quedan quietas. `prefers-reduced-motion` lo deja todo estático.
+ */
+interface Props {
+  antes?: string | null;
+  despues?: string | null;
+  palabras?: string[];
+  color?: string | null;
+  tamanoEm?: number | null;
+  colorAntes?: string | null;
+  tamanoAntesEm?: number | null;
+  retardoMs?: number | null;
+}
+const {
+  antes = '',
+  despues = '',
+  palabras = [],
+  color = '#ff7100',
+  tamanoEm = 5,
+  colorAntes = '#ffffff',
+  tamanoAntesEm = 3,
+  retardoMs = 400,
+} = Astro.props;
+
+const palabra = palabras[0] || '';
+const estiloAntes = `color:${colorAntes};font-size:${tamanoAntesEm}em;`;
+const estiloPalabra = `color:${color};font-size:${tamanoEm}em;`;
+---
+
+<div class="texto-animado" data-texto-animado data-retardo={retardoMs}>
+  {antes && <span class="texto-animado__linea texto-animado__antes" style={estiloAntes}>{antes}</span>}
+  {palabra && (
+    <span class="texto-animado__linea texto-animado__palabra" style={estiloPalabra} aria-label={palabra}>
+      {palabra.split('').map((letra, i) =>
+        letra === ' ' ? ' ' : (
+          <span class="texto-animado__letra" style={`--i:${i};--signo:${i % 2 ? -1 : 1}`} aria-hidden="true">{letra}</span>
+        )
+      )}
+    </span>
+  )}
+  {despues && <span class="texto-animado__linea texto-animado__despues">{despues}</span>}
+</div>
+
+<style>
+  .texto-animado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    line-height: 1;
+    /* Helvetica es la familia que declara el widget en el original. */
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 600;
+  }
+  .texto-animado__linea {
+    display: block;
+  }
+  .texto-animado__palabra {
+    margin-top: 0.15em;
+  }
+  .texto-animado__letra {
+    display: inline-block;
+    will-change: transform, opacity;
+  }
+
+  @keyframes ta-letra {
+    0% { opacity: 1; transform: translateY(0); }
+    38%, 58% { opacity: 0; transform: translateY(calc(60px * var(--signo, 1))); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  .texto-animado--animar .texto-animado__letra {
+    animation: ta-letra 1400ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
+    animation-delay: calc(var(--i, 0) * 28ms);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .texto-animado--animar .texto-animado__letra {
+      animation: none;
+    }
+  }
+</style>
+
+<script>
+  /*
+   * Se dispara al entrar en pantalla, una sola vez. Si el bloque ya está visible
+   * al cargar, el observer lo detecta igual: no hay un caso especial que olvidar.
+   */
+  const bloques = [...document.querySelectorAll('[data-texto-animado]')];
+  const animar = (el) => {
+    const retardo = Number(el.dataset.retardo) || 400;
+    setTimeout(() => el.classList.add('texto-animado--animar'), retardo);
+  };
+
+  if ('IntersectionObserver' in window) {
+    const observador = new IntersectionObserver((entradas) => {
+      for (const entrada of entradas) {
+        if (!entrada.isIntersecting) continue;
+        observador.unobserve(entrada.target);
+        animar(entrada.target);
+      }
+    }, { threshold: 0.35 });
+    bloques.forEach((el) => observador.observe(el));
+  } else {
+    bloques.forEach(animar);
+  }
+</script>
